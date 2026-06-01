@@ -17,7 +17,7 @@ export default function EditarPlanificacionPage({
   }, [id, router]);
 
   return (
-    <div className="flex min-h-[40vh] items-center justify-center p-8">
+    <div className="flex min-h-[40vh] items-center justify-center p-4 sm:p-8">
       <p className="text-sm text-muted-foreground">Abriendo asistente de planificación…</p>
     </div>
   );

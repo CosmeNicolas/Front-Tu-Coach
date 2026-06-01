@@ -23,8 +23,8 @@ export function PlanificacionTable({
   }
 
   return (
-    <div className="overflow-hidden rounded-lg border border-zinc-200 bg-white">
-      <table className="min-w-full text-sm">
+    <div className="overflow-x-auto rounded-lg border border-zinc-200 bg-white">
+      <table className="min-w-[720px] w-full text-sm">
         <thead className="bg-zinc-50 text-left text-zinc-600">
           <tr>
             <th className="px-4 py-3 font-medium">Título</th>

@@ -47,7 +47,7 @@ export function Asistente({ planification }: { planification: Planification }) {
   const idx = tabIds.indexOf(tabActivo);
 
   return (
-    <div className="mx-auto max-w-6xl space-y-4 pb-10">
+    <div className="mx-auto w-full max-w-6xl space-y-4 pb-10">
       <Card className="border-2 border-primary">
         <CardContent className="space-y-4 p-4 sm:p-6">
           <div className="flex flex-col gap-4 sm:flex-row sm:items-start sm:justify-between">

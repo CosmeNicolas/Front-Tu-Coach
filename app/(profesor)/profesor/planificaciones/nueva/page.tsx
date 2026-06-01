@@ -25,7 +25,7 @@ function NuevaPlanificacionContent() {
 
 export default function NuevaPlanificacionPage() {
   return (
-    <div className="p-8">
+    <div className="p-4 sm:p-8">
       <h1 className="mb-6 text-2xl font-semibold text-zinc-900">Nueva planificación</h1>
       <Suspense fallback={<p className="text-sm text-zinc-500">Cargando…</p>}>
         <NuevaPlanificacionContent />

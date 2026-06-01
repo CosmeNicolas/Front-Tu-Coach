@@ -41,7 +41,7 @@ export function AlumnoEditTabs({ client }: Props) {
 
   return (
     <Tabs value={tab} onValueChange={setTab}>
-      <TabsList>
+      <TabsList className="h-auto w-full max-w-full flex-wrap">
         <TabsTrigger value={TAB_DATOS}>Datos personales</TabsTrigger>
         <TabsTrigger value={TAB_PORTAL}>Acceso al portal</TabsTrigger>
       </TabsList>

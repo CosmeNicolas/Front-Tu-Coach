@@ -51,8 +51,8 @@ export function OwnerAlumnosView({
           No hay alumnos registrados.
         </p>
       ) : (
-        <div className="overflow-hidden rounded-2xl border border-border bg-card shadow-sm">
-          <table className="min-w-full text-sm">
+        <div className="overflow-x-auto rounded-2xl border border-border bg-card shadow-sm">
+          <table className="min-w-[640px] w-full text-sm">
             <thead className="bg-muted/40 text-left text-muted-foreground">
               <tr>
                 <th className="px-4 py-3 font-medium">Alumno</th>

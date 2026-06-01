@@ -24,11 +24,11 @@ export default function PlanificacionDetallePage({
     }
   }, [data, id, router]);
 
-  if (isLoading) return <div className="p-8 text-sm text-muted-foreground">Cargando…</div>;
-  if (!data) return <div className="p-8 text-sm text-muted-foreground">Planificación no encontrada</div>;
+  if (isLoading) return <div className="p-4 sm:p-8 text-sm text-muted-foreground">Cargando…</div>;
+  if (!data) return <div className="p-4 sm:p-8 text-sm text-muted-foreground">Planificación no encontrada</div>;
 
   return (
-    <div className="space-y-4 p-8">
+    <div className="space-y-4 p-4 sm:p-8">
       <div className="flex flex-wrap gap-2">
         <Button asChild size="lg" className="w-full sm:w-auto">
           <Link href={`/profesor/planificaciones/${id}/asistente`}>

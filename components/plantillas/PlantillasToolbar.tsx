@@ -62,7 +62,7 @@ export function PlantillasToolbar({
 
       <div className="flex flex-col gap-3 sm:flex-row sm:items-center">
         <Input
-          className="max-w-xs"
+          className="w-full sm:max-w-xs"
           placeholder="Buscar plantilla…"
           value={search}
           onChange={(e) => onSearchChange(e.target.value)}

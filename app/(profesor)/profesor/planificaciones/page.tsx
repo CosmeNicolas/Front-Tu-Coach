@@ -34,15 +34,15 @@ export default function PlanificacionesPage() {
   }
 
   return (
-    <div className="p-8">
-      <div className="mb-6 flex items-center justify-between">
-        <div>
-          <h1 className="text-2xl font-semibold text-zinc-900">Planificaciones</h1>
+    <div className="p-4 sm:p-8">
+      <div className="mb-6 flex flex-col gap-4 sm:flex-row sm:items-start sm:justify-between">
+        <div className="min-w-0">
+          <h1 className="text-xl font-semibold text-zinc-900 sm:text-2xl">Planificaciones</h1>
           <p className="mt-1 text-sm text-zinc-500">Planificaciones base asociadas a alumnos</p>
         </div>
         <Link
           href="/profesor/planificaciones/nueva"
-          className="rounded-lg bg-zinc-900 px-4 py-2 text-sm font-medium text-white"
+          className="inline-flex shrink-0 items-center justify-center rounded-lg bg-zinc-900 px-4 py-2 text-sm font-medium text-white"
         >
           Nueva planificación
         </Link>

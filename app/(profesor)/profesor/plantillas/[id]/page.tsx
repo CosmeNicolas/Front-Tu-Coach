@@ -116,12 +116,12 @@ export default function PlantillaDetallePage({
   }, [data, id, router]);
 
   if (isLoading) {
-    return <p className="p-8 text-sm text-muted-foreground">Cargando…</p>;
+    return <p className="p-4 sm:p-8 text-sm text-muted-foreground">Cargando…</p>;
   }
 
   if (!data || !data.esPlantilla) {
     return (
-      <p className="p-8 text-sm text-muted-foreground">Plantilla no encontrada</p>
+      <p className="p-4 sm:p-8 text-sm text-muted-foreground">Plantilla no encontrada</p>
     );
   }
 

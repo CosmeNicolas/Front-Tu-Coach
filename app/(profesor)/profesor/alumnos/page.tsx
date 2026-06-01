@@ -22,15 +22,15 @@ export default function AlumnosPage() {
   }
 
   return (
-    <div className="p-8">
-      <div className="mb-6 flex items-center justify-between">
-        <div>
-          <h1 className="text-2xl font-semibold text-zinc-900">Alumnos</h1>
+    <div className="p-4 sm:p-8">
+      <div className="mb-6 flex flex-col gap-4 sm:flex-row sm:items-start sm:justify-between">
+        <div className="min-w-0">
+          <h1 className="text-xl font-semibold text-zinc-900 sm:text-2xl">Alumnos</h1>
           <p className="mt-1 text-sm text-zinc-500">Gestioná tus alumnos asignados</p>
         </div>
         <Link
           href="/profesor/alumnos/nuevo"
-          className="rounded-lg bg-zinc-900 px-4 py-2 text-sm font-medium text-white"
+          className="inline-flex shrink-0 items-center justify-center rounded-lg bg-zinc-900 px-4 py-2 text-sm font-medium text-white"
         >
           Nuevo alumno
         </Link>

@@ -2,7 +2,10 @@
 
 import { Check } from 'lucide-react';
 import { EjercicioCatalogoImage } from '@/components/ejercicios/EjercicioCatalogoImage';
-import { parseExerciseParams } from '@/lib/alumno/parse-valor';
+import {
+  exerciseUsesSeconds,
+  parseExerciseParams,
+} from '@/lib/alumno/parse-valor';
 import { cn } from '@/lib/utils';
 import { FlatExerciseRow, ExerciseExecutionState } from '@/types/alumno-session';
 
@@ -26,6 +29,10 @@ export function AlumnoEjercicioCard({
     exercise.tipoItem,
     exercise.unidadTrabajo,
     exercise.parametros,
+  );
+  const inSeconds = exerciseUsesSeconds(
+    exercise.tipoItem,
+    exercise.unidadTrabajo,
   );
 
   return (
@@ -113,16 +120,23 @@ export function AlumnoEjercicioCard({
             {parsed.series ? (
               <MetricChip label="Series" value={parsed.series} />
             ) : null}
-            {parsed.reps ? (
+            {!inSeconds && parsed.reps ? (
               <MetricChip label="Reps" value={parsed.reps} />
             ) : null}
             {parsed.minutos ? (
               <MetricChip label="Min" value={parsed.minutos} />
             ) : null}
             {parsed.segundos ? (
-              <MetricChip label="Seg" value={parsed.segundos} />
+              <MetricChip
+                label={inSeconds ? 'Segundos' : 'Seg'}
+                value={parsed.segundos}
+              />
             ) : null}
-            {!parsed.pesoKg && !parsed.series && !parsed.reps && !parsed.minutos ? (
+            {!parsed.pesoKg &&
+            !parsed.series &&
+            !parsed.reps &&
+            !parsed.minutos &&
+            !parsed.segundos ? (
               <MetricChip label="Trabajo" value={parsed.display} />
             ) : null}
           </div>

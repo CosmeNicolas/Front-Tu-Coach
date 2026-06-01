@@ -87,15 +87,15 @@ export function PreviewPanel({
         </div>
 
         {frecuenciaBloque ? (
-          <label className="flex items-center gap-2 text-sm">
-            <span className="font-medium">Ver día base:</span>
+          <label className="flex w-full min-w-0 flex-col gap-2 text-sm sm:flex-row sm:items-center">
+            <span className="shrink-0 font-medium">Ver día base:</span>
             <select
               value={filtroDia ?? ''}
               onChange={(e) => {
                 const v = e.target.value;
                 setFiltroDia(v === '' ? null : Number(v));
               }}
-              className={`${selectCemd} min-w-[140px]`}
+              className={`${selectCemd} w-full min-w-0 sm:max-w-[200px]`}
             >
               <option value="">Todas las sesiones</option>
               {Array.from({ length: frecuenciaBloque }, (_, i) => i + 1).map(

@@ -2,7 +2,7 @@ import Link from 'next/link';
 
 export default function ProfesorDashboardPage() {
   return (
-    <div className="p-8">
+    <div className="p-4 sm:p-8">
       <h1 className="text-2xl font-semibold text-foreground">Dashboard Profesor</h1>
       <p className="mt-2 text-sm text-muted-foreground">
         Empezá creando un alumno y luego su planificación base.
