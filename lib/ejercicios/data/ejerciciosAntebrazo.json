@@ -1,0 +1,242 @@
+[
+  {
+    "grupo": "antebrazo",
+    "nombre": "Above Head Chest Stretch",
+    "nombre_español": "Estiramiento de pecho por encima de la cabeza",
+    "gif": "/gif/antebrazo/Barbell-Finger-Curl-unscreen.gif",
+    "series": "3x4",
+    "descripcion": "Ejercicio para estirar los músculos del pecho levantando los brazos por encima de la cabeza"
+  },
+  {
+    "grupo": "antebrazo",
+    "nombre": "Alternate Dumbbell Bench Press",
+    "nombre_español": "Biceps Invertido toma prona",
+    "gif": "/gif/antebrazo/Barbell-Reverse-Curl-unscreen.gif",
+    "series": "3x4",
+    "descripcion": "Ejercicio para fortalecer el pecho y brazos alternando mancuernas en press de banca"
+  },
+  {
+    "grupo": "antebrazo",
+    "nombre": "Barbell-Reverse-Wrist-Curl-Ove-unscreen",
+    "nombre_español": "Curl de muñeca invertido con barra sobre banco",
+    "gif": "/gif/antebrazo/Barbell-Reverse-Wrist-Curl-Ove-unscreen.gif",
+    "series": "3x4",
+    "descripcion": "Ejercicio para fortalecer los antebrazos con curl invertido de muñeca usando barra sobre un banco"
+  },
+  {
+    "grupo": "antebrazo",
+    "nombre": "Barbell-Reverse-Wrist-Curl-unscreen",
+    "nombre_español": "Curl de muñeca invertido con barra sentado",
+    "gif": "/gif/antebrazo/Barbell-Reverse-Wrist-Curl-unscreen.gif",
+    "series": "3x4",
+    "descripcion": "Ejercicio sentado para trabajar los antebrazos con curl invertido de muñeca usando barra"
+  },
+  {
+    "grupo": "antebrazo",
+    "nombre": "barbell-Wrist-Curl-unscreen",
+    "nombre_español": "Curl de muñeca con barra",
+    "gif": "/gif/antebrazo/barbell-Wrist-Curl-unscreen.gif",
+    "series": "3x4",
+    "descripcion": "Ejercicio básico para fortalecer los antebrazos flexionando las muñecas con barra"
+  },
+  {
+    "grupo": "antebrazo",
+    "nombre": "Behind-The-Back-Barbell-Wrist--unscreen",
+    "nombre_español": "Curl de muñeca con barra detrás de la espalda",
+    "gif": "/gif/antebrazo/Behind-The-Back-Barbell-Wrist--unscreen.gif",
+    "series": "3x4",
+    "descripcion": "Variación de curl de muñeca ejecutado sosteniendo la barra detrás del cuerpo"
+  },
+  {
+    "grupo": "antebrazo",
+    "nombre": "Cable-One-Arm-Wrist-Curl-On-Fl-unscreen",
+    "nombre_español": "Curl de muñeca unilateral con polea en el suelo",
+    "gif": "/gif/antebrazo/Cable-One-Arm-Wrist-Curl-On-Fl-unscreen.gif",
+    "series": "3x4",
+    "descripcion": "Ejercicio para antebrazo usando polea baja con curl de muñeca a una mano"
+  },
+  {
+    "grupo": "antebrazo",
+    "nombre": "Cable-Reverse-Grip-EZ-bar-Bice-unscreen",
+    "nombre_español": "Curl con agarre inverso en barra EZ con polea",
+    "gif": "/gif/antebrazo/Cable-Reverse-Grip-EZ-bar-Bice-unscreen.gif",
+    "series": "3x4",
+    "descripcion": "Variación de curl para bíceps y antebrazo con agarre inverso en barra EZ usando máquina de cable"
+  },
+  {
+    "grupo": "antebrazo",
+    "nombre": "Dumbbell-Finger-Curl-unscreen",
+    "nombre_español": "Curl de dedos con mancuernas",
+    "gif": "/gif/antebrazo/Dumbbell-Finger-Curl-unscreen.gif",
+    "series": "3x4",
+    "descripcion": "Ejercicio específico para fortalecer los músculos flexores de los dedos usando mancuernas"
+  },
+  {
+    "grupo": "antebrazo",
+    "nombre": "Dumbbell-Preacher-Hammer-Curl-unscreen",
+    "nombre_español": "Curl martillo en banco preacher con mancuerna",
+    "gif": "/gif/antebrazo/Dumbbell-Preacher-Hammer-Curl-unscreen.gif",
+    "series": "3x4",
+    "descripcion": "Ejercicio de aislamiento para bíceps y antebrazo en banco preacher con agarre martillo"
+  },
+  {
+    "grupo": "antebrazo",
+    "nombre": "dumbbell-reverse-curl-unscreen",
+    "nombre_español": "Curl inverso con mancuernas",
+    "gif": "/gif/antebrazo/dumbbell-reverse-curl-unscreen.gif",
+    "series": "3x4",
+    "descripcion": "Ejercicio para antebrazo y bíceps con agarre pronado (palmas hacia abajo) usando mancuernas"
+  },
+  {
+    "grupo": "antebrazo",
+    "nombre": "Dumbbell-Scott-Hammer-Curl-unscreen",
+    "nombre_español": "Curl martillo scott con mancuerna",
+    "gif": "/gif/antebrazo/Dumbbell-Scott-Hammer-Curl-unscreen.gif",
+    "series": "3x4",
+    "descripcion": "Variación de curl en banco scott con agarre martillo para mayor enfoque en antebrazo"
+  },
+  {
+    "grupo": "antebrazo",
+    "nombre": "Dumbbell-Seated-Neutral-Wrist--unscreen",
+    "nombre_español": "Curl de muñeca neutral sentado con mancuerna",
+    "gif": "/gif/antebrazo/Dumbbell-Seated-Neutral-Wrist--unscreen.gif",
+    "series": "3x4",
+    "descripcion": "Ejercicio sentado para antebrazo con mancuerna en posición neutral (agarre martillo)"
+  },
+  {
+    "grupo": "antebrazo",
+    "nombre": "Dumbbell-Wrist-Curl-unscreen",
+    "nombre_español": "Curl de muñeca con mancuerna",
+    "gif": "/gif/antebrazo/Dumbbell-Wrist-Curl-unscreen.gif",
+    "series": "3x4",
+    "descripcion": "Ejercicio básico para antebrazo flexionando la muñeca con mancuerna"
+  },
+  {
+    "grupo": "antebrazo",
+    "nombre": "Hammer-Curl-with-Resistance-Ba-unscreen",
+    "nombre_español": "Curl martillo con banda de resistencia",
+    "gif": "/gif/antebrazo/Hammer-Curl-with-Resistance-Ba-unscreen.gif",
+    "series": "3x4",
+    "descripcion": "Variación de curl martillo usando bandas elásticas para trabajar antebrazo y bíceps"
+  },
+  {
+    "grupo": "antebrazo",
+    "nombre": "Hand-Gripper-unscreen",
+    "nombre_español": "Ejercicio con prensa de mano",
+    "gif": "/gif/antebrazo/Hand-Gripper-unscreen.gif",
+    "series": "3x4",
+    "descripcion": "Ejercicio específico para fortalecer el agarre usando una prensa de mano o grip"
+  },
+  {
+    "grupo": "antebrazo",
+    "nombre": "Reverse-Grip-EZ-Bar-Curl-unscreen",
+    "nombre_español": "Curl inverso con barra EZ",
+    "gif": "/gif/antebrazo/Reverse-Grip-EZ-Bar-Curl-unscreen.gif",
+    "series": "3x4",
+    "descripcion": "Ejercicio para antebrazo y bíceps con agarre inverso en barra EZ"
+  },
+  {
+    "grupo": "antebrazo",
+    "nombre": "Reverse-Wrist-Curl-unscreen",
+    "nombre_español": "Curl de muñeca invertido",
+    "gif": "/gif/antebrazo/Reverse-Wrist-Curl-unscreen.gif",
+    "series": "3x4",
+    "descripcion": "Ejercicio para trabajar los extensores del antebrazo con curl invertido de muñeca"
+  },
+  {
+    "grupo": "antebrazo",
+    "nombre": "reverse-Wrist-Stretch-unscreen",
+    "nombre_español": "Estiramiento de muñeca inverso",
+    "gif": "/gif/antebrazo/reverse-Wrist-Stretch-unscreen.gif",
+    "series": "3x4",
+    "descripcion": "Estiramiento para mejorar la flexibilidad de los músculos extensores de la muñeca"
+  },
+  {
+    "grupo": "antebrazo",
+    "nombre": "Seated-Hammer-Curl-unscreen",
+    "nombre_español": "Curl martillo sentado",
+    "gif": "/gif/antebrazo/Seated-Hammer-Curl-unscreen.gif",
+    "series": "3x4",
+    "descripcion": "Variación sentada del curl martillo para trabajar bíceps y antebrazo"
+  },
+  {
+    "grupo": "antebrazo",
+    "nombre": "Seated-Zottman-Curl-unscreen",
+    "nombre_español": "Curl Zottman sentado",
+    "gif": "/gif/antebrazo/Seated-Zottman-Curl-unscreen.gif",
+    "series": "3x4",
+    "descripcion": "Ejercicio completo para brazos que combina curl normal e inverso en un mismo movimiento"
+  },
+  {
+    "grupo": "antebrazo",
+    "nombre": "Single-Arm-Reverse-Grip-Cable--unscreen",
+    "nombre_español": "Curl unilateral con agarre inverso en polea",
+    "gif": "/gif/antebrazo/Single-Arm-Reverse-Grip-Cable--unscreen.gif",
+    "series": "3x4",
+    "descripcion": "Ejercicio unilateral para antebrazo con agarre inverso usando máquina de cable"
+  },
+  {
+    "grupo": "antebrazo",
+    "nombre": "Single-Dumbbell-Spider-Hammer--unscreen",
+    "nombre_español": "Curl spider con mancuerna (martillo)",
+    "gif": "/gif/antebrazo/Single-Dumbbell-Spider-Hammer--unscreen.gif",
+    "series": "3x4",
+    "descripcion": "Variación de curl en banco inclinado con agarre martillo para mayor enfoque en antebrazo"
+  },
+  {
+    "grupo": "antebrazo",
+    "nombre": "Standing-one-arm-chest-stretch-unscreen",
+    "nombre_español": "Estiramiento de pecho unilateral de pie",
+    "gif": "/gif/antebrazo/Standing-one-arm-chest-stretch-unscreen.gif",
+    "series": "3x4",
+    "descripcion": "Estiramiento para pectoral mayor apoyando un brazo contra la pared"
+  },
+  {
+    "grupo": "antebrazo",
+    "nombre": "Water-Bottle-Hammer-Curl-unscreen",
+    "nombre_español": "Curl martillo con botella de agua",
+    "gif": "/gif/antebrazo/Water-Bottle-Hammer-Curl-unscreen.gif",
+    "series": "3x4",
+    "descripcion": "Ejercicio accesible usando botella con agua como peso para curl martillo"
+  },
+  {
+    "grupo": "antebrazo",
+    "nombre": "Weighted-Wrist-Curl-unscreen",
+    "nombre_español": "Curl de muñeca con peso",
+    "gif": "/gif/antebrazo/Weighted-Wrist-Curl-unscreen.gif",
+    "series": "3x4",
+    "descripcion": "Variación de curl de muñeca usando peso adicional para mayor resistencia"
+  },
+  {
+    "grupo": "antebrazo",
+    "nombre": "Wrist-Circles-Stretch-unscreen",
+    "nombre_español": "Estiramiento con círculos de muñeca",
+    "gif": "/gif/antebrazo/Wrist-Circles-Stretch-unscreen.gif",
+    "series": "3x4",
+    "descripcion": "Ejercicio dinámico para mejorar movilidad articular realizando círculos con las muñecas"
+  },
+  {
+    "grupo": "antebrazo",
+    "nombre": "wrist-roller-unscreen",
+    "nombre_español": "Rodillo de muñeca",
+    "gif": "/gif/antebrazo/wrist-roller-unscreen.gif",
+    "series": "3x4",
+    "descripcion": "Ejercicio clásico para fortalecimiento de antebrazos enrollando peso con un rodillo"
+  },
+  {
+    "grupo": "antebrazo",
+    "nombre": "Wrist-Stretch-unscreen",
+    "nombre_español": "Estiramiento de muñeca",
+    "gif": "/gif/antebrazo/Wrist-Stretch-unscreen.gif",
+    "series": "3x4",
+    "descripcion": "Estiramiento básico para mejorar flexibilidad en articulaciones de la muñeca"
+  },
+  {
+    "grupo": "antebrazo",
+    "nombre": "Wrist-Ulnar-Deviator-And-Exten-unscreen",
+    "nombre_español": "Desviación cubital y extensión de muñeca",
+    "gif": "/gif/antebrazo/Wrist-Ulnar-Deviator-And-Exten-unscreen.gif",
+    "series": "3x4",
+    "descripcion": "Ejercicio específico para trabajar los movimientos de desviación cubital y extensión de muñeca"
+  }
+]

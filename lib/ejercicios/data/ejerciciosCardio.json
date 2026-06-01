@@ -1,0 +1,730 @@
+[
+  {
+    "grupo": "Cardio",
+    "nombre": "1 2 Stick Drill Plyometrics",
+    "nombre_español": "Ejercicio pliométrico con conos 1-2",
+    "gif": "/gif/cardio/1-2-Stick-Drill-Plyometrics-unscreen.gif",
+    "series": "3x4",
+    "descripcion": "Ejercicio pliométrico que mejora la agilidad y coordinación usando conos"
+  },
+  {
+    "grupo": "Cardio",
+    "nombre": "5 Dot drills agility exercise",
+    "nombre_español": "Ejercicio de agilidad con 5 puntos",
+    "gif": "/gif/cardio/5-Dot-drills-agility-exercise-unscreen.gif",
+    "series": "3x4",
+    "descripcion": "Patrón de movimientos rápidos para mejorar velocidad y coordinación"
+  },
+  {
+    "grupo": "Cardio",
+    "nombre": "Assault Air Runner",
+    "nombre_español": "Cinta de correr",
+    "gif": "/gif/cardio/Assault-Air-Runner-unscreen.gif",
+    "series": "3x4",
+    "descripcion": "Corredora manual que requiere mayor esfuerzo que las tradicionales"
+  },
+  {
+    "grupo": "Cardio",
+    "nombre": "Assault AirBike",
+    "nombre_español": "Bicicleta AirBike",
+    "gif": "/gif/cardio/Assault-AirBike-unscreen.gif",
+    "series": "3x4",
+    "descripcion": "Bicicleta estática de alta intensidad que trabaja cuerpo completo"
+  },
+  {
+    "grupo": "Cardio",
+    "nombre": "Astride Jumps",
+    "nombre_español": "Saltos laterales",
+    "gif": "/gif/cardio/Astride-Jumps-unscreen.gif",
+    "series": "3x4",
+    "descripcion": "Saltos de lado a lado para mejorar potencia lateral"
+  },
+  {
+    "grupo": "Cardio",
+    "nombre": "Backward Jumping",
+    "nombre_español": "Saltos hacia atrás",
+    "gif": "/gif/cardio/Backward-Jumping-unscreen.gif",
+    "series": "3x4",
+    "descripcion": "Saltos en reversa que desafían la coordinación y equilibrio"
+  },
+  {
+    "grupo": "Cardio",
+    "nombre": "Backwards Running",
+    "nombre_español": "Carrera hacia atrás",
+    "gif": "/gif/cardio/Backwards-Running-unscreen.gif",
+    "series": "3x4",
+    "descripcion": "Correr en reversa para trabajar diferentes grupos musculares"
+  },
+  {
+    "grupo": "Cardio",
+    "nombre": "Band Assisted Sprinter Run",
+    "nombre_español": "Sprints con banda de resistencia",
+    "gif": "/gif/cardio/Band-Assisted-Sprinter-Run-unscreen.gif",
+    "series": "3x4",
+    "descripcion": "Sprints asistidos con banda elástica para mayor potencia"
+  },
+  {
+    "grupo": "Cardio",
+    "nombre": "Battle Rope",
+    "nombre_español": "Cuerda de batalla",
+    "gif": "/gif/cardio/Battle-Rope-unscreen.gif",
+    "series": "3x4",
+    "descripcion": "Ondulaciones con cuerda pesada para entrenamiento de cuerpo completo"
+  },
+  {
+    "grupo": "Cardio",
+    "nombre": "Bear Crawl",
+    "nombre_español": "Desplazamiento de oso",
+    "gif": "/gif/cardio/Bear-Crawl-unscreen.gif",
+    "series": "3x4",
+    "descripcion": "Movimiento cuadrúpedo que fortalece core y hombros"
+  },
+  {
+    "grupo": "Cardio",
+    "nombre": "Bicycle Crunch",
+    "nombre_español": "Abdominales en bicicleta",
+    "gif": "/gif/cardio/Bicycle-Crunch-unscreen.gif",
+    "series": "3x4",
+    "descripcion": "Ejercicio abdominal que simula pedaleo en bicicleta"
+  },
+  {
+    "grupo": "Cardio",
+    "nombre": "Bike",
+    "nombre_español": "Bicicleta",
+    "gif": "/gif/cardio/Bike-unscreen.gif",
+    "series": "3x4",
+    "descripcion": "Ejercicio cardiovascular básico en bicicleta estática"
+  },
+  {
+    "grupo": "Cardio",
+    "nombre": "bodyweight squat full version",
+    "nombre_español": "Sentadilla con peso corporal",
+    "gif": "/gif/cardio/bodyweight-squat-full-version-unscreen.gif",
+    "series": "3x4",
+    "descripcion": "Sentadilla completa usando solo el peso del cuerpo"
+  },
+  {
+    "grupo": "Cardio",
+    "nombre": "Box Jump 1 to 2",
+    "nombre_español": "Salto al cajón de 1 a 2 piernas",
+    "gif": "/gif/cardio/Box-Jump-1-to-2-unscreen.gif",
+    "series": "3x4",
+    "descripcion": "Salto pliométrico que alterna entre una y dos piernas"
+  },
+  {
+    "grupo": "Cardio",
+    "nombre": "Box Jump 2 to 1",
+    "nombre_español": "Salto al cajón de 2 a 1 piernas",
+    "gif": "/gif/cardio/Box-Jump-2-to-1-unscreen.gif",
+    "series": "3x4",
+    "descripcion": "Variación de salto al cajón alternando apoyo"
+  },
+  {
+    "grupo": "Cardio",
+    "nombre": "Box Jump to Pistol Squat",
+    "nombre_español": "Salto al cajón con sentadilla a una pierna",
+    "gif": "/gif/cardio/Box-Jump-to-Pistol-Squat-unscreen.gif",
+    "series": "3x4",
+    "descripcion": "Combinación avanzada de salto y sentadilla unilateral"
+  },
+  {
+    "grupo": "Cardio",
+    "nombre": "Boxer Shuffle Cardio",
+    "nombre_español": "Shuffle de boxeador",
+    "gif": "/gif/cardio/Boxer-Shuffle-Cardio-unscreen.gif",
+    "series": "3x4",
+    "descripcion": "Movimientos laterales rápidos inspirados en boxeo"
+  },
+  {
+    "grupo": "Cardio",
+    "nombre": "Boxing Right Cross with boxing bag",
+    "nombre_español": "Cross de derecha con bolsa de boxeo",
+    "gif": "/gif/cardio/Boxing-Right-Cross-with-boxing-unscreen.gif",
+    "series": "3x4",
+    "descripcion": "Golpe de boxeo cruzado con la mano derecha"
+  },
+  {
+    "grupo": "Cardio",
+    "nombre": "Briskly Walking",
+    "nombre_español": "Caminata rápida",
+    "gif": "/gif/cardio/Briskly-Walking-unscreen.gif",
+    "series": "3x4",
+    "descripcion": "Caminata a paso acelerado para ejercicio cardiovascular"
+  },
+  {
+    "grupo": "Cardio",
+    "nombre": "burpees",
+    "nombre_español": "Burpees",
+    "gif": "/gif/cardio/burpees-unscreen.gif",
+    "series": "3x4",
+    "descripcion": "Ejercicio completo que combina flexión, salto y sentadilla"
+  },
+  {
+    "grupo": "Cardio",
+    "nombre": "Butt Kicks",
+    "nombre_español": "Patadas a glúteos",
+    "gif": "/gif/cardio/Butt-Kicks-unscreen.gif",
+    "series": "3x4",
+    "descripcion": "Correr elevando talones hacia los glúteos"
+  },
+  {
+    "grupo": "Cardio",
+    "nombre": "Cross Body Push up_Plyometric",
+    "nombre_español": "Flexión pliométrica cruzada",
+    "gif": "/gif/cardio/Cross-Body-Push-up-Plyometric-unscreen.gif",
+    "series": "3x4",
+    "descripcion": "Flexión con salto y rotación corporal"
+  },
+  {
+    "grupo": "Cardio",
+    "nombre": "Curtsey Squat",
+    "nombre_español": "Sentadilla en reverencia",
+    "gif": "/gif/cardio/Curtsey-Squat-unscreen.gif",
+    "series": "3x4",
+    "descripcion": "Sentadilla cruzada que trabaja glúteos y piernas"
+  },
+  {
+    "grupo": "Cardio",
+    "nombre": "Depth Jump to Hurdle Hop",
+    "nombre_español": "Salto en profundidad con valla",
+    "gif": "/gif/cardio/Depth-Jump-to-Hurdle-Hop-unscreen.gif",
+    "series": "3x4",
+    "descripcion": "Salto pliométrico combinado con paso de obstáculo"
+  },
+  {
+    "grupo": "Cardio",
+    "nombre": "Dumbbell Burpees",
+    "nombre_español": "Burpees con mancuernas",
+    "gif": "/gif/cardio/Dumbbell-Burpees-unscreen.gif",
+    "series": "3x4",
+    "descripcion": "Burpees añadiendo peso con mancuernas"
+  },
+  {
+    "grupo": "Cardio",
+    "nombre": "Dumbbell Jump Squat",
+    "nombre_español": "Sentadilla con salto y mancuernas",
+    "gif": "/gif/cardio/Dumbbell-Jump-Squat-unscreen.gif",
+    "series": "3x4",
+    "descripcion": "Sentadilla explosiva con salto y peso adicional"
+  },
+  {
+    "grupo": "Cardio",
+    "nombre": "Dumbbell Split Jump",
+    "nombre_español": "Salto en zancada con mancuernas",
+    "gif": "/gif/cardio/Dumbbell-Split-Jump-unscreen.gif",
+    "series": "3x4",
+    "descripcion": "Salto alternando zancadas con peso"
+  },
+  {
+    "grupo": "Cardio",
+    "nombre": "Elbow To Knee Twists",
+    "nombre_español": "Giros codo-rodilla",
+    "gif": "/gif/cardio/Elbow-To-Knee-Twists-unscreen.gif",
+    "series": "3x4",
+    "descripcion": "Ejercicio abdominal con rotación y contacto codo-rodilla"
+  },
+  {
+    "grupo": "Cardio",
+    "nombre": "Elliptical Machine",
+    "nombre_español": "Eliptico Maquina cardio",
+    "gif": "/gif/cardio/Elliptical-Machine-unscreen.gif",
+    "series": "3x4",
+    "descripcion": "Ejercicio cardiovascular de bajo impacto"
+  },
+  {
+    "grupo": "Cardio",
+    "nombre": "Fast Feet Run",
+    "nombre_español": "Carrera de pies rápidos",
+    "gif": "/gif/cardio/Fast-Feet-Run-unscreen.gif",
+    "series": "3x4",
+    "descripcion": "Movimiento rápido de pies en el lugar para agilidad"
+  },
+  {
+    "grupo": "Cardio",
+    "nombre": "Front Plank With Arm And Leg Lift",
+    "nombre_español": "Plancha con elevación de brazo y pierna",
+    "gif": "/gif/cardio/Front-Plank-With-Arm-And-Leg-L-unscreen.gif",
+    "series": "3x4",
+    "descripcion": "Plancha abdominal con elevaciones alternadas"
+  },
+  {
+    "grupo": "Cardio",
+    "nombre": "Hands Bike",
+    "nombre_español": "Bicicleta de manos",
+    "gif": "/gif/cardio/Hands-Bike-unscreen.gif",
+    "series": "3x4",
+    "descripcion": "Ejercicio cardiovascular para extremidades superiores"
+  },
+  {
+    "grupo": "Cardio",
+    "nombre": "High Knee Run",
+    "nombre_español": "Rodillas altas corriendo",
+    "gif": "/gif/cardio/High-Knee-Run-unscreen.gif",
+    "series": "3x4",
+    "descripcion": "Correr elevando rodillas al máximo"
+  },
+  {
+    "grupo": "Cardio",
+    "nombre": "High Knee Skips_Cardio",
+    "nombre_español": "Saltos con rodillas altas",
+    "gif": "/gif/cardio/High-Knee-Skips-Cardio-unscreen.gif",
+    "series": "3x4",
+    "descripcion": "Combinación de salto y elevación de rodillas"
+  },
+  {
+    "grupo": "Cardio",
+    "nombre": "High Knee Squat",
+    "nombre_español": "Sentadilla con rodillas altas",
+    "gif": "/gif/cardio/High-Knee-Squat-unscreen.gif",
+    "series": "3x4",
+    "descripcion": "Sentadilla combinada con elevación de rodilla"
+  },
+  {
+    "grupo": "Cardio",
+    "nombre": "High Knees against wall",
+    "nombre_español": "Rodillas altas contra pared",
+    "gif": "/gif/cardio/High-Knees-against-wall-unscreen.gif",
+    "series": "3x4",
+    "descripcion": "Ejercicio de rodillas altas con apoyo en pared"
+  },
+  {
+    "grupo": "Cardio",
+    "nombre": "Hook Kick Kickboxing with boxing bag",
+    "nombre_español": "Gancho de kickboxing con bolsa",
+    "gif": "/gif/cardio/Hook-Kick-Kickboxing-with-boxi-unscreen.gif",
+    "series": "3x4",
+    "descripcion": "Patada circular de gancho en bolsa de boxeo"
+  },
+  {
+    "grupo": "Cardio",
+    "nombre": "Incline Treadmill",
+    "nombre_español": "Cinta inclinada",
+    "gif": "/gif/cardio/Incline-Treadmill-unscreen.gif",
+    "series": "3x4",
+    "descripcion": "Caminadora con inclinación para mayor intensidad"
+  },
+  {
+    "grupo": "Cardio",
+    "nombre": "Jab Boxing",
+    "nombre_español": "Jab de boxeo",
+    "gif": "/gif/cardio/Jab-Boxing-unscreen.gif",
+    "series": "3x4",
+    "descripcion": "Golpe recto básico de boxeo"
+  },
+  {
+    "grupo": "Cardio",
+    "nombre": "Jack Burpees",
+    "nombre_español": "Burpees con jumping jack",
+    "gif": "/gif/cardio/Jack-Burpees-unscreen.gif",
+    "series": "3x4",
+    "descripcion": "Combinación de burpees y saltos de estrella"
+  },
+  {
+    "grupo": "Cardio",
+    "nombre": "Jump Squat",
+    "nombre_español": "Sentadilla con salto",
+    "gif": "/gif/cardio/Jump-Squat-unscreen.gif",
+    "series": "3x4",
+    "descripcion": "Sentadilla explosiva con salto vertical"
+  },
+  {
+    "grupo": "Cardio",
+    "nombre": "Jumping jack",
+    "nombre_español": "Salto estrella",
+    "gif": "/gif/cardio/Jumping-jack-unscreen.gif",
+    "series": "3x4",
+    "descripcion": "Salto abriendo piernas y brazos en forma de estrella"
+  },
+  {
+    "grupo": "Cardio",
+    "nombre": "Kettlebell Clean and Jerk",
+    "nombre_español": "Cargada y envión con kettlebell",
+    "gif": "/gif/cardio/Kettlebell-Clean-and-Jerk-unscreen.gif",
+    "series": "3x4",
+    "descripcion": "Ejercicio olímpico con pesa rusa"
+  },
+  {
+    "grupo": "Cardio",
+    "nombre": "Lateral Speed Step",
+    "nombre_español": "Paso lateral rápido",
+    "gif": "/gif/cardio/Lateral-Speed-Step-unscreen.gif",
+    "series": "3x4",
+    "descripcion": "Desplazamientos laterales rápidos"
+  },
+  {
+    "grupo": "Cardio",
+    "nombre": "Lateral Step up",
+    "nombre_español": "Subida lateral al cajón",
+    "gif": "/gif/cardio/Lateral-Step-up-unscreen.gif",
+    "series": "3x4",
+    "descripcion": "Subida al cajón con movimiento lateral"
+  },
+  {
+    "grupo": "Cardio",
+    "nombre": "Long Jump Plyometrics",
+    "nombre_español": "Salto largo pliométrico",
+    "gif": "/gif/cardio/Long-Jump-Plyometrics-unscreen.gif",
+    "series": "3x4",
+    "descripcion": "Salto horizontal para potencia y explosividad"
+  },
+  {
+    "grupo": "Cardio",
+    "nombre": "Mountain climber",
+    "nombre_español": "Escalador",
+    "gif": "/gif/cardio/Mountain-climber-unscreen.gif",
+    "series": "3x4",
+    "descripcion": "Ejercicio dinámico que simula escalar"
+  },
+  {
+    "grupo": "Cardio",
+    "nombre": "Navy Seal Burpee",
+    "nombre_español": "Burpee Navy Seal",
+    "gif": "/gif/cardio/Navy-Seal-Burpee-unscreen.gif",
+    "series": "3x4",
+    "descripcion": "Variante avanzada de burpee con flexión explosiva"
+  },
+  {
+    "grupo": "Cardio",
+    "nombre": "Plyo Jacks",
+    "nombre_español": "Saltos pliométricos",
+    "gif": "/gif/cardio/Plyo-Jacks-unscreen.gif",
+    "series": "3x4",
+    "descripcion": "Saltos de estrella con aterrizaje en sentadilla"
+  },
+  {
+    "grupo": "Cardio",
+    "nombre": "power lunge",
+    "nombre_español": "Estocada poderosa",
+    "gif": "/gif/cardio/power-lunge-unscreen.gif",
+    "series": "3x4",
+    "descripcion": "Estocada dinámica con salto y cambio de pierna"
+  },
+  {
+    "grupo": "Cardio",
+    "nombre": "Power Skips",
+    "nombre_español": "Saltos potentes",
+    "gif": "/gif/cardio/Power-Skips-unscreen.gif",
+    "series": "3x4",
+    "descripcion": "Saltos exagerados con elevación de rodillas"
+  },
+  {
+    "grupo": "Cardio",
+    "nombre": "Punches",
+    "nombre_español": "Golpes de boxeo",
+    "gif": "/gif/cardio/Punches-unscreen.gif",
+    "series": "3x4",
+    "descripcion": "Combinación básica de golpes de boxeo"
+  },
+  {
+    "grupo": "Cardio",
+    "nombre": "Push up Toe Touch",
+    "nombre_español": "Flexión con toque de pies",
+    "gif": "/gif/cardio/Push-up-Toe-Touch-unscreen.gif",
+    "series": "3x4",
+    "descripcion": "Combinación de flexión y elevación para tocar pies"
+  },
+  {
+    "grupo": "Cardio",
+    "nombre": "Recumbent Exercise Bike",
+    "nombre_español": "Bicicleta horizontal",
+    "gif": "/gif/cardio/Recumbent-Exercise-Bike-unscreen.gif",
+    "series": "3x4",
+    "descripcion": "Bicicleta estática con asiento reclinado"
+  },
+  {
+    "grupo": "Cardio",
+    "nombre": "Riding Outdoor Bicycle",
+    "nombre_español": "Ciclismo exterior",
+    "gif": "/gif/cardio/Riding-Outdoor-Bicycle-unscreen.gif",
+    "series": "3x4",
+    "descripcion": "Ciclismo tradicional al aire libre"
+  },
+  {
+    "grupo": "Cardio",
+    "nombre": "Right Cross Boxing",
+    "nombre_español": "Cruzado derecho de boxeo",
+    "gif": "/gif/cardio/Right-Cross-Boxing-unscreen.gif",
+    "series": "3x4",
+    "descripcion": "Golpe cruzado con la mano derecha"
+  },
+  {
+    "grupo": "Cardio",
+    "nombre": "Right Uppercut Boxing",
+    "nombre_español": "Gancho ascendente derecho",
+    "gif": "/gif/cardio/Right-Uppercut-Boxing-unscreen.gif",
+    "series": "3x4",
+    "descripcion": "Golpe ascendente con la mano derecha"
+  },
+  {
+    "grupo": "Cardio",
+    "nombre": "Rowing Machine",
+    "nombre_español": "Remo Maquina",
+    "gif": "/gif/cardio/Rowing-Machine-unscreen.gif",
+    "series": "3x4",
+    "descripcion": "Ejercicio cardiovascular que simula remo"
+  },
+  {
+    "grupo": "Cardio",
+    "nombre": "Run in Place exercise",
+    "nombre_español": "Correr en el lugar",
+    "gif": "/gif/cardio/Run-in-Place-exercise-unscreen.gif",
+    "series": "3x4",
+    "descripcion": "Simulación de carrera sin desplazamiento"
+  },
+  {
+    "grupo": "Cardio",
+    "nombre": "Run in Place",
+    "nombre_español": "Correr en el lugar",
+    "gif": "/gif/cardio/Run-in-Place-unscreen.gif",
+    "series": "3x4",
+    "descripcion": "Carrera estática para ejercicio cardiovascular"
+  },
+  {
+    "grupo": "Cardio",
+    "nombre": "Run",
+    "nombre_español": "Correr",
+    "gif": "/gif/cardio/Run-unscreen.gif",
+    "series": "3x4",
+    "descripcion": "Ejercicio básico de carrera"
+  },
+  {
+    "grupo": "Cardio",
+    "nombre": "shadow boxing workout",
+    "nombre_español": "Boxeo de sombra",
+    "gif": "/gif/cardio/shadow-boxing-workout-unscreen.gif",
+    "series": "3x4",
+    "descripcion": "Práctica de boxeo sin oponente"
+  },
+  {
+    "grupo": "Cardio",
+    "nombre": "Short Stride Run",
+    "nombre_español": "Carrera de pasos cortos",
+    "gif": "/gif/cardio/Short-Stride-Run-unscreen.gif",
+    "series": "3x4",
+    "descripcion": "Carrera con zancadas cortas y rápidas"
+  },
+  {
+    "grupo": "Cardio",
+    "nombre": "Side Shuttle",
+    "nombre_español": "Desplazamiento lateral",
+    "gif": "/gif/cardio/Side-Shuttle-unscreen.gif",
+    "series": "3x4",
+    "descripcion": "Ejercicio de agilidad con cambios de dirección"
+  },
+  {
+    "grupo": "Cardio",
+    "nombre": "Single Leg Box Jump",
+    "nombre_español": "Salto al cajón con una pierna",
+    "gif": "/gif/cardio/Single-Leg-Box-Jump-unscreen.gif",
+    "series": "3x4",
+    "descripcion": "Salto pliométrico unilateral"
+  },
+  {
+    "grupo": "Cardio",
+    "nombre": "Single Leg Broad Jump",
+    "nombre_español": "Salto largo con una pierna",
+    "gif": "/gif/cardio/Single-Leg-Broad-Jump-unscreen.gif",
+    "series": "3x4",
+    "descripcion": "Salto horizontal sobre una sola pierna"
+  },
+  {
+    "grupo": "Cardio",
+    "nombre": "Single Leg Hip Thrust Jump",
+    "nombre_español": "Salto de empuje de cadera unilateral",
+    "gif": "/gif/cardio/Single-Leg-Hip-Thrust-Jump-unscreen.gif",
+    "series": "3x4",
+    "descripcion": "Salto con empuje de cadera sobre una pierna"
+  },
+  {
+    "grupo": "Cardio",
+    "nombre": "Skater",
+    "nombre_español": "Patinador",
+    "gif": "/gif/cardio/Skater-unscreen.gif",
+    "series": "3x4",
+    "descripcion": "Desplazamiento lateral imitando patinador"
+  },
+  {
+    "grupo": "Cardio",
+    "nombre": "Ski Step",
+    "nombre_español": "Paso de esquí",
+    "gif": "/gif/cardio/Ski-Step-unscreen.gif",
+    "series": "3x4",
+    "descripcion": "Movimiento que simula esquí de fondo"
+  },
+  {
+    "grupo": "Cardio",
+    "nombre": "Skip Jump Rope",
+    "nombre_español": "Salto de cuerda",
+    "gif": "/gif/cardio/Skip-Jump-Rope-unscreen.gif",
+    "series": "3x4",
+    "descripcion": "Ejercicio clásico de saltar cuerda"
+  },
+  {
+    "grupo": "Cardio",
+    "nombre": "SNAP JUMPS",
+    "nombre_español": "Saltos explosivos",
+    "gif": "/gif/cardio/SNAP-JUMPS-unscreen.gif",
+    "series": "3x4",
+    "descripcion": "Saltos rápidos con extensión completa"
+  },
+  {
+    "grupo": "Cardio",
+    "nombre": "Spider Plank",
+    "nombre_español": "Plancha araña",
+    "gif": "/gif/cardio/Spider-Plank-unscreen.gif",
+    "series": "3x4",
+    "descripcion": "Plancha con movimiento de rodilla al codo"
+  },
+  {
+    "grupo": "Cardio",
+    "nombre": "Split Jacks",
+    "nombre_español": "Saltos de tijera",
+    "gif": "/gif/cardio/Split-Jacks-unscreen.gif",
+    "series": "3x4",
+    "descripcion": "Variación de jumping jack con piernas alternadas"
+  },
+  {
+    "grupo": "Cardio",
+    "nombre": "Split Squat",
+    "nombre_español": "Sentadilla dividida",
+    "gif": "/gif/cardio/Split-Squat-unscreen.gif",
+    "series": "3x4",
+    "descripcion": "Sentadilla con una pierna adelantada"
+  },
+  {
+    "grupo": "Cardio",
+    "nombre": "sprint",
+    "nombre_español": "Sprint",
+    "gif": "/gif/cardio/sprint-unscreen.gif",
+    "series": "3x4",
+    "descripcion": "Carrera de velocidad máxima"
+  },
+  {
+    "grupo": "Cardio",
+    "nombre": "Squat Tuck Jump",
+    "nombre_español": "Salto con rodillas al pecho",
+    "gif": "/gif/cardio/Squat-Tuck-Jump-unscreen.gif",
+    "series": "3x4",
+    "descripcion": "Salto elevando rodillas al pecho desde sentadilla"
+  },
+  {
+    "grupo": "Cardio",
+    "nombre": "Stationary Bike Run",
+    "nombre_español": "Bicicleta Fija",
+    "gif": "/gif/cardio/Stationary-Bike-Run-unscreen.gif",
+    "series": "3x4",
+    "descripcion": "Simulación de carrera en bicicleta fija"
+  },
+  {
+    "grupo": "Cardio",
+    "nombre": "Step Up Opposite Elbow to Knee Twist",
+    "nombre_español": "Subida al cajón con giro codo-rodilla",
+    "gif": "/gif/cardio/Step-Up-Opposite-Elbow-to-Knee-unscreen.gif",
+    "series": "3x4",
+    "descripcion": "Subida al cajón con rotación y contacto codo-rodilla"
+  },
+  {
+    "grupo": "Cardio",
+    "nombre": "Step up",
+    "nombre_español": "Subida al cajón",
+    "gif": "/gif/cardio/Step-up-unscreen.gif",
+    "series": "3x4",
+    "descripcion": "Ejercicio básico de subida a plataforma"
+  },
+  {
+    "grupo": "Cardio",
+    "nombre": "T Cross Sit up",
+    "nombre_español": "Abdominal en T",
+    "gif": "/gif/cardio/T-Cross-Sit-up-unscreen.gif",
+    "series": "3x4",
+    "descripcion": "Abdominal con apertura de brazos en forma de T"
+  },
+  {
+    "grupo": "Cardio",
+    "nombre": "The Box Jump",
+    "nombre_español": "Salto al cajón",
+    "gif": "/gif/cardio/The-Box-Jump-unscreen.gif",
+    "series": "3x4",
+    "descripcion": "Salto pliométrico sobre cajón"
+  },
+  {
+    "grupo": "Cardio",
+    "nombre": "Treadmill ",
+    "nombre_español": "Cinta de correr",
+    "gif": "/gif/cardio/Treadmill--unscreen.gif",
+    "series": "3x4",
+    "descripcion": "Ejercicio cardiovascular en caminadora"
+  },
+  {
+    "grupo": "Cardio",
+    "nombre": "Tuck Jump",
+    "nombre_español": "Salto con rodillas al pecho",
+    "gif": "/gif/cardio/Tuck-Jump-unscreen.gif",
+    "series": "3x4",
+    "descripcion": "Salto elevando rodillas hacia el pecho"
+  },
+  {
+    "grupo": "Cardio",
+    "nombre": "Vertical Mountain Climber",
+    "nombre_español": "Escalador vertical",
+    "gif": "/gif/cardio/Vertical-Mountain-Climber-unscreen.gif",
+    "series": "3x4",
+    "descripcion": "Variante de escalador con movimiento vertical"
+  },
+  {
+    "grupo": "Cardio",
+    "nombre": "Vibrate Plate Standing",
+    "nombre_español": "Plataforma vibratoria de pie",
+    "gif": "/gif/cardio/Vibrate-Plate-Standing-unscreen.gif",
+    "series": "3x4",
+    "descripcion": "Ejercicio en plataforma vibratoria"
+  },
+  {
+    "grupo": "Cardio",
+    "nombre": "Walk Wave Machine",
+    "nombre_español": "Máquina de caminata ondulante",
+    "gif": "/gif/cardio/Walk-Wave-Machine-unscreen.gif",
+    "series": "3x4",
+    "descripcion": "Simulador de caminata con movimiento ondulatorio"
+  },
+  {
+    "grupo": "Cardio",
+    "nombre": "Walking High Knee Lunges",
+    "nombre_español": "Estocadas caminando con rodillas altas",
+    "gif": "/gif/cardio/Walking-High-Knee-Lunges-unscreen.gif",
+    "series": "3x4",
+    "descripcion": "Estocadas dinámicas con elevación de rodilla"
+  },
+  {
+    "grupo": "Cardio",
+    "nombre": "Walking on Stepmill",
+    "nombre_español": "Escalera Mecánica",
+    "gif": "/gif/cardio/Walking-on-Stepmill-unscreen.gif",
+    "series": "3x4",
+    "descripcion": "Ejercicio en máquina de escalera infinita"
+  },
+  {
+    "grupo": "Cardio",
+    "nombre": "Walking",
+    "nombre_español": "Caminata",
+    "gif": "/gif/cardio/Walking-unscreen.gif",
+    "series": "3x4",
+    "descripcion": "Ejercicio básico de caminar"
+  },
+  {
+    "grupo": "Cardio",
+    "nombre": "Wheel Run",
+    "nombre_español": "Carrera con zancada",
+    "gif": "/gif/cardio/Wheel-Run-unscreen.gif",
+    "series": "3x4",
+    "descripcion": "Ejercicio en rueda de correr"
+  },
+  {
+    "grupo": "Cardio",
+    "nombre": "Zig Zag Hops Plyometric",
+    "nombre_español": "Saltos en zigzag pliométricos",
+    "gif": "/gif/cardio/Zig-Zag-Hops-Plyometric-unscreen.gif",
+    "series": "3x4",
+    "descripcion": "Saltos laterales en patrón zigzag"
+  }
+]

@@ -1,0 +1,330 @@
+[
+  {
+    "grupo": "Gemelos",
+    "nombre": "Barbell Seated Calf Raise",
+    "gif": "/gif/gemelos/Barbell-Seated-Calf-Raise-unscreen.gif",
+    "series": "3x4",
+    "nombre_español": "Elevación de gemelos sentado con barra",
+    "descripcion": "Ejercicio para fortalecer los gemelos realizado sentado con una barra"
+  },
+  {
+    "grupo": "Gemelos",
+    "nombre": "Bench Press Machine Standing Calf Raise",
+    "gif": "/gif/gemelos/Bench-Press-Machine-Standing-C-unscreen.gif",
+    "series": "3x4",
+    "nombre_español": "Elevación de gemelos de pie en máquina de press",
+    "descripcion": "Ejercicio para gemelos usando una máquina de press"
+  },
+  {
+    "grupo": "Gemelos",
+    "nombre": "Calf Raise with Resistance Band",
+    "gif": "/gif/gemelos/Calf-Raise-with-Resistance-Ban-unscreen.gif",
+    "series": "3x4",
+    "nombre_español": "Elevación de gemelos con banda de resistencia",
+    "descripcion": "Ejercicio para gemelos utilizando una banda elástica"
+  },
+  {
+    "grupo": "Gemelos",
+    "nombre": "Calf Stretch with Rope",
+    "gif": "/gif/gemelos/Calf-Stretch-with-Rope-unscreen.gif",
+    "series": "3x4",
+    "nombre_español": "Estiramiento de gemelos con cuerda",
+    "descripcion": "Ejercicio de estiramiento para gemelos usando una cuerda"
+  },
+  {
+    "grupo": "Gemelos",
+    "nombre": "Calves Stretch Static Position",
+    "gif": "/gif/gemelos/Calves-Stretch-Static-Position.gif",
+    "series": "3x4",
+    "nombre_español": "Estiramiento estático de gemelos",
+    "descripcion": "Estiramiento mantenido para los músculos de los gemelos"
+  },
+  {
+    "grupo": "Gemelos",
+    "nombre": "Crouching Heel Back Calf Stretch",
+    "gif": "/gif/gemelos/Crouching-Heel-Back-Calf-Stret-unscreen.gif",
+    "series": "3x4",
+    "nombre_español": "Estiramiento de gemelos en cuclillas con talones atrás",
+    "descripcion": "Estiramiento profundo para gemelos en posición de cuclillas"
+  },
+  {
+    "grupo": "Gemelos",
+    "nombre": "Donkey Calf Raise",
+    "gif": "/gif/gemelos/Donkey-Calf-Raise-unscreen.gif",
+    "series": "3x4",
+    "nombre_español": "Elevación de gemelos estilo burro",
+    "descripcion": "Ejercicio clásico para gemelos en posición inclinada"
+  },
+  {
+    "grupo": "Gemelos",
+    "nombre": "Dumbbell Calf Raise",
+    "gif": "/gif/gemelos/Dumbbell-Calf-Raise-unscreen.gif",
+    "series": "3x4",
+    "nombre_español": "Elevación de gemelos con mancuernas",
+    "descripcion": "Ejercicio para gemelos usando mancuernas como peso"
+  },
+  {
+    "grupo": "Gemelos",
+    "nombre": "Feet and Ankle Rotation",
+    "gif": "/gif/gemelos/Feet-and-Ankle-Rotation-unscreen.gif",
+    "series": "3x4",
+    "nombre_español": "Rotación de pies y tobillos",
+    "descripcion": "Ejercicio de movilidad para pies y tobillos"
+  },
+  {
+    "grupo": "Gemelos",
+    "nombre": "Foam Roller Calves",
+    "gif": "/gif/gemelos/Foam-Roller-Calves-unscreen.gif",
+    "series": "3x4",
+    "nombre_español": "Auto-masaje de gemelos con rodillo",
+    "descripcion": "Técnica de liberación miofascial para gemelos"
+  },
+  {
+    "grupo": "Gemelos",
+    "nombre": "Foot and Ankles Stretches",
+    "gif": "/gif/gemelos/Foot-and-Ankles-Stretches-unscreen.gif",
+    "series": "3x4",
+    "nombre_español": "Estiramientos de pies y tobillos",
+    "descripcion": "Ejercicios de flexibilidad para pies y tobillos"
+  },
+  {
+    "grupo": "Gemelos",
+    "nombre": "Hack Machine One Leg Calf Raise",
+    "gif": "/gif/gemelos/Hack-Machine-One-Leg-Calf-Rais-unscreen.gif",
+    "series": "3x4",
+    "nombre_español": "Elevación de gemelos a una pierna en máquina hack",
+    "descripcion": "Ejercicio unilateral para gemelos en máquina hack"
+  },
+  {
+    "grupo": "Gemelos",
+    "nombre": "Hack Squat Calf Raise",
+    "gif": "/gif/gemelos/Hack-Squat-Calf-Raise-unscreen.gif",
+    "series": "3x4",
+    "nombre_español": "Elevación de gemelos en máquina hack",
+    "descripcion": "Variante para gemelos usando la máquina de sentadillas hack"
+  },
+  {
+    "grupo": "Gemelos",
+    "nombre": "INNER THIGH SIDE STRETCH",
+    "gif": "/gif/gemelos/INNER-THIGH-SIDE-STRETCH-unscreen.gif",
+    "series": "3x4",
+    "nombre_español": "Estiramiento lateral de muslos internos",
+    "descripcion": "Ejercicio de flexibilidad para la parte interna de los muslos"
+  },
+  {
+    "grupo": "Gemelos",
+    "nombre": "Leg Press Calf Raise",
+    "gif": "/gif/gemelos/Leg-Press-Calf-Raise-unscreen.gif",
+    "series": "3x4",
+    "nombre_español": "Elevación de gemelos en prensa de piernas",
+    "descripcion": "Ejercicio para gemelos realizado en la máquina de prensa"
+  },
+  {
+    "grupo": "Gemelos",
+    "nombre": "Lever Donkey Calf Raise",
+    "gif": "/gif/gemelos/Lever-Donkey-Calf-Raise-unscreen.gif",
+    "series": "3x4",
+    "nombre_español": "Elevación de gemelos estilo burro en palanca",
+    "descripcion": "Variante del ejercicio burro usando máquina de palanca"
+  },
+  {
+    "grupo": "Gemelos",
+    "nombre": "Lever Seated Calf Raise",
+    "gif": "/gif/gemelos/Lever-Seated-Calf-Raise-unscreen.gif",
+    "series": "3x4",
+    "nombre_español": "Elevación de gemelos sentado en máquina de palanca",
+    "descripcion": "Ejercicio sentado para gemelos con máquina de palancas"
+  },
+  {
+    "grupo": "Gemelos",
+    "nombre": "Lunging Straight Leg Calf Stretch",
+    "gif": "/gif/gemelos/Lunging-Straight-Leg-Calf-Stre-unscreen.gif",
+    "series": "3x4",
+    "nombre_español": "Estiramiento de gemelos en zancada con pierna recta",
+    "descripcion": "Estiramiento profundo en posición de zancada"
+  },
+  {
+    "grupo": "Gemelos",
+    "nombre": "Posterior Tibialis Stretch",
+    "gif": "/gif/gemelos/Posterior-Tibialis-Stretch-unscreen.gif",
+    "series": "3x4",
+    "nombre_español": "Estiramiento del tibial posterior",
+    "descripcion": "Ejercicio específico para el músculo tibial posterior"
+  },
+  {
+    "grupo": "Gemelos",
+    "nombre": "Resistance Band Foot External Rotation",
+    "gif": "/gif/gemelos/Resistance-Band-Foot-External--unscreen.gif",
+    "series": "3x4",
+    "nombre_español": "Rotación externa de pie con banda",
+    "descripcion": "Ejercicio de rotación para tobillos con banda elástica"
+  },
+  {
+    "grupo": "Gemelos",
+    "nombre": "Seated Calf Press on Leg Press Machine",
+    "gif": "/gif/gemelos/Seated-Calf-Press-on-Leg-Press-unscreen.gif",
+    "series": "3x4",
+    "nombre_español": "Prensa de gemelos sentado en máquina",
+    "descripcion": "Variante sentada para trabajar gemelos en prensa de piernas"
+  },
+  {
+    "grupo": "Gemelos",
+    "nombre": "Seated Straight Leg Calf Stretch",
+    "gif": "/gif/gemelos/Seated-Straight-Leg-Calf-Stret-unscreen.gif",
+    "series": "3x4",
+    "nombre_español": "Estiramiento de gemelos sentado con pierna recta",
+    "descripcion": "Estiramiento para gemelos en posición sentada"
+  },
+  {
+    "grupo": "Gemelos",
+    "nombre": "Single Calf Raise on Leg Press Machine",
+    "gif": "/gif/gemelos/Single-Calf-Raise-on-Leg-Press-unscreen.gif",
+    "series": "3x4",
+    "nombre_español": "Elevación de gemelos a una pierna en prensa",
+    "descripcion": "Ejercicio unilateral para gemelos en máquina de prensa"
+  },
+  {
+    "grupo": "Gemelos",
+    "nombre": "Single Heel Drop Calf Stretch",
+    "gif": "/gif/gemelos/Single-Heel-Drop-Calf-Stretch-unscreen.gif",
+    "series": "3x4",
+    "nombre_español": "Estiramiento de gemelos con descenso de talón",
+    "descripcion": "Estiramiento intenso bajando el talón de un solo pie"
+  },
+  {
+    "grupo": "Gemelos",
+    "nombre": "Single Leg Calf Raises",
+    "gif": "/gif/gemelos/Single-Leg-Calf-Raises-unscreen.gif",
+    "series": "3x4",
+    "nombre_español": "Elevaciones de gemelos a una pierna",
+    "descripcion": "Ejercicio unilateral para trabajar cada gemelo por separado"
+  },
+  {
+    "grupo": "Gemelos",
+    "nombre": "Single Leg Calves Stretch",
+    "gif": "/gif/gemelos/Single-Leg-Calves-Stretch-unscreen.gif",
+    "series": "3x4",
+    "nombre_español": "Estiramiento de gemelos a una pierna",
+    "descripcion": "Estiramiento intensivo para cada gemelo individualmente"
+  },
+  {
+    "grupo": "Gemelos",
+    "nombre": "Single Leg Donkey Calf Raise",
+    "gif": "/gif/gemelos/Single-Leg-Donkey-Calf-Raise-unscreen.gif",
+    "series": "3x4",
+    "nombre_español": "Elevación de gemelos estilo burro a una pierna",
+    "descripcion": "Variante unilateral del ejercicio burro para gemelos"
+  },
+  {
+    "grupo": "Gemelos",
+    "nombre": "Squat Hold Calf Raise",
+    "gif": "/gif/gemelos/Squat-Hold-Calf-Raise-unscreen.gif",
+    "series": "3x4",
+    "nombre_español": "Elevación de gemelos en posición de sentadilla",
+    "descripcion": "Ejercicio combinado de sentadilla y elevación de gemelos"
+  },
+  {
+    "grupo": "Gemelos",
+    "nombre": "Standing Barbell Calf Raise",
+    "gif": "/gif/gemelos/Standing-Barbell-Calf-Raise-unscreen.gif",
+    "series": "3x4",
+    "nombre_español": "Elevación de gemelos de pie con barra",
+    "descripcion": "Ejercicio clásico para gemelos con barra"
+  },
+  {
+    "grupo": "Gemelos",
+    "nombre": "Standing Calf Raise",
+    "gif": "/gif/gemelos/Standing-Calf-Raise-unscreen.gif",
+    "series": "3x4",
+    "nombre_español": "Elevación de gemelos de pie",
+    "descripcion": "Ejercicio básico para desarrollo de gemelos"
+  },
+  {
+    "grupo": "Gemelos",
+    "nombre": "Standing Cross Leg Hamstring Stretch",
+    "gif": "/gif/gemelos/Standing-Cross-Leg-Hamstring-S-unscreen.gif",
+    "series": "3x4",
+    "nombre_español": "Estiramiento de isquiotibiales de pie con piernas cruzadas",
+    "descripcion": "Estiramiento para piernas en posición cruzada"
+  },
+  {
+    "grupo": "Gemelos",
+    "nombre": "Standing Dorsiflexion",
+    "gif": "/gif/gemelos/Standing-Dorsiflexion-unscreen.gif",
+    "series": "3x4",
+    "nombre_español": "Dorsiflexión de pie",
+    "descripcion": "Ejercicio de movilidad para el tobillo"
+  },
+  {
+    "grupo": "Gemelos",
+    "nombre": "Standing Gastrocnemius Calf Stretch",
+    "gif": "/gif/gemelos/Standing-Gastrocnemius-Calf-St-unscreen.gif",
+    "series": "3x4",
+    "nombre_español": "Estiramiento de gastrocnemio de pie",
+    "descripcion": "Estiramiento específico para el músculo gastrocnemio"
+  },
+  {
+    "grupo": "Gemelos",
+    "nombre": "Standing Hamstring Stretch",
+    "gif": "/gif/gemelos/Standing-Hamstring-Stretch-unscreen.gif",
+    "series": "3x4",
+    "nombre_español": "Estiramiento de isquiotibiales de pie",
+    "descripcion": "Ejercicio de flexibilidad para la parte posterior del muslo"
+  },
+  {
+    "grupo": "Gemelos",
+    "nombre": "Standing Toe Flexor Stretch",
+    "gif": "/gif/gemelos/Standing-Toe-Flexor-Stretch-unscreen.gif",
+    "series": "3x4",
+    "nombre_español": "Estiramiento de flexores de los dedos de pie",
+    "descripcion": "Ejercicio para mejorar la flexibilidad de los dedos"
+  },
+  {
+    "grupo": "Gemelos",
+    "nombre": "Standing Toe Up Achilles Stretch",
+    "gif": "/gif/gemelos/Standing-Toe-Up-Achilles-Stret-unscreen.gif",
+    "series": "3x4",
+    "nombre_español": "Estiramiento de Aquiles con dedos elevados",
+    "descripcion": "Estiramiento intenso para el tendón de Aquiles"
+  },
+  {
+    "grupo": "Gemelos",
+    "nombre": "Standing Wall Calf Stretch",
+    "gif": "/gif/gemelos/Standing-Wall-Calf-Stretch-unscreen.gif",
+    "series": "3x4",
+    "nombre_español": "Estiramiento de gemelos contra la pared",
+    "descripcion": "Estiramiento básico apoyado en una pared"
+  },
+  {
+    "grupo": "Gemelos",
+    "nombre": "Toe Extensor Stretch",
+    "gif": "/gif/gemelos/Toe-Extensor-Stretch-unscreen.gif",
+    "series": "3x4",
+    "nombre_español": "Estiramiento de extensores de los dedos",
+    "descripcion": "Ejercicio para mejorar la movilidad de los dedos del pie"
+  },
+  {
+    "grupo": "Gemelos",
+    "nombre": "Weighted Donkey Calf Raise",
+    "gif": "/gif/gemelos/Weighted-Donkey-Calf-Raise-unscreen.gif",
+    "series": "3x4",
+    "nombre_español": "Elevación de gemelos estilo burro con peso",
+    "descripcion": "Variante con peso adicional para mayor intensidad"
+  },
+  {
+    "grupo": "Gemelos",
+    "nombre": "Weighted Seated Calf Raise",
+    "gif": "/gif/gemelos/Weighted-Seated-Calf-Raise-unscreen.gif",
+    "series": "3x4",
+    "nombre_español": "Elevación de gemelos sentado con peso",
+    "descripcion": "Ejercicio sentado para gemelos con carga adicional"
+  },
+  {
+    "grupo": "Gemelos",
+    "nombre": "Pantorrillas Parado en maquina",
+    "gif": "/gif/gemelos/pantorrillasParado.gif",
+    "series": "3x4",
+    "nombre_español": "Pantorrillas Parado en maquina",
+    "descripcion": "Ejercicio de pantorrilas parado en la maquina con peso o sin peso pero siempre con  ambos pies bien apoyados en los soportes"
+  }
+]

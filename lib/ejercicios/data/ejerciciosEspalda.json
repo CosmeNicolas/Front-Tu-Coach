@@ -1,0 +1,982 @@
+[
+  {
+    "grupo": "Espalda",
+    "nombre": "Across-Chest-Shoulder-Stretch-unscreen",
+    "gif": "/gif/espalda-wing/Across-Chest-Shoulder-Stretch-unscreen.gif",
+    "series": "3x4",
+    "nombre_español": "Estiramiento de hombros cruzando el pecho",
+    "descripcion": "Ejercicio de estiramiento para los hombros y espalda"
+  },
+  {
+    "grupo": "Espalda",
+    "nombre": "Archer-Pull-up-unscreen",
+    "gif": "/gif/espalda-wing/Archer-Pull-up-unscreen.gif",
+    "series": "3x4",
+    "nombre_español": "Dominada arquero",
+    "descripcion": "Variación avanzada de dominadas para espalda"
+  },
+  {
+    "grupo": "Espalda",
+    "nombre": "Assisted-Pull-up-unscreen",
+    "gif": "/gif/espalda-wing/Assisted-Pull-up-unscreen.gif",
+    "series": "3x4",
+    "nombre_español": "Dominada asistida",
+    "descripcion": "Dominadas con asistencia para principiantes"
+  },
+  {
+    "grupo": "Espalda",
+    "nombre": "Back-Lever-unscreen",
+    "gif": "/gif/espalda-wing/Back-Lever-unscreen.gif",
+    "series": "3x4",
+    "nombre_español": "Palanca trasera",
+    "descripcion": "Ejercicio avanzado de calistenia para espalda"
+  },
+  {
+    "grupo": "Espalda",
+    "nombre": "Back-Pec-Stretch-unscreen",
+    "gif": "/gif/espalda-wing/Back-Pec-Stretch-unscreen.gif",
+    "series": "3x4",
+    "nombre_español": "Estiramiento de pectorales y espalda",
+    "descripcion": "Ejercicio de flexibilidad para pecho y espalda"
+  },
+  {
+    "grupo": "Espalda",
+    "nombre": "Back-Slaps-Wrap-Around-Stretch-unscreen",
+    "gif": "/gif/espalda-wing/Back-Slaps-Wrap-Around-Stretch-unscreen.gif",
+    "series": "3x4",
+    "nombre_español": "Estiramiento envolvente con palmadas en la espalda",
+    "descripcion": "Ejercicio de movilidad para hombros y espalda"
+  },
+  {
+    "grupo": "Espalda",
+    "nombre": "Band-Alternating-Lat-Pulldown-unscreen",
+    "gif": "/gif/espalda-wing/Band-Alternating-Lat-Pulldown-unscreen.gif",
+    "series": "3x4",
+    "nombre_español": "Jalón de espalda alterno con banda",
+    "descripcion": "Ejercicio para dorsales con banda elástica"
+  },
+  {
+    "grupo": "Espalda",
+    "nombre": "Band-Alternating-Low-Row-with--unscreen",
+    "gif": "/gif/espalda-wing/Band-Alternating-Low-Row-with--unscreen.gif",
+    "series": "3x4",
+    "nombre_español": "Remo bajo alterno con banda",
+    "descripcion": "Ejercicio de remo para espalda con banda"
+  },
+  {
+    "grupo": "Espalda",
+    "nombre": "Band-Seated-Row-unscreen",
+    "gif": "/gif/espalda-wing/Band-Seated-Row-unscreen.gif",
+    "series": "3x4",
+    "nombre_español": "Remo sentado con banda",
+    "descripcion": "Ejercicio de remo para espalda en posición sentada"
+  },
+  {
+    "grupo": "Espalda",
+    "nombre": "Banded-Shoulder-Adduction-unscreen",
+    "gif": "/gif/espalda-wing/Banded-Shoulder-Adduction-unscreen.gif",
+    "series": "3x4",
+    "nombre_español": "Aducción de hombros con banda",
+    "descripcion": "Ejercicio para hombros y espalda superior"
+  },
+  {
+    "grupo": "Espalda",
+    "nombre": "Banded-Shoulder-Extension-unscreen",
+    "gif": "/gif/espalda-wing/Banded-Shoulder-Extension-unscreen.gif",
+    "series": "3x4",
+    "nombre_español": "Extensión de hombros con banda",
+    "descripcion": "Ejercicio para mejorar movilidad de hombros"
+  },
+  {
+    "grupo": "Espalda",
+    "nombre": "Barbell-Bent-Arm-Pullover-unscreen",
+    "gif": "/gif/espalda-wing/Barbell-Bent-Arm-Pullover-unscreen.gif",
+    "series": "3x4",
+    "nombre_español": "Pullover con barra y brazos flexionados",
+    "descripcion": "Ejercicio para espalda y pectorales"
+  },
+  {
+    "grupo": "Espalda",
+    "nombre": "Barbell-Bent-Over-Row-unscreen",
+    "gif": "/gif/espalda-wing/Barbell-Bent-Over-Row-unscreen.gif",
+    "series": "3x4",
+    "nombre_español": "Remo inclinado con barra",
+    "descripcion": "Ejercicio clásico para desarrollo de espalda"
+  },
+  {
+    "grupo": "Espalda",
+    "nombre": "Barbell-Deadlift-unscreen",
+    "gif": "/gif/espalda-wing/Barbell-Deadlift-unscreen.gif",
+    "series": "3x4",
+    "nombre_español": "Peso muerto con barra",
+    "descripcion": "Ejercicio compuesto para espalda baja y piernas"
+  },
+  {
+    "grupo": "Espalda",
+    "nombre": "Barbell-Decline-Bent-Arm-Pullo-unscreen",
+    "gif": "/gif/espalda-wing/Barbell-Decline-Bent-Arm-Pullo-unscreen.gif",
+    "series": "3x4",
+    "nombre_español": "Pullover declinado con barra",
+    "descripcion": "Variación de pullover para espalda"
+  },
+
+  {
+    "grupo": "Espalda",
+    "nombre": "Barbell-Romanian-Deadlift-unscreen",
+    "gif": "/gif/espalda-wing/Barbell-Romanian-Deadlift-unscreen.gif",
+    "series": "3x4",
+    "nombre_español": "Peso muerto rumano con barra",
+    "descripcion": "Ejercicio para espalda baja e isquiotibiales"
+  },
+  {
+    "grupo": "Espalda",
+    "nombre": "Barbell-Sumo-Deadlift-unscreen",
+    "gif": "/gif/espalda-wing/Barbell-Sumo-Deadlift-unscreen.gif",
+    "series": "3x4",
+    "nombre_español": "Peso muerto sumo con barra",
+    "descripcion": "Variación de peso muerto para espalda"
+  },
+  {
+    "grupo": "Espalda",
+    "nombre": "Battle-Rope-unscreen",
+    "gif": "/gif/espalda-wing/Battle-Rope-unscreen.gif",
+    "series": "3x4",
+    "nombre_español": "Cuerdas de batalla",
+    "descripcion": "Ejercicio cardiovascular para espalda y brazos"
+  },
+  {
+    "grupo": "Espalda",
+    "nombre": "Behind-The-Neck-Pull-up-unscreen",
+    "gif": "/gif/espalda-wing/Behind-The-Neck-Pull-up-unscreen.gif",
+    "series": "3x4",
+    "nombre_español": "Dominada trasnuca",
+    "descripcion": "Variación de dominadas para espalda"
+  },
+  {
+    "grupo": "Espalda",
+    "nombre": "Bent-Over-Dumbbell-Row-unscreen",
+    "gif": "/gif/espalda-wing/Bent-Over-Dumbbell-Row-unscreen.gif",
+    "series": "3x4",
+    "nombre_español": "Remo inclinado con mancuernas",
+    "descripcion": "Ejercicio para espalda con mancuernas"
+  },
+  {
+    "grupo": "Espalda",
+    "nombre": "Bent-Over-Row-Gymstick-unscreen",
+    "gif": "/gif/espalda-wing/Bent-Over-Row-Gymstick-unscreen.gif",
+    "series": "3x4",
+    "nombre_español": "Remo inclinado con gymstick",
+    "descripcion": "Ejercicio de remo con resistencia variable"
+  },
+  {
+    "grupo": "Espalda",
+    "nombre": "Bodyweight-Row-in-Doorway-unscreen",
+    "gif": "/gif/espalda-wing/Bodyweight-Row-in-Doorway-unscreen.gif",
+    "series": "3x4",
+    "nombre_español": "Remo en puerta con peso corporal",
+    "descripcion": "Ejercicio de remo usando el marco de una puerta"
+  },
+  {
+    "grupo": "Espalda",
+    "nombre": "Brachialis-Pull-up-unscreen",
+    "gif": "/gif/espalda-wing/Brachialis-Pull-up-unscreen.gif",
+    "series": "3x4",
+    "nombre_español": "Dominada para braquial",
+    "descripcion": "Variación de dominadas para brazos y espalda"
+  },
+  {
+    "grupo": "Espalda",
+    "nombre": "Cable-Bent-Over-Row-unscreen",
+    "gif": "/gif/espalda-wing/Cable-Bent-Over-Row-unscreen.gif",
+    "series": "3x4",
+    "nombre_español": "Remo inclinado con cable",
+    "descripcion": "Ejercicio de remo en máquina de cables"
+  },
+  {
+    "grupo": "Espalda",
+    "nombre": "Cable-Crossover-Lat-Pulldown-unscreen",
+    "gif": "/gif/espalda-wing/Cable-Crossover-Lat-Pulldown-unscreen.gif",
+    "series": "3x4",
+    "nombre_español": "Jalón de espalda cruzado en poleas",
+    "descripcion": "Variación de jalón para dorsales"
+  },
+  {
+    "grupo": "Espalda",
+    "nombre": "Cable-One-Arm-Lat-Pulldown-unscreen",
+    "gif": "/gif/espalda-wing/Cable-One-Arm-Lat-Pulldown-unscreen.gif",
+    "series": "3x4",
+    "nombre_español": "Jalón de espalda a un brazo",
+    "descripcion": "Ejercicio unilateral para dorsales"
+  },
+  {
+    "grupo": "Espalda",
+    "nombre": "Cable-One-Arm-Pulldown-unscreen",
+    "gif": "/gif/espalda-wing/Cable-One-Arm-Pulldown-unscreen.gif",
+    "series": "3x4",
+    "nombre_español": "Jalón a un brazo con cable",
+    "descripcion": "Ejercicio unilateral para espalda"
+  },
+  {
+    "grupo": "Espalda",
+    "nombre": "Cable-Rear-Pulldown-unscreen",
+    "gif": "/gif/espalda-wing/Cable-Rear-Pulldown-unscreen.gif",
+    "series": "3x4",
+    "nombre_español": "Jalón trasero con cable",
+    "descripcion": "Variación de jalón para espalda"
+  },
+  {
+    "grupo": "Espalda",
+    "nombre": "Cable-Seated-Pullover-unscreen",
+    "gif": "/gif/espalda-wing/Cable-Seated-Pullover-unscreen.gif",
+    "series": "3x4",
+    "nombre_español": "Pullover sentado con cable",
+    "descripcion": "Ejercicio para dorsales en posición sentada"
+  },
+  {
+    "grupo": "Espalda",
+    "nombre": "Cable-Straight-Arm-Pulldown-unscreen",
+    "gif": "/gif/espalda-wing/Cable-Straight-Arm-Pulldown-unscreen.gif",
+    "series": "3x4",
+    "nombre_español": "Jalón con brazos rectos",
+    "descripcion": "Ejercicio de aislamiento para dorsales"
+  },
+  {
+    "grupo": "Espalda",
+    "nombre": "Cable-Twisting-Standing-high-R-unscreen",
+    "gif": "/gif/espalda-wing/Cable-Twisting-Standing-high-R-unscreen.gif",
+    "series": "3x4",
+    "nombre_español": "Remo alto con giro en cable",
+    "descripcion": "Ejercicio con rotación para espalda"
+  },
+  {
+    "grupo": "Espalda",
+    "nombre": "Chin-Up-Around-the-Bar-unscreen",
+    "gif": "/gif/espalda-wing/Chin-Up-Around-the-Bar-unscreen.gif",
+    "series": "3x4",
+    "nombre_español": "Dominada girando alrededor de la barra",
+    "descripcion": "Variación avanzada de dominadas"
+  },
+  {
+    "grupo": "Espalda",
+    "nombre": "Chin-Up-unscreen",
+    "gif": "/gif/espalda-wing/Chin-Up-unscreen.gif",
+    "series": "3x4",
+    "nombre_español": "Dominada supina",
+    "descripcion": "Ejercicio básico para espalda y bíceps"
+  },
+  {
+    "grupo": "Espalda",
+    "nombre": "Climbing-Monkey-Bars-unscreen",
+    "gif": "/gif/espalda-wing/Climbing-Monkey-Bars-unscreen.gif",
+    "series": "3x4",
+    "nombre_español": "Escalada en barras",
+    "descripcion": "Ejercicio funcional para espalda y agarre"
+  },
+  {
+    "grupo": "Espalda",
+    "nombre": "Close-Grip-Chin-Up-unscreen",
+    "gif": "/gif/espalda-wing/Close-Grip-Chin-Up-unscreen.gif",
+    "series": "3x4",
+    "nombre_español": "Dominada supina con agarre cerrado",
+    "descripcion": "Variación de dominadas para bíceps y espalda"
+  },
+  {
+    "grupo": "Espalda",
+    "nombre": "Close-Grip-Lat-Pulldown-unscreen",
+    "gif": "/gif/espalda-wing/Close-Grip-Lat-Pulldown-unscreen.gif",
+    "series": "3x4",
+    "nombre_español": "Jalón de espalda con agarre cerrado",
+    "descripcion": "Variación de jalón para espalda"
+  },
+  {
+    "grupo": "Espalda",
+    "nombre": "Dominadas con elástico frontal",
+    "gif": "/gif/espalda-wing/dominadas-elastico-barra.png",
+    "series": "3x4",
+    "nombre_español": "Dominadas con banda elástica",
+    "descripcion": "Dominadas asistidas con banda elástica"
+  },
+  {
+    "grupo": "Espalda",
+    "nombre": "Double-Cable-Neutral-Grip-Lat--unscreen",
+    "gif": "/gif/espalda-wing/Double-Cable-Neutral-Grip-Lat--unscreen.gif",
+    "series": "3x4",
+    "nombre_español": "Jalón de espalda con agarre neutro",
+    "descripcion": "Ejercicio para dorsales con doble cable"
+  },
+  {
+    "grupo": "Espalda",
+    "nombre": "Dumbbell-Bent-Over-Reverse-Row-unscreen",
+    "gif": "/gif/espalda-wing/Dumbbell-Bent-Over-Reverse-Row-unscreen.gif",
+    "series": "3x4",
+    "nombre_español": "Remo invertido con mancuernas",
+    "descripcion": "Variación de remo para espalda"
+  },
+  {
+    "grupo": "Espalda",
+    "nombre": "Dumbbell-Row-unscreen",
+    "gif": "/gif/espalda-wing/Dumbbell-Row-unscreen.gif",
+    "series": "3x4",
+    "nombre_español": "Remo con mancuerna",
+    "descripcion": "Ejercicio básico para espalda con mancuernas"
+  },
+  {
+    "grupo": "Espalda",
+    "nombre": "Dumbbell-Seal-Row-unscreen",
+    "gif": "/gif/espalda-wing/Dumbbell-Seal-Row-unscreen.gif",
+    "series": "3x4",
+    "nombre_español": "Remo foca con mancuernas",
+    "descripcion": "Variación de remo en posición horizontal"
+  },
+  {
+    "grupo": "Espalda",
+    "nombre": "Dumbbell-Straight-Leg-Deadlift-unscreen",
+    "gif": "/gif/espalda-wing/Dumbbell-Straight-Leg-Deadlift-unscreen.gif",
+    "series": "3x4",
+    "nombre_español": "Peso muerto con piernas rectas y mancuernas",
+    "descripcion": "Ejercicio para espalda baja e isquiotibiales"
+  },
+  {
+    "grupo": "Espalda",
+    "nombre": "EZ-Bar-Bent-Arm-Pullover-unscreen",
+    "gif": "/gif/espalda-wing/EZ-Bar-Bent-Arm-Pullover-unscreen.gif",
+    "series": "3x4",
+    "nombre_español": "Pullover con barra EZ y brazos flexionados",
+    "descripcion": "Variación de pullover para espalda"
+  },
+  {
+    "grupo": "Espalda",
+    "nombre": "Elbow-Reverse-Push-Up-unscreen",
+    "gif": "/gif/espalda-wing/Elbow-Reverse-Push-Up-unscreen.gif",
+    "series": "3x4",
+    "nombre_español": "Flexión inversa de codos",
+    "descripcion": "Ejercicio para espalda y tríceps"
+  },
+  {
+    "grupo": "Espalda",
+    "nombre": "Foam-Roller-Lat-Stretch-unscreen",
+    "gif": "/gif/espalda-wing/Foam-Roller-Lat-Stretch-unscreen.gif",
+    "series": "3x4",
+    "nombre_español": "Estiramiento de dorsales con rodillo",
+    "descripcion": "Ejercicio de flexibilidad para espalda"
+  },
+  {
+    "grupo": "Espalda",
+    "nombre": "Foam-Roller-Upper-Back-unscreen",
+    "gif": "/gif/espalda-wing/Foam-Roller-Upper-Back-unscreen.gif",
+    "series": "3x4",
+    "nombre_español": "Liberación de espalda alta con rodillo",
+    "descripcion": "Ejercicio de movilidad para espalda superior"
+  },
+  {
+    "grupo": "Espalda",
+    "nombre": "Front-Lever-Pull-up-unscreen",
+    "gif": "/gif/espalda-wing/Front-Lever-Pull-up-unscreen.gif",
+    "series": "3x4",
+    "nombre_español": "Dominada en palanca frontal",
+    "descripcion": "Ejercicio avanzado de calistenia"
+  },
+  {
+    "grupo": "Espalda",
+    "nombre": "Front-Pulldown-unscreen",
+    "gif": "/gif/espalda-wing/Front-Pulldown-unscreen.gif",
+    "series": "3x4",
+    "nombre_español": "Jalón frontal",
+    "descripcion": "Ejercicio para dorsales en máquina"
+  },
+  {
+    "grupo": "Espalda",
+    "nombre": "Full-Range-Of-Motion-Lat-Pulld-unscreen",
+    "gif": "/gif/espalda-wing/Full-Range-Of-Motion-Lat-Pulld-unscreen.gif",
+    "series": "3x4",
+    "nombre_español": "Jalón de espalda con rango completo",
+    "descripcion": "Variación de jalón con máxima amplitud"
+  },
+  {
+    "grupo": "Espalda",
+    "nombre": "Half-Kneeling-Lat-Pulldown-unscreen",
+    "gif": "/gif/espalda-wing/Half-Kneeling-Lat-Pulldown-unscreen.gif",
+    "series": "3x4",
+    "nombre_español": "Jalón de espalda en media rodilla",
+    "descripcion": "Variación de jalón en posición arrodillada"
+  },
+  {
+    "grupo": "Espalda",
+    "nombre": "Incline-Barbell-Row-unscreen",
+    "gif": "/gif/espalda-wing/Incline-Barbell-Row-unscreen.gif",
+    "series": "3x4",
+    "nombre_español": "Remo inclinado con barra",
+    "descripcion": "Variación de remo en banco inclinado"
+  },
+  {
+    "grupo": "Espalda",
+    "nombre": "Incline-Cable-Row-unscreen",
+    "gif": "/gif/espalda-wing/Incline-Cable-Row-unscreen.gif",
+    "series": "3x4",
+    "nombre_español": "Remo inclinado con cable",
+    "descripcion": "Ejercicio de remo en posición inclinada"
+  },
+  {
+    "grupo": "Espalda",
+    "nombre": "Incline-Dumbbell-Hammer-Row-unscreen",
+    "gif": "/gif/espalda-wing/Incline-Dumbbell-Hammer-Row-unscreen.gif",
+    "series": "3x4",
+    "nombre_español": "Remo martillo inclinado con mancuernas",
+    "descripcion": "Variación de remo para espalda"
+  },
+  {
+    "grupo": "Espalda",
+    "nombre": "Incline-Reverse-Grip-Dumbbell--unscreen",
+    "gif": "/gif/espalda-wing/Incline-Reverse-Grip-Dumbbell--unscreen.gif",
+    "series": "3x4",
+    "nombre_español": "Remo inclinado con agarre invertido",
+    "descripcion": "Variación de remo para espalda"
+  },
+  {
+    "grupo": "Espalda",
+    "nombre": "Inverted-Row-unscreen",
+    "gif": "/gif/espalda-wing/Inverted-Row-unscreen.gif",
+    "series": "3x4",
+    "nombre_español": "Remo invertido",
+    "descripcion": "Ejercicio de remo con peso corporal"
+  },
+  {
+    "grupo": "Espalda",
+    "nombre": "Isometric-Pull-Up-unscreen",
+    "gif": "/gif/espalda-wing/Isometric-Pull-Up-unscreen.gif",
+    "series": "3x4",
+    "nombre_español": "Dominada isométrica",
+    "descripcion": "Ejercicio estático para espalda"
+  },
+  {
+    "grupo": "Espalda",
+    "nombre": "Kettlebell-Bent-Over-Row-unscreen",
+    "gif": "/gif/espalda-wing/Kettlebell-Bent-Over-Row-unscreen.gif",
+    "series": "3x4",
+    "nombre_español": "Remo inclinado con kettlebell",
+    "descripcion": "Variación de remo con pesa rusa"
+  },
+
+  {
+    "grupo": "Espalda",
+    "nombre": "Kneeling-High-Pulley-Row-unscreen",
+    "gif": "/gif/espalda-wing/Kneeling-High-Pulley-Row-unscreen.gif",
+    "series": "3x4",
+    "nombre_español": "Remo en polea alta arrodillado",
+    "descripcion": "Variación de remo en máquina de cables"
+  },
+  {
+    "grupo": "Espalda",
+    "nombre": "Kneeling-Single-Arm-High-Pulle-unscreen",
+    "gif": "/gif/espalda-wing/Kneeling-Single-Arm-High-Pulle-unscreen.gif",
+    "series": "3x4",
+    "nombre_español": "Remo unilateral en polea alta arrodillado",
+    "descripcion": "Ejercicio unilateral para espalda"
+  },
+  {
+    "grupo": "Espalda",
+    "nombre": "Kneeling-T-spine-Rotation-unscreen",
+    "gif": "/gif/espalda-wing/Kneeling-T-spine-Rotation-unscreen.gif",
+    "series": "3x4",
+    "nombre_español": "Rotación de columna torácica arrodillado",
+    "descripcion": "Ejercicio de movilidad para espalda"
+  },
+  {
+    "grupo": "Espalda",
+    "nombre": "Kneeling-pulldown-unscreen",
+    "gif": "/gif/espalda-wing/Kneeling-pulldown-unscreen.gif",
+    "series": "3x4",
+    "nombre_español": "Jalón arrodillado",
+    "descripcion": "Variación de jalón en posición arrodillada"
+  },
+  {
+    "grupo": "Espalda",
+    "nombre": "L-Pull-Up-unscreen",
+    "gif": "/gif/espalda-wing/L-Pull-Up-unscreen.gif",
+    "series": "3x4",
+    "nombre_español": "Dominada en L",
+    "descripcion": "Variación avanzada de dominadas"
+  },
+  {
+    "grupo": "Espalda",
+    "nombre": "Lat-Pulldown-unscreen",
+    "gif": "/gif/espalda-wing/Lat-Pulldown-unscreen.gif",
+    "series": "3x4",
+    "nombre_español": "Jalón de espalda",
+    "descripcion": "Ejercicio básico para dorsales"
+  },
+  {
+    "grupo": "Espalda",
+    "nombre": "Lever-Cable-Rear-Pulldown-unscreen",
+    "gif": "/gif/espalda-wing/Lever-Cable-Rear-Pulldown-unscreen.gif",
+    "series": "3x4",
+    "nombre_español": "Jalón trasero en máquina de palancas",
+    "descripcion": "Ejercicio para espalda en máquina"
+  },
+  {
+    "grupo": "Espalda",
+    "nombre": "Lever-High-Row-unscreen",
+    "gif": "/gif/espalda-wing/Lever-High-Row-unscreen.gif",
+    "series": "3x4",
+    "nombre_español": "Remo alto en máquina de palancas",
+    "descripcion": "Ejercicio para espalda en máquina"
+  },
+  {
+    "grupo": "Espalda",
+    "nombre": "Lever-Pullover-plate-loaded-unscreen",
+    "gif": "/gif/espalda-wing/Lever-Pullover-plate-loaded-unscreen.gif",
+    "series": "3x4",
+    "nombre_español": "Pullover en máquina con placas",
+    "descripcion": "Ejercicio para dorsales en máquina"
+  },
+  {
+    "grupo": "Espalda",
+    "nombre": "Lever-Reverse-T-Bar-Row-unscreen",
+    "gif": "/gif/espalda-wing/Lever-Reverse-T-Bar-Row-unscreen.gif",
+    "series": "3x4",
+    "nombre_español": "Remo en T invertido en máquina",
+    "descripcion": "Variación de remo para espalda"
+  },
+  {
+    "grupo": "Espalda",
+    "nombre": "Lever-T-bar-Row-unscreen",
+    "gif": "/gif/espalda-wing/Lever-T-bar-Row-unscreen.gif",
+    "series": "3x4",
+    "nombre_español": "Remo en T en máquina",
+    "descripcion": "Ejercicio para espalda en máquina"
+  },
+  {
+    "grupo": "Espalda",
+    "nombre": "Lying-Extension-Pullover-unscreen",
+    "gif": "/gif/espalda-wing/Lying-Extension-Pullover-unscreen.gif",
+    "series": "3x4",
+    "nombre_español": "Pullover con extensión acostado",
+    "descripcion": "Variación de pullover para espalda"
+  },
+  {
+    "grupo": "Espalda",
+    "nombre": "Lying-Upper-Body-Rotation-unscreen",
+    "gif": "/gif/espalda-wing/Lying-Upper-Body-Rotation-unscreen.gif",
+    "series": "3x4",
+    "nombre_español": "Rotación de torso superior acostado",
+    "descripcion": "Ejercicio de movilidad para espalda"
+  },
+  {
+    "grupo": "Espalda",
+    "nombre": "Medicine-ball-Overhead-Slam-ex-unscreen",
+    "gif": "/gif/espalda-wing/Medicine-ball-Overhead-Slam-ex-unscreen.gif",
+    "series": "3x4",
+    "nombre_español": "Golpe de balón medicinal por encima",
+    "descripcion": "Ejercicio explosivo para espalda y core"
+  },
+  {
+    "grupo": "Espalda",
+    "nombre": "Muscle-up-vertical-bar-unscreen",
+    "gif": "/gif/espalda-wing/Muscle-up-vertical-bar-unscreen.gif",
+    "series": "3x4",
+    "nombre_español": "Muscle up en barra vertical",
+    "descripcion": "Ejercicio avanzado de calistenia"
+  },
+  {
+    "grupo": "Espalda",
+    "nombre": "One-Arm-Barbell-Row--unscreen",
+    "gif": "/gif/espalda-wing/One-Arm-Barbell-Row--unscreen.gif",
+    "series": "3x4",
+    "nombre_español": "Remo a un brazo con barra",
+    "descripcion": "Ejercicio unilateral para espalda"
+  },
+  {
+    "grupo": "Espalda",
+    "nombre": "One-Arm-Chin-Up-unscreen",
+    "gif": "/gif/espalda-wing/One-Arm-Chin-Up-unscreen.gif",
+    "series": "3x4",
+    "nombre_español": "Dominada a un brazo",
+    "descripcion": "Ejercicio avanzado de calistenia"
+  },
+  {
+    "grupo": "Espalda",
+    "nombre": "One-Arm-Landmine-Row-unscreen",
+    "gif": "/gif/espalda-wing/One-Arm-Landmine-Row-unscreen.gif",
+    "series": "3x4",
+    "nombre_español": "Remo a un brazo en landmine",
+    "descripcion": "Variación de remo unilateral"
+  },
+  {
+    "grupo": "Espalda",
+    "nombre": "One-arm-Cable-Row-unscreen",
+    "gif": "/gif/espalda-wing/One-arm-Cable-Row-unscreen.gif",
+    "series": "3x4",
+    "nombre_español": "Remo a un brazo con cable",
+    "descripcion": "Ejercicio unilateral para espalda"
+  },
+  {
+    "grupo": "Espalda",
+    "nombre": "Plate-Loaded-Seated-Row-unscreen",
+    "gif": "/gif/espalda-wing/Plate-Loaded-Seated-Row-unscreen.gif",
+    "series": "3x4",
+    "nombre_español": "Remo sentado con placas",
+    "descripcion": "Ejercicio para espalda en máquina"
+  },
+  {
+    "grupo": "Espalda",
+    "nombre": "Pull-up-unscreen",
+    "gif": "/gif/espalda-wing/Pull-up-unscreen.gif",
+    "series": "3x4",
+    "nombre_español": "Dominada",
+    "descripcion": "Ejercicio básico para espalda"
+  },
+
+  {
+    "grupo": "Espalda",
+    "nombre": "Reverse-Grip-Barbell-Row-unscreen",
+    "gif": "/gif/espalda-wing/Reverse-Grip-Barbell-Row-unscreen.gif",
+    "series": "3x4",
+    "nombre_español": "Remo con barra y agarre invertido",
+    "descripcion": "Variación de remo para espalda"
+  },
+  {
+    "grupo": "Espalda",
+    "nombre": "Reverse-Grip-Machine-Row-unscreen",
+    "gif": "/gif/espalda-wing/Reverse-Grip-Machine-Row-unscreen.gif",
+    "series": "3x4",
+    "nombre_español": "Remo en máquina con agarre invertido",
+    "descripcion": "Ejercicio para espalda en máquina"
+  },
+  {
+    "grupo": "Espalda",
+    "nombre": "Reverse-Lat-Pulldown-unscreen",
+    "gif": "/gif/espalda-wing/Reverse-Lat-Pulldown-unscreen.gif",
+    "series": "3x4",
+    "nombre_español": "Jalón de espalda invertido",
+    "descripcion": "Variación de jalón para espalda"
+  },
+  {
+    "grupo": "Espalda",
+    "nombre": "Reverse-grip-Pull-up-unscreen",
+    "gif": "/gif/espalda-wing/Reverse-grip-Pull-up-unscreen.gif",
+    "series": "3x4",
+    "nombre_español": "Dominada con agarre invertido",
+    "descripcion": "Variación de dominadas para bíceps y espalda"
+  },
+  {
+    "grupo": "Espalda",
+    "nombre": "Ring-Inverted-Row-unscreen",
+    "gif": "/gif/espalda-wing/Ring-Inverted-Row-unscreen.gif",
+    "series": "3x4",
+    "nombre_español": "Remo invertido en anillas",
+    "descripcion": "Ejercicio de remo con anillas"
+  },
+  {
+    "grupo": "Espalda",
+    "nombre": "Roll-Rhomboids-unscreen",
+    "gif": "/gif/espalda-wing/Roll-Rhomboids-unscreen.gif",
+    "series": "3x4",
+    "nombre_español": "Liberación de romboides con rodillo",
+    "descripcion": "Ejercicio de movilidad para espalda"
+  },
+  {
+    "grupo": "Espalda",
+    "nombre": "Roll-Upper-Back-unscreen",
+    "gif": "/gif/espalda-wing/Roll-Upper-Back-unscreen.gif",
+    "series": "3x4",
+    "nombre_español": "Liberación de espalda alta con rodillo",
+    "descripcion": "Ejercicio de movilidad para espalda superior"
+  },
+  {
+    "grupo": "Espalda",
+    "nombre": "Rope-Climb-unscreen",
+    "gif": "/gif/espalda-wing/Rope-Climb-unscreen.gif",
+    "series": "3x4",
+    "nombre_español": "Escalada de cuerda",
+    "descripcion": "Ejercicio funcional para espalda y agarre"
+  },
+  {
+    "grupo": "Espalda",
+    "nombre": "Rope-Straight-Arm-Pulldown-unscreen",
+    "gif": "/gif/espalda-wing/Rope-Straight-Arm-Pulldown-unscreen.gif",
+    "series": "3x4",
+    "nombre_español": "Jalón con cuerda y brazos rectos",
+    "descripcion": "Ejercicio de aislamiento para dorsales"
+  },
+  {
+    "grupo": "Espalda",
+    "nombre": "Rowing-Machine-unscreen",
+    "gif": "/gif/espalda-wing/Rowing-Machine-unscreen.gif",
+    "series": "3x4",
+    "nombre_español": "Remo en máquina",
+    "descripcion": "Ejercicio cardiovascular para espalda"
+  },
+  {
+    "grupo": "Espalda",
+    "nombre": "Scapula-Pull-up-unscreen",
+    "gif": "/gif/espalda-wing/Scapula-Pull-up-unscreen.gif",
+    "series": "3x4",
+    "nombre_español": "Dominada de escápulas",
+    "descripcion": "Ejercicio para fortalecer escápulas"
+  },
+  {
+    "grupo": "Espalda",
+    "nombre": "Scapular-Protraction-and-Retra-unscreen",
+    "gif": "/gif/espalda-wing/Scapular-Protraction-and-Retra-unscreen.gif",
+    "series": "3x4",
+    "nombre_español": "Protacción y retracción escapular",
+    "descripcion": "Ejercicio de movilidad para hombros"
+  },
+  {
+    "grupo": "Espalda",
+    "nombre": "Seated-Cable-Rope-Row-unscreen",
+    "gif": "/gif/espalda-wing/Seated-Cable-Rope-Row-unscreen.gif",
+    "series": "3x4",
+    "nombre_español": "Remo sentado con cuerda",
+    "descripcion": "Ejercicio para espalda en máquina de cables"
+  },
+  {
+    "grupo": "Espalda",
+    "nombre": "Seated-Cable-Row-unscreen",
+    "gif": "/gif/espalda-wing/Seated-Cable-Row-unscreen.gif",
+    "series": "3x4",
+    "nombre_español": "Remo sentado con barra",
+    "descripcion": "Ejercicio básico para espalda"
+  },
+  {
+    "grupo": "Espalda",
+    "nombre": "Seated-Row-Machine-unscreen",
+    "gif": "/gif/espalda-wing/Seated-Row-Machine-unscreen.gif",
+    "series": "3x4",
+    "nombre_español": "Remo en máquina sentado",
+    "descripcion": "Ejercicio para espalda en máquina"
+  },
+  {
+    "grupo": "Espalda",
+    "nombre": "Seated-Toe-Touches-unscreen",
+    "gif": "/gif/espalda-wing/Seated-Toe-Touches-unscreen.gif",
+    "series": "3x4",
+    "nombre_español": "Toques de dedos sentado",
+    "descripcion": "Ejercicio de flexibilidad para espalda"
+  },
+  {
+    "grupo": "Espalda",
+    "nombre": "Shoulder-Stretch-Behind-Back-unscreen",
+    "gif": "/gif/espalda-wing/Shoulder-Stretch-Behind-Back-unscreen.gif",
+    "series": "3x4",
+    "nombre_español": "Estiramiento de hombros detrás de la espalda",
+    "descripcion": "Ejercicio de flexibilidad para hombros"
+  },
+  {
+    "grupo": "Espalda",
+    "nombre": "Single-Arm-Twisting-Seated-Cab-unscreen",
+    "gif": "/gif/espalda-wing/Single-Arm-Twisting-Seated-Cab-unscreen.gif",
+    "series": "3x4",
+    "nombre_español": "Remo sentado con giro a un brazo",
+    "descripcion": "Ejercicio unilateral con rotación"
+  },
+  {
+    "grupo": "Espalda",
+    "nombre": "Smith-Machine-Bent-Over-Row-unscreen",
+    "gif": "/gif/espalda-wing/Smith-Machine-Bent-Over-Row-unscreen.gif",
+    "series": "3x4",
+    "nombre_español": "Remo inclinado en máquina Smith",
+    "descripcion": "Variación de remo en máquina"
+  },
+  {
+    "grupo": "Espalda",
+    "nombre": "Standing-Reach-Up-Back-rotatio-unscreen",
+    "gif": "/gif/espalda-wing/Standing-Reach-Up-Back-rotatio-unscreen.gif",
+    "series": "3x4",
+    "nombre_español": "Rotación de espalda alcanzando arriba",
+    "descripcion": "Ejercicio de movilidad para espalda"
+  },
+  {
+    "grupo": "Espalda",
+    "nombre": "Standing-Side-Bend-Stretch-unscreen",
+    "gif": "/gif/espalda-wing/Standing-Side-Bend-Stretch-unscreen.gif",
+    "series": "3x4",
+    "nombre_español": "Estiramiento lateral de pie",
+    "descripcion": "Ejercicio de flexibilidad para espalda"
+  },
+  {
+    "grupo": "Espalda",
+    "nombre": "Straight-Back-back-standing-ro-unscreen",
+    "gif": "/gif/espalda-wing/Straight-Back-back-standing-ro-unscreen.gif",
+    "series": "3x4",
+    "nombre_español": "Rotación de espalda recta de pie",
+    "descripcion": "Ejercicio de movilidad para espalda"
+  },
+  {
+    "grupo": "Espalda",
+    "nombre": "Stretch-With-Towel-unscreen",
+    "gif": "/gif/espalda-wing/Stretch-With-Towel-unscreen.gif",
+    "series": "3x4",
+    "nombre_español": "Estiramiento con toalla",
+    "descripcion": "Ejercicio de flexibilidad para espalda"
+  },
+  {
+    "grupo": "Espalda",
+    "nombre": "Supine-Spinal-Twist-unscreen",
+    "gif": "/gif/espalda-wing/Supine-Spinal-Twist-unscreen.gif",
+    "series": "3x4",
+    "nombre_español": "Torsión espinal supina",
+    "descripcion": "Ejercicio de movilidad para columna"
+  },
+  {
+    "grupo": "Espalda",
+    "nombre": "Swimming-unscreen",
+    "gif": "/gif/espalda-wing/Swimming-unscreen.gif",
+    "series": "3x4",
+    "nombre_español": "Natación",
+    "descripcion": "Ejercicio cardiovascular para espalda"
+  },
+  {
+    "grupo": "Espalda",
+    "nombre": "Swing-360-unscreen",
+    "gif": "/gif/espalda-wing/Swing-360-unscreen.gif",
+    "series": "3x4",
+    "nombre_español": "Giro de 360 grados",
+    "descripcion": "Ejercicio dinámico para espalda"
+  },
+  {
+    "grupo": "Espalda",
+    "nombre": "Table-Inverted-Row-unscreen",
+    "gif": "/gif/espalda-wing/Table-Inverted-Row-unscreen.gif",
+    "series": "3x4",
+    "nombre_español": "Remo invertido en mesa",
+    "descripcion": "Variación de remo con apoyo"
+  },
+  {
+    "grupo": "Espalda",
+    "nombre": "Upper-Back-Stretch-unscreen",
+    "gif": "/gif/espalda-wing/Upper-Back-Stretch-unscreen.gif",
+    "series": "3x4",
+    "nombre_español": "Estiramiento de espalda alta",
+    "descripcion": "Ejercicio de flexibilidad para espalda superior"
+  },
+  {
+    "grupo": "Espalda",
+    "nombre": "Upside-Down-Pull-up-unscreen",
+    "gif": "/gif/espalda-wing/Upside-Down-Pull-up-unscreen.gif",
+    "series": "3x4",
+    "nombre_español": "Dominada invertida",
+    "descripcion": "Variación avanzada de dominadas"
+  },
+  {
+    "grupo": "Espalda",
+    "nombre": "V-bar-Lat-Pulldown-unscreen",
+    "gif": "/gif/espalda-wing/V-bar-Lat-Pulldown-unscreen.gif",
+    "series": "3x4",
+    "nombre_español": "Jalón de espalda con barra V",
+    "descripcion": "Variación de jalón para dorsales"
+  },
+  {
+    "grupo": "Espalda",
+    "nombre": "Weighted-One-Arm-Pull-up-unscreen",
+    "gif": "/gif/espalda-wing/Weighted-One-Arm-Pull-up-unscreen.gif",
+    "series": "3x4",
+    "nombre_español": "Dominada a un brazo con peso",
+    "descripcion": "Ejercicio avanzado con peso adicional"
+  },
+  {
+    "grupo": "Espalda",
+    "nombre": "Weighted-Pull-up-unscreen",
+    "gif": "/gif/espalda-wing/Weighted-Pull-up-unscreen.gif",
+    "series": "3x4",
+    "nombre_español": "Dominada con peso",
+    "descripcion": "Variación de dominadas con peso adicional"
+  },
+  {
+    "grupo": "Espalda",
+    "nombre": "Wide-Grip-Barbell-Bent-Over-Ro-unscreen",
+    "gif": "/gif/espalda-wing/Wide-Grip-Barbell-Bent-Over-Ro-unscreen.gif",
+    "series": "3x4",
+    "nombre_español": "Remo inclinado con barra y agarre ancho",
+    "descripcion": "Variación de remo para espalda"
+  },
+  {
+    "grupo": "Espalda",
+    "nombre": "band-assisted-pull-up-unscreen",
+    "gif": "/gif/espalda-wing/band-assisted-pull-up-unscreen.gif",
+    "series": "3x4",
+    "nombre_español": "Dominada asistida con banda",
+    "descripcion": "Dominadas con asistencia de banda elástica"
+  },
+  {
+    "grupo": "Espalda",
+    "nombre": "close-grip-cable-row-unscreen",
+    "gif": "/gif/espalda-wing/close-grip-cable-row-unscreen.gif",
+    "series": "3x4",
+    "nombre_español": "Remo con cable y agarre cerrado",
+    "descripcion": "Variación de remo para espalda"
+  },
+  {
+    "grupo": "Espalda",
+    "nombre": "commander-pull-up-unscreen",
+    "gif": "/gif/espalda-wing/commander-pull-up-unscreen.gif",
+    "series": "3x4",
+    "nombre_español": "Dominada de comandante",
+    "descripcion": "Variación de dominadas para espalda"
+  },
+
+  {
+    "grupo": "Espalda",
+    "nombre": "jumping-pull-up-unscreen",
+    "gif": "/gif/espalda-wing/jumping-pull-up-unscreen.gif",
+    "series": "3x4",
+    "nombre_español": "Dominada con salto",
+    "descripcion": "Variación de dominadas asistidas"
+  },
+  {
+    "grupo": "Espalda",
+    "nombre": "neutral-grip-pull-up-unscreen",
+    "gif": "/gif/espalda-wing/neutral-grip-pull-up-unscreen.gif",
+    "series": "3x4",
+    "nombre_español": "Dominada con agarre neutro",
+    "descripcion": "Variación de dominadas para espalda"
+  },
+  {
+    "grupo": "Espalda",
+    "nombre": "shotgun-row-unscreen",
+    "gif": "/gif/espalda-wing/shotgun-row-unscreen.gif",
+    "series": "3x4",
+    "nombre_español": "Remo escopeta",
+    "descripcion": "Variación de remo para espalda"
+  },
+  {
+    "grupo": "Espalda",
+    "nombre": "standing-side-bend-unscreen",
+    "gif": "/gif/espalda-wing/standing-side-bend-unscreen.gif",
+    "series": "3x4",
+    "nombre_español": "Inclinación lateral de pie",
+    "descripcion": "Ejercicio de movilidad para espalda"
+  },
+  {
+    "grupo": "Espalda",
+    "nombre": "t-bar-rows-unscreen",
+    "gif": "/gif/espalda-wing/t-bar-rows-unscreen.gif",
+    "series": "3x4",
+    "nombre_español": "Remo en T",
+    "descripcion": "Ejercicio clásico para espalda"
+  },
+  {
+    "grupo": "Espalda",
+    "nombre": "wall-slide-unscreen",
+    "gif": "/gif/espalda-wing/wall-slide-unscreen.gif",
+    "series": "3x4",
+    "nombre_español": "Deslizamiento en pared",
+    "descripcion": "Ejercicio de movilidad para espalda"
+  },
+  {
+    "grupo": "Espalda",
+    "nombre": "wall-slide-unscreen",
+    "gif": "/gif/espalda-wing/dead-hang.png",
+    "series": "3x4",
+    "nombre_español": "Colgado muerto",
+    "descripcion": "Ejercicio para fortalecer agarre y espalda"
+  },
+  {
+    "grupo": "Espalda",
+    "nombre": "retropulsion-parado-unscreen",
+    "gif": "/gif/espalda-wing/retropulsionparado.png",
+    "series": "3x4",
+    "nombre_español": "Retropulsión de pie",
+    "descripcion": "Ejercicio para trabajar la parte superior de la espalda"
+  }
+]

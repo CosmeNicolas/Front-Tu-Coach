@@ -1,0 +1,834 @@
+[
+  {
+    "grupo": "Tríceps",
+    "nombre": "alternating lying dumbbell triceps extension",
+    "gif": "/gif/triceps/Alternating-Lying-Dumbbell-Tri-unscreen.gif",
+    "series": "3x4",
+    "nombre_español": "Extensión alternada de tríceps con mancuernas acostado",
+    "descripcion": "Ejercicio para tríceps: Extensión alterna con mancuernas en posición horizontal"
+  },
+  {
+    "grupo": "Tríceps",
+    "nombre": "archer push up",
+    "gif": "/gif/triceps/Archer-Push-Up-unscreen.gif",
+    "series": "3x4",
+    "nombre_español": "Flexión de arquero",
+    "descripcion": "Ejercicio para tríceps: Flexión con desplazamiento lateral que enfatiza un brazo"
+  },
+  {
+    "grupo": "Tríceps",
+    "nombre": "asisted triceps dips",
+    "gif": "/gif/triceps/Asisted-Triceps-Dips-unscreen.gif",
+    "series": "3x4",
+    "nombre_español": "Fondos de tríceps asistidos",
+    "descripcion": "Ejercicio para tríceps: Fondos con asistencia para reducir la carga"
+  },
+  {
+    "grupo": "Tríceps",
+    "nombre": "band pushdown",
+    "gif": "/gif/triceps/Band-Pushdown-unscreen.gif",
+    "series": "3x4",
+    "nombre_español": "Empuje hacia abajo con banda",
+    "descripcion": "Ejercicio para tríceps: Extensión hacia abajo usando banda elástica"
+  },
+  {
+    "grupo": "Tríceps",
+    "nombre": "band skull crusher",
+    "gif": "/gif/triceps/Band-Skull-Crusher-unscreen.gif",
+    "series": "3x4",
+    "nombre_español": "Extensión tipo skull crusher con banda",
+    "descripcion": "Ejercicio para tríceps: Extensión tras nuca con resistencia de banda"
+  },
+  {
+    "grupo": "Tríceps",
+    "nombre": "banded triceps extension",
+    "gif": "/gif/triceps/Banded-Triceps-Extension-unscreen.gif",
+    "series": "3x4",
+    "nombre_español": "Extensión de tríceps con banda",
+    "descripcion": "Ejercicio para tríceps: Extensión usando banda elástica como resistencia"
+  },
+  {
+    "grupo": "Tríceps",
+    "nombre": "barbell jm press",
+    "gif": "/gif/triceps/Barbell-JM-Press-unscreen.gif",
+    "series": "3x4",
+    "nombre_español": "Press JM con barra",
+    "descripcion": "Ejercicio para tríceps: Híbrido entre press de banca y extensión de tríceps"
+  },
+  {
+    "grupo": "Tríceps",
+    "nombre": "barbell lying back of the head tricep extension",
+    "gif": "/gif/triceps/Barbell-Lying-Back-of-the-Head-unscreen.gif",
+    "series": "3x4",
+    "nombre_español": "Extensión de tríceps con barra tras nuca",
+    "descripcion": "Ejercicio para tríceps: Extensión acostado llevando la barra detrás de la cabeza"
+  },
+  {
+    "grupo": "Tríceps",
+    "nombre": "barbell one arm floor press",
+    "gif": "/gif/triceps/Barbell-One-Arm-Floor-Press-unscreen.gif",
+    "series": "3x4",
+    "nombre_español": "Press de suelo unilateral con barra",
+    "descripcion": "Ejercicio para tríceps: Press en el suelo a un brazo con barra"
+  },
+  {
+    "grupo": "Tríceps",
+    "nombre": "barbell reverse close grip bench press",
+    "gif": "/gif/triceps/Barbell-Reverse-Close-grip-Ben-unscreen.gif",
+    "series": "3x4",
+    "nombre_español": "Press de banca agarre cerrado inverso",
+    "descripcion": "Ejercicio para tríceps: Press con agarre cerrado y palmas hacia arriba"
+  },
+  {
+    "grupo": "Tríceps",
+    "nombre": "barbell reverse grip skullcrusher 1",
+    "gif": "/gif/triceps/Barbell-Reverse-Grip-Skullcrus-unscreen.gif",
+    "series": "3x4",
+    "nombre_español": "Extensión de tríceps con agarre inverso",
+    "descripcion": "Ejercicio para tríceps: Skull crusher con agarre supino"
+  },
+  {
+    "grupo": "Tríceps",
+    "nombre": "barbell triceps extension",
+    "gif": "/gif/triceps/Barbell-Triceps-Extension-unscreen.gif",
+    "series": "3x4",
+    "nombre_español": "Extensión de tríceps con barra",
+    "descripcion": "Ejercicio para tríceps: Extensión tradicional con barra recta"
+  },
+  {
+    "grupo": "Tríceps",
+    "nombre": "bench dips",
+    "gif": "/gif/triceps/Bench-Dips-unscreen.gif",
+    "series": "3x4",
+    "nombre_español": "Fondos en banco",
+    "descripcion": "Ejercicio para tríceps: Fondos usando un banco como apoyo"
+  },
+  {
+    "grupo": "Tríceps",
+    "nombre": "bent over triceps kickback",
+    "gif": "/gif/triceps/Bent-Over-Triceps-Kickback-unscreen.gif",
+    "series": "3x4",
+    "nombre_español": "Patada de tríceps inclinado",
+    "descripcion": "Ejercicio para tríceps: Extensión hacia atrás con torso inclinado"
+  },
+  {
+    "grupo": "Tríceps",
+    "nombre": "body ups",
+    "gif": "/gif/triceps/Body-Ups-unscreen.gif",
+    "series": "3x4",
+    "nombre_español": "Elevaciones corporales",
+    "descripcion": "Ejercicio para tríceps: Elevación completa del cuerpo usando tríceps"
+  },
+  {
+    "grupo": "Tríceps",
+    "nombre": "bodyweight skull crushers",
+    "gif": "/gif/triceps/Bodyweight-Skull-Crushers-unscreen.gif",
+    "series": "3x4",
+    "nombre_español": "Extensión de tríceps con peso corporal",
+    "descripcion": "Ejercicio para tríceps: Versión sin peso de skull crushers"
+  },
+  {
+    "grupo": "Tríceps",
+    "nombre": "chair dips",
+    "gif": "/gif/triceps/CHAIR-DIPS-unscreen.gif",
+    "series": "3x4",
+    "nombre_español": "Fondos en silla",
+    "descripcion": "Ejercicio para tríceps: Fondos usando una silla como apoyo"
+  },
+  {
+    "grupo": "Tríceps",
+    "nombre": "cable concentration extension on knee",
+    "gif": "/gif/triceps/Cable-Concentration-Extension--unscreen.gif",
+    "series": "3x4",
+    "nombre_español": "Extensión de tríceps concentrada en rodilla",
+    "descripcion": "Ejercicio para tríceps: Extensión apoyando el codo en la rodilla"
+  },
+  {
+    "grupo": "Tríceps",
+    "nombre": "cable crossover triceps extension",
+    "gif": "/gif/triceps/Cable-Crossover-Triceps-Extension-unscreen.gif",
+    "series": "3x4",
+    "nombre_español": "Extensión de tríceps con poleas cruzadas",
+    "descripcion": "Ejercicio para tríceps: Extensión usando poleas cruzadas para mayor tensión"
+  },
+  {
+    "grupo": "Tríceps",
+    "nombre": "cable incline triceps extension",
+    "gif": "/gif/triceps/Cable-Incline-Triceps-Extensio-unscreen.gif",
+    "series": "3x4",
+    "nombre_español": "Extensión de tríceps en banco inclinado",
+    "descripcion": "Ejercicio para tríceps: Extensión en banco inclinado usando cable"
+  },
+  {
+    "grupo": "Tríceps",
+    "nombre": "cable lying triceps extension",
+    "gif": "/gif/triceps/Cable-Lying-Triceps-Extension-unscreen.gif",
+    "series": "3x4",
+    "nombre_español": "Extensión de tríceps acostado con cable",
+    "descripcion": "Ejercicio para tríceps: Extensión en posición horizontal con polea baja"
+  },
+  {
+    "grupo": "Tríceps",
+    "nombre": "cable one arm high pulley overhead tricep extension",
+    "gif": "/gif/triceps/Cable-One-Arm-High-Pulley-Over-unscreen.gif",
+    "series": "3x4",
+    "nombre_español": "Extensión unilateral de tríceps con polea alta",
+    "descripcion": "Ejercicio para tríceps: Extensión a un brazo por encima de la cabeza"
+  },
+  {
+    "grupo": "Tríceps",
+    "nombre": "cable one arm overhead triceps extension",
+    "gif": "/gif/triceps/Cable-One-Arm-Overhead-Triceps-unscreen.gif",
+    "series": "3x4",
+    "nombre_español": "Extensión unilateral de tríceps por encima de la cabeza",
+    "descripcion": "Ejercicio para tríceps: Extensión vertical a un brazo con cable"
+  },
+  {
+    "grupo": "Tríceps",
+    "nombre": "cable rear drive",
+    "gif": "/gif/triceps/Cable-Rear-Drive-unscreen.gif",
+    "series": "3x4",
+    "nombre_español": "Empuje posterior con cable",
+    "descripcion": "Ejercicio para tríceps: Extensión hacia atrás con polea"
+  },
+  {
+    "grupo": "Tríceps",
+    "nombre": "cable rope lying on floor tricep extension",
+    "gif": "/gif/triceps/Cable-Rope-Lying-on-Floor-Tric-unscreen.gif",
+    "series": "3x4",
+    "nombre_español": "Extensión de tríceps con cuerda en suelo",
+    "descripcion": "Ejercicio para tríceps: Extensión acostado en el suelo usando cuerda"
+  },
+  {
+    "grupo": "Tríceps",
+    "nombre": "cable rope overhead triceps extension",
+    "gif": "/gif/triceps/Cable-Rope-Overhead-Triceps-Ex-unscreen.gif",
+    "series": "3x4",
+    "nombre_español": "Extensión de tríceps con cuerda por encima de la cabeza",
+    "descripcion": "Ejercicio para tríceps: Extensión vertical usando cuerda"
+  },
+  {
+    "grupo": "Tríceps",
+    "nombre": "cable side triceps extension",
+    "gif": "/gif/triceps/Cable-Side-Triceps-Extension-unscreen.gif",
+    "series": "3x4",
+    "nombre_español": "Extensión lateral de tríceps con cable",
+    "descripcion": "Ejercicio para tríceps: Extensión hacia el lado con polea"
+  },
+  {
+    "grupo": "Tríceps",
+    "nombre": "cable tricep kickback",
+    "gif": "/gif/triceps/Cable-Tricep-Kickback-unscreen.gif",
+    "series": "3x4",
+    "nombre_español": "Patada de tríceps con cable",
+    "descripcion": "Ejercicio para tríceps: Extensión hacia atrás con polea"
+  },
+  {
+    "grupo": "Tríceps",
+    "nombre": "close grip bench press",
+    "gif": "/gif/triceps/Close-Grip-Bench-Press-unscreen.gif",
+    "series": "3x4",
+    "nombre_español": "Press de banca agarre cerrado",
+    "descripcion": "Ejercicio para tríceps: Press de banca con manos juntas"
+  },
+  {
+    "grupo": "Tríceps",
+    "nombre": "close grip dumbbell press",
+    "gif": "/gif/triceps/Close-Grip-Dumbbell-Press-unscreen.gif",
+    "series": "3x4",
+    "nombre_español": "Press con mancuernas agarre cerrado",
+    "descripcion": "Ejercicio para tríceps: Press con mancuernas y manos juntas"
+  },
+  {
+    "grupo": "Tríceps",
+    "nombre": "close grip knee push up",
+    "gif": "/gif/triceps/Close-Grip-Knee-Push-up-unscreen.gif",
+    "series": "3x4",
+    "nombre_español": "Flexión de rodillas agarre cerrado",
+    "descripcion": "Ejercicio para tríceps: Flexión con rodillas apoyadas y manos juntas"
+  },
+  {
+    "grupo": "Tríceps",
+    "nombre": "close grip dumbbell push up",
+    "gif": "/gif/triceps/Close-grip-Dumbbell-Push-Up-unscreen.gif",
+    "series": "3x4",
+    "nombre_español": "Flexión con mancuernas agarre cerrado",
+    "descripcion": "Ejercicio para tríceps: Flexión usando mancuernas con manos cercanas"
+  },
+  {
+    "grupo": "Tríceps",
+    "nombre": "cross arm push up",
+    "gif": "/gif/triceps/Cross-Arm-Push-up-unscreen.gif",
+    "series": "3x4",
+    "nombre_español": "Flexión con brazos cruzados",
+    "descripcion": "Ejercicio para tríceps: Flexión con manos cruzadas para mayor intensidad"
+  },
+  {
+    "grupo": "Tríceps",
+    "nombre": "decline close grip bench to skull crusher",
+    "gif": "/gif/triceps/Decline-Close-Grip-Bench-To-Sk-unscreen.gif",
+    "series": "3x4",
+    "nombre_español": "Transición de press declinado a extensión",
+    "descripcion": "Ejercicio para tríceps: Combinación de press declinado y skull crusher"
+  },
+  {
+    "grupo": "Tríceps",
+    "nombre": "decline dumbbell triceps extension",
+    "gif": "/gif/triceps/Decline-Dumbbell-Triceps-Exten-unscreen.gif",
+    "series": "3x4",
+    "nombre_español": "Extensión de tríceps en declinado con mancuernas",
+    "descripcion": "Ejercicio para tríceps: Extensión en banco declinado"
+  },
+  {
+    "grupo": "Tríceps",
+    "nombre": "diamond push up",
+    "gif": "/gif/triceps/Diamond-Push-up-unscreen.gif",
+    "series": "3x4",
+    "nombre_español": "Flexión diamante",
+    "descripcion": "Ejercicio para tríceps: Flexión con manos en forma de diamante para mayor intensidad"
+  },
+  {
+    "grupo": "Tríceps",
+    "nombre": "dips between chairs",
+    "gif": "/gif/triceps/Dips-Between-Chairs-unscreen.gif",
+    "series": "3x4",
+    "nombre_español": "Fondos entre sillas",
+    "descripcion": "Ejercicio para tríceps: Fondos usando dos sillas como apoyo"
+  },
+  {
+    "grupo": "Tríceps",
+    "nombre": "dumbbell decline one arm hammer press",
+    "gif": "/gif/triceps/Dumbbell-Decline-One-Arm-Hamme-unscreen.gif",
+    "series": "3x4",
+    "nombre_español": "Press martillo unilateral en declinado",
+    "descripcion": "Ejercicio para tríceps: Press a un brazo en banco declinado con agarre neutro"
+  },
+  {
+    "grupo": "Tríceps",
+    "nombre": "dumbbell incline two arm extension",
+    "gif": "/gif/triceps/Dumbbell-Incline-Two-Arm-Exten-unscreen.gif",
+    "series": "3x4",
+    "nombre_español": "Extensión de tríceps en inclinado con mancuernas",
+    "descripcion": "Ejercicio para tríceps: Extensión en banco inclinado a dos brazos"
+  },
+  {
+    "grupo": "Tríceps",
+    "nombre": "dumbbell kickback",
+    "gif": "/gif/triceps/Dumbbell-Kickback-unscreen.gif",
+    "series": "3x4",
+    "nombre_español": "Patada de tríceps con mancuerna",
+    "descripcion": "Ejercicio para tríceps: Extensión hacia atrás con mancuerna"
+  },
+  {
+    "grupo": "Tríceps",
+    "nombre": "dumbbell seated front and back tate press",
+    "gif": "/gif/triceps/Dumbbell-Seated-Front-and-Back-unscreen.gif",
+    "series": "3x4",
+    "nombre_español": "Press Tate frontal y trasero sentado",
+    "descripcion": "Ejercicio para tríceps: Variación del press Tate con movimiento completo"
+  },
+  {
+    "grupo": "Tríceps",
+    "nombre": "dumbbell skull crusher",
+    "gif": "/gif/triceps/Dumbbell-Skull-Crusher-unscreen.gif",
+    "series": "3x4",
+    "nombre_español": "Extensión de tríceps con mancuernas",
+    "descripcion": "Ejercicio para tríceps: Skull crusher realizado con mancuernas"
+  },
+  {
+    "grupo": "Tríceps",
+    "nombre": "dumbbell tate press",
+    "gif": "/gif/triceps/Dumbbell-Tate-Press-unscreen.gif",
+    "series": "3x4",
+    "nombre_español": "Press Tate con mancuernas",
+    "descripcion": "Ejercicio para tríceps: Press con rotación de muñecas (variación Tate)"
+  },
+  {
+    "grupo": "Tríceps",
+    "nombre": "dumbbell triceps extension",
+    "gif": "/gif/triceps/Dumbbell-Triceps-Extension-unscreen.gif",
+    "series": "3x4",
+    "nombre_español": "Extensión de tríceps con mancuerna",
+    "descripcion": "Ejercicio para tríceps: Extensión tradicional con mancuerna"
+  },
+  {
+    "grupo": "Tríceps",
+    "nombre": "ez bar bent arm pullover",
+    "gif": "/gif/triceps/EZ-Bar-Bent-Arm-Pullover-unscreen.gif",
+    "series": "3x4",
+    "nombre_español": "Pullover con barra EZ y brazos flexionados",
+    "descripcion": "Ejercicio para tríceps: Pullover enfocado en tríceps con barra EZ"
+  },
+  {
+    "grupo": "Tríceps",
+    "nombre": "ez bar lying close grip triceps extension behind head",
+    "gif": "/gif/triceps/EZ-Bar-Lying-Close-Grip-Tricep-unscreen.gif",
+    "series": "3x4",
+    "nombre_español": "Extensión de tríceps con barra EZ tras nuca",
+    "descripcion": "Ejercicio para tríceps: Extensión acostado llevando la barra EZ detrás de la cabeza"
+  },
+  {
+    "grupo": "Tríceps",
+    "nombre": "ez barbell incline triceps extension",
+    "gif": "/gif/triceps/EZ-Barbell-Incline-Triceps-Ext-unscreen.gif",
+    "series": "3x4",
+    "nombre_español": "Extensión de tríceps en inclinado con barra EZ",
+    "descripcion": "Ejercicio para tríceps: Extensión en banco inclinado con barra EZ"
+  },
+  {
+    "grupo": "Tríceps",
+    "nombre": "exercise ball supine triceps extension",
+    "gif": "/gif/triceps/Exercise-Ball-Supine-Triceps-E-unscreen.gif",
+    "series": "3x4",
+    "nombre_español": "Extensión de tríceps en pelota suiza",
+    "descripcion": "Ejercicio para tríceps: Extensión acostado sobre pelota de ejercicio"
+  },
+  {
+    "grupo": "Tríceps",
+    "nombre": "forearm push up",
+    "gif": "/gif/triceps/Forearm-Push-up-unscreen.gif",
+    "series": "3x4",
+    "nombre_español": "Flexión sobre antebrazos",
+    "descripcion": "Ejercicio para tríceps: Flexión apoyando antebrazos en lugar de manos"
+  },
+  {
+    "grupo": "Tríceps",
+    "nombre": "handstand push ups between benches",
+    "gif": "/gif/triceps/Handstand-Push-ups-Between-Benches-unscreen.gif",
+    "series": "3x4",
+    "nombre_español": "Flexiones en pino entre bancos",
+    "descripcion": "Ejercicio para tríceps: Flexiones en posición invertida usando bancos"
+  },
+  {
+    "grupo": "Tríceps",
+    "nombre": "high pulley overhead tricep extension",
+    "gif": "/gif/triceps/High-Pulley-Overhead-Tricep-Ex-unscreen.gif",
+    "series": "3x4",
+    "nombre_español": "Extensión de tríceps con polea alta",
+    "descripcion": "Ejercicio para tríceps: Extensión por encima de la cabeza con polea alta"
+  },
+  {
+    "grupo": "Tríceps",
+    "nombre": "impossible dips",
+    "gif": "/gif/triceps/Impossible-Dips-unscreen.gif",
+    "series": "3x4",
+    "nombre_español": "Fondos imposibles",
+    "descripcion": "Ejercicio para tríceps: Fondos avanzados con máxima dificultad"
+  },
+  {
+    "grupo": "Tríceps",
+    "nombre": "knee push up",
+    "gif": "/gif/triceps/Knee-Push-Up-unscreen.gif",
+    "series": "3x4",
+    "nombre_español": "Flexión de rodillas",
+    "descripcion": "Ejercicio para tríceps: Flexión con rodillas apoyadas para principiantes"
+  },
+  {
+    "grupo": "Tríceps",
+    "nombre": "kneeling cable extension",
+    "gif": "/gif/triceps/Kneeling-Cable-Extension-unscreen.gif",
+    "series": "3x4",
+    "nombre_español": "Extensión de tríceps de rodillas con cable",
+    "descripcion": "Ejercicio para tríceps: Extensión arrodillado usando polea"
+  },
+  {
+    "grupo": "Tríceps",
+    "nombre": "kneeling cable triceps extension",
+    "gif": "/gif/triceps/Kneeling-Cable-Triceps-Extensi-unscreen.gif",
+    "series": "3x4",
+    "nombre_español": "Extensión de tríceps arrodillado con cable",
+    "descripcion": "Ejercicio para tríceps: Extensión en posición de rodillas con polea"
+  },
+  {
+    "grupo": "Tríceps",
+    "nombre": "korean dips",
+    "gif": "/gif/triceps/Korean-Dips-unscreen.gif",
+    "series": "3x4",
+    "nombre_español": "Fondos coreanos",
+    "descripcion": "Ejercicio para tríceps: Variación avanzada de fondos con inclinación"
+  },
+  {
+    "grupo": "Tríceps",
+    "nombre": "lever overhand triceps dip",
+    "gif": "/gif/triceps/Lever-Overhand-Triceps-Dip-unscreen.gif",
+    "series": "3x4",
+    "nombre_español": "Fondos de tríceps en máquina con agarre prono",
+    "descripcion": "Ejercicio para tríceps: Fondos asistidos con agarre pronado"
+  },
+  {
+    "grupo": "Tríceps",
+    "nombre": "lever tricep extension",
+    "gif": "/gif/triceps/Lever-Tricep-Extension-unscreen.gif",
+    "series": "3x4",
+    "nombre_español": "Extensión de tríceps en máquina",
+    "descripcion": "Ejercicio para tríceps: Extensión usando máquina de palancas"
+  },
+  {
+    "grupo": "Tríceps",
+    "nombre": "low cable tricep kickback",
+    "gif": "/gif/triceps/Low-Cable-Tricep-Kickback-unscreen.gif",
+    "series": "3x4",
+    "nombre_español": "Patada de tríceps con polea baja",
+    "descripcion": "Ejercicio para tríceps: Extensión hacia atrás con polea baja"
+  },
+  {
+    "grupo": "Tríceps",
+    "nombre": "medicine ball overhead throw",
+    "gif": "/gif/triceps/Medicine-Ball-Overhead-Throw-unscreen.gif",
+    "series": "3x4",
+    "nombre_español": "Lanzamiento de balón medicinal por encima de la cabeza",
+    "descripcion": "Ejercicio para tríceps: Lanzamiento explosivo con balón medicinal"
+  },
+  {
+    "grupo": "Tríceps",
+    "nombre": "medicine ball push up",
+    "gif": "/gif/triceps/Medicine-Ball-Push-Up-unscreen.gif",
+    "series": "3x4",
+    "nombre_español": "Flexión con balón medicinal",
+    "descripcion": "Ejercicio para tríceps: Flexión usando balón medicinal como apoyo"
+  },
+  {
+    "grupo": "Tríceps",
+    "nombre": "narrow grip wall push up",
+    "gif": "/gif/triceps/Narrow-Grip-Wall-Push-Up-unscreen.gif",
+    "series": "3x4",
+    "nombre_español": "Flexión en pared agarre cerrado",
+    "descripcion": "Ejercicio para tríceps: Flexión contra pared con manos juntas"
+  },
+  {
+    "grupo": "Tríceps",
+    "nombre": "one arm lying triceps extension",
+    "gif": "/gif/triceps/One-Arm-Lying-Triceps-Extensio-unscreen.gif",
+    "series": "3x4",
+    "nombre_español": "Extensión de tríceps a un brazo acostado",
+    "descripcion": "Ejercicio para tríceps: Extensión unilateral en posición horizontal"
+  },
+  {
+    "grupo": "Tríceps",
+    "nombre": "one arm pronated dumbbell triceps extension ",
+    "gif": "/gif/triceps/One-Arm-Pronated-Dumbbell-Tric-unscreen.gif",
+    "series": "3x4",
+    "nombre_español": "Extensión de tríceps a un brazo con agarre prono",
+    "descripcion": "Ejercicio para tríceps: Extensión unilateral con palma hacia abajo"
+  },
+  {
+    "grupo": "Tríceps",
+    "nombre": "one arm reverse push down",
+    "gif": "/gif/triceps/One-Arm-Reverse-Push-Down-unscreen.gif",
+    "series": "3x4",
+    "nombre_español": "Empuje hacia abajo inverso a un brazo",
+    "descripcion": "Ejercicio para tríceps: Pushdown unilateral con agarre inverso"
+  },
+  {
+    "grupo": "Tríceps",
+    "nombre": "one arm single leg bench dips",
+    "gif": "/gif/triceps/One-arm-Single-leg-Bench-Dips-unscreen.gif",
+    "series": "3x4",
+    "nombre_español": "Fondos en banco a un brazo y una pierna",
+    "descripcion": "Ejercicio para tríceps: Fondos unilaterales con apoyo reducido"
+  },
+  {
+    "grupo": "Tríceps",
+    "nombre": "one arm triceps pushdown",
+    "gif": "/gif/triceps/One-arm-triceps-pushdown-unscreen.gif",
+    "series": "3x4",
+    "nombre_español": "Empuje de tríceps a un brazo",
+    "descripcion": "Ejercicio para tríceps: Pushdown realizado unilateralmente"
+  },
+  {
+    "grupo": "Tríceps",
+    "nombre": "overhead triceps extension",
+    "gif": "/gif/triceps/Overhead-Triceps-Extension-unscreen.gif",
+    "series": "3x4",
+    "nombre_español": "Extensión de tríceps por encima de la cabeza",
+    "descripcion": "Ejercicio para tríceps: Extensión vertical con mancuerna o barra"
+  },
+  {
+    "grupo": "Tríceps",
+    "nombre": "planche push up",
+    "gif": "/gif/triceps/Planche-Push-Up-unscreen.gif",
+    "series": "3x4",
+    "nombre_español": "Flexión en plancha",
+    "descripcion": "Ejercicio para tríceps: Flexión avanzada en posición de plancha"
+  },
+  {
+    "grupo": "Tríceps",
+    "nombre": "pushdown",
+    "gif": "/gif/triceps/Pushdown-unscreen.gif",
+    "series": "3x4",
+    "nombre_español": "Triceps polea Empuje hacia abajo ",
+    "descripcion": "Ejercicio para tríceps: Extensión hacia abajo con polea"
+  },
+  {
+    "grupo": "Tríceps",
+    "nombre": "reaction ball throw agility ball drill ",
+    "gif": "/gif/triceps/Reaction-Ball-Throw-Agility-Ball-Drill-.gif",
+    "series": "3x4",
+    "nombre_español": "Ejercicio de lanzamiento con balón de reacción",
+    "descripcion": "Ejercicio para tríceps: Lanzamientos con balón de reacción para potencia"
+  },
+  {
+    "grupo": "Tríceps",
+    "nombre": "rear drive",
+    "gif": "/gif/triceps/Rear-Drive-unscreen.gif",
+    "series": "3x4",
+    "nombre_español": "Empuje posterior",
+    "descripcion": "Ejercicio para tríceps: Extensión hacia atrás para tríceps largo"
+  },
+  {
+    "grupo": "Tríceps",
+    "nombre": "reverse dips",
+    "gif": "/gif/triceps/Reverse-Dips-unscreen.gif",
+    "series": "3x4",
+    "nombre_español": "Fondos invertidos",
+    "descripcion": "Ejercicio para tríceps: Fondos con agarre invertido"
+  },
+  {
+    "grupo": "Tríceps",
+    "nombre": "reverse grip pushdown",
+    "gif": "/gif/triceps/Reverse-Grip-Pushdown-unscreen.gif",
+    "series": "3x4",
+    "nombre_español": "Empuje hacia abajo con agarre inverso",
+    "descripcion": "Ejercicio para tríceps: Pushdown con palmas hacia arriba"
+  },
+  {
+    "grupo": "Tríceps",
+    "nombre": "reverse push up",
+    "gif": "/gif/triceps/Reverse-Push-up-unscreen.gif",
+    "series": "3x4",
+    "nombre_español": "Flexión invertida",
+    "descripcion": "Ejercicio para tríceps: Flexión con manos en posición invertida"
+  },
+  {
+    "grupo": "Tríceps",
+    "nombre": "ring dips",
+    "gif": "/gif/triceps/Ring-Dips-unscreen.gif",
+    "series": "3x4",
+    "nombre_español": "Fondos en anillas",
+    "descripcion": "Ejercicio para tríceps: Fondos realizados en anillas de gimnasia"
+  },
+  {
+    "grupo": "Tríceps",
+    "nombre": "rope pushdown",
+    "gif": "/gif/triceps/Rope-Pushdown-unscreen.gif",
+    "series": "3x4",
+    "nombre_español": "Triceps polea  Empuje hacia abajo con cuerda",
+    "descripcion": "Ejercicio para tríceps: Pushdown usando cuerda para mayor rango de movimiento"
+  },
+  {
+    "grupo": "Tríceps",
+    "nombre": "seated dumbbell triceps extension",
+    "gif": "/gif/triceps/Seated-Dumbbell-Triceps-Extens-unscreen.gif",
+    "series": "3x4",
+    "nombre_español": "Extensión de tríceps con mancuerna sentado",
+    "descripcion": "Ejercicio para tríceps: Extensión en posición sentada"
+  },
+  {
+    "grupo": "Tríceps",
+    "nombre": "seated ez bar overhead triceps extension",
+    "gif": "/gif/triceps/Seated-EZ-Bar-Overhead-Triceps-unscreen.gif",
+    "series": "3x4",
+    "nombre_español": "Extensión de tríceps con barra EZ sentado",
+    "descripcion": "Ejercicio para tríceps: Extensión vertical sentado con barra EZ"
+  },
+  {
+    "grupo": "Tríceps",
+    "nombre": "seated one arm dumbbell triceps extension",
+    "gif": "/gif/triceps/Seated-One-Arm-Dumbbell-Tricep-unscreen.gif",
+    "series": "3x4",
+    "nombre_español": "Extensión de tríceps a un brazo sentado",
+    "descripcion": "Ejercicio para tríceps: Extensión unilateral en posición sentada"
+  },
+  {
+    "grupo": "Tríceps",
+    "nombre": "shoulder stretch behind back",
+    "gif": "/gif/triceps/Shoulder-Stretch-Behind-Back-unscreen.gif",
+    "series": "3x4",
+    "nombre_español": "Estiramiento de hombros tras espalda",
+    "descripcion": "Ejercicio para tríceps: Estiramiento para flexibilidad de tríceps y hombros"
+  },
+  {
+    "grupo": "Tríceps",
+    "nombre": "side one arm reverse pushdown",
+    "gif": "/gif/triceps/Side-One-Arm-Reverse-Pushdown-unscreen.gif",
+    "series": "3x4",
+    "nombre_español": "Empuje inverso lateral a un brazo",
+    "descripcion": "Ejercicio para tríceps: Pushdown unilateral con rotación"
+  },
+  {
+    "grupo": "Tríceps",
+    "nombre": "single arm push up on medicine ball",
+    "gif": "/gif/triceps/Single-Arm-Push-Up-on-Medicine-unscreen.gif",
+    "series": "3x4",
+    "nombre_español": "Flexión a un brazo sobre balón medicinal",
+    "descripcion": "Ejercicio para tríceps: Flexión unilateral con apoyo en balón"
+  },
+  {
+    "grupo": "Tríceps",
+    "nombre": "single arm push up",
+    "gif": "/gif/triceps/Single-Arm-Push-up-unscreen.gif",
+    "series": "3x4",
+    "nombre_español": "Flexión a un brazo",
+    "descripcion": "Ejercicio para tríceps: Flexión realizada con un solo brazo"
+  },
+  {
+    "grupo": "Tríceps",
+    "nombre": "single arm raise push up",
+    "gif": "/gif/triceps/Single-Arm-Raise-Push-up-unscreen.gif",
+    "series": "3x4",
+    "nombre_español": "Flexión con elevación de brazo",
+    "descripcion": "Ejercicio para tríceps: Flexión combinada con elevación unilateral"
+  },
+  {
+    "grupo": "Tríceps",
+    "nombre": "single dumbbell close grip press",
+    "gif": "/gif/triceps/Single-Dumbbell-Close-grip-Pre-unscreen.gif",
+    "series": "3x4",
+    "nombre_español": "Press agarre cerrado con mancuerna",
+    "descripcion": "Ejercicio para tríceps: Press con una mancuerna y manos juntas"
+  },
+  {
+    "grupo": "Tríceps",
+    "nombre": "standing barbell triceps extension",
+    "gif": "/gif/triceps/Standing-Barbell-Triceps-Exten-unscreen.gif",
+    "series": "3x4",
+    "nombre_español": "Extensión de tríceps con barra de pie",
+    "descripcion": "Ejercicio para tríceps: Extensión vertical con barra en posición erguida"
+  },
+  {
+    "grupo": "Tríceps",
+    "nombre": "standing triceps extension",
+    "gif": "/gif/triceps/Standing-Triceps-Extension-unscreen.gif",
+    "series": "3x4",
+    "nombre_español": "Extensión de tríceps de pie",
+    "descripcion": "Ejercicio para tríceps: Extensión en posición vertical"
+  },
+  {
+    "grupo": "Tríceps",
+    "nombre": "straight bar dip",
+    "gif": "/gif/triceps/Straight-Bar-Dip-unscreen.gif",
+    "series": "3x4",
+    "nombre_español": "Fondos en barra recta",
+    "descripcion": "Ejercicio para tríceps: Fondos realizados en barra fija"
+  },
+  {
+    "grupo": "Tríceps",
+    "nombre": "stretch with towel",
+    "gif": "/gif/triceps/Stretch-With-Towel-unscreen.gif",
+    "series": "3x4",
+    "nombre_español": "Estiramiento con toalla",
+    "descripcion": "Ejercicio para tríceps: Estiramiento asistido con toalla"
+  },
+  {
+    "grupo": "Tríceps",
+    "nombre": "supine medicine ball chest throw exercise",
+    "gif": "/gif/triceps/Supine-Medicine-Ball-Chest-Thr-unscreen.gif",
+    "series": "3x4",
+    "nombre_español": "Lanzamiento de balón medicinal en supino",
+    "descripcion": "Ejercicio para tríceps: Lanzamiento explosivo acostado"
+  },
+  {
+    "grupo": "Tríceps",
+    "nombre": "suspended push up",
+    "gif": "/gif/triceps/Suspended-Push-Up-unscreen.gif",
+    "series": "3x4",
+    "nombre_español": "Flexión en suspensión",
+    "descripcion": "Ejercicio para tríceps: Flexión usando arneses de suspensión"
+  },
+  {
+    "grupo": "Tríceps",
+    "nombre": "triceps dip machine",
+    "gif": "/gif/triceps/Triceps-Dip-Machine-unscreen.gif",
+    "series": "3x4",
+    "nombre_español": "Máquina de fondos para tríceps",
+    "descripcion": "Ejercicio para tríceps: Fondos asistidos por máquina"
+  },
+  {
+    "grupo": "Tríceps",
+    "nombre": "triceps dips on floor",
+    "gif": "/gif/triceps/Triceps-Dips-on-Floor-unscreen.gif",
+    "series": "3x4",
+    "nombre_español": "Fondos de tríceps en suelo",
+    "descripcion": "Ejercicio para tríceps: Fondos realizados en el suelo"
+  },
+  {
+    "grupo": "Tríceps",
+    "nombre": "triceps dips",
+    "gif": "/gif/triceps/Triceps-Dips-unscreen.gif",
+    "series": "3x4",
+    "nombre_español": "Fondos para tríceps",
+    "descripcion": "Ejercicio para tríceps: Fondos tradicionales entre barras paralelas"
+  },
+  {
+    "grupo": "Tríceps",
+    "nombre": "triceps extension machine",
+    "gif": "/gif/triceps/Triceps-Extension-Machine-unscreen.gif",
+    "series": "3x4",
+    "nombre_español": "Máquina de extensión de tríceps",
+    "descripcion": "Ejercicio para tríceps: Extensión usando máquina específica"
+  },
+  {
+    "grupo": "Tríceps",
+    "nombre": "triceps extension with resistance bands",
+    "gif": "/gif/triceps/Triceps-Extension-with-Resista-unscreen.gif",
+    "series": "3x4",
+    "nombre_español": "Extensión de tríceps con bandas de resistencia",
+    "descripcion": "Ejercicio para tríceps: Extensión usando bandas elásticas"
+  },
+  {
+    "grupo": "Tríceps",
+    "nombre": "triceps stretch",
+    "gif": "/gif/triceps/Triceps-Stretch-unscreen.gif",
+    "series": "3x4",
+    "nombre_español": "Estiramiento de tríceps",
+    "descripcion": "Ejercicio para tríceps: Estiramiento básico para tríceps"
+  },
+  {
+    "grupo": "Tríceps",
+    "nombre": "triceps dips on floors",
+    "gif": "/gif/triceps/Triceps-dips-on-floors-unscreen.gif",
+    "series": "3x4",
+    "nombre_español": "Fondos de tríceps en el suelo",
+    "descripcion": "Ejercicio para tríceps: Variación de fondos realizados en el piso"
+  },
+  {
+    "grupo": "Tríceps",
+    "nombre": "v bar pushdown",
+    "gif": "/gif/triceps/V-bar-Pushdown-unscreen.gif",
+    "series": "3x4",
+    "nombre_español": "Empuje hacia abajo con barra V",
+    "descripcion": "Ejercicio para tríceps: Pushdown usando barra en forma de V"
+  },
+  {
+    "grupo": "Tríceps",
+    "nombre": "wall push ups",
+    "gif": "/gif/triceps/Wall-Push-ups-unscreen.gif",
+    "series": "3x4",
+    "nombre_español": "Flexiones en pared",
+    "descripcion": "Ejercicio para tríceps: Flexiones contra la pared para principiantes"
+  },
+  {
+    "grupo": "Tríceps",
+    "nombre": "kipping handstand push up",
+    "gif": "/gif/triceps/kipping-handstand-push-up-unscreen.gif",
+    "series": "3x4",
+    "nombre_español": "Flexión en pino con impulso",
+    "descripcion": "Ejercicio para tríceps: Flexión invertida con movimiento de cadera"
+  },
+  {
+    "grupo": "Tríceps",
+    "nombre": "parallel bar dip",
+    "gif": "/gif/triceps/parallel-bar-dip-unscreen.gif",
+    "series": "3x4",
+    "nombre_español": "Fondos en barras paralelas",
+    "descripcion": "Ejercicio para tríceps: Fondos tradicionales en paralelas"
+  },
+  {
+    "grupo": "Tríceps",
+    "nombre": "wall supported handstand push up",
+    "gif": "/gif/triceps/wall-supported-handstand-push-up-unscreen.gif",
+    "series": "3x4",
+    "nombre_español": "Flexión en pino con apoyo en pared",
+    "descripcion": "Ejercicio para tríceps: Flexión invertida usando la pared como apoyo"
+  }
+]

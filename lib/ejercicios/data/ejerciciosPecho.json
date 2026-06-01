@@ -1,0 +1,1204 @@
+[
+  {
+    "grupo": "pecho",
+    "nombre": "Above Head Chest Stretch",
+    "nombre_español": "Estiramiento de pecho sobre la cabeza",
+    "gif": "/gif/Pecho/Above-Head-Chest-Stretch.gif",
+    "series": "3x4",
+    "descripcion": "Estiramiento para los músculos del pecho realizado elevando los brazos por encima de la cabeza"
+  },
+  {
+    "grupo": "pecho",
+    "nombre": "Alternate Dumbbell Bench Press",
+    "nombre_español": "Press de banca con mancuernas alternado",
+    "gif": "/gif/Pecho/Alternate-Dumbbell-Bench-Press-unscreen.gif",
+    "series": "3x4",
+    "descripcion": "Press de banca realizado alternando cada brazo con mancuernas para trabajar el pecho"
+  },
+  {
+    "grupo": "pecho",
+    "nombre": "Archer Push Up",
+    "nombre_español": "Flexiones tipo arquero",
+    "gif": "/gif/Pecho/Archer-Push-Up-unscreen.gif",
+    "series": "3x4",
+    "descripcion": "Variación avanzada de flexiones que imita el movimiento de un arquero para mayor intensidad"
+  },
+  {
+    "grupo": "pecho",
+    "nombre": "Arm Scissors",
+    "nombre_español": "Tijeras de brazos",
+    "gif": "/gif/Pecho/Arm-Scissors-unscreen.gif",
+    "series": "3x4",
+    "descripcion": "Ejercicio de apertura y cierre de brazos en forma de tijera para trabajar el pecho"
+  },
+  {
+    "grupo": "pecho",
+    "nombre": "Assisted Chest Dip",
+    "nombre_español": "Fondos asistidos para pecho",
+    "gif": "/gif/Pecho/Assisted-Chest-Dip-unscreen.gif",
+    "series": "3x4",
+    "descripcion": "Fondos en paralelas con asistencia para trabajar pectorales con apoyo"
+  },
+  {
+    "grupo": "pecho",
+    "nombre": "Back Pec Stretch",
+    "nombre_español": "Estiramiento de pectorales de espalda",
+    "gif": "/gif/Pecho/Back-Pec-Stretch-unscreen.gif",
+    "series": "3x4",
+    "descripcion": "Estiramiento para los músculos pectorales realizando una extensión hacia atrás"
+  },
+  {
+    "grupo": "pecho",
+    "nombre": "Back Slaps Wrap Around Stretch",
+    "nombre_español": "Estiramiento de abrazos con palmadas atrás",
+    "gif": "/gif/Pecho/Back-Slaps-Wrap-Around-Stretch-unscreen.gif",
+    "series": "3x4",
+    "descripcion": "Estiramiento dinámico que combina abrazos y palmadas en la espalda para el pecho"
+  },
+  {
+    "grupo": "pecho",
+    "nombre": "Band Alternate Incline Chest Press",
+    "nombre_español": "Press inclinado alterno con banda",
+    "gif": "/gif/Pecho/Band-Alternate-Incline-Chest-Press.gif",
+    "series": "3x4",
+    "descripcion": "Press inclinado alternando brazos con resistencia de bandas elásticas"
+  },
+  {
+    "grupo": "pecho",
+    "nombre": "Band Standing Chest Press",
+    "nombre_español": "Press de pecho de pie con banda",
+    "gif": "/gif/Pecho/Band-Standing-Chest-Press-unscreen.gif",
+    "series": "3x4",
+    "descripcion": "Press de pecho realizado de pie utilizando bandas de resistencia"
+  },
+  {
+    "grupo": "pecho",
+    "nombre": "Banded Shoulder Adduction",
+    "nombre_español": "Aducción de hombro con banda",
+    "gif": "/gif/Pecho/Banded-Shoulder-Adduction-unscreen.gif",
+    "series": "3x4",
+    "descripcion": "Movimiento de aducción de hombros contra resistencia de bandas elásticas"
+  },
+  {
+    "grupo": "pecho",
+    "nombre": "Barbell Bench Press",
+    "nombre_español": "Press de banca con barra",
+    "gif": "/gif/Pecho/Barbell-Bench-Press-unscreen.gif",
+    "series": "3x4",
+    "descripcion": "Ejercicio clásico para pectorales realizado con barra en banco plano"
+  },
+  {
+    "grupo": "pecho",
+    "nombre": "Barbell Floor Press",
+    "nombre_español": "Press en el suelo con barra",
+    "gif": "/gif/Pecho/Barbell-Floor-Press-unscreen.gif",
+    "series": "3x4",
+    "descripcion": "Variación del press de banca realizado en el suelo con barra"
+  },
+  {
+    "grupo": "pecho",
+    "nombre": "Barbell One Arm Floor Press",
+    "nombre_español": "Press en el suelo a un brazo con barra",
+    "gif": "/gif/Pecho/Barbell-One-Arm-Floor-Press-unscreen.gif",
+    "series": "3x4",
+    "descripcion": "Press en el suelo realizado con un solo brazo usando barra"
+  },
+  {
+    "grupo": "pecho",
+    "nombre": "Barbell Reverse Close grip Bench Press",
+    "nombre_español": "Press de banca con agarre cerrado inverso",
+    "gif": "/gif/Pecho/Barbell-Reverse-Close-grip-Ben-unscreen.gif",
+    "series": "3x4",
+    "descripcion": "Press de banca con agarre cerrado y manos en posición inversa"
+  },
+  {
+    "grupo": "pecho",
+    "nombre": "Bosu Ball Push Up",
+    "nombre_español": "Flexiones sobre Bosu Ball",
+    "gif": "/gif/Pecho/Bosu-Ball-Push-Up-unscreen.gif",
+    "series": "3x4",
+    "descripcion": "Flexiones realizadas sobre una Bosu Ball para mayor inestabilidad y desafío"
+  },
+  {
+    "grupo": "pecho",
+    "nombre": "Cable Crossover",
+    "nombre_español": "Cruces con poleas",
+    "gif": "/gif/Pecho/Cable-Crossover-unscreen.gif",
+    "series": "3x4",
+    "descripcion": "Ejercicio clásico de pecho cruzando los brazos frente al cuerpo con poleas"
+  },
+  {
+    "grupo": "pecho",
+    "nombre": "Cable Half Kneeling Pallof Press",
+    "nombre_español": "Press Pallof de rodillas con polea",
+    "gif": "/gif/Pecho/Cable-Half-Kneeling-Pallof-Pre-unscreen.gif",
+    "series": "3x4",
+    "descripcion": "Ejercicio antirotación con press desde posición de rodillas usando polea"
+  },
+  {
+    "grupo": "pecho",
+    "nombre": "Cable Upper Chest Crossovers",
+    "nombre_español": "Cruces superiores con poleas",
+    "gif": "/gif/Pecho/Cable-Upper-Chest-Crossovers-unscreen.gif",
+    "series": "3x4",
+    "descripcion": "Variación de cruces con poleas enfocada en la parte superior del pecho"
+  },
+  {
+    "grupo": "pecho",
+    "nombre": "Chest Dips",
+    "nombre_español": "Fondos para pecho",
+    "gif": "/gif/Pecho/Chest-Dips-unscreen.gif",
+    "series": "3x4",
+    "descripcion": "Fondos en paralelas con inclinación hacia adelante para enfatizar el pecho"
+  },
+  {
+    "grupo": "pecho",
+    "nombre": "Chest Press Machine",
+    "nombre_español": "Press de pecho en máquina",
+    "gif": "/gif/Pecho/Chest-Press-Machine-unscreen.gif",
+    "series": "3x4",
+    "descripcion": "Press de pecho realizado en máquina guiada para mayor seguridad"
+  },
+  {
+    "grupo": "pecho",
+    "nombre": "Chest Tap Push up",
+    "nombre_español": "Flexiones con toque al pecho",
+    "gif": "/gif/Pecho/Chest-Tap-Push-up-unscreen.gif",
+    "series": "3x4",
+    "descripcion": "Flexiones con toque alternado al pecho en cada repetición"
+  },
+  {
+    "grupo": "pecho",
+    "nombre": "Clap Push Up",
+    "nombre_español": "Flexiones con palmada",
+    "gif": "/gif/Pecho/Clap-Push-Up-unscreen.gif",
+    "series": "3x4",
+    "descripcion": "Flexiones explosivas con palmada en el aire entre repeticiones"
+  },
+  {
+    "grupo": "pecho",
+    "nombre": "Close Grip Bench Press",
+    "nombre_español": "Press de banca con agarre cerrado",
+    "gif": "/gif/Pecho/Close-Grip-Bench-Press-unscreen.gif",
+    "series": "3x4",
+    "descripcion": "Press de banca con manos juntas para mayor enfoque en tríceps y pecho interno"
+  },
+  {
+    "grupo": "pecho",
+    "nombre": "Close Grip Dumbbell Press",
+    "nombre_español": "Press con mancuernas y agarre cerrado",
+    "gif": "/gif/Pecho/Close-Grip-Dumbbell-Press-unscreen.gif",
+    "series": "3x4",
+    "descripcion": "Press con mancuernas manteniendo las manos juntas para trabajar pecho interno"
+  },
+  {
+    "grupo": "pecho",
+    "nombre": "Close grip Dumbbell Push Up",
+    "nombre_español": "Flexiones con mancuernas y agarre cerrado",
+    "gif": "/gif/Pecho/Close-grip-Dumbbell-Push-Up-unscreen.gif",
+    "series": "3x4",
+    "descripcion": "Flexiones realizadas sobre mancuernas con agarre cerrado"
+  },
+  {
+    "grupo": "pecho",
+    "nombre": "Close grip Incline Dumbbell Press",
+    "nombre_español": "Press inclinado con mancuernas y agarre cerrado",
+    "gif": "/gif/Pecho/Close-grip-Incline-Dumbbell-Pr-unscreen.gif",
+    "series": "3x4",
+    "descripcion": "Press inclinado con mancuernas manteniendo las manos juntas"
+  },
+  {
+    "grupo": "pecho",
+    "nombre": "Close Grip Knee Push up",
+    "nombre_español": "Flexiones de rodillas con agarre cerrado",
+    "gif": "/gif/Pecho/Close-Grip-Knee-Push-up-unscreen.gif",
+    "series": "3x4",
+    "descripcion": "Flexiones asistidas de rodillas con manos juntas para principiantes"
+  },
+  {
+    "grupo": "pecho",
+    "nombre": "Cobra Push up",
+    "nombre_español": "Flexiones tipo cobra",
+    "gif": "/gif/Pecho/Cobra-Push-up-unscreen.gif",
+    "series": "3x4",
+    "descripcion": "Variación de flexiones con extensión de espalda al final del movimiento"
+  },
+  {
+    "grupo": "pecho",
+    "nombre": "Corner Wall Stretch",
+    "nombre_español": "Estiramiento en esquina",
+    "gif": "/gif/Pecho/Corner-Wall-Stretch-unscreen.gif",
+    "series": "3x4",
+    "descripcion": "Estiramiento para pecho y hombros utilizando una esquina de pared"
+  },
+  {
+    "grupo": "pecho",
+    "nombre": "Decline Barbell Bench Press",
+    "nombre_español": "Press de banca declinado con barra",
+    "gif": "/gif/Pecho/Decline-Barbell-Bench-Press-unscreen.gif",
+    "series": "3x4",
+    "descripcion": "Press de banca en banco declinado para enfatizar la parte inferior del pecho"
+  },
+  {
+    "grupo": "pecho",
+    "nombre": "Decline Cable Fly",
+    "nombre_español": "Aperturas declinadas con poleas",
+    "gif": "/gif/Pecho/Decline-Cable-Fly-unscreen.gif",
+    "series": "3x4",
+    "descripcion": "Aperturas de pecho en banco declinado utilizando poleas"
+  },
+  {
+    "grupo": "pecho",
+    "nombre": "Decline Chest Press Machine",
+    "nombre_español": "Press declinado en máquina",
+    "gif": "/gif/Pecho/Decline-Chest-Press-Machine-unscreen.gif",
+    "series": "3x4",
+    "descripcion": "Press de pecho en banco declinado utilizando máquina guiada"
+  },
+  {
+    "grupo": "pecho",
+    "nombre": "Decline Dumbbell Fly",
+    "nombre_español": "Aperturas declinadas con mancuernas",
+    "gif": "/gif/Pecho/Decline-Dumbbell-Fly-unscreen.gif",
+    "series": "3x4",
+    "descripcion": "Aperturas de pecho en banco declinado con mancuernas"
+  },
+  {
+    "grupo": "pecho",
+    "nombre": "Decline Dumbbell Press",
+    "nombre_español": "Press declinado con mancuernas",
+    "gif": "/gif/Pecho/Decline-Dumbbell-Press-unscreen.gif",
+    "series": "3x4",
+    "descripcion": "Press de pecho en banco declinado utilizando mancuernas"
+  },
+  {
+    "grupo": "pecho",
+    "nombre": "Decline hammer press",
+    "nombre_español": "Press martillo declinado",
+    "gif": "/gif/Pecho/Decline-hammer-press-unscreen.gif",
+    "series": "3x4",
+    "descripcion": "Press declinado con mancuernas en posición neutral (martillo)"
+  },
+  {
+    "grupo": "pecho",
+    "nombre": "Decline Push Up",
+    "nombre_español": "Flexiones declinadas",
+    "gif": "/gif/Pecho/Decline-Push-Up-unscreen.gif",
+    "series": "3x4",
+    "descripcion": "Flexiones con pies elevados para mayor intensidad en el pecho"
+  },
+  {
+    "grupo": "pecho",
+    "nombre": "Diamond Push up",
+    "nombre_español": "Flexiones diamante",
+    "gif": "/gif/Pecho/Diamond-Push-up-unscreen.gif",
+    "series": "3x4",
+    "descripcion": "Flexiones con manos juntas formando un diamante para trabajar tríceps y pecho interno"
+  },
+  {
+    "grupo": "pecho",
+    "nombre": "Dips Between Chairs",
+    "nombre_español": "Fondos entre sillas",
+    "gif": "/gif/Pecho/Dips-Between-Chairs-unscreen.gif",
+    "series": "3x4",
+    "descripcion": "Fondos para pecho realizados entre dos sillas como alternativa a las paralelas"
+  },
+  {
+    "grupo": "pecho",
+    "nombre": "Doorway chest and shoulder stretch",
+    "nombre_español": "Estiramiento de pecho y hombros en marco de puerta",
+    "gif": "/gif/Pecho/Doorway-chest-and-sshoulder-stretch-unscreen.gif",
+    "series": "3x4",
+    "descripcion": "Estiramiento para pecho y hombros utilizando el marco de una puerta"
+  },
+  {
+    "grupo": "pecho",
+    "nombre": "Drop Push Up",
+    "nombre_español": "Flexiones con caída",
+    "gif": "/gif/Pecho/Drop-Push-Up-unscreen.gif",
+    "series": "3x4",
+    "descripcion": "Flexiones pliométricas con caída controlada entre repeticiones"
+  },
+  {
+    "grupo": "pecho",
+    "nombre": "Dumbbell Decline One Arm Hammer Press",
+    "nombre_español": "Press martillo declinado a un brazo",
+    "gif": "/gif/Pecho/Dumbbell-Decline-One-Arm-Hamme-unscreen.gif",
+    "series": "3x4",
+    "descripcion": "Press declinado con mancuerna a un brazo en posición neutral (martillo)"
+  },
+  {
+    "grupo": "pecho",
+    "nombre": "Dumbbell Fly",
+    "nombre_español": "Aperturas con mancuernas",
+    "gif": "/gif/Pecho/Dumbbell-Fly-unscreen.gif",
+    "series": "3x4",
+    "descripcion": "Ejercicio clásico de aperturas de pecho con mancuernas"
+  },
+  {
+    "grupo": "pecho",
+    "nombre": "Dumbbell One Arm Reverse Grip Press",
+    "nombre_español": "Press a un brazo con agarre inverso",
+    "gif": "/gif/Pecho/Dumbbell-One-Arm-Reverse-Grip--unscreen.gif",
+    "series": "3x4",
+    "descripcion": "Press con mancuerna a un brazo utilizando agarre inverso (palmas hacia adentro)"
+  },
+  {
+    "grupo": "pecho",
+    "nombre": "Dumbbell Press 1",
+    "nombre_español": "Press con mancuernas 1",
+    "gif": "/gif/Pecho/Dumbbell-Press-1-unscreen.gif",
+    "series": "3x4",
+    "descripcion": "Variación básica de press de pecho con mancuernas"
+  },
+  {
+    "grupo": "pecho",
+    "nombre": "Dumbbell Pullover On Stability Ball",
+    "nombre_español": "Pullover con mancuerna en balón de estabilidad",
+    "gif": "/gif/Pecho/Dumbbell-Pullover-On-Stability-unscreen.gif",
+    "series": "3x4",
+    "descripcion": "Pullover para pecho realizado sobre balón de estabilidad para mayor desafío"
+  },
+  {
+    "grupo": "pecho",
+    "nombre": "Dumbbell Pullover",
+    "nombre_español": "Pullover con mancuerna",
+    "gif": "/gif/Pecho/Dumbbell-Pullover-unscreen.gif",
+    "series": "3x4",
+    "descripcion": "Ejercicio clásico de pullover con mancuerna para pecho y espalda"
+  },
+  {
+    "grupo": "pecho",
+    "nombre": "Dumbbell Reverse Grip 30 Degrees Incline Bench Press",
+    "nombre_español": "Press inclinado 30° con agarre inverso",
+    "gif": "/gif/Pecho/Dumbbell-Reverse-Grip-30-Degre-unscreen.gif",
+    "series": "3x4",
+    "descripcion": "Press inclinado a 30 grados con mancuernas en agarre inverso"
+  },
+  {
+    "grupo": "pecho",
+    "nombre": "Dumbbell Straight Arm Pullover knees at 90 degrees",
+    "nombre_español": "Pullover con brazos rectos y rodillas a 90°",
+    "gif": "/gif/Pecho/Dumbbell-Straight-Arm-Pullover-unscreen.gif",
+    "series": "3x4",
+    "descripcion": "Pullover con brazos rectos manteniendo rodillas flexionadas a 90 grados"
+  },
+  {
+    "grupo": "pecho",
+    "nombre": "Dumbbell Upward Fly",
+    "nombre_español": "Aperturas ascendentes con mancuernas",
+    "gif": "/gif/Pecho/Dumbbell-Upward-Fly-unscreen.gif",
+    "series": "3x4",
+    "descripcion": "Variación de aperturas con movimiento ascendente para énfasis en pecho superior"
+  },
+  {
+    "grupo": "pecho",
+    "nombre": "Dynamic Chest Stretch",
+    "nombre_español": "Estiramiento dinámico de pecho",
+    "gif": "/gif/Pecho/Dynamic-Chest-Stretch-unscreen.gif",
+    "series": "3x4",
+    "descripcion": "Estiramiento dinámico para los músculos pectorales"
+  },
+  {
+    "grupo": "pecho",
+    "nombre": "Finger Push up",
+    "nombre_español": "Flexiones con dedos",
+    "gif": "/gif/Pecho/Finger-Push-up-unscreen.gif",
+    "series": "3x4",
+    "descripcion": "Flexiones realizadas sobre las puntas de los dedos para mayor desafío"
+  },
+  {
+    "grupo": "pecho",
+    "nombre": "Fish Pose Matsyasana",
+    "nombre_español": "Postura del pez (Matsyasana)",
+    "gif": "/gif/Pecho/Fish-Pose-Matsyasana-unscreen.gif",
+    "series": "3x4",
+    "descripcion": "Postura de yoga que estira el pecho y abre la caja torácica"
+  },
+  {
+    "grupo": "pecho",
+    "nombre": "Foam Roller Chest Stretch",
+    "nombre_español": "Estiramiento de pecho con rodillo",
+    "gif": "/gif/Pecho/Foam-Roller-Chest-Stretch-unscreen.gif",
+    "series": "3x4",
+    "descripcion": "Estiramiento para pectorales utilizando un rodillo de espuma"
+  },
+  {
+    "grupo": "pecho",
+    "nombre": "Forearm Push up",
+    "nombre_español": "Flexiones sobre antebrazos",
+    "gif": "/gif/Pecho/Forearm-Push-up-unscreen.gif",
+    "series": "3x4",
+    "descripcion": "Variación de flexiones apoyando los antebrazos en lugar de las manos"
+  },
+  {
+    "grupo": "pecho",
+    "nombre": "Hammer Press",
+    "nombre_español": "Press martillo",
+    "gif": "/gif/Pecho/Hammer-Press-unscreen.gif",
+    "series": "3x4",
+    "descripcion": "Press con mancuernas en posición neutral (como un martillo)"
+  },
+  {
+    "grupo": "pecho",
+    "nombre": "High Cable Crossover",
+    "nombre_español": "Cruces altos con poleas",
+    "gif": "/gif/Pecho/High-Cable-Crossover-unscreen.gif",
+    "series": "3x4",
+    "descripcion": "Cruces con poleas desde posición alta para enfatizar pecho inferior"
+  },
+  {
+    "grupo": "pecho",
+    "nombre": "High Chest Fly With Resistance Band",
+    "nombre_español": "Aperturas altas con banda de resistencia",
+    "gif": "/gif/Pecho/High-Chest-Fly-With-Resistance-unscreen.gif",
+    "series": "3x4",
+    "descripcion": "Aperturas de pecho desde posición alta utilizando bandas elásticas"
+  },
+  {
+    "grupo": "pecho",
+    "nombre": "Incline Barbell Bench Press",
+    "nombre_español": "Press inclinado con barra",
+    "gif": "/gif/Pecho/Incline-Barbell-Bench-Press-unscreen.gif",
+    "series": "3x4",
+    "descripcion": "Press de banca en banco inclinado con barra para pecho superior"
+  },
+  {
+    "grupo": "pecho",
+    "nombre": "Incline Cable Fly",
+    "nombre_español": "Aperturas inclinadas con poleas",
+    "gif": "/gif/Pecho/Incline-Cable-Fly-unscreen.gif",
+    "series": "3x4",
+    "descripcion": "Aperturas de pecho en banco inclinado utilizando poleas"
+  },
+  {
+    "grupo": "pecho",
+    "nombre": "Incline Chest Fly Machine",
+    "nombre_español": "Aperturas inclinadas en máquina",
+    "gif": "/gif/Pecho/Incline-Chest-Fly-Machine-unscreen.gif",
+    "series": "3x4",
+    "descripcion": "Aperturas de pecho en banco inclinado utilizando máquina guiada"
+  },
+  {
+    "grupo": "pecho",
+    "nombre": "Incline Chest Press Machine",
+    "nombre_español": "Press inclinado en máquina",
+    "gif": "/gif/Pecho/Incline-Chest-Press-Machine-unscreen.gif",
+    "series": "3x4",
+    "descripcion": "Press de pecho en banco inclinado utilizando máquina guiada"
+  },
+  {
+    "grupo": "pecho",
+    "nombre": "Incline Close Grip Bench Press",
+    "nombre_español": "Press inclinado con agarre cerrado",
+    "gif": "/gif/Pecho/Incline-Close-Grip-Bench-Press-unscreen.gif",
+    "series": "3x4",
+    "descripcion": "Press inclinado con barra y manos juntas para pecho superior interno"
+  },
+  {
+    "grupo": "pecho",
+    "nombre": "Incline Dumbbel Hammer Press",
+    "nombre_español": "Press martillo inclinado",
+    "gif": "/gif/Pecho/Incline-Dumbbel-Hammer-Press-unscreen.gif",
+    "series": "3x4",
+    "descripcion": "Press inclinado con mancuernas en posición neutral (martillo)"
+  },
+  {
+    "grupo": "pecho",
+    "nombre": "Incline dumbbell Fly",
+    "nombre_español": "Aperturas inclinadas con mancuernas",
+    "gif": "/gif/Pecho/Incline-dumbbell-Fly-unscreen.gif",
+    "series": "3x4",
+    "descripcion": "Aperturas de pecho en banco inclinado con mancuernas"
+  },
+  {
+    "grupo": "pecho",
+    "nombre": "Incline Dumbbell Press",
+    "nombre_español": "Press inclinado con mancuernas",
+    "gif": "/gif/Pecho/Incline-Dumbbell-Press-unscreen.gif",
+    "series": "3x4",
+    "descripcion": "Press de pecho en banco inclinado utilizando mancuernas"
+  },
+  {
+    "grupo": "pecho",
+    "nombre": "Incline Landmine Press",
+    "nombre_español": "Press inclinado con landmine",
+    "gif": "/gif/Pecho/Incline-Landmine-Press-unscreen.gif",
+    "series": "3x4",
+    "descripcion": "Press inclinado utilizando barra en landmine para rango de movimiento único"
+  },
+  {
+    "grupo": "pecho",
+    "nombre": "Incline Push Up",
+    "nombre_español": "Flexiones inclinadas",
+    "gif": "/gif/Pecho/Incline-Push-Up-unscreen.gif",
+    "series": "3x4",
+    "descripcion": "Flexiones con manos elevadas para menor intensidad y enfoque en pecho superior"
+  },
+  {
+    "grupo": "pecho",
+    "nombre": "Inner Chest Press Machine",
+    "nombre_español": "Press interno en máquina",
+    "gif": "/gif/Pecho/Inner-Chest-Press-Machine-unscreen.gif",
+    "series": "3x4",
+    "descripcion": "Press en máquina diseñado para trabajar la parte interna del pecho"
+  },
+  {
+    "grupo": "pecho",
+    "nombre": "Kettlebell Chest Press on the Floor",
+    "nombre_español": "Press de pecho con kettlebell en el suelo",
+    "gif": "/gif/Pecho/Kettlebell-Chest-Press-on-the--unscreen.gif",
+    "series": "3x4",
+    "descripcion": "Press de pecho realizado en el suelo utilizando kettlebell"
+  },
+  {
+    "grupo": "pecho",
+    "nombre": "Kettlebell Deep Push Up",
+    "nombre_español": "Flexiones profundas con kettlebell",
+    "gif": "/gif/Pecho/Kettlebell-Deep-Push-Up-unscreen.gif",
+    "series": "3x4",
+    "descripcion": "Flexiones con mayor rango de movimiento utilizando kettlebell como apoyo"
+  },
+
+  {
+    "grupo": "pecho",
+    "nombre": "Knee Push Up",
+    "nombre_español": "Flexiones de rodillas",
+    "gif": "/gif/Pecho/Knee-Push-Up-unscreen.gif",
+    "series": "3x4",
+    "descripcion": "Variación asistida de flexiones apoyando rodillas para principiantes"
+  },
+  {
+    "grupo": "pecho",
+    "nombre": "Kneeling Incline Press Gymstick",
+    "nombre_español": "Press inclinado de rodillas con Gymstick",
+    "gif": "/gif/Pecho/Kneeling-Incline-Press-Gymstic-unscreen.gif",
+    "series": "3x4",
+    "descripcion": "Press inclinado desde posición de rodillas utilizando Gymstick"
+  },
+  {
+    "grupo": "pecho",
+    "nombre": "Kneeling Landmine Press",
+    "nombre_español": "Press de rodillas con landmine",
+    "gif": "/gif/Pecho/Kneeling-Landmine-Press-unscreen.gif",
+    "series": "3x4",
+    "descripcion": "Press desde posición de rodillas utilizando barra en landmine"
+  },
+  {
+    "grupo": "pecho",
+    "nombre": "Kneeling Push up",
+    "nombre_español": "Flexiones de rodillas",
+    "gif": "/gif/Pecho/Kneeling-Push-up-unscreen.gif",
+    "series": "3x4",
+    "descripcion": "Variación asistida de flexiones apoyando rodillas para principiantes"
+  },
+  {
+    "grupo": "pecho",
+    "nombre": "Knuckle Push Up",
+    "nombre_español": "Flexiones sobre nudillos",
+    "gif": "/gif/Pecho/Knuckle-Push-Up-unscreen.gif",
+    "series": "3x4",
+    "descripcion": "Flexiones realizadas sobre los nudillos para fortalecer muñecas"
+  },
+  {
+    "grupo": "pecho",
+    "nombre": "Korean Dips",
+    "nombre_español": "Fondos coreanos",
+    "gif": "/gif/Pecho/Korean-Dips-unscreen.gif",
+    "series": "3x4",
+    "descripcion": "Variación avanzada de fondos con mayor rango de movimiento"
+  },
+  {
+    "grupo": "pecho",
+    "nombre": "Landmine Floor Chest Fly",
+    "nombre_español": "Aperturas en suelo con landmine",
+    "gif": "/gif/Pecho/Landmine-Floor-Chest-Fly-unscreen.gif",
+    "series": "3x4",
+    "descripcion": "Aperturas de pecho realizadas en el suelo utilizando barra en landmine"
+  },
+  {
+    "grupo": "pecho",
+    "nombre": "Lever Chest Press",
+    "nombre_español": "Press de pecho con palanca",
+    "gif": "/gif/Pecho/Lever-Chest-Press-unscreen.gif",
+    "series": "3x4",
+    "descripcion": "Press de pecho realizado en máquina de palancas"
+  },
+  {
+    "grupo": "pecho",
+    "nombre": "Lever Crossovers",
+    "nombre_español": "Cruces con palanca",
+    "gif": "/gif/Pecho/Lever-Crossovers-unscreen.gif",
+    "series": "3x4",
+    "descripcion": "Cruces de pecho realizados en máquina de palancas"
+  },
+  {
+    "grupo": "pecho",
+    "nombre": "Lever Decline Chest Press",
+    "nombre_español": "Press declinado con palanca",
+    "gif": "/gif/Pecho/Lever-Decline-Chest-Press-unscreen.gif",
+    "series": "3x4",
+    "descripcion": "Press de pecho declinado en máquina de palancas"
+  },
+  {
+    "grupo": "pecho",
+    "nombre": "Lever Incline Chest Press",
+    "nombre_español": "Press inclinado con palanca",
+    "gif": "/gif/Pecho/Lever-Incline-Chest-Press-unscreen.gif",
+    "series": "3x4",
+    "descripcion": "Press de pecho inclinado en máquina de palancas"
+  },
+  {
+    "grupo": "pecho",
+    "nombre": "Lever Incline Hammer Chest Press",
+    "nombre_español": "Press martillo inclinado con palanca",
+    "gif": "/gif/Pecho/Lever-Incline-Hammer-Chest-Pre-unscreen.gif",
+    "series": "3x4",
+    "descripcion": "Press inclinado en posición neutral (martillo) en máquina de palancas"
+  },
+  {
+    "grupo": "pecho",
+    "nombre": "Lever One Arm Chest Press",
+    "nombre_español": "Press a un brazo con palanca",
+    "gif": "/gif/Pecho/Lever-One-Arm-Chest-Press-unscreen.gif",
+    "series": "3x4",
+    "descripcion": "Press de pecho unilateral en máquina de palancas"
+  },
+  {
+    "grupo": "pecho",
+    "nombre": "Lever Pec Deck Fly_Chest_720",
+    "nombre_español": "Aperturas en máquina - mariposa",
+    "gif": "/gif/Pecho/Lever-Pec-Deck-Fly-Chest-720-unscreen.gif",
+    "series": "3x4",
+    "descripcion": "Aperturas de pecho en máquina Pec Deck (mariposa)"
+  },
+  {
+    "grupo": "pecho",
+    "nombre": "Low Cable Crossover",
+    "nombre_español": "Cruces bajos con poleas",
+    "gif": "/gif/Pecho/Low-Cable-Crossover-unscreen.gif",
+    "series": "3x4",
+    "descripcion": "Cruces con poleas desde posición baja para enfatizar pecho superior"
+  },
+  {
+    "grupo": "pecho",
+    "nombre": "Low fly",
+    "nombre_español": "Aperturas bajas",
+    "gif": "/gif/Pecho/Low-fly-unscreen.gif",
+    "series": "3x4",
+    "descripcion": "Aperturas de pecho desde posición baja para mayor énfasis en fibras superiores"
+  },
+  {
+    "grupo": "pecho",
+    "nombre": "Lying Cable Fly",
+    "nombre_español": "Aperturas con poleas tumbado",
+    "gif": "/gif/Pecho/Lying-Cable-Fly-unscreen.gif",
+    "series": "3x4",
+    "descripcion": "Aperturas de pecho realizadas tumbado en banco utilizando poleas"
+  },
+  {
+    "grupo": "pecho",
+    "nombre": "Lying Chest Press Machine",
+    "nombre_español": "Press de pecho tumbado en máquina",
+    "gif": "/gif/Pecho/Lying-Chest-Press-Machine-unscreen.gif",
+    "series": "3x4",
+    "descripcion": "Press de pecho realizado tumbado en máquina guiada"
+  },
+  {
+    "grupo": "pecho",
+    "nombre": "Lying Upper Body Rotation",
+    "nombre_español": "Rotación superior tumbado",
+    "gif": "/gif/Pecho/Lying-Upper-Body-Rotation-unscreen.gif",
+    "series": "3x4",
+    "descripcion": "Ejercicio de rotación del torso superior tumbado para movilidad torácica"
+  },
+  {
+    "grupo": "pecho",
+    "nombre": "Medicine Ball Overhead Throw",
+    "nombre_español": "Lanzamiento de balón medicinal por encima",
+    "gif": "/gif/Pecho/Medicine-Ball-Overhead-Throw-unscreen.gif",
+    "series": "3x4",
+    "descripcion": "Ejercicio pliométrico de lanzamiento de balón medicinal para potencia en pecho"
+  },
+  {
+    "grupo": "pecho",
+    "nombre": "Medicine Ball Push Up",
+    "nombre_español": "Flexiones con balón medicinal",
+    "gif": "/gif/Pecho/Medicine-Ball-Push-Up-unscreen.gif",
+    "series": "3x4",
+    "descripcion": "Flexiones realizadas sobre balón medicinal para mayor inestabilidad"
+  },
+  {
+    "grupo": "pecho",
+    "nombre": "Middle fly",
+    "nombre_español": "Aperturas medias",
+    "gif": "/gif/Pecho/Middle-fly-unscreen.gif",
+    "series": "3x4",
+    "descripcion": "Aperturas de pecho desde posición media para trabajo equilibrado"
+  },
+  {
+    "grupo": "pecho",
+    "nombre": "Modified Hindu Push up",
+    "nombre_español": "Flexiones hindú modificadas",
+    "gif": "/gif/Pecho/Modified-Hindu-Push-up-unscreen.gif",
+    "series": "3x4",
+    "descripcion": "Variación modificada de flexiones hindúes con menor dificultad"
+  },
+  {
+    "grupo": "pecho",
+    "nombre": "Narrow Grip Wall Push Up",
+    "nombre_español": "Flexiones en pared con agarre estrecho",
+    "gif": "/gif/Pecho/Narrow-Grip-Wall-Push-Up-unscreen.gif",
+    "series": "3x4",
+    "descripcion": "Flexiones asistidas contra pared con manos juntas para principiantes"
+  },
+  {
+    "grupo": "pecho",
+    "nombre": "One Arm Cable Chest Press",
+    "nombre_español": "Press de pecho a un brazo con polea",
+    "gif": "/gif/Pecho/One-Arm-Cable-Chest-Press-unscreen.gif",
+    "series": "3x4",
+    "descripcion": "Press de pecho unilateral utilizando polea para trabajar cada lado por separado"
+  },
+  {
+    "grupo": "pecho",
+    "nombre": "One Arm Decline Cable Fly",
+    "nombre_español": "Aperturas declinadas a un brazo con polea",
+    "gif": "/gif/Pecho/One-Arm-Decline-Cable-Fly-unscreen.gif",
+    "series": "3x4",
+    "descripcion": "Aperturas declinadas realizadas con un solo brazo utilizando polea"
+  },
+  {
+    "grupo": "pecho",
+    "nombre": "One Arm Kettlebell Chest Press on the Bench",
+    "nombre_español": "Press de pecho a un brazo con kettlebell en banco",
+    "gif": "/gif/Pecho/One-Arm-Kettlebell-Chest-Press-unscreen.gif",
+    "series": "3x4",
+    "descripcion": "Press de pecho unilateral con kettlebell realizado en banco"
+  },
+  {
+    "grupo": "pecho",
+    "nombre": "One Arm Medicine Ball Slam",
+    "nombre_español": "Golpe de balón medicinal a un brazo",
+    "gif": "/gif/Pecho/One-Arm-Medicine-Ball-Slam-unscreen.gif",
+    "series": "3x4",
+    "descripcion": "Ejercicio pliométrico de golpear balón medicinal con un brazo"
+  },
+  {
+    "grupo": "pecho",
+    "nombre": "One Arm Push Ups With Support",
+    "nombre_español": "Flexiones a un brazo con apoyo",
+    "gif": "/gif/Pecho/One-Arm-Push-Ups-With-Support-unscreen.gif",
+    "series": "3x4",
+    "descripcion": "Flexiones a un brazo con apoyo de la otra mano para asistencia"
+  },
+  {
+    "grupo": "pecho",
+    "nombre": "One Leg Push Up",
+    "nombre_español": "Flexiones a una pierna",
+    "gif": "/gif/Pecho/One-Leg-Push-Up-unscreen.gif",
+    "series": "3x4",
+    "descripcion": "Flexiones con una pierna elevada para mayor intensidad"
+  },
+  {
+    "grupo": "pecho",
+    "nombre": "parallel bar dip",
+    "nombre_español": "Fondos en paralelas",
+    "gif": "/gif/Pecho/parallel-bar-dip-unscreen.gif",
+    "series": "3x4",
+    "descripcion": "Fondos clásicos en barras paralelas para pecho y tríceps"
+  },
+  {
+    "grupo": "pecho",
+    "nombre": "Pec Deck Fly",
+    "nombre_español": "Aperturas en máquina - pecho mariposa",
+    "gif": "/gif/Pecho/Pec-Deck-Fly-unscreen.gif",
+    "series": "3x4",
+    "descripcion": "Aperturas de pecho en máquina de mariposa (Pec Deck)"
+  },
+  {
+    "grupo": "pecho",
+    "nombre": "Pike Push up",
+    "nombre_español": "Flexiones tipo pica",
+    "gif": "/gif/Pecho/Pike-Push-up-unscreen.gif",
+    "series": "3x4",
+    "descripcion": "Flexiones con cadera elevada en posición de pica para mayor enfoque en hombros"
+  },
+  {
+    "grupo": "pecho",
+    "nombre": "Planche Push Up",
+    "nombre_español": "Flexiones planche",
+    "gif": "/gif/Pecho/Planche-Push-Up-unscreen.gif",
+    "series": "3x4",
+    "descripcion": "Variación avanzada de flexiones imitando la posición de planche"
+  },
+  {
+    "grupo": "pecho",
+    "nombre": "Push Up Medicine Ball",
+    "nombre_español": "Flexiones con balón medicinal",
+    "gif": "/gif/Pecho/Push-Up-Medicine-Ball-unscreen.gif",
+    "series": "3x4",
+    "descripcion": "Flexiones realizadas sobre balón medicinal para mayor inestabilidad"
+  },
+  {
+    "grupo": "pecho",
+    "nombre": "Push Up Plus",
+    "nombre_español": "Flexiones plus",
+    "gif": "/gif/Pecho/Push-Up-Plus-unscreen.gif",
+    "series": "3x4",
+    "descripcion": "Flexiones con extensión adicional de escápulas al final del movimiento"
+  },
+
+  {
+    "grupo": "pecho",
+    "nombre": "Push up With Push up Bars",
+    "nombre_español": "Flexiones con barras de apoyo",
+    "gif": "/gif/Pecho/Push-up-With-Push-up-Bars-unscreen.gif",
+    "series": "3x4",
+    "descripcion": "Flexiones realizadas con barras de apoyo para mayor rango de movimiento"
+  },
+  {
+    "grupo": "pecho",
+    "nombre": "push up with rotation",
+    "nombre_español": "Flexiones con rotación",
+    "gif": "/gif/Pecho/push-up-with-rotation-unscreen.gif",
+    "series": "3x4",
+    "descripcion": "Flexiones combinadas con rotación del torso para trabajo core adicional"
+  },
+  {
+    "grupo": "pecho",
+    "nombre": "Push Up",
+    "nombre_español": "Flexiones",
+    "gif": "/gif/Pecho/Push-Up-unscreen.gif",
+    "series": "3x4",
+    "descripcion": "Ejercicio básico de flexiones para fortalecer pecho, hombros y tríceps"
+  },
+  {
+    "grupo": "pecho",
+    "nombre": "Reaction Ball Throw Agility Ball Drill",
+    "nombre_español": "Lanzamiento de balón de reacción",
+    "gif": "/gif/Pecho/Reaction-Ball-Throw-Agility-Ball-Drill-.gif",
+    "series": "3x4",
+    "descripcion": "Ejercicio de lanzamiento de balón de reacción para mejorar reflejos y potencia"
+  },
+  {
+    "grupo": "pecho",
+    "nombre": "Resistance Band Alternating Chest Fly",
+    "nombre_español": "Aperturas alternas con banda de resistencia",
+    "gif": "/gif/Pecho/Resistance-Band-Alternating-Ch-unscreen.gif",
+    "series": "3x4",
+    "descripcion": "Aperturas de pecho alternando brazos con banda elástica"
+  },
+  {
+    "grupo": "pecho",
+    "nombre": "Reverse Chest Stretch",
+    "nombre_español": "Estiramiento inverso de pecho",
+    "gif": "/gif/Pecho/Reverse-Chest-Stretch-unscreen.gif",
+    "series": "3x4",
+    "descripcion": "Estiramiento para pectorales con movimiento inverso"
+  },
+  {
+    "grupo": "pecho",
+    "nombre": "Reverse Dips",
+    "nombre_español": "Fondos inversos",
+    "gif": "/gif/Pecho/Reverse-Dips-unscreen.gif",
+    "series": "3x4",
+    "descripcion": "Variación de fondos con agarre inverso para diferente enfoque muscular"
+  },
+  {
+    "grupo": "pecho",
+    "nombre": "Reverse Grip Dumbbell Bench Press",
+    "nombre_español": "Press de banca con agarre inverso y mancuernas",
+    "gif": "/gif/Pecho/Reverse-Grip-Dumbbell-Bench-Pr-unscreen.gif",
+    "series": "3x4",
+    "descripcion": "Press de banca con mancuernas en agarre inverso (palmas hacia adentro)"
+  },
+  {
+    "grupo": "pecho",
+    "nombre": "Reverse Grip Incline Dumbbell Press",
+    "nombre_español": "Press inclinado con agarre inverso y mancuernas",
+    "gif": "/gif/Pecho/Reverse-Grip-Incline-Dumbbell--unscreen.gif",
+    "series": "3x4",
+    "descripcion": "Press inclinado con mancuernas en agarre inverso (palmas hacia adentro)"
+  },
+  {
+    "grupo": "pecho",
+    "nombre": "Reverse Push up",
+    "nombre_español": "Flexiones inversas",
+    "gif": "/gif/Pecho/Reverse-Push-up-unscreen.gif",
+    "series": "3x4",
+    "descripcion": "Variación de flexiones con agarre inverso para diferente estímulo muscular"
+  },
+  {
+    "grupo": "pecho",
+    "nombre": "Reverse Shoulder Stretch",
+    "nombre_español": "Estiramiento inverso de hombros",
+    "gif": "/gif/Pecho/Reverse-Shoulder-Stretch-unscreen.gif",
+    "series": "3x4",
+    "descripcion": "Estiramiento para hombros con movimiento inverso"
+  },
+  {
+    "grupo": "pecho",
+    "nombre": "Ring Dips",
+    "nombre_español": "Fondos en anillas",
+    "gif": "/gif/Pecho/Ring-Dips-unscreen.gif",
+    "series": "3x4",
+    "descripcion": "Fondos realizados en anillas para mayor inestabilidad y desafío"
+  },
+  {
+    "grupo": "pecho",
+    "nombre": "Roll Front Shoulder and Chest Lying on Floor",
+    "nombre_español": "Rodillo frontal para hombros y pecho en suelo",
+    "gif": "/gif/Pecho/Roll-Front-Shoulder-and-Chest--unscreen.gif",
+    "series": "3x4",
+    "descripcion": "Auto-liberación miofascial para pecho y hombros con rodillo en suelo"
+  },
+  {
+    "grupo": "pecho",
+    "nombre": "Seated Cable Chest Press",
+    "nombre_español": "Press de pecho sentado con polea",
+    "gif": "/gif/Pecho/Seated-Cable-Chest-Press-unscreen.gif",
+    "series": "3x4",
+    "descripcion": "Press de pecho realizado sentado utilizando poleas"
+  },
+  {
+    "grupo": "pecho",
+    "nombre": "Seated Cable Close Grip Chest Press",
+    "nombre_español": "Press de pecho sentado con agarre cerrado y polea",
+    "gif": "/gif/Pecho/Seated-Cable-Close-Grip-Chest--unscreen.gif",
+    "series": "3x4",
+    "descripcion": "Press de pecho con agarre cerrado realizado sentado utilizando poleas"
+  },
+  {
+    "grupo": "pecho",
+    "nombre": "Seated Chest Stretch",
+    "nombre_español": "Estiramiento de pecho sentado",
+    "gif": "/gif/Pecho/Seated-Chest-Stretch-unscreen.gif",
+    "series": "3x4",
+    "descripcion": "Estiramiento para pectorales realizado en posición sentada"
+  },
+  {
+    "grupo": "pecho",
+    "nombre": "Shoulder Stretch Behind Back",
+    "nombre_español": "Estiramiento de hombros por detrás de la espalda",
+    "gif": "/gif/Pecho/Shoulder-Stretch-Behind-Back-unscreen.gif",
+    "series": "3x4",
+    "descripcion": "Estiramiento para hombros llevando los brazos por detrás de la espalda"
+  },
+  {
+    "grupo": "pecho",
+    "nombre": "Shoulder Tap Push up",
+    "nombre_español": "Flexiones con toque a los hombros",
+    "gif": "/gif/Pecho/Shoulder-Tap-Push-up-unscreen.gif",
+    "series": "3x4",
+    "descripcion": "Flexiones combinadas con toque alterno a cada hombro"
+  },
+  {
+    "grupo": "pecho",
+    "nombre": "Single Arm Cable Crossover",
+    "nombre_español": "Cruces a un brazo con polea",
+    "gif": "/gif/Pecho/Single-Arm-Cable-Crossover-unscreen.gif",
+    "series": "3x4",
+    "descripcion": "Cruces de pecho realizados con un solo brazo utilizando polea"
+  },
+  {
+    "grupo": "pecho",
+    "nombre": "Single Arm Push Up on Medicine Ball",
+    "nombre_español": "Flexión a un brazo sobre balón medicinal",
+    "gif": "/gif/Pecho/Single-Arm-Push-Up-on-Medicine-unscreen.gif",
+    "series": "3x4",
+    "descripcion": "Flexión a un brazo realizada sobre balón medicinal para mayor desafío"
+  },
+  {
+    "grupo": "pecho",
+    "nombre": "Single Arm Push up",
+    "nombre_español": "Flexiones a un brazo",
+    "gif": "/gif/Pecho/Single-Arm-Push-up-unscreen.gif",
+    "series": "3x4",
+    "descripcion": "Variación avanzada de flexiones realizadas con un solo brazo"
+  },
+  {
+    "grupo": "pecho",
+    "nombre": "Single Arm Raise Push up",
+    "nombre_español": "Flexiones con elevación a un brazo",
+    "gif": "/gif/Pecho/Single-Arm-Raise-Push-up-unscreen.gif",
+    "series": "3x4",
+    "descripcion": "Flexiones combinadas con elevación de un brazo al final del movimiento"
+  },
+  {
+    "grupo": "pecho",
+    "nombre": "Single Dumbbell Close grip Press",
+    "nombre_español": "Press con agarre cerrado y una mancuerna",
+    "gif": "/gif/Pecho/Single-Dumbbell-Close-grip-Pre-unscreen.gif",
+    "series": "3x4",
+    "descripcion": "Press con una sola mancuerna manteniendo agarre cerrado"
+  },
+  {
+    "grupo": "pecho",
+    "nombre": "Smith Machine Bench Press",
+    "nombre_español": "Press de banca en máquina Smith",
+    "gif": "/gif/Pecho/Smith-Machine-Bench-Press-unscreen.gif",
+    "series": "3x4",
+    "descripcion": "Press de banca realizado en máquina Smith para mayor seguridad"
+  },
+  {
+    "grupo": "pecho",
+    "nombre": "Smith Machine Decline Bench Press",
+    "nombre_español": "Press declinado en máquina Smith",
+    "gif": "/gif/Pecho/Smith-Machine-Decline-Bench-Pr-unscreen.gif",
+    "series": "3x4",
+    "descripcion": "Press de banca declinado en máquina Smith"
+  },
+  {
+    "grupo": "pecho",
+    "nombre": "Smith Machine Hex Press",
+    "nombre_español": "Press  en máquina Smith con barra sobre banco ",
+    "gif": "/gif/Pecho/Smith-Machine-Hex-Press-unscreen.gif",
+    "series": "3x4",
+    "descripcion": "Press con mancuernas en posición hexagonal (juntas) en máquina Smith"
+  },
+  {
+    "grupo": "pecho",
+    "nombre": "Smith Machine Incline Bench Press",
+    "nombre_español": "Press inclinado en máquina Smith",
+    "gif": "/gif/Pecho/Smith-Machine-Incline-Bench-Pr-unscreen.gif",
+    "series": "3x4",
+    "descripcion": "Press de banca inclinado en máquina Smith"
+  },
+  {
+    "grupo": "pecho",
+    "nombre": "stability ball decline push ups",
+    "nombre_español": "Flexiones declinadas sobre balón de estabilidad",
+    "gif": "/gif/Pecho/stability-ball-decline-push-up-unscreen.gif",
+    "series": "3x4",
+    "descripcion": "Flexiones declinadas realizadas sobre balón de estabilidad para mayor desafío"
+  },
+  {
+    "grupo": "pecho",
+    "nombre": "stability ball push up",
+    "nombre_español": "Flexiones sobre balón de estabilidad",
+    "gif": "/gif/Pecho/stability-ball-push-up-unscreen.gif",
+    "series": "3x4",
+    "descripcion": "Flexiones realizadas sobre balón de estabilidad para trabajar equilibrio"
+  },
+  {
+    "grupo": "pecho",
+    "nombre": "Standing incline chest press",
+    "nombre_español": "Press inclinado de pie",
+    "gif": "/gif/Pecho/Standing-incline-chest-press-unscreen.gif",
+    "series": "3x4",
+    "descripcion": "Press de pecho inclinado realizado en posición de pie"
+  },
+  {
+    "grupo": "pecho",
+    "nombre": "Standing Medicine Ball Chest Pass",
+    "nombre_español": "Pase de pecho con balón medicinal de pie",
+    "gif": "/gif/Pecho/Standing-Medicine-Ball-Chest-Pass-unscreen.gif",
+    "series": "3x4",
+    "descripcion": "Ejercicio pliométrico de pase de pecho con balón medicinal desde posición de pie"
+  },
+  {
+    "grupo": "pecho",
+    "nombre": "Standing one arm chest stretch",
+    "nombre_español": "Estiramiento de pecho a un brazo de pie",
+    "gif": "/gif/Pecho/Standing-one-arm-chest-stretch-unscreen.gif",
+    "series": "3x4",
+    "descripcion": "Estiramiento unilateral para pectorales realizado de pie"
+  },
+  {
+    "grupo": "pecho",
+    "nombre": "Straight Bar Dip",
+    "nombre_español": "Fondos en barra recta",
+    "gif": "/gif/Pecho/Straight-Bar-Dip-unscreen.gif",
+    "series": "3x4",
+    "descripcion": "Fondos realizados en barra recta para trabajar pecho y tríceps"
+  },
+  {
+    "grupo": "pecho",
+    "nombre": "Supine Medicine Ball Chest Throw exercise",
+    "nombre_español": "Lanzamiento de pecho con balón medicinal tumbado",
+    "gif": "/gif/Pecho/Supine-Medicine-Ball-Chest-Thr-unscreen.gif",
+    "series": "3x4",
+    "descripcion": "Ejercicio pliométrico de lanzamiento de balón medicinal desde posición tumbada"
+  },
+  {
+    "grupo": "pecho",
+    "nombre": "Suspended Push Up",
+    "nombre_español": "Flexiones suspendidas",
+    "gif": "/gif/Pecho/Suspended-Push-Up-unscreen.gif",
+    "series": "3x4",
+    "descripcion": "Flexiones realizadas con suspensión (TRX o similar) para mayor inestabilidad"
+  },
+  {
+    "grupo": "pecho",
+    "nombre": "Svend Press",
+    "nombre_español": "Press Svend",
+    "gif": "/gif/Pecho/Svend-Press-unscreen.gif",
+    "series": "3x4",
+    "descripcion": "Ejercicio de press con discos o placas para aducción de pectorales"
+  },
+  {
+    "grupo": "pecho",
+    "nombre": "Trx Chest Flyes",
+    "nombre_español": "Aperturas con TRX",
+    "gif": "/gif/Pecho/Trx-Chest-Flyes-unscreen.gif",
+    "series": "3x4",
+    "descripcion": "Aperturas de pecho realizadas con sistema de suspensión TRX"
+  },
+  {
+    "grupo": "pecho",
+    "nombre": "Trx Chest Press",
+    "nombre_español": "Press de pecho con TRX",
+    "gif": "/gif/Pecho/Trx-Chest-Press-unscreen.gif",
+    "series": "3x4",
+    "descripcion": "Press de pecho realizado con sistema de suspensión TRX"
+  },
+  {
+    "grupo": "pecho",
+    "nombre": "Wall Push ups",
+    "nombre_español": "Flexiones contra la pared",
+    "gif": "/gif/Pecho/Wall-Push-ups-unscreen.gif",
+    "series": "3x4",
+    "descripcion": "Flexiones asistidas realizadas contra una pared para principiantes"
+  },
+  {
+    "grupo": "pecho",
+    "nombre": "Weighted Push up",
+    "nombre_español": "Flexiones con peso",
+    "gif": "/gif/Pecho/Weighted-Push-up-unscreen.gif",
+    "series": "3x4",
+    "descripcion": "Flexiones con peso adicional para mayor resistencia"
+  },
+  {
+    "grupo": "pecho",
+    "nombre": "Weighted Vest Push up",
+    "nombre_español": "Flexiones con chaleco lastrado",
+    "gif": "/gif/Pecho/Weighted-Vest-Push-up-unscreen.gif",
+    "series": "3x4",
+    "descripcion": "Flexiones realizadas con chaleco de peso para mayor intensidad"
+  },
+  {
+    "grupo": "pecho",
+    "nombre": "Wide Grip Barbell Bench Press",
+    "nombre_español": "Pecho Plano",
+    "gif": "/gif/Pecho/Wide-Grip-Barbell-Bench-Press-unscreen.gif",
+    "series": "3x4",
+    "descripcion": "Press de banca con barra utilizando agarre amplio para mayor enfoque en pecho"
+  },
+  {
+    "grupo": "pecho",
+    "nombre": "Wide Grip Reverse Bench Press",
+    "nombre_español": "Press de banca inverso con agarre amplio",
+    "gif": "/gif/Pecho/Wide-Grip-Reverse-Bench-Press-unscreen.gif",
+    "series": "3x4",
+    "descripcion": "Press de banca con agarre amplio y manos en posición inversa"
+  },
+  {
+    "grupo": "pecho",
+    "nombre": "Remo con bandas elásticas de pie",
+    "nombre_español": "Remo con bandas elasticas de pie",
+    "gif": "/gif/Pecho/RemoConBandaParado.png",
+    "series": "3x4",
+    "descripcion": "Remo al pecho utilizando bandas elásticas para mayor enfoque en la parte superior del pecho"
+  }
+]

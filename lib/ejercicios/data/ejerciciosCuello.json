@@ -1,0 +1,210 @@
+[
+  {
+    "grupo": "Cuello",
+    "nombre": "abdominal stretch",
+    "gif": "/gif/cuello/abdominal-stretch-unscreen.gif",
+    "series": "3x4",
+    "nombre_español": "estiramiento abdominal",
+    "descripcion": "Ejercicio para fortalecer los músculos abdominales y el cuello"
+  },
+  {
+    "grupo": "Cuello",
+    "nombre": "Cable Seated Neck Extension with head harness",
+    "gif": "/gif/cuello/Cable-Seated-Neck-Extension-wi-unscreen.gif",
+    "series": "3x4",
+    "nombre_español": "Extensión de cuello con cable sentado y arnés",
+    "descripcion": "Ejercicio para fortalecer la parte posterior del cuello usando máquina de cable"
+  },
+  {
+    "grupo": "Cuello",
+    "nombre": "Cable Seated Neck Flexion with head harness",
+    "gif": "/gif/cuello/Cable-Seated-Neck-Flexion-with-unscreen.gif",
+    "series": "3x4",
+    "nombre_español": "Flexión de cuello con cable sentado y arnés",
+    "descripcion": "Ejercicio para fortalecer la parte frontal del cuello usando máquina de cable"
+  },
+  {
+    "grupo": "Cuello",
+    "nombre": "Chin Tuck",
+    "gif": "/gif/cuello/Chin-Tuck-unscreen.gif",
+    "series": "3x4",
+    "nombre_español": "Mentón al pecho",
+    "descripcion": "Ejercicio básico para fortalecer y alinear el cuello"
+  },
+  {
+    "grupo": "Cuello",
+    "nombre": "Diagonal Neck Stretch 360x360",
+    "gif": "/gif/cuello/Diagonal-Neck-Stretch.png",
+    "series": "3x4",
+    "nombre_español": "Estiramiento diagonal de cuello 360°",
+    "descripcion": "Ejercicio de movilidad y estiramiento para el cuello en todas direcciones"
+  },
+  {
+    "grupo": "Cuello",
+    "nombre": "Dumbbell Seated Gittleson Shrug",
+    "gif": "/gif/cuello/Dumbbell-Seated-Gittleson-Shru-unscreen.gif",
+    "series": "3x4",
+    "nombre_español": "Encogimiento Gittleson sentado con mancuernas",
+    "descripcion": "Variación de encogimientos para trabajar trapecios y cuello"
+  },
+  {
+    "grupo": "Cuello",
+    "nombre": "Fish Pose Matsyasana",
+    "gif": "/gif/cuello/Fish-Pose-Matsyasana-unscreen.gif",
+    "series": "3x4",
+    "nombre_español": "Postura del pez (Matsyasana)",
+    "descripcion": "Postura de yoga que estira y fortalece el cuello y la columna"
+  },
+  {
+    "grupo": "Cuello",
+    "nombre": "Floor Hyperextension 1",
+    "gif": "/gif/cuello/Floor-Hyperextension-1-unscreen.gif",
+    "series": "3x4",
+    "nombre_español": "Hiperextensión en suelo 1",
+    "descripcion": "Ejercicio para fortalecer la musculatura posterior del cuello y espalda"
+  },
+  {
+    "grupo": "Cuello",
+    "nombre": "Front and Back Neck Stretch",
+    "gif": "/gif/cuello/Front-and-Back-Neck-Stretch-unscreen.gif",
+    "series": "3x4",
+    "nombre_español": "Estiramiento frontal y posterior de cuello",
+    "descripcion": "Ejercicio para estirar tanto la parte delantera como trasera del cuello"
+  },
+  {
+    "grupo": "Cuello",
+    "nombre": "Keeling Neck Stretch",
+    "gif": "/gif/cuello/Kneeling-Neck-Stretch-unscreen.gif",
+    "series": "3x4",
+    "nombre_español": "Estiramiento de cuello arrodillado",
+    "descripcion": "Variación de estiramiento para el cuello en posición de rodillas"
+  },
+  {
+    "grupo": "Cuello",
+    "nombre": "Lever Neck Extension plate loaded",
+    "gif": "/gif/cuello/Lever-Neck-Extension-plate-loa-unscreen.gif",
+    "series": "3x4",
+    "nombre_español": "Extensión de cuello con palanca y peso",
+    "descripcion": "Ejercicio con máquina para fortalecer la extensión del cuello"
+  },
+  {
+    "grupo": "Cuello",
+    "nombre": "Lever Neck Right Side Flexion plate loaded",
+    "gif": "/gif/cuello/Lever-Neck-Right-Side-Flexion--unscreen.gif",
+    "series": "3x4",
+    "nombre_español": "Flexión lateral derecha de cuello con palanca",
+    "descripcion": "Ejercicio para fortalecer los músculos laterales del cuello"
+  },
+  {
+    "grupo": "Cuello",
+    "nombre": "Lying Weighted Lateral Neck Flexion",
+    "gif": "/gif/cuello/Lying-Weighted-Lateral-Neck-Fl-unscreen.gif",
+    "series": "3x4",
+    "nombre_español": "Flexión lateral de cuello con peso acostado",
+    "descripcion": "Ejercicio para desarrollar los flexores laterales del cuello"
+  },
+  {
+    "grupo": "Cuello",
+    "nombre": "Lying Weighted Neck Extension",
+    "gif": "/gif/cuello/Lying-Weighted-Neck-Extension-unscreen.gif",
+    "series": "3x4",
+    "nombre_español": "Extensión de cuello con peso acostado",
+    "descripcion": "Ejercicio para fortalecer los extensores del cuello"
+  },
+  {
+    "grupo": "Cuello",
+    "nombre": "Lying Weighted Neck Flexion",
+    "gif": "/gif/cuello/Lying-Weighted-Neck-Flexion-unscreen.gif",
+    "series": "3x4",
+    "nombre_español": "Flexión de cuello con peso acostado",
+    "descripcion": "Ejercicio para desarrollar los flexores frontales del cuello"
+  },
+  {
+    "grupo": "Cuello",
+    "nombre": "Neck Extension Stretching 360x360",
+    "gif": "/gif/cuello/Neck-Extension-Stretching.png",
+    "series": "3x4",
+    "nombre_español": "Estiramiento de extensión de cuello 360°",
+    "descripcion": "Ejercicio completo de movilidad para la extensión del cuello"
+  },
+  {
+    "grupo": "Cuello",
+    "nombre": "Neck Flexion Stretch 360x360",
+    "gif": "/gif/cuello/Neck-Flexion-Stretch.png",
+    "series": "3x4",
+    "nombre_español": "Estiramiento de flexión de cuello 360°",
+    "descripcion": "Ejercicio completo de movilidad para la flexión del cuello"
+  },
+  {
+    "grupo": "Cuello",
+    "nombre": "Prone Cervical Extension",
+    "gif": "/gif/cuello/Prone-Cervical-Extension-unscreen.gif",
+    "series": "3x4",
+    "nombre_español": "Extensión cervical en pronación",
+    "descripcion": "Ejercicio para fortalecer los músculos cervicales posteriores"
+  },
+  {
+    "grupo": "Cuello",
+    "nombre": "Rotating Neck Stretch",
+    "gif": "/gif/cuello/Rotating-Neck-Stretch-unscreen.gif",
+    "series": "3x4",
+    "nombre_español": "Estiramiento rotatorio de cuello",
+    "descripcion": "Ejercicio para mejorar la rotación y movilidad del cuello"
+  },
+  {
+    "grupo": "Cuello",
+    "nombre": "Side Neck Stretch",
+    "gif": "/gif/cuello/Side-Neck-Stretch-unscreen.gif",
+    "series": "3x4",
+    "nombre_español": "Estiramiento lateral de cuello",
+    "descripcion": "Ejercicio básico para estirar los laterales del cuello"
+  },
+  {
+    "grupo": "Cuello",
+    "nombre": "Side Push Neck Stretch",
+    "gif": "/gif/cuello/Side-Push-Neck-Stretch-unscreen.gif",
+    "series": "3x4",
+    "nombre_español": "Estiramiento de cuello con empuje lateral",
+    "descripcion": "Variación más intensa de estiramiento lateral para el cuello"
+  },
+  {
+    "grupo": "Cuello",
+    "nombre": "Sphinx Stretch",
+    "gif": "/gif/cuello/Sphinx-Stretch-unscreen.gif",
+    "series": "3x4",
+    "nombre_español": "Estiramiento de la esfinge",
+    "descripcion": "Postura que estira y fortalece toda la columna cervical"
+  },
+  {
+    "grupo": "Cuello",
+    "nombre": "Superman exercise",
+    "gif": "/gif/cuello/Superman-exercise-unscreen.gif",
+    "series": "3x4",
+    "nombre_español": "Ejercicio de superman",
+    "descripcion": "Ejercicio completo para fortalecer espalda y cuello"
+  },
+  {
+    "grupo": "Cuello",
+    "nombre": "Weighted Lying Neck Extension",
+    "gif": "/gif/cuello/Weighted-Lying-Neck-Extension-unscreen.gif",
+    "series": "3x4",
+    "nombre_español": "Extensión de cuello con peso acostado",
+    "descripcion": "Variación con peso para fortalecer la extensión del cuello"
+  },
+  {
+    "grupo": "Cuello",
+    "nombre": "Weighted Lying Neck Flexion",
+    "gif": "/gif/cuello/Weighted-Lying-Neck-Flexion-unscreen.gif",
+    "series": "3x4",
+    "nombre_español": "Flexión de cuello con peso acostado",
+    "descripcion": "Variación con peso para trabajar los flexores del cuello"
+  },
+  {
+    "grupo": "Cuello",
+    "nombre": "Weighted Neck Harness Extension",
+    "gif": "/gif/cuello/Weighted-Neck-Harness-Extensio-unscreen.gif",
+    "series": "3x4",
+    "nombre_español": "Extensión de cuello con arnés y peso",
+    "descripcion": "Ejercicio avanzado para desarrollar los músculos del cuello"
+  }
+]

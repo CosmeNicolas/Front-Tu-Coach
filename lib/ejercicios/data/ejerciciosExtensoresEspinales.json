@@ -1,0 +1,435 @@
+[
+  {
+    "grupo": "Extensores Espinales",
+    "nombre": "arm leg raise",
+    "gif": "/gif/extensores-espinales/arm-leg-raise-unscreen.gif",
+    "series": "3x4",
+    "nombre_español": "Elevación de brazo y pierna",
+    "descripcion": "Ejercicio para fortalecer los músculos extensores de la columna mediante la elevación alterna de brazos y piernas"
+  },
+  {
+    "grupo": "Extensores Espinales",
+    "nombre": "Barbell Bent Over Row",
+    "gif": "/gif/extensores-espinales/Barbell-Bent-Over-Row-unscreen.gif",
+    "series": "3x4",
+    "nombre_español": "Remo inclinado con barra",
+    "descripcion": "Ejercicio para fortalecer la espalda y extensores espinales mediante el levantamiento de una barra en posición inclinada"
+  },
+  {
+    "grupo": "Extensores Espinales",
+    "nombre": "Barbell Deadlift",
+    "gif": "/gif/extensores-espinales/Barbell-Deadlift-unscreen.gif",
+    "series": "3x4",
+    "nombre_español": "Peso muerto con barra",
+    "descripcion": "Ejercicio fundamental para fortalecer la cadena posterior y los extensores de la columna vertebral"
+  },
+  {
+    "grupo": "Extensores Espinales",
+    "nombre": "Barbell Good Morning",
+    "gif": "/gif/extensores-espinales/Barbell-Good-Morning-unscreen.gif",
+    "series": "3x4",
+    "nombre_español": "Buenos días con barra",
+    "descripcion": "Ejercicio para fortalecer los extensores espinales mediante flexión de cadera con barra sobre los hombros"
+  },
+
+  {
+    "grupo": "Extensores Espinales",
+    "nombre": "Barbell Romanian Deadlift",
+    "gif": "/gif/extensores-espinales/Barbell-Romanian-Deadlift-unscreen.gif",
+    "series": "3x4",
+    "nombre_español": "Peso muerto rumano con barra",
+    "descripcion": "Variante de peso muerto que enfatiza el trabajo de isquiotibiales y extensores espinales"
+  },
+  {
+    "grupo": "Extensores Espinales",
+    "nombre": "Barbell Single Leg Deadlift",
+    "gif": "/gif/extensores-espinales/Barbell-Single-Leg-Deadlift-unscreen.gif",
+    "series": "3x4",
+    "nombre_español": "Peso muerto a una pierna con barra",
+    "descripcion": "Ejercicio unilateral para fortalecer extensores espinales y mejorar el equilibrio"
+  },
+  {
+    "grupo": "Extensores Espinales",
+    "nombre": "Barbell Sumo Deadlift",
+    "gif": "/gif/extensores-espinales/Barbell-Sumo-Deadlift-unscreen.gif",
+    "series": "3x4",
+    "nombre_español": "Peso muerto sumo con barra",
+    "descripcion": "Variante de peso muerto con stance amplio para trabajar extensores espinales"
+  },
+  {
+    "grupo": "Extensores Espinales",
+    "nombre": "Bent Over Dumbbell Row",
+    "gif": "/gif/extensores-espinales/Bent-Over-Dumbbell-Row-unscreen.gif",
+    "series": "3x4",
+    "nombre_español": "Remo inclinado con mancuernas",
+    "descripcion": "Ejercicio para fortalecer la espalda y extensores espinales con mancuernas"
+  },
+  {
+    "grupo": "Extensores Espinales",
+    "nombre": "Bird Dog",
+    "gif": "/gif/extensores-espinales/Bird-Dog-unscreen.gif",
+    "series": "3x4",
+    "nombre_español": "Perro pájaro",
+    "descripcion": "Ejercicio de core que fortalece los extensores espinales mediante patrón cruzado"
+  },
+  {
+    "grupo": "Extensores Espinales",
+    "nombre": "Bow Yoga Pose",
+    "gif": "/gif/extensores-espinales/Bow-Yoga-Pose-unscreen.gif",
+    "series": "3x4",
+    "nombre_español": "Postura del arco en yoga",
+    "descripcion": "Asana de yoga que fortalece y estira los extensores de la columna"
+  },
+  {
+    "grupo": "Extensores Espinales",
+    "nombre": "Cable Pull Through",
+    "gif": "/gif/extensores-espinales/Cable-Pull-Through-unscreen.gif",
+    "series": "3x4",
+    "nombre_español": "Empuje de cable entre piernas",
+    "descripcion": "Ejercicio para glúteos y extensores espinales con máquina de cable"
+  },
+  {
+    "grupo": "Extensores Espinales",
+    "nombre": "cat cow",
+    "gif": "/gif/extensores-espinales/cat-cow-unscreen.gif",
+    "series": "3x4",
+    "nombre_español": "Gato-vaca",
+    "descripcion": "Ejercicio de movilidad espinal que alterna flexión y extensión de la columna"
+  },
+  {
+    "grupo": "Extensores Espinales",
+    "nombre": "Dhanurasana Rocking Bow Pose",
+    "gif": "/gif/extensores-espinales/Dhanurasana-Rocking-Bow-Pose-unscreen.gif",
+    "series": "3x4",
+    "nombre_español": "Postura del arco mecedora",
+    "descripcion": "Variante dinámica de la postura del arco para fortalecer extensores espinales"
+  },
+  {
+    "grupo": "Extensores Espinales",
+    "nombre": "dumbbell deadlifts",
+    "gif": "/gif/extensores-espinales/dumbbell-deadlifts-unscreen.gif",
+    "series": "3x4",
+    "nombre_español": "Peso muerto con mancuernas",
+    "descripcion": "Variante de peso muerto para fortalecer extensores espinales usando mancuernas"
+  },
+  {
+    "grupo": "Extensores Espinales",
+    "nombre": "Dumbbell Good Morning",
+    "gif": "/gif/extensores-espinales/Dumbbell-Good-Morning-unscreen.gif",
+    "series": "3x4",
+    "nombre_español": "Buenos días con mancuernas",
+    "descripcion": "Ejercicio para extensores espinales con mancuernas sostenidas en los hombros"
+  },
+  {
+    "grupo": "Extensores Espinales",
+    "nombre": "Dumbbell Pull Through",
+    "gif": "/gif/extensores-espinales/Dumbbell-Pull-Through-unscreen.gif",
+    "series": "3x4",
+    "nombre_español": "Empuje de mancuerna entre piernas",
+    "descripcion": "Ejercicio para glúteos y extensores espinales con una mancuerna"
+  },
+  {
+    "grupo": "Extensores Espinales",
+    "nombre": "Dumbbell Romanian Deadlift",
+    "gif": "/gif/extensores-espinales/Dumbbell-Romanian-Deadlift-unscreen.gif",
+    "series": "3x4",
+    "nombre_español": "Peso muerto rumano con mancuernas",
+    "descripcion": "Variante de peso muerto rumano para extensores espinales con mancuernas"
+  },
+  {
+    "grupo": "Extensores Espinales",
+    "nombre": "Dumbbell Single Leg Deadlift",
+    "gif": "/gif/extensores-espinales/Dumbbell-Single-Leg-Deadlift-unscreen.gif",
+    "series": "3x4",
+    "nombre_español": "Peso muerto a una pierna con mancuernas",
+    "descripcion": "Ejercicio unilateral para extensores espinales con mancuernas"
+  },
+  {
+    "grupo": "Extensores Espinales",
+    "nombre": "Dumbbell Straight Leg Deadlift",
+    "gif": "/gif/extensores-espinales/Dumbbell-Straight-Leg-Deadlift-unscreen.gif",
+    "series": "3x4",
+    "nombre_español": "Peso muerto piernas rectas con mancuernas",
+    "descripcion": "Variante de peso muerto con piernas rectas para extensores espinales"
+  },
+  {
+    "grupo": "Extensores Espinales",
+    "nombre": "dumbbell sumo deadlift",
+    "gif": "/gif/extensores-espinales/dumbbell-sumo-deadlift-unscreen.gif",
+    "series": "3x4",
+    "nombre_español": "Peso muerto sumo con mancuernas",
+    "descripcion": "Variante sumo de peso muerto para extensores espinales con mancuernas"
+  },
+  {
+    "grupo": "Extensores Espinales",
+    "nombre": "Flat Bench Hyperextension",
+    "gif": "/gif/extensores-espinales/Flat-Bench-Hyperextension-unscreen.gif",
+    "series": "3x4",
+    "nombre_español": "Hiperextensión en banco plano",
+    "descripcion": "Ejercicio para extensores espinales realizado en banco plano"
+  },
+  {
+    "grupo": "Extensores Espinales",
+    "nombre": "Floor Hyperextension 1",
+    "gif": "/gif/extensores-espinales/Floor-Hyperextension-1-unscreen.gif",
+    "series": "3x4",
+    "nombre_español": "Hiperextensión en suelo 1",
+    "descripcion": "Variante de hiperextensión para fortalecer la espalda baja en el suelo"
+  },
+  {
+    "grupo": "Extensores Espinales",
+    "nombre": "Glute Ham Raise",
+    "gif": "/gif/extensores-espinales/Glute-Ham-Raise-unscreen.gif",
+    "series": "3x4",
+    "nombre_español": "Elevación de glúteos e isquios",
+    "descripcion": "Ejercicio avanzado para cadena posterior y extensores espinales"
+  },
+  {
+    "grupo": "Extensores Espinales",
+    "nombre": "Good Morning With Resistance Band",
+    "gif": "/gif/extensores-espinales/Good-Morning-With-Resistance-B-unscreen.gif",
+    "series": "3x4",
+    "nombre_español": "Buenos días con banda de resistencia",
+    "descripcion": "Variante del ejercicio buenos días usando banda elástica"
+  },
+  {
+    "grupo": "Extensores Espinales",
+    "nombre": "hyperextension",
+    "gif": "/gif/extensores-espinales/hyperextension-unscreen.gif",
+    "series": "3x4",
+    "nombre_español": "Hiperextensión",
+    "descripcion": "Ejercicio clásico para fortalecer los extensores de la columna vertebral"
+  },
+  {
+    "grupo": "Extensores Espinales",
+    "nombre": "kettlebell deadlift",
+    "gif": "/gif/extensores-espinales/kettlebell-deadlift-unscreen.gif",
+    "series": "3x4",
+    "nombre_español": "Peso muerto con kettlebell",
+    "descripcion": "Variante de peso muerto para extensores espinales usando kettlebell"
+  },
+  {
+    "grupo": "Extensores Espinales",
+    "nombre": "Kettlebell Figure 8",
+    "gif": "/gif/extensores-espinales/Kettlebell-Figure-8-unscreen.gif",
+    "series": "3x4",
+    "nombre_español": "Figura 8 con kettlebell",
+    "descripcion": "Ejercicio dinámico que involucra core y extensores espinales"
+  },
+  {
+    "grupo": "Extensores Espinales",
+    "nombre": "Kettlebell Single Leg Deadlift",
+    "gif": "/gif/extensores-espinales/Kettlebell-Single-Leg-Deadlift-unscreen.gif",
+    "series": "3x4",
+    "nombre_español": "Peso muerto a una pierna con kettlebell",
+    "descripcion": "Variante unilateral de peso muerto con kettlebell"
+  },
+  {
+    "grupo": "Extensores Espinales",
+    "nombre": "Kneeling Back Rotation Stretch",
+    "gif": "/gif/extensores-espinales/Kneeling-Back-Rotation-Stretch-unscreen.gif",
+    "series": "3x4",
+    "nombre_español": "Estiramiento rotacional de espalda de rodillas",
+    "descripcion": "Ejercicio de movilidad para la columna vertebral"
+  },
+  {
+    "grupo": "Extensores Espinales",
+    "nombre": "Kneeling T spine Rotation",
+    "gif": "/gif/extensores-espinales/Kneeling-T-spine-Rotation-unscreen.gif",
+    "series": "3x4",
+    "nombre_español": "Rotación de columna torácica de rodillas",
+    "descripcion": "Ejercicio para mejorar movilidad de columna torácica"
+  },
+  {
+    "grupo": "Extensores Espinales",
+    "nombre": "Lying Upper Body Rotation",
+    "gif": "/gif/extensores-espinales/Lying-Upper-Body-Rotation-unscreen.gif",
+    "series": "3x4",
+    "nombre_español": "Rotación de torso superior acostado",
+    "descripcion": "Ejercicio para movilidad espinal en posición acostada"
+  },
+  {
+    "grupo": "Extensores Espinales",
+    "nombre": "Pike to Cobra",
+    "gif": "/gif/extensores-espinales/Pike-to-Cobra-unscreen.gif",
+    "series": "3x4",
+    "nombre_español": "De pike a cobra",
+    "descripcion": "Transición de yoga que fortalece extensores espinales"
+  },
+  {
+    "grupo": "Extensores Espinales",
+    "nombre": "push up with rotation",
+    "gif": "/gif/extensores-espinales/push-up-with-rotation-unscreen.gif",
+    "series": "3x4",
+    "nombre_español": "Flexión con rotación",
+    "descripcion": "Variante de flexión que incorpora rotación para trabajar core y espalda"
+  },
+  {
+    "grupo": "Extensores Espinales",
+    "nombre": "Reverse Hyperextension Machine",
+    "gif": "/gif/extensores-espinales/Reverse-Hyperextension-Machine-unscreen.gif",
+    "series": "3x4",
+    "nombre_español": "Hiperextensión inversa en máquina",
+    "descripcion": "Ejercicio para extensores espinales usando máquina especializada"
+  },
+  {
+    "grupo": "Extensores Espinales",
+    "nombre": "Reverse Hyperextensions",
+    "gif": "/gif/extensores-espinales/Reverse-Hyperextensions-unscreen.gif",
+    "series": "3x4",
+    "nombre_español": "Hiperextensiones inversas",
+    "descripcion": "Variante de hiperextensión que trabaja glúteos y espalda baja"
+  },
+  {
+    "grupo": "Extensores Espinales",
+    "nombre": "Roll Upper Back",
+    "gif": "/gif/extensores-espinales/Roll-Upper-Back-unscreen.gif",
+    "series": "3x4",
+    "nombre_español": "Rodamiento de espalda alta",
+    "descripcion": "Ejercicio de movilidad para columna torácica"
+  },
+  {
+    "grupo": "Extensores Espinales",
+    "nombre": "Rolling Like a Ball crab",
+    "gif": "/gif/extensores-espinales/Rolling-Like-a-Ball-crab-unscreen.gif",
+    "series": "3x4",
+    "nombre_español": "Rodar como una pelota (cangrejo)",
+    "descripcion": "Ejercicio de Pilates para movilidad espinal"
+  },
+  {
+    "grupo": "Extensores Espinales",
+    "nombre": "seated back extension",
+    "gif": "/gif/extensores-espinales/seated-back-extension-unscreen.gif",
+    "series": "3x4",
+    "nombre_español": "Extensión de espalda sentado",
+    "descripcion": "Variante sentada de extensión para columna vertebral"
+  },
+  {
+    "grupo": "Extensores Espinales",
+    "nombre": "Seated Cable Rope Row",
+    "gif": "/gif/extensores-espinales/Seated-Cable-Rope-Row-unscreen.gif",
+    "series": "3x4",
+    "nombre_español": "Remo sentado con cuerda de cable",
+    "descripcion": "Ejercicio para espalda usando polea y cuerda"
+  },
+  {
+    "grupo": "Extensores Espinales",
+    "nombre": "Seated Hamstring Stretch",
+    "gif": "/gif/extensores-espinales/Seated-Hamstring-Stretch-unscreen.gif",
+    "series": "3x4",
+    "nombre_español": "Estiramiento de isquios sentado",
+    "descripcion": "Ejercicio de flexibilidad para cadena posterior"
+  },
+  {
+    "grupo": "Extensores Espinales",
+    "nombre": "Seated Toe Touches",
+    "gif": "/gif/extensores-espinales/Seated-Toe-Touches-unscreen.gif",
+    "series": "3x4",
+    "nombre_español": "Toques de dedos sentado",
+    "descripcion": "Ejercicio de flexión hacia adelante en posición sentada"
+  },
+  {
+    "grupo": "Extensores Espinales",
+    "nombre": "Side Plank Rotation",
+    "gif": "/gif/extensores-espinales/Side-Plank-Rotation-unscreen.gif",
+    "series": "3x4",
+    "nombre_español": "Rotación en plancha lateral",
+    "descripcion": "Variante de plancha que trabaja oblicuos y extensores espinales"
+  },
+  {
+    "grupo": "Extensores Espinales",
+    "nombre": "Single Leg Reverse Hyperextension",
+    "gif": "/gif/extensores-espinales/Single-Leg-Reverse-Hyperextens-unscreen.gif",
+    "series": "3x4",
+    "nombre_español": "Hiperextensión inversa a una pierna",
+    "descripcion": "Variante unilateral de hiperextensión inversa"
+  },
+  {
+    "grupo": "Extensores Espinales",
+    "nombre": "Smith Machine Good Morning",
+    "gif": "/gif/extensores-espinales/Smith-Machine-Good-Morning-unscreen.gif",
+    "series": "3x4",
+    "nombre_español": "Buenos días en máquina Smith",
+    "descripcion": "Variante del ejercicio buenos días con máquina Smith"
+  },
+  {
+    "grupo": "Extensores Espinales",
+    "nombre": "Sphinx Stretch",
+    "gif": "/gif/extensores-espinales/Sphinx-Stretch-unscreen.gif",
+    "series": "3x4",
+    "nombre_español": "Estiramiento de esfinge",
+    "descripcion": "Postura de yoga para estirar y fortalecer extensores espinales"
+  },
+  {
+    "grupo": "Extensores Espinales",
+    "nombre": "Standing Toe Touches",
+    "gif": "/gif/extensores-espinales/Standing-Toe-Touches-unscreen.gif",
+    "series": "3x4",
+    "nombre_español": "Toques de dedos de pie",
+    "descripcion": "Ejercicio de flexión hacia adelante en posición de pie"
+  },
+  {
+    "grupo": "Extensores Espinales",
+    "nombre": "Stiff Leg Deadlift",
+    "gif": "/gif/extensores-espinales/Stiff-Leg-Deadlift-unscreen.gif",
+    "series": "3x4",
+    "nombre_español": "Peso muerto piernas rígidas",
+    "descripcion": "Variante de peso muerto con mínimo flexionamiento de rodillas"
+  },
+  {
+    "grupo": "Extensores Espinales",
+    "nombre": "Superman exercise",
+    "gif": "/gif/extensores-espinales/Superman-exercise-unscreen.gif",
+    "series": "3x4",
+    "nombre_español": "Ejercicio de superman",
+    "descripcion": "Ejercicio isométrico para fortalecer toda la cadena posterior"
+  },
+  {
+    "grupo": "Extensores Espinales",
+    "nombre": "Supine Spinal Twist",
+    "gif": "/gif/extensores-espinales/Supine-Spinal-Twist-unscreen.gif",
+    "series": "3x4",
+    "nombre_español": "Torsión espinal supina",
+    "descripcion": "Ejercicio de movilidad para la columna en posición acostada"
+  },
+  {
+    "grupo": "Extensores Espinales",
+    "nombre": "Swing Gymstick",
+    "gif": "/gif/extensores-espinales/Swing-Gymstick-unscreen.gif",
+    "series": "3x4",
+    "nombre_español": "Balanceo con palo de gimnasia",
+    "descripcion": "Ejercicio dinámico con implemento para trabajar core y espalda"
+  },
+  {
+    "grupo": "Extensores Espinales",
+    "nombre": "t bar rows",
+    "gif": "/gif/extensores-espinales/t-bar-rows-unscreen.gif",
+    "series": "3x4",
+    "nombre_español": "Remo en barra T",
+    "descripcion": "Ejercicio para espalda usando máquina de barra T"
+  },
+  {
+    "grupo": "Extensores Espinales",
+    "nombre": "Twisting Hyperextension",
+    "gif": "/gif/extensores-espinales/Twisting-Hyperextension-unscreen.gif",
+    "series": "3x4",
+    "nombre_español": "Hiperextensión con torsión",
+    "descripcion": "Variante de hiperextensión que incorpora rotación"
+  },
+  {
+    "grupo": "Extensores Espinales",
+    "nombre": "Weighted Back Extension",
+    "gif": "/gif/extensores-espinales/Weighted-Back-Extension-unscreen.gif",
+    "series": "3x4",
+    "nombre_español": "Extensión de espalda con peso",
+    "descripcion": "Hiperextensión con carga adicional para mayor resistencia"
+  },
+  {
+    "grupo": "Extensores Espinales",
+    "nombre": "Elevaciones de tronco palo",
+    "gif": "/gif/extensores-espinales/ElevacionesTroncoPalo.gif",
+    "series": "3x4",
+    "nombre_español": "Corrector de columna con palo",
+    "descripcion": "Ejercicio de corrección postural para la columna vertebral"
+  }
+]

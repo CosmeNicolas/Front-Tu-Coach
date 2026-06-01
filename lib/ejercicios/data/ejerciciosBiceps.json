@@ -1,0 +1,554 @@
+[
+  {
+    "grupo": "Bíceps",
+    "nombre": "Arm Blaster Hammer Curl",
+    "nombre_español": "Curl martillo con arm blaster",
+    "gif": "/gif/biceps/Arm-Blaster-Hammer-Curl-unscreen.gif",
+    "series": "3x4",
+    "descripcion": "Ejercicio para fortalecer los bíceps usando un arm blaster con agarre de martillo"
+  },
+  {
+    "grupo": "Bíceps",
+    "nombre": "Band Biceps Curl",
+    "nombre_español": "Curl de bíceps con banda",
+    "gif": "/gif/biceps/Band-Biceps-Curl-unscreen.gif",
+    "series": "3x4",
+    "descripcion": "Ejercicio para bíceps utilizando una banda elástica de resistencia"
+  },
+  {
+    "grupo": "Bíceps",
+    "nombre": "Barbell Alternate Biceps Curl",
+    "nombre_español": "Curl alterno de bíceps con barra",
+    "gif": "/gif/biceps/Barbell-Alternate-Biceps-Curl-unscreen.gif",
+    "series": "3x4",
+    "descripcion": "Ejercicio alternado para bíceps realizado con barra"
+  },
+  {
+    "grupo": "Bíceps",
+    "nombre": "Barbell Curl On Arm Blaster",
+    "nombre_español": "Curl con barra en arm blaster",
+    "gif": "/gif/biceps/Barbell-Curl-On-Arm-Blaster-unscreen.gif",
+    "series": "3x4",
+    "descripcion": "Ejercicio para bíceps con barra utilizando un arm blaster"
+  },
+  {
+    "grupo": "Bíceps",
+    "nombre": "Barbell Curl",
+    "nombre_español": "Curl con barra",
+    "gif": "/gif/biceps/Barbell-Curl-unscreen.gif",
+    "series": "3x4",
+    "descripcion": "Ejercicio clásico para bíceps realizado con barra"
+  },
+  {
+    "grupo": "Bíceps",
+    "nombre": "Barbell Drag Curl",
+    "nombre_español": "Curl de arrastre con barra",
+    "gif": "/gif/biceps/Barbell-Drag-Curl-unscreen.gif",
+    "series": "3x4",
+    "descripcion": "Variación de curl donde la barra se arrastra cerca del cuerpo"
+  },
+  {
+    "grupo": "Bíceps",
+    "nombre": "Bicep Curl Machine",
+    "nombre_español": "Máquina de curl para bíceps",
+    "gif": "/gif/biceps/Bicep-Curl-Machine-unscreen.gif",
+    "series": "3x4",
+    "descripcion": "Ejercicio para bíceps realizado en máquina especializada"
+  },
+  {
+    "grupo": "Bíceps",
+    "nombre": "Biceps Leg Concentration Curl",
+    "nombre_español": "Curl de concentración con pierna",
+    "gif": "/gif/biceps/Biceps-Leg-Concentration-Curl-unscreen.gif",
+    "series": "3x4",
+    "descripcion": "Ejercicio de concentración para bíceps apoyando el brazo en la pierna"
+  },
+  {
+    "grupo": "Bíceps",
+    "nombre": "Brachialis Pull up",
+    "nombre_español": "Dominadas para braquial",
+    "gif": "/gif/biceps/Brachialis-Pull-up-unscreen.gif",
+    "series": "3x4",
+    "descripcion": "Variación de dominadas que enfatiza el músculo braquial"
+  },
+  {
+    "grupo": "Bíceps",
+    "nombre": "Cable Concentration Curl",
+    "nombre_español": "Curl de concentración en polea",
+    "gif": "/gif/biceps/Cable-Concentration-Curl-unscreen.gif",
+    "series": "3x4",
+    "descripcion": "Ejercicio de concentración para bíceps realizado en máquina de cable"
+  },
+  {
+    "grupo": "Bíceps",
+    "nombre": "cable curl",
+    "nombre_español": "Curl en polea",
+    "gif": "/gif/biceps/cable-curl-unscreen.gif",
+    "series": "3x4",
+    "descripcion": "Ejercicio básico para bíceps realizado con máquina de cable"
+  },
+  {
+    "grupo": "Bíceps",
+    "nombre": "Cable Incline Biceps Curl",
+    "nombre_español": "Curl inclinado en polea",
+    "gif": "/gif/biceps/Cable-Incline-Biceps-Curl-unscreen.gif",
+    "series": "3x4",
+    "descripcion": "Ejercicio para bíceps realizado en posición inclinada con polea"
+  },
+  {
+    "grupo": "Bíceps",
+    "nombre": "Cable Kneeling Biceps Curl",
+    "nombre_español": "Curl de rodillas en polea",
+    "gif": "/gif/biceps/Cable-Kneeling-Biceps-Curl-unscreen.gif",
+    "series": "3x4",
+    "descripcion": "Variación de curl para bíceps realizado de rodillas con polea"
+  },
+  {
+    "grupo": "Bíceps",
+    "nombre": "cable preacher curls",
+    "nombre_español": "Curl predicador en polea",
+    "gif": "/gif/biceps/cable-preacher-curls-unscreen.gif",
+    "series": "3x4",
+    "descripcion": "Ejercicio de curl predicador realizado con máquina de cable"
+  },
+  {
+    "grupo": "Bíceps",
+    "nombre": "Cable Pulldown Bicep Curl",
+    "nombre_español": "Curl en polea hacia abajo",
+    "gif": "/gif/biceps/Cable-Pulldown-Bicep-Curl-unscreen.gif",
+    "series": "3x4",
+    "descripcion": "Variación de curl donde el cable se jala hacia abajo"
+  },
+  {
+    "grupo": "Bíceps",
+    "nombre": "Cable Reverse Grip EZ bar Biceps Curl",
+    "nombre_español": "Curl con barra EZ en polea y agarre invertido",
+    "gif": "/gif/biceps/Cable-Reverse-Grip-EZ-bar-Bice-unscreen.gif",
+    "series": "3x4",
+    "descripcion": "Ejercicio para bíceps con barra EZ, agarre invertido y polea"
+  },
+  {
+    "grupo": "Bíceps",
+    "nombre": "Cable Two Arm Curl on Incline Bench",
+    "nombre_español": "Curl a dos brazos en banco inclinado con polea",
+    "gif": "/gif/biceps/Cable-Two-Arm-Curl-on-Incline--unscreen.gif",
+    "series": "3x4",
+    "descripcion": "Ejercicio para bíceps realizado en banco inclinado con polea"
+  },
+  {
+    "grupo": "Bíceps",
+    "nombre": "Chin Up Around the Bar",
+    "nombre_español": "Dominada alrededor de la barra",
+    "gif": "/gif/biceps/Chin-Up-Around-the-Bar-unscreen.gif",
+    "series": "3x4",
+    "descripcion": "Variación de dominada moviéndose alrededor de la barra"
+  },
+  {
+    "grupo": "Bíceps",
+    "nombre": "Chin Up",
+    "nombre_español": "Dominada",
+    "gif": "/gif/biceps/Chin-Up-unscreen.gif",
+    "series": "3x4",
+    "descripcion": "Ejercicio clásico de dominadas para bíceps"
+  },
+  {
+    "grupo": "Bíceps",
+    "nombre": "close grip barbell curl",
+    "nombre_español": "Curl con barra y agarre cerrado",
+    "gif": "/gif/biceps/close-grip-barbell-curl-unscreen.gif",
+    "series": "3x4",
+    "descripcion": "Variación de curl con barra usando un agarre más estrecho"
+  },
+  {
+    "grupo": "Bíceps",
+    "nombre": "Close Grip Z Bar Curl",
+    "nombre_español": "Curl con barra Z y agarre cerrado",
+    "gif": "/gif/biceps/Close-Grip-Z-Bar-Curl-unscreen.gif",
+    "series": "3x4",
+    "descripcion": "Ejercicio para bíceps con barra Z usando agarre cerrado"
+  },
+  {
+    "grupo": "Bíceps",
+    "nombre": "Concentration Curl",
+    "nombre_español": "Curl de concentración",
+    "gif": "/gif/biceps/Concentration-Curl-unscreen.gif",
+    "series": "3x4",
+    "descripcion": "Ejercicio que aísla el bíceps apoyando el brazo en la pierna"
+  },
+  {
+    "grupo": "Bíceps",
+    "nombre": "Double Arm Dumbbell Curl",
+    "nombre_español": "Curl con mancuernas a dos brazos",
+    "gif": "/gif/biceps/Double-Arm-Dumbbell-Curl-unscreen.gif",
+    "series": "3x4",
+    "descripcion": "Ejercicio para bíceps realizado con mancuernas simultáneamente"
+  },
+  {
+    "grupo": "Bíceps",
+    "nombre": "Dumbbell Alternate Preacher Curl",
+    "nombre_español": "Curl alternado con mancuerna scott",
+    "gif": "/gif/biceps/Dumbbell-Alternate-Preacher-Cu-unscreen.gif",
+    "series": "3x4",
+    "descripcion": "Ejercicio alternado en banco predicador con mancuernas"
+  },
+  {
+    "grupo": "Bíceps",
+    "nombre": "Dumbbell Curl On Arm Blaster",
+    "nombre_español": "Curl con mancuerna en arm blaster",
+    "gif": "/gif/biceps/Dumbbell-Curl-On-Arm-Blaster-unscreen.gif",
+    "series": "3x4",
+    "descripcion": "Ejercicio para bíceps con mancuerna usando arm blaster"
+  },
+  {
+    "grupo": "Bíceps",
+    "nombre": "Dumbbell Curl",
+    "nombre_español": "Curl con mancuerna",
+    "gif": "/gif/biceps/Dumbbell-Curl-unscreen.gif",
+    "series": "3x4",
+    "descripcion": "Ejercicio básico para bíceps con mancuerna"
+  },
+  {
+    "grupo": "Bíceps",
+    "nombre": "Dumbbell High Curl",
+    "nombre_español": "Curl alto con mancuerna",
+    "gif": "/gif/biceps/Dumbbell-High-Curl-unscreen.gif",
+    "series": "3x4",
+    "descripcion": "Variación de curl donde se levanta la mancuerna más alto"
+  },
+  {
+    "grupo": "Bíceps",
+    "nombre": "Dumbbell Preacher Curl",
+    "nombre_español": "Curl predicador con mancuerna",
+    "gif": "/gif/biceps/Dumbbell-Preacher-Curl-unscreen.gif",
+    "series": "3x4",
+    "descripcion": "Ejercicio para bíceps en banco predicador con mancuerna"
+  },
+  {
+    "grupo": "Bíceps",
+    "nombre": "Dumbbell Preacher Hammer Curl",
+    "nombre_español": "Curl martillo con mancuerna",
+    "gif": "/gif/biceps/Dumbbell-Preacher-Hammer-Curl-unscreen.gif",
+    "series": "3x4",
+    "descripcion": "Ejercicio en banco predicador con agarre de martillo"
+  },
+  {
+    "grupo": "Bíceps",
+    "nombre": "dumbbell reverse curl",
+    "nombre_español": "Curl invertido con mancuerna",
+    "gif": "/gif/biceps/dumbbell-reverse-curl-unscreen.gif",
+    "series": "3x4",
+    "descripcion": "Ejercicio para bíceps con agarre invertido (palmas hacia abajo)"
+  },
+  {
+    "grupo": "Bíceps",
+    "nombre": "dumbbell scott curl",
+    "nombre_español": "Curl scott con mancuerna",
+    "gif": "/gif/biceps/dumbbell-scot-curl-unscreen.gif",
+    "series": "3x4",
+    "descripcion": "Ejercicio para bíceps en banco scott con mancuerna"
+  },
+  {
+    "grupo": "Bíceps",
+    "nombre": "Dumbbell Scott Hammer Curl",
+    "nombre_español": "Curl scott martillo con mancuerna",
+    "gif": "/gif/biceps/Dumbbell-Scott-Hammer-Curl-unscreen.gif",
+    "series": "3x4",
+    "descripcion": "Ejercicio en banco scott con agarre de martillo"
+  },
+  {
+    "grupo": "Bíceps",
+    "nombre": "elbow flexion",
+    "nombre_español": "Flexión de codo",
+    "gif": "/gif/biceps/elbow-flexion-unscreen.gif",
+    "series": "3x4",
+    "descripcion": "Ejercicio básico de flexión de codo para bíceps"
+  },
+  {
+    "grupo": "Bíceps",
+    "nombre": "Flexor Incline Dumbbell Curls",
+    "nombre_español": "Curl inclinado con mancuerna",
+    "gif": "/gif/biceps/Flexor-Incline-Dumbbell-Curls-unscreen.gif",
+    "series": "3x4",
+    "descripcion": "Ejercicio para bíceps realizado en banco inclinado"
+  },
+  {
+    "grupo": "Bíceps",
+    "nombre": "Hammer Curl with Resistance Band",
+    "nombre_español": "Curl martillo con banda de resistencia",
+    "gif": "/gif/biceps/Hammer-Curl-with-Resistance-Ba-unscreen.gif",
+    "series": "3x4",
+    "descripcion": "Variación de curl martillo usando banda elástica"
+  },
+  {
+    "grupo": "Bíceps",
+    "nombre": "Hammer Curl",
+    "nombre_español": "Curl martillo",
+    "gif": "/gif/biceps/Hammer-Curl-unscreen.gif",
+    "series": "3x4",
+    "descripcion": "Ejercicio para bíceps con agarre neutral (martillo)"
+  },
+  {
+    "grupo": "Bíceps",
+    "nombre": "High Cable Single Arm Bicep Curl",
+    "nombre_español": "Curl de bíceps a un brazo en polea alta",
+    "gif": "/gif/biceps/High-Cable-Single-Arm-Bicep-Cu-unscreen.gif",
+    "series": "3x4",
+    "descripcion": "Ejercicio unilateral para bíceps con polea alta"
+  },
+  {
+    "grupo": "Bíceps",
+    "nombre": "Lever Biceps Curl",
+    "nombre_español": "Curl con palanca para bíceps",
+    "gif": "/gif/biceps/Lever-Biceps-Curl-unscreen.gif",
+    "series": "3x4",
+    "descripcion": "Ejercicio para bíceps realizado en máquina de palanca"
+  },
+  {
+    "grupo": "Bíceps",
+    "nombre": "Lever Preacher Curl",
+    "nombre_español": "Curl predicador con palanca",
+    "gif": "/gif/biceps/Lever-Preacher-Curl-unscreen.gif",
+    "series": "3x4",
+    "descripcion": "Ejercicio en banco predicador usando máquina de palanca"
+  },
+  {
+    "grupo": "Bíceps",
+    "nombre": "lying cable curl",
+    "nombre_español": "Curl en polea acostado",
+    "gif": "/gif/biceps/lying-cable-curl-unscreen.gif",
+    "series": "3x4",
+    "descripcion": "Variación de curl realizado acostado con polea"
+  },
+  {
+    "grupo": "Bíceps",
+    "nombre": "Lying High Bench Barbell Curl",
+    "nombre_español": "Curl con barra acostado en banco alto",
+    "gif": "/gif/biceps/Lying-High-Bench-Barbell-Curl-unscreen.gif",
+    "series": "3x4",
+    "descripcion": "Ejercicio para bíceps acostado en banco inclinado con barra"
+  },
+  {
+    "grupo": "Bíceps",
+    "nombre": "One Arm Biceps Curl 1",
+    "nombre_español": "Curl de bíceps a un brazo 1",
+    "gif": "/gif/biceps/One-Arm-Biceps-Curl-1-unscreen.gif",
+    "series": "3x4",
+    "descripcion": "Variación unilateral de curl para bíceps"
+  },
+  {
+    "grupo": "Bíceps",
+    "nombre": "One Arm Biceps Curl",
+    "nombre_español": "Curl de bíceps a un brazo",
+    "gif": "/gif/biceps/One-Arm-Biceps-Curl-unscreen.gif",
+    "series": "3x4",
+    "descripcion": "Ejercicio para bíceps realizado con un solo brazo"
+  },
+  {
+    "grupo": "Bíceps",
+    "nombre": "One Arm Cable Bicep Curl",
+    "nombre_español": "Curl de bíceps a un brazo en polea",
+    "gif": "/gif/biceps/One-Arm-Cable-Bicep-Curl-unscreen.gif",
+    "series": "3x4",
+    "descripcion": "Ejercicio unilateral para bíceps con máquina de cable"
+  },
+  {
+    "grupo": "Bíceps",
+    "nombre": "One Arm Cable Curl",
+    "nombre_español": "Curl a un brazo en polea",
+    "gif": "/gif/biceps/One-Arm-Cable-Curl-unscreen.gif",
+    "series": "3x4",
+    "descripcion": "Variación unilateral de curl con máquina de cable"
+  },
+  {
+    "grupo": "Bíceps",
+    "nombre": "One Arm Chin Up",
+    "nombre_español": "Dominada a un brazo",
+    "gif": "/gif/biceps/One-Arm-Chin-Up-unscreen.gif",
+    "series": "3x4",
+    "descripcion": "Ejercicio avanzado de dominada con un solo brazo"
+  },
+  {
+    "grupo": "Bíceps",
+    "nombre": "One Arm Prone Dumbbell Curl",
+    "nombre_español": "Curl a un brazo prono con mancuerna",
+    "gif": "/gif/biceps/One-Arm-Prone-Dumbbell-Curl-unscreen.gif",
+    "series": "3x4",
+    "descripcion": "Variación de curl realizado en posición prono"
+  },
+  {
+    "grupo": "Bíceps",
+    "nombre": "overhead cable curl",
+    "nombre_español": "Curl en polea por encima de la cabeza",
+    "gif": "/gif/biceps/overhead-cable-curl-unscreen.gif",
+    "series": "3x4",
+    "descripcion": "Variación de curl donde el cable está por encima de la cabeza"
+  },
+  {
+    "grupo": "Bíceps",
+    "nombre": "Prone Incline Biceps Curl",
+    "nombre_español": "Curl inclinado prono para bíceps",
+    "gif": "/gif/biceps/Prone-Incline-Biceps-Curl-unscreen.gif",
+    "series": "3x4",
+    "descripcion": "Ejercicio para bíceps en posición inclinada prono"
+  },
+  {
+    "grupo": "Bíceps",
+    "nombre": "Reverse Grip EZ Bar Curl",
+    "nombre_español": "Curl con barra EZ y agarre invertido",
+    "gif": "/gif/biceps/Reverse-Grip-EZ-Bar-Curl-unscreen.gif",
+    "series": "3x4",
+    "descripcion": "Ejercicio para bíceps con barra EZ y agarre supino"
+  },
+  {
+    "grupo": "Bíceps",
+    "nombre": "rope bicep curls",
+    "nombre_español": "Curl de bíceps con cuerda",
+    "gif": "/gif/biceps/rope-bicep-curls-unscreen.gif",
+    "series": "3x4",
+    "descripcion": "Ejercicio para bíceps realizado con cuerda en polea"
+  },
+  {
+    "grupo": "Bíceps",
+    "nombre": "Seated Bicep Curl With Resistance Band",
+    "nombre_español": "Curl de bíceps sentado con banda",
+    "gif": "/gif/biceps/Seated-Bicep-Curl-With-Resista-unscreen.gif",
+    "series": "3x4",
+    "descripcion": "Ejercicio para bíceps sentado usando banda elástica"
+  },
+  {
+    "grupo": "Bíceps",
+    "nombre": "seated biceps curl",
+    "nombre_español": "Curl de bíceps sentado",
+    "gif": "/gif/biceps/seated-biceps-curl-unscreen.gif",
+    "series": "3x4",
+    "descripcion": "Variación de curl para bíceps realizado sentado"
+  },
+  {
+    "grupo": "Bíceps",
+    "nombre": "Seated close grip concentration curl",
+    "nombre_español": "Curl de concentración sentado con agarre cerrado",
+    "gif": "/gif/biceps/Seated-close-grip-concentratio-unscreen.gif",
+    "series": "3x4",
+    "descripcion": "Ejercicio de concentración con agarre cerrado realizado sentado"
+  },
+  {
+    "grupo": "Bíceps",
+    "nombre": "Seated dumbbell alternating curl",
+    "nombre_español": "Curl alterno con mancuerna sentado",
+    "gif": "/gif/biceps/Seated-dumbbell-alternating-cu-unscreen.gif",
+    "series": "3x4",
+    "descripcion": "Ejercicio alternado para bíceps realizado sentado con mancuernas"
+  },
+  {
+    "grupo": "Bíceps",
+    "nombre": "Seated Hammer Curl",
+    "nombre_español": "Curl martillo sentado",
+    "gif": "/gif/biceps/Seated-Hammer-Curl-unscreen.gif",
+    "series": "3x4",
+    "descripcion": "Variación de curl martillo realizada sentado"
+  },
+  {
+    "grupo": "Bíceps",
+    "nombre": "Seated Incline Dumbbell Curl",
+    "nombre_español": "Curl inclinado con mancuerna sentado",
+    "gif": "/gif/biceps/Seated-Incline-Dumbbell-Curl-unscreen.gif",
+    "series": "3x4",
+    "descripcion": "Ejercicio para bíceps en posición inclinada sentado"
+  },
+  {
+    "grupo": "Bíceps",
+    "nombre": "Seated Zottman Curl",
+    "nombre_español": "Curl Zottman sentado",
+    "gif": "/gif/biceps/Seated-Zottman-Curl-unscreen.gif",
+    "series": "3x4",
+    "descripcion": "Variación de curl Zottman realizada sentado"
+  },
+  {
+    "grupo": "Bíceps",
+    "nombre": "Single Arm Reverse Grip Cable Bicep Curl",
+    "nombre_español": "Curl de bíceps invertido a un brazo en polea",
+    "gif": "/gif/biceps/Single-Arm-Reverse-Grip-Cable--unscreen.gif",
+    "series": "3x4",
+    "descripcion": "Ejercicio unilateral con agarre invertido en polea"
+  },
+  {
+    "grupo": "Bíceps",
+    "nombre": "Single Dumbbell Spider Hammer Curl",
+    "nombre_español": "Curl martillo araña con mancuerna",
+    "gif": "/gif/biceps/Single-Dumbbell-Spider-Hammer--unscreen.gif",
+    "series": "3x4",
+    "descripcion": "Variación de curl martillo en posición de araña"
+  },
+  {
+    "grupo": "Bíceps",
+    "nombre": "Standing Barbell Concentration Curl",
+    "nombre_español": "Curl de concentración con barra de pie",
+    "gif": "/gif/biceps/Standing-Barbell-Concentration-unscreen.gif",
+    "series": "3x4",
+    "descripcion": "Ejercicio de concentración para bíceps con barra de pie"
+  },
+  {
+    "grupo": "Bíceps",
+    "nombre": "Standing one arm chest stretch",
+    "nombre_español": "Estiramiento de pecho a un brazo de pie",
+    "gif": "/gif/biceps/Standing-one-arm-chest-stretch-unscreen.gif",
+    "series": "3x4",
+    "descripcion": "Ejercicio de estiramiento para pecho realizado de pie"
+  },
+  {
+    "grupo": "Bíceps",
+    "nombre": "Standing Reverse Shoulder Stretch",
+    "nombre_español": "Estiramiento inverso de hombros de pie",
+    "gif": "/gif/biceps/Standing-Reverse-Shoulder-Stre-unscreen.gif",
+    "series": "3x4",
+    "descripcion": "Ejercicio de estiramiento para hombros en posición inversa"
+  },
+  {
+    "grupo": "Bíceps",
+    "nombre": "Two dumbbell preacher curl",
+    "nombre_español": "Curl simetrico con dos mancuernas",
+    "gif": "/gif/biceps/Two-dumbbell-preacher-curl-unscreen.gif",
+    "series": "3x4",
+    "descripcion": "Ejercicio en banco predicador realizado con dos mancuernas"
+  },
+  {
+    "grupo": "Bíceps",
+    "nombre": "waiter curl",
+    "nombre_español": "Curl de camarero",
+    "gif": "/gif/biceps/waiter-curl-unscreen.gif",
+    "series": "3x4",
+    "descripcion": "Variación de curl que imita el movimiento de un camarero"
+  },
+  {
+    "grupo": "Bíceps",
+    "nombre": "Water Bottle Hammer Curl",
+    "nombre_español": "Curl martillo con botella de agua",
+    "gif": "/gif/biceps/Water-Bottle-Hammer-Curl-unscreen.gif",
+    "series": "3x4",
+    "descripcion": "Ejercicio de curl martillo usando botella de agua como peso"
+  },
+  {
+    "grupo": "Bíceps",
+    "nombre": "Z Bar Curl",
+    "nombre_español": "Curl con barra Z",
+    "gif": "/gif/biceps/Z-Bar-Curl-unscreen.gif",
+    "series": "3x4",
+    "descripcion": "Ejercicio para bíceps realizado con barra Z"
+  },
+  {
+    "grupo": "Bíceps",
+    "nombre": "Z Bar Preacher Curl",
+    "nombre_español": "Curl con barra W",
+    "gif": "/gif/biceps/Z-Bar-Preacher-Curl-unscreen.gif",
+    "series": "3x4",
+    "descripcion": "Ejercicio en banco predicador realizado con barra Z"
+  },
+  {
+    "grupo": "Bíceps",
+    "nombre": "zottman curl",
+    "nombre_español": "Curl Zottman",
+    "gif": "/gif/biceps/zottman-curl-unscreen.gif",
+    "series": "3x4",
+    "descripcion": "Ejercicio que combina curl normal e invertido en un movimiento"
+  }
+]

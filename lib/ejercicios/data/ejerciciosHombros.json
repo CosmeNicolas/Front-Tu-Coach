@@ -1,0 +1,1538 @@
+[
+  {
+    "grupo": "Hombros",
+    "nombre": "45 degree incline row",
+    "gif": "/gif/hombros/45-Degree-Incline-Row-unscreen.gif",
+    "series": "3x4",
+    "nombre_español": "Remo en inclinación de 45 grados",
+    "descripcion": "Ejercicio para hombros que trabaja la parte posterior con remo en banco inclinado"
+  },
+  {
+    "grupo": "Hombros",
+    "nombre": "90 degree cable external rotation ",
+    "gif": "/gif/hombros/90-Degree-Cable-External-Rotat-unscreen.gif",
+    "series": "3x4",
+    "nombre_español": "Rotación externa con cable a 90 grados",
+    "descripcion": "Ejercicio para rotadores externos del hombro usando polea"
+  },
+  {
+    "grupo": "Hombros",
+    "nombre": "across chest shoulder stretch",
+    "gif": "/gif/hombros/Across-Chest-Shoulder-Stretch-unscreen.gif",
+    "series": "3x4",
+    "nombre_español": "Estiramiento de hombro cruzando el pecho",
+    "descripcion": "Ejercicio de movilidad para estirar los hombros"
+  },
+  {
+    "grupo": "Hombros",
+    "nombre": "alternate dumbbell lateral raise",
+    "gif": "/gif/hombros/Alternate-Dumbbell-Lateral-Rai-unscreen.gif",
+    "series": "3x4",
+    "nombre_español": "Elevaciones laterales alternas con mancuernas",
+    "descripcion": "Ejercicio para deltoides laterales alternando brazos"
+  },
+  {
+    "grupo": "Hombros",
+    "nombre": "alternating dumbbell front raise",
+    "gif": "/gif/hombros/Alternating-Dumbbell-Front-Rai-unscreen.gif",
+    "series": "3x4",
+    "nombre_español": "Elevaciones frontales alternas con mancuernas",
+    "descripcion": "Ejercicio para deltoides frontales alternando brazos"
+  },
+  {
+    "grupo": "Hombros",
+    "nombre": "arm circles_shoulders",
+    "gif": "/gif/hombros/Arm-Circles-Shoulders-unscreen.gif",
+    "series": "3x4",
+    "nombre_español": "Círculos con brazos para hombros",
+    "descripcion": "Ejercicio de movilidad articular para hombros"
+  },
+  {
+    "grupo": "Hombros",
+    "nombre": "arm scissors",
+    "gif": "/gif/hombros/Arm-Scissors-unscreen.gif",
+    "series": "3x4",
+    "nombre_español": "Tijeras con brazos",
+    "descripcion": "Ejercicio de movilidad para hombros y pecho"
+  },
+  {
+    "grupo": "Hombros",
+    "nombre": "arnold press",
+    "gif": "/gif/hombros/Arnold-Press-unscreen.gif",
+    "series": "3x4",
+    "nombre_español": "Press Arnold",
+    "descripcion": "Ejercicio completo para hombros con rotación de mancuernas"
+  },
+  {
+    "grupo": "Hombros",
+    "nombre": "back lever",
+    "gif": "/gif/hombros/Back-Lever-unscreen.gif",
+    "series": "3x4",
+    "nombre_español": "Palanca trasera",
+    "descripcion": "Ejercicio avanzado de calistenia para hombros y espalda"
+  },
+  {
+    "grupo": "Hombros",
+    "nombre": "back slaps wrap around stretch",
+    "gif": "/gif/hombros/Back-Slaps-Wrap-Around-Stretch-unscreen.gif",
+    "series": "3x4",
+    "nombre_español": "Estiramiento envolvente con palmadas en espalda",
+    "descripcion": "Ejercicio de movilidad para hombros y espalda"
+  },
+  {
+    "grupo": "Hombros",
+    "nombre": "back to wall alternating shoulder flexion",
+    "gif": "/gif/hombros/Back-to-Wall-Alternating-Shoul-unscreen.gif",
+    "series": "3x4",
+    "nombre_español": "Flexión de hombros alterna contra pared",
+    "descripcion": "Ejercicio de movilidad para hombros con apoyo en pared"
+  },
+  {
+    "grupo": "Hombros",
+    "nombre": "backhand raise",
+    "gif": "/gif/hombros/Backhand-Raise-unscreen.gif",
+    "series": "3x4",
+    "nombre_español": "Elevación de revés",
+    "descripcion": "Variación de elevación lateral para deltoides posteriores"
+  },
+  {
+    "grupo": "Hombros",
+    "nombre": "band front lateral raise",
+    "gif": "/gif/hombros/Band-Front-Lateral-Raise-unscreen.gif",
+    "series": "3x4",
+    "nombre_español": "Elevación frontal y lateral con banda",
+    "descripcion": "Ejercicio combinado para deltoides usando bandas"
+  },
+  {
+    "grupo": "Hombros",
+    "nombre": "band single arm shoulder press",
+    "gif": "/gif/hombros/Band-Single-Arm-Shoulder-Press-unscreen.gif",
+    "series": "3x4",
+    "nombre_español": "Press de hombro a un brazo con banda",
+    "descripcion": "Variación unilateral de press con resistencia de banda"
+  },
+  {
+    "grupo": "Hombros",
+    "nombre": "band pull apart",
+    "gif": "/gif/hombros/Band-pull-apart-unscreen.gif",
+    "series": "3x4",
+    "nombre_español": "Apertura con banda",
+    "descripcion": "Ejercicio para deltoides posteriores y trapecio"
+  },
+  {
+    "grupo": "Hombros",
+    "nombre": "banded shoulder extension",
+    "gif": "/gif/hombros/Banded-Shoulder-Extension-unscreen.gif",
+    "series": "3x4",
+    "nombre_español": "Extensión de hombro con banda",
+    "descripcion": "Ejercicio de movilidad para extensión de hombros"
+  },
+  {
+    "grupo": "Hombros",
+    "nombre": "banded shoulder external rotation",
+    "gif": "/gif/hombros/Banded-Shoulder-External-Rotat-unscreen.gif",
+    "series": "3x4",
+    "nombre_español": "Rotación externa de hombro con banda",
+    "descripcion": "Ejercicio para rotadores externos usando banda"
+  },
+  {
+    "grupo": "Hombros",
+    "nombre": "banded shoulder flexion",
+    "gif": "/gif/hombros/Banded-Shoulder-Flexion-unscreen.gif",
+    "series": "3x4",
+    "nombre_español": "Flexión de hombro con banda",
+    "descripcion": "Ejercicio de movilidad para flexión de hombros"
+  },
+  {
+    "grupo": "Hombros",
+    "nombre": "barbell clean and press ",
+    "gif": "/gif/hombros/Barbell-Clean-and-Press--unscreen.gif",
+    "series": "3x4",
+    "nombre_español": "Cargada y press con barra",
+    "descripcion": "Ejercicio olímpico completo para hombros y cuerpo"
+  },
+  {
+    "grupo": "Hombros",
+    "nombre": "barbell front raise twist",
+    "gif": "/gif/hombros/Barbell-Front-Raise-Twist-unscreen.gif",
+    "series": "3x4",
+    "nombre_español": "Elevación frontal con giro de barra",
+    "descripcion": "Variación de elevación frontal con rotación"
+  },
+  {
+    "grupo": "Hombros",
+    "nombre": "barbell front raise",
+    "gif": "/gif/hombros/Barbell-Front-Raise-unscreen.gif",
+    "series": "3x4",
+    "nombre_español": "Elevación frontal con barra",
+    "descripcion": "Ejercicio para deltoides frontales usando barra"
+  },
+  {
+    "grupo": "Hombros",
+    "nombre": "barbell rear delt raise",
+    "gif": "/gif/hombros/Barbell-Rear-Delt-Raise-unscreen.gif",
+    "series": "3x4",
+    "nombre_español": "Elevación para deltoides posteriores con barra",
+    "descripcion": "Ejercicio para parte posterior de hombros con barra"
+  },
+  {
+    "grupo": "Hombros",
+    "nombre": "barbell shoulder press",
+    "gif": "/gif/hombros/Barbell-Shoulder-Press-unscreen.gif",
+    "series": "3x4",
+    "nombre_español": "Press de hombros con barra",
+    "descripcion": "Ejercicio básico para hombros con barra"
+  },
+  {
+    "grupo": "Hombros",
+    "nombre": "barbell standing military press",
+    "gif": "/gif/hombros/Barbell-Standing-Military-Pres-unscreen.gif",
+    "series": "3x4",
+    "nombre_español": "Press militar con barra de pie",
+    "descripcion": "Variación clásica de press de hombros"
+  },
+  {
+    "grupo": "Hombros",
+    "nombre": "barbell upright row",
+    "gif": "/gif/hombros/Barbell-Upright-Row-unscreen.gif",
+    "series": "3x4",
+    "nombre_español": "Remo vertical con barra",
+    "descripcion": "Ejercicio para hombros y trapecio con barra"
+  },
+  {
+    "grupo": "Hombros",
+    "nombre": "battle rope",
+    "gif": "/gif/hombros/Battle-Rope-unscreen.gif",
+    "series": "3x4",
+    "nombre_español": "Cuerda de batalla",
+    "descripcion": "Ejercicio de potencia para hombros y cuerpo completo"
+  },
+  {
+    "grupo": "Hombros",
+    "nombre": "bench pike push up",
+    "gif": "/gif/hombros/Bench-Pike-Push-up-unscreen.gif",
+    "series": "3x4",
+    "nombre_español": "Flexión pike en banco",
+    "descripcion": "Variación de flexión para hombros con pies elevados"
+  },
+  {
+    "grupo": "Hombros",
+    "nombre": "bench supported dumbbell external rotation",
+    "gif": "/gif/hombros/Bench-Supported-Dumbbell-Exter-unscreen.gif",
+    "series": "3x4",
+    "nombre_español": "Rotación externa con mancuerna apoyado en banco",
+    "descripcion": "Ejercicio para rotadores externos con apoyo"
+  },
+  {
+    "grupo": "Hombros",
+    "nombre": "bent over barbell reverse raise",
+    "gif": "/gif/hombros/Bent-Over-Barbell-Reverse-Rais-unscreen.gif",
+    "series": "3x4",
+    "nombre_español": "Elevación inversa inclinada con barra",
+    "descripcion": "Ejercicio para deltoides posteriores con barra"
+  },
+  {
+    "grupo": "Hombros",
+    "nombre": "bent over dumbbell rear delt raise with head on bench",
+    "gif": "/gif/hombros/Bent-Over-Dumbbell-Rear-Delt-R-unscreen.gif",
+    "series": "3x4",
+    "nombre_español": "Elevación para deltoides posteriores inclinado con cabeza en banco",
+    "descripcion": "Variación con apoyo para aislar deltoides posteriores"
+  },
+  {
+    "grupo": "Hombros",
+    "nombre": "bent over lateral raise",
+    "gif": "/gif/hombros/Bent-Over-Lateral-Raise-unscreen.gif",
+    "series": "3x4",
+    "nombre_español": "Elevación lateral inclinada",
+    "descripcion": "Ejercicio para deltoides posteriores en posición inclinada"
+  },
+  {
+    "grupo": "Hombros",
+    "nombre": "bent over rear delt fly gymstick",
+    "gif": "/gif/hombros/Bent-Over-Rear-Delt-Fly-Gymsti-unscreen.gif",
+    "series": "3x4",
+    "nombre_español": "Vuelo para deltoides posteriores con gymstick",
+    "descripcion": "Ejercicio con barra flexible para hombros posteriores"
+  },
+  {
+    "grupo": "Hombros",
+    "nombre": "bent over row gymstick",
+    "gif": "/gif/hombros/Bent-Over-Row-Gymstick-unscreen.gif",
+    "series": "3x4",
+    "nombre_español": "Remo inclinado con gymstick",
+    "descripcion": "Ejercicio para espalda y hombros con barra flexible"
+  },
+  {
+    "grupo": "Hombros",
+    "nombre": "bodyweight military press",
+    "gif": "/gif/hombros/Bodyweight-Military-Press-unscreen.gif",
+    "series": "3x4",
+    "nombre_español": "Press militar con peso corporal",
+    "descripcion": "Variación de press usando solo el peso del cuerpo"
+  },
+  {
+    "grupo": "Hombros",
+    "nombre": "cable external shoulder rotation",
+    "gif": "/gif/hombros/Cable-External-Shoulder-Rotati-unscreen.gif",
+    "series": "3x4",
+    "nombre_español": "Rotación externa de hombro con cable",
+    "descripcion": "Ejercicio para rotadores externos usando polea"
+  },
+  {
+    "grupo": "Hombros",
+    "nombre": "cable front raise",
+    "gif": "/gif/hombros/Cable-Front-Raise-unscreen.gif",
+    "series": "3x4",
+    "nombre_español": "Elevación frontal con cable",
+    "descripcion": "Ejercicio para deltoides frontales con polea baja"
+  },
+  {
+    "grupo": "Hombros",
+    "nombre": "cable half kneeling pallof press",
+    "gif": "/gif/hombros/Cable-Half-Kneeling-Pallof-Pre-unscreen.gif",
+    "series": "3x4",
+    "nombre_español": "Press Pallof de rodillas con cable",
+    "descripcion": "Ejercicio antirotación para core y hombros"
+  },
+  {
+    "grupo": "Hombros",
+    "nombre": "cable internal shoulder rotation",
+    "gif": "/gif/hombros/Cable-Internal-Shoulder-Rotati-unscreen.gif",
+    "series": "3x4",
+    "nombre_español": "Rotación interna de hombro con cable",
+    "descripcion": "Ejercicio para rotadores internos usando polea"
+  },
+  {
+    "grupo": "Hombros",
+    "nombre": "cable lateral raise",
+    "gif": "/gif/hombros/Cable-Lateral-Raise-unscreen.gif",
+    "series": "3x4",
+    "nombre_español": "Elevación lateral con cable",
+    "descripcion": "Ejercicio para deltoides laterales con polea baja"
+  },
+  {
+    "grupo": "Hombros",
+    "nombre": "cable seated shoulder internal rotation",
+    "gif": "/gif/hombros/Cable-Seated-Shoulder-Internal-unscreen.gif",
+    "series": "3x4",
+    "nombre_español": "Rotación interna de hombro sentado con cable",
+    "descripcion": "Variación sentada para rotadores internos"
+  },
+  {
+    "grupo": "Hombros",
+    "nombre": "cable shoulder 90 degrees internal rotation",
+    "gif": "/gif/hombros/Cable-Shoulder-90-degrees-Inte-unscreen.gif",
+    "series": "3x4",
+    "nombre_español": "Rotación interna de hombro a 90 grados con cable",
+    "descripcion": "Ejercicio específico para rotadores internos"
+  },
+  {
+    "grupo": "Hombros",
+    "nombre": "cable shoulder press",
+    "gif": "/gif/hombros/Cable-Shoulder-Press-unscreen.gif",
+    "series": "3x4",
+    "nombre_español": "Press de hombros con cable",
+    "descripcion": "Variación de press usando máquina de poleas"
+  },
+  {
+    "grupo": "Hombros",
+    "nombre": "cable upright row",
+    "gif": "/gif/hombros/Cable-Upright-Row-unscreen.gif",
+    "series": "3x4",
+    "nombre_español": "Remo vertical con cable",
+    "descripcion": "Ejercicio para hombros y trapecio con poleas"
+  },
+  {
+    "grupo": "Hombros",
+    "nombre": "chest supported dumbbell front raises",
+    "gif": "/gif/hombros/Chest-Supported-Dumbbell-Front-unscreen.gif",
+    "series": "3x4",
+    "nombre_español": "Elevaciones frontales con mancuernas apoyado en pecho",
+    "descripcion": "Variación con apoyo para aislar deltoides frontales"
+  },
+  {
+    "grupo": "Hombros",
+    "nombre": "chest and front of shoulder stretch",
+    "gif": "/gif/hombros/Chest-and-Front-of-Shoulder-St-unscreen.gif",
+    "series": "3x4",
+    "nombre_español": "Estiramiento de pecho y parte frontal del hombro",
+    "descripcion": "Ejercicio de movilidad para pectorales y hombros"
+  },
+  {
+    "grupo": "Hombros",
+    "nombre": "corner wall stretch",
+    "gif": "/gif/hombros/Corner-Wall-Stretch-unscreen.gif",
+    "series": "3x4",
+    "nombre_español": "Estiramiento en esquina de pared",
+    "descripcion": "Ejercicio para estirar pectorales y hombros"
+  },
+  {
+    "grupo": "Hombros",
+    "nombre": "cross cable face pull",
+    "gif": "/gif/hombros/Cross-Cable-Face-Pull-unscreen.gif",
+    "series": "3x4",
+    "nombre_español": "Face pull con cables cruzados",
+    "descripcion": "Ejercicio para deltoides posteriores y trapecio"
+  },
+  {
+    "grupo": "Hombros",
+    "nombre": "doorway chest and sshoulder stretch",
+    "gif": "/gif/hombros/Doorway-chest-and-sshoulder-stretch-unscreen.gif",
+    "series": "3x4",
+    "nombre_español": "Estiramiento de pecho y hombro en marco de puerta",
+    "descripcion": "Ejercicio de movilidad usando el marco de una puerta"
+  },
+  {
+    "grupo": "Hombros",
+    "nombre": "double cable front raise",
+    "gif": "/gif/hombros/Double-Cable-Front-Raise-unscreen.gif",
+    "series": "3x4",
+    "nombre_español": "Elevación frontal doble con cable",
+    "descripcion": "Variación bilateral para deltoides frontales"
+  },
+  {
+    "grupo": "Hombros",
+    "nombre": "dumbbell 4 ways lateral raise",
+    "gif": "/gif/hombros/Dumbbell-4-Ways-Lateral-Raise-unscreen.gif",
+    "series": "3x4",
+    "nombre_español": "Elevación lateral 4 vías con mancuernas",
+    "descripcion": "Ejercicio completo para hombros en diferentes ángulos"
+  },
+  {
+    "grupo": "Hombros",
+    "nombre": "dumbbell 6 ways raise",
+    "gif": "/gif/hombros/Dumbbell-6-Ways-Raise-unscreen.gif",
+    "series": "3x4",
+    "nombre_español": "Elevación 6 vías con mancuernas",
+    "descripcion": "Variación avanzada para hombros en múltiples planos"
+  },
+  {
+    "grupo": "Hombros",
+    "nombre": "dumbbell bent arm laterl raise",
+    "gif": "/gif/hombros/Dumbbell-Bent-Arm-Laterl-Raise-unscreen.gif",
+    "series": "3x4",
+    "nombre_español": "Elevación lateral con brazos flexionados",
+    "descripcion": "Variación de elevación lateral con codos flexionados"
+  },
+  {
+    "grupo": "Hombros",
+    "nombre": "dumbbell chest supported lateral raises",
+    "gif": "/gif/hombros/Dumbbell-Chest-Supported-Later-unscreen.gif",
+    "series": "3x4",
+    "nombre_español": "Elevaciones laterales con apoyo en pecho",
+    "descripcion": "Variación con apoyo para aislar deltoides laterales"
+  },
+  {
+    "grupo": "Hombros",
+    "nombre": "dumbbell cuban external rotation",
+    "gif": "/gif/hombros/Dumbbell-Cuban-External-Rotati-unscreen.gif",
+    "series": "3x4",
+    "nombre_español": "Rotación externa cubana con mancuernas",
+    "descripcion": "Ejercicio completo para rotadores externos"
+  },
+  {
+    "grupo": "Hombros",
+    "nombre": "dumbbell front raise",
+    "gif": "/gif/hombros/Dumbbell-Front-Raise-unscreen.gif",
+    "series": "3x4",
+    "nombre_español": "Elevación frontal con mancuernas",
+    "descripcion": "Ejercicio básico para deltoides frontales"
+  },
+  {
+    "grupo": "Hombros",
+    "nombre": "dumbbell incline t raise",
+    "gif": "/gif/hombros/Dumbbell-Incline-T-Raise-unscreen.gif",
+    "series": "3x4",
+    "nombre_español": "Elevación en T inclinado con mancuernas",
+    "descripcion": "Ejercicio para hombros en posición inclinada"
+  },
+  {
+    "grupo": "Hombros",
+    "nombre": "dumbbell iron cross",
+    "gif": "/gif/hombros/Dumbbell-Iron-Cross-unscreen.gif",
+    "series": "3x4",
+    "nombre_español": "Cruz de hierro con mancuernas",
+    "descripcion": "Ejercicio avanzado para hombros y pecho"
+  },
+  {
+    "grupo": "Hombros",
+    "nombre": "dumbbell lateral raise",
+    "gif": "/gif/hombros/Dumbbell-Lateral-Raise-unscreen.gif",
+    "series": "3x4",
+    "nombre_español": "Elevación lateral con mancuernas",
+    "descripcion": "Ejercicio clásico para deltoides laterales"
+  },
+  {
+    "grupo": "Hombros",
+    "nombre": "dumbbell lateral to front raise",
+    "gif": "/gif/hombros/Dumbbell-Lateral-Raise-unscreen.gif",
+    "series": "3x4",
+    "nombre_español": "Elevación lateral a frontal con mancuernas",
+    "descripcion": "Ejercicio combinado para hombros"
+  },
+  {
+    "grupo": "Hombros",
+    "nombre": "dumbbell lying external shoulder rotation",
+    "gif": "/gif/hombros/Dumbbell-Lying-External-Should-unscreen.gif",
+    "series": "3x4",
+    "nombre_español": "Rotación externa de hombro acostado con mancuerna",
+    "descripcion": "Ejercicio para rotadores externos en posición tumbada"
+  },
+  {
+    "grupo": "Hombros",
+    "nombre": "dumbbell lying one arm rear lateral raise",
+    "gif": "/gif/hombros/Dumbbell-Lying-One-Arm-Rear-La-unscreen.gif",
+    "series": "3x4",
+    "nombre_español": "Elevación lateral posterior a un brazo acostado",
+    "descripcion": "Variación unilateral para deltoides posteriores"
+  },
+  {
+    "grupo": "Hombros",
+    "nombre": "dumbbell lying rear lateral raise",
+    "gif": "/gif/hombros/Dumbbell-Lying-Rear-Lateral-Ra-unscreen.gif",
+    "series": "3x4",
+    "nombre_español": "Elevación lateral posterior acostado",
+    "descripcion": "Ejercicio para deltoides posteriores en posición tumbada"
+  },
+  {
+    "grupo": "Hombros",
+    "nombre": "dumbbell one arm shoulder press",
+    "gif": "/gif/hombros/Dumbbell-One-Arm-Shoulder-Pres-unscreen.gif",
+    "series": "3x4",
+    "nombre_español": "Press de hombros a un brazo con mancuerna",
+    "descripcion": "Variación unilateral de press para hombros"
+  },
+  {
+    "grupo": "Hombros",
+    "nombre": "dumbbell push press",
+    "gif": "/gif/hombros/Dumbbell-Push-Press-unscreen.gif",
+    "series": "3x4",
+    "nombre_español": "Push press con mancuernas",
+    "descripcion": "Ejercicio de potencia para hombros con impulso"
+  },
+  {
+    "grupo": "Hombros",
+    "nombre": "dumbbell raise",
+    "gif": "/gif/hombros/Dumbbell-Raise-unscreen.gif",
+    "series": "3x4",
+    "nombre_español": "Elevación con mancuernas",
+    "descripcion": "Ejercicio básico para hombros con mancuernas"
+  },
+  {
+    "grupo": "Hombros",
+    "nombre": "dumbbell rear delt row",
+    "gif": "/gif/hombros/Dumbbell-Rear-Delt-Row-unscreen.gif",
+    "series": "3x4",
+    "nombre_español": "Remo para deltoides posteriores con mancuernas",
+    "descripcion": "Ejercicio combinado para hombros y espalda"
+  },
+  {
+    "grupo": "Hombros",
+    "nombre": "dumbbell reverse fly",
+    "gif": "/gif/hombros/Dumbbell-Reverse-Fly-unscreen.gif",
+    "series": "3x4",
+    "nombre_español": "Vuelo inverso con mancuernas",
+    "descripcion": "Ejercicio para deltoides posteriores"
+  },
+  {
+    "grupo": "Hombros",
+    "nombre": "dumbbell scaption",
+    "gif": "/gif/hombros/Dumbbell-Scaption-unscreen.gif",
+    "series": "3x4",
+    "nombre_español": "Scaption con mancuernas",
+    "descripcion": "Ejercicio en plano escapular para hombros"
+  },
+  {
+    "grupo": "Hombros",
+    "nombre": "dumbbell seated alternate front raises",
+    "gif": "/gif/hombros/Dumbbell-Seated-Alternate-Fron-unscreen.gif",
+    "series": "3x4",
+    "nombre_español": "Elevaciones frontales alternas sentado con mancuernas",
+    "descripcion": "Variación sentada para deltoides frontales"
+  },
+  {
+    "grupo": "Hombros",
+    "nombre": "dumbbell seated bent over rear delt row",
+    "gif": "/gif/hombros/Dumbbell-Seated-Bent-Over-Rear-unscreen.gif",
+    "series": "3x4",
+    "nombre_español": "Remo inclinado para deltoides posteriores sentado",
+    "descripcion": "Variación sentada para hombros posteriores"
+  },
+  {
+    "grupo": "Hombros",
+    "nombre": "dumbbell seated cuban press",
+    "gif": "/gif/hombros/Dumbbell-Seated-Cuban-Press-unscreen.gif",
+    "series": "3x4",
+    "nombre_español": "Press cubano sentado con mancuernas",
+    "descripcion": "Variación sentada del ejercicio cubano completo"
+  },
+  {
+    "grupo": "Hombros",
+    "nombre": "dumbbell shoulder press",
+    "gif": "/gif/hombros/Dumbbell-Shoulder-Press-unscreen.gif",
+    "series": "3x4",
+    "nombre_español": "Press de hombros con mancuernas",
+    "descripcion": "Ejercicio básico para hombros con mancuernas"
+  },
+  {
+    "grupo": "Hombros",
+    "nombre": "dumbbell side lying rear delt raise",
+    "gif": "/gif/hombros/Dumbbell-Side-Lying-Rear-Delt--unscreen.gif",
+    "series": "3x4",
+    "nombre_español": "Elevación para deltoides posteriores de lado",
+    "descripcion": "Variación lateral para aislar hombros posteriores"
+  },
+  {
+    "grupo": "Hombros",
+    "nombre": "dumbbell single arm lateral raise",
+    "gif": "/gif/hombros/Dumbbell-Single-Arm-Lateral-Ra-unscreen.gif",
+    "series": "3x4",
+    "nombre_español": "Elevación lateral a un brazo con mancuerna",
+    "descripcion": "Variación unilateral para deltoides laterales"
+  },
+  {
+    "grupo": "Hombros",
+    "nombre": "dumbbell standing palms in press",
+    "gif": "/gif/hombros/Dumbbell-Standing-Palms-In-Pre-unscreen.gif",
+    "series": "3x4",
+    "nombre_español": "Press de hombros con palmas hacia adentro",
+    "descripcion": "Variación de press con rotación neutra"
+  },
+  {
+    "grupo": "Hombros",
+    "nombre": "dumbbell upright row",
+    "gif": "/gif/hombros/Dumbbell-Upright-Row-unscreen.gif",
+    "series": "3x4",
+    "nombre_español": "Remo vertical con mancuernas",
+    "descripcion": "Ejercicio para hombros y trapecio con mancuernas"
+  },
+  {
+    "grupo": "Hombros",
+    "nombre": "dumbbell w press",
+    "gif": "/gif/hombros/Dumbbell-W-Press-unscreen.gif",
+    "series": "3x4",
+    "nombre_español": "Press en W con mancuernas",
+    "descripcion": "Variación de press con codos flexionados"
+  },
+  {
+    "grupo": "Hombros",
+    "nombre": "dumbbell windmill",
+    "gif": "/gif/hombros/Dumbbell-Windmill-unscreen.gif",
+    "series": "3x4",
+    "nombre_español": "Molino con mancuerna",
+    "descripcion": "Ejercicio de movilidad para hombros y core"
+  },
+  {
+    "grupo": "Hombros",
+    "nombre": "dumbbell z press",
+    "gif": "/gif/hombros/Dumbbell-Z-Press-unscreen.gif",
+    "series": "3x4",
+    "nombre_español": "Press Z con mancuernas",
+    "descripcion": "Variación avanzada de press sentado en el suelo"
+  },
+  {
+    "grupo": "Hombros",
+    "nombre": "ez bar underhand press",
+    "gif": "/gif/hombros/EZ-Bar-Underhand-Press-unscreen.gif",
+    "series": "3x4",
+    "nombre_español": "Press con barra EZ en pronación",
+    "descripcion": "Variación de press con agarre inverso"
+  },
+  {
+    "grupo": "Hombros",
+    "nombre": "face pull",
+    "gif": "/gif/hombros/Face-pull-unscreen.gif",
+    "series": "3x4",
+    "nombre_español": "Face pull",
+    "descripcion": "Ejercicio esencial para deltoides posteriores"
+  },
+  {
+    "grupo": "Hombros",
+    "nombre": "foam roller posterior shoulder",
+    "gif": "/gif/hombros/Foam-Roller-Posterior-Shoulder-unscreen.gif",
+    "series": "3x4",
+    "nombre_español": "Auto-masaje con rodillo para hombros posteriores",
+    "descripcion": "Ejercicio de liberación miofascial para hombros"
+  },
+  {
+    "grupo": "Hombros",
+    "nombre": "full range of motion lat pulldown",
+    "gif": "/gif/hombros/Full-Range-Of-Motion-Lat-Pulldown-unscreen.gif",
+    "series": "3x4",
+    "nombre_español": "Jalón al pecho con rango completo",
+    "descripcion": "Variación de jalón para espalda y hombros"
+  },
+  {
+    "grupo": "Hombros",
+    "nombre": "half arnold press",
+    "gif": "/gif/hombros/Half-Arnold-Press-unscreen.gif",
+    "series": "3x4",
+    "nombre_español": "Press Arnold medio",
+    "descripcion": "Variación simplificada del press Arnold"
+  },
+  {
+    "grupo": "Hombros",
+    "nombre": "half kneeling cable external rotation",
+    "gif": "/gif/hombros/Half-Kneeling-Cable-External-R-unscreen.gif",
+    "series": "3x4",
+    "nombre_español": "Rotación externa con cable de rodillas",
+    "descripcion": "Variación unilateral para rotadores externos"
+  },
+  {
+    "grupo": "Hombros",
+    "nombre": "half kneeling high cable row rope",
+    "gif": "/gif/hombros/Half-Kneeling-High-Cable-Row-R-unscreen.gif",
+    "series": "3x4",
+    "nombre_español": "Remo alto con cuerda de rodillas",
+    "descripcion": "Ejercicio para hombros posteriores y trapecio"
+  },
+  {
+    "grupo": "Hombros",
+    "nombre": "half kneeling one arm kettlebell press",
+    "gif": "/gif/hombros/Half-Kneeling-One-Arm-Kettlebe-unscreen.gif",
+    "series": "3x4",
+    "nombre_español": "Press a un brazo con kettlebell de rodillas",
+    "descripcion": "Variación unilateral con kettlebell"
+  },
+  {
+    "grupo": "Hombros",
+    "nombre": "handstand push ups between benches",
+    "gif": "/gif/hombros/handstand-push-up-unscreen.gif",
+    "series": "3x4",
+    "nombre_español": "Flexiones en pino entre bancos",
+    "descripcion": "Ejercicio avanzado de peso corporal para hombros"
+  },
+  {
+    "grupo": "Hombros",
+    "nombre": "incline dumbbell side lateral raise",
+    "gif": "/gif/hombros/Incline-Dumbbell-Side-Lateral--unscreen.gif",
+    "series": "3x4",
+    "nombre_español": "Elevación lateral inclinado con mancuernas",
+    "descripcion": "Variación en banco inclinado para deltoides"
+  },
+  {
+    "grupo": "Hombros",
+    "nombre": "incline dumbbell y raise",
+    "gif": "/gif/hombros/Incline-Dumbbell-Y-Raise-unscreen.gif",
+    "series": "3x4",
+    "nombre_español": "Elevación en Y inclinado con mancuernas",
+    "descripcion": "Ejercicio para hombros en posición inclinada"
+  },
+  {
+    "grupo": "Hombros",
+    "nombre": "incline front raise",
+    "gif": "/gif/hombros/Incline-Front-Raise-unscreen.gif",
+    "series": "3x4",
+    "nombre_español": "Elevación frontal inclinado",
+    "descripcion": "Variación en banco inclinado para deltoides frontales"
+  },
+  {
+    "grupo": "Hombros",
+    "nombre": "incline landmine press",
+    "gif": "/gif/hombros/Incline-Landmine-Press-unscreen.gif",
+    "series": "3x4",
+    "nombre_español": "Press con landmine inclinado",
+    "descripcion": "Variación en banco inclinado con barra anclada"
+  },
+  {
+    "grupo": "Hombros",
+    "nombre": "kettlebell arnold press",
+    "gif": "/gif/hombros/Kettlebell-Arnold-Press-unscreen.gif",
+    "series": "3x4",
+    "nombre_español": "Press Arnold con kettlebell",
+    "descripcion": "Variación del press Arnold usando kettlebell"
+  },
+  {
+    "grupo": "Hombros",
+    "nombre": "kettlebell clean and jerk",
+    "gif": "/gif/hombros/Kettlebell-Clean-and-Jerk-unscreen.gif",
+    "series": "3x4",
+    "nombre_español": "Cargada y envión con kettlebell",
+    "descripcion": "Ejercicio olímpico completo con kettlebell"
+  },
+  {
+    "grupo": "Hombros",
+    "nombre": "kettlebell clean and press",
+    "gif": "/gif/hombros/Kettlebell-Clean-and-Press-unscreen.gif",
+    "series": "3x4",
+    "nombre_español": "Cargada y press con kettlebell",
+    "descripcion": "Ejercicio combinado para hombros y cuerpo"
+  },
+  {
+    "grupo": "Hombros",
+    "nombre": "kettlebell lateral raise",
+    "gif": "/gif/hombros/Kettlebell-Lateral-Raise-unscreen.gif",
+    "series": "3x4",
+    "nombre_español": "Elevación lateral con kettlebell",
+    "descripcion": "Variación de elevación lateral con kettlebell"
+  },
+  {
+    "grupo": "Hombros",
+    "nombre": "kettlebell one arm military press",
+    "gif": "/gif/hombros/Kettlebell-One-Arm-Military-Pr-unscreen.gif",
+    "series": "3x4",
+    "nombre_español": "Press militar a un brazo con kettlebell",
+    "descripcion": "Variación unilateral con kettlebell"
+  },
+  {
+    "grupo": "Hombros",
+    "nombre": "kettlebell shoulder press",
+    "gif": "/gif/hombros/Kettlebell-Shoulder-Press-unscreen.gif",
+    "series": "3x4",
+    "nombre_español": "Press de hombros con kettlebell",
+    "descripcion": "Ejercicio básico para hombros con kettlebell"
+  },
+  {
+    "grupo": "Hombros",
+    "nombre": "kettlebell split snatch",
+    "gif": "/gif/hombros/Kettlebell-Split-Snatch-unscreen.gif",
+    "series": "3x4",
+    "nombre_español": "Arranque en split con kettlebell",
+    "descripcion": "Variación de arranque con posición dividida"
+  },
+  {
+    "grupo": "Hombros",
+    "nombre": "kettlebell swings",
+    "gif": "/gif/hombros/Kettlebell-Swings-unscreen.gif",
+    "series": "3x4",
+    "nombre_español": "Balanceos con kettlebell",
+    "descripcion": "Ejercicio de potencia para hombros y cadena posterior"
+  },
+  {
+    "grupo": "Hombros",
+    "nombre": "kettlebell thruster",
+    "gif": "/gif/hombros/Kettlebell-Thruster-unscreen.gif",
+    "series": "3x4",
+    "nombre_español": "Thruster con kettlebell",
+    "descripcion": "Ejercicio combinado de sentadilla y press"
+  },
+  {
+    "grupo": "Hombros",
+    "nombre": "kettlebell windmill",
+    "gif": "/gif/hombros/Kettlebell-Windmill-unscreen.gif",
+    "series": "3x4",
+    "nombre_español": "Molino con kettlebell",
+    "descripcion": "Ejercicio de movilidad para hombros y core"
+  },
+  {
+    "grupo": "Hombros",
+    "nombre": "kneeling back rotation stretch",
+    "gif": "/gif/hombros/Kneeling-Back-Rotation-Stretch-unscreen.gif",
+    "series": "3x4",
+    "nombre_español": "Estiramiento de rotación de espalda de rodillas",
+    "descripcion": "Ejercicio de movilidad para hombros y columna"
+  },
+  {
+    "grupo": "Hombros",
+    "nombre": "kneeling cable shoulder press",
+    "gif": "/gif/hombros/Kneeling-Cable-Shoulder-Press-unscreen.gif",
+    "series": "3x4",
+    "nombre_español": "Press de hombros con cable de rodillas",
+    "descripcion": "Variación de press en posición de rodillas"
+  },
+  {
+    "grupo": "Hombros",
+    "nombre": "kneeling landmine press",
+    "gif": "/gif/hombros/Kneeling-Landmine-Press-unscreen.gif",
+    "series": "3x4",
+    "nombre_español": "Press con landmine de rodillas",
+    "descripcion": "Variación de press con barra anclada"
+  },
+  {
+    "grupo": "Hombros",
+    "nombre": "kneeling t spine rotation",
+    "gif": "/gif/hombros/Kneeling-T-spine-Rotation-unscreen.gif",
+    "series": "3x4",
+    "nombre_español": "Rotación de columna torácica de rodillas",
+    "descripcion": "Ejercicio de movilidad para hombros y espalda"
+  },
+  {
+    "grupo": "Hombros",
+    "nombre": "landmine lateral raise",
+    "gif": "/gif/hombros/Landmine-Lateral-Raise-unscreen.gif",
+    "series": "3x4",
+    "nombre_español": "Elevación lateral con landmine",
+    "descripcion": "Variación de elevación lateral con barra anclada"
+  },
+  {
+    "grupo": "Hombros",
+    "nombre": "landmine press",
+    "gif": "/gif/hombros/Landmine-Press-unscreen.gif",
+    "series": "3x4",
+    "nombre_español": "Press con landmine",
+    "descripcion": "Ejercicio para hombros con barra anclada"
+  },
+  {
+    "grupo": "Hombros",
+    "nombre": "lateral raise machine",
+    "gif": "/gif/hombros/Lateral-Raise-Machine-unscreen.gif",
+    "series": "3x4",
+    "nombre_español": "Elevación lateral en máquina",
+    "descripcion": "Ejercicio guiado para deltoides laterales"
+  },
+  {
+    "grupo": "Hombros",
+    "nombre": "lateral raise with towel on wall",
+    "gif": "/gif/hombros/Lateral-Raise-with-Towel-on-Wall-unscreen.gif",
+    "series": "3x4",
+    "nombre_español": "Elevación lateral con toalla en pared",
+    "descripcion": "Variación con apoyo para técnica correcta"
+  },
+  {
+    "grupo": "Hombros",
+    "nombre": "leaning cable lateral raise",
+    "gif": "/gif/hombros/Leaning-Cable-Lateral-Raise-unscreen.gif",
+    "series": "3x4",
+    "nombre_español": "Elevación lateral inclinado con cable",
+    "descripcion": "Variación con apoyo lateral para deltoides"
+  },
+  {
+    "grupo": "Hombros",
+    "nombre": "leaning single arm dumbbell lateral raise",
+    "gif": "/gif/hombros/Leaning-Single-Arm-Dumbbell-La-unscreen.gif",
+    "series": "3x4",
+    "nombre_español": "Elevación lateral a un brazo inclinado",
+    "descripcion": "Variación unilateral con apoyo"
+  },
+  {
+    "grupo": "Hombros",
+    "nombre": "lever high row",
+    "gif": "/gif/hombros/Lever-High-Row-unscreen.gif",
+    "series": "3x4",
+    "nombre_español": "Remo alto en máquina de palancas",
+    "descripcion": "Ejercicio para hombros posteriores y trapecio"
+  },
+  {
+    "grupo": "Hombros",
+    "nombre": "lever lateral raise",
+    "gif": "/gif/hombros/Lever-Lateral-Raise-unscreen.gif",
+    "series": "3x4",
+    "nombre_español": "Elevación lateral en máquina de palancas",
+    "descripcion": "Ejercicio guiado para deltoides laterales"
+  },
+  {
+    "grupo": "Hombros",
+    "nombre": "lever reverse shoulder press",
+    "gif": "/gif/hombros/Lever-Reverse-Shoulder-Press-unscreen.gif",
+    "series": "3x4",
+    "nombre_español": "Press inverso de hombros en máquina",
+    "descripcion": "Variación de press con agarre inverso"
+  },
+  {
+    "grupo": "Hombros",
+    "nombre": "lever shoulder press hammer grip",
+    "gif": "/gif/hombros/Lever-Shoulder-Press-Hammer-Gr-unscreen.gif",
+    "series": "3x4",
+    "nombre_español": "Press de hombros con agarre martillo en máquina",
+    "descripcion": "Variación de press con agarre neutro"
+  },
+  {
+    "grupo": "Hombros",
+    "nombre": "lever shoulder press",
+    "gif": "/gif/hombros/Lever-Shoulder-Press-unscreen.gif",
+    "series": "3x4",
+    "nombre_español": "Press de hombros en máquina de palancas",
+    "descripcion": "Ejercicio guiado para hombros"
+  },
+  {
+    "grupo": "Hombros",
+    "nombre": "lying cable reverse fly",
+    "gif": "/gif/hombros/Lying-Cable-Reverse-Fly-unscreen.gif",
+    "series": "3x4",
+    "nombre_español": "Vuelo inverso con cable acostado",
+    "descripcion": "Variación tumbada para deltoides posteriores"
+  },
+  {
+    "grupo": "Hombros",
+    "nombre": "lying shoulder press",
+    "gif": "/gif/hombros/Lying-Shoulder-Press-unscreen.gif",
+    "series": "3x4",
+    "nombre_español": "Press de hombros acostado",
+    "descripcion": "Variación tumbada para aislar hombros"
+  },
+  {
+    "grupo": "Hombros",
+    "nombre": "lying upper body rotation",
+    "gif": "/gif/hombros/Lying-Upper-Body-Rotation-unscreen.gif",
+    "series": "3x4",
+    "nombre_español": "Rotación de torso superior acostado",
+    "descripcion": "Ejercicio de movilidad para hombros y columna"
+  },
+  {
+    "grupo": "Hombros",
+    "nombre": "medicine ball overhead throw",
+    "gif": "/gif/hombros/Medicine-Ball-Overhead-Throw-unscreen.gif",
+    "series": "3x4",
+    "nombre_español": "Lanzamiento de balón medicinal por encima",
+    "descripcion": "Ejercicio de potencia para hombros"
+  },
+  {
+    "grupo": "Hombros",
+    "nombre": "medicine ball overhead slam exercise",
+    "gif": "/gif/hombros/Medicine-ball-Overhead-Slam-ex-unscreen.gif",
+    "series": "3x4",
+    "nombre_español": "Golpeo de balón medicinal por encima",
+    "descripcion": "Ejercicio pliométrico para hombros"
+  },
+  {
+    "grupo": "Hombros",
+    "nombre": "one arm bent over cable lateral raise",
+    "gif": "/gif/hombros/One-Arm-Bent-Over-Cable-Lateral-Raise.gif",
+    "series": "3x4",
+    "nombre_español": "Elevación lateral inclinado a un brazo con cable",
+    "descripcion": "Variación unilateral para deltoides laterales"
+  },
+  {
+    "grupo": "Hombros",
+    "nombre": "one arm dumbbell snatch",
+    "gif": "/gif/hombros/One-Arm-Dumbbell-Snatch-unscreen.gif",
+    "series": "3x4",
+    "nombre_español": "Arranque a un brazo con mancuerna",
+    "descripcion": "Ejercicio olímpico unilateral para hombros"
+  },
+  {
+    "grupo": "Hombros",
+    "nombre": "one arm dumbbell upright row",
+    "gif": "/gif/hombros/One-Arm-Dumbbell-Upright-Row-unscreen.gif",
+    "series": "3x4",
+    "nombre_español": "Remo vertical a un brazo con mancuerna",
+    "descripcion": "Variación unilateral para hombros y trapecio"
+  },
+  {
+    "grupo": "Hombros",
+    "nombre": "one arm kettlebell snatch exercise",
+    "gif": "/gif/hombros/One-Arm-Kettlebell-Snatch-exer-unscreen.gif",
+    "series": "3x4",
+    "nombre_español": "Arranque a un brazo con kettlebell",
+    "descripcion": "Ejercicio de potencia unilateral"
+  },
+  {
+    "grupo": "Hombros",
+    "nombre": "one arm kettlebell swing",
+    "gif": "/gif/hombros/One-Arm-Kettlebell-Swing-unscreen.gif",
+    "series": "3x4",
+    "nombre_español": "Balanceo a un brazo con kettlebell",
+    "descripcion": "Variación unilateral del swing"
+  },
+  {
+    "grupo": "Hombros",
+    "nombre": "one arm landmine row",
+    "gif": "/gif/hombros/One-Arm-Landmine-Row-unscreen.gif",
+    "series": "3x4",
+    "nombre_español": "Remo a un brazo con landmine",
+    "descripcion": "Variación unilateral con barra anclada"
+  },
+  {
+    "grupo": "Hombros",
+    "nombre": "one arm medicine ball slam",
+    "gif": "/gif/hombros/One-Arm-Medicine-Ball-Slam-unscreen.gif",
+    "series": "3x4",
+    "nombre_español": "Golpeo de balón medicinal a un brazo",
+    "descripcion": "Variación unilateral de slam ball"
+  },
+  {
+    "grupo": "Hombros",
+    "nombre": "pvc front rack stretch",
+    "gif": "/gif/hombros/PVC-Front-Rack-Stretch-unscreen.gif",
+    "series": "3x4",
+    "nombre_español": "Estiramiento de rack frontal con tubo PVC",
+    "descripcion": "Ejercicio de movilidad para posición de rack"
+  },
+  {
+    "grupo": "Hombros",
+    "nombre": "pike push up between chairs",
+    "gif": "/gif/hombros/Pike-Push-Up-Between-Chairs-unscreen.gif",
+    "series": "3x4",
+    "nombre_español": "Flexión pike entre sillas",
+    "descripcion": "Variación avanzada de flexión para hombros"
+  },
+  {
+    "grupo": "Hombros",
+    "nombre": "pike push up",
+    "gif": "/gif/hombros/Pike-Push-up-unscreen.gif",
+    "series": "3x4",
+    "nombre_español": "Flexión pike",
+    "descripcion": "Ejercicio de peso corporal para hombros"
+  },
+  {
+    "grupo": "Hombros",
+    "nombre": "pike to cobra",
+    "gif": "/gif/hombros/Pike-to-Cobra-unscreen.gif",
+    "series": "3x4",
+    "nombre_español": "De pike a cobra",
+    "descripcion": "Ejercicio de movilidad para hombros y espalda"
+  },
+  {
+    "grupo": "Hombros",
+    "nombre": "plate loaded shoulder press",
+    "gif": "/gif/hombros/Plate-Loaded-Shoulder-Press-unscreen.gif",
+    "series": "3x4",
+    "nombre_español": "Press de hombros con discos",
+    "descripcion": "Variación de press en máquina con placas"
+  },
+  {
+    "grupo": "Hombros",
+    "nombre": "reaction ball throw agility ball drill ",
+    "gif": "/gif/hombros/Reaction-Ball-Throw-Agility-Ball-Drill-.gif",
+    "series": "3x4",
+    "nombre_español": "Ejercicio de lanzamiento de balón de reacción",
+    "descripcion": "Ejercicio de coordinación y hombros"
+  },
+  {
+    "grupo": "Hombros",
+    "nombre": "rear delt machine flys",
+    "gif": "/gif/hombros/Rear-Delt-Machine-Flys-unscreen.gif",
+    "series": "3x4",
+    "nombre_español": "Vuelos para deltoides posteriores en máquina",
+    "descripcion": "Ejercicio guiado para hombros posteriores"
+  },
+  {
+    "grupo": "Hombros",
+    "nombre": "resistance band bent over rear delt fly",
+    "gif": "/gif/hombros/Resistance-Band-Bent-Over-Rear-unscreen.gif",
+    "series": "3x4",
+    "nombre_español": "Vuelo para deltoides posteriores inclinado con banda",
+    "descripcion": "Ejercicio con banda elástica para hombros"
+  },
+  {
+    "grupo": "Hombros",
+    "nombre": "resistance band pull apart",
+    "gif": "/gif/hombros/Resistance-Band-Pull-Apart-unscreen.gif",
+    "series": "3x4",
+    "nombre_español": "Apertura con banda de resistencia",
+    "descripcion": "Ejercicio para deltoides posteriores y trapecio"
+  },
+  {
+    "grupo": "Hombros",
+    "nombre": "resistance band seated shoulder press",
+    "gif": "/gif/hombros/Resistance-Band-Seated-Shoulde-unscreen.gif",
+    "series": "3x4",
+    "nombre_español": "Press de hombros sentado con banda",
+    "descripcion": "Variación sentada con banda elástica"
+  },
+  {
+    "grupo": "Hombros",
+    "nombre": "reverse shoulder stretch",
+    "gif": "/gif/hombros/Reverse-Shoulder-Stretch-unscreen.gif",
+    "series": "3x4",
+    "nombre_español": "Estiramiento inverso de hombro",
+    "descripcion": "Ejercicio de movilidad para hombros"
+  },
+  {
+    "grupo": "Hombros",
+    "nombre": "roll front shoulder and chest lying on floor",
+    "gif": "/gif/hombros/Roll-Front-Shoulder-and-Chest--unscreen.gif",
+    "series": "3x4",
+    "nombre_español": "Rodamiento de hombro y pecho en el suelo",
+    "descripcion": "Ejercicio de liberación miofascial"
+  },
+  {
+    "grupo": "Hombros",
+    "nombre": "rotator cuff stretch",
+    "gif": "/gif/hombros/Rotator-Cuff-Stretch-unscreen.gif",
+    "series": "3x4",
+    "nombre_español": "Estiramiento para manguito rotador",
+    "descripcion": "Ejercicio de movilidad para rotadores"
+  },
+  {
+    "grupo": "Hombros",
+    "nombre": "scapula dips",
+    "gif": "/gif/hombros/Scapula-Dips-unscreen.gif",
+    "series": "3x4",
+    "nombre_español": "Dips escapulares",
+    "descripcion": "Ejercicio para movilidad escapular"
+  },
+  {
+    "grupo": "Hombros",
+    "nombre": "scapular protraction and retraction",
+    "gif": "/gif/hombros/Scapular-Protraction-and-Retra-unscreen.gif",
+    "series": "3x4",
+    "nombre_español": "Protacción y retracción escapular",
+    "descripcion": "Ejercicio para movilidad de escápulas"
+  },
+  {
+    "grupo": "Hombros",
+    "nombre": "seated ballerina",
+    "gif": "/gif/hombros/Seated-Ballerina-unscreen.gif",
+    "series": "3x4",
+    "nombre_español": "Bailarina sentada",
+    "descripcion": "Ejercicio de movilidad para hombros"
+  },
+  {
+    "grupo": "Hombros",
+    "nombre": "seated behind the neck press",
+    "gif": "/gif/hombros/Seated-Behind-the-Neck-Press-unscreen.gif",
+    "series": "3x4",
+    "nombre_español": "Press tras nuca sentado",
+    "descripcion": "Variación de press con barra tras la cabeza"
+  },
+  {
+    "grupo": "Hombros",
+    "nombre": "seated dumbbell lateral raise",
+    "gif": "/gif/hombros/Seated-Dumbbell-Lateral-Raise-unscreen.gif",
+    "series": "3x4",
+    "nombre_español": "Elevación lateral sentado con mancuernas",
+    "descripcion": "Variación sentada para deltoides laterales"
+  },
+  {
+    "grupo": "Hombros",
+    "nombre": "seated rear lateral dumbbell raise",
+    "gif": "/gif/hombros/Seated-Rear-Lateral-Dumbbell-R-unscreen.gif",
+    "series": "3x4",
+    "nombre_español": "Elevación lateral posterior sentado",
+    "descripcion": "Variación sentada para deltoides posteriores"
+  },
+  {
+    "grupo": "Hombros",
+    "nombre": "seated scapular retraction exercise",
+    "gif": "/gif/hombros/Seated-Scapular-Retraction-Exe-unscreen.gif",
+    "series": "3x4",
+    "nombre_español": "Ejercicio de retracción escapular sentado",
+    "descripcion": "Ejercicio para postura y movilidad escapular"
+  },
+  {
+    "grupo": "Hombros",
+    "nombre": "serratus wall slide with foam roller",
+    "gif": "/gif/hombros/Serratus-Wall-Slide-With-Foam-Roller.gif",
+    "series": "3x4",
+    "nombre_español": "Deslizamiento en pared con rodillo para serrato",
+    "descripcion": "Ejercicio para activación del serrato anterior"
+  },
+  {
+    "grupo": "Hombros",
+    "nombre": "shoulder stretch behind back",
+    "gif": "/gif/hombros/Shoulder-Stretch-Behind-Back-unscreen.gif",
+    "series": "3x4",
+    "nombre_español": "Estiramiento de hombro por detrás de la espalda",
+    "descripcion": "Ejercicio de movilidad para rotación interna"
+  },
+  {
+    "grupo": "Hombros",
+    "nombre": "side bend press",
+    "gif": "/gif/hombros/Side-Bend-Press-unscreen.gif",
+    "series": "3x4",
+    "nombre_español": "Press con inclinación lateral",
+    "descripcion": "Variación de press trabajando oblicuos"
+  },
+  {
+    "grupo": "Hombros",
+    "nombre": "side lying rear delt dumbbell raise",
+    "gif": "/gif/hombros/Side-Lying-Rear-Delt-Dumbbell--unscreen.gif",
+    "series": "3x4",
+    "nombre_español": "Elevación para deltoides posteriores de lado",
+    "descripcion": "Variación lateral para aislar hombros posteriores"
+  },
+  {
+    "grupo": "Hombros",
+    "nombre": "single arm arnold press",
+    "gif": "/gif/hombros/Single-Arm-Arnold-Press-unscreen.gif",
+    "series": "3x4",
+    "nombre_español": "Press Arnold a un brazo",
+    "descripcion": "Variación unilateral del press Arnold"
+  },
+  {
+    "grupo": "Hombros",
+    "nombre": "single arm circles",
+    "gif": "/gif/hombros/Single-Arm-Circles-unscreen.gif",
+    "series": "3x4",
+    "nombre_español": "Círculos a un brazo",
+    "descripcion": "Ejercicio de movilidad articular unilateral"
+  },
+  {
+    "grupo": "Hombros",
+    "nombre": "skier gymstick",
+    "gif": "/gif/hombros/Skier-Gymstick-unscreen.gif",
+    "series": "3x4",
+    "nombre_español": "Esquiador con gymstick",
+    "descripcion": "Ejercicio de coordinación para hombros"
+  },
+  {
+    "grupo": "Hombros",
+    "nombre": "smith machine behind neck press",
+    "gif": "/gif/hombros/Smith-Machine-Behind-Neck-Pres-unscreen.gif",
+    "series": "3x4",
+    "nombre_español": "Press tras nuca en máquina Smith",
+    "descripcion": "Variación guiada de press tras la cabeza"
+  },
+  {
+    "grupo": "Hombros",
+    "nombre": "smith machine shoulder press",
+    "gif": "/gif/hombros/Smith-Machine-Shoulder-Press-unscreen.gif",
+    "series": "3x4",
+    "nombre_español": "Press de hombros en máquina Smith",
+    "descripcion": "Variación guiada de press para hombros"
+  },
+  {
+    "grupo": "Hombros",
+    "nombre": "standing alternating dumbbell shoulder press",
+    "gif": "/gif/hombros/Standing-Alternating-Dumbbell--unscreen.gif",
+    "series": "3x4",
+    "nombre_español": "Press de hombros alterno con mancuernas de pie",
+    "descripcion": "Variación alternada de press unilateral"
+  },
+  {
+    "grupo": "Hombros",
+    "nombre": "standing barbell close grip military press",
+    "gif": "/gif/hombros/Standing-Barbell-Close-Grip-Mi-unscreen.gif",
+    "series": "3x4",
+    "nombre_español": "Press militar con agarre cerrado de pie",
+    "descripcion": "Variación de press con agarre estrecho"
+  },
+  {
+    "grupo": "Hombros",
+    "nombre": "standing behind head military press",
+    "gif": "/gif/hombros/Standing-Behind-Head-Military--unscreen.gif",
+    "series": "3x4",
+    "nombre_español": "Press militar tras nuca de pie",
+    "descripcion": "Variación avanzada de press tras la cabeza"
+  },
+  {
+    "grupo": "Hombros",
+    "nombre": "standing dumbbell overhead press",
+    "gif": "/gif/hombros/Standing-Dumbbell-Overhead-Pre-unscreen.gif",
+    "series": "3x4",
+    "nombre_español": "Press por encima con mancuernas de pie",
+    "descripcion": "Ejercicio básico para hombros de pie"
+  },
+  {
+    "grupo": "Hombros",
+    "nombre": "standing reach up back rotation stretch",
+    "gif": "/gif/hombros/Standing-Reach-Up-Back-rotatio-unscreen.gif",
+    "series": "3x4",
+    "nombre_español": "Estiramiento de rotación de espalda alcanzando arriba",
+    "descripcion": "Ejercicio de movilidad para hombros y columna"
+  },
+  {
+    "grupo": "Hombros",
+    "nombre": "standing reverse shoulder stretch",
+    "gif": "/gif/hombros/Standing-Reverse-Shoulder-Stre-unscreen.gif",
+    "series": "3x4",
+    "nombre_español": "Estiramiento inverso de hombro de pie",
+    "descripcion": "Ejercicio de movilidad para rotación externa"
+  },
+  {
+    "grupo": "Hombros",
+    "nombre": "standing single arm upright row",
+    "gif": "/gif/hombros/Standing-Single-Arm-Upright-Ro-unscreen.gif",
+    "series": "3x4",
+    "nombre_español": "Remo vertical a un brazo de pie",
+    "descripcion": "Variación unilateral de remo vertical"
+  },
+  {
+    "grupo": "Hombros",
+    "nombre": "standing smith machine shoulder press",
+    "gif": "/gif/hombros/Standing-Smith-Machine-Shoulde-unscreen.gif",
+    "series": "3x4",
+    "nombre_español": "Press de hombros en máquina Smith de pie",
+    "descripcion": "Variación de pie en máquina guiada"
+  },
+  {
+    "grupo": "Hombros",
+    "nombre": "stretch with towel",
+    "gif": "/gif/hombros/Stretch-With-Towel-unscreen.gif",
+    "series": "3x4",
+    "nombre_español": "Estiramiento con toalla",
+    "descripcion": "Ejercicio de movilidad para hombros"
+  },
+  {
+    "grupo": "Hombros",
+    "nombre": "swing gymstick",
+    "gif": "/gif/hombros/Swing-Gymstick-unscreen.gif",
+    "series": "3x4",
+    "nombre_español": "Balanceo con gymstick",
+    "descripcion": "Ejercicio de coordinación para hombros"
+  },
+  {
+    "grupo": "Hombros",
+    "nombre": "two arm cable front raise",
+    "gif": "/gif/hombros/Two-Arm-Cable-Front-Raise-unscreen.gif",
+    "series": "3x4",
+    "nombre_español": "Elevación frontal a dos brazos con cable",
+    "descripcion": "Ejercicio bilateral para deltoides frontales"
+  },
+  {
+    "grupo": "Hombros",
+    "nombre": "two arm cable lateral raise",
+    "gif": "/gif/hombros/Two-Arm-Cable-Lateral-Raise-unscreen.gif",
+    "series": "3x4",
+    "nombre_español": "Elevación lateral a dos brazos con cable",
+    "descripcion": "Ejercicio bilateral para deltoides laterales"
+  },
+  {
+    "grupo": "Hombros",
+    "nombre": "two arm dumbbell front raise",
+    "gif": "/gif/hombros/Two-Arm-Dumbbell-Front-Raise-unscreen.gif",
+    "series": "3x4",
+    "nombre_español": "Elevación frontal a dos brazos con mancuernas",
+    "descripcion": "Ejercicio bilateral básico para hombros"
+  },
+  {
+    "grupo": "Hombros",
+    "nombre": "wall supported arm raises",
+    "gif": "/gif/hombros/Wall-Supported-Arm-Raises-unscreen.gif",
+    "series": "3x4",
+    "nombre_español": "Elevaciones de brazos con apoyo en pared",
+    "descripcion": "Ejercicio para técnica correcta de elevación"
+  },
+  {
+    "grupo": "Hombros",
+    "nombre": "weight plate front raise 1",
+    "gif": "/gif/hombros/Weight-Plate-Front-Raise-1-unscreen.gif",
+    "series": "3x4",
+    "nombre_español": "Elevación frontal con disco",
+    "descripcion": "Variación de elevación frontal usando disco"
+  },
+  {
+    "grupo": "Hombros",
+    "nombre": "arm circles",
+    "gif": "/gif/hombros/Arm-Circles-Shoulders-unscreen.gif",
+    "series": "3x4",
+    "nombre_español": "Círculos con brazos",
+    "descripcion": "Ejercicio de movilidad articular para hombros"
+  },
+  {
+    "grupo": "Hombros",
+    "nombre": "barbell uprightrow",
+    "gif": "/gif/hombros/barbell-uprightrow-unscreen.gif",
+    "series": "3x4",
+    "nombre_español": "Remo vertical con barra",
+    "descripcion": "Ejercicio para hombros y trapecio con barra"
+  },
+  {
+    "grupo": "Hombros",
+    "nombre": "bent over reverse cable fly",
+    "gif": "/gif/hombros/bent-over-reverse-cable-fly-unscreen.gif",
+    "series": "3x4",
+    "nombre_español": "Vuelo inverso inclinado con cable",
+    "descripcion": "Variación con polea para deltoides posteriores"
+  },
+  {
+    "grupo": "Hombros",
+    "nombre": "cable rear delt fly",
+    "gif": "/gif/hombros/cable-rear-delt-fly-unscreen.gif",
+    "series": "3x4",
+    "nombre_español": "Vuelo para deltoides posteriores con cable",
+    "descripcion": "Ejercicio con polea para hombros posteriores"
+  },
+  {
+    "grupo": "Hombros",
+    "nombre": "cable y raise",
+    "gif": "/gif/hombros/cable-y-raise-unscreen.gif",
+    "series": "3x4",
+    "nombre_español": "Elevación en Y con cable",
+    "descripcion": "Ejercicio para deltoides y trapecio inferior"
+  },
+  {
+    "grupo": "Hombros",
+    "nombre": "dumbbell cuban press ",
+    "gif": "/gif/hombros/dumbbell-cuban-press--unscreen.gif",
+    "series": "3x4",
+    "nombre_español": "Press cubano con mancuernas",
+    "descripcion": "Ejercicio completo para rotadores y hombros"
+  },
+  {
+    "grupo": "Hombros",
+    "nombre": "handstand push up",
+    "gif": "/gif/hombros/handstand-push-up-unscreen.gif",
+    "series": "3x4",
+    "nombre_español": "Flexión en pino",
+    "descripcion": "Ejercicio avanzado de peso corporal para hombros"
+  },
+  {
+    "grupo": "Hombros",
+    "nombre": "kipping handstand push up",
+    "gif": "/gif/hombros/kipping-handstand-push-up.gif",
+    "series": "3x4",
+    "nombre_español": "Flexión en pino con kipping",
+    "descripcion": "Variación con impulso para mayor repeticiones"
+  },
+  {
+    "grupo": "Hombros",
+    "nombre": "pendulum",
+    "gif": "/gif/hombros/pendulum-unscreen.gif",
+    "series": "3x4",
+    "nombre_español": "Péndulo",
+    "descripcion": "Ejercicio de movilidad para hombros"
+  },
+  {
+    "grupo": "Hombros",
+    "nombre": "push press 1",
+    "gif": "/gif/hombros/push-press-1-unscreen.gif",
+    "series": "3x4",
+    "nombre_español": "Push press",
+    "descripcion": "Ejercicio de potencia para hombros con impulso"
+  },
+  {
+    "grupo": "Hombros",
+    "nombre": "scott press",
+    "gif": "/gif/hombros/scott-press-unscreen.gif",
+    "series": "3x4",
+    "nombre_español": "Press Scott",
+    "descripcion": "Variación de press con trayectoria arqueada"
+  },
+  {
+    "grupo": "Hombros",
+    "nombre": "seated dumbbell front raise",
+    "gif": "/gif/hombros/seated-dumbbell-front-raise-unscreen.gif",
+    "series": "3x4",
+    "nombre_español": "Elevación frontal sentado con mancuernas",
+    "descripcion": "Variación sentada para deltoides frontales"
+  },
+  {
+    "grupo": "Hombros",
+    "nombre": "shoulder external rotation stretch",
+    "gif": "/gif/hombros/shoulder-external-rotation-str-unscreen.gif",
+    "series": "3x4",
+    "nombre_español": "Estiramiento de rotación externa de hombro",
+    "descripcion": "Ejercicio de movilidad para rotadores externos"
+  },
+  {
+    "grupo": "Hombros",
+    "nombre": "shoulder internal rotation stretch",
+    "gif": "/gif/hombros/shoulder-internal-rotation-str-unscreen.gif",
+    "series": "3x4",
+    "nombre_español": "Estiramiento de rotación interna de hombro",
+    "descripcion": "Ejercicio de movilidad para rotadores internos"
+  },
+  {
+    "grupo": "Hombros",
+    "nombre": "thruster",
+    "gif": "/gif/hombros/thruster-unscreen.gif",
+    "series": "3x4",
+    "nombre_español": "Thruster",
+    "descripcion": "Ejercicio combinado de sentadilla y press"
+  },
+  {
+    "grupo": "Hombros",
+    "nombre": "wall ball",
+    "gif": "/gif/hombros/wall-ball-unscreen.gif",
+    "series": "3x4",
+    "nombre_español": "Lanzamiento a pared con balón",
+    "descripcion": "Ejercicio de potencia para hombros y piernas"
+  },
+  {
+    "grupo": "Hombros",
+    "nombre": "wall slide",
+    "gif": "/gif/hombros/wall-slide-unscreen.gif",
+    "series": "3x4",
+    "nombre_español": "Deslizamiento en pared",
+    "descripcion": "Ejercicio de movilidad para hombros y escápulas"
+  },
+  {
+    "grupo": "Hombros",
+    "nombre": "wall supported handstand push up",
+    "gif": "/gif/hombros/wall-supported-handstand-push--unscreen.gif",
+    "series": "3x4",
+    "nombre_español": "Flexión en pino con apoyo en pared",
+    "descripcion": "Variación asistida de flexión en pino"
+  },
+  {
+    "grupo": "Hombros",
+    "nombre": "weighted round arm",
+    "gif": "/gif/hombros/weighted-round-arm-unscreen.gif",
+    "series": "3x4",
+    "nombre_español": "Brazos redondos con peso",
+    "descripcion": "Ejercicio de movilidad para hombros con carga"
+  }
+]

@@ -1,0 +1,1419 @@
+[
+  {
+    "grupo": "Core",
+    "nombre": "4-Point-Tummy-Vacuum-Exercise-unscreen",
+    "gif": "/gif/centro/4-Point-Tummy-Vacuum-Exercise-unscreen.gif",
+    "series": "3x4",
+    "nombre_español": "Ejercicio de vacío abdominal en 4 puntos",
+    "descripcion": "Ejercicio para fortalecer el core: Contracción profunda de los abdominales en posición de cuatro apoyos"
+  },
+  {
+    "grupo": "Core",
+    "nombre": "Ab-Coaster-Machine-unscreen",
+    "gif": "/gif/centro/Ab-Coaster-Machine-unscreen.gif",
+    "series": "3x4",
+    "nombre_español": "Máquina de abdominales Ab Coaster",
+    "descripcion": "Ejercicio para fortalecer el core: Movimiento guiado que trabaja los abdominales superiores e inferiores"
+  },
+  {
+    "grupo": "Core",
+    "nombre": "Ab-Roller-Crunch-unscreen",
+    "gif": "/gif/centro/Ab-Roller-Crunch-unscreen.gif",
+    "series": "3x4",
+    "nombre_español": "Crunch con rueda abdominal",
+    "descripcion": "Ejercicio para fortalecer el core: Flexión de tronco usando una rueda para mayor intensidad"
+  },
+  {
+    "grupo": "Core",
+    "nombre": "Ab-Straps-Leg-Raise-unscreen",
+    "gif": "/gif/centro/Ab-Straps-Leg-Raise-unscreen.gif",
+    "series": "3x4",
+    "nombre_español": "Elevación de piernas en correas",
+    "descripcion": "Ejercicio para fortalecer el core: Elevación de piernas colgado con soporte de correas"
+  },
+  {
+    "grupo": "Core",
+    "nombre": "Ab-Wheel-Rollout-unscreen",
+    "gif": "/gif/centro/Ab-Wheel-Rollout-unscreen.gif",
+    "series": "3x4",
+    "nombre_español": "Extensión con rueda abdominal",
+    "descripcion": "Ejercicio para fortalecer el core: Rodar la rueda hacia adelante manteniendo el core activo"
+  },
+  {
+    "grupo": "Core",
+    "nombre": "Abdominal-bracing-exercise",
+    "gif": "/gif/centro/Abdominal-bracing-exercise.png",
+    "series": "3x4",
+    "nombre_español": "Ejercicio de activación abdominal",
+    "descripcion": "Ejercicio para fortalecer el core: Contracción isométrica de los músculos abdominales"
+  },
+  {
+    "grupo": "Core",
+    "nombre": "Alternate-Leg-Raises-unscreen",
+    "gif": "/gif/centro/Alternate-Leg-Raises-unscreen.gif",
+    "series": "3x4",
+    "nombre_español": "Elevaciones alternadas de piernas",
+    "descripcion": "Ejercicio para fortalecer el core: Elevación alterna de piernas manteniendo el control"
+  },
+  {
+    "grupo": "Core",
+    "nombre": "Alternate-Lying-Floor-Leg-Rais-unscreen",
+    "gif": "/gif/centro/Alternate-Lying-Floor-Leg-Rais-unscreen.gif",
+    "series": "3x4",
+    "nombre_español": "Elevaciones alternas de piernas en suelo",
+    "descripcion": "Ejercicio para fortalecer el core: Movimiento de piernas alterno en posición tumbada"
+  },
+  {
+    "grupo": "Core",
+    "nombre": "Ball-Russian-Twist-throw-with--unscreen",
+    "gif": "/gif/centro/Ball-Russian-Twist-throw-with--unscreen.gif",
+    "series": "3x4",
+    "nombre_español": "Giros rusos con balón",
+    "descripcion": "Ejercicio para fortalecer el core: Rotación de torso con balón para trabajar oblicuos"
+  },
+  {
+    "grupo": "Core",
+    "nombre": "Barbell-Rollout-unscreen",
+    "gif": "/gif/centro/Barbell-Rollout-unscreen.gif",
+    "series": "3x4",
+    "nombre_español": "Extensión con barra",
+    "descripcion": "Ejercicio para fortalecer el core: Rodar la barra hacia adelante manteniendo la estabilidad"
+  },
+  {
+    "grupo": "Core",
+    "nombre": "Barbell-Seated-Twist-unscreen",
+    "gif": "/gif/centro/Barbell-Seated-Twist-unscreen.gif",
+    "series": "3x4",
+    "nombre_español": "Giros sentados con barra",
+    "descripcion": "Ejercicio para fortalecer el core: Rotación de torso con barra para oblicuos"
+  },
+  {
+    "grupo": "Core",
+    "nombre": "Barbell-Side-Bend-unscreen",
+    "gif": "/gif/centro/Barbell-Side-Bend-unscreen.gif",
+    "series": "3x4",
+    "nombre_español": "Inclinaciones laterales con barra",
+    "descripcion": "Ejercicio para fortalecer el core: Flexión lateral con peso para trabajar oblicuos"
+  },
+  {
+    "grupo": "Core",
+    "nombre": "Bear-Crawl-unscreen",
+    "gif": "/gif/centro/Bear-Crawl-unscreen.gif",
+    "series": "3x4",
+    "nombre_español": "Desplazamiento de oso",
+    "descripcion": "Ejercicio para fortalecer el core: Movimiento cuadrúpedo que desafía la estabilidad"
+  },
+  {
+    "grupo": "Core",
+    "nombre": "Bench-Side-Bend-unscreen",
+    "gif": "/gif/centro/Bench-Side-Bend-unscreen.gif",
+    "series": "3x4",
+    "nombre_español": "Inclinaciones laterales en banco",
+    "descripcion": "Ejercicio para fortalecer el core: Flexión lateral sobre banco para oblicuos"
+  },
+  {
+    "grupo": "Core",
+    "nombre": "Bent-Over-Twist-unscreen",
+    "gif": "/gif/centro/Bent-Over-Twist-unscreen.gif",
+    "series": "3x4",
+    "nombre_español": "Giros inclinados",
+    "descripcion": "Ejercicio para fortalecer el core: Rotación de torso en posición inclinada"
+  },
+  {
+    "grupo": "Core",
+    "nombre": "Bicycle-Crunch-Gymstick-unscreen",
+    "gif": "/gif/centro/Bicycle-Crunch-Gymstick-unscreen.gif",
+    "series": "3x4",
+    "nombre_español": "Bicicleta abdominal con Gymstick",
+    "descripcion": "Ejercicio para fortalecer el core: Movimiento de pedaleo con resistencia añadida"
+  },
+  {
+    "grupo": "Core",
+    "nombre": "Bicycle-Crunch-unscreen",
+    "gif": "/gif/centro/Bicycle-Crunch-unscreen.gif",
+    "series": "3x4",
+    "nombre_español": "Bicicleta abdominal",
+    "descripcion": "Ejercicio para fortalecer el core: Pedaleo aéreo combinando codo y rodilla opuestos"
+  },
+  {
+    "grupo": "Core",
+    "nombre": "Bicycle-Twisting-Crunch-unscreen",
+    "gif": "/gif/centro/Bicycle-Twisting-Crunch-unscreen.gif",
+    "series": "3x4",
+    "nombre_español": "Bicicleta abdominal con giros",
+    "descripcion": "Ejercicio para fortalecer el core: Pedaleo aéreo con rotación adicional"
+  },
+  {
+    "grupo": "Core",
+    "nombre": "Boat-Pose-Stretch-unscreen",
+    "gif": "/gif/centro/Boat-Pose-Stretch-unscreen.gif",
+    "series": "3x4",
+    "nombre_español": "Postura del barco",
+    "descripcion": "Ejercicio para fortalecer el core: Equilibrio en V que trabaja abdominales profundos"
+  },
+  {
+    "grupo": "Core",
+    "nombre": "Bodyweight-Kneeling-Sissy-Squa-unscreen",
+    "gif": "/gif/centro/Bodyweight-Kneeling-Sissy-Squa-unscreen.gif",
+    "series": "3x4",
+    "nombre_español": "Sentadilla Sissy de rodillas",
+    "descripcion": "Ejercicio para fortalecer el core: Variante de sentadilla que desafía el equilibrio"
+  },
+  {
+    "grupo": "Core",
+    "nombre": "Bodyweight-Skull-Crushers-unscreen",
+    "gif": "/gif/centro/Bodyweight-Skull-Crushers-unscreen.gif",
+    "series": "3x4",
+    "nombre_español": "Extensión de tríceps con peso corporal",
+    "descripcion": "Ejercicio para fortalecer el core: Extensión de brazos que involucra la estabilidad central"
+  },
+  {
+    "grupo": "Core",
+    "nombre": "Bodyweight-Windmill-unscreen",
+    "gif": "/gif/centro/Bodyweight-Windmill-unscreen.gif",
+    "series": "3x4",
+    "nombre_español": "Molino con peso corporal",
+    "descripcion": "Ejercicio para fortalecer el core: Rotación controlada del torso"
+  },
+  {
+    "grupo": "Core",
+    "nombre": "Bow-Yoga-Pose-unscreen",
+    "gif": "/gif/centro/Bow-Yoga-Pose-unscreen.gif",
+    "series": "3x4",
+    "nombre_español": "Postura del arco en yoga",
+    "descripcion": "Ejercicio para fortalecer el core: Extensión que trabaja la cadena posterior"
+  },
+  {
+    "grupo": "Core",
+    "nombre": "Butterfly-Sit-up-unscreen",
+    "gif": "/gif/centro/Butterfly-Sit-up-unscreen.gif",
+    "series": "3x4",
+    "nombre_español": "Abdominales mariposa",
+    "descripcion": "Ejercicio para fortalecer el core: Encogimientos con plantas de pies juntas"
+  },
+  {
+    "grupo": "Core",
+    "nombre": "Cable-Half-Kneeling-Pallof-Pre-unscreen",
+    "gif": "/gif/centro/Cable-Half-Kneeling-Pallof-Pre-unscreen.gif",
+    "series": "3x4",
+    "nombre_español": "Press Pallof de rodillas",
+    "descripcion": "Ejercicio para fortalecer el core: Anti-rotación con cable desde posición de rodillas"
+  },
+  {
+    "grupo": "Core",
+    "nombre": "Cable-Seated-Cross-Arm-Twist-unscreen",
+    "gif": "/gif/centro/Cable-Seated-Cross-Arm-Twist-unscreen.gif",
+    "series": "3x4",
+    "nombre_español": "Giros sentados con cable",
+    "descripcion": "Ejercicio para fortalecer el core: Rotación de torso contra resistencia"
+  },
+  {
+    "grupo": "Core",
+    "nombre": "Cable-Seated-Twist-on-Floor-unscreen",
+    "gif": "/gif/centro/Cable-Seated-Twist-on-Floor-unscreen.gif",
+    "series": "3x4",
+    "nombre_español": "Giros sentados en suelo con cable",
+    "descripcion": "Ejercicio para fortalecer el core: Rotación de torso desde el suelo con resistencia"
+  },
+  {
+    "grupo": "Core",
+    "nombre": "Cable-Side-Bend-unscreen",
+    "gif": "/gif/centro/Cable-Side-Bend-unscreen.gif",
+    "series": "3x4",
+    "nombre_español": "Inclinaciones laterales con cable",
+    "descripcion": "Ejercicio para fortalecer el core: Flexión lateral con resistencia ajustable"
+  },
+  {
+    "grupo": "Core",
+    "nombre": "Captains-Chair-Leg-Raise-unscreen",
+    "gif": "/gif/centro/Captains-Chair-Leg-Raise-unscreen.gif",
+    "series": "3x4",
+    "nombre_español": "Elevación de piernas en silla capitán",
+    "descripcion": "Ejercicio para fortalecer el core: Elevación controlada de piernas colgado"
+  },
+  {
+    "grupo": "Core",
+    "nombre": "Crab-Twist-Toe-Touch-unscreen",
+    "gif": "/gif/centro/Crab-Twist-Toe-Touch-unscreen.gif",
+    "series": "3x4",
+    "nombre_español": "Toques de pie en posición de cangrejo",
+    "descripcion": "Ejercicio para fortalecer el core: Movimiento combinado de rotación y extensión"
+  },
+  {
+    "grupo": "Core",
+    "nombre": "Cross-Body-Mountain-Climber-unscreen",
+    "gif": "/gif/centro/Cross-Body-Mountain-Climber-unscreen.gif",
+    "series": "3x4",
+    "nombre_español": "Escalador cruzado",
+    "descripcion": "Ejercicio para fortalecer el core: Movimiento dinámico con rotación"
+  },
+  {
+    "grupo": "Core",
+    "nombre": "Cross-Crunch-unscreen",
+    "gif": "/gif/centro/Cross-Crunch-unscreen.gif",
+    "series": "3x4",
+    "nombre_español": "Crunch cruzado",
+    "descripcion": "Ejercicio para fortalecer el core: Encogimiento combinando codo y rodilla opuestos"
+  },
+  {
+    "grupo": "Core",
+    "nombre": "Crunch-With-Leg-Raise-unscreen",
+    "gif": "/gif/centro/Crunch-With-Leg-Raise-unscreen.gif",
+    "series": "3x4",
+    "nombre_español": "Crunch con elevación de piernas",
+    "descripcion": "Ejercicio para fortalecer el core: Combinación de encogimiento y elevación de piernas"
+  },
+  {
+    "grupo": "Core",
+    "nombre": "Crunch-unscreen",
+    "gif": "/gif/centro/Crunch-unscreen.gif",
+    "series": "3x4",
+    "nombre_español": "Crunch abdominal",
+    "descripcion": "Ejercicio para fortalecer el core: Encogimiento básico para abdominales superiores"
+  },
+  {
+    "grupo": "Core",
+    "nombre": "Dead-Bug-1-unscreen",
+    "gif": "/gif/centro/Dead-Bug-1-unscreen.gif",
+    "series": "3x4",
+    "nombre_español": "Bicho muerto (variación)",
+    "descripcion": "Ejercicio para fortalecer el core: Movimiento contralateral de brazos y piernas"
+  },
+  {
+    "grupo": "Core",
+    "nombre": "Dead-Bug-unscreen",
+    "gif": "/gif/centro/Dead-Bug-unscreen.gif",
+    "series": "3x4",
+    "nombre_español": "Bicho muerto",
+    "descripcion": "Ejercicio para fortalecer el core: Control de movimiento en posición supina"
+  },
+  {
+    "grupo": "Core",
+    "nombre": "Decline-Sit-up-unscreen",
+    "gif": "/gif/centro/Decline-Sit-up-unscreen.gif",
+    "series": "3x4",
+    "nombre_español": "Abdominales en declive",
+    "descripcion": "Ejercicio para fortalecer el core: Encogimientos en banco inclinado para mayor intensidad"
+  },
+  {
+    "grupo": "Core",
+    "nombre": "Dhanurasana-Rocking-Bow-Pose-unscreen",
+    "gif": "/gif/centro/Dhanurasana-Rocking-Bow-Pose-unscreen.gif",
+    "series": "3x4",
+    "nombre_español": "Postura del arco mecedora",
+    "descripcion": "Ejercicio para fortalecer el core: Estiramiento y fortalecimiento de la cadena posterior"
+  },
+  {
+    "grupo": "Core",
+    "nombre": "Double-Crunches-unscreen",
+    "gif": "/gif/centro/Double-Crunches-unscreen.gif",
+    "series": "3x4",
+    "nombre_español": "Crunch doble",
+    "descripcion": "Ejercicio para fortalecer el core: Combinación de encogimiento superior e inferior"
+  },
+  {
+    "grupo": "Core",
+    "nombre": "Double-Leg-Stretch-unscreen",
+    "gif": "/gif/centro/Double-Leg-Stretch-unscreen.gif",
+    "series": "3x4",
+    "nombre_español": "Estiramiento de doble pierna",
+    "descripcion": "Ejercicio para fortalecer el core: Extensión controlada de piernas en posición supina"
+  },
+  {
+    "grupo": "Core",
+    "nombre": "Down-to-Up-Twist-Gymstick-unscreen",
+    "gif": "/gif/centro/Down-to-Up-Twist-Gymstick-unscreen.gif",
+    "series": "3x4",
+    "nombre_español": "Giros de abajo arriba con Gymstick",
+    "descripcion": "Ejercicio para fortalecer el core: Rotación con resistencia en plano vertical"
+  },
+  {
+    "grupo": "Core",
+    "nombre": "Dumbbell-Floor-Wipers-unscreen",
+    "gif": "/gif/centro/Dumbbell-Floor-Wipers-unscreen.gif",
+    "series": "3x4",
+    "nombre_español": "Limpiaparabrisas con mancuernas",
+    "descripcion": "Ejercicio para fortalecer el core: Rotación de piernas con peso adicional"
+  },
+  {
+    "grupo": "Core",
+    "nombre": "Dumbbell-Side-Bend-unscreen",
+    "gif": "/gif/centro/Dumbbell-Side-Bend-unscreen.gif",
+    "series": "3x4",
+    "nombre_español": "Inclinaciones laterales con mancuernas",
+    "descripcion": "Ejercicio para fortalecer el core: Flexión lateral con peso para oblicuos"
+  },
+  {
+    "grupo": "Core",
+    "nombre": "Dumbbell-V-up-unscreen",
+    "gif": "/gif/centro/Dumbbell-V-up-unscreen.gif",
+    "series": "3x4",
+    "nombre_español": "Elevación en V con mancuernas",
+    "descripcion": "Ejercicio para fortalecer el core: Combinación de elevación de torso y piernas con peso"
+  },
+  {
+    "grupo": "Core",
+    "nombre": "Dumbbell-Windmill-unscreen",
+    "gif": "/gif/centro/Dumbbell-Windmill-unscreen.gif",
+    "series": "3x4",
+    "nombre_español": "Molino con mancuerna",
+    "descripcion": "Ejercicio para fortalecer el core: Rotación controlada con peso"
+  },
+  {
+    "grupo": "Core",
+    "nombre": "Exercise-Ball-Frog-Crunch-unscreen",
+    "gif": "/gif/centro/Exercise-Ball-Frog-Crunch-unscreen.gif",
+    "series": "3x4",
+    "nombre_español": "Crunch de rana en balón",
+    "descripcion": "Ejercicio para fortalecer el core: Movimiento de rana sobre balón para mayor inestabilidad"
+  },
+  {
+    "grupo": "Core",
+    "nombre": "Fish-Pose-Matsyasana-unscreen",
+    "gif": "/gif/centro/Fish-Pose-Matsyasana-unscreen.gif",
+    "series": "3x4",
+    "nombre_español": "Postura del pez",
+    "descripcion": "Ejercicio para fortalecer el core: Estiramiento que abre el pecho y trabaja el core"
+  },
+  {
+    "grupo": "Core",
+    "nombre": "Floor-Crunch-unscreen",
+    "gif": "/gif/centro/Floor-Crunch-unscreen.gif",
+    "series": "3x4",
+    "nombre_español": "Crunch en suelo",
+    "descripcion": "Ejercicio para fortalecer el core: Encogimiento básico sobre superficie plana"
+  },
+  {
+    "grupo": "Core",
+    "nombre": "Flutter-Kicks-unscreen",
+    "gif": "/gif/centro/Flutter-Kicks-unscreen.gif",
+    "series": "3x4",
+    "nombre_español": "Aleteo de piernas",
+    "descripcion": "Ejercicio para fortalecer el core: Movimiento rápido y controlado de piernas"
+  },
+  {
+    "grupo": "Core",
+    "nombre": "Front-Plank-With-Arm-And-Leg-L-unscreen",
+    "gif": "/gif/centro/Front-Plank-With-Arm-And-Leg-L-unscreen.gif",
+    "series": "3x4",
+    "nombre_español": "Plancha dinamica con elevación de brazo y pierna",
+    "descripcion": "Ejercicio para fortalecer el core: Plancha con desafío de equilibrio contralateral"
+  },
+  {
+    "grupo": "Core",
+    "nombre": "Front-Plank-with-Arm-Lift-unscreen",
+    "gif": "/gif/centro/Front-Plank-with-Arm-Lift-unscreen.gif",
+    "series": "3x4",
+    "nombre_español": "Plancha isometrica con elevación de brazos",
+    "descripcion": "Ejercicio para fortalecer el core: Plancha estándar con desafío de estabilidad"
+  },
+  {
+    "grupo": "Core",
+    "nombre": "Front-to-Side-Plank-unscreen",
+    "gif": "/gif/centro/Front-to-Side-Plank-unscreen.gif",
+    "series": "3x4",
+    "nombre_español": "Transición de plancha frontal a lateral",
+    "descripcion": "Ejercicio para fortalecer el core: Cambio dinámico entre planchas"
+  },
+  {
+    "grupo": "Core",
+    "nombre": "Full-Crunch-Machine-unscreen",
+    "gif": "/gif/centro/Full-Crunch-Machine-unscreen.gif",
+    "series": "3x4",
+    "nombre_español": "Máquina de crunch completo",
+    "descripcion": "Ejercicio para fortalecer el core: Encogimiento asistido por máquina"
+  },
+  {
+    "grupo": "Core",
+    "nombre": "Full-Planche-unscreen",
+    "gif": "/gif/centro/Full-Planche-unscreen.gif",
+    "series": "3x4",
+    "nombre_español": "Plancha completa",
+    "descripcion": "Ejercicio para fortalecer el core: Equilibrio avanzado en suspensión"
+  },
+  {
+    "grupo": "Core",
+    "nombre": "Glute-Bridge--unscreen",
+    "gif": "/gif/centro/Glute-Bridge--unscreen.gif",
+    "series": "3x4",
+    "nombre_español": "Puente de glúteos",
+    "descripcion": "Ejercicio para fortalecer el core: Elevación de cadera para glúteos y core"
+  },
+  {
+    "grupo": "Core",
+    "nombre": "Half-Cross-Crunch-unscreen",
+    "gif": "/gif/centro/Half-Cross-Crunch-unscreen.gif",
+    "series": "3x4",
+    "nombre_español": "Crunch cruzado medio",
+    "descripcion": "Ejercicio para fortalecer el core: Variación de crunch con rotación parcial"
+  },
+  {
+    "grupo": "Core",
+    "nombre": "Half-Frog-Pose-ardha-bhekasana-unscreen",
+    "gif": "/gif/centro/Half-Frog-Pose-ardha-bhekasana-unscreen.gif",
+    "series": "3x4",
+    "nombre_español": "Postura media de la rana",
+    "descripcion": "Ejercicio para fortalecer el core: Estiramiento y fortalecimiento de piernas y core"
+  },
+  {
+    "grupo": "Core",
+    "nombre": "Half-Wipers-unscreen",
+    "gif": "/gif/centro/Half-Wipers-unscreen.gif",
+    "series": "3x4",
+    "nombre_español": "Medio limpiaparabrisas",
+    "descripcion": "Ejercicio para fortalecer el core: Rotación controlada de piernas en rango reducido"
+  },
+  {
+    "grupo": "Core",
+    "nombre": "Hanging-Knee-Raises-unscreen",
+    "gif": "/gif/centro/Hanging-Knee-Raises-unscreen.gif",
+    "series": "3x4",
+    "nombre_español": "Elevaciones de rodillas colgado",
+    "descripcion": "Ejercicio para fortalecer el core: Elevación de rodillas en suspensión"
+  },
+  {
+    "grupo": "Core",
+    "nombre": "Hanging-Side-Knee-Raises-unscreen",
+    "gif": "/gif/centro/Hanging-Side-Knee-Raises-unscreen.gif",
+    "series": "3x4",
+    "nombre_español": "Elevaciones laterales de rodillas colgado",
+    "descripcion": "Ejercicio para fortalecer el core: Enfoque en oblicuos en posición colgada"
+  },
+  {
+    "grupo": "Core",
+    "nombre": "Hanging-Windshield-Wiper-unscreen",
+    "gif": "/gif/centro/Hanging-Windshield-Wiper-unscreen.gif",
+    "series": "3x4",
+    "nombre_español": "Limpiaparabrisas colgado",
+    "descripcion": "Ejercicio para fortalecer el core: Rotación completa de piernas en suspensión"
+  },
+  {
+    "grupo": "Core",
+    "nombre": "Heel-Touch-unscreen",
+    "gif": "/gif/centro/Heel-Touch-unscreen.gif",
+    "series": "3x4",
+    "nombre_español": "Toques de talón",
+    "descripcion": "Ejercicio para fortalecer el core: Alcanzar los talones alternadamente"
+  },
+  {
+    "grupo": "Core",
+    "nombre": "Hell-Slide-unscreen",
+    "gif": "/gif/centro/Hell-Slide-unscreen.gif",
+    "series": "3x4",
+    "nombre_español": "Deslizamiento infernal",
+    "descripcion": "Ejercicio para fortalecer el core: Movimiento deslizante intenso para core"
+  },
+  {
+    "grupo": "Core",
+    "nombre": "High-Knee-Skips-Cardio-unscreen",
+    "gif": "/gif/centro/High-Knee-Skips-Cardio-unscreen.gif",
+    "series": "3x4",
+    "nombre_español": "Rodillas altas con salto",
+    "descripcion": "Ejercicio para fortalecer el core: Movimiento cardiovascular que involucra el core"
+  },
+  {
+    "grupo": "Core",
+    "nombre": "High-Knee-Squat-unscreen",
+    "gif": "/gif/centro/High-Knee-Squat-unscreen.gif",
+    "series": "3x4",
+    "nombre_español": "Sentadilla con rodillas altas",
+    "descripcion": "Ejercicio para fortalecer el core: Combinación de sentadilla y elevación de rodilla"
+  },
+  {
+    "grupo": "Core",
+    "nombre": "HollowHold",
+    "gif": "/gif/centro/HollowHold.png",
+    "series": "3x4",
+    "nombre_español": "Posición hueca",
+    "descripcion": "Ejercicio para fortalecer el core: Mantenimiento isométrico de posición hueca"
+  },
+  {
+    "grupo": "Core",
+    "nombre": "Inchworm-unscreen",
+    "gif": "/gif/centro/Inchworm-unscreen.gif",
+    "series": "3x4",
+    "nombre_español": "Oruga",
+    "descripcion": "Ejercicio para fortalecer el core: Movimiento secuencial de manos a pies"
+  },
+  {
+    "grupo": "Core",
+    "nombre": "Incline-Leg-Hip-Raise-unscreen",
+    "gif": "/gif/centro/Incline-Leg-Hip-Raise-unscreen.gif",
+    "series": "3x4",
+    "nombre_español": "Elevación de piernas y cadera en inclinado",
+    "descripcion": "Ejercicio para fortalecer el core: Movimiento en banco inclinado para mayor intensidad"
+  },
+  {
+    "grupo": "Core",
+    "nombre": "Jack-knife-sit-up-unscreen",
+    "gif": "/gif/centro/Jack-knife-sit-up-unscreen.gif",
+    "series": "3x4",
+    "nombre_español": "Abdominal navaja",
+    "descripcion": "Ejercicio para fortalecer el core: Combinación de elevación de torso y piernas"
+  },
+  {
+    "grupo": "Core",
+    "nombre": "Jackknife-Sit-ups-unscreen",
+    "gif": "/gif/centro/Jackknife-Sit-ups-unscreen.gif",
+    "series": "3x4",
+    "nombre_español": "Abdominales navaja",
+    "descripcion": "Ejercicio para fortalecer el core: Variación de abdominal completo"
+  },
+  {
+    "grupo": "Core",
+    "nombre": "Kettlebell-Figure-8-unscreen",
+    "gif": "/gif/centro/Kettlebell-Figure-8-unscreen.gif",
+    "series": "3x4",
+    "nombre_español": "Figura 8 con kettlebell",
+    "descripcion": "Ejercicio para fortalecer el core: Movimiento fluido en forma de ocho"
+  },
+  {
+    "grupo": "Core",
+    "nombre": "Kettlebell-Swings-unscreen",
+    "gif": "/gif/centro/Kettlebell-Swings-unscreen.gif",
+    "series": "3x4",
+    "nombre_español": "Balanceo con kettlebell",
+    "descripcion": "Ejercicio para fortalecer el core: Movimiento balístico que involucra cadera y core"
+  },
+  {
+    "grupo": "Core",
+    "nombre": "Kettlebell-Windmill-unscreen",
+    "gif": "/gif/centro/Kettlebell-Windmill-unscreen.gif",
+    "series": "3x4",
+    "nombre_español": "Molino con kettlebell",
+    "descripcion": "Ejercicio para fortalecer el core: Rotación controlada con peso"
+  },
+  {
+    "grupo": "Core",
+    "nombre": "Kneeling-Cable-Crunch-unscreen",
+    "gif": "/gif/centro/Kneeling-Cable-Crunch-unscreen.gif",
+    "series": "3x4",
+    "nombre_español": "Crunch con cable de rodillas",
+    "descripcion": "Ejercicio para fortalecer el core: Encogimiento con resistencia desde polea alta"
+  },
+  {
+    "grupo": "Core",
+    "nombre": "Kneeling-T-spine-Rotation-unscreen",
+    "gif": "/gif/centro/Kneeling-T-spine-Rotation-unscreen.gif",
+    "series": "3x4",
+    "nombre_español": "Rotación de columna torácica de rodillas",
+    "descripcion": "Ejercicio para fortalecer el core: Movilidad y control de rotación"
+  },
+  {
+    "grupo": "Core",
+    "nombre": "L-Sit-unscreen",
+    "gif": "/gif/centro/L-Sit-unscreen.gif",
+    "series": "3x4",
+    "nombre_español": "Posición en L",
+    "descripcion": "Ejercicio para fortalecer el core: Mantenimiento isométrico de posición en L"
+  },
+  {
+    "grupo": "Core",
+    "nombre": "Landmine-Twist-unscreen",
+    "gif": "/gif/centro/Landmine-Twist-unscreen.gif",
+    "series": "3x4",
+    "nombre_español": "Giros con landmine",
+    "descripcion": "Ejercicio para fortalecer el core: Rotación de torso con barra anclada"
+  },
+  {
+    "grupo": "Core",
+    "nombre": "Leg-Pull-In-Knee-ups-unscreen",
+    "gif": "/gif/centro/Leg-Pull-In-Knee-ups-unscreen.gif",
+    "series": "3x4",
+    "nombre_español": "Elevación de rodillas acercadas",
+    "descripcion": "Ejercicio para fortalecer el core: Movimiento de rodillas hacia el pecho"
+  },
+  {
+    "grupo": "Core",
+    "nombre": "Leg-Raise-Dragon-Flag-unscreen",
+    "gif": "/gif/centro/Leg-Raise-Dragon-Flag-unscreen.gif",
+    "series": "3x4",
+    "nombre_español": "Bandera del dragón",
+    "descripcion": "Ejercicio para fortalecer el core: Elevación controlada de piernas y cadera"
+  },
+  {
+    "grupo": "Core",
+    "nombre": "Leg-Scissors-unscreen",
+    "gif": "/gif/centro/Leg-Scissors-unscreen.gif",
+    "series": "3x4",
+    "nombre_español": "Tijeras de piernas",
+    "descripcion": "Ejercicio para fortalecer el core: Movimiento alternado de piernas en tijera"
+  },
+  {
+    "grupo": "Core",
+    "nombre": "Lever-Lying-Crunch-unscreen",
+    "gif": "/gif/centro/Lever-Lying-Crunch-unscreen.gif",
+    "series": "3x4",
+    "nombre_español": "Crunch en palanca tumbado",
+    "descripcion": "Ejercicio para fortalecer el core: Encogimiento con resistencia mecánica"
+  },
+  {
+    "grupo": "Core",
+    "nombre": "Lever-Seated-Twist-unscreen",
+    "gif": "/gif/centro/Lever-Seated-Twist-unscreen.gif",
+    "series": "3x4",
+    "nombre_español": "Giros sentados en palanca",
+    "descripcion": "Ejercicio para fortalecer el core: Rotación de torso con resistencia mecánica"
+  },
+  {
+    "grupo": "Core",
+    "nombre": "Long-Arm-Crunch-unscreen",
+    "gif": "/gif/centro/Long-Arm-Crunch-unscreen.gif",
+    "series": "3x4",
+    "nombre_español": "Crunch con brazos largos",
+    "descripcion": "Ejercicio para fortalecer el core: Encogimiento con brazos extendidos para mayor intensidad"
+  },
+  {
+    "grupo": "Core",
+    "nombre": "Lying-Knee-Raise-unscreen",
+    "gif": "/gif/centro/Lying-Knee-Raise-unscreen.gif",
+    "series": "3x4",
+    "nombre_español": "Elevación de rodillas tumbado",
+    "descripcion": "Ejercicio para fortalecer el core: Movimiento de rodillas hacia el pecho en posición supina"
+  },
+  {
+    "grupo": "Core",
+    "nombre": "Lying-Leg-Raise-unscreen",
+    "gif": "/gif/centro/Lying-Leg-Raise-unscreen.gif",
+    "series": "3x4",
+    "nombre_español": "Elevación de piernas tumbado",
+    "descripcion": "Ejercicio para fortalecer el core: Elevación controlada de piernas estiradas"
+  },
+  {
+    "grupo": "Core",
+    "nombre": "Lying-Scissor-Kick-unscreen",
+    "gif": "/gif/centro/Lying-Scissor-Kick-unscreen.gif",
+    "series": "3x4",
+    "nombre_español": "Patada de tijera tumbado",
+    "descripcion": "Ejercicio para fortalecer el core: Movimiento alternado vertical de piernas"
+  },
+  {
+    "grupo": "Core",
+    "nombre": "Lying-Toe-Touches-unscreen",
+    "gif": "/gif/centro/Lying-Toe-Touches-unscreen.gif",
+    "series": "3x4",
+    "nombre_español": "Toques de pies tumbado",
+    "descripcion": "Ejercicio para fortalecer el core: Alcanzar los pies desde posición supina"
+  },
+  {
+    "grupo": "Core",
+    "nombre": "Lying-Upper-Body-Rotation-unscreen",
+    "gif": "/gif/centro/Lying-Upper-Body-Rotation-unscreen.gif",
+    "series": "3x4",
+    "nombre_español": "Rotación de torso tumbado",
+    "descripcion": "Ejercicio para fortalecer el core: Giro controlado del torso en posición supina"
+  },
+  {
+    "grupo": "Core",
+    "nombre": "Lying-leg-and-hip-raise-unscreen",
+    "gif": "/gif/centro/Lying-leg-and-hip-raise-unscreen.gif",
+    "series": "3x4",
+    "nombre_español": "Elevación de piernas y cadera tumbado",
+    "descripcion": "Ejercicio para fortalecer el core: Movimiento combinado de elevación"
+  },
+  {
+    "grupo": "Core",
+    "nombre": "Medicine-Ball-Crunch-unscreen",
+    "gif": "/gif/centro/Medicine-Ball-Crunch-unscreen.gif",
+    "series": "3x4",
+    "nombre_español": "Crunch con balón medicinal",
+    "descripcion": "Ejercicio para fortalecer el core: Encogimiento con peso adicional"
+  },
+  {
+    "grupo": "Core",
+    "nombre": "Medicine-Ball-Rotational-Throw-unscreen",
+    "gif": "/gif/centro/Medicine-Ball-Rotational-Throw-unscreen.gif",
+    "series": "3x4",
+    "nombre_español": "Lanzamiento rotacional con balón medicinal",
+    "descripcion": "Ejercicio para fortalecer el core: Movimiento explosivo con rotación"
+  },
+  {
+    "grupo": "Core",
+    "nombre": "Medicine-Ball-Sit-up-Throw-unscreen",
+    "gif": "/gif/centro/Medicine-Ball-Sit-up-Throw-unscreen.gif",
+    "series": "3x4",
+    "nombre_español": "Abdominal con lanzamiento de balón medicinal",
+    "descripcion": "Ejercicio para fortalecer el core: Combinación de abdominal y lanzamiento"
+  },
+  {
+    "grupo": "Core",
+    "nombre": "Mountain-climber-unscreen",
+    "gif": "/gif/centro/Mountain-climber-unscreen.gif",
+    "series": "3x4",
+    "nombre_español": "Escalador",
+    "descripcion": "Ejercicio para fortalecer el core: Movimiento dinámico de rodillas al pecho"
+  },
+  {
+    "grupo": "Core",
+    "nombre": "Oblique-Floor-Crunches-unscreen",
+    "gif": "/gif/centro/Oblique-Floor-Crunches-unscreen.gif",
+    "series": "3x4",
+    "nombre_español": "Crunch oblicuos en suelo",
+    "descripcion": "Ejercicio para fortalecer el core: Encogimiento lateral para oblicuos"
+  },
+  {
+    "grupo": "Core",
+    "nombre": "One-Arm-Medicine-Ball-Slam-unscreen",
+    "gif": "/gif/centro/One-Arm-Medicine-Ball-Slam-unscreen.gif",
+    "series": "3x4",
+    "nombre_español": "Golpe de balón medicinal a una mano",
+    "descripcion": "Ejercicio para fortalecer el core: Lanzamiento explosivo unilateral"
+  },
+  {
+    "grupo": "Core",
+    "nombre": "PLANK-KNEE-TO-ELBOW-unscreen",
+    "gif": "/gif/centro/PLANK-KNEE-TO-ELBOW-unscreen.gif",
+    "series": "3x4",
+    "nombre_español": "Plancha rodilla a codo",
+    "descripcion": "Ejercicio para fortalecer el core: Movimiento contralateral en posición de plancha"
+  },
+  {
+    "grupo": "Core",
+    "nombre": "Pike-to-Cobra-unscreen",
+    "gif": "/gif/centro/Pike-to-Cobra-unscreen.gif",
+    "series": "3x4",
+    "nombre_español": "De pike a cobra",
+    "descripcion": "Ejercicio para fortalecer el core: Transición entre posiciones de yoga"
+  },
+  {
+    "grupo": "Core",
+    "nombre": "Plank-Jacks-Extended-Leg-unscreen",
+    "gif": "/gif/centro/Plank-Jacks-Extended-Leg-unscreen.gif",
+    "series": "3x4",
+    "nombre_español": "Saltos de plancha con piernas extendidas",
+    "descripcion": "Ejercicio para fortalecer el core: Variación dinámica de plancha"
+  },
+  {
+    "grupo": "Core",
+    "nombre": "Plank-Leg-Lift-unscreen",
+    "gif": "/gif/centro/Plank-Leg-Lift-unscreen.gif",
+    "series": "3x4",
+    "nombre_español": "Plancha con elevación de pierna",
+    "descripcion": "Ejercicio para fortalecer el core: Plancha estática con desafío unilateral"
+  },
+  {
+    "grupo": "Core",
+    "nombre": "Plancha isometrica con elevación de brazo y pierna",
+    "gif": "/gif/centro/Plank-with-Arm-and-Leg-Lift-unscreen.gif",
+    "series": "3x4",
+    "nombre_español": "Plancha isometrica con elevación de brazo y pierna",
+    "descripcion": "Ejercicio para fortalecer el core: Desafío de equilibrio contralateral"
+  },
+  {
+    "grupo": "Core",
+    "nombre": "Prone-Abdominal-Hollowing",
+    "gif": "/gif/centro/Prone-Abdominal-Hollowing.png",
+    "series": "3x4",
+    "nombre_español": "Hollowing abdominal prono",
+    "descripcion": "Ejercicio para fortalecer el core: Activación profunda de abdominales en posición prona"
+  },
+  {
+    "grupo": "Core",
+    "nombre": "Quarter-Sit-up-unscreen",
+    "gif": "/gif/centro/Quarter-Sit-up-unscreen.gif",
+    "series": "3x4",
+    "nombre_español": "Abdominales parciales",
+    "descripcion": "Ejercicio para fortalecer el core: Encogimiento con rango de movimiento reducido"
+  },
+  {
+    "grupo": "Core",
+    "nombre": "Reverse-Crunch-1-unscreen",
+    "gif": "/gif/centro/Reverse-Crunch-1-unscreen.gif",
+    "series": "3x4",
+    "nombre_español": "Crunch inverso (variación)",
+    "descripcion": "Ejercicio para fortalecer el core: Elevación de cadera en posición supina"
+  },
+  {
+    "grupo": "Core",
+    "nombre": "Reverse-Plank-Kicks-unscreen",
+    "gif": "/gif/centro/Reverse-Plank-Kicks-unscreen.gif",
+    "series": "3x4",
+    "nombre_español": "Plancha inversa con patadas",
+    "descripcion": "Ejercicio para fortalecer el core: Plancha inversa dinámica"
+  },
+  {
+    "grupo": "Core",
+    "nombre": "Reverse-plank-unscreen",
+    "gif": "/gif/centro/Reverse-plank-unscreen.gif",
+    "series": "3x4",
+    "nombre_español": "Plancha isometrica inversa",
+    "descripcion": "Ejercicio para fortalecer el core: Mantenimiento isométrico en posición inversa"
+  },
+  {
+    "grupo": "Core",
+    "nombre": "Russian-Twist-unscreen",
+    "gif": "/gif/centro/Russian-Twist-unscreen.gif",
+    "series": "3x4",
+    "nombre_español": "Giros rusos",
+    "descripcion": "Ejercicio para fortalecer el core: Rotación de torso para trabajar oblicuos"
+  },
+  {
+    "grupo": "Core",
+    "nombre": "SNAP-JUMPS-unscreen",
+    "gif": "/gif/centro/SNAP-JUMPS-unscreen.gif",
+    "series": "3x4",
+    "nombre_español": "Saltos explosivos",
+    "descripcion": "Ejercicio para fortalecer el core: Movimiento pliométrico que involucra el core"
+  },
+  {
+    "grupo": "Core",
+    "nombre": "Seated-Ab-Crunch-Machine-unscreen",
+    "gif": "/gif/centro/Seated-Ab-Crunch-Machine-unscreen.gif",
+    "series": "3x4",
+    "nombre_español": "Máquina de crunch sentado",
+    "descripcion": "Ejercicio para fortalecer el core: Encogimiento asistido por máquina en posición sentada"
+  },
+  {
+    "grupo": "Core",
+    "nombre": "Seated-Bench-Leg-Pull-in-unscreen",
+    "gif": "/gif/centro/Seated-Bench-Leg-Pull-in-unscreen.gif",
+    "series": "3x4",
+    "nombre_español": "Acercamiento de piernas en banco sentado",
+    "descripcion": "Ejercicio para fortalecer el core: Movimiento de rodillas al pecho en banco"
+  },
+  {
+    "grupo": "Core",
+    "nombre": "Seated-Cable-Twist-unscreen",
+    "gif": "/gif/centro/Seated-Cable-Twist-unscreen.gif",
+    "series": "3x4",
+    "nombre_español": "Giros sentados con cable",
+    "descripcion": "Ejercicio para fortalecer el core: Rotación de torso con resistencia"
+  },
+  {
+    "grupo": "Core",
+    "nombre": "Seated-Crunch-Machine-unscreen",
+    "gif": "/gif/centro/Seated-Crunch-Machine-unscreen.gif",
+    "series": "3x4",
+    "nombre_español": "Máquina de abdominales sentado",
+    "descripcion": "Ejercicio para fortalecer el core: Encogimiento en máquina específica"
+  },
+  {
+    "grupo": "Core",
+    "nombre": "Seated-Flutter-Kick-unscreen",
+    "gif": "/gif/centro/Seated-Flutter-Kick-unscreen.gif",
+    "series": "3x4",
+    "nombre_español": "Aleteo sentado",
+    "descripcion": "Ejercicio para fortalecer el core: Movimiento rápido de piernas en posición sentada"
+  },
+  {
+    "grupo": "Core",
+    "nombre": "Seated-Oblique-Twist-unscreen",
+    "gif": "/gif/centro/Seated-Oblique-Twist-unscreen.gif",
+    "series": "3x4",
+    "nombre_español": "Giros oblicuos sentados",
+    "descripcion": "Ejercicio para fortalecer el core: Rotación lateral en posición sentada"
+  },
+  {
+    "grupo": "Core",
+    "nombre": "Seated-Side-Crunches-unscreen",
+    "gif": "/gif/centro/Seated-Side-Crunches-unscreen.gif",
+    "series": "3x4",
+    "nombre_español": "Crunch laterales sentados",
+    "descripcion": "Ejercicio para fortalecer el core: Encogimiento lateral en posición sentada"
+  },
+  {
+    "grupo": "Core",
+    "nombre": "Seated-twist-unscreen",
+    "gif": "/gif/centro/Seated-twist-unscreen.gif",
+    "series": "3x4",
+    "nombre_español": "Giros sentados",
+    "descripcion": "Ejercicio para fortalecer el core: Rotación básica de torso sentado"
+  },
+  {
+    "grupo": "Core",
+    "nombre": "Side-Bent-unscreen",
+    "gif": "/gif/centro/Side-Bent-unscreen.gif",
+    "series": "3x4",
+    "nombre_español": "Inclinación lateral",
+    "descripcion": "Ejercicio para fortalecer el core: Flexión lateral sin peso adicional"
+  },
+  {
+    "grupo": "Core",
+    "nombre": "Side-Bridge-Hip-Abduction-unscreen",
+    "gif": "/gif/centro/Side-Bridge-Hip-Abduction-unscreen.gif",
+    "series": "3x4",
+    "nombre_español": "Plancha lateral con abducción isometrica",
+    "descripcion": "Ejercicio para fortalecer el core: Plancha lateral con movimiento adicional"
+  },
+  {
+    "grupo": "Core",
+    "nombre": "Side-Bridge-unscreen",
+    "gif": "/gif/centro/Side-Bridge-unscreen.gif",
+    "series": "3x4",
+    "nombre_español": "Plancha lateral dinamica",
+    "descripcion": "Ejercicio para fortalecer el core: Mantenimiento isométrico lateral"
+  },
+  {
+    "grupo": "Core",
+    "nombre": "Side-Lying-Feet-Raise-unscreen",
+    "gif": "/gif/centro/Side-Lying-Feet-Raise-unscreen.gif",
+    "series": "3x4",
+    "nombre_español": "Elevación de pies lateral tumbado",
+    "descripcion": "Ejercicio para fortalecer el core: Movimiento de piernas en posición lateral"
+  },
+  {
+    "grupo": "Core",
+    "nombre": "Side-Plank-1",
+    "gif": "/gif/centro/Side-Plank-1.png",
+    "series": "3x5",
+    "nombre_español": "Plancha lateral isométrica ",
+    "descripcion": "Ejercicio para fortalecer el core: Variación básica de plancha lateral"
+  },
+  {
+    "grupo": "Core",
+    "nombre": "Side-Plank-Hip-Adduction-Copen-unscreen",
+    "gif": "/gif/centro/Side-Plank-Hip-Adduction-Copen-unscreen.gif",
+    "series": "3x4",
+    "nombre_español": "Plancha lateral con aducción de dinamica",
+    "descripcion": "Ejercicio para fortalecer el core: Plancha lateral con movimiento de caderas"
+  },
+  {
+    "grupo": "Core",
+    "nombre": "Side-Plank-Knee-to-Elbow--unscreen",
+    "gif": "/gif/centro/Side-Plank-Knee-to-Elbow--unscreen.gif",
+    "series": "3x4",
+    "nombre_español": "Plancha lateral rodilla a codo",
+    "descripcion": "Ejercicio para fortalecer el core: Movimiento contralateral en plancha lateral"
+  },
+  {
+    "grupo": "Core",
+    "nombre": "Side-Plank-Leg-Raises-unscreen",
+    "gif": "/gif/centro/Side-Plank-Leg-Raises-unscreen.gif",
+    "series": "3x4",
+    "nombre_español": "Plancha lateral con elevación de pierna",
+    "descripcion": "Ejercicio para fortalecer el core: Desafío de equilibrio unilateral"
+  },
+  {
+    "grupo": "Core",
+    "nombre": "Side-Plank-Oblique-Crunch-unscreen",
+    "gif": "/gif/centro/Side-Plank-Oblique-Crunch-unscreen.gif",
+    "series": "3x4",
+    "nombre_español": "Plancha lateral con crunch oblicuo",
+    "descripcion": "Ejercicio para fortalecer el core: Combinación de plancha y encogimiento"
+  },
+  {
+    "grupo": "Core",
+    "nombre": "Side-Plank-Rotation-unscreen",
+    "gif": "/gif/centro/Side-Plank-Rotation-unscreen.gif",
+    "series": "3x4",
+    "nombre_español": "Plancha lateral con rotación",
+    "descripcion": "Ejercicio para fortalecer el core: Movimiento dinámico en plancha lateral"
+  },
+  {
+    "grupo": "Core",
+    "nombre": "Sit-ups-unscreen",
+    "gif": "/gif/centro/Sit-ups-unscreen.gif",
+    "series": "3x4",
+    "nombre_español": "Abdominales completos",
+    "descripcion": "Ejercicio para fortalecer el core: Movimiento completo de flexión de tronco"
+  },
+  {
+    "grupo": "Core",
+    "nombre": "Spider-Plank-unscreen",
+    "gif": "/gif/centro/Spider-Plank-unscreen.gif",
+    "series": "3x4",
+    "nombre_español": "Plancha de araña",
+    "descripcion": "Ejercicio para fortalecer el core: Variación de plancha con movimiento de rodillas"
+  },
+  {
+    "grupo": "Core",
+    "nombre": "Stability-Ball-Knee-Tuck-unscreen",
+    "gif": "/gif/centro/Stability-Ball-Knee-Tuck-unscreen.gif",
+    "series": "3x4",
+    "nombre_español": "Aproximación de rodillas en balón",
+    "descripcion": "Ejercicio para fortalecer el core: Movimiento de rodillas al pecho sobre balón"
+  },
+  {
+    "grupo": "Core",
+    "nombre": "Standing-Barbell-Rollout-unscreen",
+    "gif": "/gif/centro/Standing-Barbell-Rollout-unscreen.gif",
+    "series": "3x4",
+    "nombre_español": "Extensión con barra de pie",
+    "descripcion": "Ejercicio para fortalecer el core: Rodar la barra hacia adelante desde posición erguida"
+  },
+  {
+    "grupo": "Core",
+    "nombre": "Standing-Cable-Crunch-unscreen",
+    "gif": "/gif/centro/Standing-Cable-Crunch-unscreen.gif",
+    "series": "3x4",
+    "nombre_español": "Crunch con cable de pie",
+    "descripcion": "Ejercicio para fortalecer el core: Encogimiento con resistencia desde polea alta"
+  },
+  {
+    "grupo": "Core",
+    "nombre": "Standing-Cable-High-To-Low-Twi-unscreen",
+    "gif": "/gif/centro/Standing-Cable-High-To-Low-Twi-unscreen.gif",
+    "series": "3x4",
+    "nombre_español": "Giros con cable de arriba abajo de pie",
+    "descripcion": "Ejercicio para fortalecer el core: Rotación diagonal con resistencia"
+  },
+  {
+    "grupo": "Core",
+    "nombre": "Standing-Cable-low-to-high-Twi-unscreen",
+    "gif": "/gif/centro/Standing-Cable-low-to-high-Twi-unscreen.gif",
+    "series": "3x4",
+    "nombre_español": "Giros con cable de abajo arriba de pie",
+    "descripcion": "Ejercicio para fortalecer el core: Rotación diagonal inversa con resistencia"
+  },
+  {
+    "grupo": "Core",
+    "nombre": "Standing-Rotation-unscreen",
+    "gif": "/gif/centro/Standing-Rotation-unscreen.gif",
+    "series": "3x4",
+    "nombre_español": "Rotación de pie",
+    "descripcion": "Ejercicio para fortalecer el core: Giro controlado del torso en posición erguida"
+  },
+  {
+    "grupo": "Core",
+    "nombre": "Standing-Side-Bend-1--unscreen",
+    "gif": "/gif/centro/Standing-Side-Bend-1--unscreen.gif",
+    "series": "3x4",
+    "nombre_español": "Inclinación lateral de pie (variación)",
+    "descripcion": "Ejercicio para fortalecer el core: Flexión lateral sin apoyo"
+  },
+  {
+    "grupo": "Core",
+    "nombre": "Standing-Toe-Touch-unscreen",
+    "gif": "/gif/centro/Standing-Toe-Touch-unscreen.gif",
+    "series": "3x4",
+    "nombre_español": "Toques de pie de pie",
+    "descripcion": "Ejercicio para fortalecer el core: Flexión hacia adelante manteniendo piernas rectas"
+  },
+  {
+    "grupo": "Core",
+    "nombre": "Standing-Twist-Machine-unscreen",
+    "gif": "/gif/centro/Standing-Twist-Machine-unscreen.gif",
+    "series": "3x4",
+    "nombre_español": "Máquina de giros de pie",
+    "descripcion": "Ejercicio para fortalecer el core: Rotación de torso asistida por máquina"
+  },
+  {
+    "grupo": "Core",
+    "nombre": "Straddle-Planche-unscreen",
+    "gif": "/gif/centro/Straddle-Planche-unscreen.gif",
+    "series": "3x5",
+    "nombre_español": "Plancha con piernas abiertas",
+    "descripcion": "Ejercicio para fortalecer el core: Variación avanzada de plancha"
+  },
+  {
+    "grupo": "Core",
+    "nombre": "Suspended-Ab-Fall-out-unscreen",
+    "gif": "/gif/centro/Suspended-Ab-Fall-out-unscreen.gif",
+    "series": "3x4",
+    "nombre_español": "Caída controlada en suspensión",
+    "descripcion": "Ejercicio para fortalecer el core: Movimiento excéntrico con soporte de correas"
+  },
+  {
+    "grupo": "Core",
+    "nombre": "T-Cross-Sit-up-unscreen",
+    "gif": "/gif/centro/T-Cross-Sit-up-unscreen.gif",
+    "series": "3x4",
+    "nombre_español": "Abdominales en T cruzada",
+    "descripcion": "Ejercicio para fortalecer el core: Encogimiento con patrón de movimiento cruzado"
+  },
+  {
+    "grupo": "Core",
+    "nombre": "TRX-Mountain-Climber-unscreen",
+    "gif": "/gif/centro/TRX-Mountain-Climber-unscreen.gif",
+    "series": "3x4",
+    "nombre_español": "Escalador en TRX",
+    "descripcion": "Ejercicio para fortalecer el core: Variación de escalador con suspensión"
+  },
+  {
+    "grupo": "Core",
+    "nombre": "Teaser-Pilates-unscreen",
+    "gif": "/gif/centro/Teaser-Pilates-unscreen.gif",
+    "series": "3x4",
+    "nombre_español": "Teaser de pilates",
+    "descripcion": "Ejercicio para fortalecer el core: Movimiento avanzado de equilibrio y control"
+  },
+  {
+    "grupo": "Core",
+    "nombre": "Toe-Reaches-unscreen",
+    "gif": "/gif/centro/Toe-Reaches-unscreen.gif",
+    "series": "3x4",
+    "nombre_español": "Alcanzar los dedos",
+    "descripcion": "Ejercicio para fortalecer el core: Estiramiento y fortalecimiento combinados"
+  },
+  {
+    "grupo": "Core",
+    "nombre": "Toes-to-Bar-unscreen",
+    "gif": "/gif/centro/Toes-to-Bar-unscreen.gif",
+    "series": "3x4",
+    "nombre_español": "Pies a la barra",
+    "descripcion": "Ejercicio para fortalecer el core: Elevación completa de piernas en suspensión"
+  },
+  {
+    "grupo": "Core",
+    "nombre": "Tuck-Crunch-unscreen",
+    "gif": "/gif/centro/Tuck-Crunch-unscreen.gif",
+    "series": "3x4",
+    "nombre_español": "Crunch agrupado",
+    "descripcion": "Ejercicio para fortalecer el core: Encogimiento con rodillas flexionadas"
+  },
+  {
+    "grupo": "Core",
+    "nombre": "Twist-down-up-unscreen",
+    "gif": "/gif/centro/Twist-down-up-unscreen.gif",
+    "series": "3x4",
+    "nombre_español": "Giros abajo y arriba",
+    "descripcion": "Ejercicio para fortalecer el core: Rotación en plano vertical"
+  },
+  {
+    "grupo": "Core",
+    "nombre": "Twist-unscreen",
+    "gif": "/gif/centro/Twist-unscreen.gif",
+    "series": "3x4",
+    "nombre_español": "Giros",
+    "descripcion": "Ejercicio para fortalecer el core: Rotación básica de torso"
+  },
+  {
+    "grupo": "Core",
+    "nombre": "Twisting-Hyperextension-unscreen",
+    "gif": "/gif/centro/Twisting-Hyperextension-unscreen.gif",
+    "series": "3x4",
+    "nombre_español": "Hiperextensión con giro",
+    "descripcion": "Ejercicio para fortalecer el core: Extensión de espalda con rotación"
+  },
+  {
+    "grupo": "Core",
+    "nombre": "V-Up-Down-with-Stability-ball-unscreen",
+    "gif": "/gif/centro/V-Up-Down-with-Stability-ball-unscreen.gif",
+    "series": "3x4",
+    "nombre_español": "V arriba y abajo con balón",
+    "descripcion": "Ejercicio para fortalecer el core: Movimiento completo con balón de estabilidad"
+  },
+  {
+    "grupo": "Core",
+    "nombre": "Weighted-Crunch-unscreen",
+    "gif": "/gif/centro/Weighted-Crunch-unscreen.gif",
+    "series": "3x4",
+    "nombre_español": "Crunch con peso",
+    "descripcion": "Ejercicio para fortalecer el core: Encogimiento con resistencia adicional"
+  },
+  {
+    "grupo": "Core",
+    "nombre": "Weighted-Front-Plank-unscreen",
+    "gif": "/gif/centro/Weighted-Front-Plank-unscreen.gif",
+    "series": "3x4",
+    "nombre_español": "Plancha isometrica frontal con peso",
+    "descripcion": "Ejercicio para fortalecer el core: Plancha estática con resistencia"
+  },
+  {
+    "grupo": "Core",
+    "nombre": "Weighted-Side-Bend-on-stabilit-unscreen",
+    "gif": "/gif/centro/Weighted-Side-Bend-on-stabilit-unscreen.gif",
+    "series": "3x4",
+    "nombre_español": "Inclinación lateral con peso en balón",
+    "descripcion": "Ejercicio para fortalecer el core: Flexión lateral con peso sobre superficie inestable"
+  },
+  {
+    "grupo": "Core",
+    "nombre": "abdominal-stretch-unscreen",
+    "gif": "/gif/centro/abdominal-stretch-unscreen.gif",
+    "series": "3x4",
+    "nombre_español": "Estiramiento abdominal",
+    "descripcion": "Ejercicio para fortalecer el core: Estiramiento activo de la musculatura abdominal"
+  },
+  {
+    "grupo": "Core",
+    "nombre": "burpees-unscreen",
+    "gif": "/gif/centro/burpees-unscreen.gif",
+    "series": "3x4",
+    "nombre_español": "Burpees",
+    "descripcion": "Ejercicio para fortalecer el core: Movimiento completo que involucra todo el cuerpo"
+  },
+  {
+    "grupo": "Core",
+    "nombre": "frog-crunch-unscreen",
+    "gif": "/gif/centro/frog-crunch-unscreen.gif",
+    "series": "3x4",
+    "nombre_español": "Crunch de rana",
+    "descripcion": "Ejercicio para fortalecer el core: Encogimiento con posición de rana"
+  },
+  {
+    "grupo": "Core",
+    "nombre": "plancha-palmas-pies",
+    "gif": "/gif/centro/plancha-palmas-pies.png",
+    "series": "3x5",
+    "nombre_español": "Plancha sobre palmas y pies",
+    "descripcion": "Ejercicio para fortalecer el core: Mantenimiento isométrico en posición de plancha alta"
+  },
+  {
+    "grupo": "Core",
+    "nombre": "plank-unscreen",
+    "gif": "/gif/centro/plank-unscreen.gif",
+    "series": "3x5",
+    "nombre_español": "Plancha isométrica frontal",
+    "descripcion": "Ejercicio para fortalecer el core: Mantenimiento isométrico de posición de plancha"
+  },
+  {
+    "grupo": "Core",
+    "nombre": "push-up-with-rotation-unscreen",
+    "gif": "/gif/centro/push-up-with-rotation-unscreen.gif",
+    "series": "3x4",
+    "nombre_español": "Flexión con rotación",
+    "descripcion": "Ejercicio para fortalecer el core: Combinación de flexión y rotación de torso"
+  },
+  {
+    "grupo": "Core",
+    "nombre": "standing-cable-twist-unscreen",
+    "gif": "/gif/centro/standing-cable-twist-unscreen.gif",
+    "series": "3x4",
+    "nombre_español": "Giros con cable de pie",
+    "descripcion": "Ejercicio para fortalecer el core: Rotación de torso con resistencia ajustable"
+  },
+  {
+    "grupo": "Core",
+    "nombre": "standing-side-bend-unscreen",
+    "gif": "/gif/centro/standing-side-bend-unscreen.gif",
+    "series": "3x4",
+    "nombre_español": "Inclinación lateral de pie",
+    "descripcion": "Ejercicio para fortalecer el core: Flexión lateral sin apoyo"
+  },
+  {
+    "grupo": "Core",
+    "nombre": "swiss-ball-rollout-unscreen",
+    "gif": "/gif/centro/swiss-ball-rollout-unscreen.gif",
+    "series": "3x4",
+    "nombre_español": "Extensión con balón suizo",
+    "descripcion": "Ejercicio para fortalecer el core: Rodar el balón hacia adelante manteniendo el control"
+  },
+  {
+    "grupo": "Core",
+    "nombre": "weighted-hanging-knee-raises-unscreen",
+    "gif": "/gif/centro/weighted-hanging-knee-raises-unscreen.gif",
+    "series": "3x4",
+    "nombre_español": "Elevaciones de rodillas colgado con peso",
+    "descripcion": "Ejercicio para fortalecer el core: Movimiento en suspensión con resistencia adicional"
+  },
+  {
+    "grupo": "Core",
+    "nombre": "weighted-lying-twist-unscreen",
+    "gif": "/gif/centro/weighted-lying-twist-unscreen.gif",
+    "series": "3x4",
+    "nombre_español": "Giros tumbados con peso",
+    "descripcion": "Ejercicio para fortalecer el core: Rotación de torso con peso en posición supina"
+  },
+  {
+    "grupo": "Core",
+    "nombre": "weightedsitups-unscreen",
+    "gif": "/gif/centro/weightedsitups-unscreen.gif",
+    "series": "3x4",
+    "nombre_español": "Abdominales con peso",
+    "descripcion": "Ejercicio para fortalecer el core: Encogimientos completos con resistencia"
+  },
+  {
+    "grupo": "Core",
+    "nombre": "Abdominal-bracing-exercise",
+    "gif": "/gif/centro/Abdominal-bracing-exercise.png",
+    "series": "3x4",
+    "nombre_español": "Ejercicio de activación abdominal",
+    "descripcion": "Ejercicio para fortalecer el core: Contracción isométrica de los músculos abdominales"
+  },
+  {
+    "grupo": "Core",
+    "nombre": "HollowHold",
+    "gif": "/gif/centro/HollowHold.png",
+    "series": "3x4",
+    "nombre_español": "Posición hueca",
+    "descripcion": "Ejercicio para fortalecer el core: Mantenimiento isométrico de posición hueca"
+  },
+  {
+    "grupo": "Core",
+    "nombre": "plancha-palmas-pies",
+    "gif": "/gif/centro/plancha-palmas-pies.png",
+    "series": "3x4",
+    "nombre_español": "Plancha sobre palmas y pies",
+    "descripcion": "Ejercicio para fortalecer el core: Mantenimiento isométrico en posición de plancha alta"
+  },
+  {
+    "grupo": "Core",
+    "nombre": "Prone-Abdominal-Hollowing",
+    "gif": "/gif/centro/Prone-Abdominal-Hollowing.png",
+    "series": "3x4",
+    "nombre_español": "Hollowing abdominal prono",
+    "descripcion": "Ejercicio para fortalecer el core: Activación profunda de abdominales en posición prona"
+  },
+  {
+    "grupo": "Core",
+    "nombre": "Side-Plank-1",
+    "gif": "/gif/centro/Side-Plank-1.png",
+    "series": "3x5",
+    "nombre_español": "Plancha lateral isométrica",
+    "descripcion": "Ejercicio para fortalecer el core: Variación básica de plancha lateral"
+  },
+   {
+    "grupo": "Core",
+    "nombre": "Side-Plank-knee",
+    "gif": "/gif/centro/plancha-lateral-apoyo-rodillas.png",
+    "series": "3x5",
+    "nombre_español": "Plancha lateral isométrica rodilla",
+    "descripcion": "Ejercicio para actiavr la zona media del cuerpo: Variación de plancha lateral con apoyo en rodillas"
+  },
+  { "grupo": "Core",
+    "nombre": "AbdominalesBancoMultiangular",
+    "gif": "/gif/centro/abdominalesBanco.jpg",
+    "series": "3x5",
+    "nombre_español": "Abdominales Banco Multiangular",
+    "descripcion": "Ejercicio para actiavr la zona media del cuerpo: Variación de abdominales"
+  },
+  { "grupo": "Core",
+    "nombre": "AbdominalesBancoMultiangularCruzadas",
+    "gif": "/gif/centro/abdominalesCruzadasBancoMultinagular.jpg",
+    "series": "3x5",
+    "nombre_español": "Abdominales Banco Multiangular Cruzadas",
+    "descripcion": "Ejercicio para actiavr la zona media del cuerpo: Variación de abdominales "
+  }
+  ,
+  { "grupo": "Core",
+    "nombre": "AbdominalesAdaptadosPiernasElevadas",
+    "gif": "/gif/centro/abdominalesAdapatados.gif",
+    "series": "3x5",
+    "nombre_español": "Abdominales Adaptados Piernas Elevadas en banco",
+    "descripcion": "Ejercicio para fortalecer el core: Activación profunda de abdominales en banco con piernas elevadas"
+  }  ,
+  { "grupo": "Core",
+    "nombre": "Plancha isometrica Copenague",
+    "gif": "/gif/centro/PlanchaCopenague.png",
+    "series": "3x5",
+    "nombre_español": "Plancha isometrica Copenague",
+    "descripcion": "Ejercicio para fortalecer el core: Activación profunda de abdominales con presión escapular y glúteos"
+  },
+  { "grupo": "Core",
+    "nombre": "Giro con Banda o Polea",
+    "gif": "/gif/centro/GiroBandaPolea.png",
+    "series": "3x5",
+    "nombre_español": "Giro con Banda o Polea",
+    "descripcion": "Ejercicio para fortalecer el core: Activación profunda de abdominales"
+  },
+  
+  { "grupo": "Core",
+    "nombre": "Giro con Banda o Polea isométrica",
+    "gif": "/gif/centro/GiroBandaPolea.png",
+    "series": "3x5",
+    "nombre_español": "Giro con Banda o Polea isométrica",
+    "descripcion": "Ejercicio para fortalecer el core: Activación profunda de abdominales "
+  },
+  { "grupo": "Core",
+    "nombre": "Pallof banda o Polea",
+    "gif": "/gif/centro/PallofBandaPolea.png",
+    "series": "3x5",
+    "nombre_español": "Pallof banda o Polea",
+    "descripcion": "Ejercicio para fortalecer el core: Activación profunda de abdominales "
+  },
+  { "grupo": "Core",
+    "nombre": "Pallof banda isométrica",
+    "gif": "/gif/centro/PallofBanda.png",
+    "series": "3x5",
+    "nombre_español": "Pallof banda isométrica",
+    "descripcion": "Ejercicio para fortalecer el core: Activación profunda de abdominales "
+  },
+   { "grupo": "Core",
+    "nombre": "Pallof banda",
+    "gif": "/gif/centro/PallofBanda.png",
+    "series": "3x5",
+    "nombre_español": "Pallof banda ",
+    "descripcion": "Ejercicio para fortalecer el core: Activación profunda de abdominales con presión escapular y glúteos"
+  }
+]

@@ -1,0 +1,1930 @@
+[
+  {
+    "grupo": "Piernas",
+    "nombre": "5 dot drills agility exercise",
+    "gif": "/gif/piernas/5-Dot-drills-agility-exercise-unscreen.gif",
+    "series": "3x4",
+    "nombre_español": "Ejercicio de agilidad con 5 puntos",
+    "descripcion": "Ejercicio para mejorar la agilidad y coordinación en piernas"
+  },
+  {
+    "grupo": "Piernas",
+    "nombre": "90 90 hip stretch",
+    "gif": "/gif/piernas/90-90-Hip-Stretch-unscreen.gif",
+    "series": "3x4",
+    "nombre_español": "Estiramiento de cadera 90-90",
+    "descripcion": "Estiramiento para mejorar la movilidad de la cadera"
+  },
+  {
+    "grupo": "Piernas",
+    "nombre": "atg split squat",
+    "gif": "/gif/piernas/ATG-Split-Squat-unscreen.gif",
+    "series": "3x4",
+    "nombre_español": "Sentadilla dividida ATG",
+    "descripcion": "Variación profunda de sentadilla para fortalecer piernas"
+  },
+  {
+    "grupo": "Piernas",
+    "nombre": "adductor magnus stretch",
+    "gif": "/gif/piernas/Adductor-Magnus-Stretch-unscreen.gif",
+    "series": "3x4",
+    "nombre_español": "Estiramiento del aductor magno",
+    "descripcion": "Estiramiento para los músculos internos del muslo"
+  },
+  {
+    "grupo": "Piernas",
+    "nombre": "all fours squad stretch",
+    "gif": "/gif/piernas/All-Fours-Squad-Stretch-unscreen.gif",
+    "series": "3x4",
+    "nombre_español": "Estiramiento en cuadrupedia",
+    "descripcion": "Estiramiento para piernas y espalda baja"
+  },
+  {
+    "grupo": "Piernas",
+    "nombre": "barbell squat",
+    "gif": "/gif/piernas/BARBELL-SQUAT-unscreen.gif",
+    "series": "3x4",
+    "nombre_español": "Sentadilla con barra",
+    "descripcion": "Ejercicio fundamental para fortalecer piernas"
+  },
+  {
+    "grupo": "Piernas",
+    "nombre": "bodyweight sumo squat",
+    "gif": "/gif/piernas/BODYWEIGHT-SUMO-SQUAT-unscreen.gif",
+    "series": "3x4",
+    "nombre_español": "Sentadilla sumo con peso corporal",
+    "descripcion": "Variación de sentadilla con énfasis en aductores"
+  },
+  {
+    "grupo": "Piernas",
+    "nombre": "backward jumping",
+    "gif": "/gif/piernas/Backward-Jumping-unscreen.gif",
+    "series": "3x4",
+    "nombre_español": "Saltos hacia atrás",
+    "descripcion": "Ejercicio pliométrico para piernas"
+  },
+  {
+    "grupo": "Piernas",
+    "nombre": "banded kettlebell goblet squat",
+    "gif": "/gif/piernas/Banded-Kettlebell-Goblet-Squat-unscreen.gif",
+    "series": "3x4",
+    "nombre_español": "Sentadilla tipo copa con banda y kettlebell",
+    "descripcion": "Variación de sentadilla con resistencia adicional"
+  },
+  {
+    "grupo": "Piernas",
+    "nombre": "banded leg curl",
+    "gif": "/gif/piernas/Banded-Leg-Curl-unscreen.gif",
+    "series": "3x4",
+    "nombre_español": "Flexion de piernas con banda",
+    "descripcion": "Ejercicio para isquiotibiales con resistencia de banda"
+  },
+  {
+    "grupo": "Piernas",
+    "nombre": "banded lunge",
+    "gif": "/gif/piernas/Banded-Lunge-unscreen.gif",
+    "series": "3x4",
+    "nombre_español": "Estocada con banda",
+    "descripcion": "Variación de zancada con resistencia adicional"
+  },
+  {
+    "grupo": "Piernas",
+    "nombre": "banded split squat",
+    "gif": "/gif/piernas/Banded-Split-Squat-unscreen.gif",
+    "series": "3x4",
+    "nombre_español": "Sentadilla dividida con banda",
+    "descripcion": "Ejercicio unilateral para piernas con resistencia"
+  },
+  {
+    "grupo": "Piernas",
+    "nombre": "banded step up",
+    "gif": "/gif/piernas/Banded-Step-up-unscreen.gif",
+    "series": "3x4",
+    "nombre_español": "Subida al cajón con banda",
+    "descripcion": "Ejercicio para piernas con resistencia adicional"
+  },
+  {
+    "grupo": "Piernas",
+    "nombre": "banded walk",
+    "gif": "/gif/piernas/Banded-Walk-unscreen.gif",
+    "series": "3x4",
+    "nombre_español": "Caminata con banda",
+    "descripcion": "Ejercicio para glúteos y abductores con banda"
+  },
+  {
+    "grupo": "Piernas",
+    "nombre": "barbell bench front squat",
+    "gif": "/gif/piernas/Barbell-Bench-Front-Squat-unscreen.gif",
+    "series": "3x4",
+    "nombre_español": "Sentadilla frontal con banco y barra",
+    "descripcion": "Variación de sentadilla frontal con apoyo"
+  },
+  {
+    "grupo": "Piernas",
+    "nombre": "barbell bulgarian split squat",
+    "gif": "/gif/piernas/Barbell-Bulgarian-Split-Squat-unscreen.gif",
+    "series": "3x4",
+    "nombre_español": "Sentadilla búlgara con barra",
+    "descripcion": "Ejercicio unilateral avanzado para piernas"
+  },
+  {
+    "grupo": "Piernas",
+    "nombre": "barbell clean and press ",
+    "gif": "/gif/piernas/Barbell-Clean-and-Press--unscreen.gif",
+    "series": "3x4",
+    "nombre_español": "Cargada y press con barra",
+    "descripcion": "Ejercicio completo para piernas y hombros"
+  },
+  {
+    "grupo": "Piernas",
+    "nombre": "barbell curtsey lunge",
+    "gif": "/gif/piernas/Barbell-Curtsey-Lunge-unscreen.gif",
+    "series": "3x4",
+    "nombre_español": "Zancada de reverencia con barra",
+    "descripcion": "Variación de zancada para glúteos y aductores"
+  },
+  {
+    "grupo": "Piernas",
+    "nombre": "barbell deadlift",
+    "gif": "/gif/piernas/Barbell-Deadlift-unscreen.gif",
+    "series": "3x4",
+    "nombre_español": "Peso muerto con barra",
+    "descripcion": "Ejercicio fundamental para piernas y espalda"
+  },
+  {
+    "grupo": "Piernas",
+    "nombre": "barbell good morning",
+    "gif": "/gif/piernas/Barbell-Good-Morning-unscreen.gif",
+    "series": "3x4",
+    "nombre_español": "Buenos días con barra",
+    "descripcion": "Ejercicio para isquiotibiales y espalda baja"
+  },
+  {
+    "grupo": "Piernas",
+    "nombre": "barbell hack squat",
+    "gif": "/gif/piernas/Barbell-Hack-Squat-unscreen.gif",
+    "series": "3x4",
+    "nombre_español": "Sentadilla hack con barra",
+    "descripcion": "Variación de sentadilla con énfasis en cuádriceps"
+  },
+  {
+    "grupo": "Piernas",
+    "nombre": "barbell jump squat",
+    "gif": "/gif/piernas/Barbell-Jump-Squat-unscreen.gif",
+    "series": "3x4",
+    "nombre_español": "Sentadilla con salto y barra",
+    "descripcion": "Ejercicio pliométrico para potencia en piernas"
+  },
+  {
+    "grupo": "Piernas",
+    "nombre": "barbell lateral lunge",
+    "gif": "/gif/piernas/Barbell-Lateral-Lunge-unscreen.gif",
+    "series": "3x4",
+    "nombre_español": "Zancada lateral con barra",
+    "descripcion": "Ejercicio para aductores y glúteos"
+  },
+  {
+    "grupo": "Piernas",
+    "nombre": "barbell lunge",
+    "gif": "/gif/piernas/Barbell-Lunge-unscreen.gif",
+    "series": "3x4",
+    "nombre_español": "Zancada con barra",
+    "descripcion": "Ejercicio unilateral para piernas con peso"
+  },
+  {
+    "grupo": "Piernas",
+    "nombre": "barbell romanian deadlift",
+    "gif": "/gif/piernas/Barbell-Romanian-Deadlift-unscreen.gif",
+    "series": "3x4",
+    "nombre_español": "Peso muerto rumano con barra",
+    "descripcion": "Ejercicio para isquiotibiales y glúteos"
+  },
+  {
+    "grupo": "Piernas",
+    "nombre": "barbell single leg deadlift",
+    "gif": "/gif/piernas/Barbell-Single-Leg-Deadlift-unscreen.gif",
+    "series": "3x4",
+    "nombre_español": "Peso muerto a una pierna con barra",
+    "descripcion": "Ejercicio unilateral para piernas y equilibrio"
+  },
+  {
+    "grupo": "Piernas",
+    "nombre": "barbell split squat",
+    "gif": "/gif/piernas/Barbell-Split-Squat-unscreen.gif",
+    "series": "3x4",
+    "nombre_español": "Sentadilla dividida con barra",
+    "descripcion": "Ejercicio unilateral para fuerza en piernas"
+  },
+  {
+    "grupo": "Piernas",
+    "nombre": "barbell step up",
+    "gif": "/gif/piernas/Barbell-Step-Up-unscreen.gif",
+    "series": "3x4",
+    "nombre_español": "Subida al cajón con barra",
+    "descripcion": "Ejercicio unilateral para piernas con peso"
+  },
+  {
+    "grupo": "Piernas",
+    "nombre": "barbell sumo deadlift",
+    "gif": "/gif/piernas/Barbell-Sumo-Deadlift-unscreen.gif",
+    "series": "3x4",
+    "nombre_español": "Peso muerto sumo con barra",
+    "descripcion": "Variación de peso muerto con postura amplia"
+  },
+  {
+    "grupo": "Piernas",
+    "nombre": "barbell sumo squat",
+    "gif": "/gif/piernas/Barbell-sumo-squat-unscreen.gif",
+    "series": "3x4",
+    "nombre_español": "Sentadilla sumo con barra",
+    "descripcion": "Variación de sentadilla con postura amplia"
+  },
+  {
+    "grupo": "Piernas",
+    "nombre": "boat pose stretch",
+    "gif": "/gif/piernas/Boat-Pose-Stretch-unscreen.gif",
+    "series": "3x4",
+    "nombre_español": "Estiramiento en postura de bote",
+    "descripcion": "Estiramiento para abdominales y flexores de cadera"
+  },
+  {
+    "grupo": "Piernas",
+    "nombre": "bodyweight box squat",
+    "gif": "/gif/piernas/Bodyweight-Box-Squat-unscreen.gif",
+    "series": "3x4",
+    "nombre_español": "Sentadilla al cajón con peso corporal",
+    "descripcion": "Variación de sentadilla con apoyo"
+  },
+  {
+    "grupo": "Piernas",
+    "nombre": "bodyweight bulgarian split squat",
+    "gif": "/gif/piernas/Bodyweight-Bulgarian-Split-Squ-unscreen.gif",
+    "series": "3x4",
+    "nombre_español": "Sentadilla búlgara con peso corporal",
+    "descripcion": "Ejercicio unilateral para piernas sin peso adicional"
+  },
+  {
+    "grupo": "Piernas",
+    "nombre": "bodyweight kneeling sissy squat",
+    "gif": "/gif/piernas/Bodyweight-Kneeling-Sissy-Squa-unscreen.gif",
+    "series": "3x4",
+    "nombre_español": "Sentadilla sissy de rodillas con peso corporal",
+    "descripcion": "Variación avanzada para cuádriceps"
+  },
+  {
+    "grupo": "Piernas",
+    "nombre": "bodyweight plie squat",
+    "gif": "/gif/piernas/Bodyweight-Plie-Squat-unscreen.gif",
+    "series": "3x4",
+    "nombre_español": "Sentadilla plié con peso corporal",
+    "descripcion": "Variación de sentadilla con énfasis en aductores"
+  },
+  {
+    "grupo": "Piernas",
+    "nombre": "bodyweight windmill",
+    "gif": "/gif/piernas/Bodyweight-Windmill-unscreen.gif",
+    "series": "3x4",
+    "nombre_español": "Molino con peso corporal",
+    "descripcion": "Ejercicio para movilidad y flexibilidad"
+  },
+  {
+    "grupo": "Piernas",
+    "nombre": "bow yoga pose",
+    "gif": "/gif/piernas/Bow-Yoga-Pose-unscreen.gif",
+    "series": "3x4",
+    "nombre_español": "Postura de arco en yoga",
+    "descripcion": "Estiramiento para espalda y piernas"
+  },
+  {
+    "grupo": "Piernas",
+    "nombre": "box jump 1 to 2",
+    "gif": "/gif/piernas/Box-Jump-1-to-2-unscreen.gif",
+    "series": "3x4",
+    "nombre_español": "Salto al cajón de 1 a 2",
+    "descripcion": "Ejercicio pliométrico para potencia en piernas"
+  },
+  {
+    "grupo": "Piernas",
+    "nombre": "box jump 2 to 1",
+    "gif": "/gif/piernas/Box-Jump-2-to-1-unscreen.gif",
+    "series": "3x4",
+    "nombre_español": "Salto al cajón de 2 a 1",
+    "descripcion": "Variación de salto pliométrico"
+  },
+  {
+    "grupo": "Piernas",
+    "nombre": "box jump to pistol squat",
+    "gif": "/gif/piernas/Box-Jump-to-Pistol-Squat-unscreen.gif",
+    "series": "3x4",
+    "nombre_español": "Salto al cajón a sentadilla pistol",
+    "descripcion": "Combinación avanzada para piernas"
+  },
+  {
+    "grupo": "Piernas",
+    "nombre": "box pistol squat",
+    "gif": "/gif/piernas/Box-pistol-Squat-unscreen.gif",
+    "series": "3x4",
+    "nombre_español": "Sentadilla pistol con cajón",
+    "descripcion": "Variación asistida de sentadilla a una pierna"
+  },
+  {
+    "grupo": "Piernas",
+    "nombre": "bulgarian jump squat",
+    "gif": "/gif/piernas/Bulgarian-Jump-Squat-unscreen.gif",
+    "series": "3x4",
+    "nombre_español": "Sentadilla con salto búlgara",
+    "descripcion": "Ejercicio pliométrico unilateral avanzado"
+  },
+  {
+    "grupo": "Piernas",
+    "nombre": "butterfly stretch",
+    "gif": "/gif/piernas/Butterfly-Stretch-unscreen.gif",
+    "series": "3x4",
+    "nombre_español": "Estiramiento de mariposa",
+    "descripcion": "Estiramiento para aductores e ingle"
+  },
+  {
+    "grupo": "Piernas",
+    "nombre": "cable forward lunge",
+    "gif": "/gif/piernas/Cable-Forward-Lunge-unscreen.gif",
+    "series": "3x4",
+    "nombre_español": "Zancada frontal con cable",
+    "descripcion": "Variación de zancada con resistencia de cable"
+  },
+  {
+    "grupo": "Piernas",
+    "nombre": "cable front squat",
+    "gif": "/gif/piernas/Cable-Front-Squat-unscreen.gif",
+    "series": "3x4",
+    "nombre_español": "Sentadilla frontal con cable",
+    "descripcion": "Variación de sentadilla con resistencia constante"
+  },
+  {
+    "grupo": "Piernas",
+    "nombre": "cable hips adduction",
+    "gif": "/gif/piernas/Cable-Hips-Adduction-unscreen.gif",
+    "series": "3x4",
+    "nombre_español": "Aducción de cadera con cable",
+    "descripcion": "Ejercicio para aductores con máquina de cable"
+  },
+  {
+    "grupo": "Piernas",
+    "nombre": "cable lunge",
+    "gif": "/gif/piernas/Cable-Lunge-unscreen.gif",
+    "series": "3x4",
+    "nombre_español": "Zancada con cable",
+    "descripcion": "Variación de zancada con resistencia de cable"
+  },
+  {
+    "grupo": "Piernas",
+    "nombre": "cable squat",
+    "gif": "/gif/piernas/Cable-Squat-unscreen.gif",
+    "series": "3x4",
+    "nombre_español": "Sentadilla con cable",
+    "descripcion": "Variación de sentadilla con resistencia constante"
+  },
+  {
+    "grupo": "Piernas",
+    "nombre": "cossack squat",
+    "gif": "/gif/piernas/Cossack-Squat-unscreen.gif",
+    "series": "3x4",
+    "nombre_español": "Sentadilla cosaca",
+    "descripcion": "Variación de sentadilla lateral para movilidad"
+  },
+  {
+    "grupo": "Piernas",
+    "nombre": "crouching heel back calf stretch",
+    "gif": "/gif/piernas/Crouching-Heel-Back-Calf-Stret-unscreen.gif",
+    "series": "3x4",
+    "nombre_español": "Estiramiento de gemelos en cuclillas",
+    "descripcion": "Estiramiento profundo para pantorrillas"
+  },
+  {
+    "grupo": "Piernas",
+    "nombre": "curtsey squat",
+    "gif": "/gif/piernas/Curtsey-Squat-unscreen.gif",
+    "series": "3x4",
+    "nombre_español": "Sentadilla de reverencia",
+    "descripcion": "Variación de sentadilla para glúteos y aductores"
+  },
+  {
+    "grupo": "Piernas",
+    "nombre": "decline bench dumbbell lunge",
+    "gif": "/gif/piernas/Decline-Bench-Dumbbell-Lunge-unscreen.gif",
+    "series": "3x4",
+    "nombre_español": "Zancada con mancuernas en banco declinado",
+    "descripcion": "Variación avanzada de zancada"
+  },
+  {
+    "grupo": "Piernas",
+    "nombre": "decline dumbbell leg curl",
+    "gif": "/gif/piernas/Decline-Dumbbell-Leg-Curl-unscreen.gif",
+    "series": "3x4",
+    "nombre_español": "Flexores de piernas con mancuernas en declinado",
+    "descripcion": "Ejercicio para isquiotibiales en banco inclinado"
+  },
+  {
+    "grupo": "Piernas",
+    "nombre": "depth jump to hurdle hop",
+    "gif": "/gif/piernas/Depth-Jump-to-Hurdle-Hop-unscreen.gif",
+    "series": "3x4",
+    "nombre_español": "Salto en profundidad a salto de valla",
+    "descripcion": "Ejercicio pliométrico avanzado para piernas"
+  },
+  {
+    "grupo": "Piernas",
+    "nombre": "duck walk",
+    "gif": "/gif/piernas/Duck-Walk-unscreen.gif",
+    "series": "3x4",
+    "nombre_español": "Caminata de pato",
+    "descripcion": "Ejercicio para movilidad y fuerza en piernas"
+  },
+  {
+    "grupo": "Piernas",
+    "nombre": "dumbbell bulgarian split squat",
+    "gif": "/gif/piernas/Dumbbell-Bulgarian-Split-Squat-unscreen.gif",
+    "series": "3x4",
+    "nombre_español": "Sentadilla búlgara con mancuernas",
+    "descripcion": "Ejercicio unilateral para piernas con peso"
+  },
+  {
+    "grupo": "Piernas",
+    "nombre": "dumbbell goblet curtsey lunge",
+    "gif": "/gif/piernas/Dumbbell-Goblet-Curtsey-Lunge-unscreen.gif",
+    "series": "3x4",
+    "nombre_español": "Zancada de reverencia tipo copa con mancuerna",
+    "descripcion": "Variación de zancada para glúteos"
+  },
+  {
+    "grupo": "Piernas",
+    "nombre": "dumbbell goblet squat",
+    "gif": "/gif/piernas/Dumbbell-Goblet-Squat-unscreen.gif",
+    "series": "3x4",
+    "nombre_español": "Sentadilla tipo copa con mancuerna",
+    "descripcion": "Variación de sentadilla con mancuerna"
+  },
+  {
+    "grupo": "Piernas",
+    "nombre": "dumbbell good morning",
+    "gif": "/gif/piernas/Dumbbell-Good-Morning-unscreen.gif",
+    "series": "3x4",
+    "nombre_español": "Buenos días con mancuernas",
+    "descripcion": "Ejercicio para isquiotibiales y espalda baja"
+  },
+  {
+    "grupo": "Piernas",
+    "nombre": "dumbbell iron cross",
+    "gif": "/gif/piernas/Dumbbell-Iron-Cross-unscreen.gif",
+    "series": "3x4",
+    "nombre_español": "Cruz de hierro con mancuernas",
+    "descripcion": "Ejercicio para piernas y core"
+  },
+  {
+    "grupo": "Piernas",
+    "nombre": "dumbbell jump squat",
+    "gif": "/gif/piernas/Dumbbell-Jump-Squat-unscreen.gif",
+    "series": "3x4",
+    "nombre_español": "Sentadilla con salto y mancuernas",
+    "descripcion": "Ejercicio pliométrico con peso adicional"
+  },
+  {
+    "grupo": "Piernas",
+    "nombre": "dumbbell lateral step up",
+    "gif": "/gif/piernas/Dumbbell-Lateral-Step-Up-unscreen.gif",
+    "series": "3x4",
+    "nombre_español": "Subida lateral al cajón con mancuernas",
+    "descripcion": "Ejercicio unilateral para piernas"
+  },
+  {
+    "grupo": "Piernas",
+    "nombre": "dumbbell lunge",
+    "gif": "/gif/piernas/Dumbbell-Lunge-unscreen.gif",
+    "series": "3x4",
+    "nombre_español": "Zancada con mancuernas",
+    "descripcion": "Ejercicio fundamental unilateral para piernas"
+  },
+  {
+    "grupo": "Piernas",
+    "nombre": "dumbbell pull through",
+    "gif": "/gif/piernas/Dumbbell-Pull-Through-unscreen.gif",
+    "series": "3x4",
+    "nombre_español": "Jalon con mancuerna entre piernas",
+    "descripcion": "Ejercicio para glúteos e isquiotibiales"
+  },
+  {
+    "grupo": "Piernas",
+    "nombre": "dumbbell rear lunge",
+    "gif": "/gif/piernas/Dumbbell-Rear-Lunge-unscreen.gif",
+    "series": "3x4",
+    "nombre_español": "Zancada trasera con mancuernas",
+    "descripcion": "Variación de zancada para glúteos"
+  },
+  {
+    "grupo": "Piernas",
+    "nombre": "dumbbell romanian deadlift",
+    "gif": "/gif/piernas/Dumbbell-Romanian-Deadlift-unscreen.gif",
+    "series": "3x4",
+    "nombre_español": "Peso muerto rumano con mancuernas",
+    "descripcion": "Ejercicio para isquiotibiales y glúteos"
+  },
+  {
+    "grupo": "Piernas",
+    "nombre": "dumbbell single leg deadlift",
+    "gif": "/gif/piernas/Dumbbell-Single-Leg-Deadlift-unscreen.gif",
+    "series": "3x4",
+    "nombre_español": "Peso muerto a una pierna con mancuerna",
+    "descripcion": "Ejercicio unilateral para equilibrio y fuerza"
+  },
+  {
+    "grupo": "Piernas",
+    "nombre": "dumbbell split jump",
+    "gif": "/gif/piernas/Dumbbell-Split-Jump-unscreen.gif",
+    "series": "3x4",
+    "nombre_español": "Salto dividido con mancuernas",
+    "descripcion": "Ejercicio pliométrico unilateral"
+  },
+  {
+    "grupo": "Piernas",
+    "nombre": "dumbbell squat",
+    "gif": "/gif/piernas/Dumbbell-Squat-unscreen.gif",
+    "series": "3x4",
+    "nombre_español": "Sentadilla con mancuernas",
+    "descripcion": "Variación básica de sentadilla con peso"
+  },
+  {
+    "grupo": "Piernas",
+    "nombre": "dumbbell straight leg deadlift",
+    "gif": "/gif/piernas/Dumbbell-Straight-Leg-Deadlift-unscreen.gif",
+    "series": "3x4",
+    "nombre_español": "Peso muerto con piernas rectas y mancuernas",
+    "descripcion": "Ejercicio para isquiotibiales y glúteos"
+  },
+  {
+    "grupo": "Piernas",
+    "nombre": "dumbeel step up",
+    "gif": "/gif/piernas/Dumbeel-Step-Up-unscreen.gif",
+    "series": "3x4",
+    "nombre_español": "Subida al cajón con mancuerna",
+    "descripcion": "Ejercicio unilateral para piernas"
+  },
+  {
+    "grupo": "Piernas",
+    "nombre": "dumbell pistol squat",
+    "gif": "/gif/piernas/Dumbell-Pistol-Squat-unscreen.gif",
+    "series": "3x4",
+    "nombre_español": "Sentadilla pistol con mancuerna",
+    "descripcion": "Variación avanzada unilateral con peso"
+  },
+  {
+    "grupo": "Piernas",
+    "nombre": "dumbell reverse lunge",
+    "gif": "/gif/piernas/Dumbell-reverse-lunge-unscreen.gif",
+    "series": "3x4",
+    "nombre_español": "Zancada inversa con mancuerna",
+    "descripcion": "Variación de zancada para glúteos"
+  },
+  {
+    "grupo": "Piernas",
+    "nombre": "exercise ball wall squat",
+    "gif": "/gif/piernas/Exercise-Ball-Wall-Squat-unscreen.gif",
+    "series": "3x4",
+    "nombre_español": "Sentadilla en pared con balón",
+    "descripcion": "Variación de sentadilla isométrica"
+  },
+  {
+    "grupo": "Piernas",
+    "nombre": "foam roller hamstrings",
+    "gif": "/gif/piernas/Foam-Roller-Hamstrings-unscreen.gif",
+    "series": "3x4",
+    "nombre_español": "Auto-liberación de isquiotibiales con rodillo",
+    "descripcion": "Técnica de liberación miofascial"
+  },
+  {
+    "grupo": "Piernas",
+    "nombre": "foam roller it iliotibial band stretch",
+    "gif": "/gif/piernas/Foam-Roller-IT-iliotibial-Band-unscreen.gif",
+    "series": "3x4",
+    "nombre_español": "Liberación de banda iliotibial con rodillo",
+    "descripcion": "Estiramiento y liberación para la banda IT"
+  },
+  {
+    "grupo": "Piernas",
+    "nombre": "foam roller inner thigh adductor stretch",
+    "gif": "/gif/piernas/Foam-Roller-Inner-Thigh-Adduct-unscreen.gif",
+    "series": "3x4",
+    "nombre_español": "Estiramiento de aductores con rodillo",
+    "descripcion": "Liberación miofascial para muslos internos"
+  },
+  {
+    "grupo": "Piernas",
+    "nombre": "foam roller plantar fasciitis",
+    "gif": "/gif/piernas/Foam-Roller-Plantar-Fasciitis-unscreen.gif",
+    "series": "3x4",
+    "nombre_español": "Liberación de fascia plantar con rodillo",
+    "descripcion": "Técnica para aliviar dolor en pies"
+  },
+  {
+    "grupo": "Piernas",
+    "nombre": "foam roller quads",
+    "gif": "/gif/piernas/Foam-Roller-Quads-unscreen.gif",
+    "series": "3x4",
+    "nombre_español": "Auto-liberación de cuádriceps con rodillo",
+    "descripcion": "Técnica de liberación miofascial"
+  },
+  {
+    "grupo": "Piernas",
+    "nombre": "frog pose mandukasana",
+    "gif": "/gif/piernas/Frog-Pose-mandukasana-unscreen.gif",
+    "series": "3x4",
+    "nombre_español": "Postura de rana (mandukasana)",
+    "descripcion": "Estiramiento profundo para ingle y caderas"
+  },
+  {
+    "grupo": "Piernas",
+    "nombre": "front plank with arm and leg lift",
+    "gif": "/gif/piernas/Front-Plank-With-Arm-And-Leg-L-unscreen.gif",
+    "series": "3x4",
+    "nombre_español": "Plancha frontal con elevación de brazo y pierna",
+    "descripcion": "Ejercicio para core y estabilidad"
+  },
+  {
+    "grupo": "Piernas",
+    "nombre": "glute ham raise",
+    "gif": "/gif/piernas/Glute-Ham-Raise-unscreen.gif",
+    "series": "3x4",
+    "nombre_español": "Elevación de glúteos e isquiotibiales",
+    "descripcion": "Ejercicio avanzado para piernas posteriores"
+  },
+  {
+    "grupo": "Piernas",
+    "nombre": "good morning with resistance band",
+    "gif": "/gif/piernas/Good-Morning-With-Resistance-B-unscreen.gif",
+    "series": "3x4",
+    "nombre_español": "Buenos días con banda de resistencia",
+    "descripcion": "Variación del ejercicio con resistencia adicional"
+  },
+  {
+    "grupo": "Piernas",
+    "nombre": "hip adduction machine",
+    "gif": "/gif/piernas/HIP-ADDUCTION-MACHINE-unscreen.gif",
+    "series": "3x4",
+    "nombre_español": "Máquina de aducción de cadera",
+    "descripcion": "Ejercicio para aductores en máquina"
+  },
+  {
+    "grupo": "Piernas",
+    "nombre": "half frog pose ardha bhekasana",
+    "gif": "/gif/piernas/Half-Frog-Pose-ardha-bhekasana-unscreen.gif",
+    "series": "3x4",
+    "nombre_español": "Media postura de rana (ardha bhekasana)",
+    "descripcion": "Estiramiento para cuádriceps y caderas"
+  },
+  {
+    "grupo": "Piernas",
+    "nombre": "hamstrings lying stretch",
+    "gif": "/gif/piernas/Hamstrings-Lying-Stretch-unscreen.gif",
+    "series": "3x4",
+    "nombre_español": "Estiramiento de isquiotibiales acostado",
+    "descripcion": "Estiramiento básico para piernas posteriores"
+  },
+  {
+    "grupo": "Piernas",
+    "nombre": "happy baby pose",
+    "gif": "/gif/piernas/Happy-Baby-Pose-unscreen.gif",
+    "series": "3x4",
+    "nombre_español": "Postura del bebé feliz",
+    "descripcion": "Estiramiento para espalda baja y caderas"
+  },
+  {
+    "grupo": "Piernas",
+    "nombre": "hawaiian squat exercise",
+    "gif": "/gif/piernas/Hawaiian-Squat-exercise-unscreen.gif",
+    "series": "3x4",
+    "nombre_español": "Sentadilla hawaiana",
+    "descripcion": "Variación de sentadilla para movilidad"
+  },
+  {
+    "grupo": "Piernas",
+    "nombre": "heel touch side kick squat",
+    "gif": "/gif/piernas/Heel-Touch-Side-Kick-Squat-unscreen.gif",
+    "series": "3x4",
+    "nombre_español": "Sentadilla con toque de talón y patada lateral",
+    "descripcion": "Ejercicio combinado para piernas"
+  },
+  {
+    "grupo": "Piernas",
+    "nombre": "hell slide",
+    "gif": "/gif/piernas/Hell-Slide-unscreen.gif",
+    "series": "3x4",
+    "nombre_español": "Deslizamiento infernal",
+    "descripcion": "Ejercicio intenso para piernas"
+  },
+  {
+    "grupo": "Piernas",
+    "nombre": "hip abduction machine",
+    "gif": "/gif/piernas/HiP-ABDUCTION-MACHINE-unscreen.gif",
+    "series": "3x4",
+    "nombre_español": "Máquina de abducción de cadera",
+    "descripcion": "Ejercicio para glúteos y abductores"
+  },
+  {
+    "grupo": "Piernas",
+    "nombre": "high knee lunge on bosu ball",
+    "gif": "/gif/piernas/High-Knee-Lunge-on-Bosu-Ball-unscreen.gif",
+    "series": "3x4",
+    "nombre_español": "Zancada con rodilla alta en bosu",
+    "descripcion": "Ejercicio de equilibrio y fuerza"
+  },
+  {
+    "grupo": "Piernas",
+    "nombre": "high knee run",
+    "gif": "/gif/piernas/High-Knee-Run-unscreen.gif",
+    "series": "3x4",
+    "nombre_español": "Carrera con rodillas altas",
+    "descripcion": "Ejercicio cardiovascular para piernas"
+  },
+  {
+    "grupo": "Piernas",
+    "nombre": "high knee skips_cardio",
+    "gif": "/gif/piernas/High-Knee-Skips-Cardio-unscreen.gif",
+    "series": "3x4",
+    "nombre_español": "Saltos con rodillas altas (cardio)",
+    "descripcion": "Ejercicio pliométrico cardiovascular"
+  },
+  {
+    "grupo": "Piernas",
+    "nombre": "high knee squat",
+    "gif": "/gif/piernas/High-Knee-Squat-unscreen.gif",
+    "series": "3x4",
+    "nombre_español": "Sentadilla con rodillas altas",
+    "descripcion": "Variación de sentadilla con elevación"
+  },
+  {
+    "grupo": "Piernas",
+    "nombre": "inner thigh side stretch",
+    "gif": "/gif/piernas/INNER-THIGH-SIDE-STRETCH-unscreen.gif",
+    "series": "3x4",
+    "nombre_español": "Estiramiento lateral de muslos internos",
+    "descripcion": "Estiramiento para aductores"
+  },
+  {
+    "grupo": "Piernas",
+    "nombre": "jump squat",
+    "gif": "/gif/piernas/Jump-Squat-unscreen.gif",
+    "series": "3x4",
+    "nombre_español": "Sentadilla con salto",
+    "descripcion": "Ejercicio pliométrico para potencia"
+  },
+  {
+    "grupo": "Piernas",
+    "nombre": "jumping jack",
+    "gif": "/gif/piernas/Jumping-jack-unscreen.gif",
+    "series": "3x4",
+    "nombre_español": "Saltos de tijera",
+    "descripcion": "Ejercicio cardiovascular completo"
+  },
+  {
+    "grupo": "Piernas",
+    "nombre": "kettlebell clean and jerk",
+    "gif": "/gif/piernas/Kettlebell-Clean-and-Jerk-unscreen.gif",
+    "series": "3x4",
+    "nombre_español": "Cargada y envión con kettlebell",
+    "descripcion": "Ejercicio completo de potencia"
+  },
+  {
+    "grupo": "Piernas",
+    "nombre": "kettlebell clean and press",
+    "gif": "/gif/piernas/Kettlebell-Clean-and-Press-unscreen.gif",
+    "series": "3x4",
+    "nombre_español": "Cargada y press con kettlebell",
+    "descripcion": "Ejercicio compuesto para cuerpo completo"
+  },
+  {
+    "grupo": "Piernas",
+    "nombre": "kettlebell figure 8",
+    "gif": "/gif/piernas/Kettlebell-Figure-8-unscreen.gif",
+    "series": "3x4",
+    "nombre_español": "Figura 8 con kettlebell",
+    "descripcion": "Ejercicio para coordinación y fuerza"
+  },
+  {
+    "grupo": "Piernas",
+    "nombre": "kettlebell pistol squats",
+    "gif": "/gif/piernas/Kettlebell-Pistol-Squats-unscreen.gif",
+    "series": "3x4",
+    "nombre_español": "Sentadillas pistol con kettlebell",
+    "descripcion": "Variación avanzada unilateral"
+  },
+  {
+    "grupo": "Piernas",
+    "nombre": "kettlebell split snatch",
+    "gif": "/gif/piernas/Kettlebell-Split-Snatch-unscreen.gif",
+    "series": "3x4",
+    "nombre_español": "Arranque dividido con kettlebell",
+    "descripcion": "Ejercicio de potencia avanzado"
+  },
+  {
+    "grupo": "Piernas",
+    "nombre": "kettlebell swings",
+    "gif": "/gif/piernas/Kettlebell-Swings-unscreen.gif",
+    "series": "3x4",
+    "nombre_español": "Balanceos con kettlebell",
+    "descripcion": "Ejercicio dinámico para glúteos y piernas"
+  },
+  {
+    "grupo": "Piernas",
+    "nombre": "kettlebell thruster",
+    "gif": "/gif/piernas/Kettlebell-Thruster-unscreen.gif",
+    "series": "3x4",
+    "nombre_español": "Thruster con kettlebell",
+    "descripcion": "Ejercicio compuesto para piernas y hombros"
+  },
+  {
+    "grupo": "Piernas",
+    "nombre": "kettlebell front squat",
+    "gif": "/gif/piernas/Kettlebell-front-squat-unscreen.gif",
+    "series": "3x4",
+    "nombre_español": "Sentadilla frontal con kettlebell",
+    "descripcion": "Variación de sentadilla con peso frontal"
+  },
+  {
+    "grupo": "Piernas",
+    "nombre": "knee circles",
+    "gif": "/gif/piernas/Knee-Circles-unscreen.gif",
+    "series": "3x4",
+    "nombre_español": "Círculos con rodillas",
+    "descripcion": "Ejercicio para movilidad de rodillas"
+  },
+  {
+    "grupo": "Piernas",
+    "nombre": "kneeling hip flexor stretch 1 360x360",
+    "gif": "/gif/piernas/Kneeling-Hip-Flexor-Stretch-IMG.gif",
+    "series": "3x4",
+    "nombre_español": "Estiramiento de flexores de cadera de rodillas",
+    "descripcion": "Estiramiento para flexores de cadera"
+  },
+  {
+    "grupo": "Piernas",
+    "nombre": "kneeling hip flexor stretch",
+    "gif": "/gif/piernas/Kneeling-Hip-Flexor-Stretch-unscreen.gif",
+    "series": "3x4",
+    "nombre_español": "Estiramiento de flexores de cadera",
+    "descripcion": "Estiramiento básico para cadera"
+  },
+  {
+    "grupo": "Piernas",
+    "nombre": "kneeling jump squat",
+    "gif": "/gif/piernas/Kneeling-Jump-Squat-unscreen.gif",
+    "series": "3x4",
+    "nombre_español": "Sentadilla con salto desde rodillas",
+    "descripcion": "Ejercicio pliométrico avanzado"
+  },
+  {
+    "grupo": "Piernas",
+    "nombre": "kneeling leg out adductor stretch",
+    "gif": "/gif/piernas/Kneeling-Leg-Out-Adductor-Stre-unscreen.gif",
+    "series": "3x4",
+    "nombre_español": "Estiramiento de aductores con pierna extendida",
+    "descripcion": "Estiramiento profundo para ingle"
+  },
+  {
+    "grupo": "Piernas",
+    "nombre": "kneeling quad stretch",
+    "gif": "/gif/piernas/Kneeling-Quad-Stretch-unscreen.gif",
+    "series": "3x4",
+    "nombre_español": "Estiramiento de cuádriceps de rodillas",
+    "descripcion": "Estiramiento básico para piernas frontales"
+  },
+  {
+    "grupo": "Piernas",
+    "nombre": "leg extension",
+    "gif": "/gif/piernas/LEG-EXTENSION-unscreen.gif",
+    "series": "3x4",
+    "nombre_español": "Extensión de piernas",
+    "descripcion": "Ejercicio para cuádriceps en máquina"
+  },
+  {
+    "grupo": "Piernas",
+    "nombre": "landmine deadlift",
+    "gif": "/gif/piernas/Landmine-Deadlift-unscreen.gif",
+    "series": "3x4",
+    "nombre_español": "Peso muerto con landmine",
+    "descripcion": "Variación de peso muerto con barra anclada"
+  },
+  {
+    "grupo": "Piernas",
+    "nombre": "landmine lunge",
+    "gif": "/gif/piernas/Landmine-Lunge-unscreen.gif",
+    "series": "3x4",
+    "nombre_español": "Zancada con landmine",
+    "descripcion": "Variación de zancada con barra anclada"
+  },
+  {
+    "grupo": "Piernas",
+    "nombre": "landmine press",
+    "gif": "/gif/piernas/Landmine-Press-unscreen.gif",
+    "series": "3x4",
+    "nombre_español": "Press con landmine",
+    "descripcion": "Ejercicio para hombros con barra anclada"
+  },
+  {
+    "grupo": "Piernas",
+    "nombre": "landmine squat",
+    "gif": "/gif/piernas/Landmine-Squat-unscreen.gif",
+    "series": "3x4",
+    "nombre_español": "Sentadilla con landmine",
+    "descripcion": "Variación de sentadilla con barra anclada"
+  },
+  {
+    "grupo": "Piernas",
+    "nombre": "lateral leg swings",
+    "gif": "/gif/piernas/Lateral-Leg-Swings-unscreen.gif",
+    "series": "3x4",
+    "nombre_español": "Balanceos laterales de piernas",
+    "descripcion": "Ejercicio dinámico para movilidad"
+  },
+  {
+    "grupo": "Piernas",
+    "nombre": "lateral speed step",
+    "gif": "/gif/piernas/Lateral-Speed-Step-unscreen.gif",
+    "series": "3x4",
+    "nombre_español": "Paso lateral rápido",
+    "descripcion": "Ejercicio para agilidad lateral"
+  },
+  {
+    "grupo": "Piernas",
+    "nombre": "lateral step up",
+    "gif": "/gif/piernas/Lateral-Step-up-unscreen.gif",
+    "series": "3x4",
+    "nombre_español": "Subida lateral al cajón",
+    "descripcion": "Ejercicio unilateral para piernas"
+  },
+  {
+    "grupo": "Piernas",
+    "nombre": "leg curl",
+    "gif": "/gif/piernas/Leg-Curl-unscreen.gif",
+    "series": "3x4",
+    "nombre_español": "Flexores de piernas camilla",
+    "descripcion": "Ejercicio para isquiotibiales en máquina"
+  },
+  {
+    "grupo": "Piernas",
+    "nombre": "leg press",
+    "gif": "/gif/piernas/Leg-Press-unscreen.gif",
+    "series": "3x4",
+    "nombre_español": "Prensa de piernas",
+    "descripcion": "Ejercicio fundamental para piernas"
+  },
+  {
+    "grupo": "Piernas",
+    "nombre": "lever assisted leg press",
+    "gif": "/gif/piernas/Lever-Assisted-Leg-Press-unscreen.gif",
+    "series": "3x4",
+    "nombre_español": "Prensa de piernas asistida",
+    "descripcion": "Variación de prensa con asistencia"
+  },
+  {
+    "grupo": "Piernas",
+    "nombre": "lever deadlift",
+    "gif": "/gif/piernas/Lever-Deadlift-unscreen.gif",
+    "series": "3x4",
+    "nombre_español": "Peso muerto con palanca",
+    "descripcion": "Variación de peso muerto en máquina"
+  },
+  {
+    "grupo": "Piernas",
+    "nombre": "lever horizontal leg press",
+    "gif": "/gif/piernas/Lever-Horizontal-Leg-Press-unscreen.gif",
+    "series": "3x4",
+    "nombre_español": "Prensa de piernas horizontal",
+    "descripcion": "Variación de prensa en posición horizontal"
+  },
+  {
+    "grupo": "Piernas",
+    "nombre": "lever kneeling leg curl ",
+    "gif": "/gif/piernas/Lever-Kneeling-Leg-Curl--unscreen.gif",
+    "series": "3x4",
+    "nombre_español": "Flexores de piernas maquina",
+    "descripcion": "Variación de curl para isquiotibiales"
+  },
+  {
+    "grupo": "Piernas",
+    "nombre": "lever side hip abduction",
+    "gif": "/gif/piernas/Lever-Side-Hip-Abduction-unscreen.gif",
+    "series": "3x4",
+    "nombre_español": "Abducción de cadera lateral con palanca",
+    "descripcion": "Ejercicio para glúteos en máquina"
+  },
+  {
+    "grupo": "Piernas",
+    "nombre": "lever side hip adduction",
+    "gif": "/gif/piernas/Lever-Side-Hip-Adduction-unscreen.gif",
+    "series": "3x4",
+    "nombre_español": "Aducción de cadera lateral con palanca",
+    "descripcion": "Ejercicio para aductores en máquina"
+  },
+  {
+    "grupo": "Piernas",
+    "nombre": "lever single leg curl",
+    "gif": "/gif/piernas/Lever-Single-Leg-Curl-unscreen.gif",
+    "series": "3x4",
+    "nombre_español": "Flexor a una pierna maquina acostado",
+    "descripcion": "Variación unilateral para isquiotibiales"
+  },
+  {
+    "grupo": "Piernas",
+    "nombre": "lever standing leg raise",
+    "gif": "/gif/piernas/Lever-Standing-Leg-Raise-unscreen.gif",
+    "series": "3x4",
+    "nombre_español": "Elevación de pierna de pie con palanca",
+    "descripcion": "Ejercicio para flexores de cadera"
+  },
+  {
+    "grupo": "Piernas",
+    "nombre": "long jump plyometrics",
+    "gif": "/gif/piernas/Long-Jump-Plyometrics-unscreen.gif",
+    "series": "3x4",
+    "nombre_español": "Salto largo pliométrico",
+    "descripcion": "Ejercicio de potencia para piernas"
+  },
+  {
+    "grupo": "Piernas",
+    "nombre": "lying alternate leg press",
+    "gif": "/gif/piernas/Lying-Alternate-Leg-Press-unscreen.gif",
+    "series": "3x4",
+    "nombre_español": "Prensa de piernas alternada acostado",
+    "descripcion": "Variación unilateral de prensa"
+  },
+  {
+    "grupo": "Piernas",
+    "nombre": "lying dumbbell leg curl",
+    "gif": "/gif/piernas/Lying-Dumbbell-Leg-Curl-unscreen.gif",
+    "series": "3x4",
+    "nombre_español": "Flexion de piernas con mancuernas acostado",
+    "descripcion": "Ejercicio para isquiotibiales con peso libre"
+  },
+  {
+    "grupo": "Piernas",
+    "nombre": "lying glute stretch",
+    "gif": "/gif/piernas/Lying-glute-stretch-unscreen.gif",
+    "series": "3x4",
+    "nombre_español": "Estiramiento de glúteos acostado",
+    "descripcion": "Estiramiento básico para glúteos"
+  },
+  {
+    "grupo": "Piernas",
+    "nombre": "lying leg curl",
+    "gif": "/gif/piernas/Lying-leg-curl-unscreen.gif",
+    "series": "3x4",
+    "nombre_español": "Flexion  de piernas acostado polea banda",
+    "descripcion": "Ejercicio básico para isquiotibiales"
+  },
+  {
+    "grupo": "Piernas",
+    "nombre": "nordic hamstring curl",
+    "gif": "/gif/piernas/Nordic-Hamstring-Curl-unscreen.gif",
+    "series": "3x4",
+    "nombre_español": "Curl nórdico de isquiotibiales",
+    "descripcion": "Ejercicio avanzado para piernas posteriores"
+  },
+  {
+    "grupo": "Piernas",
+    "nombre": "one arm dumbbell snatch",
+    "gif": "/gif/piernas/One-Arm-Dumbbell-Snatch-unscreen.gif",
+    "series": "3x4",
+    "nombre_español": "Arranque con mancuerna a un brazo",
+    "descripcion": "Ejercicio de potencia unilateral"
+  },
+  {
+    "grupo": "Piernas",
+    "nombre": "one arm kettlebell snatch exercise",
+    "gif": "/gif/piernas/One-Arm-Kettlebell-Snatch-exer-unscreen.gif",
+    "series": "3x4",
+    "nombre_español": "Arranque con kettlebell a un brazo",
+    "descripcion": "Ejercicio dinámico de potencia"
+  },
+  {
+    "grupo": "Piernas",
+    "nombre": "piriformis stretch",
+    "gif": "/gif/piernas/Piriformis-Stretch-unscreen.gif",
+    "series": "3x4",
+    "nombre_español": "Estiramiento del piriforme",
+    "descripcion": "Estiramiento para aliviar ciática"
+  },
+  {
+    "grupo": "Piernas",
+    "nombre": "pistol squat to box",
+    "gif": "/gif/piernas/Pistol-Squat-to-Box-unscreen.gif",
+    "series": "3x4",
+    "nombre_español": "Sentadilla pistol a cajón",
+    "descripcion": "Variación asistida de sentadilla a una pierna"
+  },
+  {
+    "grupo": "Piernas",
+    "nombre": "pistol squat",
+    "gif": "/gif/piernas/Pistol-Squat-unscreen.gif",
+    "series": "3x4",
+    "nombre_español": "Sentadilla pistol",
+    "descripcion": "Ejercicio avanzado unilateral"
+  },
+  {
+    "grupo": "Piernas",
+    "nombre": "plank with arm and leg lift",
+    "gif": "/gif/piernas/Plank-with-Arm-and-Leg-Lift-unscreen.gif",
+    "series": "3x4",
+    "nombre_español": "Plancha isometrica  con elevación de brazo y pierna",
+    "descripcion": "Ejercicio para core y estabilidad"
+  },
+  {
+    "grupo": "Piernas",
+    "nombre": "resistance band lateral walk",
+    "gif": "/gif/piernas/Resistance-Band-Lateral-Walk-unscreen.gif",
+    "series": "3x4",
+    "nombre_español": "Caminata lateral con banda de resistencia",
+    "descripcion": "Ejercicio para glúteos y abductores"
+  },
+  {
+    "grupo": "Piernas",
+    "nombre": "resistance band overhead squat",
+    "gif": "/gif/piernas/Resistance-Band-Overhead-Squat-unscreen.gif",
+    "series": "3x4",
+    "nombre_español": "Sentadilla por encima de la cabeza con banda",
+    "descripcion": "Variación de sentadilla con resistencia"
+  },
+  {
+    "grupo": "Piernas",
+    "nombre": "resistance band toe touch",
+    "gif": "/gif/piernas/Resistance-Band-Toe-Touch-unscreen.gif",
+    "series": "3x4",
+    "nombre_español": "Toque de dedos con banda de resistencia",
+    "descripcion": "Ejercicio para flexibilidad y resistencia"
+  },
+  {
+    "grupo": "Piernas",
+    "nombre": "reverse hack squat",
+    "gif": "/gif/piernas/Reverse-Hack-Squat-unscreen.gif",
+    "series": "3x4",
+    "nombre_español": "Sentadilla hack inversa",
+    "descripcion": "Variación de sentadilla en máquina"
+  },
+  {
+    "grupo": "Piernas",
+    "nombre": "reverse lunge knee",
+    "gif": "/gif/piernas/Reverse-Lunge-Knee-unscreen.gif",
+    "series": "3x4",
+    "nombre_español": "Zancada inversa con elevación de rodilla",
+    "descripcion": "Variación de zancada con movimiento adicional"
+  },
+  {
+    "grupo": "Piernas",
+    "nombre": "snap jumps",
+    "gif": "/gif/piernas/SNAP-JUMPS-unscreen.gif",
+    "series": "3x4",
+    "nombre_español": "Saltos explosivos",
+    "descripcion": "Ejercicio pliométrico para potencia"
+  },
+  {
+    "grupo": "Piernas",
+    "nombre": "standing knee hugs",
+    "gif": "/gif/piernas/STANDING-KNEE-HUGS-unscreen.gif",
+    "series": "3x4",
+    "nombre_español": "Abrazos de rodilla de pie",
+    "descripcion": "Estiramiento dinámico para piernas"
+  },
+  {
+    "grupo": "Piernas",
+    "nombre": "seated adductor groin stretch",
+    "gif": "/gif/piernas/Seated-Adductor-Groin-Stretch-unscreen.gif",
+    "series": "3x4",
+    "nombre_español": "Estiramiento de aductores sentado",
+    "descripcion": "Estiramiento para ingle y muslos internos"
+  },
+  {
+    "grupo": "Piernas",
+    "nombre": "seated banded leg extension",
+    "gif": "/gif/piernas/Seated-Banded-Leg-Extension-unscreen.gif",
+    "series": "3x4",
+    "nombre_español": "Extensión de piernas con banda sentado",
+    "descripcion": "Variación de extensión con resistencia"
+  },
+  {
+    "grupo": "Piernas",
+    "nombre": "seated hamstring stretch",
+    "gif": "/gif/piernas/Seated-Hamstring-Stretch-unscreen.gif",
+    "series": "3x4",
+    "nombre_español": "Estiramiento de isquiotibiales sentado",
+    "descripcion": "Estiramiento básico para piernas posteriores"
+  },
+  {
+    "grupo": "Piernas",
+    "nombre": "seated leg curl",
+    "gif": "/gif/piernas/Seated-Leg-Curl-unscreen.gif",
+    "series": "3x4",
+    "nombre_español": "Flexores de piernas sentado",
+    "descripcion": "Ejercicio para isquiotibiales en máquina"
+  },
+  {
+    "grupo": "Piernas",
+    "nombre": "seated leg extension with resistance band",
+    "gif": "/gif/piernas/Seated-Leg-Extension-with-Resi-unscreen.gif",
+    "series": "3x4",
+    "nombre_español": "Extensión de piernas con banda sentado",
+    "descripcion": "Variación de extensión con resistencia"
+  },
+  {
+    "grupo": "Piernas",
+    "nombre": "seated piriformis stretch",
+    "gif": "/gif/piernas/Seated-Piriformis-Stretch-unscreen.gif",
+    "series": "3x4",
+    "nombre_español": "Estiramiento del piriforme sentado",
+    "descripcion": "Estiramiento para aliviar ciática"
+  },
+  {
+    "grupo": "Piernas",
+    "nombre": "seated side crunches",
+    "gif": "/gif/piernas/Seated-Side-Crunches-unscreen.gif",
+    "series": "3x4",
+    "nombre_español": "Crunches laterales sentado",
+    "descripcion": "Ejercicio para oblicuos"
+  },
+  {
+    "grupo": "Piernas",
+    "nombre": "seated straight leg calf stretch",
+    "gif": "/gif/piernas/Seated-Straight-Leg-Calf-Stret-unscreen.gif",
+    "series": "3x4",
+    "nombre_español": "Estiramiento de pantorrilla con pierna recta sentado",
+    "descripcion": "Estiramiento para gemelos"
+  },
+  {
+    "grupo": "Piernas",
+    "nombre": "seated toe touches",
+    "gif": "/gif/piernas/Seated-Toe-Touches-unscreen.gif",
+    "series": "3x4",
+    "nombre_español": "Toques de dedos sentado",
+    "descripcion": "Estiramiento para isquiotibiales"
+  },
+  {
+    "grupo": "Piernas",
+    "nombre": "side lunge stretch",
+    "gif": "/gif/piernas/Side-Lunge-Stretch-unscreen.gif",
+    "series": "3x4",
+    "nombre_español": "Estiramiento de zancada lateral",
+    "descripcion": "Estiramiento para aductores y glúteos"
+  },
+  {
+    "grupo": "Piernas",
+    "nombre": "single knee to chest stretch",
+    "gif": "/gif/piernas/Single-Knee-To-Chest-Stretch-unscreen.gif",
+    "series": "3x4",
+    "nombre_español": "Estiramiento de rodilla al pecho",
+    "descripcion": "Estiramiento básico para espalda baja y piernas"
+  },
+  {
+    "grupo": "Piernas",
+    "nombre": "single leg box jump",
+    "gif": "/gif/piernas/Single-Leg-Box-Jump-unscreen.gif",
+    "series": "3x4",
+    "nombre_español": "Salto al cajón a una pierna",
+    "descripcion": "Ejercicio pliométrico unilateral"
+  },
+  {
+    "grupo": "Piernas",
+    "nombre": "single leg broad jump",
+    "gif": "/gif/piernas/Single-Leg-Broad-Jump-unscreen.gif",
+    "series": "3x4",
+    "nombre_español": "Salto largo a una pierna",
+    "descripcion": "Ejercicio de potencia unilateral"
+  },
+  {
+    "grupo": "Piernas",
+    "nombre": "single leg extension",
+    "gif": "/gif/piernas/Single-Leg-Extension-unscreen.gif",
+    "series": "3x4",
+    "nombre_español": "Extensión de pierna única",
+    "descripcion": "Variación unilateral para cuádriceps"
+  },
+  {
+    "grupo": "Piernas",
+    "nombre": "single leg press",
+    "gif": "/gif/piernas/Single-Leg-Press-unscreen.gif",
+    "series": "3x4",
+    "nombre_español": "Prensa de pierna única",
+    "descripcion": "Ejercicio unilateral para piernas"
+  },
+  {
+    "grupo": "Piernas",
+    "nombre": "single leg step down",
+    "gif": "/gif/piernas/Single-Leg-Step-Down-unscreen.gif",
+    "series": "3x4",
+    "nombre_español": "Bajada de escalón a una pierna",
+    "descripcion": "Ejercicio para fuerza y equilibrio"
+  },
+  {
+    "grupo": "Piernas",
+    "nombre": "sitting rotation hip stretch",
+    "gif": "/gif/piernas/Sitting-Rotation-Hip-Stretch-unscreen.gif",
+    "series": "3x4",
+    "nombre_español": "Estiramiento de cadera con rotación sentado",
+    "descripcion": "Estiramiento para movilidad de cadera"
+  },
+  {
+    "grupo": "Piernas",
+    "nombre": "sitting wide leg adductor stretch",
+    "gif": "/gif/piernas/Sitting-Wide-Leg-Adductor-Stre-unscreen.gif",
+    "series": "3x4",
+    "nombre_español": "Estiramiento de aductores con piernas abiertas sentado",
+    "descripcion": "Estiramiento profundo para ingle"
+  },
+  {
+    "grupo": "Piernas",
+    "nombre": "skater squat",
+    "gif": "/gif/piernas/Skater-Squat-unscreen.gif",
+    "series": "3x4",
+    "nombre_español": "Sentadilla de patinador",
+    "descripcion": "Ejercicio unilateral para equilibrio y fuerza"
+  },
+  {
+    "grupo": "Piernas",
+    "nombre": "skater",
+    "gif": "/gif/piernas/Skater-unscreen.gif",
+    "series": "3x4",
+    "nombre_español": "Patinador",
+    "descripcion": "Ejercicio lateral para piernas y glúteos"
+  },
+  {
+    "grupo": "Piernas",
+    "nombre": "sled hack squat",
+    "gif": "/gif/piernas/Sled-Hack-Squat-unscreen.gif",
+    "series": "3x4",
+    "nombre_español": "Sentadilla hack en trineo",
+    "descripcion": "Variación de sentadilla en máquina"
+  },
+  {
+    "grupo": "Piernas",
+    "nombre": "smith machine good morning",
+    "gif": "/gif/piernas/Smith-Machine-Good-Morning-unscreen.gif",
+    "series": "3x4",
+    "nombre_español": "Buenos días en máquina Smith",
+    "descripcion": "Variación del ejercicio con guía"
+  },
+  {
+    "grupo": "Piernas",
+    "nombre": "smith machine leg press",
+    "gif": "/gif/piernas/Smith-Machine-Leg-Press-unscreen.gif",
+    "series": "3x4",
+    "nombre_español": "Prensa de piernas en máquina Smith",
+    "descripcion": "Variación de prensa con guía"
+  },
+  {
+    "grupo": "Piernas",
+    "nombre": "smith machine lunge",
+    "gif": "/gif/piernas/Smith-Machine-Lunge-unscreen.gif",
+    "series": "3x4",
+    "nombre_español": "Zancada en máquina Smith",
+    "descripcion": "Variación de zancada con guía"
+  },
+  {
+    "grupo": "Piernas",
+    "nombre": "split squat gymstick",
+    "gif": "/gif/piernas/Split-Squat-Gymstick-unscreen.gif",
+    "series": "3x4",
+    "nombre_español": "Sentadilla dividida con gymstick",
+    "descripcion": "Variación de sentadilla con resistencia"
+  },
+  {
+    "grupo": "Piernas",
+    "nombre": "split squat",
+    "gif": "/gif/piernas/Split-Squat-unscreen.gif",
+    "series": "3x4",
+    "nombre_español": "Sentadilla dividida",
+    "descripcion": "Ejercicio unilateral básico"
+  },
+  {
+    "grupo": "Piernas",
+    "nombre": "squat gymstick",
+    "gif": "/gif/piernas/Squat-Gymstick-unscreen.gif",
+    "series": "3x4",
+    "nombre_español": "Sentadilla con gymstick",
+    "descripcion": "Variación de sentadilla con resistencia"
+  },
+  {
+    "grupo": "Piernas",
+    "nombre": "squat mobility complex",
+    "gif": "/gif/piernas/Squat-mobility-Complex-unscreen.gif",
+    "series": "3x4",
+    "nombre_español": "Complejo de movilidad para sentadilla",
+    "descripcion": "Ejercicios para mejorar movilidad en sentadillas"
+  },
+  {
+    "grupo": "Piernas",
+    "nombre": "standing cross leg hamstring stretch",
+    "gif": "/gif/piernas/Standing-Cross-Leg-Hamstring-S-unscreen.gif",
+    "series": "3x4",
+    "nombre_español": "Estiramiento de isquiotibiales con piernas cruzadas de pie",
+    "descripcion": "Estiramiento profundo para piernas posteriores"
+  },
+  {
+    "grupo": "Piernas",
+    "nombre": "standing hamstring stretch",
+    "gif": "/gif/piernas/Standing-Hamstring-Stretch-unscreen.gif",
+    "series": "3x4",
+    "nombre_español": "Estiramiento de isquiotibiales de pie",
+    "descripcion": "Estiramiento básico para piernas"
+  },
+  {
+    "grupo": "Piernas",
+    "nombre": "standing leg circles",
+    "gif": "/gif/piernas/Standing-Leg-Circles-unscreen.gif",
+    "series": "3x4",
+    "nombre_español": "Círculos con piernas de pie",
+    "descripcion": "Ejercicio para movilidad de cadera"
+  },
+  {
+    "grupo": "Piernas",
+    "nombre": "standing leg raise",
+    "gif": "/gif/piernas/Standing-Leg-Raise-unscreen.gif",
+    "series": "3x4",
+    "nombre_español": "Elevación de pierna de pie",
+    "descripcion": "Ejercicio para flexores de cadera"
+  },
+  {
+    "grupo": "Piernas",
+    "nombre": "standing quadriceps stretch",
+    "gif": "/gif/piernas/Standing-Quadriceps-Stretch-unscreen.gif",
+    "series": "3x4",
+    "nombre_español": "Estiramiento de cuádriceps de pie",
+    "descripcion": "Estiramiento básico para piernas frontales"
+  },
+  {
+    "grupo": "Piernas",
+    "nombre": "standing side toe touching",
+    "gif": "/gif/piernas/Standing-Side-Toe-Touching-unscreen.gif",
+    "series": "3x4",
+    "nombre_español": "Toque lateral de dedos de pie",
+    "descripcion": "Estiramiento para espalda y piernas"
+  },
+  {
+    "grupo": "Piernas",
+    "nombre": "standing single leg curl machine",
+    "gif": "/gif/piernas/Standing-Single-Leg-Curl-Machi-unscreen.gif",
+    "series": "3x4",
+    "nombre_español": "Flexor a una pierna parado en máquina",
+    "descripcion": "Variación unilateral para isquiotibiales"
+  },
+  {
+    "grupo": "Piernas",
+    "nombre": "standing toe touches",
+    "gif": "/gif/piernas/Standing-Toe-Touches-unscreen.gif",
+    "series": "3x4",
+    "nombre_español": "Toques de dedos de pie",
+    "descripcion": "Estiramiento para isquiotibiales"
+  },
+  {
+    "grupo": "Piernas",
+    "nombre": "standing wide knees adductor stretch",
+    "gif": "/gif/piernas/Standing-Wide-Knees-Adductor-S-unscreen.gif",
+    "series": "3x4",
+    "nombre_español": "Estiramiento de aductores con rodillas separadas de pie",
+    "descripcion": "Estiramiento para ingle y muslos internos"
+  },
+  {
+    "grupo": "Piernas",
+    "nombre": "standing wide leg adductor stretch",
+    "gif": "/gif/piernas/Standing-Wide-Leg-Adductor-Str-unscreen.gif",
+    "series": "3x4",
+    "nombre_español": "Estiramiento de aductores con piernas separadas de pie",
+    "descripcion": "Estiramiento profundo para ingle"
+  },
+  {
+    "grupo": "Piernas",
+    "nombre": "standing leg curl",
+    "gif": "/gif/piernas/Standing-leg-curl-unscreen.gif",
+    "series": "3x4",
+    "nombre_español": "Flexores de piernas en polea de pie",
+    "descripcion": "Variación de curl para isquiotibiales"
+  },
+  {
+    "grupo": "Piernas",
+    "nombre": "standing leg extension",
+    "gif": "/gif/piernas/Standing-leg-extension-unscreen.gif",
+    "series": "3x4",
+    "nombre_español": "Extensión de piernas de pie",
+    "descripcion": "Variación de extensión para cuádriceps"
+  },
+  {
+    "grupo": "Piernas",
+    "nombre": "standing straight leg raise",
+    "gif": "/gif/piernas/Standing-straight-leg-raise-unscreen.gif",
+    "series": "3x4",
+    "nombre_español": "Elevación de pierna recta de pie",
+    "descripcion": "Ejercicio para flexores de cadera"
+  },
+  {
+    "grupo": "Piernas",
+    "nombre": "static lunge",
+    "gif": "/gif/piernas/Static-Lunge-unscreen.gif",
+    "series": "3x4",
+    "nombre_español": "Zancada estática",
+    "descripcion": "Variación de zancada sin movimiento"
+  },
+  {
+    "grupo": "Piernas",
+    "nombre": "step up opposite elbow to knee twist",
+    "gif": "/gif/piernas/Step-Up-Opposite-Elbow-to-Knee-unscreen.gif",
+    "series": "3x4",
+    "nombre_español": "Subida al cajón con codo a rodilla opuesta",
+    "descripcion": "Ejercicio combinado para piernas y core"
+  },
+  {
+    "grupo": "Piernas",
+    "nombre": "step up single leg balance with bicep curl",
+    "gif": "/gif/piernas/Step-Up-Single-Leg-Balance-wit-unscreen.gif",
+    "series": "3x4",
+    "nombre_español": "Subida al cajón con equilibrio y curl de bíceps",
+    "descripcion": "Ejercicio combinado para piernas y brazos"
+  },
+  {
+    "grupo": "Piernas",
+    "nombre": "step up",
+    "gif": "/gif/piernas/Step-up-unscreen.gif",
+    "series": "3x4",
+    "nombre_español": "Subida al cajón",
+    "descripcion": "Ejercicio unilateral básico para piernas"
+  },
+  {
+    "grupo": "Piernas",
+    "nombre": "stiff leg deadlift",
+    "gif": "/gif/piernas/Stiff-Leg-Deadlift-unscreen.gif",
+    "series": "3x4",
+    "nombre_español": "Peso muerto con piernas rígidas",
+    "descripcion": "Variación para isquiotibiales y glúteos"
+  },
+  {
+    "grupo": "Piernas",
+    "nombre": "sumo plie dumbbell squat",
+    "gif": "/gif/piernas/Sumo-Plie-Dumbbell-Squat-unscreen.gif",
+    "series": "3x4",
+    "nombre_español": "Sentadilla sumo plié con mancuernas",
+    "descripcion": "Variación de sentadilla con énfasis en aductores"
+  },
+  {
+    "grupo": "Piernas",
+    "nombre": "supported one leg standing hip flexor and knee extensor stretch",
+    "gif": "/gif/piernas/Supported-One-Leg-Standing-Hip-unscreen.gif",
+    "series": "3x4",
+    "nombre_español": "Estiramiento de flexores de cadera y extensores de rodilla a una pierna con apoyo",
+    "descripcion": "Estiramiento completo para pierna"
+  },
+  {
+    "grupo": "Piernas",
+    "nombre": "supported pistol squat",
+    "gif": "/gif/piernas/Supported-Pistol-Squat-unscreen.gif",
+    "series": "3x4",
+    "nombre_español": "Sentadilla pistol con apoyo",
+    "descripcion": "Variación asistida de sentadilla a una pierna"
+  },
+  {
+    "grupo": "Piernas",
+    "nombre": "trx pistol squat",
+    "gif": "/gif/piernas/TRX-Pistol-Squat-unscreen.gif",
+    "series": "3x4",
+    "nombre_español": "Sentadilla pistol con TRX",
+    "descripcion": "Variación asistida con suspensión"
+  },
+  {
+    "grupo": "Piernas",
+    "nombre": "the box jump",
+    "gif": "/gif/piernas/The-Box-Jump-unscreen.gif",
+    "series": "3x4",
+    "nombre_español": "Salto al cajón",
+    "descripcion": "Ejercicio pliométrico fundamental"
+  },
+  {
+    "grupo": "Piernas",
+    "nombre": "towel leg curl",
+    "gif": "/gif/piernas/Towel-Leg-Curl-unscreen.gif",
+    "series": "3x4",
+    "nombre_español": "Flexores de piernas con toalla",
+    "descripcion": "Variación de curl para isquiotibiales"
+  },
+  {
+    "grupo": "Piernas",
+    "nombre": "trap bar deadlift",
+    "gif": "/gif/piernas/Trap-Bar-Deadlift-unscreen.gif",
+    "series": "3x4",
+    "nombre_español": "Peso muerto con barra hexagonal",
+    "descripcion": "Variación ergonómica de peso muerto"
+  },
+  {
+    "grupo": "Piernas",
+    "nombre": "upavistha konasana",
+    "gif": "/gif/piernas/Upavistha-Konasana-unscreen.gif",
+    "series": "3x4",
+    "nombre_español": "Postura de ángulo abierto sentado (upavistha konasana)",
+    "descripcion": "Estiramiento profundo para ingle y caderas"
+  },
+  {
+    "grupo": "Piernas",
+    "nombre": "wall sit 238x360",
+    "gif": "/gif/piernas/Wall-Sit.png",
+    "series": "3x4",
+    "nombre_español": "Sentadilla en pared",
+    "descripcion": "Ejercicio isométrico para piernas"
+  },
+  {
+    "grupo": "Piernas",
+    "nombre": "weighted front plank",
+    "gif": "/gif/piernas/Weighted-Front-Plank-unscreen.gif",
+    "series": "3x4",
+    "nombre_español": "Plancha isometrica  frontal con peso",
+    "descripcion": "Variación avanzada de plancha"
+  },
+  {
+    "grupo": "Piernas",
+    "nombre": "zercher squat",
+    "gif": "/gif/piernas/Zercher-Squat-unscreen.gif",
+    "series": "3x4",
+    "nombre_español": "Sentadilla Zercher",
+    "descripcion": "Variación de sentadilla con barra en antebrazos"
+  },
+  {
+    "grupo": "Piernas",
+    "nombre": "zig zag hops plyometric",
+    "gif": "/gif/piernas/Zig-Zag-Hops-Plyometric-unscreen.gif",
+    "series": "3x4",
+    "nombre_español": "Saltos en zigzag pliométricos",
+    "descripcion": "Ejercicio para agilidad y potencia"
+  },
+  {
+    "grupo": "Piernas",
+    "nombre": "barbell rack pull",
+    "gif": "/gif/piernas/barbell-rack-pull-unscreen.gif",
+    "series": "3x4",
+    "nombre_español": "Jalón en rack con barra",
+    "descripcion": "Variación parcial de peso muerto"
+  },
+  {
+    "grupo": "Piernas",
+    "nombre": "belt squat",
+    "gif": "/gif/piernas/belt-squat-unscreen.gif",
+    "series": "3x4",
+    "nombre_español": "Sentadilla con cinturón",
+    "descripcion": "Variación de sentadilla sin carga en columna"
+  },
+  {
+    "grupo": "Piernas",
+    "nombre": "bodyweight lunges",
+    "gif": "/gif/piernas/bodyweight-lunges-unscreen.gif",
+    "series": "3x4",
+    "nombre_español": "Zancadas con peso corporal",
+    "descripcion": "Ejercicio unilateral básico"
+  },
+  {
+    "grupo": "Piernas",
+    "nombre": "bodyweight reverse lunge",
+    "gif": "/gif/piernas/bodyweight-reverse-lunge-unscreen.gif",
+    "series": "3x4",
+    "nombre_español": "Zancada inversa con peso corporal",
+    "descripcion": "Variación de zancada para glúteos"
+  },
+  {
+    "grupo": "Piernas",
+    "nombre": "bodyweight squat full version",
+    "gif": "/gif/piernas/bodyweight-squat-full-version-unscreen.gif",
+    "series": "3x4",
+    "nombre_español": "Sentadilla completa con peso corporal",
+    "descripcion": "Ejercicio fundamental para piernas"
+  },
+  {
+    "grupo": "Piernas",
+    "nombre": "bodyweight walking lunge",
+    "gif": "/gif/piernas/bodyweight-walking-lunge-unscreen.gif",
+    "series": "3x4",
+    "nombre_español": "Zancada caminando con peso corporal",
+    "descripcion": "Variación dinámica de zancada"
+  },
+  {
+    "grupo": "Piernas",
+    "nombre": "burpees",
+    "gif": "/gif/piernas/burpees-unscreen.gif",
+    "series": "3x4",
+    "nombre_español": "Burpees",
+    "descripcion": "Ejercicio completo de cuerpo entero"
+  },
+  {
+    "grupo": "Piernas",
+    "nombre": "curtsy lunge",
+    "gif": "/gif/piernas/curtsy-lunge-unscreen.gif",
+    "series": "3x4",
+    "nombre_español": "Zancada de reverencia",
+    "descripcion": "Variación de zancada para glúteos"
+  },
+  {
+    "grupo": "Piernas",
+    "nombre": "dumbbell bench squat",
+    "gif": "/gif/piernas/dumbbell-bench-squat-unscreen.gif",
+    "series": "3x4",
+    "nombre_español": "Sentadilla en banco con mancuernas",
+    "descripcion": "Variación de sentadilla con apoyo"
+  },
+  {
+    "grupo": "Piernas",
+    "nombre": "dumbbell cossack squat",
+    "gif": "/gif/piernas/dumbbell-cossack-squat-unscreen.gif",
+    "series": "3x4",
+    "nombre_español": "Sentadilla cosaca con mancuernas",
+    "descripcion": "Variación lateral con peso"
+  },
+  {
+    "grupo": "Piernas",
+    "nombre": "dumbbell deadlifts",
+    "gif": "/gif/piernas/dumbbell-deadlifts-unscreen.gif",
+    "series": "3x4",
+    "nombre_español": "Peso muerto con mancuernas",
+    "descripcion": "Variación básica con peso libre"
+  },
+  {
+    "grupo": "Piernas",
+    "nombre": "dumbbell forward leaning lunge",
+    "gif": "/gif/piernas/dumbbell-forward-leaning-lunge-unscreen.gif",
+    "series": "3x4",
+    "nombre_español": "Zancada inclinada hacia adelante con mancuernas",
+    "descripcion": "Variación de zancada con énfasis en glúteos"
+  },
+  {
+    "grupo": "Piernas",
+    "nombre": "dumbbell lunges",
+    "gif": "/gif/piernas/dumbbell-lunges-unscreen.gif",
+    "series": "3x4",
+    "nombre_español": "Zancadas con mancuernas",
+    "descripcion": "Ejercicio unilateral con peso"
+  },
+  {
+    "grupo": "Piernas",
+    "nombre": "dumbbell sumo deadlift",
+    "gif": "/gif/piernas/dumbbell-sumo-deadlift-unscreen.gif",
+    "series": "3x4",
+    "nombre_español": "Peso muerto sumo con mancuernas",
+    "descripcion": "Variación con postura amplia"
+  },
+  {
+    "grupo": "Piernas",
+    "nombre": "dumbbell sumo squat",
+    "gif": "/gif/piernas/dumbbell-sumo-squat-unscreen.gif",
+    "series": "3x4",
+    "nombre_español": "Sentadilla sumo con mancuernas",
+    "descripcion": "Variación con postura amplia"
+  },
+  {
+    "grupo": "Piernas",
+    "nombre": "front squat",
+    "gif": "/gif/piernas/front-squat-unscreen.gif",
+    "series": "3x4",
+    "nombre_español": "Sentadilla frontal",
+    "descripcion": "Variación con barra en posición frontal"
+  },
+  {
+    "grupo": "Piernas",
+    "nombre": "jefferson squat",
+    "gif": "/gif/piernas/jefferson-squat-unscreen.gif",
+    "series": "3x4",
+    "nombre_español": "Sentadilla Jefferson",
+    "descripcion": "Variación con barra entre piernas"
+  },
+  {
+    "grupo": "Piernas",
+    "nombre": "kettlebell deadlift",
+    "gif": "/gif/piernas/kettlebell-deadlift-unscreen.gif",
+    "series": "3x4",
+    "nombre_español": "Peso muerto con kettlebell",
+    "descripcion": "Variación con peso libre"
+  },
+  {
+    "grupo": "Piernas",
+    "nombre": "kettlebell goblet squat",
+    "gif": "/gif/piernas/kettlebell-goblet-squat-unscreen.gif",
+    "series": "3x4",
+    "nombre_español": "Sentadilla tipo copa con kettlebell",
+    "descripcion": "Variación con peso frontal"
+  },
+  {
+    "grupo": "Piernas",
+    "nombre": "leg curl on stability ball",
+    "gif": "/gif/piernas/leg-curl-on-stability-ball-unscreen.gif",
+    "series": "3x4",
+    "nombre_español": "Flejores de piernas en balón de estabilidad",
+    "descripcion": "Variación para isquiotibiales con balón"
+  },
+  {
+    "grupo": "Piernas",
+    "nombre": "power lunge",
+    "gif": "/gif/piernas/power-lunge-unscreen.gif",
+    "series": "3x4",
+    "nombre_español": "Zancada de potencia",
+    "descripcion": "Variación explosiva de zancada"
+  },
+  {
+    "grupo": "Piernas",
+    "nombre": "shrimp squats",
+    "gif": "/gif/piernas/shrimp-squats-unscreen.gif",
+    "series": "3x4",
+    "nombre_español": "Sentadillas camarón",
+    "descripcion": "Variación avanzada unilateral"
+  },
+  {
+    "grupo": "Piernas",
+    "nombre": "sissy squat",
+    "gif": "/gif/piernas/sissy-squat-unscreen.gif",
+    "series": "3x4",
+    "nombre_español": "Sentadilla sissy",
+    "descripcion": "Variación avanzada para cuádriceps"
+  },
+  {
+    "grupo": "Piernas",
+    "nombre": "smith machine squat",
+    "gif": "/gif/piernas/smith-machine-squat-unscreen.gif",
+    "series": "3x4",
+    "nombre_español": "Sentadilla en máquina Smith",
+    "descripcion": "Variación con guía"
+  },
+  {
+    "grupo": "Piernas",
+    "nombre": "thruster",
+    "gif": "/gif/piernas/thruster-unscreen.gif",
+    "series": "3x4",
+    "nombre_español": "Thruster",
+    "descripcion": "Ejercicio compuesto para piernas y hombros"
+  },
+  {
+    "grupo": "Piernas",
+    "nombre": "trap bar jump squat",
+    "gif": "/gif/piernas/trap-bar-jump-squat-unscreen.gif",
+    "series": "3x4",
+    "nombre_español": "Sentadilla con salto en barra hexagonal",
+    "descripcion": "Ejercicio pliométrico con barra especial"
+  },
+  {
+    "grupo": "Piernas",
+    "nombre": "wall ball",
+    "gif": "/gif/piernas/wall-ball.gif",
+    "series": "3x4",
+    "nombre_español": "Lanzamiento de balón a la pared",
+    "descripcion": "Ejercicio funcional completo"
+  },
+  {
+    "grupo": "Piernas",
+    "nombre": "zercher deadlift",
+    "gif": "/gif/piernas/zercher-deadlift-unscreen.gif",
+    "series": "3x4",
+    "nombre_español": "Peso muerto Zercher",
+    "descripcion": "Variación con barra en antebrazos"
+  },
+  {
+    "grupo": "Piernas",
+    "nombre": "Equilibrio isométrica un pie",
+    "gif": "/gif/piernas/Equilibrio_un_Pie.png",
+    "series": "3x4",
+    "nombre_español": "Equilibrio isométrica a  un pie",
+    "descripcion": "Equilibrio en el lugar con una pierna"
+  },
+  {
+    "grupo": "Piernas",
+    "nombre": "Equilibrio dinamico un pie",
+    "gif": "/gif/piernas/equilibriounpieEstocada.gif",
+    "series": "3x4",
+    "nombre_español": "Equilibrio dinámico un pie",
+    "descripcion": "Equilibrio en el lugar con una pierna y movimiento de estocada"
+  },
+  {
+    "grupo": "Piernas",
+    "nombre": "Sentadilla Sissy",
+    "gif": "/gif/piernas/sissy.png",
+    "series": "3x4",
+    "nombre_español": "Sentadilla sissy",
+    "descripcion": "Sentadilla Sissy con énfasis en cuádriceps"
+  },
+  {
+    "grupo": "Piernas",
+    "nombre": "PrensaHorizontalUnaPierna",
+    "gif": "/gif/piernas/prensaHorizontalunaPierna.png",
+    "series": "3x4",
+    "nombre_español": "Prensa Horizontal Una Pierna",
+    "descripcion": "Prensa de pierna en máquina para una pierna"
+  },
+  {
+    "grupo": "Piernas",
+    "nombre": "Caminata Granjero",
+    "gif": "/gif/piernas/caminataGranjero.gif",
+    "series": "3x4",
+    "nombre_español": "Caminata Granjero con mancuernas o kettlebells",
+    "descripcion": "Prensa de pierna vertical en máquina para una pierna"
+  },
+  {
+    "grupo": "Piernas",
+    "nombre": "Caminata Granjero unilateral",
+    "gif": "/gif/piernas/CaminataGRanjeroUnilateral.gif",
+    "series": "3x4",
+    "nombre_español": "Caminata Granjero Unilateral",
+    "descripcion": "Variacion de Caminata de Granjero con una sola pesa"
+  }
+]

@@ -1,0 +1,612 @@
+[
+  {
+    "grupo": "Full Body",
+    "nombre": "Archer Pull up",
+    "gif": "/gif/fullBody/Archer-Pull-up-unscreen.gif",
+    "series": "3x4",
+    "nombre_español": "Dominada arquera",
+    "descripcion": "Ejercicio de fuerza que combina dominadas con un brazo extendido lateralmente"
+  },
+  {
+    "grupo": "Full Body",
+    "nombre": "Archer Push Up",
+    "gif": "/gif/fullBody/Archer-Push-Up-unscreen.gif",
+    "series": "3x4",
+    "nombre_español": "Flexión arquera",
+    "descripcion": "Variante de flexión con un brazo extendido lateralmente"
+  },
+  {
+    "grupo": "Full Body",
+    "nombre": "Back Lever",
+    "gif": "/gif/fullBody/Back-Lever-unscreen.gif",
+    "series": "3x4",
+    "nombre_español": "Palanca trasera",
+    "descripcion": "Ejercicio de calistenia en barra manteniendo el cuerpo paralelo al suelo"
+  },
+  {
+    "grupo": "Full Body",
+    "nombre": "Backward Medicine Ball Throw",
+    "gif": "/gif/fullBody/Backward-Medicine-Ball-Throw-unscreen.gif",
+    "series": "3x4",
+    "nombre_español": "Lanzamiento hacia atrás de balón medicinal",
+    "descripcion": "Ejercicio explosivo lanzando el balón medicinal por encima de la cabeza hacia atrás"
+  },
+  {
+    "grupo": "Full Body",
+    "nombre": "Barbell Bent Over Row",
+    "gif": "/gif/fullBody/Barbell-Bent-Over-Row-unscreen.gif",
+    "series": "3x4",
+    "nombre_español": "Remo con barra inclinado",
+    "descripcion": "Ejercicio para espalda doblando el torso y levantando la barra hacia el abdomen"
+  },
+  {
+    "grupo": "Full Body",
+    "nombre": "Barbell Clean and Press",
+    "gif": "/gif/fullBody/Barbell-Clean-and-Press-unscreen.gif",
+    "series": "3x4",
+    "nombre_español": "Cargada y press con barra",
+    "descripcion": "Ejercicio olímpico que combina cargada desde el suelo seguido de press overhead"
+  },
+  {
+    "grupo": "Full Body",
+    "nombre": "Barbell Hang Clean",
+    "gif": "/gif/fullBody/Barbell-Hang-Clean-unscreen.gif",
+    "series": "3x4",
+    "nombre_español": "Cargada colgante con barra",
+    "descripcion": "Variante de cargada iniciando desde posición de colgado"
+  },
+  {
+    "grupo": "Full Body",
+    "nombre": "Barbell Heaving Snatch Balance",
+    "gif": "/gif/fullBody/Barbell-Heaving-Snatch-Balance-unscreen.gif",
+    "series": "3x4",
+    "nombre_español": "Balance de arranque con barra",
+    "descripcion": "Ejercicio técnico de halterofilia para mejorar la recepción en snatch"
+  },
+  {
+    "grupo": "Full Body",
+    "nombre": "Barbell Jump Squat",
+    "gif": "/gif/fullBody/Barbell-Jump-Squat-unscreen.gif",
+    "series": "3x4",
+    "nombre_español": "Sentadilla con salto y barra",
+    "descripcion": "Ejercicio pliométrico combinando sentadilla con salto vertical"
+  },
+  {
+    "grupo": "Full Body",
+    "nombre": "Barbell Muscle Snatch",
+    "gif": "/gif/fullBody/Barbell-Muscle-Snatch-unscreen.gif",
+    "series": "3x4",
+    "nombre_español": "Arranque muscular con barra",
+    "descripcion": "Variante de arranque sin flexión de piernas, usando solo fuerza de brazos"
+  },
+  {
+    "grupo": "Full Body",
+    "nombre": "Barbell Power Snatch",
+    "gif": "/gif/fullBody/Barbell-Power-Snatch-unscreen.gif",
+    "series": "3x4",
+    "nombre_español": "Arranque de potencia con barra",
+    "descripcion": "Ejercicio olímpico levantando la barra desde el suelo hasta overhead en un movimiento explosivo"
+  },
+  {
+    "grupo": "Full Body",
+    "nombre": "Barbell Snatch",
+    "gif": "/gif/fullBody/Barbell-Snatch-unscreen.gif",
+    "series": "3x4",
+    "nombre_español": "Arranque con barra",
+    "descripcion": "Movimiento completo de halterofilia levantando la barra desde el suelo hasta overhead en un movimiento"
+  },
+  {
+    "grupo": "Full Body",
+    "nombre": "Battle Rope",
+    "gif": "/gif/fullBody/Battle-Rope-unscreen.gif",
+    "series": "3x4",
+    "nombre_español": "Cuerdas de batalla",
+    "descripcion": "Ejercicio de fuerza y resistencia agitando cuerdas pesadas"
+  },
+  {
+    "grupo": "Full Body",
+    "nombre": "Bent Over Dumbbell Row",
+    "gif": "/gif/fullBody/Bent-Over-Dumbbell-Row-unscreen.gif",
+    "series": "3x4",
+    "nombre_español": "Remo con mancuernas inclinado",
+    "descripcion": "Ejercicio para espalda doblando el torso y levantando mancuernas hacia el torso"
+  },
+  {
+    "grupo": "Full Body",
+    "nombre": "Bodyweight Skull Crushers",
+    "gif": "/gif/fullBody/Bodyweight-Skull-Crushers-unscreen.gif",
+    "series": "3x4",
+    "nombre_español": "Extensión de tríceps con peso corporal",
+    "descripcion": "Variante sin peso de extensión de tríceps similar a skull crushers"
+  },
+  {
+    "grupo": "Full Body",
+    "nombre": "burpees",
+    "gif": "/gif/fullBody/burpees-unscreen.gif",
+    "series": "3x4",
+    "nombre_español": "Burpees",
+    "descripcion": "Ejercicio completo combinando flexión, salto y sentadilla"
+  },
+  {
+    "grupo": "Full Body",
+    "nombre": "Climbing Monkey Bars",
+    "gif": "/gif/fullBody/Climbing-Monkey-Bars-unscreen.gif",
+    "series": "3x4",
+    "nombre_español": "Trepar barras de mono",
+    "descripcion": "Ejercicio de fuerza y coordinación moviéndose entre barras horizontales"
+  },
+  {
+    "grupo": "Full Body",
+    "nombre": "Cross Body Push up_Plyometric",
+    "gif": "/gif/fullBody/Cross-Body-Push-up_Plyometric.gif",
+    "series": "3x4",
+    "nombre_español": "Flexión plyométrica cruzada",
+    "descripcion": "Variante explosiva de flexión con rotación y salto"
+  },
+  {
+    "grupo": "Full Body",
+    "nombre": "Dumbbell Burpees",
+    "gif": "/gif/fullBody/Dumbbell-Burpees-unscreen.gif",
+    "series": "3x4",
+    "nombre_español": "Burpees con mancuernas",
+    "descripcion": "Variante de burpees agregando peso con mancuernas"
+  },
+  {
+    "grupo": "Full Body",
+    "nombre": "dumbbell deadlifts",
+    "gif": "/gif/fullBody/dumbbell-deadlifts-unscreen.gif",
+    "series": "3x4",
+    "nombre_español": "Peso muerto con mancuernas",
+    "descripcion": "Ejercicio básico levantando mancuernas desde el suelo hasta la cadera"
+  },
+  {
+    "grupo": "Full Body",
+    "nombre": "Dumbbell Devil Press",
+    "gif": "/gif/fullBody/Dumbbell-Devil-Press-unscreen.gif",
+    "series": "3x4",
+    "nombre_español": "Press diabólico con mancuernas",
+    "descripcion": "Ejercicio combinando burpee con press overhead con mancuernas"
+  },
+  {
+    "grupo": "Full Body",
+    "nombre": "Dumbbell Iron Cross",
+    "gif": "/gif/fullBody/Dumbbell-Iron-Cross-unscreen.gif",
+    "series": "3x4",
+    "nombre_español": "Cruz de hierro con mancuernas",
+    "descripcion": "Ejercicio de hombros manteniendo mancuernas extendidas en forma de cruz"
+  },
+  {
+    "grupo": "Full Body",
+    "nombre": "Dumbbell Jump Squat",
+    "gif": "/gif/fullBody/Dumbbell-Jump-Squat-unscreen.gif",
+    "series": "3x4",
+    "nombre_español": "Sentadilla con salto y mancuernas",
+    "descripcion": "Variante pliométrica de sentadilla agregando peso con mancuernas"
+  },
+  {
+    "grupo": "Full Body",
+    "nombre": "dumbbell lunges",
+    "gif": "/gif/fullBody/dumbbell-lunges-unscreen.gif",
+    "series": "3x4",
+    "nombre_español": "Zancadas con mancuernas",
+    "descripcion": "Ejercicio unilateral para piernas con peso adicional"
+  },
+  {
+    "grupo": "Full Body",
+    "nombre": "Dumbbell Power Clean",
+    "gif": "/gif/fullBody/Dumbbell-Power-Clean-unscreen.gif",
+    "series": "3x4",
+    "nombre_español": "Cargada de potencia con mancuernas",
+    "descripcion": "Movimiento explosivo levantando mancuernas desde el suelo hasta los hombros"
+  },
+  {
+    "grupo": "Full Body",
+    "nombre": "Dumbbell Push Press",
+    "gif": "/gif/fullBody/Dumbbell-Push-Press-unscreen.gif",
+    "series": "3x4",
+    "nombre_español": "Push press con mancuernas",
+    "descripcion": "Variante de press overhead usando impulso de piernas"
+  },
+  {
+    "grupo": "Full Body",
+    "nombre": "dumbbell renegade row 1",
+    "gif": "/gif/fullBody/dumbbell-renegade-row-1-unscreen.gif",
+    "series": "3x4",
+    "nombre_español": "Remo renegado con mancuernas",
+    "descripcion": "Ejercicio combinando plancha y remo unilateral con mancuernas"
+  },
+  {
+    "grupo": "Full Body",
+    "nombre": "dumbbell sumo deadlift",
+    "gif": "/gif/fullBody/dumbbell-sumo-deadlift-unscreen.gif",
+    "series": "3x4",
+    "nombre_español": "Peso muerto sumo con mancuernas",
+    "descripcion": "Variante de peso muerto con postura amplia y mancuernas"
+  },
+  {
+    "grupo": "Full Body",
+    "nombre": "Farmers walk Cardio",
+    "gif": "/gif/fullBody/Farmers-walk-Cardio-unscreen.gif",
+    "series": "3x4",
+    "nombre_español": "Caminata del granjero cardio",
+    "descripcion": "Ejercicio de carga caminando sosteniendo pesos a los lados"
+  },
+  {
+    "grupo": "Full Body",
+    "nombre": "Front Lever Pull up",
+    "gif": "/gif/fullBody/Front-Lever-Pull-up-unscreen.gif",
+    "series": "3x4",
+    "nombre_español": "Dominada en palanca frontal",
+    "descripcion": "Ejercicio avanzado de calistenia manteniendo el cuerpo paralelo al suelo mientras se hace dominada"
+  },
+  {
+    "grupo": "Full Body",
+    "nombre": "Full Planche",
+    "gif": "/gif/fullBody/Full-Planche-unscreen.gif",
+    "series": "3x4",
+    "nombre_español": "Plancha completa",
+    "descripcion": "Ejercicio avanzado de calistenia manteniendo el cuerpo horizontal en el aire apoyado solo en las manos"
+  },
+  {
+    "grupo": "Full Body",
+    "nombre": "handstand holds",
+    "gif": "/gif/fullBody/handstand-holds-unscreen.gif",
+    "series": "3x4",
+    "nombre_español": "Sostén en pino",
+    "descripcion": "Ejercicio de equilibrio manteniendo posición vertical sobre las manos"
+  },
+  {
+    "grupo": "Full Body",
+    "nombre": "handstand walk",
+    "gif": "/gif/fullBody/handstand-walk-unscreen.gif",
+    "series": "3x4",
+    "nombre_español": "Caminata en pino",
+    "descripcion": "Desplazamiento avanzado manteniendo posición vertical sobre las manos"
+  },
+  {
+    "grupo": "Full Body",
+    "nombre": "Human Flag",
+    "gif": "/gif/fullBody/Human-Flag-unscreen.gif",
+    "series": "3x4",
+    "nombre_español": "Bandera humana",
+    "descripcion": "Ejercicio avanzado de calistenia manteniendo el cuerpo horizontal agarrado a un poste vertical"
+  },
+  {
+    "grupo": "Full Body",
+    "nombre": "Impossible Dips",
+    "gif": "/gif/fullBody/Impossible-Dips-unscreen.gif",
+    "series": "3x4",
+    "nombre_español": "Fondos imposibles",
+    "descripcion": "Variante extrema de fondos en paralelas con rotación corporal"
+  },
+  {
+    "grupo": "Full Body",
+    "nombre": "Kettlebell Clean and Jerk",
+    "gif": "/gif/fullBody/Kettlebell-Clean-and-Jerk-unscreen.gif",
+    "series": "3x4",
+    "nombre_español": "Cargada y envión con kettlebell",
+    "descripcion": "Movimiento olímpico llevando la kettlebell desde el suelo hasta overhead en dos tiempos"
+  },
+  {
+    "grupo": "Full Body",
+    "nombre": "Kettlebell Clean and Press",
+    "gif": "/gif/fullBody/Kettlebell-Clean-and-Press-unscreen.gif",
+    "series": "3x4",
+    "nombre_español": "Cargada y press con kettlebell",
+    "descripcion": "Ejercicio combinado levantando la kettlebell hasta los hombros y luego presionando overhead"
+  },
+  {
+    "grupo": "Full Body",
+    "nombre": "Kettlebell Figure 8",
+    "gif": "/gif/fullBody/Kettlebell-Figure-8-unscreen.gif",
+    "series": "3x4",
+    "nombre_español": "Figura 8 con kettlebell",
+    "descripcion": "Ejercicio de coordinación moviendo la kettlebell en forma de ocho entre las piernas"
+  },
+  {
+    "grupo": "Full Body",
+    "nombre": "Kettlebell Hang Clean",
+    "gif": "/gif/fullBody/Kettlebell-Hang-Clean-unscreen.gif",
+    "series": "3x4",
+    "nombre_español": "Cargada colgante con kettlebell",
+    "descripcion": "Variante de cargada iniciando desde posición de colgado con kettlebell"
+  },
+
+  {
+    "grupo": "Full Body",
+    "nombre": "Kettlebell Swings",
+    "gif": "/gif/fullBody/Kettlebell-Swings-unscreen.gif",
+    "series": "3x4",
+    "nombre_español": "Balanceos con kettlebell",
+    "descripcion": "Ejercicio dinámico balanceando la kettlebell entre las piernas hasta altura de hombros"
+  },
+  {
+    "grupo": "Full Body",
+    "nombre": "kipping handstand push up",
+    "gif": "/gif/fullBody/kipping-handstand-push-up.gif",
+    "series": "3x4",
+    "nombre_español": "Flexión en pino con kipping",
+    "descripcion": "Variante de flexión en pino usando impulso de piernas"
+  },
+  {
+    "grupo": "Full Body",
+    "nombre": "Korean Dips",
+    "gif": "/gif/fullBody/Korean-Dips-unscreen.gif",
+    "series": "3x4",
+    "nombre_español": "Fondos coreanos",
+    "descripcion": "Variante avanzada de fondos con inclinación hacia adelante"
+  },
+  {
+    "grupo": "Full Body",
+    "nombre": "L Pull Up",
+    "gif": "/gif/fullBody/L-Pull-Up-unscreen.gif",
+    "series": "3x4",
+    "nombre_español": "Dominada en L",
+    "descripcion": "Variante de dominada manteniendo las piernas extendidas formando una L"
+  },
+  {
+    "grupo": "Full Body",
+    "nombre": "Landmine Press",
+    "gif": "/gif/fullBody/Landmine-Press-unscreen.gif",
+    "series": "3x4",
+    "nombre_español": "Press con landmine",
+    "descripcion": "Ejercicio de empuje con barra anclada en un extremo"
+  },
+  {
+    "grupo": "Full Body",
+    "nombre": "Log Lift",
+    "gif": "/gif/fullBody/Log-Lift-unscreen.gif",
+    "series": "3x4",
+    "nombre_español": "Levantamiento de tronco",
+    "descripcion": "Ejercicio de strongman levantando un tronco pesado desde el pecho hasta overhead"
+  },
+  {
+    "grupo": "Full Body",
+    "nombre": "Medicine Ball Sit up Throw",
+    "gif": "/gif/fullBody/Medicine-Ball-Sit-up-Throw-unscreen.gif",
+    "series": "3x4",
+    "nombre_español": "Abdominal con lanzamiento de balón medicinal",
+    "descripcion": "Ejercicio combinando abdominal con lanzamiento explosivo del balón"
+  },
+  {
+    "grupo": "Full Body",
+    "nombre": "Modified Hindu Push up",
+    "gif": "/gif/fullBody/Modified-Hindu-Push-up-unscreen.gif",
+    "series": "3x4",
+    "nombre_español": "Flexión hindú modificada",
+    "descripcion": "Variante de flexión con movimiento ondulante del cuerpo"
+  },
+  {
+    "grupo": "Full Body",
+    "nombre": "Muscle up vertical bar",
+    "gif": "/gif/fullBody/Muscle-up-vertical-bar-unscreen.gif",
+    "series": "3x4",
+    "nombre_español": "Muscle up en barra vertical",
+    "descripcion": "Ejercicio avanzado pasando de colgado a apoyo en barra vertical"
+  },
+  {
+    "grupo": "Full Body",
+    "nombre": "Navy Seal Burpee",
+    "gif": "/gif/fullBody/Navy-Seal-Burpee-unscreen.gif",
+    "series": "3x4",
+    "nombre_español": "Burpee Navy Seal",
+    "descripcion": "Variante extrema de burpee con flexión explosiva y salto"
+  },
+  {
+    "grupo": "Full Body",
+    "nombre": "One Arm Dumbbell Snatch",
+    "gif": "/gif/fullBody/One-Arm-Dumbbell-Snatch-unscreen.gif",
+    "series": "3x4",
+    "nombre_español": "Arranque a un brazo con mancuerna",
+    "descripcion": "Movimiento explosivo levantando mancuerna con un brazo desde el suelo hasta overhead"
+  },
+  {
+    "grupo": "Full Body",
+    "nombre": "One Arm Kettlebell Snatch exercise",
+    "gif": "/gif/fullBody/One-Arm-Kettlebell-Snatch-exer-unscreen.gif",
+    "series": "3x4",
+    "nombre_español": "Arranque a un brazo con kettlebell",
+    "descripcion": "Ejercicio explosivo levantando kettlebell con un brazo desde el suelo hasta overhead"
+  },
+  {
+    "grupo": "Full Body",
+    "nombre": "One Arm Kettlebell Swing",
+    "gif": "/gif/fullBody/One-Arm-Kettlebell-Swing-unscreen.gif",
+    "series": "3x4",
+    "nombre_español": "Balanceo a un brazo con kettlebell",
+    "descripcion": "Variante unilateral del swing balanceando la kettlebell con un brazo"
+  },
+  {
+    "grupo": "Full Body",
+    "nombre": "One Arm Medicine Ball Slam",
+    "gif": "/gif/fullBody/One-Arm-Medicine-Ball-Slam-unscreen.gif",
+    "series": "3x4",
+    "nombre_español": "Golpe de balón medicinal a un brazo",
+    "descripcion": "Ejercicio explosivo lanzando el balón medicinal al suelo con un brazo"
+  },
+  {
+    "grupo": "Full Body",
+    "nombre": "overhead squat",
+    "gif": "/gif/fullBody/overhead-squat-unscreen.gif",
+    "series": "3x4",
+    "nombre_español": "Sentadilla overhead",
+    "descripcion": "Sentadilla manteniendo los brazos extendidos verticalmente con peso"
+  },
+  {
+    "grupo": "Full Body",
+    "nombre": "Planche Push Up",
+    "gif": "/gif/fullBody/Planche-Push-Up-unscreen.gif",
+    "series": "3x4",
+    "nombre_español": "Flexión en plancha",
+    "descripcion": "Variante extrema de flexión manteniendo posición de plancha"
+  },
+  {
+    "grupo": "Full Body",
+    "nombre": "Power Clean",
+    "gif": "/gif/fullBody/Power-Clean--unscreen.gif",
+    "series": "3x4",
+    "nombre_español": "Cargada de potencia",
+    "descripcion": "Movimiento olímpico llevando la barra desde el suelo hasta los hombros en un movimiento explosivo"
+  },
+  {
+    "grupo": "Full Body",
+    "nombre": "push press 1",
+    "gif": "/gif/fullBody/push-press-1-unscreen.gif",
+    "series": "3x4",
+    "nombre_español": "Push press",
+    "descripcion": "Variante de press overhead usando impulso de piernas para mover más peso"
+  },
+
+  {
+    "grupo": "Full Body",
+    "nombre": "Push up Toe Touch",
+    "gif": "/gif/fullBody/Push-up-Toe-Touch-unscreen.gif",
+    "series": "3x4",
+    "nombre_español": "Flexión con toque de pies",
+    "descripcion": "Variante de flexión agregando elevación de piernas para tocar los pies"
+  },
+  {
+    "grupo": "Full Body",
+    "nombre": "Ring Dips",
+    "gif": "/gif/fullBody/Ring-Dips-unscreen.gif",
+    "series": "3x4",
+    "nombre_español": "Fondos en anillas",
+    "descripcion": "Variante avanzada de fondos realizada en anillas gimnásticas"
+  },
+  {
+    "grupo": "Full Body",
+    "nombre": "Rope Climb",
+    "gif": "/gif/fullBody/Rope-Climb-unscreen.gif",
+    "series": "3x4",
+    "nombre_español": "Escalada de cuerda",
+    "descripcion": "Ejercicio de fuerza y coordinación trepando una cuerda vertical"
+  },
+  {
+    "grupo": "Full Body",
+    "nombre": "Rowing Machine",
+    "gif": "/gif/fullBody/Rowing-Machine-unscreen.gif",
+    "series": "3x4",
+    "nombre_español": "Remo en máquina",
+    "descripcion": "Ejercicio cardiovascular simulando movimiento de remo"
+  },
+  {
+    "grupo": "Full Body",
+    "nombre": "Side Plank Hip Adduction Copenhagen adduction",
+    "gif": "/gif/fullBody/Side-Plank-Hip-Adduction-Copen-unscreen.gif",
+    "series": "3x4",
+    "nombre_español": "Plancha lateral con aducción de cadera",
+    "descripcion": "Ejercicio para aductores en posición de plancha lateral"
+  },
+  {
+    "grupo": "Full Body",
+    "nombre": "Ski Ergometer",
+    "gif": "/gif/fullBody/Ski-Ergometer-unscreen.gif",
+    "series": "3x4",
+    "nombre_español": "Esquí de máquina",
+    "descripcion": "Ejercicio cardiovascular simulando movimiento de esquí de fondo"
+  },
+  {
+    "grupo": "Full Body",
+    "nombre": "SNAP JUMPS",
+    "gif": "/gif/fullBody/SNAP-JUMPS-unscreen.gif",
+    "series": "3x4",
+    "nombre_español": "Saltos SNAP",
+    "descripcion": "Ejercicio pliométrico con saltos explosivos"
+  },
+  {
+    "grupo": "Full Body",
+    "nombre": "Straddle Planche",
+    "gif": "/gif/fullBody/Straddle-Planche-unscreen.gif",
+    "series": "3x5",
+    "nombre_español": "Plancha en straddle isometrica",
+    "descripcion": "Variante de plancha con piernas abiertas lateralmente"
+  },
+  {
+    "grupo": "Full Body",
+    "nombre": "Straight Bar Dip",
+    "gif": "/gif/fullBody/Straight-Bar-Dip-unscreen.gif",
+    "series": "3x4",
+    "nombre_español": "Fondos en barra recta",
+    "descripcion": "Variante de fondos realizada en barra fija"
+  },
+  {
+    "grupo": "Full Body",
+    "nombre": "StrongMan Tire Flip",
+    "gif": "/gif/fullBody/StrongMan-Tire-Flip-unscreen.gif",
+    "series": "3x4",
+    "nombre_español": "Volteo de neumático Strongman",
+    "descripcion": "Ejercicio de fuerza volteando un neumático pesado"
+  },
+  {
+    "grupo": "Full Body",
+    "nombre": "thruster",
+    "gif": "/gif/fullBody/thruster-unscreen.gif",
+    "series": "3x4",
+    "nombre_español": "Thruster",
+    "descripcion": "Ejercicio combinando sentadilla frontal con press overhead"
+  },
+  {
+    "grupo": "Full Body",
+    "nombre": "Tire SledgeHammer",
+    "gif": "/gif/fullBody/Tire-SledgeHammer-unscreen.gif",
+    "series": "3x4",
+    "nombre_español": "Martillo sobre neumático",
+    "descripcion": "Ejercicio golpeando un neumático con mazo"
+  },
+  {
+    "grupo": "Full Body",
+    "nombre": "trap bar jump squat",
+    "gif": "/gif/fullBody/trap-bar-jump-squat-unscreen.gif",
+    "series": "3x4",
+    "nombre_español": "Sentadilla con salto en barra hexagonal",
+    "descripcion": "Ejercicio pliométrico con barra hexagonal"
+  },
+  {
+    "grupo": "Full Body",
+    "nombre": "Turkish Get Up Squat style",
+    "gif": "/gif/fullBody/Turkish-Get-Up-Squat-style-unscreen.gif",
+    "series": "3x4",
+    "nombre_español": "Levantamiento turco estilo sentadilla",
+    "descripcion": "Variante del levantamiento turco incorporando sentadilla"
+  },
+  {
+    "grupo": "Full Body",
+    "nombre": "wall ball",
+    "gif": "/gif/fullBody/wall-ball.gif",
+    "series": "3x4",
+    "nombre_español": "Lanzamiento al muro",
+    "descripcion": "Ejercicio lanzando balón medicinal contra la pared desde sentadilla"
+  },
+  {
+    "grupo": "Full Body",
+    "nombre": "wall walk muscles",
+    "gif": "/gif/fullBody/wall-walk-muscles-unscreen.gif",
+    "series": "3x4",
+    "nombre_español": "Caminata en pared",
+    "descripcion": "Ejercicio avanzado caminando con las manos por la pared hasta posición invertida"
+  },
+  {
+    "grupo": "Full Body",
+    "nombre": "zercher carry",
+    "gif": "/gif/fullBody/zercher-carry-unscreen.gif",
+    "series": "3x4",
+    "nombre_español": "Transporte Zercher",
+    "descripcion": "Ejercicio de carga llevando peso en la curva de los codos"
+  },
+  {
+    "grupo": "Full Body",
+    "nombre": "Vitalizaciones Estatico",
+    "gif": "/gif/fullBody/VitalizacionesEstatico.jpg",
+    "series": "3x4",
+    "nombre_español": "Vitalizaciones Estático",
+    "descripcion": "Ejercicio de carga llevando peso en la curva de los codos"
+  },
+  {
+    "grupo": "Full Body",
+    "nombre": "Estiramiento toco el cielo",
+    "gif": "/gif/fullBody/estiraramiento-alternando-braz-unscreen.gif",
+    "series": "3x4",
+    "nombre_español": "Estiramiento toco el cielo",
+    "descripcion": "Ejercicio para estirar y activar la parte superior del cuerpo, extendiendo los brazos hacia arriba"
+  }
+]

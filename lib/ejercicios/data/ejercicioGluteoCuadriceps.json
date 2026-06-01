@@ -1,0 +1,1818 @@
+[
+  {
+    "grupo": "Glúteos-Cuádriceps",
+    "nombre": "5 dot drills agility exercise",
+    "gif": "/gif/gluteo-cuadriceps/5-Dot-drills-agility-exercise-unscreen.gif",
+    "series": "3x4",
+    "nombre_español": "Ejercicio de agilidad con 5 puntos",
+    "descripcion": "Ejercicio de agilidad para mejorar coordinación y velocidad, trabajando glúteos y cuádriceps"
+  },
+  {
+    "grupo": "Glúteos-Cuádriceps",
+    "nombre": "90 90 hip stretch",
+    "gif": "/gif/gluteo-cuadriceps/90-90-Hip-Stretch-unscreen.gif",
+    "series": "3x4",
+    "nombre_español": "Estiramiento de cadera 90-90",
+    "descripcion": "Estiramiento para flexores de cadera y rotadores externos"
+  },
+  {
+    "grupo": "Glúteos-Cuádriceps",
+    "nombre": "atg split squat",
+    "gif": "/gif/gluteo-cuadriceps/ATG-Split-Squat-unscreen.gif",
+    "series": "3x4",
+    "nombre_español": "Sentadilla dividida ATG (Ass to Grass)",
+    "descripcion": "Variación profunda de sentadilla que trabaja cuádriceps y glúteos"
+  },
+  {
+    "grupo": "Glúteos-Cuádriceps",
+    "nombre": "ab wheel rollout",
+    "gif": "/gif/gluteo-cuadriceps/Ab-Wheel-Rollout-unscreen.gif",
+    "series": "3x4",
+    "nombre_español": "Rueda abdominal",
+    "descripcion": "Ejercicio para core que también activa glúteos y cuádriceps"
+  },
+  {
+    "grupo": "Glúteos-Cuádriceps",
+    "nombre": "adductor magnus stretch",
+    "gif": "/gif/gluteo-cuadriceps/Adductor-Magnus-Stretch-unscreen.gif",
+    "series": "3x4",
+    "nombre_español": "Estiramiento del aductor magno",
+    "descripcion": "Estiramiento para la parte interna del muslo"
+  },
+  {
+    "grupo": "Glúteos-Cuádriceps",
+    "nombre": "barbell squat",
+    "gif": "/gif/gluteo-cuadriceps/BARBELL-SQUAT-unscreen.gif",
+    "series": "3x4",
+    "nombre_español": "Sentadilla con barra",
+    "descripcion": "Ejercicio fundamental para glúteos y cuádriceps con peso libre"
+  },
+  {
+    "grupo": "Glúteos-Cuádriceps",
+    "nombre": "bodyweight sumo squat",
+    "gif": "/gif/gluteo-cuadriceps/BODYWEIGHT-SUMO-SQUAT-unscreen.gif",
+    "series": "3x4",
+    "nombre_español": "Sentadilla sumo con peso corporal",
+    "descripcion": "Variación de sentadilla con piernas abiertas para trabajar parte interna"
+  },
+  {
+    "grupo": "Glúteos-Cuádriceps",
+    "nombre": "band lying hip external rotation",
+    "gif": "/gif/gluteo-cuadriceps/Band-Lying-Hip-External-Rotati-unscreen.gif",
+    "series": "3x4",
+    "nombre_español": "Rotación externa de cadera con banda",
+    "descripcion": "Ejercicio para rotadores externos de cadera"
+  },
+  {
+    "grupo": "Glúteos-Cuádriceps",
+    "nombre": "band seated hip external rotation",
+    "gif": "/gif/gluteo-cuadriceps/Band-Seated-Hip-External-Rotat-unscreen.gif",
+    "series": "3x4",
+    "nombre_español": "Rotación externa de cadera sentado con banda",
+    "descripcion": "Fortalece los rotadores externos de la cadera"
+  },
+  {
+    "grupo": "Glúteos-Cuádriceps",
+    "nombre": "band seated hip internal rotation",
+    "gif": "/gif/gluteo-cuadriceps/Band-Seated-Hip-Internal-Rotat-unscreen.gif",
+    "series": "3x4",
+    "nombre_español": "Rotación interna de cadera sentado con banda",
+    "descripcion": "Ejercicio para rotadores internos de cadera"
+  },
+  {
+    "grupo": "Glúteos-Cuádriceps",
+    "nombre": "band side lying clam",
+    "gif": "/gif/gluteo-cuadriceps/Band-Side-Lying-Clam-unscreen.gif",
+    "series": "3x4",
+    "nombre_español": "Almeja lateral con banda",
+    "descripcion": "Ejercicio para glúteo medio con resistencia de banda"
+  },
+  {
+    "grupo": "Glúteos-Cuádriceps",
+    "nombre": "band side lying leg lift",
+    "gif": "/gif/gluteo-cuadriceps/Band-Side-Lying-Leg-Lift-unscreen.gif",
+    "series": "3x4",
+    "nombre_español": "Elevación lateral de pierna con banda",
+    "descripcion": "Trabaja abductores y glúteo medio"
+  },
+  {
+    "grupo": "Glúteos-Cuádriceps",
+    "nombre": "banded donkey kicks",
+    "gif": "/gif/gluteo-cuadriceps/Banded-Donkey-Kicks-unscreen.gif",
+    "series": "3x4",
+    "nombre_español": "Patadas de burro con banda",
+    "descripcion": "Ejercicio de extensión de cadera para glúteos"
+  },
+  {
+    "grupo": "Glúteos-Cuádriceps",
+    "nombre": "banded fire hydrant",
+    "gif": "/gif/gluteo-cuadriceps/Banded-Fire-Hydrant-unscreen.gif",
+    "series": "3x4",
+    "nombre_español": "Hidrante con banda",
+    "descripcion": "Ejercicio para glúteo medio y abductores"
+  },
+  {
+    "grupo": "Glúteos-Cuádriceps",
+    "nombre": "banded glute bridge",
+    "gif": "/gif/gluteo-cuadriceps/Banded-Glute-Bridge-unscreen.gif",
+    "series": "3x4",
+    "nombre_español": "Puente de glúteos con banda",
+    "descripcion": "Variación del puente de glúteos con resistencia adicional"
+  },
+  {
+    "grupo": "Glúteos-Cuádriceps",
+    "nombre": "banded glute kickbacks",
+    "gif": "/gif/gluteo-cuadriceps/Banded-Glute-Kickbacks-unscreen.gif",
+    "series": "3x4",
+    "nombre_español": "Patadas hacia atrás con banda",
+    "descripcion": "Ejercicio de extensión de cadera para glúteos"
+  },
+  {
+    "grupo": "Glúteos-Cuádriceps",
+    "nombre": "banded kettlebell goblet squat",
+    "gif": "/gif/gluteo-cuadriceps/Banded-Kettlebell-Goblet-Squat-unscreen.gif",
+    "series": "3x4",
+    "nombre_español": "Sentadilla copa con kettlebell y banda",
+    "descripcion": "Variación de sentadilla con doble resistencia"
+  },
+  {
+    "grupo": "Glúteos-Cuádriceps",
+    "nombre": "banded seated hip abduction",
+    "gif": "/gif/gluteo-cuadriceps/Banded-Seated-Hip-Abduction-unscreen.gif",
+    "series": "3x4",
+    "nombre_español": "Abducción de cadera sentado con banda",
+    "descripcion": "Ejercicio para abductores y glúteo medio"
+  },
+  {
+    "grupo": "Glúteos-Cuádriceps",
+    "nombre": "banded single leg glute bridge",
+    "gif": "/gif/gluteo-cuadriceps/Banded-Single-Leg-Glute-Bridge-unscreen.gif",
+    "series": "3x4",
+    "nombre_español": "Puente de glúteos a una pierna con banda",
+    "descripcion": "Variación unilateral con resistencia adicional"
+  },
+  {
+    "grupo": "Glúteos-Cuádriceps",
+    "nombre": "banded standing glute kickback",
+    "gif": "/gif/gluteo-cuadriceps/Banded-Standing-Glute-Kickback-unscreen.gif",
+    "series": "3x4",
+    "nombre_español": "Patada hacia atrás de pie con banda",
+    "descripcion": "Ejercicio de extensión de cadera de pie"
+  },
+  {
+    "grupo": "Glúteos-Cuádriceps",
+    "nombre": "banded step up",
+    "gif": "/gif/gluteo-cuadriceps/Banded-Step-up-unscreen.gif",
+    "series": "3x4",
+    "nombre_español": "Step up con banda",
+    "descripcion": "Ejercicio de subida al banco con resistencia adicional"
+  },
+  {
+    "grupo": "Glúteos-Cuádriceps",
+    "nombre": "banded thigh fly",
+    "gif": "/gif/gluteo-cuadriceps/Banded-Thigh-Fly-unscreen.gif",
+    "series": "3x4",
+    "nombre_español": "Apertura de muslos con banda",
+    "descripcion": "Ejercicio para abductores con resistencia"
+  },
+  {
+    "grupo": "Glúteos-Cuádriceps",
+    "nombre": "banded walk",
+    "gif": "/gif/gluteo-cuadriceps/Banded-Walk-unscreen.gif",
+    "series": "3x4",
+    "nombre_español": "Caminata con banda",
+    "descripcion": "Ejercicio de resistencia lateral para glúteos"
+  },
+  {
+    "grupo": "Glúteos-Cuádriceps",
+    "nombre": "barbell deadlift",
+    "gif": "/gif/gluteo-cuadriceps/Barbell-Deadlift-unscreen.gif",
+    "series": "3x4",
+    "nombre_español": "Peso muerto con barra",
+    "descripcion": "Ejercicio compuesto para glúteos y cadena posterior"
+  },
+  {
+    "grupo": "Glúteos-Cuádriceps",
+    "nombre": "barbell glute bridge two legs on bench",
+    "gif": "/gif/gluteo-cuadriceps/Barbell-Glute-Bridge-Two-Legs--unscreen.gif",
+    "series": "3x4",
+    "nombre_español": "Puente de glúteos con barra y pies en banco",
+    "descripcion": "Variación avanzada del puente de glúteos"
+  },
+  {
+    "grupo": "Glúteos-Cuádriceps",
+    "nombre": "barbell glute bridge",
+    "gif": "/gif/gluteo-cuadriceps/Barbell-Glute-Bridge-unscreen.gif",
+    "series": "3x4",
+    "nombre_español": "Puente de glúteos con barra",
+    "descripcion": "Ejercicio para glúteos con peso adicional"
+  },
+  {
+    "grupo": "Glúteos-Cuádriceps",
+    "nombre": "barbell good morning",
+    "gif": "/gif/gluteo-cuadriceps/Barbell-Good-Morning-unscreen.gif",
+    "series": "3x4",
+    "nombre_español": "Good morning con barra",
+    "descripcion": "Ejercicio para glúteos e isquiotibiales"
+  },
+  {
+    "grupo": "Glúteos-Cuádriceps",
+    "nombre": "barbell hack squat",
+    "gif": "/gif/gluteo-cuadriceps/Barbell-Hack-Squat-unscreen.gif",
+    "series": "3x4",
+    "nombre_español": "Sentadilla hack con barra",
+    "descripcion": "Variación de sentadilla que enfatiza cuádriceps"
+  },
+  {
+    "grupo": "Glúteos-Cuádriceps",
+    "nombre": "barbell hip thrust",
+    "gif": "/gif/gluteo-cuadriceps/Barbell-Hip-Thrust-unscreen.gif",
+    "series": "3x4",
+    "nombre_español": "Empuje de cadera con barra",
+    "descripcion": "Ejercicio fundamental para desarrollo glúteo"
+  },
+  {
+    "grupo": "Glúteos-Cuádriceps",
+    "nombre": "barbell jump squat",
+    "gif": "/gif/gluteo-cuadriceps/Barbell-Jump-Squat-unscreen.gif",
+    "series": "3x4",
+    "nombre_español": "Sentadilla con salto y barra",
+    "descripcion": "Ejercicio pliométrico para potencia en piernas"
+  },
+  {
+    "grupo": "Glúteos-Cuádriceps",
+    "nombre": "barbell lateral lunge",
+    "gif": "/gif/gluteo-cuadriceps/Barbell-Lateral-Lunge-unscreen.gif",
+    "series": "3x4",
+    "nombre_español": "Estocada lateral con barra",
+    "descripcion": "Variación lateral de estocada con peso"
+  },
+  {
+    "grupo": "Glúteos-Cuádriceps",
+    "nombre": "barbell pin squat",
+    "gif": "/gif/gluteo-cuadriceps/Barbell-Pin-Squat-unscreen.gif",
+    "series": "3x4",
+    "nombre_español": "Sentadilla con topes toma frontal",
+    "descripcion": "Variación de sentadilla con rango controlado"
+  },
+  {
+    "grupo": "Glúteos-Cuádriceps",
+    "nombre": "barbell romanian deadlift",
+    "gif": "/gif/gluteo-cuadriceps/Barbell-Romanian-Deadlift-unscreen.gif",
+    "series": "3x4",
+    "nombre_español": "Peso muerto rumano con barra",
+    "descripcion": "Variación que enfatiza glúteos e isquiotibiales"
+  },
+  {
+    "grupo": "Glúteos-Cuádriceps",
+    "nombre": "barbell single leg deadlift",
+    "gif": "/gif/gluteo-cuadriceps/Barbell-Single-Leg-Deadlift-unscreen.gif",
+    "series": "3x4",
+    "nombre_español": "Peso muerto a una pierna con barra",
+    "descripcion": "Variación unilateral para glúteos y equilibrio"
+  },
+  {
+    "grupo": "Glúteos-Cuádriceps",
+    "nombre": "barbell single leg hip thrust",
+    "gif": "/gif/gluteo-cuadriceps/Barbell-Single-Leg-Hip-Thrust-unscreen.gif",
+    "series": "3x4",
+    "nombre_español": "Empuje de cadera a una pierna con barra",
+    "descripcion": "Variación unilateral avanzada para glúteos"
+  },
+  {
+    "grupo": "Glúteos-Cuádriceps",
+    "nombre": "barbell step up",
+    "gif": "/gif/gluteo-cuadriceps/Barbell-Step-Up-unscreen.gif",
+    "series": "3x4",
+    "nombre_español": "Step up con barra",
+    "descripcion": "Ejercicio de subida al banco con peso"
+  },
+  {
+    "grupo": "Glúteos-Cuádriceps",
+    "nombre": "barbell sumo deadlift",
+    "gif": "/gif/gluteo-cuadriceps/Barbell-Sumo-Deadlift-unscreen.gif",
+    "series": "3x4",
+    "nombre_español": "Peso muerto sumo con barra",
+    "descripcion": "Variación con piernas abiertas para glúteos y aductores"
+  },
+  {
+    "grupo": "Glúteos-Cuádriceps",
+    "nombre": "barbell sumo squat",
+    "gif": "/gif/gluteo-cuadriceps/Barbell-sumo-squat-unscreen.gif",
+    "series": "3x4",
+    "nombre_español": "Sentadilla sumo con barra",
+    "descripcion": "Variación de sentadilla con piernas abiertas"
+  },
+  {
+    "grupo": "Glúteos-Cuádriceps",
+    "nombre": "bench glute flutter kicks",
+    "gif": "/gif/gluteo-cuadriceps/Bench-Glute-Flutter-Kicks-unscreen.gif",
+    "series": "3x4",
+    "nombre_español": "Aleteo de glúteos en banco",
+    "descripcion": "Ejercicio de aislamiento para glúteos"
+  },
+  {
+    "grupo": "Glúteos-Cuádriceps",
+    "nombre": "bird dog",
+    "gif": "/gif/gluteo-cuadriceps/Bird-Dog-unscreen.gif",
+    "series": "3x4",
+    "nombre_español": "Perro pájaro",
+    "descripcion": "Ejercicio de core que también activa glúteos"
+  },
+  {
+    "grupo": "Glúteos-Cuádriceps",
+    "nombre": "bodyweight box squat",
+    "gif": "/gif/gluteo-cuadriceps/Bodyweight-Box-Squat-unscreen.gif",
+    "series": "3x4",
+    "nombre_español": "Sentadilla a caja con peso corporal",
+    "descripcion": "Variación de sentadilla con apoyo para controlar profundidad"
+  },
+  {
+    "grupo": "Glúteos-Cuádriceps",
+    "nombre": "bodyweight bulgarian split squat",
+    "gif": "/gif/gluteo-cuadriceps/Bodyweight-Bulgarian-Split-Squ-unscreen.gif",
+    "series": "3x4",
+    "nombre_español": "Sentadilla búlgara con peso corporal",
+    "descripcion": "Variación unilateral avanzada para piernas"
+  },
+  {
+    "grupo": "Glúteos-Cuádriceps",
+    "nombre": "bodyweight plie squat",
+    "gif": "/gif/gluteo-cuadriceps/Bodyweight-Plie-Squat-unscreen.gif",
+    "series": "3x4",
+    "nombre_español": "Sentadilla plié con peso corporal",
+    "descripcion": "Variación de sentadilla con énfasis en aductores"
+  },
+  {
+    "grupo": "Glúteos-Cuádriceps",
+    "nombre": "bodyweight single leg deadlift",
+    "gif": "/gif/gluteo-cuadriceps/Bodyweight-Single-Leg-Deadlift-unscreen.gif",
+    "series": "3x4",
+    "nombre_español": "Peso muerto a una pierna con peso corporal",
+    "descripcion": "Ejercicio unilateral para glúteos y equilibrio"
+  },
+  {
+    "grupo": "Glúteos-Cuádriceps",
+    "nombre": "box jump 1 to 2",
+    "gif": "/gif/gluteo-cuadriceps/Box-Jump-1-to-2-unscreen.gif",
+    "series": "3x4",
+    "nombre_español": "Salto a caja alternando pies",
+    "descripcion": "Ejercicio pliométrico para potencia en piernas"
+  },
+  {
+    "grupo": "Glúteos-Cuádriceps",
+    "nombre": "box jump 2 to 1",
+    "gif": "/gif/gluteo-cuadriceps/Box-Jump-2-to-1-unscreen.gif",
+    "series": "3x4",
+    "nombre_español": "Salto a caja con dos pies y bajada con uno",
+    "descripcion": "Variación de salto para trabajar potencia unilateral"
+  },
+  {
+    "grupo": "Glúteos-Cuádriceps",
+    "nombre": "box jump to pistol squat",
+    "gif": "/gif/gluteo-cuadriceps/Box-Jump-to-Pistol-Squat-unscreen.gif",
+    "series": "3x4",
+    "nombre_español": "Salto a caja seguido de sentadilla pistol",
+    "descripcion": "Combinación avanzada de pliometría y fuerza"
+  },
+  {
+    "grupo": "Glúteos-Cuádriceps",
+    "nombre": "box pistol squat",
+    "gif": "/gif/gluteo-cuadriceps/Box-pistol-Squat-unscreen.gif",
+    "series": "3x4",
+    "nombre_español": "Sentadilla pistol con apoyo en caja",
+    "descripcion": "Variación asistida de sentadilla a una pierna"
+  },
+  {
+    "grupo": "Glúteos-Cuádriceps",
+    "nombre": "bridge hip abduction",
+    "gif": "/gif/gluteo-cuadriceps/Bridge-Hip-Abduction-unscreen.gif",
+    "series": "3x4",
+    "nombre_español": "Puente con abducción de cadera",
+    "descripcion": "Combinación de puente de glúteos y trabajo de abductores"
+  },
+  {
+    "grupo": "Glúteos-Cuádriceps",
+    "nombre": "bulgarian jump squat",
+    "gif": "/gif/gluteo-cuadriceps/Bulgarian-Jump-Squat-unscreen.gif",
+    "series": "3x4",
+    "nombre_español": "Sentadilla búlgara con salto",
+    "descripcion": "Variación pliométrica unilateral avanzada"
+  },
+  {
+    "grupo": "Glúteos-Cuádriceps",
+    "nombre": "butterfly stretch",
+    "gif": "/gif/gluteo-cuadriceps/Butterfly-Stretch-unscreen.gif",
+    "series": "3x4",
+    "nombre_español": "Estiramiento de mariposa",
+    "descripcion": "Estiramiento para aductores y cadera"
+  },
+  {
+    "grupo": "Glúteos-Cuádriceps",
+    "nombre": "cable donkey kickback",
+    "gif": "/gif/gluteo-cuadriceps/Cable-Donkey-Kickback-unscreen.gif",
+    "series": "3x4",
+    "nombre_español": "Patada de burro con cable",
+    "descripcion": "Ejercicio de extensión de cadera con polea baja"
+  },
+  {
+    "grupo": "Glúteos-Cuádriceps",
+    "nombre": "cable forward lunge",
+    "gif": "/gif/gluteo-cuadriceps/Cable-Forward-Lunge-unscreen.gif",
+    "series": "3x4",
+    "nombre_español": "Estocada frontal con cable",
+    "descripcion": "Variación de estocada con resistencia de polea"
+  },
+  {
+    "grupo": "Glúteos-Cuádriceps",
+    "nombre": "cable front squat",
+    "gif": "/gif/gluteo-cuadriceps/Cable-Front-Squat-unscreen.gif",
+    "series": "3x4",
+    "nombre_español": "Sentadilla frontal con cable",
+    "descripcion": "Variación de sentadilla con resistencia de polea"
+  },
+  {
+    "grupo": "Glúteos-Cuádriceps",
+    "nombre": "cable hip abduction",
+    "gif": "/gif/gluteo-cuadriceps/Cable-Hip-Abduction-unscreen.gif",
+    "series": "3x4",
+    "nombre_español": "Abducción de cadera con cable",
+    "descripcion": "Ejercicio para glúteo medio con resistencia ajustable"
+  },
+  {
+    "grupo": "Glúteos-Cuádriceps",
+    "nombre": "cable hip extension",
+    "gif": "/gif/gluteo-cuadriceps/Cable-Hip-Extension-unscreen.gif",
+    "series": "3x4",
+    "nombre_español": "Extensión de cadera con cable",
+    "descripcion": "Ejercicio para glúteos con polea baja"
+  },
+  {
+    "grupo": "Glúteos-Cuádriceps",
+    "nombre": "cable hips adduction",
+    "gif": "/gif/gluteo-cuadriceps/Cable-Hips-Adduction-unscreen.gif",
+    "series": "3x4",
+    "nombre_español": "Aducción de cadera con cable",
+    "descripcion": "Ejercicio para aductores con resistencia de polea"
+  },
+  {
+    "grupo": "Glúteos-Cuádriceps",
+    "nombre": "cable kneeling pull through",
+    "gif": "/gif/gluteo-cuadriceps/Cable-Kneeling-Pull-Through-unscreen.gif",
+    "series": "3x4",
+    "nombre_español": "Pull through arrodillado con cable",
+    "descripcion": "Ejercicio para glúteos desde posición de rodillas"
+  },
+  {
+    "grupo": "Glúteos-Cuádriceps",
+    "nombre": "cable pull through",
+    "gif": "/gif/gluteo-cuadriceps/Cable-Pull-Through-unscreen.gif",
+    "series": "3x4",
+    "nombre_español": "Pull through con cable",
+    "descripcion": "Ejercicio para glúteos con polea baja"
+  },
+  {
+    "grupo": "Glúteos-Cuádriceps",
+    "nombre": "cable squat",
+    "gif": "/gif/gluteo-cuadriceps/Cable-Squat-unscreen.gif",
+    "series": "3x4",
+    "nombre_español": "Sentadilla con cable",
+    "descripcion": "Variación de sentadilla con resistencia de polea"
+  },
+  {
+    "grupo": "Glúteos-Cuádriceps",
+    "nombre": "cossack squat",
+    "gif": "/gif/gluteo-cuadriceps/Cossack-Squat-unscreen.gif",
+    "series": "3x4",
+    "nombre_español": "Sentadilla cosaca",
+    "descripcion": "Variación lateral de sentadilla para movilidad"
+  },
+  {
+    "grupo": "Glúteos-Cuádriceps",
+    "nombre": "curtsey squat",
+    "gif": "/gif/gluteo-cuadriceps/Curtsey-Squat-unscreen.gif",
+    "series": "3x4",
+    "nombre_español": "Sentadilla reverencia",
+    "descripcion": "Variación que enfatiza glúteo medio"
+  },
+  {
+    "grupo": "Glúteos-Cuádriceps",
+    "nombre": "decline bench dumbbell lunge",
+    "gif": "/gif/gluteo-cuadriceps/Decline-Bench-Dumbbell-Lunge-unscreen.gif",
+    "series": "3x4",
+    "nombre_español": "Estocada con mancuernas en banco declinado",
+    "descripcion": "Variación intensa de estocada con mayor rango"
+  },
+  {
+    "grupo": "Glúteos-Cuádriceps",
+    "nombre": "depth jump to hurdle hop",
+    "gif": "/gif/gluteo-cuadriceps/Depth-Jump-to-Hurdle-Hop-unscreen.gif",
+    "series": "3x4",
+    "nombre_español": "Salto en profundidad a salto de valla",
+    "descripcion": "Ejercicio pliométrico avanzado para potencia"
+  },
+  {
+    "grupo": "Glúteos-Cuádriceps",
+    "nombre": "donkey kick on leg extension machine",
+    "gif": "/gif/gluteo-cuadriceps/Donkey-Kick-on-Leg-Extension-M-unscreen.gif",
+    "series": "3x4",
+    "nombre_español": "Patada de burro en máquina de extensión",
+    "descripcion": "Variación de extensión de cadera usando máquina"
+  },
+  {
+    "grupo": "Glúteos-Cuádriceps",
+    "nombre": "donkey kick on smith machine",
+    "gif": "/gif/gluteo-cuadriceps/Donkey-Kick-on-Smith-Machine-unscreen.gif",
+    "series": "3x4",
+    "nombre_español": "Patada de burro en máquina Smith",
+    "descripcion": "Variación de extensión de cadera con barra guiada"
+  },
+  {
+    "grupo": "Glúteos-Cuádriceps",
+    "nombre": "donkey kicks",
+    "gif": "/gif/gluteo-cuadriceps/Donkey-Kicks-unscreen.gif",
+    "series": "3x4",
+    "nombre_español": "Patadas de burro",
+    "descripcion": "Ejercicio de extensión de cadera para glúteos"
+  },
+  {
+    "grupo": "Glúteos-Cuádriceps",
+    "nombre": "duck walk",
+    "gif": "/gif/gluteo-cuadriceps/Duck-Walk-unscreen.gif",
+    "series": "3x4",
+    "nombre_español": "Caminata de pato",
+    "descripcion": "Ejercicio funcional para piernas en posición baja"
+  },
+  {
+    "grupo": "Glúteos-Cuádriceps",
+    "nombre": "dumbbell glute bridge",
+    "gif": "/gif/gluteo-cuadriceps/Dumbbell-Glute-Bridge-unscreen.gif",
+    "series": "3x4",
+    "nombre_español": "Puente de glúteos con mancuernas",
+    "descripcion": "Variación del puente de glúteos con peso"
+  },
+  {
+    "grupo": "Glúteos-Cuádriceps",
+    "nombre": "dumbbell goblet squat",
+    "gif": "/gif/gluteo-cuadriceps/Dumbbell-Goblet-Squat-unscreen.gif",
+    "series": "3x4",
+    "nombre_español": "Sentadilla copa con mancuerna",
+    "descripcion": "Variación de sentadilla frontal con mancuerna"
+  },
+  {
+    "grupo": "Glúteos-Cuádriceps",
+    "nombre": "dumbbell good morning",
+    "gif": "/gif/gluteo-cuadriceps/Dumbbell-Good-Morning-unscreen.gif",
+    "series": "3x4",
+    "nombre_español": "Good morning con mancuernas",
+    "descripcion": "Ejercicio para glúteos e isquiotibiales con peso"
+  },
+  {
+    "grupo": "Glúteos-Cuádriceps",
+    "nombre": "dumbbell iron cross",
+    "gif": "/gif/gluteo-cuadriceps/Dumbbell-Iron-Cross-unscreen.gif",
+    "series": "3x4",
+    "nombre_español": "Cruz de hierro con mancuernas",
+    "descripcion": "Ejercicio para glúteos y estabilidad core"
+  },
+  {
+    "grupo": "Glúteos-Cuádriceps",
+    "nombre": "dumbbell jump squat",
+    "gif": "/gif/gluteo-cuadriceps/Dumbbell-Jump-Squat-unscreen.gif",
+    "series": "3x4",
+    "nombre_español": "Sentadilla con salto y mancuernas",
+    "descripcion": "Ejercicio pliométrico con peso adicional"
+  },
+  {
+    "grupo": "Glúteos-Cuádriceps",
+    "nombre": "dumbbell lateral step up",
+    "gif": "/gif/gluteo-cuadriceps/Dumbbell-Lateral-Step-Up-unscreen.gif",
+    "series": "3x4",
+    "nombre_español": "Step up lateral con mancuernas",
+    "descripcion": "Variación lateral de step up con peso"
+  },
+  {
+    "grupo": "Glúteos-Cuádriceps",
+    "nombre": "dumbbell lunge",
+    "gif": "/gif/gluteo-cuadriceps/Dumbbell-Lunge-unscreen.gif",
+    "series": "3x4",
+    "nombre_español": "Estocada con mancuernas",
+    "descripcion": "Variación básica de estocada con peso"
+  },
+  {
+    "grupo": "Glúteos-Cuádriceps",
+    "nombre": "dumbbell pull through",
+    "gif": "/gif/gluteo-cuadriceps/Dumbbell-Pull-Through-unscreen.gif",
+    "series": "3x4",
+    "nombre_español": "Pull through con mancuerna",
+    "descripcion": "Ejercicio para glúteos con mancuerna entre piernas"
+  },
+  {
+    "grupo": "Glúteos-Cuádriceps",
+    "nombre": "dumbbell rear lunge",
+    "gif": "/gif/gluteo-cuadriceps/Dumbbell-Rear-Lunge-unscreen.gif",
+    "series": "3x4",
+    "nombre_español": "Estocada trasera con mancuernas",
+    "descripcion": "Variación de estocada hacia atrás con peso"
+  },
+  {
+    "grupo": "Glúteos-Cuádriceps",
+    "nombre": "dumbbell romanian deadlift",
+    "gif": "/gif/gluteo-cuadriceps/Dumbbell-Romanian-Deadlift-unscreen.gif",
+    "series": "3x4",
+    "nombre_español": "Peso muerto rumano con mancuernas",
+    "descripcion": "Variación que enfatiza glúteos e isquiotibiales"
+  },
+  {
+    "grupo": "Glúteos-Cuádriceps",
+    "nombre": "dumbbell single leg deadlift",
+    "gif": "/gif/gluteo-cuadriceps/Dumbbell-Single-Leg-Deadlift-unscreen.gif",
+    "series": "3x4",
+    "nombre_español": "Peso muerto a una pierna con mancuerna",
+    "descripcion": "Ejercicio unilateral para glúteos y equilibrio"
+  },
+  {
+    "grupo": "Glúteos-Cuádriceps",
+    "nombre": "dumbbell split jump",
+    "gif": "/gif/gluteo-cuadriceps/Dumbbell-Split-Jump-unscreen.gif",
+    "series": "3x4",
+    "nombre_español": "Salto dividido con mancuernas",
+    "descripcion": "Ejercicio pliométrico unilateral con peso"
+  },
+  {
+    "grupo": "Glúteos-Cuádriceps",
+    "nombre": "dumbbell squat",
+    "gif": "/gif/gluteo-cuadriceps/Dumbbell-Squat-unscreen.gif",
+    "series": "3x4",
+    "nombre_español": "Sentadilla con mancuernas",
+    "descripcion": "Variación básica de sentadilla con peso"
+  },
+  {
+    "grupo": "Glúteos-Cuádriceps",
+    "nombre": "dumbeel step up",
+    "gif": "/gif/gluteo-cuadriceps/Dumbeel-Step-Up-unscreen.gif",
+    "series": "3x4",
+    "nombre_español": "Step up con mancuernas",
+    "descripcion": "Ejercicio de subida al banco con peso"
+  },
+  {
+    "grupo": "Glúteos-Cuádriceps",
+    "nombre": "dumbell reverse lunge",
+    "gif": "/gif/gluteo-cuadriceps/Dumbell-reverse-lunge-unscreen.gif",
+    "series": "3x4",
+    "nombre_español": "Estocada inversa con mancuerna",
+    "descripcion": "Variación de estocada hacia atrás con peso"
+  },
+  {
+    "grupo": "Glúteos-Cuádriceps",
+    "nombre": "exercise ball wall squat",
+    "gif": "/gif/gluteo-cuadriceps/Exercise-Ball-Wall-Squat-unscreen.gif",
+    "series": "3x4",
+    "nombre_español": "Sentadilla en pared con balón",
+    "descripcion": "Variación de sentadilla isométrica con apoyo"
+  },
+  {
+    "grupo": "Glúteos-Cuádriceps",
+    "nombre": "fire hydrant",
+    "gif": "/gif/gluteo-cuadriceps/Fire-Hydrant-unscreen.gif",
+    "series": "3x4",
+    "nombre_español": "Hidrante",
+    "descripcion": "Ejercicio para glúteo medio y abductores"
+  },
+  {
+    "grupo": "Glúteos-Cuádriceps",
+    "nombre": "foam roller glutes",
+    "gif": "/gif/gluteo-cuadriceps/Foam-Roller-Glutes-unscreen.gif",
+    "series": "3x4",
+    "nombre_español": "Autoliberación de glúteos con rodillo",
+    "descripcion": "Técnica de liberación miofascial para glúteos"
+  },
+  {
+    "grupo": "Glúteos-Cuádriceps",
+    "nombre": "foam roller inner thigh adductor stretch",
+    "gif": "/gif/gluteo-cuadriceps/Foam-Roller-Inner-Thigh-Adduct-unscreen.gif",
+    "series": "3x4",
+    "nombre_español": "Estiramiento de aductores con rodillo",
+    "descripcion": "Liberación miofascial para parte interna del muslo"
+  },
+  {
+    "grupo": "Glúteos-Cuádriceps",
+    "nombre": "frog pose mandukasana",
+    "gif": "/gif/gluteo-cuadriceps/Frog-Pose-mandukasana-unscreen.gif",
+    "series": "3x4",
+    "nombre_español": "Postura de rana (Mandukasana)",
+    "descripcion": "Estiramiento profundo para cadera y aductores"
+  },
+  {
+    "grupo": "Glúteos-Cuádriceps",
+    "nombre": "frog pump",
+    "gif": "/gif/gluteo-cuadriceps/Frog-Pump-unscreen.gif",
+    "series": "3x4",
+    "nombre_español": "Bombeo de rana",
+    "descripcion": "Variación del puente de glúteos con piernas abiertas"
+  },
+  {
+    "grupo": "Glúteos-Cuádriceps",
+    "nombre": "front plank with arm and leg lift",
+    "gif": "/gif/gluteo-cuadriceps/Front-Plank-With-Arm-And-Leg-L-unscreen.gif",
+    "series": "3x4",
+    "nombre_español": "Plancha frontal isometrica con elevación de brazo y pierna",
+    "descripcion": "Ejercicio de core que también activa glúteos"
+  },
+   {
+    "grupo": "Glúteos-Cuádriceps",
+    "nombre": "front plank with arm and leg lift",
+    "gif": "/gif/gluteo-cuadriceps/Front-Plank-With-Arm-And-Leg-L-unscreen.gif",
+    "series": "3x4",
+    "nombre_español": "Plancha frontal dinamica con elevación de brazo y pierna",
+    "descripcion": "Ejercicio de core que también activa glúteos"
+  },
+  {
+    "grupo": "Glúteos-Cuádriceps",
+    "nombre": "glute bridge ",
+    "gif": "/gif/gluteo-cuadriceps/Glute-Bridge--unscreen.gif",
+    "series": "3x4",
+    "nombre_español": "Puente de glúteos",
+    "descripcion": "Ejercicio fundamental para activación glútea"
+  },
+  {
+    "grupo": "Glúteos-Cuádriceps",
+    "nombre": "glute bridge one leg on bench",
+    "gif": "/gif/gluteo-cuadriceps/Glute-Bridge-One-Leg-on-Bench-unscreen.gif",
+    "series": "3x4",
+    "nombre_español": "Puente de glúteos a una pierna en banco",
+    "descripcion": "Variación unilateral avanzada del puente"
+  },
+  {
+    "grupo": "Glúteos-Cuádriceps",
+    "nombre": "glute bridge on bench",
+    "gif": "/gif/gluteo-cuadriceps/Glute-Bridge-on-Bench-unscreen.gif",
+    "series": "3x4",
+    "nombre_español": "Puente de glúteos en banco",
+    "descripcion": "Variación con mayor rango de movimiento"
+  },
+  {
+    "grupo": "Glúteos-Cuádriceps",
+    "nombre": "glute ham raise",
+    "gif": "/gif/gluteo-cuadriceps/Glute-Ham-Raise-unscreen.gif",
+    "series": "3x4",
+    "nombre_español": "Elevación de glúteos e isquiotibiales",
+    "descripcion": "Ejercicio avanzado para cadena posterior"
+  },
+  {
+    "grupo": "Glúteos-Cuádriceps",
+    "nombre": "glute kickback machine",
+    "gif": "/gif/gluteo-cuadriceps/Glute-Kickback-Machine-unscreen.gif",
+    "series": "3x4",
+    "nombre_español": "Patada hacia atrás en máquina",
+    "descripcion": "Ejercicio de extensión de cadera con máquina"
+  },
+  {
+    "grupo": "Glúteos-Cuádriceps",
+    "nombre": "hip adduction machine",
+    "gif": "/gif/gluteo-cuadriceps/HIP-ADDUCTION-MACHINE-unscreen.gif",
+    "series": "3x4",
+    "nombre_español": "Máquina de aducción de cadera",
+    "descripcion": "Ejercicio para aductores en máquina específica"
+  },
+  {
+    "grupo": "Glúteos-Cuádriceps",
+    "nombre": "happy baby pose",
+    "gif": "/gif/gluteo-cuadriceps/Happy-Baby-Pose-unscreen.gif",
+    "series": "3x4",
+    "nombre_español": "Postura del bebé feliz",
+    "descripcion": "Estiramiento para cadera y parte interna de muslos"
+  },
+  {
+    "grupo": "Glúteos-Cuádriceps",
+    "nombre": "hip abduction machine",
+    "gif": "/gif/gluteo-cuadriceps/HiP-ABDUCTION-MACHINE-unscreen.gif",
+    "series": "3x4",
+    "nombre_español": "Máquina de abducción de cadera",
+    "descripcion": "Ejercicio para glúteo medio en máquina específica"
+  },
+  {
+    "grupo": "Glúteos-Cuádriceps",
+    "nombre": "high knee lunge on bosu ball",
+    "gif": "/gif/gluteo-cuadriceps/High-Knee-Lunge-on-Bosu-Ball-unscreen.gif",
+    "series": "3x4",
+    "nombre_español": "Estocada con rodilla alta en bosu",
+    "descripcion": "Variación de estocada con desafío de equilibrio"
+  },
+  {
+    "grupo": "Glúteos-Cuádriceps",
+    "nombre": "high knee run",
+    "gif": "/gif/gluteo-cuadriceps/High-Knee-Run-unscreen.gif",
+    "series": "3x4",
+    "nombre_español": "Carrera con rodillas altas",
+    "descripcion": "Ejercicio dinámico para calentamiento o cardio"
+  },
+  {
+    "grupo": "Glúteos-Cuádriceps",
+    "nombre": "high knee squat",
+    "gif": "/gif/gluteo-cuadriceps/High-Knee-Squat-unscreen.gif",
+    "series": "3x4",
+    "nombre_español": "Sentadilla con rodillas altas",
+    "descripcion": "Variación dinámica de sentadilla"
+  },
+  {
+    "grupo": "Glúteos-Cuádriceps",
+    "nombre": "hip circles stretch",
+    "gif": "/gif/gluteo-cuadriceps/Hip-Circles-Stretch-unscreen.gif",
+    "series": "3x4",
+    "nombre_español": "Círculos de cadera",
+    "descripcion": "Ejercicio para movilidad de cadera"
+  },
+  {
+    "grupo": "Glúteos-Cuádriceps",
+    "nombre": "hip extension on bench",
+    "gif": "/gif/gluteo-cuadriceps/Hip-Extension-On-Bench-unscreen.gif",
+    "series": "3x4",
+    "nombre_español": "Extensión de cadera en banco",
+    "descripcion": "Ejercicio de aislamiento para glúteos"
+  },
+  {
+    "grupo": "Glúteos-Cuádriceps",
+    "nombre": "hip thrust machine",
+    "gif": "/gif/gluteo-cuadriceps/Hip-Thrust-Machine-unscreen.gif",
+    "series": "3x4",
+    "nombre_español": "Máquina de empuje de cadera",
+    "descripcion": "Ejercicio específico para glúteos en máquina"
+  },
+  {
+    "grupo": "Glúteos-Cuádriceps",
+    "nombre": "hip thrust on the leg extension machine",
+    "gif": "/gif/gluteo-cuadriceps/Hip-Thrust-on-The-Leg-Extensio-unscreen.gif",
+    "series": "3x4",
+    "nombre_español": "Empuje de cadera en máquina de extensión",
+    "descripcion": "Variación creativa usando máquina de piernas"
+  },
+  {
+    "grupo": "Glúteos-Cuádriceps",
+    "nombre": "inner thigh side stretch",
+    "gif": "/gif/gluteo-cuadriceps/INNER-THIGH-SIDE-STRETCH-unscreen.gif",
+    "series": "3x4",
+    "nombre_español": "Estiramiento lateral de parte interna del muslo",
+    "descripcion": "Estiramiento para aductores en posición lateral"
+  },
+  {
+    "grupo": "Glúteos-Cuádriceps",
+    "nombre": "jump squat",
+    "gif": "/gif/gluteo-cuadriceps/Jump-Squat-unscreen.gif",
+    "series": "3x4",
+    "nombre_español": "Sentadilla con salto",
+    "descripcion": "Ejercicio pliométrico para potencia en piernas"
+  },
+  {
+    "grupo": "Glúteos-Cuádriceps",
+    "nombre": "kettlebell clean and jerk",
+    "gif": "/gif/gluteo-cuadriceps/Kettlebell-Clean-and-Jerk-unscreen.gif",
+    "series": "3x4",
+    "nombre_español": "Clean and jerk con kettlebell",
+    "descripcion": "Ejercicio olímpico completo para cuerpo entero"
+  },
+  {
+    "grupo": "Glúteos-Cuádriceps",
+    "nombre": "kettlebell clean and press",
+    "gif": "/gif/gluteo-cuadriceps/Kettlebell-Clean-and-Press-unscreen.gif",
+    "series": "3x4",
+    "nombre_español": "Clean and press con kettlebell",
+    "descripcion": "Ejercicio compuesto para fuerza y potencia"
+  },
+  {
+    "grupo": "Glúteos-Cuádriceps",
+    "nombre": "kettlebell figure 8",
+    "gif": "/gif/gluteo-cuadriceps/Kettlebell-Figure-8-unscreen.gif",
+    "series": "3x4",
+    "nombre_español": "Figura 8 con kettlebell",
+    "descripcion": "Ejercicio dinámico para coordinación y fuerza"
+  },
+  {
+    "grupo": "Glúteos-Cuádriceps",
+    "nombre": "kettlebell single leg deadlift",
+    "gif": "/gif/gluteo-cuadriceps/Kettlebell-Single-Leg-Deadlift-unscreen.gif",
+    "series": "3x4",
+    "nombre_español": "Peso muerto a una pierna con kettlebell",
+    "descripcion": "Variación unilateral para glúteos y equilibrio"
+  },
+  {
+    "grupo": "Glúteos-Cuádriceps",
+    "nombre": "kettlebell split snatch",
+    "gif": "/gif/gluteo-cuadriceps/Kettlebell-Split-Snatch-unscreen.gif",
+    "series": "3x4",
+    "nombre_español": "Snatch dividido con kettlebell",
+    "descripcion": "Variación olímpica avanzada con kettlebell"
+  },
+  {
+    "grupo": "Glúteos-Cuádriceps",
+    "nombre": "kettlebell swings",
+    "gif": "/gif/gluteo-cuadriceps/Kettlebell-Swings-unscreen.gif",
+    "series": "3x4",
+    "nombre_español": "Balanceos con kettlebell",
+    "descripcion": "Ejercicio dinámico para glúteos y cadena posterior"
+  },
+  {
+    "grupo": "Glúteos-Cuádriceps",
+    "nombre": "kettlebell thruster",
+    "gif": "/gif/gluteo-cuadriceps/Kettlebell-Thruster-unscreen.gif",
+    "series": "3x4",
+    "nombre_español": "Thruster con kettlebell",
+    "descripcion": "Ejercicio compuesto que combina sentadilla y press"
+  },
+  {
+    "grupo": "Glúteos-Cuádriceps",
+    "nombre": "kettlebell front squat",
+    "gif": "/gif/gluteo-cuadriceps/Kettlebell-front-squat-unscreen.gif",
+    "series": "3x4",
+    "nombre_español": "Sentadilla frontal con kettlebell",
+    "descripcion": "Variación de sentadilla con peso en posición frontal"
+  },
+  {
+    "grupo": "Glúteos-Cuádriceps",
+    "nombre": "kicks leg bent",
+    "gif": "/gif/gluteo-cuadriceps/Kicks-Leg-Bent-unscreen.gif",
+    "series": "3x4",
+    "nombre_español": "Patadas con pierna flexionada",
+    "descripcion": "Ejercicio de extensión de cadera para glúteos"
+  },
+  {
+    "grupo": "Glúteos-Cuádriceps",
+    "nombre": "kneeling hip flexor stretch 1 360x360",
+    "gif": "/gif/gluteo-cuadriceps/Kneeling-Hip-Flexor-Stretch-IMG.png",
+    "series": "3x4",
+    "nombre_español": "Estiramiento de flexores de cadera arrodillado",
+    "descripcion": "Estiramiento para flexores de cadera desde posición de rodillas"
+  },
+  {
+    "grupo": "Glúteos-Cuádriceps",
+    "nombre": "kneeling hip flexor stretch",
+    "gif": "/gif/gluteo-cuadriceps/Kneeling-Hip-Flexor-Stretch-unscreen.gif",
+    "series": "3x4",
+    "nombre_español": "Estiramiento de flexores de cadera arrodillado",
+    "descripcion": "Estiramiento para flexores de cadera en posición de rodillas"
+  },
+  {
+    "grupo": "Glúteos-Cuádriceps",
+    "nombre": "kneeling jump squat",
+    "gif": "/gif/gluteo-cuadriceps/Kneeling-Jump-Squat-unscreen.gif",
+    "series": "3x4",
+    "nombre_español": "Sentadilla con salto desde rodillas",
+    "descripcion": "Ejercicio pliométrico avanzado desde posición baja"
+  },
+  {
+    "grupo": "Glúteos-Cuádriceps",
+    "nombre": "kneeling leg out adductor stretch",
+    "gif": "/gif/gluteo-cuadriceps/Kneeling-Leg-Out-Adductor-Stre-unscreen.gif",
+    "series": "3x4",
+    "nombre_español": "Estiramiento de aductores con pierna extendida",
+    "descripcion": "Estiramiento para parte interna del muslo desde rodillas"
+  },
+  {
+    "grupo": "Glúteos-Cuádriceps",
+    "nombre": "kneeling single leg kick",
+    "gif": "/gif/gluteo-cuadriceps/Kneeling-Single-Leg-Kick-unscreen.gif",
+    "series": "3x4",
+    "nombre_español": "Patada a una pierna desde rodillas",
+    "descripcion": "Ejercicio de extensión de cadera unilateral"
+  },
+  {
+    "grupo": "Glúteos-Cuádriceps",
+    "nombre": "landmine deadlift",
+    "gif": "/gif/gluteo-cuadriceps/Landmine-Deadlift-unscreen.gif",
+    "series": "3x4",
+    "nombre_español": "Peso muerto con landmine",
+    "descripcion": "Variación de peso muerto con barra anclada"
+  },
+  {
+    "grupo": "Glúteos-Cuádriceps",
+    "nombre": "landmine lunge",
+    "gif": "/gif/gluteo-cuadriceps/Landmine-Lunge-unscreen.gif",
+    "series": "3x4",
+    "nombre_español": "Estocada con landmine",
+    "descripcion": "Variación de estocada con barra anclada"
+  },
+  {
+    "grupo": "Glúteos-Cuádriceps",
+    "nombre": "landmine press",
+    "gif": "/gif/gluteo-cuadriceps/Landmine-Press-unscreen.gif",
+    "series": "3x4",
+    "nombre_español": "Press con landmine",
+    "descripcion": "Ejercicio de empuje con barra anclada"
+  },
+  {
+    "grupo": "Glúteos-Cuádriceps",
+    "nombre": "landmine squat",
+    "gif": "/gif/gluteo-cuadriceps/Landmine-Squat-unscreen.gif",
+    "series": "3x4",
+    "nombre_español": "Sentadilla con landmine",
+    "descripcion": "Variación de sentadilla con barra anclada"
+  },
+  {
+    "grupo": "Glúteos-Cuádriceps",
+    "nombre": "lateral leg swings",
+    "gif": "/gif/gluteo-cuadriceps/Lateral-Leg-Swings-unscreen.gif",
+    "series": "3x4",
+    "nombre_español": "Balanceos laterales de pierna",
+    "descripcion": "Ejercicio dinámico para movilidad de cadera"
+  },
+  {
+    "grupo": "Glúteos-Cuádriceps",
+    "nombre": "lever side hip abduction",
+    "gif": "/gif/gluteo-cuadriceps/Lever-Side-Hip-Abduction-unscreen.gif",
+    "series": "3x4",
+    "nombre_español": "Abducción lateral de cadera en máquina",
+    "descripcion": "Ejercicio para glúteo medio con máquina de palancas"
+  },
+  {
+    "grupo": "Glúteos-Cuádriceps",
+    "nombre": "lever side hip adduction",
+    "gif": "/gif/gluteo-cuadriceps/Lever-Side-Hip-Adduction-unscreen.gif",
+    "series": "3x4",
+    "nombre_español": "Aducción lateral de cadera en máquina",
+    "descripcion": "Ejercicio para aductores con máquina de palancas"
+  },
+  {
+    "grupo": "Glúteos-Cuádriceps",
+    "nombre": "lever standing hip extension",
+    "gif": "/gif/gluteo-cuadriceps/Lever-Standing-Hip-Extension-unscreen.gif",
+    "series": "3x4",
+    "nombre_español": "Extensión de cadera de pie en máquina",
+    "descripcion": "Ejercicio para glúteos en máquina de palancas"
+  },
+  {
+    "grupo": "Glúteos-Cuádriceps",
+    "nombre": "lever standing rear kick",
+    "gif": "/gif/gluteo-cuadriceps/Lever-Standing-Rear-Kick-unscreen.gif",
+    "series": "3x4",
+    "nombre_español": "Patada trasera de pie en máquina",
+    "descripcion": "Ejercicio de extensión de cadera en máquina"
+  },
+  {
+    "grupo": "Glúteos-Cuádriceps",
+    "nombre": "lying glute stretch",
+    "gif": "/gif/gluteo-cuadriceps/Lying-glute-stretch-unscreen.gif",
+    "series": "3x4",
+    "nombre_español": "Estiramiento de glúteos acostado",
+    "descripcion": "Estiramiento para glúteos en posición supina"
+  },
+  {
+    "grupo": "Glúteos-Cuádriceps",
+    "nombre": "one arm dumbbell snatch",
+    "gif": "/gif/gluteo-cuadriceps/One-Arm-Dumbbell-Snatch-unscreen.gif",
+    "series": "3x4",
+    "nombre_español": "Snatch a un brazo con mancuerna",
+    "descripcion": "Ejercicio olímpico unilateral para potencia"
+  },
+  {
+    "grupo": "Glúteos-Cuádriceps",
+    "nombre": "one arm kettlebell snatch exercise",
+    "gif": "/gif/gluteo-cuadriceps/One-Arm-Kettlebell-Snatch-exer-unscreen.gif",
+    "series": "3x4",
+    "nombre_español": "Snatch a un brazo con kettlebell",
+    "descripcion": "Variación olímpica unilateral con kettlebell"
+  },
+  {
+    "grupo": "Glúteos-Cuádriceps",
+    "nombre": "one arm kettlebell swing",
+    "gif": "/gif/gluteo-cuadriceps/One-Arm-Kettlebell-Swing-unscreen.gif",
+    "series": "3x4",
+    "nombre_español": "Balanceo a un brazo con kettlebell",
+    "descripcion": "Variación unilateral del swing con kettlebell"
+  },
+  {
+    "grupo": "Glúteos-Cuádriceps",
+    "nombre": "pelvic tilt",
+    "gif": "/gif/gluteo-cuadriceps/Pelvic-Tilt-unscreen.gif",
+    "series": "3x4",
+    "nombre_español": "Inclinación pélvica",
+    "descripcion": "Ejercicio para movilidad y control pélvico"
+  },
+  {
+    "grupo": "Glúteos-Cuádriceps",
+    "nombre": "pin squat",
+    "gif": "/gif/gluteo-cuadriceps/Pin-Squat-unscreen.gif",
+    "series": "3x4",
+    "nombre_español": "Sentadilla con topes",
+    "descripcion": "Variación de sentadilla con rango controlado por topes"
+  },
+  {
+    "grupo": "Glúteos-Cuádriceps",
+    "nombre": "piriformis stretch",
+    "gif": "/gif/gluteo-cuadriceps/Piriformis-Stretch-unscreen.gif",
+    "series": "3x4",
+    "nombre_español": "Estiramiento del piriforme",
+    "descripcion": "Estiramiento específico para el músculo piriforme"
+  },
+  {
+    "grupo": "Glúteos-Cuádriceps",
+    "nombre": "pistol squat to box",
+    "gif": "/gif/gluteo-cuadriceps/Pistol-Squat-to-Box-unscreen.gif",
+    "series": "3x4",
+    "nombre_español": "Sentadilla pistol a caja",
+    "descripcion": "Variación asistida de sentadilla a una pierna"
+  },
+  {
+    "grupo": "Glúteos-Cuádriceps",
+    "nombre": "plank leg lift",
+    "gif": "/gif/gluteo-cuadriceps/Plank-Leg-Lift-unscreen.gif",
+    "series": "3x4",
+    "nombre_español": "Plancha con elevación de pierna",
+    "descripcion": "Variación de plancha que activa glúteos"
+  },
+  {
+    "grupo": "Glúteos-Cuádriceps",
+    "nombre": "plank with arm and leg lift",
+    "gif": "/gif/gluteo-cuadriceps/Plank-with-Arm-and-Leg-Lift-unscreen.gif",
+    "series": "3x4",
+    "nombre_español": "Plancha isometrica con elevación de brazo y pierna",
+    "descripcion": "Ejercicio avanzado de core y estabilidad"
+  },
+  {
+    "grupo": "Glúteos-Cuádriceps",
+    "nombre": "pull through hips",
+    "gif": "/gif/gluteo-cuadriceps/Pull-through-Hips-unscreen.gif",
+    "series": "3x4",
+    "nombre_español": "Pull through para caderas",
+    "descripcion": "Ejercicio para glúteos con cable o banda"
+  },
+  {
+    "grupo": "Glúteos-Cuádriceps",
+    "nombre": "resistance band hip thrust",
+    "gif": "/gif/gluteo-cuadriceps/Resistance-Band-Hip-Thrust-unscreen.gif",
+    "series": "3x4",
+    "nombre_español": "Empuje de cadera con banda de resistencia",
+    "descripcion": "Variación del hip thrust con banda elástica"
+  },
+  {
+    "grupo": "Glúteos-Cuádriceps",
+    "nombre": "resistance band hip thrusts on knees",
+    "gif": "/gif/gluteo-cuadriceps/Resistance-Band-Hip-Thrusts-on-unscreen.gif",
+    "series": "3x4",
+    "nombre_español": "Empuje de cadera con banda desde rodillas",
+    "descripcion": "Variación del hip thrust desde posición de rodillas"
+  },
+  {
+    "grupo": "Glúteos-Cuádriceps",
+    "nombre": "resistance band lateral walk",
+    "gif": "/gif/gluteo-cuadriceps/Resistance-Band-Lateral-Walk-unscreen.gif",
+    "series": "3x4",
+    "nombre_español": "Caminata lateral con banda",
+    "descripcion": "Ejercicio para glúteo medio con resistencia"
+  },
+  {
+    "grupo": "Glúteos-Cuádriceps",
+    "nombre": "resistance band overhead squat",
+    "gif": "/gif/gluteo-cuadriceps/Resistance-Band-Overhead-Squat-unscreen.gif",
+    "series": "3x4",
+    "nombre_español": "Sentadilla por encima con banda",
+    "descripcion": "Variación de sentadilla con banda sobre cabeza"
+  },
+  {
+    "grupo": "Glúteos-Cuádriceps",
+    "nombre": "resistance band reverse hyperextension",
+    "gif": "/gif/gluteo-cuadriceps/Resistance-Band-Reverse-Hypere-unscreen.gif",
+    "series": "3x4",
+    "nombre_español": "Hiperextensión inversa con banda",
+    "descripcion": "Ejercicio para glúteos y espalda baja con banda"
+  },
+  {
+    "grupo": "Glúteos-Cuádriceps",
+    "nombre": "resistance band toe touch",
+    "gif": "/gif/gluteo-cuadriceps/Resistance-Band-Toe-Touch-unscreen.gif",
+    "series": "3x4",
+    "nombre_español": "Toque de dedos con banda",
+    "descripcion": "Ejercicio de movilidad y flexibilidad con resistencia"
+  },
+  {
+    "grupo": "Glúteos-Cuádriceps",
+    "nombre": "reverse hack squat",
+    "gif": "/gif/gluteo-cuadriceps/Reverse-Hack-Squat-unscreen.gif",
+    "series": "3x4",
+    "nombre_español": "Sentadilla hack inversa",
+    "descripcion": "Variación de sentadilla en máquina con posición invertida"
+  },
+  {
+    "grupo": "Glúteos-Cuádriceps",
+    "nombre": "reverse hyperextension machine",
+    "gif": "/gif/gluteo-cuadriceps/Reverse-Hyperextension-Machine-unscreen.gif",
+    "series": "3x4",
+    "nombre_español": "Máquina de hiperextensión inversa",
+    "descripcion": "Ejercicio específico para glúteos y espalda baja"
+  },
+  {
+    "grupo": "Glúteos-Cuádriceps",
+    "nombre": "reverse hyperextensions",
+    "gif": "/gif/gluteo-cuadriceps/Reverse-Hyperextensions-unscreen.gif",
+    "series": "3x4",
+    "nombre_español": "Hiperextensiones inversas",
+    "descripcion": "Ejercicio para glúteos y cadena posterior"
+  },
+  {
+    "grupo": "Glúteos-Cuádriceps",
+    "nombre": "reverse lunge knee",
+    "gif": "/gif/gluteo-cuadriceps/Reverse-Lunge-Knee-unscreen.gif",
+    "series": "3x4",
+    "nombre_español": "Estocada inversa con elevación de rodilla",
+    "descripcion": "Variación de estocada con componente de equilibrio"
+  },
+  {
+    "grupo": "Glúteos-Cuádriceps",
+    "nombre": "reverse plank",
+    "gif": "/gif/gluteo-cuadriceps/Reverse-plank-unscreen.gif",
+    "series": "3x4",
+    "nombre_español": "Plancha isometrica inversa",
+    "descripcion": "Variación de plancha que trabaja glúteos y espalda"
+  },
+  {
+    "grupo": "Glúteos-Cuádriceps",
+    "nombre": "snap jumps",
+    "gif": "/gif/gluteo-cuadriceps/SNAP-JUMPS-unscreen.gif",
+    "series": "3x4",
+    "nombre_español": "Saltos explosivos",
+    "descripcion": "Ejercicio pliométrico para potencia en piernas"
+  },
+  {
+    "grupo": "Glúteos-Cuádriceps",
+    "nombre": "standing knee hugs",
+    "gif": "/gif/gluteo-cuadriceps/STANDING-KNEE-HUGS-unscreen.gif",
+    "series": "3x4",
+    "nombre_español": "Abrazos de rodilla de pie",
+    "descripcion": "Estiramiento dinámico para flexores de cadera"
+  },
+  {
+    "grupo": "Glúteos-Cuádriceps",
+    "nombre": "seated piriformis stretch",
+    "gif": "/gif/gluteo-cuadriceps/Seated-Piriformis-Stretch-unscreen.gif",
+    "series": "3x4",
+    "nombre_español": "Estiramiento del piriforme sentado",
+    "descripcion": "Estiramiento específico en posición sentada"
+  },
+  {
+    "grupo": "Glúteos-Cuádriceps",
+    "nombre": "side bridge hip abduction",
+    "gif": "/gif/gluteo-cuadriceps/Side-Bridge-Hip-Abduction-unscreen.gif",
+    "series": "3x4",
+    "nombre_español": "Plancha lateral con abducción isometrica",
+    "descripcion": "Ejercicio combinado de core y glúteo medio"
+  },
+  {
+    "grupo": "Glúteos-Cuádriceps",
+    "nombre": "side hip abduction",
+    "gif": "/gif/gluteo-cuadriceps/Side-Hip-Abduction-unscreen.gif",
+    "series": "3x4",
+    "nombre_español": "Abducción lateral de cadera",
+    "descripcion": "Ejercicio para glúteo medio en posición lateral"
+  },
+  {
+    "grupo": "Glúteos-Cuádriceps",
+    "nombre": "side lying clam",
+    "gif": "/gif/gluteo-cuadriceps/Side-Lying-Clam-unscreen.gif",
+    "series": "3x4",
+    "nombre_español": "Almeja lateral",
+    "descripcion": "Ejercicio clásico para glúteo medio"
+  },
+  {
+    "grupo": "Glúteos-Cuádriceps",
+    "nombre": "side lying feet raise",
+    "gif": "/gif/gluteo-cuadriceps/Side-Lying-Feet-Raise-unscreen.gif",
+    "series": "3x4",
+    "nombre_español": "Elevación de pies en posición lateral",
+    "descripcion": "Ejercicio para abductores en posición lateral"
+  },
+  {
+    "grupo": "Glúteos-Cuádriceps",
+    "nombre": "side lying hip adduction",
+    "gif": "/gif/gluteo-cuadriceps/Side-Lying-Hip-Adduction-unscreen.gif",
+    "series": "3x4",
+    "nombre_español": "Aducción de cadera en posición lateral",
+    "descripcion": "Ejercicio para aductores en posición lateral"
+  },
+  {
+    "grupo": "Glúteos-Cuádriceps",
+    "nombre": "side plank hip adduction copenhagen adduction",
+    "gif": "/gif/gluteo-cuadriceps/Side-Plank-Hip-Adduction-Copen-unscreen.gif",
+    "series": "3x4",
+    "nombre_español": "Plancha lateral con aducción de Copenhague",
+    "descripcion": "Ejercicio avanzado para aductores y core"
+  },
+  {
+    "grupo": "Glúteos-Cuádriceps",
+    "nombre": "single knee to chest stretch",
+    "gif": "/gif/gluteo-cuadriceps/Single-Knee-To-Chest-Stretch-unscreen.gif",
+    "series": "3x4",
+    "nombre_español": "Estiramiento de rodilla al pecho",
+    "descripcion": "Estiramiento básico para glúteos y cadera"
+  },
+  {
+    "grupo": "Glúteos-Cuádriceps",
+    "nombre": "single leg box jump",
+    "gif": "/gif/gluteo-cuadriceps/Single-Leg-Box-Jump-unscreen.gif",
+    "series": "3x4",
+    "nombre_español": "Salto a caja a una pierna",
+    "descripcion": "Ejercicio pliométrico unilateral avanzado"
+  },
+  {
+    "grupo": "Glúteos-Cuádriceps",
+    "nombre": "single leg bridge",
+    "gif": "/gif/gluteo-cuadriceps/Single-Leg-Bridge-unscreen.gif",
+    "series": "3x4",
+    "nombre_español": "Puente a una pierna",
+    "descripcion": "Variación unilateral del puente de glúteos"
+  },
+  {
+    "grupo": "Glúteos-Cuádriceps",
+    "nombre": "single leg dumbbell hip thrust",
+    "gif": "/gif/gluteo-cuadriceps/Single-Leg-Dumbbell-Hip-Thrust-unscreen.gif",
+    "series": "3x4",
+    "nombre_español": "Empuje de cadera a una pierna con mancuerna",
+    "descripcion": "Variación unilateral avanzada con peso"
+  },
+  {
+    "grupo": "Glúteos-Cuádriceps",
+    "nombre": "single leg hip thrust jump",
+    "gif": "/gif/gluteo-cuadriceps/Single-Leg-Hip-Thrust-Jump-unscreen.gif",
+    "series": "3x4",
+    "nombre_español": "Salto con empuje de cadera a una pierna",
+    "descripcion": "Ejercicio pliométrico unilateral para glúteos"
+  },
+  {
+    "grupo": "Glúteos-Cuádriceps",
+    "nombre": "single leg reverse hyperextension",
+    "gif": "/gif/gluteo-cuadriceps/Single-Leg-Reverse-Hyperextens-unscreen.gif",
+    "series": "3x4",
+    "nombre_español": "Hiperextensión inversa a una pierna",
+    "descripcion": "Variación unilateral para glúteos y espalda baja"
+  },
+  {
+    "grupo": "Glúteos-Cuádriceps",
+    "nombre": "single stiff leg deadlift",
+    "gif": "/gif/gluteo-cuadriceps/Single-stiff-leg-deadlift-unscreen.gif",
+    "series": "3x4",
+    "nombre_español": "Peso muerto a una pierna con pierna rígida",
+    "descripcion": "Variación unilateral que enfatiza glúteos e isquiotibiales"
+  },
+  {
+    "grupo": "Glúteos-Cuádriceps",
+    "nombre": "sitting rotation hip stretch",
+    "gif": "/gif/gluteo-cuadriceps/Sitting-Rotation-Hip-Stretch-unscreen.gif",
+    "series": "3x4",
+    "nombre_español": "Estiramiento de cadera con rotación sentado",
+    "descripcion": "Estiramiento para movilidad de cadera en posición sentada"
+  },
+  {
+    "grupo": "Glúteos-Cuádriceps",
+    "nombre": "sitting wide leg adductor stretch",
+    "gif": "/gif/gluteo-cuadriceps/Sitting-Wide-Leg-Adductor-Stre-unscreen.gif",
+    "series": "3x4",
+    "nombre_español": "Estiramiento de aductores con piernas abiertas sentado",
+    "descripcion": "Estiramiento para parte interna del muslo en posición sentada"
+  },
+  {
+    "grupo": "Glúteos-Cuádriceps",
+    "nombre": "skater",
+    "gif": "/gif/gluteo-cuadriceps/Skater-unscreen.gif",
+    "series": "3x4",
+    "nombre_español": "Patín",
+    "descripcion": "Ejercicio dinámico para glúteos y equilibrio"
+  },
+  {
+    "grupo": "Glúteos-Cuádriceps",
+    "nombre": "smith machine good morning",
+    "gif": "/gif/gluteo-cuadriceps/Smith-Machine-Good-Morning-unscreen.gif",
+    "series": "3x4",
+    "nombre_español": "Good morning en máquina Smith",
+    "descripcion": "Variación con barra guiada para glúteos e isquiotibiales"
+  },
+  {
+    "grupo": "Glúteos-Cuádriceps",
+    "nombre": "smith machine hip thrust",
+    "gif": "/gif/gluteo-cuadriceps/Smith-Machine-Hip-Thrust-unscreen.gif",
+    "series": "3x4",
+    "nombre_español": "Empuje de cadera en máquina Smith",
+    "descripcion": "Variación con barra guiada para glúteos"
+  },
+  {
+    "grupo": "Glúteos-Cuádriceps",
+    "nombre": "smith machine lunge",
+    "gif": "/gif/gluteo-cuadriceps/Smith-Machine-Lunge-unscreen.gif",
+    "series": "3x4",
+    "nombre_español": "Estocada en máquina Smith",
+    "descripcion": "Variación de estocada con barra guiada"
+  },
+  {
+    "grupo": "Glúteos-Cuádriceps",
+    "nombre": "smith machine reverse kickback",
+    "gif": "/gif/gluteo-cuadriceps/Smith-Machine-Reverse-Kickback-unscreen.gif",
+    "series": "3x4",
+    "nombre_español": "Patada inversa en máquina Smith",
+    "descripcion": "Ejercicio de extensión de cadera con máquina"
+  },
+  {
+    "grupo": "Glúteos-Cuádriceps",
+    "nombre": "split squat gymstick",
+    "gif": "/gif/gluteo-cuadriceps/Split-Squat-Gymstick-unscreen.gif",
+    "series": "3x4",
+    "nombre_español": "Sentadilla dividida con gymstick",
+    "descripcion": "Variación de sentadilla con barra flexible"
+  },
+  {
+    "grupo": "Glúteos-Cuádriceps",
+    "nombre": "split squat",
+    "gif": "/gif/gluteo-cuadriceps/Split-Squat-unscreen.gif",
+    "series": "3x4",
+    "nombre_español": "Sentadilla dividida",
+    "descripcion": "Ejercicio unilateral para piernas"
+  },
+  {
+    "grupo": "Glúteos-Cuádriceps",
+    "nombre": "squat gymstick",
+    "gif": "/gif/gluteo-cuadriceps/Squat-Gymstick-unscreen.gif",
+    "series": "3x4",
+    "nombre_español": "Sentadilla con gymstick",
+    "descripcion": "Variación de sentadilla con barra flexible"
+  },
+  {
+    "grupo": "Glúteos-Cuádriceps",
+    "nombre": "squat mobility complex",
+    "gif": "/gif/gluteo-cuadriceps/Squat-mobility-Complex-unscreen.gif",
+    "series": "3x4",
+    "nombre_español": "Complejo de movilidad para sentadilla",
+    "descripcion": "Serie de ejercicios para mejorar movilidad en sentadilla"
+  },
+  {
+    "grupo": "Glúteos-Cuádriceps",
+    "nombre": "squat on the abductor machine",
+    "gif": "/gif/gluteo-cuadriceps/Squat-on-The-Abductor-Machine-unscreen.gif",
+    "series": "3x4",
+    "nombre_español": "Sentadilla en máquina de abducción",
+    "descripcion": "Variación creativa usando máquina de abductores"
+  },
+  {
+    "grupo": "Glúteos-Cuádriceps",
+    "nombre": "standing cross leg hamstring stretch",
+    "gif": "/gif/gluteo-cuadriceps/Standing-Cross-Leg-Hamstring-S-unscreen.gif",
+    "series": "3x4",
+    "nombre_español": "Estiramiento de isquiotibiales con piernas cruzadas",
+    "descripcion": "Estiramiento para parte posterior del muslo"
+  },
+  {
+    "grupo": "Glúteos-Cuádriceps",
+    "nombre": "standing hamstring stretch",
+    "gif": "/gif/gluteo-cuadriceps/Standing-Hamstring-Stretch-unscreen.gif",
+    "series": "3x4",
+    "nombre_español": "Estiramiento de isquiotibiales de pie",
+    "descripcion": "Estiramiento básico para parte posterior del muslo"
+  },
+  {
+    "grupo": "Glúteos-Cuádriceps",
+    "nombre": "standing hip abduction 1",
+    "gif": "/gif/gluteo-cuadriceps/Standing-Hip-Abduction-1-unscreen.gif",
+    "series": "3x4",
+    "nombre_español": "Abducción de cadera de pie",
+    "descripcion": "Ejercicio para glúteo medio en posición vertical"
+  },
+  {
+    "grupo": "Glúteos-Cuádriceps",
+    "nombre": "standing hip extension",
+    "gif": "/gif/gluteo-cuadriceps/Standing-Hip-Extension-unscreen.gif",
+    "series": "3x4",
+    "nombre_español": "Extensión de cadera de pie",
+    "descripcion": "Ejercicio para glúteos en posición vertical"
+  },
+  {
+    "grupo": "Glúteos-Cuádriceps",
+    "nombre": "standing leg circles",
+    "gif": "/gif/gluteo-cuadriceps/Standing-Leg-Circles-unscreen.gif",
+    "series": "3x4",
+    "nombre_español": "Círculos con pierna de pie",
+    "descripcion": "Ejercicio dinámico para movilidad de cadera"
+  },
+  {
+    "grupo": "Glúteos-Cuádriceps",
+    "nombre": "standing wide knees adductor stretch",
+    "gif": "/gif/gluteo-cuadriceps/Standing-Wide-Knees-Adductor-S-unscreen.gif",
+    "series": "3x4",
+    "nombre_español": "Estiramiento de aductores con rodillas abiertas",
+    "descripcion": "Estiramiento para parte interna del muslo"
+  },
+  {
+    "grupo": "Glúteos-Cuádriceps",
+    "nombre": "standing wide leg adductor stretch",
+    "gif": "/gif/gluteo-cuadriceps/Standing-Wide-Leg-Adductor-Str-unscreen.gif",
+    "series": "3x4",
+    "nombre_español": "Estiramiento de aductores con piernas abiertas",
+    "descripcion": "Estiramiento para parte interna del muslo"
+  },
+  {
+    "grupo": "Glúteos-Cuádriceps",
+    "nombre": "static lunge",
+    "gif": "/gif/gluteo-cuadriceps/Static-Lunge-unscreen.gif",
+    "series": "3x4",
+    "nombre_español": "Estocada estática",
+    "descripcion": "Variación de estocada sin movimiento entre repeticiones"
+  },
+  {
+    "grupo": "Glúteos-Cuádriceps",
+    "nombre": "step up single leg balance with bicep curl",
+    "gif": "/gif/gluteo-cuadriceps/Step-Up-Single-Leg-Balance-wit-unscreen.gif",
+    "series": "3x4",
+    "nombre_español": "Step up con equilibrio a una pierna y curl de bíceps",
+    "descripcion": "Ejercicio combinado para piernas y brazos"
+  },
+  {
+    "grupo": "Glúteos-Cuádriceps",
+    "nombre": "stiff leg deadlift",
+    "gif": "/gif/gluteo-cuadriceps/Stiff-Leg-Deadlift-unscreen.gif",
+    "series": "3x4",
+    "nombre_español": "Peso muerto con piernas rígidas",
+    "descripcion": "Variación que enfatiza glúteos e isquiotibiales"
+  },
+  {
+    "grupo": "Glúteos-Cuádriceps",
+    "nombre": "straight leg kickback",
+    "gif": "/gif/gluteo-cuadriceps/Straight-Leg-Kickback-unscreen.gif",
+    "series": "3x4",
+    "nombre_español": "Patada hacia atrás con pierna recta",
+    "descripcion": "Ejercicio de extensión de cadera para glúteos"
+  },
+  {
+    "grupo": "Glúteos-Cuádriceps",
+    "nombre": "sumo plie dumbbell squat",
+    "gif": "/gif/gluteo-cuadriceps/Sumo-Plie-Dumbbell-Squat-unscreen.gif",
+    "series": "3x4",
+    "nombre_español": "Sentadilla sumo plié con mancuernas",
+    "descripcion": "Variación de sentadilla con énfasis en aductores"
+  },
+  {
+    "grupo": "Glúteos-Cuádriceps",
+    "nombre": "supported one leg standing hip flexor and knee extensor stretch",
+    "gif": "/gif/gluteo-cuadriceps/Supported-One-Leg-Standing-Hip-unscreen.gif",
+    "series": "3x4",
+    "nombre_español": "Estiramiento de flexor de cadera y extensores de rodilla a una pierna con apoyo",
+    "descripcion": "Estiramiento avanzado con apoyo para movilidad"
+  },
+  {
+    "grupo": "Glúteos-Cuádriceps",
+    "nombre": "swimming",
+    "gif": "/gif/gluteo-cuadriceps/Swimming-unscreen.gif",
+    "series": "3x4",
+    "nombre_español": "Natación",
+    "descripcion": "Ejercicio de core que también activa glúteos"
+  },
+  {
+    "grupo": "Glúteos-Cuádriceps",
+    "nombre": "swing gymstick",
+    "gif": "/gif/gluteo-cuadriceps/Swing-Gymstick-unscreen.gif",
+    "series": "3x4",
+    "nombre_español": "Balanceo con gymstick",
+    "descripcion": "Ejercicio dinámico con barra flexible"
+  },
+  {
+    "grupo": "Glúteos-Cuádriceps",
+    "nombre": "trx pistol squat",
+    "gif": "/gif/gluteo-cuadriceps/TRX-Pistol-Squat-unscreen.gif",
+    "series": "3x4",
+    "nombre_español": "Sentadilla pistol con TRX",
+    "descripcion": "Variación asistida de sentadilla a una pierna"
+  },
+  {
+    "grupo": "Glúteos-Cuádriceps",
+    "nombre": "the box jump",
+    "gif": "/gif/gluteo-cuadriceps/The-Box-Jump-unscreen.gif",
+    "series": "3x4",
+    "nombre_español": "Salto al cajón",
+    "descripcion": "Ejercicio pliométrico para potencia en piernas"
+  },
+  {
+    "grupo": "Glúteos-Cuádriceps",
+    "nombre": "towel leg curl",
+    "gif": "/gif/gluteo-cuadriceps/Towel-Leg-Curl-unscreen.gif",
+    "series": "3x4",
+    "nombre_español": "Felxores de piernas con toalla",
+    "descripcion": "Ejercicio para isquiotibiales usando toalla como deslizador"
+  },
+  {
+    "grupo": "Glúteos-Cuádriceps",
+    "nombre": "unilateral bridge",
+    "gif": "/gif/gluteo-cuadriceps/Unilateral-Bridge-unscreen.gif",
+    "series": "3x4",
+    "nombre_español": "Puente unilateral",
+    "descripcion": "Variación a una pierna del puente de glúteos"
+  },
+  {
+    "grupo": "Glúteos-Cuádriceps",
+    "nombre": "wall sit 238x360",
+    "gif": "/gif/gluteo-cuadriceps/Wall-Sit-IMG.png",
+    "series": "3x4",
+    "nombre_español": "Sentadilla en pared",
+    "descripcion": "Ejercicio isométrico para cuádriceps"
+  },
+  {
+    "grupo": "Glúteos-Cuádriceps",
+    "nombre": "zercher squat",
+    "gif": "/gif/gluteo-cuadriceps/Zercher-Squat-unscreen.gif",
+    "series": "3x4",
+    "nombre_español": "Sentadilla Zercher",
+    "descripcion": "Variación de sentadilla con barra en antebrazos"
+  },
+  {
+    "grupo": "Glúteos-Cuádriceps",
+    "nombre": "arm leg raise",
+    "gif": "/gif/gluteo-cuadriceps/arm-leg-raise-unscreen.gif",
+    "series": "3x4",
+    "nombre_español": "Elevación de brazo y pierna",
+    "descripcion": "Ejercicio para core y estabilidad"
+  },
+  {
+    "grupo": "Glúteos-Cuádriceps",
+    "nombre": "barbell rack pull",
+    "gif": "/gif/gluteo-cuadriceps/barbell-rack-pull-unscreen.gif",
+    "series": "3x4",
+    "nombre_español": "Rack pull con barra",
+    "descripcion": "Variación de peso muerto con rango reducido"
+  },
+  {
+    "grupo": "Glúteos-Cuádriceps",
+    "nombre": "belt squat",
+    "gif": "/gif/gluteo-cuadriceps/belt-squat-unscreen.gif",
+    "series": "3x4",
+    "nombre_español": "Sentadilla con cinturón",
+    "descripcion": "Variación de sentadilla con peso en cinturón"
+  },
+  {
+    "grupo": "Glúteos-Cuádriceps",
+    "nombre": "bodyweight hip thrust",
+    "gif": "/gif/gluteo-cuadriceps/bodyweight-hip-thrust-unscreen.gif",
+    "series": "3x4",
+    "nombre_español": "Empuje de cadera con peso corporal",
+    "descripcion": "Ejercicio básico para glúteos sin peso adicional"
+  },
+  {
+    "grupo": "Glúteos-Cuádriceps",
+    "nombre": "bodyweight lunges",
+    "gif": "/gif/gluteo-cuadriceps/bodyweight-lunges-unscreen.gif",
+    "series": "3x4",
+    "nombre_español": "Estocadas con peso corporal",
+    "descripcion": "Variación básica de estocada sin peso"
+  },
+  {
+    "grupo": "Glúteos-Cuádriceps",
+    "nombre": "bodyweight reverse lunge",
+    "gif": "/gif/gluteo-cuadriceps/bodyweight-reverse-lunge-unscreen.gif",
+    "series": "3x4",
+    "nombre_español": "Estocada inversa con peso corporal",
+    "descripcion": "Variación básica de estocada hacia atrás sin peso"
+  },
+  {
+    "grupo": "Glúteos-Cuádriceps",
+    "nombre": "bodyweight squat full version",
+    "gif": "/gif/gluteo-cuadriceps/bodyweight-squat-full-version-unscreen.gif",
+    "series": "3x4",
+    "nombre_español": "Sentadilla completa con peso corporal",
+    "descripcion": "Ejercicio fundamental para piernas sin peso adicional"
+  },
+  {
+    "grupo": "Glúteos-Cuádriceps",
+    "nombre": "burpees",
+    "gif": "/gif/gluteo-cuadriceps/burpees-unscreen.gif",
+    "series": "3x4",
+    "nombre_español": "Burpees",
+    "descripcion": "Ejercicio completo que también trabaja piernas"
+  },
+  {
+    "grupo": "Glúteos-Cuádriceps",
+    "nombre": "curtsy lunge",
+    "gif": "/gif/gluteo-cuadriceps/curtsy-lunge-unscreen.gif",
+    "series": "3x4",
+    "nombre_español": "Estocada reverencia",
+    "descripcion": "Variación de estocada cruzada para glúteos"
+  },
+  {
+    "grupo": "Glúteos-Cuádriceps",
+    "nombre": "dumbbell bench squat",
+    "gif": "/gif/gluteo-cuadriceps/dumbbell-bench-squat-unscreen.gif",
+    "series": "3x4",
+    "nombre_español": "Sentadilla en banco con mancuernas",
+    "descripcion": "Variación de sentadilla con apoyo en banco"
+  },
+  {
+    "grupo": "Glúteos-Cuádriceps",
+    "nombre": "dumbbell cossack squat",
+    "gif": "/gif/gluteo-cuadriceps/dumbbell-cossack-squat-unscreen.gif",
+    "series": "3x4",
+    "nombre_español": "Sentadilla cosaca con mancuernas",
+    "descripcion": "Variación lateral de sentadilla con peso"
+  },
+  {
+    "grupo": "Glúteos-Cuádriceps",
+    "nombre": "dumbbell deadlifts",
+    "gif": "/gif/gluteo-cuadriceps/dumbbell-deadlifts-unscreen.gif",
+    "series": "3x4",
+    "nombre_español": "Peso muerto con mancuernas",
+    "descripcion": "Variación básica de peso muerto con mancuernas"
+  },
+  {
+    "grupo": "Glúteos-Cuádriceps",
+    "nombre": "dumbbell forward leaning lunge",
+    "gif": "/gif/gluteo-cuadriceps/dumbbell-forward-leaning-lunge-unscreen.gif",
+    "series": "3x4",
+    "nombre_español": "Estocada inclinada hacia adelante con mancuernas",
+    "descripcion": "Variación que enfatiza glúteos e isquiotibiales"
+  },
+  {
+    "grupo": "Glúteos-Cuádriceps",
+    "nombre": "dumbbell lunges",
+    "gif": "/gif/gluteo-cuadriceps/dumbbell-lunges-unscreen.gif",
+    "series": "3x4",
+    "nombre_español": "Estocadas con mancuernas",
+    "descripcion": "Variación básica de estocada con peso"
+  },
+  {
+    "grupo": "Glúteos-Cuádriceps",
+    "nombre": "dumbbell sumo deadlift",
+    "gif": "/gif/gluteo-cuadriceps/dumbbell-sumo-deadlift-unscreen.gif",
+    "series": "3x4",
+    "nombre_español": "Peso muerto sumo con mancuernas",
+    "descripcion": "Variación con piernas abiertas usando mancuernas"
+  },
+  {
+    "grupo": "Glúteos-Cuádriceps",
+    "nombre": "dumbbell sumo squat",
+    "gif": "/gif/gluteo-cuadriceps/dumbbell-sumo-squat-unscreen.gif",
+    "series": "3x4",
+    "nombre_español": "Sentadilla sumo con mancuernas",
+    "descripcion": "Variación de sentadilla con piernas abiertas y peso"
+  },
+  {
+    "grupo": "Glúteos-Cuádriceps",
+    "nombre": "jefferson squat",
+    "gif": "/gif/gluteo-cuadriceps/jefferson-squat-unscreen.gif",
+    "series": "3x4",
+    "nombre_español": "Sentadilla Jefferson",
+    "descripcion": "Variación de sentadilla con barra entre piernas"
+  },
+  {
+    "grupo": "Glúteos-Cuádriceps",
+    "nombre": "kettlebell deadlift",
+    "gif": "/gif/gluteo-cuadriceps/kettlebell-deadlift-unscreen.gif",
+    "series": "3x4",
+    "nombre_español": "Peso muerto con kettlebell",
+    "descripcion": "Variación básica de peso muerto con kettlebell"
+  },
+  {
+    "grupo": "Glúteos-Cuádriceps",
+    "nombre": "kettlebell goblet squat",
+    "gif": "/gif/gluteo-cuadriceps/kettlebell-goblet-squat-unscreen.gif",
+    "series": "3x4",
+    "nombre_español": "Sentadilla copa con kettlebell",
+    "descripcion": "Variación de sentadilla frontal con kettlebell"
+  },
+  {
+    "grupo": "Glúteos-Cuádriceps",
+    "nombre": "power lunge",
+    "gif": "/gif/gluteo-cuadriceps/power-lunge-unscreen.gif",
+    "series": "3x4",
+    "nombre_español": "Estocada de potencia",
+    "descripcion": "Variación explosiva de estocada"
+  },
+  {
+    "grupo": "Glúteos-Cuádriceps",
+    "nombre": "smith machine squat",
+    "gif": "/gif/gluteo-cuadriceps/smith-machine-squat-unscreen.gif",
+    "series": "3x4",
+    "nombre_español": "Sentadilla en máquina Smith",
+    "descripcion": "Variación de sentadilla con barra guiada"
+  },
+  {
+    "grupo": "Glúteos-Cuádriceps",
+    "nombre": "trap bar jump squat",
+    "gif": "/gif/gluteo-cuadriceps/trap-bar-jump-squat-unscreen.gif",
+    "series": "3x4",
+    "nombre_español": "Sentadilla con salto en barra hexagonal",
+    "descripcion": "Ejercicio pliométrico con barra especial"
+  },
+  {
+    "grupo": "Glúteos-Cuádriceps",
+    "nombre": "wall ball",
+    "gif": "/gif/gluteo-cuadriceps/wall-ball-unscreen.gif",
+    "series": "3x4",
+    "nombre_español": "Lanzamiento de balón a la pared",
+    "descripcion": "Ejercicio funcional que trabaja piernas y core"
+  },
+  {
+    "grupo": "Glúteos-Cuádriceps",
+    "nombre": "zercher deadlift",
+    "gif": "/gif/gluteo-cuadriceps/zercher-deadlift-unscreen.gif",
+    "series": "3x4",
+    "nombre_español": "Peso muerto Zercher",
+    "descripcion": "Variación de peso muerto con barra en antebrazos"
+  },
+   {
+    "grupo": "Glúteos-Cuádriceps",
+    "nombre": "zercher deadlift",
+    "gif": "/gif/gluteo-cuadriceps/Zercher-Squat-unscreen.gif",
+    "series": "3x4",
+    "nombre_español": "Peso muerto Zercher",
+    "descripcion": "Variación de peso muerto con barra en antebrazos"
+  }
+]

@@ -1,0 +1,426 @@
+[
+  {
+    "grupo": "Trapecio",
+    "nombre": "45 degree incline row",
+    "gif": "/gif/trapecio/45-Degree-Incline-Row-unscreen.gif",
+    "series": "3x4",
+    "nombre_español": "Remo en inclinación de 45 grados",
+    "descripcion": "Ejercicio para el trapecio: Remo en inclinación de 45 grados"
+  },
+  {
+    "grupo": "Trapecio",
+    "nombre": "band pull apart",
+    "gif": "/gif/trapecio/Band-pull-apart-unscreen.gif",
+    "series": "3x4",
+    "nombre_español": "Separación con banda",
+    "descripcion": "Ejercicio para el trapecio: Separación con banda"
+  },
+  {
+    "grupo": "Trapecio",
+    "nombre": "barbell rear delt raise",
+    "gif": "/gif/trapecio/Barbell-Rear-Delt-Raise-unscreen.gif",
+    "series": "3x4",
+    "nombre_español": "Elevación posterior con barra",
+    "descripcion": "Ejercicio para el trapecio: Elevación posterior con barra"
+  },
+  {
+    "grupo": "Trapecio",
+    "nombre": "barbell shrug",
+    "gif": "/gif/trapecio/Barbell-Shrug-unscreen.gif",
+    "series": "3x4",
+    "nombre_español": "Encogimiento con barra",
+    "descripcion": "Ejercicio para el trapecio: Encogimiento con barra"
+  },
+  {
+    "grupo": "Trapecio",
+    "nombre": "barbell upright row",
+    "gif": "/gif/trapecio/Barbell-Upright-Row-unscreen.gif",
+    "series": "3x4",
+    "nombre_español": "Remo vertical con barra",
+    "descripcion": "Ejercicio para el trapecio: Remo vertical con barra"
+  },
+  {
+    "grupo": "Trapecio",
+    "nombre": "behind the back barbell shrug reverse barbell shrug",
+    "gif": "/gif/trapecio/Behind-The-Back-Barbell-Shrug--unscreen.gif",
+    "series": "3x4",
+    "nombre_español": "Encogimiento con barra tras espalda",
+    "descripcion": "Ejercicio para el trapecio: Encogimiento con barra tras espalda"
+  },
+  {
+    "grupo": "Trapecio",
+    "nombre": "bent over barbell reverse raise",
+    "gif": "/gif/trapecio/Bent-Over-Barbell-Reverse-Rais-unscreen.gif",
+    "series": "3x4",
+    "nombre_español": "Elevación inversa inclinada con barra",
+    "descripcion": "Ejercicio para el trapecio: Elevación inversa inclinada con barra"
+  },
+  {
+    "grupo": "Trapecio",
+    "nombre": "bent over lateral raise",
+    "gif": "/gif/trapecio/Bent-Over-Lateral-Raise-unscreen.gif",
+    "series": "3x4",
+    "nombre_español": "Elevación lateral inclinada",
+    "descripcion": "Ejercicio para el trapecio: Elevación lateral inclinada"
+  },
+  {
+    "grupo": "Trapecio",
+    "nombre": "bent over rear delt fly gymstick",
+    "gif": "/gif/trapecio/Bent-Over-Rear-Delt-Fly-Gymsti-unscreen.gif",
+    "series": "3x4",
+    "nombre_español": "Apertura posterior inclinada con gymstick",
+    "descripcion": "Ejercicio para el trapecio: Apertura posterior inclinada con gymstick"
+  },
+  {
+    "grupo": "Trapecio",
+    "nombre": "bodyweight military press",
+    "gif": "/gif/trapecio/Bodyweight-Military-Press-unscreen.gif",
+    "series": "3x4",
+    "nombre_español": "Press militar con peso corporal",
+    "descripcion": "Ejercicio para el trapecio: Press militar con peso corporal"
+  },
+  {
+    "grupo": "Trapecio",
+    "nombre": "cable shrug",
+    "gif": "/gif/trapecio/Cable-Shrug-unscreen.gif",
+    "series": "3x4",
+    "nombre_español": "Encogimiento con cable",
+    "descripcion": "Ejercicio para el trapecio: Encogimiento con cable"
+  },
+  {
+    "grupo": "Trapecio",
+    "nombre": "cable upright row",
+    "gif": "/gif/trapecio/Cable-Upright-Row-unscreen.gif",
+    "series": "3x4",
+    "nombre_español": "Remo vertical con cable",
+    "descripcion": "Ejercicio para el trapecio: Remo vertical con cable"
+  },
+  {
+    "grupo": "Trapecio",
+    "nombre": "cross cable face pull",
+    "gif": "/gif/trapecio/Cross-Cable-Face-Pull-unscreen.gif",
+    "series": "3x4",
+    "nombre_español": "Jalón al rostro con cable cruzado",
+    "descripcion": "Ejercicio para el trapecio: Jalón al rostro con cable cruzado"
+  },
+  {
+    "grupo": "Trapecio",
+    "nombre": "dip shrugs",
+    "gif": "/gif/trapecio/Dip-Shrugs-unscreen.gif",
+    "series": "3x4",
+    "nombre_español": "Encogimientos en dips",
+    "descripcion": "Ejercicio para el trapecio: Encogimientos en dips"
+  },
+   {
+    "grupo": "Espalda",
+    "nombre": "Dominadas con elástico frontal",
+    "gif": "/gif/trapecio/dominadas-elastico-barra.png",
+    "series": "3x4",
+    "nombre_español": "Dominadas con banda de resistencia",
+    "descripcion": "Ejercicio para fortalecer la espalda: Dominadas con banda de resistencia"
+  },
+  {
+    "grupo": "Trapecio",
+    "nombre": "dumbbell decline shrug",
+    "gif": "/gif/trapecio/Dumbbell-Decline-Shrug-unscreen.gif",
+    "series": "3x4",
+    "nombre_español": "Encogimiento en declive con mancuernas",
+    "descripcion": "Ejercicio para el trapecio: Encogimiento en declive con mancuernas"
+  },
+  {
+    "grupo": "Trapecio",
+    "nombre": "dumbbell incline shrug",
+    "gif": "/gif/trapecio/Dumbbell-Incline-Shrug-unscreen.gif",
+    "series": "3x4",
+    "nombre_español": "Encogimiento en inclinación con mancuernas",
+    "descripcion": "Ejercicio para el trapecio: Encogimiento en inclinación con mancuernas"
+  },
+  {
+    "grupo": "Trapecio",
+    "nombre": "dumbbell incline t raise",
+    "gif": "/gif/trapecio/Dumbbell-Incline-T-Raise-unscreen.gif",
+    "series": "3x4",
+    "nombre_español": "Elevación en T inclinado con mancuernas",
+    "descripcion": "Ejercicio para el trapecio: Elevación en T inclinado con mancuernas"
+  },
+  {
+    "grupo": "Trapecio",
+    "nombre": "dumbbell raise",
+    "gif": "/gif/trapecio/Dumbbell-Raise-unscreen.gif",
+    "series": "3x4",
+    "nombre_español": "Elevación con mancuernas",
+    "descripcion": "Ejercicio para el trapecio: Elevación con mancuernas"
+  },
+  {
+    "grupo": "Trapecio",
+    "nombre": "dumbbell reverse fly",
+    "gif": "/gif/trapecio/Dumbbell-Reverse-Fly-unscreen.gif",
+    "series": "3x4",
+    "nombre_español": "Apertura invertida con mancuernas",
+    "descripcion": "Ejercicio para el trapecio: Apertura invertida con mancuernas"
+  },
+  {
+    "grupo": "Trapecio",
+    "nombre": "dumbbell seated gittleson shrug",
+    "gif": "/gif/trapecio/Dumbbell-Seated-Gittleson-Shru-unscreen.gif",
+    "series": "3x4",
+    "nombre_español": "Encogimiento Gittleson sentado con mancuernas",
+    "descripcion": "Ejercicio para el trapecio: Encogimiento Gittleson sentado con mancuernas"
+  },
+  {
+    "grupo": "Trapecio",
+    "nombre": "dumbbell shrug",
+    "gif": "/gif/trapecio/Dumbbell-Shrug-unscreen.gif",
+    "series": "3x4",
+    "nombre_español": "Encogimiento con mancuernas",
+    "descripcion": "Ejercicio para el trapecio: Encogimiento con mancuernas"
+  },
+  {
+    "grupo": "Trapecio",
+    "nombre": "dumbbell upright row",
+    "gif": "/gif/trapecio/Dumbbell-Upright-Row-unscreen.gif",
+    "series": "3x4",
+    "nombre_español": "Remo vertical con mancuernas",
+    "descripcion": "Ejercicio para el trapecio: Remo vertical con mancuernas"
+  },
+  {
+    "grupo": "Trapecio",
+    "nombre": "elbow reverse push up",
+    "gif": "/gif/trapecio/Elbow-Reverse-Push-Up-unscreen.gif",
+    "series": "3x4",
+    "nombre_español": "Flexión inversa de codos",
+    "descripcion": "Ejercicio para el trapecio: Flexión inversa de codos"
+  },
+  {
+    "grupo": "Trapecio",
+    "nombre": "face pull",
+    "gif": "/gif/trapecio/Face-pull-unscreen.gif",
+    "series": "3x4",
+    "nombre_español": "Jalón al rostro",
+    "descripcion": "Ejercicio para el trapecio: Jalón al rostro"
+  },
+  {
+    "grupo": "Trapecio",
+    "nombre": "foam roller upper back",
+    "gif": "/gif/trapecio/Foam-Roller-Upper-Back-unscreen.gif",
+    "series": "3x4",
+    "nombre_español": "Rodillo de espuma para espalda superior",
+    "descripcion": "Ejercicio para el trapecio: Rodillo de espuma para espalda superior"
+  },
+  {
+    "grupo": "Trapecio",
+    "nombre": "half kneeling high cable row rope",
+    "gif": "/gif/trapecio/Half-Kneeling-High-Cable-Row-R-unscreen.gif",
+    "series": "3x4",
+    "nombre_español": "Remo alto con cable de rodillas con cuerda",
+    "descripcion": "Ejercicio para el trapecio: Remo alto con cable de rodillas con cuerda"
+  },
+  {
+    "grupo": "Trapecio",
+    "nombre": "incline dumbbell y raise",
+    "gif": "/gif/trapecio/Incline-Dumbbell-Y-Raise-unscreen.gif",
+    "series": "3x4",
+    "nombre_español": "Elevación en Y inclinado con mancuernas",
+    "descripcion": "Ejercicio para el trapecio: Elevación en Y inclinado con mancuernas"
+  },
+  {
+    "grupo": "Trapecio",
+    "nombre": "kneeling high pulley row",
+    "gif": "/gif/trapecio/Kneeling-High-Pulley-Row-unscreen.gif",
+    "series": "3x4",
+    "nombre_español": "Remo alto de rodillas con polea",
+    "descripcion": "Ejercicio para el trapecio: Remo alto de rodillas con polea"
+  },
+  {
+    "grupo": "Trapecio",
+    "nombre": "lever gripless shrug",
+    "gif": "/gif/trapecio/Lever-Gripless-Shrug-unscreen.gif",
+    "series": "3x4",
+    "nombre_español": "Encogimiento sin agarre en palanca",
+    "descripcion": "Ejercicio para el trapecio: Encogimiento sin agarre en palanca"
+  },
+  {
+    "grupo": "Trapecio",
+    "nombre": "lever shrug",
+    "gif": "/gif/trapecio/Lever-Shrug-unscreen.gif",
+    "series": "3x4",
+    "nombre_español": "Encogimiento en palanca",
+    "descripcion": "Ejercicio para el trapecio: Encogimiento en palanca"
+  },
+  {
+    "grupo": "Trapecio",
+    "nombre": "one arm dumbbell upright row",
+    "gif": "/gif/trapecio/One-Arm-Dumbbell-Upright-Row-unscreen.gif",
+    "series": "3x4",
+    "nombre_español": "Remo vertical a un brazo con mancuerna",
+    "descripcion": "Ejercicio para el trapecio: Remo vertical a un brazo con mancuerna"
+  },
+  {
+    "grupo": "Trapecio",
+    "nombre": "push up plus",
+    "gif": "/gif/trapecio/Push-Up-Plus-unscreen.gif",
+    "series": "3x4",
+    "nombre_español": "Flexión plus",
+    "descripcion": "Ejercicio para el trapecio: Flexión plus"
+  },
+  {
+    "grupo": "Trapecio",
+    "nombre": "rear delt machine flys",
+    "gif": "/gif/trapecio/Rear-Delt-Machine-Flys-unscreen.gif",
+    "series": "3x4",
+    "nombre_español": "Posterior en máquina",
+    "descripcion": "Ejercicio para el trapecio: Apertura posterior en máquina"
+  },
+  {
+    "grupo": "Trapecio",
+    "nombre": "resistance band bent over rear delt fly",
+    "gif": "/gif/trapecio/Resistance-Band-Bent-Over-Rear-unscreen.gif",
+    "series": "3x4",
+    "nombre_español": "Apertura posterior inclinada con banda",
+    "descripcion": "Ejercicio para el trapecio: Apertura posterior inclinada con banda"
+  },
+  {
+    "grupo": "Trapecio",
+    "nombre": "resistance band pull apart",
+    "gif": "/gif/trapecio/Resistance-Band-Pull-Apart-unscreen.gif",
+    "series": "3x4",
+    "nombre_español": "Separación con banda de resistencia",
+    "descripcion": "Ejercicio para el trapecio: Separación con banda de resistencia"
+  },
+  {
+    "grupo": "Trapecio",
+    "nombre": "roll rhomboids",
+    "gif": "/gif/trapecio/Roll-Rhomboids-unscreen.gif",
+    "series": "3x4",
+    "nombre_español": "Rodamiento para romboides",
+    "descripcion": "Ejercicio para el trapecio: Rodamiento para romboides"
+  },
+  {
+    "grupo": "Trapecio",
+    "nombre": "scapula dips",
+    "gif": "/gif/trapecio/Scapula-Dips-unscreen.gif",
+    "series": "3x4",
+    "nombre_español": "Dips para escápula",
+    "descripcion": "Ejercicio para el trapecio: Dips para escápula"
+  },
+  {
+    "grupo": "Trapecio",
+    "nombre": "scapula pull up",
+    "gif": "/gif/trapecio/Scapula-Pull-up-unscreen.gif",
+    "series": "3x4",
+    "nombre_español": "Dominadas para escápula",
+    "descripcion": "Ejercicio para el trapecio: Dominadas para escápula"
+  },
+  {
+    "grupo": "Trapecio",
+    "nombre": "scapular protraction and retraction",
+    "gif": "/gif/trapecio/Scapular-Protraction-and-Retra-unscreen.gif",
+    "series": "3x4",
+    "nombre_español": "Protracción y retracción escapular",
+    "descripcion": "Ejercicio para el trapecio: Protracción y retracción escapular"
+  },
+  {
+    "grupo": "Trapecio",
+    "nombre": "seated ballerina",
+    "gif": "/gif/trapecio/Seated-Ballerina-unscreen.gif",
+    "series": "3x4",
+    "nombre_español": "Bailarina sentada",
+    "descripcion": "Ejercicio para el trapecio: Bailarina sentada"
+  },
+  {
+    "grupo": "Trapecio",
+    "nombre": "seated scapular retraction exercise",
+    "gif": "/gif/trapecio/Seated-Scapular-Retraction-Exe-unscreen.gif",
+    "series": "3x4",
+    "nombre_español": "Ejercicio de retracción escapular sentado",
+    "descripcion": "Ejercicio para el trapecio: Ejercicio de retracción escapular sentado"
+  },
+  {
+    "grupo": "Trapecio",
+    "nombre": "serratus wall slide with foam roller",
+    "gif": "/gif/trapecio/Serratus-Wall-Slide-With-Foam-Roller-unscreen.gif",
+    "series": "3x4",
+    "nombre_español": "Deslizamiento en pared para serrato con rodillo",
+    "descripcion": "Ejercicio para el trapecio: Deslizamiento en pared para serrato con rodillo"
+  },
+  {
+    "grupo": "Trapecio",
+    "nombre": "standing single arm upright row",
+    "gif": "/gif/trapecio/Standing-Single-Arm-Upright-Row-unscreen.gif",
+    "series": "3x4",
+    "nombre_español": "Remo vertical a un brazo de pie",
+    "descripcion": "Ejercicio para el trapecio: Remo vertical a un brazo de pie"
+  },
+  {
+    "grupo": "Trapecio",
+    "nombre": "swimming",
+    "gif": "/gif/trapecio/Swimming-unscreen.gif",
+    "series": "3x4",
+    "nombre_español": "Natación",
+    "descripcion": "Ejercicio para el trapecio: Natación"
+  },
+  {
+    "grupo": "Trapecio",
+    "nombre": "wide grip alternate barbell bent over row plus",
+    "gif": "/gif/trapecio/Wide-Grip-Alternate-Barbell-Be-unscreen.gif",
+    "series": "3x4",
+    "nombre_español": "Remo inclinado alterno con agarre ancho plus",
+    "descripcion": "Ejercicio para el trapecio: Remo inclinado alterno con agarre ancho plus"
+  },
+  {
+    "grupo": "Trapecio",
+    "nombre": "wide grip barbell bent over row plus",
+    "gif": "/gif/trapecio/Wide-Grip-Barbell-Bent-Over-Ro-unscreen.gif",
+    "series": "3x4",
+    "nombre_español": "Remo inclinado con agarre ancho plus",
+    "descripcion": "Ejercicio para el trapecio: Remo inclinado con agarre ancho plus"
+  },
+  {
+    "grupo": "Trapecio",
+    "nombre": "barbell uprightrow",
+    "gif": "/gif/trapecio/barbell-uprightrow-unscreen.gif",
+    "series": "3x4",
+    "nombre_español": "Remo vertical con barra",
+    "descripcion": "Ejercicio para el trapecio: Remo vertical con barra"
+  },
+  {
+    "grupo": "Trapecio",
+    "nombre": "bent over reverse cable fly",
+    "gif": "/gif/trapecio/bent-over-reverse-cable-fly-unscreen.gif",
+    "series": "3x4",
+    "nombre_español": "Apertura invertida inclinada con cable",
+    "descripcion": "Ejercicio para el trapecio: Apertura invertida inclinada con cable"
+  },
+  {
+    "grupo": "Trapecio",
+    "nombre": "cable rear delt fly",
+    "gif": "/gif/trapecio/cable-rear-delt-fly-unscreen.gif",
+    "series": "3x4",
+    "nombre_español": "Apertura posterior con cable",
+    "descripcion": "Ejercicio para el trapecio: Apertura posterior con cable"
+  },
+  {
+    "grupo": "Trapecio",
+    "nombre": "cable y raise",
+    "gif": "/gif/trapecio/cable-y-raise-unscreen.gif",
+    "series": "3x4",
+    "nombre_español": "Elevación en Y con cable",
+    "descripcion": "Ejercicio para el trapecio: Elevación en Y con cable"
+  },
+  {
+    "grupo": "Trapecio",
+    "nombre": "overhead shrug",
+    "gif": "/gif/trapecio/overhead-shrug-unscreen.gif",
+    "series": "3x4",
+    "nombre_español": "Encogimiento por encima de la cabeza",
+    "descripcion": "Ejercicio para el trapecio: Encogimiento por encima de la cabeza"
+  },
+  {
+    "grupo": "Trapecio",
+    "nombre": "smith machine shrug",
+    "gif": "/gif/trapecio/smith-machine-shrug-unscreen.gif",
+    "series": "3x4",
+    "nombre_español": "Encogimiento en máquina Smith",
+    "descripcion": "Ejercicio para el trapecio: Encogimiento en máquina Smith"
+  }
+]
