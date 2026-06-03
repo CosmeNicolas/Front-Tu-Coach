@@ -40,6 +40,7 @@ interface Props {
   diaActivo: number;
   frecuenciaBloque: number | null;
   contentVersion: number;
+  progresoAlumno: Planification['progresoAlumno'];
   onUpdateSeccion: (
     titulo: string,
     updater: (s: PlanificationSection) => PlanificationSection,
@@ -55,6 +56,7 @@ export function TabSeccionContent({
   diaActivo,
   frecuenciaBloque,
   contentVersion,
+  progresoAlumno,
   onUpdateSeccion,
   onUpdateCardio,
   onAdjusted,
@@ -85,6 +87,7 @@ export function TabSeccionContent({
       diaActivo={diaActivo}
       frecuenciaBloque={frecuenciaBloque}
       contentVersion={contentVersion}
+      progresoAlumno={progresoAlumno}
       onUpdateSeccion={onUpdateSeccion}
       onAdjusted={onAdjusted}
     />
@@ -99,6 +102,7 @@ function SeccionPrincipal({
   diaActivo,
   frecuenciaBloque,
   contentVersion,
+  progresoAlumno,
   onUpdateSeccion,
   onAdjusted,
 }: {
@@ -109,6 +113,7 @@ function SeccionPrincipal({
   diaActivo: number;
   frecuenciaBloque: number | null;
   contentVersion: number;
+  progresoAlumno: Planification['progresoAlumno'];
   onUpdateSeccion: Props['onUpdateSeccion'];
   onAdjusted: Props['onAdjusted'];
 }) {
@@ -230,8 +235,10 @@ function SeccionPrincipal({
                   key={entry.id}
                   grupo={entry}
                   config={planification.config}
+                  catalogTabId={tabId}
                   planificationId={planification.id}
                   contentVersion={contentVersion}
+                  progresoAlumno={progresoAlumno}
                   modoSeleccion={combo.modoSeleccion}
                   onUpdateSubitem={(subId, updated) =>
                     updateGrupoSubitem(entry.id, subId, updated)
@@ -264,8 +271,10 @@ function SeccionPrincipal({
                 <CardEjercicio
                   item={entry}
                   config={planification.config}
+                  catalogTabId={tabId}
                   planificationId={planification.id}
                   contentVersion={contentVersion}
+                  progresoAlumno={progresoAlumno}
                   onUpdate={(updated) => updateSingleAt(idx, updated)}
                   onRemove={() => removeAt(idx)}
                   onAdjusted={onAdjusted}

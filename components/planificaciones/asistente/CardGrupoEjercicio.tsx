@@ -5,6 +5,7 @@ import {
   PlanificationConfig,
   PlanificationItemGroup,
   PlanificationItemSingle,
+  PlanificationProgress,
 } from '@/types/planification';
 import { CardEjercicio } from './CardEjercicio';
 import { CEMD } from './constants';
@@ -12,8 +13,10 @@ import { CEMD } from './constants';
 interface Props {
   grupo: PlanificationItemGroup;
   config: PlanificationConfig;
+  catalogTabId?: string;
   planificationId?: string;
   contentVersion?: number;
+  progresoAlumno?: PlanificationProgress;
   modoSeleccion?: boolean;
   onUpdateSubitem: (subId: string, item: PlanificationItemSingle) => void;
   onRemoveSubitem: (subId: string) => void;
@@ -24,8 +27,10 @@ interface Props {
 export function CardGrupoEjercicio({
   grupo,
   config,
+  catalogTabId = 'principal',
   planificationId,
   contentVersion,
+  progresoAlumno,
   modoSeleccion,
   onUpdateSubitem,
   onRemoveSubitem,
@@ -65,8 +70,10 @@ export function CardGrupoEjercicio({
               item={sub}
               config={config}
               compact
+              catalogTabId={catalogTabId}
               planificationId={planificationId}
               contentVersion={contentVersion}
+              progresoAlumno={progresoAlumno}
               onUpdate={(updated) => onUpdateSubitem(sub.id, updated)}
               onRemove={() => onRemoveSubitem(sub.id)}
               onAdjusted={onAdjusted}

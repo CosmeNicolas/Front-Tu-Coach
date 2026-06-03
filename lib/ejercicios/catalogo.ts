@@ -26,6 +26,10 @@ export interface EjercicioCatalogo {
   gif: string;
   series: string;
   descripcion: string;
+  /** Origen del ítem en catálogo fusionado */
+  source?: 'global' | 'private';
+  privateId?: string;
+  mediaType?: 'gif' | 'mp4' | 'webm' | 'image';
 }
 
 const TODOS: EjercicioCatalogo[] = [

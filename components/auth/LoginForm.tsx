@@ -1,11 +1,25 @@
 'use client';
 
-import { useState } from 'react';
+import { useEffect, useState } from 'react';
+import Image from 'next/image';
 import { useRouter, useSearchParams } from 'next/navigation';
+import { Eye, EyeOff, Loader2 } from 'lucide-react';
 import { toast } from 'sonner';
 import { loginRequest } from '@/lib/api/auth';
 import { getDashboardPath } from '@/lib/auth/roles';
 import { ApiError } from '@/lib/api/client';
+import { REMEMBER_EMAIL_KEY } from '@/lib/auth/constants';
+import { Button } from '@/components/ui/button';
+import { Input } from '@/components/ui/input';
+import { Label } from '@/components/ui/label';
+import {
+  Card,
+  CardContent,
+  CardDescription,
+  CardHeader,
+  CardTitle,
+} from '@/components/ui/card';
+import { cn } from '@/lib/utils';
 
 export function LoginForm() {
   const router = useRouter();
@@ -13,7 +27,19 @@ export function LoginForm() {
   const emailFromLink = searchParams.get('email')?.trim() ?? '';
   const [email, setEmail] = useState(emailFromLink);
   const [password, setPassword] = useState('');
+  const [showPassword, setShowPassword] = useState(false);
+  const [rememberMe, setRememberMe] = useState(true);
   const [loading, setLoading] = useState(false);
+
+  useEffect(() => {
+    if (emailFromLink) return;
+    try {
+      const saved = localStorage.getItem(REMEMBER_EMAIL_KEY);
+      if (saved) setEmail(saved);
+    } catch {
+      // ignore
+    }
+  }, [emailFromLink]);
 
   async function handleSubmit(event: React.FormEvent<HTMLFormElement>) {
     event.preventDefault();
@@ -21,6 +47,11 @@ export function LoginForm() {
 
     try {
       const response = await loginRequest({ email, password });
+      if (rememberMe) {
+        localStorage.setItem(REMEMBER_EMAIL_KEY, email.trim());
+      } else {
+        localStorage.removeItem(REMEMBER_EMAIL_KEY);
+      }
       toast.success('Sesión iniciada');
       router.replace(getDashboardPath(response.user.role));
     } catch (error) {
@@ -38,46 +69,108 @@ export function LoginForm() {
   }
 
   return (
-    <form onSubmit={handleSubmit} className="flex w-full max-w-sm flex-col gap-4">
-      <div className="flex flex-col gap-1.5">
-        <label htmlFor="email" className="text-sm font-medium text-foreground">
-          Email
-        </label>
-        <input
-          id="email"
-          type="email"
-          required
-          autoComplete="email"
-          value={email}
-          onChange={(e) => setEmail(e.target.value)}
-          className="rounded-lg border border-input bg-card px-3 py-2 text-sm text-foreground outline-none focus:border-foreground focus:ring-1 focus:ring-ring"
-          placeholder="admin@tucoach.com"
-        />
-      </div>
+    <Card
+      className={cn(
+        'w-full max-w-[420px] border-white/25 bg-white/10 text-white shadow-[0_8px_40px_rgba(0,0,0,0.45)]',
+        'backdrop-blur-2xl ',
+      )}
+    >
+      <CardHeader className="space-y-4 pb-2">
+        <div className="flex items-center gap-3">
+          <Image
+            src="/branding/ZORRO1.png"
+            alt="TuCoach"
+            width={52}
+            height={52}
+            className="rounded-full ring-2 ring-white/30"
+            priority
+          />
+          <div>
+            <p className="text-xs font-medium uppercase tracking-[0.2em] text-white/70">
+              TuCoach
+            </p>
+            <CardTitle className="text-2xl font-semibold tracking-wide text-white">
+              Ingresar
+            </CardTitle>
+          </div>
+        </div>
+        <CardDescription className="text-white/70">
+          Accedé a tu panel de entrenamiento y planificaciones.
+        </CardDescription>
+      </CardHeader>
 
-      <div className="flex flex-col gap-1.5">
-        <label htmlFor="password" className="text-sm font-medium text-foreground">
-          Contraseña
-        </label>
-        <input
-          id="password"
-          type="password"
-          required
-          autoComplete="current-password"
-          value={password}
-          onChange={(e) => setPassword(e.target.value)}
-          className="rounded-lg border border-input bg-card px-3 py-2 text-sm text-foreground outline-none focus:border-foreground focus:ring-1 focus:ring-ring"
-          placeholder="••••••••"
-        />
-      </div>
+      <CardContent>
+        <form onSubmit={handleSubmit} className="flex flex-col gap-5">
+          <div className="space-y-2">
+            <Label htmlFor="email" className="text-white/90">
+              Email
+            </Label>
+            <Input
+              id="email"
+              type="email"
+              required
+              autoComplete="email"
+              value={email}
+              onChange={(e) => setEmail(e.target.value)}
+              placeholder="usuario@ejemplo.com"
+              className="h-11 border-white/20 bg-white/95 text-foreground placeholder:text-muted-foreground focus-visible:ring-white/40"
+            />
+          </div>
 
-      <button
-        type="submit"
-        disabled={loading}
-        className="mt-2 rounded-lg bg-primary px-4 py-2.5 text-sm font-medium text-primary-foreground transition-colors hover:bg-primary/90 disabled:opacity-50"
-      >
-        {loading ? 'Ingresando…' : 'Ingresar'}
-      </button>
-    </form>
+          <div className="space-y-2">
+            <Label htmlFor="password" className="text-white/90">
+              Contraseña
+            </Label>
+            <div className="relative">
+              <Input
+                id="password"
+                type={showPassword ? 'text' : 'password'}
+                required
+                autoComplete="current-password"
+                value={password}
+                onChange={(e) => setPassword(e.target.value)}
+                placeholder="••••••••"
+                className="h-11 border-white/20 bg-white/95 pr-11 text-foreground placeholder:text-muted-foreground focus-visible:ring-white/40"
+              />
+              <Button
+                type="button"
+                variant="ghost"
+                size="icon"
+                className="absolute right-1 top-1/2 size-9 -translate-y-1/2 text-muted-foreground hover:bg-black/5 hover:text-foreground"
+                onClick={() => setShowPassword((v) => !v)}
+                aria-label={showPassword ? 'Ocultar contraseña' : 'Mostrar contraseña'}
+              >
+                {showPassword ? <EyeOff /> : <Eye />}
+              </Button>
+            </div>
+          </div>
+
+          <label className="flex cursor-pointer items-center gap-2.5 text-sm text-white/80">
+            <input
+              type="checkbox"
+              checked={rememberMe}
+              onChange={(e) => setRememberMe(e.target.checked)}
+              className="size-4 rounded border-white/40 bg-white/20 accent-white"
+            />
+            Recordar mi email en este dispositivo
+          </label>
+
+          <Button
+            type="submit"
+            disabled={loading}
+            className="h-11 w-full rounded-lg bg-neutral-950 text-base font-medium text-white hover:bg-neutral-800"
+          >
+            {loading ? (
+              <>
+                <Loader2 className="animate-spin" />
+                Ingresando…
+              </>
+            ) : (
+              'Ingresar'
+            )}
+          </Button>
+        </form>
+      </CardContent>
+    </Card>
   );
 }

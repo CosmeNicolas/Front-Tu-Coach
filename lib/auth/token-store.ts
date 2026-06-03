@@ -1,4 +1,5 @@
 import {
+  REFRESH_TOKEN_STORAGE_KEY,
   TOKEN_COOKIE_MAX_AGE,
   TOKEN_COOKIE_NAME,
   TOKEN_STORAGE_KEY,
@@ -6,6 +7,7 @@ import {
 
 /** Token en memoria — fuente primaria durante la sesión activa */
 let memoryToken: string | null = null;
+let memoryRefreshToken: string | null = null;
 
 function isBrowser(): boolean {
   return typeof window !== 'undefined';
@@ -21,7 +23,6 @@ function clearCookie(): void {
   document.cookie = `${TOKEN_COOKIE_NAME}=; path=/; max-age=0; SameSite=Lax`;
 }
 
-/** Sincroniza token en memory + localStorage + cookie */
 export function setAccessToken(token: string): void {
   memoryToken = token;
 
@@ -29,6 +30,23 @@ export function setAccessToken(token: string): void {
     localStorage.setItem(TOKEN_STORAGE_KEY, token);
     syncCookie(token);
   }
+}
+
+export function setRefreshToken(token: string | null | undefined): void {
+  memoryRefreshToken = token ?? null;
+
+  if (!isBrowser()) return;
+
+  if (token) {
+    localStorage.setItem(REFRESH_TOKEN_STORAGE_KEY, token);
+  } else {
+    localStorage.removeItem(REFRESH_TOKEN_STORAGE_KEY);
+  }
+}
+
+export function setTokenPair(accessToken: string, refreshToken?: string | null): void {
+  setAccessToken(accessToken);
+  setRefreshToken(refreshToken);
 }
 
 export function getAccessToken(): string | null {
@@ -46,22 +64,43 @@ export function getAccessToken(): string | null {
   return null;
 }
 
+export function getRefreshToken(): string | null {
+  if (memoryRefreshToken) return memoryRefreshToken;
+
+  if (!isBrowser()) return null;
+
+  const fromStorage = localStorage.getItem(REFRESH_TOKEN_STORAGE_KEY);
+  if (fromStorage) {
+    memoryRefreshToken = fromStorage;
+    return fromStorage;
+  }
+
+  return null;
+}
+
 export function clearAccessToken(): void {
   memoryToken = null;
+  memoryRefreshToken = null;
 
   if (isBrowser()) {
     localStorage.removeItem(TOKEN_STORAGE_KEY);
+    localStorage.removeItem(REFRESH_TOKEN_STORAGE_KEY);
     clearCookie();
   }
 }
 
-/** Hidrata memory desde localStorage al iniciar la app */
 export function hydrateTokenStore(): void {
-  if (!isBrowser() || memoryToken) return;
+  if (!isBrowser()) return;
 
-  const stored = localStorage.getItem(TOKEN_STORAGE_KEY);
-  if (stored) {
-    memoryToken = stored;
-    syncCookie(stored);
+  if (!memoryToken) {
+    const stored = localStorage.getItem(TOKEN_STORAGE_KEY);
+    if (stored) {
+      memoryToken = stored;
+      syncCookie(stored);
+    }
+  }
+
+  if (!memoryRefreshToken) {
+    memoryRefreshToken = localStorage.getItem(REFRESH_TOKEN_STORAGE_KEY);
   }
 }

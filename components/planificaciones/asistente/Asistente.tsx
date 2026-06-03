@@ -7,6 +7,10 @@ import { useClient } from '@/hooks/useClients';
 import { Button } from '@/components/ui/button';
 import { Card, CardContent } from '@/components/ui/card';
 import { Tabs, TabsContent, TabsList, TabsTrigger } from '@/components/ui/tabs';
+import {
+  hasAlumnoSessionProgress,
+  ultimaSesionCompletadaAlumno,
+} from '@/lib/planification/alumno-progress-guard';
 import { TAB_PREVIEW_ID, WIZARD_TABS } from './constants';
 import { useAsistenteState } from './useAsistenteState';
 import { IndicadorProgreso } from './IndicadorProgreso';
@@ -45,6 +49,7 @@ export function Asistente({ planification }: { planification: Planification }) {
 
   const tabIds = [...WIZARD_TABS.map((t) => t.id), TAB_PREVIEW_ID];
   const idx = tabIds.indexOf(tabActivo);
+  const alumnoConProgreso = hasAlumnoSessionProgress(planification.progresoAlumno);
 
   return (
     <div className="mx-auto w-full max-w-6xl space-y-4 pb-10">
@@ -97,6 +102,17 @@ export function Asistente({ planification }: { planification: Planification }) {
             seccionesCompletadas={progresoAsistente.seccionesCompletadas}
             totalSecciones={progresoAsistente.totalSecciones}
           />
+
+          {alumnoConProgreso ? (
+            <div className="rounded-lg border border-amber-200 bg-amber-50 px-3 py-2 text-sm text-amber-950">
+              El alumno completó{' '}
+              <strong>{planification.progresoAlumno.completadas.length}</strong>{' '}
+              sesión(es) (última: #
+              {ultimaSesionCompletadaAlumno(planification.progresoAlumno)}). Para
+              cambiar ejercicios usá <strong>⚡ Ajuste desde sesión N</strong>; la
+              edición ✎ y eliminar 🗑 están bloqueadas.
+            </div>
+          ) : null}
         </CardContent>
       </Card>
 
@@ -174,6 +190,7 @@ export function Asistente({ planification }: { planification: Planification }) {
                   diaActivo={diaActivo}
                   frecuenciaBloque={frecuenciaBloque}
                   contentVersion={contentVersion}
+                  progresoAlumno={planification.progresoAlumno}
                   onUpdateSeccion={updateSeccion}
                   onUpdateCardio={setCalentamientoOrVuelta}
                   onAdjusted={syncFromServer}

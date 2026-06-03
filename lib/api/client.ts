@@ -1,5 +1,6 @@
 import { API_BASE_URL } from '@/lib/auth/constants';
 import { getAccessToken } from '@/lib/auth/token-store';
+import { tryRefreshAccessToken } from '@/lib/api/refresh-session';
 import {
   clearSessionUser,
   getSessionUser,
@@ -20,12 +21,26 @@ export class ApiError extends Error {
 interface RequestOptions extends Omit<RequestInit, 'body'> {
   body?: unknown;
   auth?: boolean;
+  /** Evita loop al refrescar token */
+  skipRefresh?: boolean;
 }
 
-export async function apiClient<T>(
+async function parseErrorMessage(response: Response): Promise<string> {
+  let message = 'Error en la solicitud';
+  try {
+    const errorBody = await response.json();
+    const raw = errorBody.message;
+    message = Array.isArray(raw) ? raw.join(', ') : (raw ?? message);
+  } catch {
+    // respuesta no JSON
+  }
+  return message;
+}
+
+async function executeFetch<T>(
   path: string,
-  options: RequestOptions = {},
-): Promise<T> {
+  options: RequestOptions,
+): Promise<Response> {
   const { body, auth = false, headers, ...rest } = options;
 
   const requestHeaders: HeadersInit = {
@@ -40,22 +55,33 @@ export async function apiClient<T>(
     }
   }
 
-  const response = await fetch(`${API_BASE_URL}${path}`, {
+  return fetch(`${API_BASE_URL}${path}`, {
     ...rest,
     headers: requestHeaders,
     body: body !== undefined ? JSON.stringify(body) : undefined,
   });
+}
+
+export async function apiClient<T>(
+  path: string,
+  options: RequestOptions = {},
+): Promise<T> {
+  let response = await executeFetch(path, options);
+
+  if (
+    response.status === 401 &&
+    options.auth &&
+    !options.skipRefresh &&
+    path !== '/auth/refresh'
+  ) {
+    const refreshed = await tryRefreshAccessToken();
+    if (refreshed) {
+      response = await executeFetch(path, options);
+    }
+  }
 
   if (!response.ok) {
-    let message = 'Error en la solicitud';
-    try {
-      const errorBody = await response.json();
-      const raw = errorBody.message;
-      message = Array.isArray(raw) ? raw.join(', ') : (raw ?? message);
-    } catch {
-      // respuesta no JSON
-    }
-    throw new ApiError(message, response.status);
+    throw new ApiError(await parseErrorMessage(response), response.status);
   }
 
   if (response.status === 204) {

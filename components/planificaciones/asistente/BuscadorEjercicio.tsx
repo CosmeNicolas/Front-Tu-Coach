@@ -6,7 +6,12 @@ import {
   EjercicioCatalogo,
   filtrarCatalogo,
 } from '@/lib/ejercicios/catalogo';
+import {
+  filtrarPrivadosParaWizard,
+  mergeCatalogoConPrivados,
+} from '@/lib/ejercicios/merge-private-catalog';
 import { gruposParaTab } from '@/lib/ejercicios/grupos-musculares';
+import { usePrivateExerciseWizardCatalog } from '@/hooks/usePrivateExercises';
 import { Input } from '@/components/ui/input';
 import { Button } from '@/components/ui/button';
 import { Label } from '@/components/ui/label';
@@ -23,6 +28,7 @@ export function BuscadorEjercicio({ tabId, onSeleccionar }: Props) {
   const [busqueda, setBusqueda] = useState('');
   const [debounced, setDebounced] = useState('');
   const [grupoActivo, setGrupoActivo] = useState<string | null>(null);
+  const { data: wizardData } = usePrivateExerciseWizardCatalog();
 
   const gruposTab = useMemo(() => gruposParaTab(tabId), [tabId]);
 
@@ -37,16 +43,22 @@ export function BuscadorEjercicio({ tabId, onSeleccionar }: Props) {
     setDebounced('');
   }, [tabId]);
 
-  const resultados = useMemo(
-    () =>
-      filtrarCatalogo({
-        tabId,
-        query: debounced,
-        grupoId: grupoActivo,
-        limit: debounced ? 60 : 48,
-      }),
-    [tabId, debounced, grupoActivo],
-  );
+  const resultados = useMemo(() => {
+    const estaticos = filtrarCatalogo({
+      tabId,
+      query: debounced,
+      grupoId: grupoActivo,
+      limit: debounced ? 60 : 48,
+    });
+    const privadosRaw = wizardData?.ejercicios ?? [];
+    const privados = filtrarPrivadosParaWizard(privadosRaw, {
+      tabId,
+      query: debounced,
+      grupoId: grupoActivo,
+      limit: debounced ? 60 : 48,
+    });
+    return mergeCatalogoConPrivados(estaticos, privados);
+  }, [tabId, debounced, grupoActivo, wizardData?.ejercicios]);
 
   const tituloLista = debounced
     ? `${resultados.length} resultados`
@@ -92,7 +104,7 @@ export function BuscadorEjercicio({ tabId, onSeleccionar }: Props) {
         <div className="grid grid-cols-2 gap-3 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-5 xl:grid-cols-6">
           {resultados.map((ej, i) => (
             <EjercicioCatalogoCard
-              key={catalogoKey(ej)}
+              key={ej.privateId ?? catalogoKey(ej)}
               ejercicio={ej}
               onSeleccionar={onSeleccionar}
               eagerImage={i < 12}
@@ -102,8 +114,7 @@ export function BuscadorEjercicio({ tabId, onSeleccionar }: Props) {
       )}
 
       <p className="text-[10px] text-zinc-400">
-        GIFs desde <code className="rounded bg-zinc-100 px-1">/public/gif</code>{' '}
-        cuando estén disponibles · fallback automático si falta el asset
+        Catálogo global + tus ejercicios privados · GIFs locales o Cloudinary
       </p>
     </div>
   );

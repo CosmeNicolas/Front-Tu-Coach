@@ -1,6 +1,6 @@
 'use client';
 
-import { useMemo, useState } from 'react';
+import { useEffect, useMemo, useState } from 'react';
 import Link from 'next/link';
 import { useRouter } from 'next/navigation';
 import { toast } from 'sonner';
@@ -8,6 +8,12 @@ import { StudentMaterializedPlanification, StudentPlanification } from '@/lib/ap
 import { isSessionCompleted } from '@/lib/api/student-portal';
 import { flattenSessionToBlocks, countSessionExercises } from '@/lib/alumno/flatten-materialized';
 import { getSessionLog, initExerciseStateFromLog } from '@/lib/alumno/metrics';
+import {
+  clearSessionDraft,
+  loadSessionDraft,
+  mergeExerciseStatesWithDraft,
+  saveSessionDraft,
+} from '@/lib/alumno/session-draft-store';
 import { etiquetaDia } from '@/lib/planification/preview-progression';
 import { useCompleteSession } from '@/hooks/useStudentPortal';
 import { ExerciseExecutionState } from '@/types/alumno-session';
@@ -45,20 +51,58 @@ export function AlumnoSesionExecutionView({
   );
 
   const sessionLog = getSessionLog(materialized.progreso, sessionNum);
+  const localDraft = readOnly ? null : loadSessionDraft(plan.id, sessionNum);
 
   const [exerciseStates, setExerciseStates] = useState<ExerciseExecutionState[]>(
-    () => initExerciseStateFromLog(allExercises, sessionLog),
+    () =>
+      mergeExerciseStatesWithDraft(
+        initExerciseStateFromLog(allExercises, sessionLog),
+        localDraft,
+      ),
   );
 
-  const [rpe, setRpe] = useState<number | ''>(
-    sessionLog?.rpe?.value ?? materialized.progreso.rpePorSesion[String(sessionNum)] ?? '',
+  const [rpe, setRpe] = useState<number | ''>(() => {
+    if (localDraft?.rpe !== undefined && localDraft.rpe !== '') {
+      return localDraft.rpe;
+    }
+    return (
+      sessionLog?.rpe?.value ??
+      materialized.progreso.rpePorSesion[String(sessionNum)] ??
+      ''
+    );
+  });
+  const [rpeNote, setRpeNote] = useState(
+    localDraft?.rpeNote ?? sessionLog?.rpe?.note ?? '',
   );
-  const [rpeNote, setRpeNote] = useState(sessionLog?.rpe?.note ?? '');
   const [sessionComment, setSessionComment] = useState(
-    sessionLog?.sessionComment ?? materialized.progreso.comentarios[sessionNum - 1] ?? '',
+    localDraft?.sessionComment ??
+      sessionLog?.sessionComment ??
+      materialized.progreso.comentarios[sessionNum - 1] ??
+      '',
   );
   const [pendingDialogOpen, setPendingDialogOpen] = useState(false);
   const [pendingCount, setPendingCount] = useState(0);
+
+  useEffect(() => {
+    if (readOnly) return;
+    saveSessionDraft({
+      planificationId: plan.id,
+      sessionNum,
+      updatedAt: Date.now(),
+      exerciseStates,
+      rpe,
+      rpeNote,
+      sessionComment,
+    });
+  }, [
+    readOnly,
+    plan.id,
+    sessionNum,
+    exerciseStates,
+    rpe,
+    rpeNote,
+    sessionComment,
+  ]);
 
   if (!sesion) {
     return (
@@ -94,6 +138,7 @@ export function AlumnoSesionExecutionView({
           })),
         },
       });
+      clearSessionDraft(plan.id, sessionNum);
       setPendingDialogOpen(false);
       toast.success('Sesión completada', {
         description: `La sesión ${sessionNum} se guardó correctamente.`,

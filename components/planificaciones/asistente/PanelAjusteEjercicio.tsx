@@ -6,19 +6,29 @@ import { ApiError } from '@/lib/api/client';
 import {
   PlanificationConfig,
   PlanificationItemSingle,
+  PlanificationProgress,
   TipoItem,
 } from '@/types/planification';
+import {
+  filtrarSesionesAjusteTrasProgreso,
+  minFromSessionTrasProgreso,
+  ultimaSesionCompletadaAlumno,
+} from '@/lib/planification/alumno-progress-guard';
 import { ajustarRangosTrasCambioMin } from '@/lib/planification/fuerza-rangos';
 import { useCreateItemAdjustment } from '@/hooks/usePlanifications';
+import { applyCatalogToItemDraft } from '@/lib/planification/item-from-catalog';
 import { Button } from '@/components/ui/button';
 import { CardEjercicioEdicion } from './CardEjercicioEdicion';
 import { AjusteAntesDespues } from './AjusteAntesDespues';
+import { SustitucionEjercicioCatalogo } from './SustitucionEjercicioCatalogo';
 import { computeItemProgressionPreview } from '@/lib/planification/preview-progression';
 import { CEMD } from './constants';
 
 interface Props {
   planificationId: string;
   contentVersion: number;
+  catalogTabId: string;
+  progresoAlumno?: PlanificationProgress;
   item: PlanificationItemSingle;
   config: PlanificationConfig;
   onClose: () => void;
@@ -28,6 +38,8 @@ interface Props {
 export function PanelAjusteEjercicio({
   planificationId,
   contentVersion,
+  catalogTabId,
+  progresoAlumno,
   item,
   config,
   onClose,
@@ -52,11 +64,31 @@ export function PanelAjusteEjercicio({
 
   const sesionesValidas = useMemo(() => {
     const base = computeItemProgressionPreview(item, config);
-    return base
+    const ocurrencias = base
       .map((v, i) => ({ v, n: i + 1 }))
       .filter(({ v }) => v.trim() !== '')
       .map(({ n }) => n);
-  }, [item, config]);
+    return filtrarSesionesAjusteTrasProgreso(ocurrencias, progresoAlumno);
+  }, [item, config, progresoAlumno]);
+
+  useEffect(() => {
+    if (lockedSession !== undefined) return;
+    if (sesionesValidas.length === 0) return;
+    const sugerida = Math.max(
+      minFromSessionTrasProgreso(progresoAlumno),
+      Math.max(2, Math.ceil(config.totalSesiones / 2)),
+    );
+    const pick = sesionesValidas.includes(sugerida)
+      ? sugerida
+      : sesionesValidas[0];
+    setFromSession(pick);
+  }, [lockedSession, sesionesValidas, progresoAlumno, config.totalSesiones]);
+
+  useEffect(() => {
+    if (sesionesValidas.length && !sesionesValidas.includes(fromSession)) {
+      setFromSession(sesionesValidas[0]);
+    }
+  }, [sesionesValidas, fromSession]);
 
   function setParam<K extends keyof PlanificationItemSingle['parametros']>(
     key: K,
@@ -84,6 +116,12 @@ export function PanelAjusteEjercicio({
   async function handleSubmit() {
     if (!draft.ejercicio.trim()) {
       toast.error('El nombre del ejercicio es obligatorio');
+      return;
+    }
+    if (!sesionesValidas.length) {
+      toast.error(
+        'No hay sesiones disponibles para ajustar después del progreso del alumno',
+      );
       return;
     }
     if (!sesionesValidas.includes(fromSession)) {
@@ -138,6 +176,12 @@ export function PanelAjusteEjercicio({
               <p className="text-xs text-zinc-500">
                 Las sesiones anteriores no se recalculan. El progreso del alumno no
                 cambia.
+                {ultimaSesionCompletadaAlumno(progresoAlumno) > 0 ? (
+                  <>
+                    {' '}
+                    Última sesión completada: #{ultimaSesionCompletadaAlumno(progresoAlumno)}.
+                  </>
+                ) : null}
               </p>
             </div>
             <button
@@ -154,6 +198,12 @@ export function PanelAjusteEjercicio({
         <div className="space-y-4 p-4">
           <label className="block text-sm">
             <span className="font-medium">Desde sesión</span>
+            {sesionesValidas.length === 0 ? (
+              <p className="mt-2 rounded-lg border border-amber-200 bg-amber-50 px-3 py-2 text-xs text-amber-900">
+                El alumno completó todas las ocurrencias de este ejercicio o no quedan
+                sesiones futuras para ajustar.
+              </p>
+            ) : (
             <select
               value={fromSession}
               disabled={lockedSession !== undefined}
@@ -167,6 +217,7 @@ export function PanelAjusteEjercicio({
                 </option>
               ))}
             </select>
+            )}
           </label>
 
           <AjusteAntesDespues
@@ -174,6 +225,15 @@ export function PanelAjusteEjercicio({
             despues={draft}
             fromSession={fromSession}
           />
+
+          {draft.tipoItem !== TipoItem.AEROBICO ? (
+            <SustitucionEjercicioCatalogo
+              catalogTabId={catalogTabId}
+              onSeleccionar={(ej) =>
+                setDraft((d) => applyCatalogToItemDraft(d, ej))
+              }
+            />
+          ) : null}
 
           {draft.tipoItem !== TipoItem.AEROBICO ? (
             <CardEjercicioEdicion
@@ -210,8 +270,16 @@ export function PanelAjusteEjercicio({
           </label>
 
           <div className="rounded-lg border border-border bg-muted p-2 text-xs text-muted-foreground">
-            Vista previa sesión {fromSession}:{' '}
-            <strong>{preview[fromSession - 1] || '—'}</strong>
+            <p>
+              Vista previa sesión {fromSession}:{' '}
+              <strong>{preview[fromSession - 1] || '—'}</strong>
+            </p>
+            {fromSession > 1 ? (
+              <p className="mt-1">
+                Sesión {fromSession - 1} (sin cambios):{' '}
+                <strong>{preview[fromSession - 2] || '—'}</strong>
+              </p>
+            ) : null}
           </div>
         </div>
 
@@ -219,7 +287,7 @@ export function PanelAjusteEjercicio({
           <Button type="button" variant="outline" onClick={onClose}>
             Cancelar
           </Button>
-          <Button type="button" onClick={handleSubmit} disabled={mutation.isPending}>
+          <Button type="button" onClick={handleSubmit} disabled={mutation.isPending || sesionesValidas.length === 0}>
             {mutation.isPending ? 'Aplicando…' : 'Aplicar ajuste'}
           </Button>
         </footer>

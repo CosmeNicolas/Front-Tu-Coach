@@ -1,12 +1,20 @@
 'use client';
 
 import { useEffect, useState } from 'react';
+import { toast } from 'sonner';
 import {
   Planification,
   PlanificationConfig,
   PlanificationItem,
+  PlanificationProgress,
   TipoItem,
 } from '@/types/planification';
+import {
+  canInlineEditPlanItem,
+  canRemovePlanItem,
+  hasAlumnoSessionProgress,
+  ultimaSesionCompletadaAlumno,
+} from '@/lib/planification/alumno-progress-guard';
 import { ajustarRangosTrasCambioMin } from '@/lib/planification/fuerza-rangos';
 import { EjercicioAvatar } from './EjercicioAvatar';
 import { MiniTablaProgresion } from './MiniTablaProgresion';
@@ -22,6 +30,8 @@ interface Props {
   item: PlanificationItem;
   config: PlanificationConfig;
   compact?: boolean;
+  catalogTabId?: string;
+  progresoAlumno?: PlanificationProgress;
   planificationId?: string;
   contentVersion?: number;
   onUpdate: (item: PlanificationItem) => void;
@@ -33,6 +43,8 @@ export function CardEjercicio({
   item,
   config,
   compact,
+  catalogTabId = 'principal',
+  progresoAlumno,
   planificationId,
   contentVersion,
   onUpdate,
@@ -82,6 +94,35 @@ export function CardEjercicio({
   }
 
   const display = editing ? draft : item;
+  const inlineEditBlocked = !canInlineEditPlanItem(progresoAlumno);
+  const removeBlocked = !canRemovePlanItem(progresoAlumno);
+  const alumnoProgreso = hasAlumnoSessionProgress(progresoAlumno);
+
+  function startEdit() {
+    if (inlineEditBlocked) {
+      toast.error('El alumno ya completó sesiones', {
+        description: 'Usá ⚡ ajuste desde sesión N para cambiar sin alterar lo hecho.',
+      });
+      return;
+    }
+    if (item.ajuste) {
+      toast.message('Este ejercicio tiene ajuste desde sesión N', {
+        description:
+          'Usá ⚡ para sustituir sin afectar sesiones pasadas. La edición ✎ aplica a toda la planilla.',
+      });
+    }
+    setEditing(true);
+  }
+
+  function handleRemove() {
+    if (removeBlocked) {
+      toast.error('No podés eliminar este ejercicio', {
+        description: 'El alumno ya registró sesiones en esta planificación.',
+      });
+      return;
+    }
+    onRemove();
+  }
 
   return (
     <article className="rounded-lg border border-zinc-200 bg-white shadow-sm">
@@ -98,13 +139,21 @@ export function CardEjercicio({
               <div className="min-w-0 flex-1 space-y-1">
                 <CardEjercicioHeader item={display} editing={editing} />
                 {!editing && item.ajuste ? <AjusteBadge item={item} /> : null}
+                {!editing && alumnoProgreso ? (
+                  <p className="text-[10px] font-medium text-amber-700">
+                    Alumno: {progresoAlumno?.completadas.length ?? 0} sesión(es) completada(s)
+                    · última #{ultimaSesionCompletadaAlumno(progresoAlumno)} — usá ⚡
+                  </p>
+                ) : null}
               </div>
               <CardEjercicioToolbar
                 editing={editing}
+                inlineEditBlocked={inlineEditBlocked}
+                removeBlocked={removeBlocked}
                 onSave={save}
                 onCancel={cancel}
-                onEdit={() => setEditing(true)}
-                onRemove={onRemove}
+                onEdit={startEdit}
+                onRemove={handleRemove}
                 onAdjust={
                   planificationId && contentVersion !== undefined && onAdjusted
                     ? () => setAjusteAbierto(true)
@@ -139,6 +188,8 @@ export function CardEjercicio({
         <PanelAjusteEjercicio
           planificationId={planificationId}
           contentVersion={contentVersion}
+          catalogTabId={catalogTabId}
+          progresoAlumno={progresoAlumno}
           item={item}
           config={config}
           onClose={() => setAjusteAbierto(false)}

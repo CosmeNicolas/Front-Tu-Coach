@@ -53,6 +53,7 @@ export function GymDashboardView({
 
   const profesoresPath = `${basePath}/profesores`;
   const alumnosPath = `${basePath}/alumnos`;
+  const ejerciciosPath = `${basePath}/ejercicios-privados`;
 
   return (
     <div className="space-y-6">
@@ -86,6 +87,9 @@ export function GymDashboardView({
             </Button>
             <Button variant="outline" size="sm" asChild>
               <Link href={alumnosPath}>Todos los alumnos</Link>
+            </Button>
+            <Button variant="outline" size="sm" asChild>
+              <Link href={ejerciciosPath}>Ejercicios privados</Link>
             </Button>
           </div>
         </div>
