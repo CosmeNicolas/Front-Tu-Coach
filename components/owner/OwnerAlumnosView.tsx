@@ -72,7 +72,7 @@ export function OwnerAlumnosView({
                     <td className="px-4 py-3">
                       <Link
                         href={profHref}
-                        className="text-primary hover:underline"
+                        className="text-foreground underline-offset-2 hover:underline"
                       >
                         {profesorNames.get(c.profesorId) ?? '—'}
                       </Link>
@@ -80,7 +80,7 @@ export function OwnerAlumnosView({
                     <td className="px-4 py-3 text-muted-foreground">
                       {c.email ?? c.telefono ?? '—'}
                     </td>
-                    <td className="px-4 py-3">
+                    <td className="px-4 py-3 text-foreground">
                       {c.estado === ClientStatus.ACTIVE ? 'Activo' : 'Inactivo'}
                     </td>
                   </tr>

@@ -1,7 +1,9 @@
 'use client';
 
 import Link from 'next/link';
+import { ChevronLeft } from 'lucide-react';
 import { useGymDashboard } from '@/hooks/useGymAdmin';
+import { Button } from '@/components/ui/button';
 
 interface Props {
   tenantId?: string;
@@ -31,12 +33,14 @@ export function ProfesoresListView({
 
   return (
     <div className="space-y-6">
-      <Link
-        href={dashboardHref}
-        className="text-sm text-muted-foreground hover:text-foreground"
-      >
-        ← Dashboard
-      </Link>
+      {!basePath.startsWith('/super-admin/tenants/') ? (
+        <Button variant="ghost" size="sm" className="w-fit px-0" asChild>
+          <Link href={dashboardHref}>
+            <ChevronLeft className="mr-1 h-4 w-4" />
+            Volver al dashboard
+          </Link>
+        </Button>
+      ) : null}
       <header>
         <h1 className="text-2xl font-bold text-foreground">Profesores</h1>
         <p className="mt-1 text-sm text-muted-foreground">
@@ -51,7 +55,7 @@ export function ProfesoresListView({
             <Link
               key={p.id}
               href={href}
-              className="rounded-2xl border border-border bg-card p-5 shadow-sm transition hover:border-primary/40 hover:bg-accent/10"
+              className="rounded-xl border border-border bg-card p-5 shadow-sm transition hover:border-primary/40 hover:bg-accent/10"
             >
               <p className="font-semibold text-foreground">
                 {p.apellido}, {p.nombre}

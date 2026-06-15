@@ -109,14 +109,50 @@ textarea::placeholder {
   color: var(--muted-foreground);
 }
 
-/* Textos con zinc fijo (páginas legacy): legibles en modo oscuro */
+/* Textos y superficies legacy (zinc / white): legibles en modo oscuro */
+.dark .bg-white {
+  background-color: var(--card);
+}
+
+.dark .bg-zinc-50 {
+  background-color: color-mix(in srgb, var(--muted) 50%, transparent);
+}
+
+.dark .border-zinc-100,
+.dark .border-zinc-200,
+.dark .border-zinc-300 {
+  border-color: var(--border);
+}
+
 .dark .text-zinc-900,
 .dark .text-zinc-800 {
   color: var(--foreground);
 }
 
-.dark .border-zinc-300 {
-  border-color: var(--border);
+.dark .text-zinc-600,
+.dark .text-zinc-500 {
+  color: var(--muted-foreground);
+}
+
+.dark .bg-zinc-900 {
+  background-color: var(--primary);
+}
+
+.dark .bg-zinc-900.text-white,
+.dark .bg-zinc-900 .text-white {
+  color: var(--primary-foreground);
+}
+
+.dark .hover\:bg-zinc-700:hover {
+  background-color: color-mix(in srgb, var(--primary) 85%, var(--foreground));
+}
+
+.dark .hover\:bg-zinc-800:hover {
+  background-color: color-mix(in srgb, var(--primary) 90%, var(--foreground));
+}
+
+.dark .text-red-600 {
+  color: #f87171;
 }
 
 /* Fondo de GIFs de ejercicios: siempre blanco, en cualquier tema */

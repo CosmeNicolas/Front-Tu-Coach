@@ -58,7 +58,7 @@ export function GymDashboardView({
   return (
     <div className="space-y-6">
       <header>
-        <p className="text-xs font-semibold uppercase tracking-wide text-primary">
+        <p className="text-xs font-semibold uppercase tracking-wide text-muted-foreground">
           {data.tenant.nombre}
         </p>
         <h1 className="mt-1 text-2xl font-bold text-foreground">
@@ -122,7 +122,7 @@ export function GymDashboardView({
                         {p.apellido}, {p.nombre}
                       </td>
                       <td className="px-4 py-3 text-muted-foreground">{p.email}</td>
-                      <td className="px-4 py-3 text-center font-semibold text-primary">
+                      <td className="px-4 py-3 text-center font-semibold text-foreground">
                         {p.alumnosCount}
                       </td>
                       <td className="px-4 py-3 text-center text-foreground">
@@ -131,7 +131,7 @@ export function GymDashboardView({
                       <td className="px-4 py-3">
                         <Link
                           href={detailHref}
-                          className="font-medium text-primary hover:underline"
+                          className="font-medium text-foreground underline-offset-2 hover:underline"
                         >
                           Ver alumnos
                         </Link>

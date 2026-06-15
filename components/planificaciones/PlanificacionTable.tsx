@@ -16,16 +16,16 @@ export function PlanificacionTable({
 }: PlanificacionTableProps) {
   if (!items.length) {
     return (
-      <p className="rounded-lg border border-dashed border-zinc-300 p-8 text-center text-sm text-zinc-500">
+      <p className="rounded-lg border border-dashed border-border p-8 text-center text-sm text-muted-foreground">
         No hay planificaciones todavía.
       </p>
     );
   }
 
   return (
-    <div className="overflow-x-auto rounded-lg border border-zinc-200 bg-white">
+    <div className="overflow-x-auto rounded-lg border border-border bg-card shadow-sm">
       <table className="min-w-[720px] w-full text-sm">
-        <thead className="bg-zinc-50 text-left text-zinc-600">
+        <thead className="bg-muted/40 text-left text-muted-foreground">
           <tr>
             <th className="px-4 py-3 font-medium">Título</th>
             <th className="px-4 py-3 font-medium">Config</th>
@@ -35,28 +35,39 @@ export function PlanificacionTable({
         </thead>
         <tbody>
           {items.map((p) => (
-            <tr key={p.id} className="border-t border-zinc-100">
-              <td className="px-4 py-3 font-medium text-zinc-900">{p.titulo}</td>
-              <td className="px-4 py-3 text-zinc-600">
+            <tr key={p.id} className="border-t border-border hover:bg-muted/20">
+              <td className="px-4 py-3 font-medium text-foreground">{p.titulo}</td>
+              <td className="px-4 py-3 text-muted-foreground">
                 {PROGRESSION_MODE_LABELS[p.config.modoProgresion]} ·{' '}
                 {p.config.totalSesiones} sesiones
               </td>
-              <td className="px-4 py-3 capitalize">{p.estado}</td>
+              <td className="px-4 py-3 capitalize text-foreground">{p.estado}</td>
               <td className="px-4 py-3">
                 <div className="flex flex-wrap gap-2">
                   <Link
                     href={`/profesor/planificaciones/${p.id}/asistente`}
-                    className="font-medium text-primary hover:underline"
+                    className="font-medium text-foreground underline-offset-2 hover:underline"
                   >
                     Asistente
                   </Link>
-                  <Link href={`/profesor/planificaciones/${p.id}`} className="hover:underline">
+                  <Link
+                    href={`/profesor/planificaciones/${p.id}`}
+                    className="text-foreground underline-offset-2 hover:underline"
+                  >
                     Ver
                   </Link>
-                  <button type="button" onClick={() => onArchive(p.id)} className="hover:underline">
+                  <button
+                    type="button"
+                    onClick={() => onArchive(p.id)}
+                    className="text-foreground underline-offset-2 hover:underline"
+                  >
                     Archivar
                   </button>
-                  <button type="button" onClick={() => onDelete(p.id)} className="text-red-600 hover:underline">
+                  <button
+                    type="button"
+                    onClick={() => onDelete(p.id)}
+                    className="text-red-600 underline-offset-2 hover:underline"
+                  >
                     Eliminar
                   </button>
                 </div>
