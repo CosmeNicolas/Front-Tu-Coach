@@ -6,6 +6,7 @@ import { resolveGifUrl } from '@/lib/ejercicios/gif-url';
 import { ensureSingleItem, isSingleItem, diaBaseDeItem } from '@/lib/planification/section-items';
 import { PLANIFICATION_LIMITS } from '@/types/planification-limits';
 import {
+  PlanificationItemSingle,
   PlanificationSection,
   TipoItem,
   TipoSeccion,
@@ -119,9 +120,11 @@ export function SelectorCardioGrid({
     commit(id, minutos, incremento, notas);
   }
 
-  const draftItem = selId
+  const builtDraft = selId
     ? buildItem(selId, minutos, incremento, notas)?.items[0]
-    : item;
+    : undefined;
+  const draftItem: PlanificationItemSingle | undefined =
+    builtDraft && isSingleItem(builtDraft) ? builtDraft : item;
 
   return (
     <section className="space-y-4">
