@@ -60,7 +60,7 @@ export function LoginForm() {
         message = error.message;
       } else if (error instanceof TypeError) {
         message =
-          'No se pudo conectar con el servidor. Verificá que el backend esté corriendo en el puerto 3001.';
+          'No se pudo conectar con la API. En producción verificá NEXT_PUBLIC_API_URL en Netlify y CORS_ORIGIN en Vercel.';
       }
       toast.error(message);
     } finally {

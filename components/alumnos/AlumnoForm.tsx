@@ -4,6 +4,9 @@ import { useState } from 'react';
 import { toast } from 'sonner';
 import { ApiError } from '@/lib/api/client';
 import { CreateClientPayload, UpdateClientPayload } from '@/types/client';
+import { Button } from '@/components/ui/button';
+import { Input } from '@/components/ui/input';
+import { Label } from '@/components/ui/label';
 
 interface AlumnoFormProps {
   initial?: Partial<CreateClientPayload> & {
@@ -52,7 +55,10 @@ export function AlumnoForm({
     }
   }
 
-  function updateDatos(field: keyof NonNullable<CreateClientPayload['datos']>, value: string | number) {
+  function updateDatos(
+    field: keyof NonNullable<CreateClientPayload['datos']>,
+    value: string | number,
+  ) {
     setForm((prev) => ({
       ...prev,
       datos: { ...prev.datos, [field]: value },
@@ -62,54 +68,109 @@ export function AlumnoForm({
   return (
     <form onSubmit={handleSubmit} className="mx-auto flex max-w-xl flex-col gap-4">
       <div className="grid gap-4 sm:grid-cols-2">
-        <Field label="Nombre" value={form.nombre} onChange={(v) => setForm({ ...form, nombre: v })} required />
-        <Field label="Apellido" value={form.apellido} onChange={(v) => setForm({ ...form, apellido: v })} required />
-        <Field label="Email" value={form.email ?? ''} onChange={(v) => setForm({ ...form, email: v })} type="email" />
-        <Field label="Teléfono" value={form.telefono ?? ''} onChange={(v) => setForm({ ...form, telefono: v })} />
-        <Field label="DNI" value={form.dni ?? ''} onChange={(v) => setForm({ ...form, dni: v })} />
+        <Field
+          id="alumno-nombre"
+          label="Nombre"
+          value={form.nombre}
+          onChange={(v) => setForm({ ...form, nombre: v })}
+          required
+        />
+        <Field
+          id="alumno-apellido"
+          label="Apellido"
+          value={form.apellido}
+          onChange={(v) => setForm({ ...form, apellido: v })}
+          required
+        />
+        <Field
+          id="alumno-email"
+          label="Email"
+          value={form.email ?? ''}
+          onChange={(v) => setForm({ ...form, email: v })}
+          type="email"
+        />
+        <Field
+          id="alumno-telefono"
+          label="Teléfono"
+          value={form.telefono ?? ''}
+          onChange={(v) => setForm({ ...form, telefono: v })}
+        />
+        <Field
+          id="alumno-dni"
+          label="DNI"
+          value={form.dni ?? ''}
+          onChange={(v) => setForm({ ...form, dni: v })}
+        />
       </div>
 
       <div className="grid gap-4 sm:grid-cols-3">
-        <Field label="Edad" value={String(form.datos?.edad ?? '')} onChange={(v) => updateDatos('edad', Number(v) || 0)} type="number" />
-        <Field label="Peso (kg)" value={String(form.datos?.peso ?? '')} onChange={(v) => updateDatos('peso', Number(v) || 0)} type="number" />
-        <Field label="Altura (cm)" value={String(form.datos?.altura ?? '')} onChange={(v) => updateDatos('altura', Number(v) || 0)} type="number" />
+        <Field
+          id="alumno-edad"
+          label="Edad"
+          value={String(form.datos?.edad ?? '')}
+          onChange={(v) => updateDatos('edad', Number(v) || 0)}
+          type="number"
+        />
+        <Field
+          id="alumno-peso"
+          label="Peso (kg)"
+          value={String(form.datos?.peso ?? '')}
+          onChange={(v) => updateDatos('peso', Number(v) || 0)}
+          type="number"
+        />
+        <Field
+          id="alumno-altura"
+          label="Altura (cm)"
+          value={String(form.datos?.altura ?? '')}
+          onChange={(v) => updateDatos('altura', Number(v) || 0)}
+          type="number"
+        />
       </div>
 
-      <label className="flex flex-col gap-1.5 text-sm">
-        <span className="font-medium text-zinc-700">Sexo</span>
+      <div className="space-y-2">
+        <Label htmlFor="alumno-sexo">Sexo</Label>
         <select
+          id="alumno-sexo"
           value={form.datos?.sexo ?? 'no_informado'}
           onChange={(e) => updateDatos('sexo', e.target.value)}
-          className="rounded-lg border border-zinc-300 bg-white px-3 py-2 text-zinc-900 outline-none focus:border-zinc-900"
+          className="flex h-9 w-full rounded-md border border-input bg-background px-3 py-1 text-sm shadow-sm focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring"
         >
           <option value="no_informado">No informado</option>
           <option value="masculino">Masculino</option>
           <option value="femenino">Femenino</option>
           <option value="otro">Otro</option>
         </select>
-      </label>
+      </div>
 
-      <Field label="Objetivo" value={form.datos?.objetivo ?? ''} onChange={(v) => updateDatos('objetivo', v)} />
-      <Field label="Condicionante de carga" value={form.datos?.condicionanteDeCarga ?? ''} onChange={(v) => updateDatos('condicionanteDeCarga', v)} />
+      <Field
+        id="alumno-objetivo"
+        label="Objetivo"
+        value={form.datos?.objetivo ?? ''}
+        onChange={(v) => updateDatos('objetivo', v)}
+      />
+      <Field
+        id="alumno-condicionante"
+        label="Condicionante de carga"
+        value={form.datos?.condicionanteDeCarga ?? ''}
+        onChange={(v) => updateDatos('condicionanteDeCarga', v)}
+      />
 
-      <button
-        type="submit"
-        disabled={loading}
-        className="rounded-lg bg-zinc-900 px-4 py-2.5 text-sm font-medium text-white disabled:opacity-50"
-      >
+      <Button type="submit" disabled={loading} className="mt-2">
         {loading ? 'Guardando…' : submitLabel}
-      </button>
+      </Button>
     </form>
   );
 }
 
 function Field({
+  id,
   label,
   value,
   onChange,
   required,
   type = 'text',
 }: {
+  id: string;
   label: string;
   value: string;
   onChange: (v: string) => void;
@@ -117,16 +178,16 @@ function Field({
   type?: string;
 }) {
   return (
-    <label className="flex flex-col gap-1.5 text-sm">
-      <span className="font-medium text-zinc-700">{label}</span>
-      <input
+    <div className="space-y-2">
+      <Label htmlFor={id}>{label}</Label>
+      <Input
+        id={id}
         type={type}
         required={required}
         value={value}
         onChange={(e) => onChange(e.target.value)}
-        className="rounded-lg border border-zinc-300 bg-white px-3 py-2 text-zinc-900 outline-none focus:border-zinc-900"
       />
-    </label>
+    </div>
   );
 }
 

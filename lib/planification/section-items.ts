@@ -135,9 +135,8 @@ export function filterItemsPorDia(
   items: PlanificationSectionItem[],
   frecuenciaBloque: number | null,
   diaActivo: number,
-  esPrincipal: boolean,
 ): PlanificationSectionItem[] {
-  if (!frecuenciaBloque || !esPrincipal) return items;
+  if (!frecuenciaBloque) return items;
   return items.filter((it) => (diaBaseDeItem(it) ?? 1) === diaActivo);
 }
 

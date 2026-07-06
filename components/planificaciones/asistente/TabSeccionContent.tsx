@@ -73,6 +73,8 @@ export function TabSeccionContent({
         tipoSeccion={tab.tipoSeccion}
         seccion={seccion}
         config={planification.config}
+        diaActivo={diaActivo}
+        frecuenciaBloque={frecuenciaBloque}
         onChange={onUpdateCardio}
       />
     );
@@ -124,7 +126,6 @@ function SeccionPrincipal({
     seccion.items,
     frecuenciaBloque,
     diaActivo,
-    true,
   );
   const cantidadTotal = countItemsEnSeccion(seccion.items);
   const puedeAgregar = cantidadTotal < MAX_EJERCICIOS_POR_SECCION;

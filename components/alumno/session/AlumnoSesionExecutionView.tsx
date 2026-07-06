@@ -17,7 +17,6 @@ import {
 import { etiquetaDia } from '@/lib/planification/preview-progression';
 import { useCompleteSession } from '@/hooks/useStudentPortal';
 import { ExerciseExecutionState } from '@/types/alumno-session';
-import { TipoSeccion } from '@/types/planification';
 import { ApiError } from '@/lib/api/client';
 import { AlumnoBloqueSeccion } from './AlumnoBloqueSeccion';
 import { AlumnoRpeForm } from './AlumnoRpeForm';
@@ -222,7 +221,7 @@ export function AlumnoSesionExecutionView({
             block={block}
             exerciseStates={exerciseStates}
             readOnly={readOnly}
-            defaultOpen={block.tipoSeccion !== TipoSeccion.VUELTA_CALMA}
+            defaultOpen
             onToggle={(id, c) => updateExercise(id, { completed: c })}
             onNote={(id, n) => updateExercise(id, { note: n })}
           />

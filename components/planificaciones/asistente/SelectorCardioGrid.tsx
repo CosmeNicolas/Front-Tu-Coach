@@ -1,9 +1,9 @@
 'use client';
 
-import { useState } from 'react';
+import { useEffect, useState } from 'react';
 import { OPCIONES_CARDIO } from '@/lib/ejercicios/catalogo-cardio';
 import { resolveGifUrl } from '@/lib/ejercicios/gif-url';
-import { ensureSingleItem, isSingleItem } from '@/lib/planification/section-items';
+import { ensureSingleItem, isSingleItem, diaBaseDeItem } from '@/lib/planification/section-items';
 import { PLANIFICATION_LIMITS } from '@/types/planification-limits';
 import {
   PlanificationSection,
@@ -11,6 +11,7 @@ import {
   TipoSeccion,
   UnidadTrabajo,
 } from '@/types/planification';
+import { etiquetaDia } from '@/lib/planification/preview-progression';
 import {
   CEMD,
   OPCIONES_INCREMENTO_MIN,
@@ -24,6 +25,8 @@ interface Props {
   tipoSeccion: TipoSeccion.CALENTAMIENTO | TipoSeccion.VUELTA_CALMA;
   seccion?: PlanificationSection;
   config: import('@/types/planification').PlanificationConfig;
+  diaActivo: number;
+  frecuenciaBloque: number | null;
   onChange: (sec: PlanificationSection) => void;
 }
 
@@ -31,6 +34,8 @@ export function SelectorCardioGrid({
   tipoSeccion,
   seccion,
   config,
+  diaActivo,
+  frecuenciaBloque,
   onChange,
 }: Props) {
   const limits =
@@ -38,7 +43,11 @@ export function SelectorCardioGrid({
       ? PLANIFICATION_LIMITS.calentamiento
       : PLANIFICATION_LIMITS.vueltaCalma;
 
-  const rawItem = seccion?.items[0];
+  const rawItem = frecuenciaBloque
+    ? seccion?.items.find(
+        (it) => isSingleItem(it) && (diaBaseDeItem(it) ?? 1) === diaActivo,
+      )
+    : seccion?.items[0];
   const item = rawItem && isSingleItem(rawItem) ? rawItem : undefined;
   const [selId, setSelId] = useState(
     () => OPCIONES_CARDIO.find((o) => o.nombre === item?.ejercicio)?.id ?? '',
@@ -48,6 +57,22 @@ export function SelectorCardioGrid({
     item?.progresion?.incrementoMinutos ?? 2,
   );
   const [notas, setNotas] = useState(item?.notas ?? '');
+
+  useEffect(() => {
+    const nextRaw = frecuenciaBloque
+      ? seccion?.items.find(
+          (it) => isSingleItem(it) && (diaBaseDeItem(it) ?? 1) === diaActivo,
+        )
+      : seccion?.items[0];
+    const nextItem =
+      nextRaw && isSingleItem(nextRaw) ? nextRaw : undefined;
+    setSelId(
+      OPCIONES_CARDIO.find((o) => o.nombre === nextItem?.ejercicio)?.id ?? '',
+    );
+    setMinutos(nextItem?.parametros.minutos ?? 10);
+    setIncremento(nextItem?.progresion?.incrementoMinutos ?? 2);
+    setNotas(nextItem?.notas ?? '');
+  }, [seccion, diaActivo, frecuenciaBloque]);
 
   const titulo =
     tipoSeccion === TipoSeccion.CALENTAMIENTO
@@ -59,21 +84,28 @@ export function SelectorCardioGrid({
   function buildItem(id: string, min: number, inc: number, note: string) {
     const op = OPCIONES_CARDIO.find((o) => o.id === id);
     if (!op) return null;
+
+    const newItem = ensureSingleItem({
+      ejercicio: op.nombre,
+      tipoItem: TipoItem.AEROBICO,
+      unidadTrabajo: UnidadTrabajo.MIN,
+      parametros: { minutos: min },
+      progresion: { incrementoMinutos: inc },
+      gif: op.imagen ? resolveGifUrl(op.imagen) : null,
+      notas: note.trim() || null,
+      ...(frecuenciaBloque ? { diaBase: diaActivo } : {}),
+    });
+
+    const existing = seccion?.items ?? [];
+    const rest = frecuenciaBloque
+      ? existing.filter((it) => (diaBaseDeItem(it) ?? 1) !== diaActivo)
+      : [];
+
     return {
       tipoSeccion,
       titulo,
       orden: esEntrada ? -1 : 999,
-      items: [
-        ensureSingleItem({
-          ejercicio: op.nombre,
-          tipoItem: TipoItem.AEROBICO,
-          unidadTrabajo: UnidadTrabajo.MIN,
-          parametros: { minutos: min },
-          progresion: { incrementoMinutos: inc },
-          gif: op.imagen ? resolveGifUrl(op.imagen) : null,
-          notas: note.trim() || null,
-        }),
-      ],
+      items: frecuenciaBloque ? [...rest, newItem] : [newItem],
     } satisfies PlanificationSection;
   }
 
@@ -99,6 +131,9 @@ export function SelectorCardioGrid({
         </h2>
         <p className="text-sm text-zinc-500">
           Tope: {limits.topeMinutos} min por sesión
+          {frecuenciaBloque
+            ? ` · ${etiquetaDia(config.modoProgresion, diaActivo)}`
+            : ''}
         </p>
       </header>
 

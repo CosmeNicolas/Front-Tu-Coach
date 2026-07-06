@@ -116,12 +116,10 @@ export function useAsistenteState(planification: Planification) {
     (tabId: string) => {
       const sec = getSeccion(tabId);
       if (!sec) return 0;
-      if (!frecuenciaBloque || sec.tipoSeccion !== TipoSeccion.PRINCIPAL) {
-        return countItemsEnSeccion(sec.items);
-      }
-      return countItemsEnSeccion(
-        filterItemsPorDia(sec.items, frecuenciaBloque, diaActivo, true),
-      );
+      const items = frecuenciaBloque
+        ? filterItemsPorDia(sec.items, frecuenciaBloque, diaActivo)
+        : sec.items;
+      return countItemsEnSeccion(items);
     },
     [getSeccion, frecuenciaBloque, diaActivo],
   );

@@ -129,6 +129,10 @@ textarea::placeholder {
   color: var(--foreground);
 }
 
+.dark .text-zinc-700 {
+  color: var(--muted-foreground);
+}
+
 .dark .text-zinc-600,
 .dark .text-zinc-500 {
   color: var(--muted-foreground);

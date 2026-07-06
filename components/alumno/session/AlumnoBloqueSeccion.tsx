@@ -31,8 +31,10 @@ export function AlumnoBloqueSeccion({
   onNote,
 }: Props) {
   const [open, setOpen] = useState(defaultOpen);
-  const done = exerciseStates.filter((e) => e.completed).length;
-  const total = exerciseStates.length;
+  const blockIds = new Set(block.exercises.map((e) => e.exerciseId));
+  const blockStates = exerciseStates.filter((e) => blockIds.has(e.exerciseId));
+  const done = blockStates.filter((e) => e.completed).length;
+  const total = block.exercises.length;
   const label = SECTION_LABEL[block.tipoSeccion] ?? block.titulo;
 
   return (
