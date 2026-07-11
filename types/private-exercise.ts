@@ -1,4 +1,4 @@
-export type PrivateExerciseMediaType = 'gif' | 'mp4' | 'webm' | 'image';
+export type PrivateExerciseMediaType = 'gif' | 'mp4' | 'webm' | 'image' | 'youtube';
 
 export interface PrivateExercise {
   id: string;

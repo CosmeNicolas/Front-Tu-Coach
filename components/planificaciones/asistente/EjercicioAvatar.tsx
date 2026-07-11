@@ -1,11 +1,14 @@
 'use client';
 
-import { useState } from 'react';
-import { PLACEHOLDER_EJERCICIO, resolveGifUrl } from '@/lib/ejercicios/gif-url';
+import { EjercicioMediaPreview } from '@/components/ejercicios/EjercicioMediaPreview';
+import { inferMediaType } from '@/lib/ejercicios/media-type';
+import { PrivateExerciseMediaType } from '@/types/private-exercise';
+import { cn } from '@/lib/utils';
 
 interface Props {
   gif?: string | null;
   nombre: string;
+  mediaType?: PrivateExerciseMediaType | null;
   size?: 'sm' | 'md' | 'lg';
   roundedFull?: boolean;
 }
@@ -19,37 +22,27 @@ const SIZES = {
 export function EjercicioAvatar({
   gif,
   nombre,
+  mediaType,
   size = 'md',
   roundedFull = false,
 }: Props) {
   const cls = SIZES[size];
-  const [failed, setFailed] = useState(false);
+  const resolvedType = inferMediaType(gif, mediaType);
   const radius = roundedFull ? 'rounded-full' : 'rounded-lg';
-  const src = failed ? PLACEHOLDER_EJERCICIO : resolveGifUrl(gif);
 
-  const img = (
-    // eslint-disable-next-line @next/next/no-img-element
-    <img
-      src={src}
+  return (
+    <EjercicioMediaPreview
+      src={gif}
       alt={nombre}
-      className={
-        roundedFull
-          ? 'max-h-full max-w-full object-contain object-center'
-          : `${cls} ejercicio-gif-fondo shrink-0 ${radius} border border-border object-contain object-center`
-      }
-      onError={() => setFailed(true)}
+      mediaType={resolvedType}
+      mode="thumbnail"
+      eager
+      containerClassName={cn(
+        'ejercicio-gif-fondo shrink-0 overflow-hidden border border-border',
+        cls,
+        radius,
+      )}
+      className="h-full w-full object-contain object-center"
     />
   );
-
-  if (roundedFull) {
-    return (
-      <div
-        className={`${cls} ejercicio-gif-fondo mx-auto flex shrink-0 items-center justify-center overflow-hidden ${radius} border border-border`}
-      >
-        {img}
-      </div>
-    );
-  }
-
-  return img;
 }

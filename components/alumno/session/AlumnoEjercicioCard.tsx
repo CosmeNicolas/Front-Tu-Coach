@@ -1,11 +1,12 @@
 'use client';
 
 import { Check } from 'lucide-react';
-import { EjercicioCatalogoImage } from '@/components/ejercicios/EjercicioCatalogoImage';
+import { EjercicioMediaPreview } from '@/components/ejercicios/EjercicioMediaPreview';
 import {
   exerciseUsesSeconds,
   parseExerciseParams,
 } from '@/lib/alumno/parse-valor';
+import { inferMediaType } from '@/lib/ejercicios/media-type';
 import { cn } from '@/lib/utils';
 import { FlatExerciseRow, ExerciseExecutionState } from '@/types/alumno-session';
 
@@ -34,6 +35,11 @@ export function AlumnoEjercicioCard({
     exercise.tipoItem,
     exercise.unidadTrabajo,
   );
+  const mediaType = inferMediaType(exercise.gif);
+  const showEmbed =
+    mediaType === 'youtube' ||
+    mediaType === 'mp4' ||
+    mediaType === 'webm';
 
   return (
     <article
@@ -48,15 +54,24 @@ export function AlumnoEjercicioCard({
           <div
             className={cn(
               'ejercicio-gif-fondo relative w-full overflow-hidden',
-              'min-h-[200px] sm:min-h-0 sm:aspect-square',
+              showEmbed
+                ? 'min-h-[200px] sm:min-h-[180px]'
+                : 'min-h-[200px] sm:min-h-0 sm:aspect-square',
               'rounded-t-xl sm:rounded-xl sm:border sm:border-border',
             )}
           >
-            <EjercicioCatalogoImage
+            <EjercicioMediaPreview
               src={exercise.gif}
               alt={exercise.name}
-              containerClassName="h-full min-h-[200px] sm:min-h-[128px]"
-              className="h-full min-h-[200px] w-full object-contain object-center p-1 sm:min-h-[128px]"
+              mediaType={mediaType}
+              mode={showEmbed ? 'embed' : 'thumbnail'}
+              containerClassName={
+                showEmbed
+                  ? 'h-full min-h-[200px] w-full'
+                  : 'h-full min-h-[200px] w-full sm:min-h-[128px]'
+              }
+              className="h-full w-full object-contain object-center"
+              eager
             />
 
             {!readOnly ? (

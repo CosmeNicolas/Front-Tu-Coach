@@ -302,6 +302,7 @@ function SeccionPrincipal({
             nombre: nombreVisible(ejercicioSel),
             gif: ejercicioSel.gif,
             descripcion: ejercicioSel.descripcion,
+            mediaType: ejercicioSel.mediaType,
             isIsometrico: esIsometrico(nombreVisible(ejercicioSel)),
           }}
           onAgregar={addItem}

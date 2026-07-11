@@ -29,7 +29,7 @@ export interface EjercicioCatalogo {
   /** Origen del ítem en catálogo fusionado */
   source?: 'global' | 'private';
   privateId?: string;
-  mediaType?: 'gif' | 'mp4' | 'webm' | 'image';
+  mediaType?: 'gif' | 'mp4' | 'webm' | 'image' | 'youtube';
 }
 
 const TODOS: EjercicioCatalogo[] = [

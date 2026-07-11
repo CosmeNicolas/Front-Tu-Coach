@@ -32,7 +32,8 @@ import {
   AlertDialogHeader,
   AlertDialogTitle,
 } from '@/components/ui/alert-dialog';
-import { EjercicioCatalogoImage } from '@/components/ejercicios/EjercicioCatalogoImage';
+import { EjercicioMediaPreview } from '@/components/ejercicios/EjercicioMediaPreview';
+import { inferMediaType } from '@/lib/ejercicios/media-type';
 
 type FormState = {
   nombre: string;
@@ -127,13 +128,16 @@ export function ProfesorEjerciciosView() {
 
     try {
       let mediaUrl = form.mediaUrl.trim();
-      let mediaType = form.mediaType;
+      let mediaType = inferMediaType(mediaUrl, form.mediaType);
 
       if (selectedFile) {
         const uploaded = await handleUpload(editingId ?? undefined);
         if (!uploaded) return;
         mediaUrl = uploaded.mediaUrl;
-        mediaType = uploaded.mediaType;
+        mediaType = inferMediaType(mediaUrl, uploaded.mediaType);
+      } else if (!mediaUrl) {
+        toast.error('Subí un archivo o pegá un link de YouTube / URL de media.');
+        return;
       }
 
       const payload = {
@@ -176,6 +180,7 @@ export function ProfesorEjerciciosView() {
   }
 
   const mediaPreview = previewUrl || form.mediaUrl;
+  const previewMediaType = inferMediaType(mediaPreview, form.mediaType);
 
   return (
     <div className="grid gap-6 lg:grid-cols-[minmax(0,1fr)_minmax(0,1.2fr)]">
@@ -230,7 +235,29 @@ export function ProfesorEjerciciosView() {
             </div>
 
             <div className="space-y-2">
-              <Label htmlFor="ej-media">GIF / imagen / video</Label>
+              <Label htmlFor="ej-media-url">Link de YouTube o URL manual</Label>
+              <Input
+                id="ej-media-url"
+                value={form.mediaUrl}
+                onChange={(e) => {
+                  const mediaUrl = e.target.value;
+                  setForm((f) => ({
+                    ...f,
+                    mediaUrl,
+                    mediaType: inferMediaType(mediaUrl, f.mediaType),
+                  }));
+                  if (!selectedFile) setPreviewUrl('');
+                }}
+                placeholder="https://www.youtube.com/watch?v=... o https://..."
+              />
+              <p className="text-xs text-muted-foreground">
+                Podés pegar un link de YouTube o una URL de imagen/video ya
+                hospedada. También podés subir un archivo abajo.
+              </p>
+            </div>
+
+            <div className="space-y-2">
+              <Label htmlFor="ej-media">Subir GIF / imagen / video</Label>
               <Input
                 id="ej-media"
                 type="file"
@@ -247,20 +274,19 @@ export function ProfesorEjerciciosView() {
 
             {mediaPreview ? (
               <div className="rounded-lg border bg-muted/30 p-3">
-                {form.mediaType === 'mp4' || form.mediaType === 'webm' ? (
-                  // eslint-disable-next-line jsx-a11y/media-has-caption
-                  <video
-                    src={mediaPreview}
-                    controls
-                    className="mx-auto max-h-40 w-full rounded-md object-contain"
-                  />
-                ) : (
-                  <EjercicioCatalogoImage
-                    src={mediaPreview}
-                    alt={form.nombre || 'Preview'}
-                    containerClassName="max-h-40"
-                  />
-                )}
+                <EjercicioMediaPreview
+                  src={mediaPreview}
+                  alt={form.nombre || 'Preview'}
+                  mediaType={previewMediaType}
+                  mode={
+                    previewMediaType === 'youtube' ||
+                    previewMediaType === 'mp4' ||
+                    previewMediaType === 'webm'
+                      ? 'embed'
+                      : 'thumbnail'
+                  }
+                  containerClassName="max-h-56"
+                />
               </div>
             ) : null}
 
@@ -313,8 +339,8 @@ export function ProfesorEjerciciosView() {
         ) : items.length === 0 ? (
           <Card className="border-dashed">
             <CardContent className="py-10 text-center text-sm text-muted-foreground">
-              Todavía no creaste ejercicios propios. Subí un GIF o video y usalo
-              en el asistente de planificación.
+              Todavía no creaste ejercicios propios. Subí un GIF, video, link de
+              YouTube y usalo en el asistente de planificación.
             </CardContent>
           </Card>
         ) : (
@@ -323,10 +349,12 @@ export function ProfesorEjerciciosView() {
               <Card key={item.id}>
                 <CardContent className="flex gap-3 p-3">
                   <div className="w-20 shrink-0">
-                    <EjercicioCatalogoImage
+                    <EjercicioMediaPreview
                       src={item.mediaUrl}
                       alt={item.nombre}
-                      containerClassName="h-20"
+                      mediaType={item.mediaType}
+                      containerClassName="h-20 w-20"
+                      eager
                     />
                   </div>
                   <div className="min-w-0 flex-1">

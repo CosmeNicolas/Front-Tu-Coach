@@ -12,6 +12,9 @@ import { btnOutline, btnPrimary, CEMD } from './constants';
 import { defaultItem } from './CardEjercicio';
 import { MiniTablaProgresion } from './MiniTablaProgresion';
 import { EjercicioAvatar } from './EjercicioAvatar';
+import { EjercicioMediaPreview } from '@/components/ejercicios/EjercicioMediaPreview';
+import { inferMediaType } from '@/lib/ejercicios/media-type';
+import { EjercicioCatalogo } from '@/lib/ejercicios/catalogo';
 import { ProgresionAvanzadaFuerza } from './ProgresionAvanzadaFuerza';
 import {
   ajustarRangosTrasCambioMin,
@@ -29,6 +32,7 @@ interface EjercicioBase {
   nombre: string;
   gif?: string;
   descripcion?: string;
+  mediaType?: EjercicioCatalogo['mediaType'];
   isIsometrico?: boolean;
 }
 
@@ -106,6 +110,7 @@ export function FormularioRapido({
           <EjercicioAvatar
             gif={draft.gif}
             nombre={draft.ejercicio}
+            mediaType={ejercicioBase?.mediaType}
             size="lg"
             roundedFull
           />
@@ -125,6 +130,24 @@ export function FormularioRapido({
           ✕
         </button>
       </div>
+
+      {ejercicioBase?.gif ? (
+        <div className="mb-4 flex justify-center">
+          <EjercicioMediaPreview
+            src={ejercicioBase.gif}
+            alt={ejercicioBase.nombre}
+            mediaType={ejercicioBase.mediaType}
+            mode={
+              ['youtube', 'mp4', 'webm'].includes(
+                inferMediaType(ejercicioBase.gif, ejercicioBase.mediaType),
+              )
+                ? 'embed'
+                : 'thumbnail'
+            }
+            containerClassName="w-full max-w-xs sm:max-w-sm"
+          />
+        </div>
+      ) : null}
 
       {!ejercicioBase ? (
         <div className="mb-3 grid gap-3 sm:grid-cols-2">

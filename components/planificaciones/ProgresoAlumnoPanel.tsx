@@ -1,7 +1,7 @@
 'use client';
 
-import { CheckCircle2, Circle } from 'lucide-react';
-import { Planification } from '@/types/planification';
+import { CheckCircle2, Circle, MessageSquareText } from 'lucide-react';
+import { Planification, SessionExecutionLog } from '@/types/planification';
 import {
   buildProgressStats,
   formatProgressDate,
@@ -17,6 +17,7 @@ export function ProgresoAlumnoPanel({
     planification.progresoAlumno,
     planification.config.totalSesiones,
   );
+  const detalle = planification.progresoAlumno?.detallePorSesion ?? {};
 
   if (stats.completadas === 0) {
     return (
@@ -31,6 +32,15 @@ export function ProgresoAlumnoPanel({
       </section>
     );
   }
+
+  const sesionesConFeedback = stats.filas.filter((fila) => {
+    const det = detalle[String(fila.numero)];
+    const comentario = fila.comentario?.trim();
+    const notasEjercicios =
+      det?.exercises?.some((e) => e.note?.trim()) ?? false;
+    const notaRpe = det?.rpe?.note?.trim();
+    return Boolean(comentario || notasEjercicios || notaRpe);
+  });
 
   return (
     <section
@@ -59,21 +69,21 @@ export function ProgresoAlumnoPanel({
       </dl>
 
       <div className="mt-4 overflow-x-auto rounded-lg border border-zinc-100">
-        <table className="w-full min-w-[480px] text-left text-sm">
+        <table className="w-full min-w-[520px] text-left text-sm">
           <thead>
             <tr className="border-b border-zinc-100 bg-zinc-50/80 text-xs uppercase tracking-wide text-zinc-500">
               <th className="px-3 py-2 font-medium">Sesión</th>
               <th className="px-3 py-2 font-medium">Estado</th>
               <th className="px-3 py-2 font-medium">Fecha</th>
               <th className="px-3 py-2 font-medium">RPE</th>
-              <th className="px-3 py-2 font-medium">Comentario</th>
+              <th className="px-3 py-2 font-medium">Comentario de sesión</th>
             </tr>
           </thead>
           <tbody>
             {stats.filas.map((fila) => (
               <tr
                 key={fila.numero}
-                className="border-b border-zinc-50 last:border-0"
+                className="border-b border-zinc-50 align-top last:border-0"
               >
                 <td className="px-3 py-2 font-medium text-zinc-800">
                   {fila.numero}
@@ -102,15 +112,85 @@ export function ProgresoAlumnoPanel({
                 <td className="px-3 py-2 text-zinc-800">
                   {fila.rpe ?? '—'}
                 </td>
-                <td className="max-w-[200px] truncate px-3 py-2 text-zinc-600">
-                  {fila.comentario ?? '—'}
+                <td className="max-w-md px-3 py-2 text-zinc-600">
+                  {fila.comentario?.trim() ? (
+                    <p className="whitespace-pre-wrap break-words">
+                      {fila.comentario}
+                    </p>
+                  ) : (
+                    '—'
+                  )}
                 </td>
               </tr>
             ))}
           </tbody>
         </table>
       </div>
+
+      {sesionesConFeedback.length > 0 ? (
+        <div className="mt-5 space-y-3">
+          <h3 className="flex items-center gap-2 text-sm font-semibold text-zinc-800">
+            <MessageSquareText className="size-4" />
+            Comentarios y notas del alumno
+          </h3>
+          {sesionesConFeedback.map((fila) => (
+            <SessionFeedbackCard
+              key={fila.numero}
+              sessionNum={fila.numero}
+              det={detalle[String(fila.numero)]}
+              comentarioSesion={fila.comentario}
+            />
+          ))}
+        </div>
+      ) : null}
     </section>
+  );
+}
+
+function SessionFeedbackCard({
+  sessionNum,
+  det,
+  comentarioSesion,
+}: {
+  sessionNum: number;
+  det?: SessionExecutionLog;
+  comentarioSesion: string | null;
+}) {
+  const notasEjercicios =
+    det?.exercises?.filter((e) => e.note?.trim()) ?? [];
+  const notaRpe = det?.rpe?.note?.trim();
+
+  return (
+    <article className="rounded-lg border border-border bg-muted/30 p-3">
+      <p className="text-xs font-semibold uppercase tracking-wide text-muted-foreground">
+        Sesión {sessionNum}
+      </p>
+      {comentarioSesion?.trim() ? (
+        <p className="mt-2 text-sm text-foreground">
+          <span className="font-semibold">Comentario general: </span>
+          {comentarioSesion}
+        </p>
+      ) : null}
+      {notaRpe ? (
+        <p className="mt-2 text-sm text-foreground">
+          <span className="font-semibold">Nota RPE: </span>
+          {notaRpe}
+        </p>
+      ) : null}
+      {notasEjercicios.length > 0 ? (
+        <ul className="mt-2 space-y-1.5">
+          {notasEjercicios.map((ej) => (
+            <li
+              key={ej.exerciseId}
+              className="rounded-md border border-border bg-background px-2.5 py-1.5 text-sm"
+            >
+              <span className="font-medium">{ej.name}: </span>
+              <span className="text-muted-foreground">{ej.note}</span>
+            </li>
+          ))}
+        </ul>
+      ) : null}
+    </article>
   );
 }
 

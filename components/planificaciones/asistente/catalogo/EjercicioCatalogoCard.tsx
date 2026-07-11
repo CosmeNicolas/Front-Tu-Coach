@@ -3,7 +3,7 @@
 import { EjercicioCatalogo, nombreVisible } from '@/lib/ejercicios/catalogo';
 import { Card, CardContent } from '@/components/ui/card';
 import { Badge } from '@/components/ui/badge';
-import { EjercicioCatalogoImage } from '@/components/ejercicios/EjercicioCatalogoImage';
+import { EjercicioMediaPreview } from '@/components/ejercicios/EjercicioMediaPreview';
 import { CEMD } from '../constants';
 
 interface Props {
@@ -25,9 +25,10 @@ export function EjercicioCatalogoCard({
       onClick={() => onSeleccionar(ejercicio)}
     >
       <CardContent className="flex h-full flex-col p-2">
-        <EjercicioCatalogoImage
+        <EjercicioMediaPreview
           src={ejercicio.gif}
           alt={nombre}
+          mediaType={ejercicio.mediaType}
           eager={eagerImage}
         />
         <span className="mt-2 line-clamp-2 text-center text-xs font-semibold text-zinc-900">

@@ -6,4 +6,4 @@ export const REMEMBER_EMAIL_KEY = 'tucoach_remember_email';
 export const TOKEN_COOKIE_MAX_AGE = 60 * 60 * 24 * 7;
 
 export const API_BASE_URL =
-  process.env.NEXT_PUBLIC_API_URL ?? 'http://localhost:3001/api/v1';
+  process.env.NEXT_PUBLIC_API_URL ?? 'http://localhost:3002/api/v1';

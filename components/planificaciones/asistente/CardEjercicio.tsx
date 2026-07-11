@@ -16,6 +16,7 @@ import {
   ultimaSesionCompletadaAlumno,
 } from '@/lib/planification/alumno-progress-guard';
 import { ajustarRangosTrasCambioMin } from '@/lib/planification/fuerza-rangos';
+import { inferMediaType } from '@/lib/ejercicios/media-type';
 import { EjercicioAvatar } from './EjercicioAvatar';
 import { MiniTablaProgresion } from './MiniTablaProgresion';
 import { CardEjercicioEdicion } from './CardEjercicioEdicion';
@@ -131,6 +132,7 @@ export function CardEjercicio({
           <EjercicioAvatar
             gif={display.gif}
             nombre={display.ejercicio}
+            mediaType={inferMediaType(display.gif)}
             size="lg"
           />
 

@@ -3,7 +3,7 @@
 import { useState } from 'react';
 import { usePrivateExercises } from '@/hooks/usePrivateExercises';
 import { useTenants } from '@/hooks/useGymAdmin';
-import { EjercicioCatalogoImage } from '@/components/ejercicios/EjercicioCatalogoImage';
+import { EjercicioMediaPreview } from '@/components/ejercicios/EjercicioMediaPreview';
 import { Input } from '@/components/ui/input';
 import { Label } from '@/components/ui/label';
 
@@ -88,11 +88,13 @@ export function SuperAdminPrivateExercisesView({ tenantId: fixedTenantId }: Prop
               {items.map((item) => (
                 <tr key={item.id} className="border-t border-border">
                   <td className="px-4 py-2">
-                    <div className="w-16">
-                      <EjercicioCatalogoImage
+                    <div className="w-20 shrink-0">
+                      <EjercicioMediaPreview
                         src={item.mediaUrl}
                         alt={item.nombre}
-                        containerClassName="h-14"
+                        mediaType={item.mediaType}
+                        containerClassName="h-14 w-20"
+                        eager
                       />
                     </div>
                   </td>
