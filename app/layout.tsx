@@ -7,6 +7,15 @@ import './globals.css';
 export const metadata: Metadata = {
   title: 'TuCoach',
   description: 'Plataforma SaaS para gimnasios y planificaciones',
+  manifest: '/site.webmanifest',
+  icons: {
+    icon: [
+      { url: '/favicon.ico', sizes: 'any' },
+      { url: '/icon-192.png', type: 'image/png', sizes: '192x192' },
+      { url: '/icon-512.png', type: 'image/png', sizes: '512x512' },
+    ],
+    apple: '/apple-touch-icon.png',
+  },
 };
 
 export default function RootLayout({

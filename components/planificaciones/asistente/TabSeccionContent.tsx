@@ -4,6 +4,7 @@ import { useState } from 'react';
 import { Link2, Plus, Search, X } from 'lucide-react';
 import { toast } from 'sonner';
 import {
+  MaterializedPlanification,
   Planification,
   PlanificationItemSingle,
   PlanificationSection,
@@ -41,6 +42,7 @@ interface Props {
   frecuenciaBloque: number | null;
   contentVersion: number;
   progresoAlumno: Planification['progresoAlumno'];
+  materialized?: MaterializedPlanification;
   onUpdateSeccion: (
     titulo: string,
     updater: (s: PlanificationSection) => PlanificationSection,
@@ -57,6 +59,7 @@ export function TabSeccionContent({
   frecuenciaBloque,
   contentVersion,
   progresoAlumno,
+  materialized,
   onUpdateSeccion,
   onUpdateCardio,
   onAdjusted,
@@ -90,6 +93,7 @@ export function TabSeccionContent({
       frecuenciaBloque={frecuenciaBloque}
       contentVersion={contentVersion}
       progresoAlumno={progresoAlumno}
+      materialized={materialized}
       onUpdateSeccion={onUpdateSeccion}
       onAdjusted={onAdjusted}
     />
@@ -105,6 +109,7 @@ function SeccionPrincipal({
   frecuenciaBloque,
   contentVersion,
   progresoAlumno,
+  materialized,
   onUpdateSeccion,
   onAdjusted,
 }: {
@@ -116,6 +121,7 @@ function SeccionPrincipal({
   frecuenciaBloque: number | null;
   contentVersion: number;
   progresoAlumno: Planification['progresoAlumno'];
+  materialized?: MaterializedPlanification;
   onUpdateSeccion: Props['onUpdateSeccion'];
   onAdjusted: Props['onAdjusted'];
 }) {
@@ -240,6 +246,7 @@ function SeccionPrincipal({
                   planificationId={planification.id}
                   contentVersion={contentVersion}
                   progresoAlumno={progresoAlumno}
+                  materialized={materialized}
                   modoSeleccion={combo.modoSeleccion}
                   onUpdateSubitem={(subId, updated) =>
                     updateGrupoSubitem(entry.id, subId, updated)
@@ -276,6 +283,7 @@ function SeccionPrincipal({
                   planificationId={planification.id}
                   contentVersion={contentVersion}
                   progresoAlumno={progresoAlumno}
+                  materialized={materialized}
                   onUpdate={(updated) => updateSingleAt(idx, updated)}
                   onRemove={() => removeAt(idx)}
                   onAdjusted={onAdjusted}

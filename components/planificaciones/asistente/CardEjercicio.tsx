@@ -3,12 +3,15 @@
 import { useEffect, useState } from 'react';
 import { toast } from 'sonner';
 import {
+  MaterializedPlanification,
   Planification,
   PlanificationConfig,
   PlanificationItem,
   PlanificationProgress,
   TipoItem,
 } from '@/types/planification';
+import { getLastExerciseAlumnoContext } from '@/lib/planification/exercise-progress-context';
+import { ExerciseAlumnoContextBlock } from '@/components/planificaciones/shared/ExerciseAlumnoContextBlock';
 import {
   canInlineEditPlanItem,
   canRemovePlanItem,
@@ -33,6 +36,7 @@ interface Props {
   compact?: boolean;
   catalogTabId?: string;
   progresoAlumno?: PlanificationProgress;
+  materialized?: MaterializedPlanification;
   planificationId?: string;
   contentVersion?: number;
   onUpdate: (item: PlanificationItem) => void;
@@ -46,6 +50,7 @@ export function CardEjercicio({
   compact,
   catalogTabId = 'principal',
   progresoAlumno,
+  materialized,
   planificationId,
   contentVersion,
   onUpdate,
@@ -98,6 +103,13 @@ export function CardEjercicio({
   const inlineEditBlocked = !canInlineEditPlanItem(progresoAlumno);
   const removeBlocked = !canRemovePlanItem(progresoAlumno);
   const alumnoProgreso = hasAlumnoSessionProgress(progresoAlumno);
+  const alumnoContext =
+    !editing && progresoAlumno
+      ? getLastExerciseAlumnoContext(progresoAlumno, materialized, {
+          id: item.id,
+          ejercicio: item.ejercicio,
+        })
+      : null;
 
   function startEdit() {
     if (inlineEditBlocked) {
@@ -146,6 +158,12 @@ export function CardEjercicio({
                     Alumno: {progresoAlumno?.completadas.length ?? 0} sesión(es) completada(s)
                     · última #{ultimaSesionCompletadaAlumno(progresoAlumno)} — usá ⚡
                   </p>
+                ) : null}
+                {!editing ? (
+                  <ExerciseAlumnoContextBlock
+                    context={alumnoContext}
+                    compact={compact}
+                  />
                 ) : null}
               </div>
               <CardEjercicioToolbar

@@ -1,6 +1,7 @@
 'use client';
 
 import {
+  MaterializedPlanification,
   Planification,
   PlanificationConfig,
   PlanificationItemGroup,
@@ -17,6 +18,7 @@ interface Props {
   planificationId?: string;
   contentVersion?: number;
   progresoAlumno?: PlanificationProgress;
+  materialized?: MaterializedPlanification;
   modoSeleccion?: boolean;
   onUpdateSubitem: (subId: string, item: PlanificationItemSingle) => void;
   onRemoveSubitem: (subId: string) => void;
@@ -31,6 +33,7 @@ export function CardGrupoEjercicio({
   planificationId,
   contentVersion,
   progresoAlumno,
+  materialized,
   modoSeleccion,
   onUpdateSubitem,
   onRemoveSubitem,
@@ -74,6 +77,7 @@ export function CardGrupoEjercicio({
               planificationId={planificationId}
               contentVersion={contentVersion}
               progresoAlumno={progresoAlumno}
+              materialized={materialized}
               onUpdate={(updated) => onUpdateSubitem(sub.id, updated)}
               onRemove={() => onRemoveSubitem(sub.id)}
               onAdjusted={onAdjusted}

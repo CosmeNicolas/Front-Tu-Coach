@@ -1,5 +1,11 @@
-<svg xmlns="http://www.w3.org/2000/svg" width="80" height="80" viewBox="0 0 80 80" fill="none">
-  <rect width="80" height="80" rx="8" fill="#e5e5e5"/>
-  <rect x="8" y="8" width="64" height="64" rx="6" stroke="#a3a3a3" stroke-width="2" fill="#fafafa"/>
-  <text x="40" y="48" text-anchor="middle" font-size="28"><�</text>
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 120 120" role="img" aria-label="Ejercicio">
+  <rect width="120" height="120" rx="16" fill="#f4f4f5"/>
+  <g fill="none" stroke="#71717a" stroke-width="6" stroke-linecap="round" stroke-linejoin="round">
+    <path d="M24 60h12"/>
+    <path d="M84 60h12"/>
+    <rect x="30" y="48" width="12" height="24" rx="3" fill="#e4e4e7" stroke="#71717a"/>
+    <rect x="78" y="48" width="12" height="24" rx="3" fill="#e4e4e7" stroke="#71717a"/>
+    <path d="M42 60h36"/>
+  </g>
+  <text x="60" y="98" text-anchor="middle" font-family="ui-sans-serif, system-ui, sans-serif" font-size="11" fill="#a1a1aa">Sin media</text>
 </svg>

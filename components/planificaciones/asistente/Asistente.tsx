@@ -4,6 +4,7 @@ import { useRouter } from 'next/navigation';
 import { ChevronLeft, ChevronRight, CheckCircle2, Save } from 'lucide-react';
 import { Planification } from '@/types/planification';
 import { useClient } from '@/hooks/useClients';
+import { useMaterializedPlanification } from '@/hooks/usePlanifications';
 import { Button } from '@/components/ui/button';
 import { Card, CardContent } from '@/components/ui/card';
 import { Tabs, TabsContent, TabsList, TabsTrigger } from '@/components/ui/tabs';
@@ -50,6 +51,9 @@ export function Asistente({ planification }: { planification: Planification }) {
   const tabIds = [...WIZARD_TABS.map((t) => t.id), TAB_PREVIEW_ID];
   const idx = tabIds.indexOf(tabActivo);
   const alumnoConProgreso = hasAlumnoSessionProgress(planification.progresoAlumno);
+  const { data: materialized } = useMaterializedPlanification(
+    alumnoConProgreso ? planification.id : '',
+  );
 
   return (
     <div className="mx-auto w-full max-w-6xl space-y-4 pb-10">
@@ -191,6 +195,7 @@ export function Asistente({ planification }: { planification: Planification }) {
                   frecuenciaBloque={frecuenciaBloque}
                   contentVersion={contentVersion}
                   progresoAlumno={planification.progresoAlumno}
+                  materialized={materialized}
                   onUpdateSeccion={updateSeccion}
                   onUpdateCardio={setCalentamientoOrVuelta}
                   onAdjusted={syncFromServer}
