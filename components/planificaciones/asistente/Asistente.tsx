@@ -114,7 +114,9 @@ export function Asistente({ planification }: { planification: Planification }) {
               sesión(es) (última: #
               {ultimaSesionCompletadaAlumno(planification.progresoAlumno)}). Para
               cambiar ejercicios usá <strong>⚡ Ajuste desde sesión N</strong>; la
-              edición ✎ y eliminar 🗑 están bloqueadas.
+              edición ✎ y eliminar 🗑 están bloqueadas. Podés{' '}
+              <strong>reordenar</strong> ejercicios con ⋮⋮; el alumno verá el nuevo orden
+              al guardar.
             </div>
           ) : null}
         </CardContent>

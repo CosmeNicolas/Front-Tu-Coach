@@ -51,14 +51,18 @@ export function AlumnoMobileLayout({ children }: { children: React.ReactNode }) 
         </div>
       </aside>
 
-      <div className="flex min-w-0 flex-1 flex-col">
-        <header className="sticky top-0 z-30 flex items-start justify-between gap-3 border-b border-border bg-card/95 px-4 py-3 backdrop-blur lg:hidden">
+      <div className="flex min-w-0 flex-1 flex-col [--alumno-sticky-top:4.5rem] lg:[--alumno-sticky-top:0px]">
+        <header className="fixed inset-x-0 top-0 z-30 flex items-start justify-between gap-3 border-b border-border bg-card/95 px-4 py-3 backdrop-blur-sm lg:hidden">
           <div>
             <p className="font-display text-xl tracking-wide text-foreground">TuCoach</p>
             <p className="text-xs text-muted-foreground">Portal Alumno</p>
           </div>
           <ThemeToggle variant="compact" />
         </header>
+        <div
+          className="h-(--alumno-sticky-top) shrink-0 lg:hidden"
+          aria-hidden
+        />
         <main className="mx-auto w-full max-w-lg flex-1 pb-28 lg:max-w-4xl lg:pb-8">
           {children}
         </main>

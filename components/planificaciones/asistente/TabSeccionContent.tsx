@@ -21,7 +21,10 @@ import {
   filterItemsPorDia,
   isGroupItem,
   isSingleItem,
+  reorderGroupSubitem,
+  reorderVisibleItems,
 } from '@/lib/planification/section-items';
+import { hasAlumnoSessionProgress } from '@/lib/planification/alumno-progress-guard';
 import { Button } from '@/components/ui/button';
 import { Card, CardContent } from '@/components/ui/card';
 import { Badge } from '@/components/ui/badge';
@@ -32,6 +35,10 @@ import { CardGrupoEjercicio } from './CardGrupoEjercicio';
 import { FormularioRapido } from './FormularioRapido';
 import { BuscadorEjercicio } from './BuscadorEjercicio';
 import { useCombinacionEjercicios } from './useCombinacionEjercicios';
+import {
+  SeccionItemsSortableList,
+  SortableSectionItem,
+} from './SeccionItemsSortableList';
 import { etiquetaDia } from '@/lib/planification/preview-progression';
 
 interface Props {
@@ -187,6 +194,50 @@ function SeccionPrincipal({
     else toast.error('No se pudo combinar. Verificá la selección.');
   }
 
+  function notifyReorderIfProgress() {
+    if (hasAlumnoSessionProgress(progresoAlumno)) {
+      toast.message('Orden actualizado', {
+        description:
+          'El alumno verá los ejercicios en este orden. Guardá la planilla para aplicarlo.',
+      });
+    }
+  }
+
+  function handleReorderVisible(orderedVisibleIds: string[]) {
+    const next = reorderVisibleItems(seccion.items, orderedVisibleIds);
+    const changed = next.some((item, i) => item.id !== seccion.items[i]?.id);
+    if (!changed) return;
+    setItems(next);
+    notifyReorderIfProgress();
+  }
+
+  function handleReorderInGroup(
+    groupId: string,
+    subId: string,
+    direction: 'up' | 'down',
+  ) {
+    const next = reorderGroupSubitem(seccion.items, groupId, subId, direction);
+    const grupoBefore = seccion.items.find(
+      (it) => isGroupItem(it) && it.id === groupId,
+    );
+    const grupoAfter = next.find((it) => isGroupItem(it) && it.id === groupId);
+    if (
+      !grupoBefore ||
+      !isGroupItem(grupoBefore) ||
+      !grupoAfter ||
+      !isGroupItem(grupoAfter)
+    ) {
+      return;
+    }
+    const changed = grupoBefore.items.some(
+      (sub, i) => sub.id !== grupoAfter.items[i]?.id,
+    );
+    if (!changed) return;
+    setItems(next);
+    notifyReorderIfProgress();
+  }
+
+  const alumnoConProgreso = hasAlumnoSessionProgress(progresoAlumno);
   const diaLabel = frecuenciaBloque
     ? etiquetaDia(planification.config.modoProgresion, diaActivo)
     : null;
@@ -232,66 +283,95 @@ function SeccionPrincipal({
         )}
       </div>
 
+      {itemsVisibles.length > 1 && !combo.modoSeleccion ? (
+        <p className="rounded-lg border border-muted bg-muted/30 px-3 py-2 text-xs text-muted-foreground">
+          Arrastrá <span aria-hidden>⋮⋮</span> para reordenar bloques. El alumno verá los
+          ejercicios en este mismo orden en su sesión.
+          {alumnoConProgreso
+            ? ' Podés reordenar aunque el alumno ya tenga progreso; recordá guardar la planilla.'
+            : null}
+        </p>
+      ) : null}
+
       {itemsVisibles.length > 0 ? (
-        <div className="space-y-2">
+        <SeccionItemsSortableList
+          itemIds={itemsVisibles.map((it) => it.id)}
+          disabled={combo.modoSeleccion}
+          onReorder={handleReorderVisible}
+        >
           {itemsVisibles.map((entry) => {
             const idx = indexOfId(entry.id);
             if (isGroupItem(entry)) {
               return (
-                <CardGrupoEjercicio
-                  key={entry.id}
-                  grupo={entry}
-                  config={planification.config}
-                  catalogTabId={tabId}
-                  planificationId={planification.id}
-                  contentVersion={contentVersion}
-                  progresoAlumno={progresoAlumno}
-                  materialized={materialized}
-                  modoSeleccion={combo.modoSeleccion}
-                  onUpdateSubitem={(subId, updated) =>
-                    updateGrupoSubitem(entry.id, subId, updated)
-                  }
-                  onRemoveSubitem={(subId) => combo.quitarSubitem(entry.id, subId)}
-                  onDesagrupar={() => combo.desagrupar(entry.id)}
-                  onAdjusted={onAdjusted}
-                />
+                <SortableSectionItem key={entry.id} id={entry.id}>
+                  {({ dragHandleProps }) => (
+                    <CardGrupoEjercicio
+                      grupo={entry}
+                      config={planification.config}
+                      catalogTabId={tabId}
+                      planificationId={planification.id}
+                      contentVersion={contentVersion}
+                      progresoAlumno={progresoAlumno}
+                      materialized={materialized}
+                      modoSeleccion={combo.modoSeleccion}
+                      dragHandleProps={
+                        combo.modoSeleccion ? undefined : dragHandleProps
+                      }
+                      onUpdateSubitem={(subId, updated) =>
+                        updateGrupoSubitem(entry.id, subId, updated)
+                      }
+                      onRemoveSubitem={(subId) => combo.quitarSubitem(entry.id, subId)}
+                      onDesagrupar={() => combo.desagrupar(entry.id)}
+                      onReorderSubitem={(subId, direction) =>
+                        handleReorderInGroup(entry.id, subId, direction)
+                      }
+                      onAdjusted={onAdjusted}
+                    />
+                  )}
+                </SortableSectionItem>
               );
             }
             return (
-              <div
-                key={entry.id}
-                className={
-                  combo.modoSeleccion && combo.seleccionados.has(entry.id)
-                    ? 'rounded-lg ring-2 ring-primary'
-                    : undefined
-                }
-              >
-                {combo.modoSeleccion ? (
-                  <label className="mb-1 flex items-center gap-2 px-1 text-xs">
-                    <input
-                      type="checkbox"
-                      checked={combo.seleccionados.has(entry.id)}
-                      onChange={() => combo.toggleSeleccion(entry.id)}
+              <SortableSectionItem key={entry.id} id={entry.id}>
+                {({ dragHandleProps }) => (
+                  <div
+                    className={
+                      combo.modoSeleccion && combo.seleccionados.has(entry.id)
+                        ? 'rounded-lg ring-2 ring-primary'
+                        : undefined
+                    }
+                  >
+                    {combo.modoSeleccion ? (
+                      <label className="mb-1 flex items-center gap-2 px-1 text-xs">
+                        <input
+                          type="checkbox"
+                          checked={combo.seleccionados.has(entry.id)}
+                          onChange={() => combo.toggleSeleccion(entry.id)}
+                        />
+                        Seleccionar para combinar
+                      </label>
+                    ) : null}
+                    <CardEjercicio
+                      item={entry}
+                      config={planification.config}
+                      catalogTabId={tabId}
+                      planificationId={planification.id}
+                      contentVersion={contentVersion}
+                      progresoAlumno={progresoAlumno}
+                      materialized={materialized}
+                      dragHandleProps={
+                        combo.modoSeleccion ? undefined : dragHandleProps
+                      }
+                      onUpdate={(updated) => updateSingleAt(idx, updated)}
+                      onRemove={() => removeAt(idx)}
+                      onAdjusted={onAdjusted}
                     />
-                    Seleccionar para combinar
-                  </label>
-                ) : null}
-                <CardEjercicio
-                  item={entry}
-                  config={planification.config}
-                  catalogTabId={tabId}
-                  planificationId={planification.id}
-                  contentVersion={contentVersion}
-                  progresoAlumno={progresoAlumno}
-                  materialized={materialized}
-                  onUpdate={(updated) => updateSingleAt(idx, updated)}
-                  onRemove={() => removeAt(idx)}
-                  onAdjusted={onAdjusted}
-                />
-              </div>
+                  </div>
+                )}
+              </SortableSectionItem>
             );
           })}
-        </div>
+        </SeccionItemsSortableList>
       ) : (
         <Card className="border-dashed">
           <CardContent className="flex flex-col items-center py-8 text-center">

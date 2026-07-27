@@ -2,6 +2,7 @@ import { apiClient } from '@/lib/api/client';
 import {
   MaterializedPlanification,
   Planification,
+  PlanificationStatus,
 } from '@/types/planification';
 import {
   CompleteSessionPayloadV2,
@@ -14,6 +15,18 @@ export interface StudentProgressSummary {
   total: number;
   porcentaje: number;
   proximaSesion: number | null;
+}
+
+export interface StudentPlanificationListItem {
+  id: string;
+  titulo: string;
+  estado: PlanificationStatus;
+  createdAt: string;
+  updatedAt: string;
+  progresoResumen: StudentProgressSummary;
+  completada: boolean;
+  finalizadaEn: string | null;
+  fechasCompletadas: string[];
 }
 
 export interface StudentPlanification extends Planification {
@@ -37,6 +50,12 @@ export function fetchMiPerfil() {
 
 export function fetchMiPlanificacion() {
   return apiClient<StudentPlanification>('/alumno/mi-planificacion', {
+    auth: true,
+  });
+}
+
+export function fetchMisPlanificaciones() {
+  return apiClient<StudentPlanificationListItem[]>('/alumno/mis-planificaciones', {
     auth: true,
   });
 }

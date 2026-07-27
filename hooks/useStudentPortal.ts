@@ -5,6 +5,7 @@ import {
   completeStudentSession,
   fetchMiPerfil,
   fetchMiPlanificacion,
+  fetchMisPlanificaciones,
   fetchStudentMaterialized,
 } from '@/lib/api/student-portal';
 import { CompleteSessionPayloadV2 } from '@/types/alumno-session';
@@ -20,6 +21,14 @@ export function useMiPlanificacion() {
   return useQuery({
     queryKey: ['alumno', 'mi-planificacion'],
     queryFn: fetchMiPlanificacion,
+    retry: false,
+  });
+}
+
+export function useMisPlanificaciones() {
+  return useQuery({
+    queryKey: ['alumno', 'mis-planificaciones'],
+    queryFn: fetchMisPlanificaciones,
   });
 }
 
@@ -43,6 +52,7 @@ export function useCompleteSession(planificationId: string) {
     }) => completeStudentSession(planificationId, sessionNum, payload),
     onSuccess: async () => {
       await qc.invalidateQueries({ queryKey: ['alumno', 'mi-planificacion'] });
+      await qc.invalidateQueries({ queryKey: ['alumno', 'mis-planificaciones'] });
       await qc.invalidateQueries({
         queryKey: ['alumno', 'materialized', planificationId],
       });

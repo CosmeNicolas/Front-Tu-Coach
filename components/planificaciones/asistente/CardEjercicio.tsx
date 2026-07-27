@@ -27,6 +27,7 @@ import { CardEjercicioHeader } from './CardEjercicioHeader';
 import { CardEjercicioToolbar } from './CardEjercicioToolbar';
 import { AjusteBadge } from './AjusteAntesDespues';
 import { PanelAjusteEjercicio } from './PanelAjusteEjercicio';
+import { DragHandle } from './SeccionItemsSortableList';
 
 export { defaultItem } from './card-ejercicio-defaults';
 
@@ -39,6 +40,7 @@ interface Props {
   materialized?: MaterializedPlanification;
   planificationId?: string;
   contentVersion?: number;
+  dragHandleProps?: React.ButtonHTMLAttributes<HTMLButtonElement>;
   onUpdate: (item: PlanificationItem) => void;
   onRemove: () => void;
   onAdjusted?: (planification: Planification) => void;
@@ -53,6 +55,7 @@ export function CardEjercicio({
   materialized,
   planificationId,
   contentVersion,
+  dragHandleProps,
   onUpdate,
   onRemove,
   onAdjusted,
@@ -141,6 +144,11 @@ export function CardEjercicio({
     <article className="rounded-lg border border-zinc-200 bg-white shadow-sm">
       <div className="p-4">
         <div className="flex flex-col gap-3 sm:flex-row sm:items-start">
+          {dragHandleProps ? (
+            <div className="flex shrink-0 self-start pt-1">
+              <DragHandle {...dragHandleProps} />
+            </div>
+          ) : null}
           <EjercicioAvatar
             gif={display.gif}
             nombre={display.ejercicio}

@@ -95,13 +95,20 @@ function AlumnoBarChart({
 
 interface Props {
   weekly: ChartPoint[];
+  monthly: ChartPoint[];
   rpe: ChartPoint[];
   exercises: ChartPoint[];
 }
 
-export function AlumnoMetricasCharts({ weekly, rpe, exercises }: Props) {
+export function AlumnoMetricasCharts({ weekly, monthly, rpe, exercises }: Props) {
   return (
     <div className="flex flex-col gap-4">
+      <AlumnoBarChart
+        title="Sesiones completadas por mes"
+        description="Actividad mensual (últimos 12 meses con registros)"
+        data={monthly}
+        valueLabel="Sesiones"
+      />
       <AlumnoBarChart
         title="Sesiones completadas por semana"
         description="Últimas semanas con al menos una sesión registrada"

@@ -168,3 +168,47 @@ export function countItemsEnSeccion(items: PlanificationSectionItem[]): number {
     return acc + 1;
   }, 0);
 }
+
+/** Reordena solo los ítems visibles (p. ej. filtrados por día) preservando el resto. */
+export function reorderVisibleItems(
+  items: PlanificationSectionItem[],
+  orderedVisibleIds: string[],
+): PlanificationSectionItem[] {
+  const orderedSet = new Set(orderedVisibleIds);
+  const byId = new Map<string, PlanificationSectionItem>();
+  for (const item of items) {
+    if (orderedSet.has(item.id)) byId.set(item.id, item);
+  }
+  if (byId.size !== orderedVisibleIds.length) return items;
+
+  const reorderedVisible = orderedVisibleIds.map((id) => byId.get(id)!);
+  let cursor = 0;
+  return items.map((item) => {
+    if (!orderedSet.has(item.id)) return item;
+    const next = reorderedVisible[cursor++];
+    return next ?? item;
+  });
+}
+
+export function reorderGroupSubitem(
+  items: PlanificationSectionItem[],
+  groupId: string,
+  subId: string,
+  direction: 'up' | 'down',
+): PlanificationSectionItem[] {
+  const idx = items.findIndex((it) => isGroupItem(it) && it.id === groupId);
+  if (idx === -1) return items;
+  const grupo = items[idx];
+  if (!isGroupItem(grupo)) return items;
+
+  const subIdx = grupo.items.findIndex((s) => s.id === subId);
+  if (subIdx === -1) return items;
+
+  const newIdx = direction === 'up' ? subIdx - 1 : subIdx + 1;
+  if (newIdx < 0 || newIdx >= grupo.items.length) return items;
+
+  const nuevosSubs = [...grupo.items];
+  [nuevosSubs[subIdx], nuevosSubs[newIdx]] = [nuevosSubs[newIdx], nuevosSubs[subIdx]];
+
+  return items.map((it, i) => (i === idx ? { ...grupo, items: nuevosSubs } : it));
+}

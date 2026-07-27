@@ -36,7 +36,10 @@ function asExtended(
 }
 
 export function buildAlumnoMetrics(
-  plan: Planification,
+  plan: {
+    config: Pick<Planification['config'], 'totalSesiones'>;
+    progresoAlumno: Planification['progresoAlumno'] | StudentProgressExtended;
+  },
   resumen?: StudentProgressSummary,
 ): AlumnoDashboardMetrics {
   const progress = asExtended(plan.progresoAlumno);

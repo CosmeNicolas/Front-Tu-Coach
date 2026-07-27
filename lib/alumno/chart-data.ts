@@ -21,15 +21,59 @@ function formatWeekLabel(isoMonday: string): string {
   return d.toLocaleDateString('es-AR', { day: '2-digit', month: 'short' });
 }
 
+function formatMonthLabel(yearMonth: string): string {
+  const [year, month] = yearMonth.split('-');
+  const d = new Date(Number(year), Number(month) - 1, 1);
+  return d.toLocaleDateString('es-AR', { month: 'short', year: '2-digit' });
+}
+
+function monthKey(isoDate: string): string | null {
+  const d = new Date(isoDate);
+  if (Number.isNaN(d.getTime())) return null;
+  const y = d.getFullYear();
+  const m = String(d.getMonth() + 1).padStart(2, '0');
+  return `${y}-${m}`;
+}
+
+function bucketDatesByMonth(fechas: string[]): ChartPoint[] {
+  const buckets = new Map<string, { label: string; value: number; sort: string }>();
+
+  for (const fecha of fechas) {
+    if (!fecha?.trim()) continue;
+    const key = monthKey(fecha);
+    if (!key) continue;
+    const existing = buckets.get(key);
+    if (existing) {
+      existing.value += 1;
+    } else {
+      buckets.set(key, {
+        label: formatMonthLabel(key),
+        value: 1,
+        sort: key,
+      });
+    }
+  }
+
+  return [...buckets.values()]
+    .sort((a, b) => a.sort.localeCompare(b.sort))
+    .slice(-12)
+    .map(({ label, value }) => ({ label, value }));
+}
+
 export function buildWeeklyCompletions(
   fechas: string[],
   completadas: number[],
 ): ChartPoint[] {
+  const dates = completadas
+    .map((n) => fechas[n - 1])
+    .filter((f): f is string => Boolean(f?.trim()));
+  return bucketDatesByWeek(dates);
+}
+
+function bucketDatesByWeek(fechas: string[]): ChartPoint[] {
   const buckets = new Map<string, { label: string; value: number; sort: string }>();
 
-  for (const n of completadas) {
-    const fecha = fechas[n - 1];
-    if (!fecha?.trim()) continue;
+  for (const fecha of fechas) {
     const d = new Date(fecha);
     if (Number.isNaN(d.getTime())) continue;
     const key = mondayKey(d);
@@ -49,6 +93,23 @@ export function buildWeeklyCompletions(
     .sort((a, b) => a.sort.localeCompare(b.sort))
     .slice(-8)
     .map(({ label, value }) => ({ label, value }));
+}
+
+export function buildMonthlyCompletions(
+  fechas: string[],
+  completadas: number[],
+): ChartPoint[] {
+  const dates = completadas
+    .map((n) => fechas[n - 1])
+    .filter((f): f is string => Boolean(f?.trim()));
+  return bucketDatesByMonth(dates);
+}
+
+export function buildAggregateMonthlyCompletions(
+  items: Array<{ fechasCompletadas: string[] }>,
+): ChartPoint[] {
+  const allDates = items.flatMap((item) => item.fechasCompletadas ?? []);
+  return bucketDatesByMonth(allDates);
 }
 
 export function buildRpePerSession(

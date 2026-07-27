@@ -1,6 +1,6 @@
 'use client';
 
-import { useEffect, useMemo, useState } from 'react';
+import { useEffect, useLayoutEffect, useMemo, useRef, useState } from 'react';
 import Link from 'next/link';
 import { useRouter } from 'next/navigation';
 import { toast } from 'sonner';
@@ -81,6 +81,27 @@ export function AlumnoSesionExecutionView({
   );
   const [pendingDialogOpen, setPendingDialogOpen] = useState(false);
   const [pendingCount, setPendingCount] = useState(0);
+  const sessionHeaderRef = useRef<HTMLElement>(null);
+  const [sessionHeaderHeight, setSessionHeaderHeight] = useState(132);
+
+  useLayoutEffect(() => {
+    const el = sessionHeaderRef.current;
+    if (!el) return;
+
+    const updateHeight = () => {
+      setSessionHeaderHeight(el.offsetHeight);
+    };
+
+    updateHeight();
+    const observer = new ResizeObserver(updateHeight);
+    observer.observe(el);
+    window.addEventListener('resize', updateHeight);
+
+    return () => {
+      observer.disconnect();
+      window.removeEventListener('resize', updateHeight);
+    };
+  }, [readOnly, sesion?.diaBase, sesion?.numero]);
 
   useEffect(() => {
     if (readOnly) return;
@@ -184,35 +205,49 @@ export function AlumnoSesionExecutionView({
         ← Volver al historial
       </Link>
 
-      <header className="rounded-xl border border-border bg-card p-4">
-        <p className="text-xs font-semibold uppercase tracking-wide text-primary">
-          {readOnly ? 'Sesión completada' : 'En entrenamiento'}
-        </p>
-        <h1 className="text-xl font-bold text-foreground">
-          Sesión {sesion.numero} de {materialized.totalSesiones}
-        </h1>
-        {sesion.diaBase ? (
-          <p className="text-sm text-primary">
-            {etiquetaDia(plan.config.modoProgresion, sesion.diaBase)}
-            {' · '}
-            Semana {sesion.semanaDelPlan} · Día {sesion.dayIndexInWeek}
+      <div
+        className="fixed inset-x-0 top-(--alumno-sticky-top) z-20 px-4 sm:px-6"
+        aria-live="polite"
+      >
+        <header
+          ref={sessionHeaderRef}
+          className="mx-auto w-full max-w-2xl rounded-xl border border-border bg-card/95 p-4 shadow-sm backdrop-blur-sm"
+        >
+          <p className="text-xs font-semibold uppercase tracking-wide text-primary">
+            {readOnly ? 'Sesión completada' : 'En entrenamiento'}
           </p>
-        ) : null}
-        <div className="mt-3">
-          <div className="mb-1 flex justify-between text-xs text-muted-foreground">
-            <span>Ejercicios de esta sesión</span>
-            <span>
-              {doneEx}/{totalEx} ({sessionPct}%)
-            </span>
+          <h1 className="text-xl font-bold text-foreground">
+            Sesión {sesion.numero} de {materialized.totalSesiones}
+          </h1>
+          {sesion.diaBase ? (
+            <p className="text-sm text-primary">
+              {etiquetaDia(plan.config.modoProgresion, sesion.diaBase)}
+              {' · '}
+              Semana {sesion.semanaDelPlan} · Día {sesion.dayIndexInWeek}
+            </p>
+          ) : null}
+          <div className="mt-3">
+            <div className="mb-1 flex justify-between text-xs text-muted-foreground">
+              <span>Ejercicios de esta sesión</span>
+              <span>
+                {doneEx}/{totalEx} ({sessionPct}%)
+              </span>
+            </div>
+            <div className="h-2 overflow-hidden rounded-full bg-muted">
+              <div
+                className="h-full rounded-full bg-primary transition-all"
+                style={{ width: `${sessionPct}%` }}
+              />
+            </div>
           </div>
-          <div className="h-2 overflow-hidden rounded-full bg-muted">
-            <div
-              className="h-full rounded-full bg-primary transition-all"
-              style={{ width: `${sessionPct}%` }}
-            />
-          </div>
-        </div>
-      </header>
+        </header>
+      </div>
+
+      <div
+        aria-hidden
+        className="shrink-0"
+        style={{ height: sessionHeaderHeight }}
+      />
 
       <div className="space-y-3">
         {blocks.map((block) => (
