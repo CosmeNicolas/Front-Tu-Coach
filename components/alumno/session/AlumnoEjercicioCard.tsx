@@ -35,6 +35,8 @@ export function AlumnoEjercicioCard({
     exercise.tipoItem,
     exercise.unidadTrabajo,
   );
+  const descansoSeg = exercise.parametros?.descanso;
+  const showDescanso = descansoSeg != null && descansoSeg > 0;
   const mediaType = inferMediaType(exercise.gif);
   const showEmbed =
     mediaType === 'youtube' ||
@@ -154,6 +156,13 @@ export function AlumnoEjercicioCard({
             !parsed.segundos ? (
               <MetricChip label="Trabajo" value={parsed.display} />
             ) : null}
+            {showDescanso ? (
+              <MetricChip
+                label="Descanso"
+                value={`${descansoSeg} s`}
+                secondary
+              />
+            ) : null}
           </div>
 
           {exercise.notas?.trim() ? (
@@ -188,13 +197,35 @@ export function AlumnoEjercicioCard({
   );
 }
 
-function MetricChip({ label, value }: { label: string; value: string }) {
+function MetricChip({
+  label,
+  value,
+  secondary,
+}: {
+  label: string;
+  value: string;
+  secondary?: boolean;
+}) {
   return (
-    <span className="inline-flex flex-col rounded-lg bg-muted px-2.5 py-1 text-center">
+    <span
+      className={cn(
+        'inline-flex flex-col rounded-lg px-2.5 py-1 text-center',
+        secondary
+          ? 'border border-border/70 bg-muted/40'
+          : 'bg-muted',
+      )}
+    >
       <span className="text-[9px] font-semibold uppercase text-muted-foreground">
         {label}
       </span>
-      <span className="text-sm font-bold text-foreground">{value}</span>
+      <span
+        className={cn(
+          'text-sm font-bold',
+          secondary ? 'text-muted-foreground' : 'text-foreground',
+        )}
+      >
+        {value}
+      </span>
     </span>
   );
 }
