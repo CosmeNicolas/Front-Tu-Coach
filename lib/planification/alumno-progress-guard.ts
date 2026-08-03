@@ -35,6 +35,33 @@ export function filtrarSesionesAjusteTrasProgreso(
   return sesionesValidas.filter((n) => n >= min);
 }
 
+/**
+ * Sesión mínima para aplicar un ajuste (nuevo o re-aplicado).
+ * Permite avanzar el corte cuando el alumno ya completó sesiones bajo el ajuste previo.
+ */
+export function minFromSessionParaAjuste(
+  progreso?: PlanificationProgress | null,
+  ajusteDesdeSesion?: number,
+): number {
+  const minProgress = minFromSessionTrasProgreso(progreso);
+  if (ajusteDesdeSesion === undefined) return minProgress;
+
+  const ultima = ultimaSesionCompletadaAlumno(progreso);
+  if (ultima >= ajusteDesdeSesion) {
+    return Math.max(minProgress, ultima + 1);
+  }
+  return Math.max(minProgress, ajusteDesdeSesion);
+}
+
+export function filtrarSesionesAjuste(
+  sesionesValidas: number[],
+  progreso?: PlanificationProgress | null,
+  ajusteDesdeSesion?: number,
+): number[] {
+  const min = minFromSessionParaAjuste(progreso, ajusteDesdeSesion);
+  return sesionesValidas.filter((n) => n >= min);
+}
+
 export function canInlineEditPlanItem(
   progreso?: PlanificationProgress | null,
 ): boolean {

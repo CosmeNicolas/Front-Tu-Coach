@@ -3,6 +3,7 @@
 import { useQuery } from '@tanstack/react-query';
 import {
   fetchGymDashboard,
+  fetchPlatformOverview,
   fetchProfesorAlumnos,
   fetchProfesorDetail,
 } from '@/lib/api/gym-admin';
@@ -19,6 +20,14 @@ export function useGymDashboard(tenantId?: string) {
   return useQuery({
     queryKey: ['gym-admin', 'dashboard', tenantId ?? 'own'],
     queryFn: () => fetchGymDashboard(tenantId),
+  });
+}
+
+export function usePlatformOverview(enabled = true) {
+  return useQuery({
+    queryKey: ['gym-admin', 'platform-overview'],
+    queryFn: fetchPlatformOverview,
+    enabled,
   });
 }
 

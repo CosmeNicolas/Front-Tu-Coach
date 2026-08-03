@@ -12,8 +12,16 @@ interface Props {
 }
 
 export function AjusteAntesDespues({ antes, despues, fromSession }: Props) {
-  const nombreAntes = antes.ajuste?.ejercicioAnterior ?? antes.ejercicio;
-  const gifAntes = antes.ajuste?.gifAnterior ?? antes.gif;
+  const cortePrevio = antes.ajuste?.desdeSesion;
+  const esAvanceDeCorte =
+    cortePrevio !== undefined && fromSession > cortePrevio;
+
+  const nombreAntes = esAvanceDeCorte
+    ? antes.ejercicio
+    : (antes.ajuste?.ejercicioAnterior ?? antes.ejercicio);
+  const gifAntes = esAvanceDeCorte
+    ? antes.gif
+    : (antes.ajuste?.gifAnterior ?? antes.gif);
 
   return (
     <div className="grid gap-3 sm:grid-cols-2">

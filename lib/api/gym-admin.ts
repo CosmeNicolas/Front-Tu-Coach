@@ -1,6 +1,7 @@
 import { apiClient } from '@/lib/api/client';
 import {
   GymAdminDashboard,
+  PlatformOverview,
   ProfesorAlumnosList,
   ProfesorSummary,
 } from '@/types/gym-admin';
@@ -11,6 +12,13 @@ function withTenant(tenantId?: string) {
 
 export function fetchGymDashboard(tenantId?: string) {
   return apiClient<GymAdminDashboard>(`/gym-admin/dashboard${withTenant(tenantId)}`, {
+    auth: true,
+  });
+}
+
+/** Solo super_admin — resumen multi-tenant */
+export function fetchPlatformOverview() {
+  return apiClient<PlatformOverview>('/gym-admin/platform-overview', {
     auth: true,
   });
 }

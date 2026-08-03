@@ -10,8 +10,8 @@ import {
   TipoItem,
 } from '@/types/planification';
 import {
-  filtrarSesionesAjusteTrasProgreso,
-  minFromSessionTrasProgreso,
+  filtrarSesionesAjuste,
+  minFromSessionParaAjuste,
   ultimaSesionCompletadaAlumno,
 } from '@/lib/planification/alumno-progress-guard';
 import { ajustarRangosTrasCambioMin } from '@/lib/planification/fuerza-rangos';
@@ -46,10 +46,14 @@ export function PanelAjusteEjercicio({
   onApplied,
 }: Props) {
   const mutation = useCreateItemAdjustment(planificationId);
-  const lockedSession = item.ajuste?.desdeSesion;
-  const [fromSession, setFromSession] = useState(
-    lockedSession ?? Math.max(2, Math.ceil(config.totalSesiones / 2)),
-  );
+  const cortePrevio = item.ajuste?.desdeSesion;
+  const minFromSession = minFromSessionParaAjuste(progresoAlumno, cortePrevio);
+  const avanceDeCorte =
+    cortePrevio !== undefined &&
+    minFromSession > cortePrevio;
+
+  const [fromSession, setFromSession] = useState(minFromSession);
+
   const [motivo, setMotivo] = useState('');
   const [draft, setDraft] = useState<PlanificationItemSingle>({ ...item });
 
@@ -68,26 +72,13 @@ export function PanelAjusteEjercicio({
       .map((v, i) => ({ v, n: i + 1 }))
       .filter(({ v }) => v.trim() !== '')
       .map(({ n }) => n);
-    return filtrarSesionesAjusteTrasProgreso(ocurrencias, progresoAlumno);
-  }, [item, config, progresoAlumno]);
+    return filtrarSesionesAjuste(ocurrencias, progresoAlumno, cortePrevio);
+  }, [item, config, progresoAlumno, cortePrevio]);
 
   useEffect(() => {
-    if (lockedSession !== undefined) return;
     if (sesionesValidas.length === 0) return;
-    const sugerida = Math.max(
-      minFromSessionTrasProgreso(progresoAlumno),
-      Math.max(2, Math.ceil(config.totalSesiones / 2)),
-    );
-    const pick = sesionesValidas.includes(sugerida)
-      ? sugerida
-      : sesionesValidas[0];
-    setFromSession(pick);
-  }, [lockedSession, sesionesValidas, progresoAlumno, config.totalSesiones]);
-
-  useEffect(() => {
-    if (sesionesValidas.length && !sesionesValidas.includes(fromSession)) {
-      setFromSession(sesionesValidas[0]);
-    }
+    if (sesionesValidas.includes(fromSession)) return;
+    setFromSession(sesionesValidas[0]!);
   }, [sesionesValidas, fromSession]);
 
   function setParam<K extends keyof PlanificationItemSingle['parametros']>(
@@ -179,10 +170,19 @@ export function PanelAjusteEjercicio({
                 {ultimaSesionCompletadaAlumno(progresoAlumno) > 0 ? (
                   <>
                     {' '}
-                    Última sesión completada: #{ultimaSesionCompletadaAlumno(progresoAlumno)}.
+                    Última sesión completada: #
+                    {ultimaSesionCompletadaAlumno(progresoAlumno)}.
                   </>
                 ) : null}
               </p>
+              {cortePrevio !== undefined ? (
+                <p className="mt-1 text-xs text-zinc-600">
+                  Corte anterior: sesión {cortePrevio}.
+                  {avanceDeCorte
+                    ? ` Elegí sesión ${minFromSession} o posterior para modificar lo que viene sin tocar lo ya hecho.`
+                    : ' Podés re-ajustar desde la misma sesión de corte.'}
+                </p>
+              ) : null}
             </div>
             <button
               type="button"
@@ -204,19 +204,19 @@ export function PanelAjusteEjercicio({
                 sesiones futuras para ajustar.
               </p>
             ) : (
-            <select
-              value={fromSession}
-              disabled={lockedSession !== undefined}
-              onChange={(e) => setFromSession(Number(e.target.value))}
-              className="mt-1 w-full rounded border border-zinc-300 px-2 py-1.5 text-sm disabled:bg-zinc-100"
-            >
-              {sesionesValidas.map((n) => (
-                <option key={n} value={n}>
-                  Sesión {n}
-                  {n === lockedSession ? ' (corte fijado)' : ''}
-                </option>
-              ))}
-            </select>
+              <select
+                value={fromSession}
+                onChange={(e) => setFromSession(Number(e.target.value))}
+                className="mt-1 w-full rounded border border-zinc-300 px-2 py-1.5 text-sm"
+              >
+                {sesionesValidas.map((n) => (
+                  <option key={n} value={n}>
+                    Sesión {n}
+                    {n === cortePrevio && !avanceDeCorte ? ' (corte actual)' : ''}
+                    {n === minFromSession && avanceDeCorte ? ' (nuevo corte sugerido)' : ''}
+                  </option>
+                ))}
+              </select>
             )}
           </label>
 
@@ -287,7 +287,11 @@ export function PanelAjusteEjercicio({
           <Button type="button" variant="outline" onClick={onClose}>
             Cancelar
           </Button>
-          <Button type="button" onClick={handleSubmit} disabled={mutation.isPending || sesionesValidas.length === 0}>
+          <Button
+            type="button"
+            onClick={handleSubmit}
+            disabled={mutation.isPending || sesionesValidas.length === 0}
+          >
             {mutation.isPending ? 'Aplicando…' : 'Aplicar ajuste'}
           </Button>
         </footer>
