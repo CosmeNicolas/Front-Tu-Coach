@@ -10,8 +10,10 @@ export function useAuth() {
 
   return useQuery({
     queryKey: ['auth', 'me'],
-    queryFn: fetchCurrentUser,
+    // Siempre refrescar desde API: el cache en memoria puede quedar con nombre viejo
+    queryFn: () => fetchCurrentUser({ force: true }),
     enabled: hasToken,
+    staleTime: 30_000,
     retry: false,
   });
 }

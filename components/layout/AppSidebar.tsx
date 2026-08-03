@@ -8,6 +8,7 @@ export interface SidebarNavItem {
 interface AppSidebarProps {
   title: string;
   subtitle?: string;
+  roleContext?: string;
   navItems: SidebarNavItem[];
   footer?: React.ReactNode;
 }
@@ -15,6 +16,7 @@ interface AppSidebarProps {
 export function AppSidebar({
   title,
   subtitle,
+  roleContext,
   navItems,
   footer,
 }: AppSidebarProps) {
@@ -23,6 +25,7 @@ export function AppSidebar({
       <DashboardSidebarContent
         title={title}
         subtitle={subtitle}
+        roleContext={roleContext}
         navItems={navItems}
         footer={footer}
       />

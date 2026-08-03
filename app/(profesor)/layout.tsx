@@ -12,7 +12,7 @@ export default function ProfesorLayout({
     <RoleGuard expectedRole={Role.PROFESOR}>
       <DashboardShell
         title="TuCoach"
-        subtitle="Profesor"
+        roleContext="Panel profesor"
         navItems={PROFESOR_NAV}
       >
         {children}

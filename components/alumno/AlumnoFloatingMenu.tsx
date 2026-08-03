@@ -14,6 +14,7 @@ import {
 import { AnimatePresence, motion } from 'framer-motion';
 import { useEffect, useState } from 'react';
 import { Button } from '@/components/ui/button';
+import { AlumnoPortalGreeting } from '@/components/alumno/AlumnoPortalGreeting';
 import { AlumnoLogoutConfirmDialog } from './AlumnoLogoutConfirmDialog';
 import { cn } from '@/lib/utils/cn';
 
@@ -113,17 +114,20 @@ export function AlumnoFloatingMenu() {
               exit={{ y: '100%' }}
               transition={panelTransition}
             >
-              <div className="mb-4 flex items-start justify-between gap-3">
-                <div>
-                  <h2
-                    id="alumno-menu-title"
-                    className="text-lg font-semibold text-foreground"
-                  >
-                    Menú rápido
-                  </h2>
-                  <p className="mt-1 text-sm text-muted-foreground">
-                    Navegá por tu portal de entrenamiento
-                  </p>
+              <div className="mb-5 flex items-start justify-between gap-3">
+                <div className="min-w-0 space-y-3">
+                  <AlumnoPortalGreeting showAvatar />
+                  <div>
+                    <h2
+                      id="alumno-menu-title"
+                      className="text-base font-semibold text-foreground"
+                    >
+                      Menú rápido
+                    </h2>
+                    <p className="mt-0.5 text-sm text-muted-foreground">
+                      Navegá por tu entrenamiento
+                    </p>
+                  </div>
                 </div>
                 <Button
                   type="button"

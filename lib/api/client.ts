@@ -91,9 +91,13 @@ export async function apiClient<T>(
   return response.json() as Promise<T>;
 }
 
-export async function fetchCurrentUser(): Promise<AuthUser> {
-  const cached = getSessionUser();
-  if (cached) return cached;
+export async function fetchCurrentUser(options?: {
+  force?: boolean;
+}): Promise<AuthUser> {
+  if (!options?.force) {
+    const cached = getSessionUser();
+    if (cached) return cached;
+  }
 
   const user = await apiClient<AuthUser>('/auth/me', { auth: true });
   setSessionUser(user);

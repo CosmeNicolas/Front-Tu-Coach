@@ -4,6 +4,7 @@ import { useState } from 'react';
 import { Menu } from 'lucide-react';
 import { AppSidebar, SidebarNavItem } from '@/components/layout/AppSidebar';
 import { DashboardSidebarContent } from '@/components/layout/DashboardSidebarContent';
+import { PortalGreeting } from '@/components/layout/PortalGreeting';
 import { LogoutButton } from '@/components/layout/LogoutButton';
 import { Button } from '@/components/ui/button';
 import {
@@ -16,6 +17,8 @@ import {
 interface DashboardShellProps {
   title: string;
   subtitle?: string;
+  /** Etiqueta de rol bajo el saludo personalizado */
+  roleContext?: string;
   navItems: SidebarNavItem[];
   children: React.ReactNode;
   footer?: React.ReactNode;
@@ -24,6 +27,7 @@ interface DashboardShellProps {
 export function DashboardShell({
   title,
   subtitle,
+  roleContext,
   navItems,
   children,
   footer = <LogoutButton />,
@@ -35,6 +39,7 @@ export function DashboardShell({
       <AppSidebar
         title={title}
         subtitle={subtitle}
+        roleContext={roleContext}
         navItems={navItems}
         footer={footer}
       />
@@ -58,13 +63,14 @@ export function DashboardShell({
             >
               <SheetTitle className="sr-only">Menú de navegación</SheetTitle>
               <div className="flex min-h-0 flex-1 flex-col overflow-y-auto">
-              <DashboardSidebarContent
-                title={title}
-                subtitle={subtitle}
-                navItems={navItems}
-                footer={footer}
-                onNavigate={() => setMenuOpen(false)}
-              />
+                <DashboardSidebarContent
+                  title={title}
+                  subtitle={subtitle}
+                  roleContext={roleContext}
+                  navItems={navItems}
+                  footer={footer}
+                  onNavigate={() => setMenuOpen(false)}
+                />
               </div>
             </SheetContent>
           </Sheet>
@@ -72,7 +78,9 @@ export function DashboardShell({
             <p className="truncate font-display text-xl tracking-wide text-foreground">
               {title}
             </p>
-            {subtitle ? (
+            {roleContext ? (
+              <PortalGreeting compact contextLabel={roleContext} />
+            ) : subtitle ? (
               <p className="truncate text-xs text-muted-foreground">{subtitle}</p>
             ) : null}
           </div>

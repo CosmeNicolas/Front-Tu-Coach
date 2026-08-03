@@ -12,7 +12,7 @@ export default function OwnerLayout({
     <RoleGuard expectedRole={Role.OWNER_GIMNASIO}>
       <DashboardShell
         title="TuCoach"
-        subtitle="Dueño de Gimnasio"
+        roleContext="Dueño del gimnasio"
         navItems={OWNER_NAV}
       >
         {children}

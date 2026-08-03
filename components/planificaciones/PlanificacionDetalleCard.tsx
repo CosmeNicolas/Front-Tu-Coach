@@ -36,12 +36,6 @@ export function PlanificacionDetalleCard({
               ? 'Abrir Asistente'
               : 'Editar en Asistente'}
           </Link>
-          <Link
-            href={`/profesor/planificaciones/${planification.id}/editar`}
-            className="rounded-lg border border-zinc-300 px-3 py-2 text-sm hover:bg-zinc-50"
-          >
-            Editar metadata
-          </Link>
         </div>
       </div>
 

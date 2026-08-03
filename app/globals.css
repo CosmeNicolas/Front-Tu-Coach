@@ -74,9 +74,30 @@
   --ring: #a3a3a3;
 }
 
+html {
+  scroll-behavior: smooth;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
+  }
+}
+
 html,
 body {
   overflow-x: hidden;
+}
+
+/* Landing pública — aísla tipografía y fondo del resto de la app */
+.landing-page {
+  color-scheme: dark;
+}
+
+.landing-page a:focus-visible,
+.landing-page button:focus-visible {
+  outline: 2px solid rgba(255, 255, 255, 0.35);
+  outline-offset: 2px;
 }
 
 body {
