@@ -80,7 +80,22 @@ export function completeStudentSession(
         rpeDetail: payload.rpe,
         sessionComment: payload.sessionComment,
         exercises: payload.exercises,
+        notifyProfessor: payload.notifyProfessor ?? false,
       },
+      auth: true,
+    },
+  );
+}
+
+export function solicitarNuevaPlanificacion(
+  planificationId: string,
+  mensaje?: string,
+) {
+  return apiClient<StudentPlanification>(
+    `/alumno/planificaciones/${planificationId}/solicitar-nueva`,
+    {
+      method: 'POST',
+      body: mensaje?.trim() ? { mensaje: mensaje.trim() } : {},
       auth: true,
     },
   );

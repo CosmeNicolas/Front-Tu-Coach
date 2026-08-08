@@ -11,6 +11,7 @@ interface AppSidebarProps {
   roleContext?: string;
   navItems: SidebarNavItem[];
   footer?: React.ReactNode;
+  headerActions?: React.ReactNode;
 }
 
 export function AppSidebar({
@@ -19,6 +20,7 @@ export function AppSidebar({
   roleContext,
   navItems,
   footer,
+  headerActions,
 }: AppSidebarProps) {
   return (
     <aside className="hidden w-64 shrink-0 flex-col border-r border-border bg-card lg:flex">
@@ -28,6 +30,7 @@ export function AppSidebar({
         roleContext={roleContext}
         navItems={navItems}
         footer={footer}
+        headerActions={headerActions}
       />
     </aside>
   );

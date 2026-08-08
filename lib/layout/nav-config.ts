@@ -34,6 +34,8 @@ export const PROFESOR_NAV: SidebarNavItem[] = [
 
   { href: '/profesor/alumnos', label: 'Alumnos' },
 
+  { href: '/profesor/mensajes', label: 'Mensajes' },
+
   { href: '/profesor/planificaciones', label: 'Planificaciones' },
 
   { href: '/profesor/plantillas', label: 'Plantillas' },
@@ -49,6 +51,8 @@ export const ALUMNO_NAV: SidebarNavItem[] = [
   { href: '/alumno/mi-planificacion', label: 'Mi planificación' },
 
   { href: '/alumno/sesiones', label: 'Sesiones' },
+
+  { href: '/alumno/mensajes', label: 'Mensajes' },
 
   { href: '/alumno/metricas', label: 'Métricas' },
 

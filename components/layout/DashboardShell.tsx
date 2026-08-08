@@ -2,6 +2,7 @@
 
 import { useState } from 'react';
 import { Menu } from 'lucide-react';
+import { BrandMark } from '@/components/branding/BrandMark';
 import { AppSidebar, SidebarNavItem } from '@/components/layout/AppSidebar';
 import { DashboardSidebarContent } from '@/components/layout/DashboardSidebarContent';
 import { PortalGreeting } from '@/components/layout/PortalGreeting';
@@ -22,6 +23,8 @@ interface DashboardShellProps {
   navItems: SidebarNavItem[];
   children: React.ReactNode;
   footer?: React.ReactNode;
+  /** Acciones del header (ej. campana de notificaciones) */
+  headerActions?: React.ReactNode;
 }
 
 export function DashboardShell({
@@ -31,6 +34,7 @@ export function DashboardShell({
   navItems,
   children,
   footer = <LogoutButton />,
+  headerActions,
 }: DashboardShellProps) {
   const [menuOpen, setMenuOpen] = useState(false);
 
@@ -42,6 +46,7 @@ export function DashboardShell({
         roleContext={roleContext}
         navItems={navItems}
         footer={footer}
+        headerActions={headerActions}
       />
 
       <div className="flex min-w-0 flex-1 flex-col">
@@ -69,20 +74,32 @@ export function DashboardShell({
                   roleContext={roleContext}
                   navItems={navItems}
                   footer={footer}
+                  headerActions={headerActions}
                   onNavigate={() => setMenuOpen(false)}
                 />
               </div>
             </SheetContent>
           </Sheet>
           <div className="min-w-0 flex-1">
-            <p className="truncate font-display text-xl tracking-wide text-foreground">
-              {title}
-            </p>
             {roleContext ? (
               <PortalGreeting compact contextLabel={roleContext} />
             ) : subtitle ? (
               <p className="truncate text-xs text-muted-foreground">{subtitle}</p>
+            ) : title !== 'TuCoach' ? (
+              <p className="truncate font-display text-xl tracking-wide text-foreground">
+                {title}
+              </p>
+            ) : (
+              <p className="truncate font-display text-lg tracking-wide text-foreground">
+                TuCoach
+              </p>
+            )}
+          </div>
+          <div className="flex shrink-0 items-center gap-2">
+            {title === 'TuCoach' ? (
+              <BrandMark size="sm" showWordmark={false} priority />
             ) : null}
+            {headerActions}
           </div>
         </header>
 

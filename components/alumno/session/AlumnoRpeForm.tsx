@@ -6,11 +6,13 @@ interface Props {
   rpe: number | '';
   rpeNote: string;
   sessionComment: string;
+  notifyProfessor: boolean;
   readOnly: boolean;
   isPending: boolean;
   onRpe: (value: number) => void;
   onRpeNote: (note: string) => void;
   onSessionComment: (comment: string) => void;
+  onNotifyProfessor: (value: boolean) => void;
   onSubmit: () => void;
 }
 
@@ -31,11 +33,13 @@ export function AlumnoRpeForm({
   rpe,
   rpeNote,
   sessionComment,
+  notifyProfessor,
   readOnly,
   isPending,
   onRpe,
   onRpeNote,
   onSessionComment,
+  onNotifyProfessor,
   onSubmit,
 }: Props) {
   if (readOnly) {
@@ -114,6 +118,20 @@ export function AlumnoRpeForm({
           placeholder="¿Cómo te sentiste en general?"
         />
       </label>
+
+      {sessionComment.trim() ? (
+        <label className="mt-3 flex cursor-pointer items-start gap-2 rounded-lg border border-border bg-muted/30 px-3 py-2 text-sm">
+          <input
+            type="checkbox"
+            className="mt-0.5"
+            checked={notifyProfessor}
+            onChange={(e) => onNotifyProfessor(e.target.checked)}
+          />
+          <span className="text-foreground">
+            Quiero que mi profesor vea este comentario
+          </span>
+        </label>
+      ) : null}
 
       <Button
         type="button"

@@ -174,6 +174,10 @@ export interface Planification {
   config: PlanificationConfig;
   secciones: PlanificationSection[];
   progresoAlumno: PlanificationProgress;
+  solicitudRevisionAt?: string | null;
+  solicitudRevisionMensaje?: string | null;
+  solicitudRevisionResueltaAt?: string | null;
+  solicitudRevisionPendiente?: boolean;
   createdAt: string;
   updatedAt: string;
 }

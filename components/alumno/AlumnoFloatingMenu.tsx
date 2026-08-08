@@ -8,6 +8,7 @@ import {
   ClipboardList,
   LogOut,
   Menu,
+  MessageSquare,
   UserCircle,
   X,
 } from 'lucide-react';
@@ -16,11 +17,13 @@ import { useEffect, useState } from 'react';
 import { Button } from '@/components/ui/button';
 import { AlumnoPortalGreeting } from '@/components/alumno/AlumnoPortalGreeting';
 import { AlumnoLogoutConfirmDialog } from './AlumnoLogoutConfirmDialog';
+import { useMessagesUnreadCount } from '@/hooks/useMessages';
 import { cn } from '@/lib/utils/cn';
 
 const MENU_ITEMS = [
   { href: '/alumno/mi-planificacion', label: 'Mi planificación', icon: ClipboardList },
   { href: '/alumno/sesiones', label: 'Sesiones', icon: CalendarDays },
+  { href: '/alumno/mensajes', label: 'Mensajes', icon: MessageSquare },
   { href: '/alumno/metricas', label: 'Métricas', icon: BarChart3 },
   { href: '/alumno/mis-datos', label: 'Datos personales', icon: UserCircle },
 ] as const;
@@ -52,6 +55,8 @@ export function AlumnoFloatingMenu() {
   const pathname = usePathname();
   const [open, setOpen] = useState(false);
   const [logoutConfirmOpen, setLogoutConfirmOpen] = useState(false);
+  const { data: unread } = useMessagesUnreadCount(true);
+  const unreadCount = unread?.count ?? 0;
 
   function requestLogout() {
     setOpen(false);
@@ -77,15 +82,24 @@ export function AlumnoFloatingMenu() {
       <Button
         type="button"
         size="icon"
-        aria-label="Abrir menú de navegación"
+        aria-label={
+          unreadCount > 0
+            ? `Abrir menú, ${unreadCount} mensajes sin leer`
+            : 'Abrir menú de navegación'
+        }
         aria-expanded={open}
         onClick={() => setOpen(true)}
         className={cn(
-          'fixed bottom-5 right-4 z-40 size-14 rounded-full shadow-lg lg:hidden',
+          'relative fixed bottom-5 right-4 z-40 size-14 rounded-full shadow-lg lg:hidden',
           'bg-primary text-primary-foreground hover:bg-primary/90',
         )}
       >
         <Menu className="size-6" aria-hidden />
+        {unreadCount > 0 ? (
+          <span className="absolute -right-0.5 -top-0.5 flex h-5 min-w-5 items-center justify-center rounded-full bg-background px-1 text-[10px] font-bold text-foreground ring-2 ring-primary">
+            {unreadCount > 99 ? '99+' : unreadCount}
+          </span>
+        ) : null}
       </Button>
 
       <AnimatePresence>
@@ -150,6 +164,8 @@ export function AlumnoFloatingMenu() {
                 {MENU_ITEMS.map(({ href, label, icon: Icon }) => {
                   const active =
                     pathname === href || pathname.startsWith(`${href}/`);
+                  const showBadge =
+                    href === '/alumno/mensajes' && unreadCount > 0;
                   return (
                     <motion.div key={href} variants={itemVariants}>
                       <Link
@@ -163,7 +179,19 @@ export function AlumnoFloatingMenu() {
                         )}
                       >
                         <Icon className="size-5 shrink-0" aria-hidden />
-                        {label}
+                        <span className="flex-1">{label}</span>
+                        {showBadge ? (
+                          <span
+                            className={cn(
+                              'rounded-full px-1.5 text-[10px] font-bold',
+                              active
+                                ? 'bg-primary-foreground text-primary'
+                                : 'bg-primary text-primary-foreground',
+                            )}
+                          >
+                            {unreadCount > 99 ? '99+' : unreadCount}
+                          </span>
+                        ) : null}
                       </Link>
                     </motion.div>
                   );

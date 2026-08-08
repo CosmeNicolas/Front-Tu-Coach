@@ -20,7 +20,9 @@ import {
   buildAlumnoDashboardRows,
   buildProfesorDashboardStats,
 } from '@/lib/profesor/dashboard-stats';
+import { PushNotificationsCard } from '@/components/notifications/PushNotificationsCard';
 import { AlumnosDashboardTable } from '@/components/profesor/AlumnosDashboardTable';
+import { PlanesARenovarPanel } from '@/components/profesor/PlanesARenovarPanel';
 import { Button } from '@/components/ui/button';
 import { cn } from '@/lib/utils/cn';
 
@@ -86,6 +88,9 @@ export function ProfesorDashboardView() {
   const plans = plansData?.items ?? [];
   const stats = buildProfesorDashboardStats(clients, plans, 14);
   const alumnoRows = buildAlumnoDashboardRows(clients, plans);
+  const alumnoNameById = new Map(
+    clients.map((c) => [c.id, `${c.apellido}, ${c.nombre}`]),
+  );
   const ejerciciosPropios = exercisesData?.total ?? exercisesData?.items?.length ?? 0;
   const plantillas = templatesData?.total ?? templatesData?.items?.length ?? 0;
 
@@ -118,6 +123,8 @@ export function ProfesorDashboardView() {
             <Link href="/profesor/planificaciones">Ver planificaciones</Link>
           </Button>
         </div>
+
+        <PushNotificationsCard variant="banner" />
       </header>
 
       {loading ? (
@@ -142,6 +149,8 @@ export function ProfesorDashboardView() {
             <StatCard label="Plantillas" value={plantillas} />
             <StatCard label="Ejercicios propios" value={ejerciciosPropios} />
           </section>
+
+          <PlanesARenovarPanel plans={plans} alumnoNameById={alumnoNameById} />
 
           <section className="grid gap-4 lg:grid-cols-2">
             <ChartCard

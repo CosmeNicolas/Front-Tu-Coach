@@ -79,6 +79,7 @@ export function AlumnoSesionExecutionView({
       materialized.progreso.comentarios[sessionNum - 1] ??
       '',
   );
+  const [notifyProfessor, setNotifyProfessor] = useState(false);
   const [pendingDialogOpen, setPendingDialogOpen] = useState(false);
   const [pendingCount, setPendingCount] = useState(0);
   const sessionHeaderRef = useRef<HTMLElement>(null);
@@ -150,6 +151,8 @@ export function AlumnoSesionExecutionView({
         payload: {
           rpe: { value: rpe as number, note: rpeNote.trim() || undefined },
           sessionComment: sessionComment.trim() || undefined,
+          notifyProfessor:
+            Boolean(sessionComment.trim()) && notifyProfessor,
           exercises: exerciseStates.map((e) => ({
             exerciseId: e.exerciseId,
             name: e.name,
@@ -267,11 +270,13 @@ export function AlumnoSesionExecutionView({
         rpe={rpe}
         rpeNote={rpeNote}
         sessionComment={sessionComment}
+        notifyProfessor={notifyProfessor}
         readOnly={readOnly}
         isPending={complete.isPending}
         onRpe={setRpe}
         onRpeNote={setRpeNote}
         onSessionComment={setSessionComment}
+        onNotifyProfessor={setNotifyProfessor}
         onSubmit={handleFinalize}
       />
 

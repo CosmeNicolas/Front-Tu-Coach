@@ -10,6 +10,7 @@ import {
   fetchPlanification,
   fetchPlanificationAdjustments,
   fetchPlanifications,
+  resolveRevisionRequest,
   setCalentamiento,
   setVueltaCalma,
   updatePlanification,
@@ -66,6 +67,18 @@ export function useArchivePlanification() {
   return useMutation({
     mutationFn: (id: string) => archivePlanification(id),
     onSuccess: () => qc.invalidateQueries({ queryKey: ['planifications'] }),
+  });
+}
+
+export function useResolveRevisionRequest() {
+  const qc = useQueryClient();
+  return useMutation({
+    mutationFn: (id: string) => resolveRevisionRequest(id),
+    onSuccess: (_data, id) => {
+      qc.invalidateQueries({ queryKey: ['planifications'] });
+      qc.invalidateQueries({ queryKey: ['planifications', 'detail', id] });
+      qc.invalidateQueries({ queryKey: ['notifications'] });
+    },
   });
 }
 

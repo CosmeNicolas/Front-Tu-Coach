@@ -125,8 +125,7 @@ export function GymAlumnosActivityTable({
           Alumnos del gimnasio
         </h2>
         <p className="mt-1 text-sm text-muted-foreground">
-          Última actividad = última sesión completada en el portal (fecha y hora).
-          Solo alumnos de este gimnasio.
+          Última actividad 
         </p>
       </div>
 

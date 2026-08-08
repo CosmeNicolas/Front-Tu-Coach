@@ -70,6 +70,8 @@ export interface ExerciseExecutionState {
 export interface CompleteSessionPayloadV2 {
   rpe: { value: number; note?: string };
   sessionComment?: string;
+  /** Avisa al profe solo si hay comentario de sesión */
+  notifyProfessor?: boolean;
   exercises: Array<{
     exerciseId: string;
     name: string;

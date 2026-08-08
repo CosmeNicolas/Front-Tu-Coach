@@ -61,6 +61,16 @@ export function archivePlanification(id: string) {
   });
 }
 
+export function resolveRevisionRequest(id: string) {
+  return apiClient<Planification>(
+    `/planifications/${id}/solicitud-revision/resolver`,
+    {
+      method: 'PATCH',
+      auth: true,
+    },
+  );
+}
+
 export function deletePlanification(id: string) {
   return apiClient<{ message: string }>(`/planifications/${id}`, {
     method: 'DELETE',

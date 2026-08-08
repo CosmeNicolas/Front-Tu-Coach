@@ -34,6 +34,12 @@ export function AlumnoDetalleCard({ client }: { client: Client }) {
             {client.userId ? 'Acceso portal' : 'Crear acceso portal'}
           </Link>
           <Link
+            href={`/profesor/mensajes?alumnoId=${client.id}`}
+            className="rounded-lg border border-zinc-300 px-3 py-2 text-sm hover:bg-zinc-50"
+          >
+            Mensajes
+          </Link>
+          <Link
             href={`/profesor/planificaciones/nueva?alumnoId=${client.id}`}
             className="rounded-lg bg-zinc-900 px-3 py-2 text-sm text-white hover:bg-zinc-700"
           >
