@@ -67,15 +67,17 @@ export function ChatThreadView({ thread, currentRole, emptyHint }: Props) {
       : thread.profesorNombre ?? 'Tu profesor';
 
   return (
-    <div className="flex h-full min-h-[420px] flex-col rounded-2xl border border-border bg-card">
-      <header className="border-b border-border px-4 py-3">
+    <div className="flex h-full min-h-[420px] min-w-0 flex-col overflow-hidden rounded-2xl border border-border bg-card">
+      <header className="min-w-0 border-b border-border px-4 py-3">
         <p className="text-xs font-semibold uppercase tracking-wide text-muted-foreground">
           Chat
         </p>
-        <h2 className="text-base font-semibold text-foreground">{peerName}</h2>
+        <h2 className="truncate text-base font-semibold text-foreground">
+          {peerName}
+        </h2>
       </header>
 
-      <div className="flex-1 space-y-3 overflow-y-auto px-4 py-4">
+      <div className="min-h-0 min-w-0 flex-1 space-y-3 overflow-x-hidden overflow-y-auto px-4 py-4">
         {thread.messages.length === 0 ? (
           <p className="rounded-xl border border-dashed border-border px-4 py-8 text-center text-sm text-muted-foreground">
             {emptyHint ?? 'Todavía no hay mensajes. Escribí el primero.'}
@@ -86,17 +88,22 @@ export function ChatThreadView({ thread, currentRole, emptyHint }: Props) {
             return (
               <div
                 key={m.id}
-                className={cn('flex', mine ? 'justify-end' : 'justify-start')}
+                className={cn(
+                  'flex min-w-0',
+                  mine ? 'justify-end' : 'justify-start',
+                )}
               >
                 <div
                   className={cn(
-                    'max-w-[85%] rounded-2xl px-3 py-2 text-sm',
+                    'min-w-0 max-w-[min(85%,28rem)] rounded-2xl px-3 py-2 text-sm',
                     mine
                       ? 'bg-primary text-primary-foreground'
                       : 'bg-muted text-foreground',
                   )}
                 >
-                  <p className="whitespace-pre-wrap break-words">{m.text}</p>
+                  <p className="whitespace-pre-wrap break-words [overflow-wrap:anywhere]">
+                    {m.text}
+                  </p>
                   <p
                     className={cn(
                       'mt-1 text-[10px]',
@@ -117,7 +124,7 @@ export function ChatThreadView({ thread, currentRole, emptyHint }: Props) {
 
       <form
         onSubmit={(e) => void handleSubmit(e)}
-        className="flex gap-2 border-t border-border p-3"
+        className="flex min-w-0 gap-2 border-t border-border p-3"
       >
         <input
           value={text}
