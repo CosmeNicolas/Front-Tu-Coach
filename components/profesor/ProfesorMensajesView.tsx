@@ -8,6 +8,7 @@ import {
   useThreadWithAlumno,
 } from '@/hooks/useMessages';
 import { ChatThreadView } from '@/components/mensajes/ChatThreadView';
+import { PushNotificationsCard } from '@/components/notifications/PushNotificationsCard';
 import { Button } from '@/components/ui/button';
 import { cn } from '@/lib/utils/cn';
 
@@ -73,6 +74,8 @@ export function ProfesorMensajesView() {
           campana de notificaciones.
         </p>
       </header>
+
+      <PushNotificationsCard variant="banner" />
 
       <div className="grid min-w-0 gap-4 lg:grid-cols-[280px_minmax(0,1fr)]">
         <aside className="min-w-0 rounded-2xl border border-border bg-card p-3">
