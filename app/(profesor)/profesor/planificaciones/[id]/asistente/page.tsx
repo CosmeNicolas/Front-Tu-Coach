@@ -13,7 +13,7 @@ export default function AsistentePage({
   const { data, isLoading, error } = usePlanification(id);
 
   if (isLoading) {
-    return <p className="p-4 sm:p-8 text-sm text-zinc-500">Cargando planificación…</p>;
+    return <p className="p-4 sm:p-8 text-sm text-muted-foreground">Cargando planificación…</p>;
   }
   if (error || !data) {
     return (
@@ -24,7 +24,7 @@ export default function AsistentePage({
   }
 
   return (
-    <div className="w-full max-w-full bg-zinc-50 p-4 sm:p-6 lg:p-8">
+    <div className="w-full max-w-full bg-muted/30 p-4 sm:p-6 lg:p-8">
       <Asistente planification={data} />
     </div>
   );

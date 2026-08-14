@@ -95,7 +95,7 @@ export function BuscadorEjercicio({ tabId, onSeleccionar }: Props) {
       />
 
       {resultados.length === 0 ? (
-        <p className="rounded-lg border border-dashed border-zinc-300 p-6 text-center text-sm text-zinc-500">
+        <p className="rounded-lg border border-dashed border-input p-6 text-center text-sm text-muted-foreground">
           {debounced
             ? 'No se encontraron ejercicios para esa búsqueda.'
             : 'No hay ejercicios en este filtro.'}
@@ -113,7 +113,7 @@ export function BuscadorEjercicio({ tabId, onSeleccionar }: Props) {
         </div>
       )}
 
-      <p className="text-[10px] text-zinc-400">
+      <p className="text-[10px] text-muted-foreground">
         Catálogo global + tus ejercicios privados · GIFs locales o Cloudinary
       </p>
     </div>

@@ -53,7 +53,7 @@ export function CardEjercicioEdicion({
           type="text"
           value={draft.notas ?? ''}
           onChange={(e) => setNotas(e.target.value)}
-          className="mt-0.5 w-full rounded border border-zinc-300 bg-white px-2 py-1"
+          className="mt-0.5 w-full rounded border border-input bg-card px-2 py-1"
         />
       </label>
     </div>
@@ -85,7 +85,7 @@ function Num({
         step={step ?? 1}
         value={value ?? ''}
         onChange={(e) => onChange(Number(e.target.value) || 0)}
-        className="mt-0.5 w-full rounded border border-zinc-300 bg-white px-1.5 py-1"
+        className="mt-0.5 w-full rounded border border-input bg-card px-1.5 py-1"
       />
     </label>
   );

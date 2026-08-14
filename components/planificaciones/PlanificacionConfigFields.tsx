@@ -14,14 +14,19 @@ import {
   PLAN_WEEK_OPTIONS,
   WEEKLY_FREQUENCY_OPTIONS,
 } from '@/lib/planificaciones/config-options';
+import { Label } from '@/components/ui/label';
+import {
+  Select,
+  SelectContent,
+  SelectItem,
+  SelectTrigger,
+  SelectValue,
+} from '@/components/ui/select';
 
 interface PlanificacionConfigFieldsProps {
   value: PlanificationConfig;
   onChange: (config: PlanificationConfig) => void;
 }
-
-const selectCls =
-  'rounded-lg border border-input bg-card px-3 py-2 text-sm text-foreground';
 
 export function PlanificacionConfigFields({
   value,
@@ -38,66 +43,75 @@ export function PlanificacionConfigFields({
     onChange(next);
   }
 
-  function onModoChange(modo: ProgressionMode) {
-    commit(aplicarCambioModo(config, modo));
+  function onModoChange(modo: string) {
+    commit(aplicarCambioModo(config, modo as ProgressionMode));
   }
 
-  function onFrecuenciaChange(freq: number) {
-    commit(aplicarCambioFrecuencia(config, freq));
+  function onFrecuenciaChange(freq: string) {
+    commit(aplicarCambioFrecuencia(config, Number(freq)));
   }
 
-  function onSemanasChange(semanas: number) {
-    commit(aplicarCambioSemanas(config, semanas));
+  function onSemanasChange(semanas: string) {
+    commit(aplicarCambioSemanas(config, Number(semanas)));
   }
 
   return (
     <div className="flex flex-col gap-4">
-      <label className="flex flex-col gap-1.5 text-sm">
-        <span className="font-medium text-foreground">Modo de progresión</span>
-        <select
-          value={config.modoProgresion}
-          onChange={(e) => onModoChange(e.target.value as ProgressionMode)}
-          className={selectCls}
-        >
-          {Object.values(ProgressionMode).map((mode) => (
-            <option key={mode} value={mode}>
-              {PROGRESSION_MODE_LABELS[mode]}
-            </option>
-          ))}
-        </select>
-      </label>
+      <div className="space-y-2">
+        <Label>Modo de progresión</Label>
+        <Select value={config.modoProgresion} onValueChange={onModoChange}>
+          <SelectTrigger>
+            <SelectValue />
+          </SelectTrigger>
+          <SelectContent>
+            {Object.values(ProgressionMode).map((mode) => (
+              <SelectItem key={mode} value={mode}>
+                {PROGRESSION_MODE_LABELS[mode]}
+              </SelectItem>
+            ))}
+          </SelectContent>
+        </Select>
+      </div>
 
       <div className="grid gap-4 sm:grid-cols-2">
-        <label className="flex flex-col gap-1.5 text-sm">
-          <span className="font-medium text-foreground">Semanas del plan</span>
-          <select
-            value={config.semanasDelPlan}
-            onChange={(e) => onSemanasChange(Number(e.target.value))}
-            className={selectCls}
+        <div className="space-y-2">
+          <Label>Semanas del plan</Label>
+          <Select
+            value={String(config.semanasDelPlan)}
+            onValueChange={onSemanasChange}
           >
-            {PLAN_WEEK_OPTIONS.map((s) => (
-              <option key={s} value={s}>
-                {s} {s === 1 ? 'semana' : 'semanas'}
-                {s === 4 ? ' (mes)' : ''}
-              </option>
-            ))}
-          </select>
-        </label>
+            <SelectTrigger>
+              <SelectValue />
+            </SelectTrigger>
+            <SelectContent>
+              {PLAN_WEEK_OPTIONS.map((s) => (
+                <SelectItem key={s} value={String(s)}>
+                  {s} {s === 1 ? 'semana' : 'semanas'}
+                  {s === 4 ? ' (mes)' : ''}
+                </SelectItem>
+              ))}
+            </SelectContent>
+          </Select>
+        </div>
 
-        <label className="flex flex-col gap-1.5 text-sm">
-          <span className="font-medium text-foreground">Frecuencia semanal</span>
-          <select
-            value={config.frecuenciaSemanal}
-            onChange={(e) => onFrecuenciaChange(Number(e.target.value))}
-            className={selectCls}
+        <div className="space-y-2">
+          <Label>Frecuencia semanal</Label>
+          <Select
+            value={String(config.frecuenciaSemanal)}
+            onValueChange={onFrecuenciaChange}
           >
-            {WEEKLY_FREQUENCY_OPTIONS.map((f) => (
-              <option key={f} value={f}>
-                {f} {f === 1 ? 'día' : 'días'} por semana
-              </option>
-            ))}
-          </select>
-        </label>
+            <SelectTrigger>
+              <SelectValue />
+            </SelectTrigger>
+            <SelectContent>
+              {WEEKLY_FREQUENCY_OPTIONS.map((f) => (
+                <SelectItem key={f} value={String(f)}>
+                  {f} {f === 1 ? 'día' : 'días'} por semana
+                </SelectItem>
+              ))}
+            </SelectContent>
+          </Select>
+        </div>
       </div>
 
       <div className="rounded-lg border border-border bg-muted/50 p-4 text-sm">
@@ -106,8 +120,9 @@ export function PlanificacionConfigFields({
           {config.totalSesiones}
         </p>
         <p className="mt-1 text-muted-foreground">
-          {config.frecuenciaSemanal} días/semana × {config.semanasDelPlan} semana
-          {config.semanasDelPlan > 1 ? 's' : ''} = {config.totalSesiones} sesiones
+          {config.frecuenciaSemanal} días/semana × {config.semanasDelPlan}{' '}
+          semana{config.semanasDelPlan > 1 ? 's' : ''} = {config.totalSesiones}{' '}
+          sesiones
         </p>
         <p className="mt-2 text-xs text-muted-foreground">
           {descripcionProgresion(config)}

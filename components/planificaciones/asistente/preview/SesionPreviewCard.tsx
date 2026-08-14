@@ -56,7 +56,7 @@ export function SesionPreviewCard({ sesion, config }: Props) {
           />
         ))}
         {sesion.secciones.length === 0 ? (
-          <p className="text-center text-xs text-zinc-400">Sin ejercicios</p>
+          <p className="text-center text-xs text-muted-foreground">Sin ejercicios</p>
         ) : null}
       </CardContent>
     </Card>

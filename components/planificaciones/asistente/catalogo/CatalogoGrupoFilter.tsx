@@ -51,7 +51,7 @@ function FilterChip({
       className={
         active
           ? `rounded-full border-2 border-primary bg-primary/15 px-2.5 py-0.5 text-xs font-semibold ${CEMD.primaryClass}`
-          : 'rounded-full border border-zinc-300 bg-white px-2.5 py-0.5 text-xs text-zinc-600 hover:border-primary/50'
+          : 'rounded-full border border-input bg-card px-2.5 py-0.5 text-xs text-muted-foreground hover:border-primary/50'
       }
     >
       {label}

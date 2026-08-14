@@ -43,7 +43,7 @@ export function SeccionPreviewBlock({ grupo, sessionNum, compact }: Props) {
       >
         {iconoSeccion(grupo.tipoSeccion)} {grupo.titulo}
         {esFija ? (
-          <span className="ml-1 font-normal normal-case text-zinc-500">
+          <span className="ml-1 font-normal normal-case text-muted-foreground">
             (todas las sesiones)
           </span>
         ) : null}

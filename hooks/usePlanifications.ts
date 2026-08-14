@@ -7,6 +7,7 @@ import {
   createItemAdjustment,
   deletePlanification,
   fetchMaterialized,
+  fetchPlanBaseline,
   fetchPlanification,
   fetchPlanificationAdjustments,
   fetchPlanifications,
@@ -32,6 +33,30 @@ export function usePlanifications(alumnoId?: string) {
   });
 }
 
+export function usePlanBaseline(
+  alumnoId?: string,
+  options?: {
+    excludePlanificationId?: string;
+    modoProgresion?: string;
+  },
+) {
+  return useQuery({
+    queryKey: [
+      'planifications',
+      'baseline',
+      alumnoId ?? '',
+      options?.excludePlanificationId ?? '',
+      options?.modoProgresion ?? '',
+    ],
+    queryFn: () =>
+      fetchPlanBaseline(alumnoId!, {
+        excludePlanificationId: options?.excludePlanificationId,
+        modoProgresion: options?.modoProgresion,
+      }),
+    enabled: Boolean(alumnoId),
+  });
+}
+
 export function usePlanification(id: string) {
   return useQuery({
     queryKey: ['planifications', 'detail', id],
@@ -45,7 +70,14 @@ export function useCreatePlanification() {
   return useMutation({
     mutationFn: (payload: CreatePlanificationPayload) =>
       createPlanification(payload),
-    onSuccess: () => qc.invalidateQueries({ queryKey: ['planifications'] }),
+    onSuccess: (_data, variables) => {
+      void qc.invalidateQueries({ queryKey: ['planifications'] });
+      if (variables.alumnoId) {
+        void qc.invalidateQueries({
+          queryKey: ['planifications', 'baseline', variables.alumnoId],
+        });
+      }
+    },
   });
 }
 

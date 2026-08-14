@@ -21,10 +21,10 @@ export function CardEjercicioHeader({ item, editing }: Props) {
         {item.ejercicio}
       </h4>
       {!editing ? (
-        <p className="mt-0.5 text-sm text-zinc-600">{linea}</p>
+        <p className="mt-0.5 text-sm text-muted-foreground">{linea}</p>
       ) : null}
       {item.notas && !editing ? (
-        <p className="mt-1 text-xs text-zinc-500">📝 {item.notas}</p>
+        <p className="mt-1 text-xs text-muted-foreground">📝 {item.notas}</p>
       ) : null}
     </div>
   );

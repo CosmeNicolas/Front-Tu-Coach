@@ -31,7 +31,7 @@ export function EjercicioCatalogoCard({
           mediaType={ejercicio.mediaType}
           eager={eagerImage}
         />
-        <span className="mt-2 line-clamp-2 text-center text-xs font-semibold text-zinc-900">
+        <span className="mt-2 line-clamp-2 text-center text-xs font-semibold text-foreground">
           {nombre}
         </span>
         {ejercicio.source === 'private' ? (
@@ -40,7 +40,7 @@ export function EjercicioCatalogoCard({
           </Badge>
         ) : null}
         {ejercicio.descripcion ? (
-          <p className="mt-1 line-clamp-2 text-center text-[10px] leading-snug text-zinc-500">
+          <p className="mt-1 line-clamp-2 text-center text-[10px] leading-snug text-muted-foreground">
             {ejercicio.descripcion}
           </p>
         ) : null}

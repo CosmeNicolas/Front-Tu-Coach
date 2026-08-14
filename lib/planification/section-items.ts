@@ -23,10 +23,13 @@ export function isGroupItem(
 }
 
 export function diaBaseDeItem(item: PlanificationSectionItem): number | undefined {
-  if (isGroupItem(item)) {
-    return item.diaBase ?? item.items[0]?.diaBase;
-  }
-  return item.diaBase;
+  const raw = isGroupItem(item)
+    ? (item.diaBase ?? item.items[0]?.diaBase)
+    : item.diaBase;
+  if (raw == null || raw === '') return undefined;
+  const n = Number(raw);
+  if (!Number.isFinite(n) || n < 1) return undefined;
+  return Math.trunc(n);
 }
 
 export function ensureSingleItem(
@@ -137,7 +140,9 @@ export function filterItemsPorDia(
   diaActivo: number,
 ): PlanificationSectionItem[] {
   if (!frecuenciaBloque) return items;
-  return items.filter((it) => (diaBaseDeItem(it) ?? 1) === diaActivo);
+  const dia = Number(diaActivo);
+  if (!Number.isFinite(dia) || dia < 1) return items;
+  return items.filter((it) => (diaBaseDeItem(it) ?? 1) === dia);
 }
 
 export function hydrateSectionItem(item: PlanificationSectionItem): PlanificationSectionItem {

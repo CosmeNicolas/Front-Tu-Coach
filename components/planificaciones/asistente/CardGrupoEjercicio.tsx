@@ -58,7 +58,7 @@ export function CardGrupoEjercicio({
           {dragHandleProps ? <DragHandle {...dragHandleProps} /> : null}
           <div className="min-w-0">
             <h4 className={`text-sm font-bold ${CEMD.primaryClass}`}>{label}</h4>
-            <p className="text-xs text-zinc-500">
+            <p className="text-xs text-muted-foreground">
               {grupo.items.length} ejercicios · progresión individual
             </p>
           </div>
@@ -67,7 +67,7 @@ export function CardGrupoEjercicio({
           <button
             type="button"
             onClick={onDesagrupar}
-            className="shrink-0 rounded px-2 py-1 text-xs text-zinc-600 hover:bg-white"
+            className="shrink-0 rounded px-2 py-1 text-xs text-muted-foreground hover:bg-card"
           >
             Desagrupar
           </button>

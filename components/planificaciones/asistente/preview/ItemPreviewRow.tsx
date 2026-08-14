@@ -25,7 +25,7 @@ export function ItemPreviewRow({
 
   return (
     <div
-      className={`border-b border-zinc-200 pb-3 last:border-0 last:pb-0 ${
+      className={`border-b border-border pb-3 last:border-0 last:pb-0 ${
         esParteDeGrupo ? 'border-l-2 border-primary/30 pl-3' : ''
       } ${item.esPreAjuste ? 'opacity-95' : ''}`}
     >
@@ -33,7 +33,7 @@ export function ItemPreviewRow({
         <EjercicioAvatar gif={item.gif} nombre={item.ejercicio} size="md" />
         <div className="min-w-0 flex-1">
           <div className="flex flex-wrap items-center gap-2">
-            <h4 className="text-sm font-semibold text-zinc-900">
+            <h4 className="text-sm font-semibold text-foreground">
               {item.ejercicio}
             </h4>
             <AjustePreviewBadge item={item} sessionNum={sessionNum} />

@@ -1,10 +1,11 @@
 'use client';
 
-import { useMemo, useState } from 'react';
+import { useEffect, useMemo, useState } from 'react';
 import { Eye } from 'lucide-react';
 import { useMaterializedPlanification } from '@/hooks/usePlanifications';
 import { PlanificationConfig } from '@/types/planification';
 import { etiquetaDia } from '@/lib/planification/preview-progression';
+import { normalizeDiaBase } from '@/lib/planification/asistente-dia';
 import { Badge } from '@/components/ui/badge';
 import { CEMD, selectCemd } from './constants';
 import { SesionPreviewCard } from './preview/SesionPreviewCard';
@@ -15,6 +16,7 @@ interface Props {
   needsSave: boolean;
   diaActivo: number;
   frecuenciaBloque: number | null;
+  onDiaChange: (dia: number) => void;
 }
 
 export function PreviewPanel({
@@ -23,17 +25,27 @@ export function PreviewPanel({
   needsSave,
   diaActivo,
   frecuenciaBloque,
+  onDiaChange,
 }: Props) {
-  const [filtroDia, setFiltroDia] = useState<number | null>(
-    frecuenciaBloque ? diaActivo : null,
-  );
+  /** null = todas; si no, sigue al día del asistente */
+  const [verTodas, setVerTodas] = useState(false);
   const { data, isLoading, error, dataUpdatedAt } =
     useMaterializedPlanification(planificationId);
 
+  useEffect(() => {
+    // Al cambiar el día desde la barra, salimos de "Todas"
+    setVerTodas(false);
+  }, [diaActivo]);
+
+  const filtroDia =
+    frecuenciaBloque && !verTodas ? normalizeDiaBase(diaActivo) : null;
+
   const sesionesFiltradas = useMemo(() => {
     if (!data) return [];
-    if (!filtroDia) return data.sesiones;
-    return data.sesiones.filter((s) => s.diaBase === filtroDia);
+    if (filtroDia == null) return data.sesiones;
+    return data.sesiones.filter(
+      (s) => normalizeDiaBase(s.diaBase) === filtroDia,
+    );
   }, [data, filtroDia]);
 
   if (needsSave) {
@@ -57,8 +69,14 @@ export function PreviewPanel({
     );
   }
 
+  const sesionesVacias =
+    filtroDia != null &&
+    sesionesFiltradas.every((s) =>
+      s.secciones.every((sec) => (sec.items?.length ?? 0) === 0),
+    );
+
   return (
-    <section className={`rounded-xl border ${CEMD.borderClass} bg-white p-4 sm:p-6`}>
+    <section className={`rounded-xl border ${CEMD.borderClass} bg-card p-4 sm:p-6`}>
       <header className="mb-5 flex flex-col gap-3 sm:flex-row sm:flex-wrap sm:items-end sm:justify-between">
         <div className="space-y-1">
           <div className="flex flex-wrap items-center gap-2">
@@ -67,15 +85,15 @@ export function PreviewPanel({
               Vista previa — como verá el alumno
             </h2>
           </div>
-          <p className="text-sm text-zinc-500">
+          <p className="text-sm text-muted-foreground">
             {data.totalSesiones} sesiones · fuente{' '}
-            <code className="rounded bg-zinc-100 px-1 text-xs">GET /materialized</code>
+            <code className="rounded bg-muted px-1 text-xs">GET /materialized</code>
           </p>
           <div className="flex flex-wrap items-center gap-2 pt-1">
             <Badge variant="outline" className="font-mono text-xs">
               contentVersion: {data.contentVersion}
             </Badge>
-            <span className="text-[10px] text-zinc-400">
+            <span className="text-[10px] text-muted-foreground">
               sync{' '}
               {new Date(dataUpdatedAt).toLocaleTimeString('es-AR', {
                 hour: '2-digit',
@@ -90,10 +108,15 @@ export function PreviewPanel({
           <label className="flex w-full min-w-0 flex-col gap-2 text-sm sm:flex-row sm:items-center">
             <span className="shrink-0 font-medium">Ver día base:</span>
             <select
-              value={filtroDia ?? ''}
+              value={verTodas ? '' : String(normalizeDiaBase(diaActivo))}
               onChange={(e) => {
                 const v = e.target.value;
-                setFiltroDia(v === '' ? null : Number(v));
+                if (v === '') {
+                  setVerTodas(true);
+                  return;
+                }
+                setVerTodas(false);
+                onDiaChange(Number(v));
               }}
               className={`${selectCemd} w-full min-w-0 sm:max-w-[200px]`}
             >
@@ -111,8 +134,14 @@ export function PreviewPanel({
       </header>
 
       {sesionesFiltradas.length === 0 ? (
-        <p className="text-sm text-zinc-500">
+        <p className="text-sm text-muted-foreground">
           No hay sesiones para el filtro seleccionado.
+        </p>
+      ) : sesionesVacias ? (
+        <p className="rounded-lg border border-dashed border-border bg-muted/30 px-4 py-6 text-sm text-muted-foreground">
+          {filtroDia
+            ? `${etiquetaDia(config.modoProgresion, filtroDia)} todavía no tiene ejercicios cargados. Volvé al asistente, elegí ese día en la barra y cargá las secciones. Podés guardar y continuar después.`
+            : 'No hay ejercicios en estas sesiones.'}
         </p>
       ) : (
         <div className="grid grid-cols-1 gap-4 sm:grid-cols-2 xl:grid-cols-3">
@@ -126,7 +155,7 @@ export function PreviewPanel({
         </div>
       )}
 
-      <p className="mt-4 text-center text-[10px] text-zinc-400">
+      <p className="mt-4 text-center text-[10px] text-muted-foreground">
         Mostrando {sesionesFiltradas.length} de {data.totalSesiones} sesiones
         {filtroDia
           ? ` · ${etiquetaDia(config.modoProgresion, filtroDia)}`

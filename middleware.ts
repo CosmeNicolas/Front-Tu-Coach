@@ -38,13 +38,14 @@ export function middleware(request: NextRequest) {
   const token = request.cookies.get(TOKEN_COOKIE_NAME)?.value;
   const authenticated = Boolean(token);
 
+  // Landing pública en `/`. Si ya hay sesión, ir al dashboard del rol.
   if (pathname === '/') {
     if (authenticated && token) {
       const role = getRoleFromToken(token);
       const dest = role ? DASHBOARD_BY_ROLE[role] : '/login';
       return NextResponse.redirect(new URL(dest, request.url));
     }
-    return NextResponse.redirect(new URL('/login', request.url));
+    return NextResponse.next();
   }
 
   if (PUBLIC_PATHS.includes(pathname)) {

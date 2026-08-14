@@ -9,16 +9,16 @@ function EditarAlumnoContent({ id }: { id: string }) {
   const { data, isLoading } = useClient(id);
 
   if (isLoading) {
-    return <div className="p-4 sm:p-8 text-sm text-zinc-500">Cargando…</div>;
+    return <div className="p-4 sm:p-8 text-sm text-muted-foreground">Cargando…</div>;
   }
   if (!data) {
-    return <div className="p-4 sm:p-8 text-sm text-zinc-500">Alumno no encontrado</div>;
+    return <div className="p-4 sm:p-8 text-sm text-muted-foreground">Alumno no encontrado</div>;
   }
 
   return (
     <div className="p-4 sm:p-8">
       <div className="mb-6 flex flex-wrap items-center justify-between gap-3">
-        <h1 className="font-display text-2xl tracking-wide text-zinc-900">
+        <h1 className="font-display text-2xl tracking-wide text-foreground">
           Editar alumno
         </h1>
         <Link
@@ -41,7 +41,7 @@ export default function EditarAlumnoPage({
   const { id } = use(params);
 
   return (
-    <Suspense fallback={<div className="p-4 sm:p-8 text-sm text-zinc-500">Cargando…</div>}>
+    <Suspense fallback={<div className="p-4 sm:p-8 text-sm text-muted-foreground">Cargando…</div>}>
       <EditarAlumnoContent id={id} />
     </Suspense>
   );

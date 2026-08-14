@@ -1,9 +1,14 @@
+'use client';
+
 import Link from 'next/link';
 import {
   Planification,
+  PlanificationStatus,
   PROGRESSION_MODE_LABELS,
 } from '@/types/planification';
 import { ProgresoAlumnoPanel } from '@/components/planificaciones/ProgresoAlumnoPanel';
+import { RenovarDesdeAnteriorButton } from '@/components/planificaciones/RenovarDesdeAnteriorButton';
+import { Button } from '@/components/ui/button';
 
 export function PlanificacionDetalleCard({
   planification,
@@ -15,27 +20,48 @@ export function PlanificacionDetalleCard({
     (acc, s) => acc + s.items.length,
     0,
   );
+  const canRenew =
+    Boolean(planification.alumnoId) &&
+    !planification.esPlantilla &&
+    planification.secciones.length > 0 &&
+    (planification.estado === PlanificationStatus.ACTIVE ||
+      planification.solicitudRevisionPendiente);
 
   return (
-    <div className="rounded-lg border border-zinc-200 bg-white p-6">
+    <div className="rounded-lg border border-border bg-card p-6">
       <div className="flex flex-wrap items-start justify-between gap-4">
         <div>
-          <h1 className="text-2xl font-semibold text-zinc-900">
+          <h1 className="text-2xl font-semibold text-foreground">
             {planification.titulo}
           </h1>
-          <p className="mt-1 text-sm text-zinc-500">
+          <p className="mt-1 text-sm text-muted-foreground">
             Versión {planification.version} · {planification.estado}
+            {planification.solicitudRevisionPendiente
+              ? ' · solicitud de renovación pendiente'
+              : ''}
           </p>
         </div>
-        <div className="flex items-center gap-2">
-          <Link
-            href={`/profesor/planificaciones/${planification.id}/asistente`}
-            className="rounded-lg bg-zinc-900 px-3 py-2 text-sm font-medium text-white hover:bg-zinc-800"
-          >
-            {planification.secciones.length === 0
-              ? 'Abrir Asistente'
-              : 'Editar en Asistente'}
-          </Link>
+        <div className="flex flex-wrap items-center gap-2">
+          <Button asChild>
+            <Link
+              href={`/profesor/planificaciones/${planification.id}/asistente`}
+            >
+              {planification.secciones.length === 0
+                ? 'Abrir Asistente'
+                : 'Editar en Asistente'}
+            </Link>
+          </Button>
+          {canRenew && planification.alumnoId ? (
+            <RenovarDesdeAnteriorButton
+              alumnoId={planification.alumnoId}
+              fromPlanId={planification.id}
+              label={
+                planification.solicitudRevisionPendiente
+                  ? 'Armar nueva desde este plan'
+                  : 'Nueva desde este plan'
+              }
+            />
+          ) : null}
         </div>
       </div>
 
@@ -48,7 +74,7 @@ export function PlanificacionDetalleCard({
 
       <ProgresoAlumnoPanel planification={planification} />
 
-      <p className="mt-4 text-sm text-zinc-500">
+      <p className="mt-4 text-sm text-muted-foreground">
         {planification.secciones.length === 0
           ? 'Sin secciones todavía. Abrí el Asistente para cargar entrada en calor, ejercicios principales y vuelta a la calma.'
           : `${planification.secciones.length} secciones · ${totalItems} ítems cargados`}
@@ -60,8 +86,10 @@ export function PlanificacionDetalleCard({
 function Item({ label, value }: { label: string; value: string }) {
   return (
     <div>
-      <dt className="text-xs font-medium uppercase tracking-wide text-zinc-500">{label}</dt>
-      <dd className="mt-1 text-sm text-zinc-900">{value}</dd>
+      <dt className="text-xs font-medium uppercase tracking-wide text-muted-foreground">
+        {label}
+      </dt>
+      <dd className="mt-1 text-sm text-foreground">{value}</dd>
     </div>
   );
 }

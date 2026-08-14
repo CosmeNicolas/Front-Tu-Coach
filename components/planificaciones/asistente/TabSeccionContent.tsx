@@ -376,7 +376,16 @@ function SeccionPrincipal({
         <Card className="border-dashed">
           <CardContent className="flex flex-col items-center py-8 text-center">
             <Plus className="mb-2 size-10 text-muted-foreground" />
-            <p className="text-muted-foreground">No hay ejercicios en esta sección</p>
+            <p className="text-muted-foreground">
+              {frecuenciaBloque && diaLabel
+                ? `Sin ejercicios en ${diaLabel} para esta sección`
+                : 'No hay ejercicios en esta sección'}
+            </p>
+            <p className="mt-1 max-w-md text-xs text-muted-foreground">
+              {frecuenciaBloque
+                ? 'Los ejercicios del Día 1 no aparecen acá. Cargá este día, guardá, y podés seguir con otro día más tarde.'
+                : 'Buscá un ejercicio abajo para empezar.'}
+            </p>
           </CardContent>
         </Card>
       )}

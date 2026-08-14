@@ -10,7 +10,13 @@ import {
 import { useUpdatePlanification } from '@/hooks/usePlanifications';
 import { Label } from '@/components/ui/label';
 import {
-  aplicarCambioConfig,
+  Select,
+  SelectContent,
+  SelectItem,
+  SelectTrigger,
+  SelectValue,
+} from '@/components/ui/select';
+import {
   aplicarCambioFrecuencia,
   aplicarCambioModo,
   aplicarCambioTotalSesiones,
@@ -18,23 +24,31 @@ import {
   WEEKLY_FREQUENCY_OPTIONS,
 } from '@/lib/planificaciones/config-options';
 import { etiquetaDia } from '@/lib/planification/preview-progression';
+import { sesionesDeDiaBase } from '@/lib/planification/asistente-dia';
+import { cn } from '@/lib/utils';
+
+interface DiaResumen {
+  dia: number;
+  ejercicios: number;
+}
 
 interface Props {
   planificationId: string;
   config: PlanificationConfig;
   diaActivo: number;
   frecuenciaBloque: number | null;
+  diasResumen: DiaResumen[];
+  totalSesiones: number;
   onDiaChange: (dia: number) => void;
 }
-
-const selectCls =
-  'h-9 rounded-md border border-primary bg-background px-2 text-sm text-foreground';
 
 export function AsistenteConfigBar({
   planificationId,
   config,
   diaActivo,
   frecuenciaBloque,
+  diasResumen,
+  totalSesiones,
   onDiaChange,
 }: Props) {
   const update = useUpdatePlanification(planificationId);
@@ -57,91 +71,145 @@ export function AsistenteConfigBar({
     }
   }
 
-  function patch(partial: Partial<PlanificationConfig>) {
-    void commit(aplicarCambioConfig(draft, partial));
+  function onModoChange(modo: string) {
+    void commit(aplicarCambioModo(draft, modo as ProgressionMode));
   }
 
-  function onModoChange(modo: ProgressionMode) {
-    void commit(aplicarCambioModo(draft, modo));
+  function onFrecuenciaChange(freq: string) {
+    void commit(aplicarCambioFrecuencia(draft, Number(freq)));
   }
 
-  function onFrecuenciaChange(freq: number) {
-    void commit(aplicarCambioFrecuencia(draft, freq));
+  function onSesionesChange(total: string) {
+    void commit(aplicarCambioTotalSesiones(draft, Number(total)));
   }
 
-  function onSesionesChange(total: number) {
-    void commit(aplicarCambioTotalSesiones(draft, total));
-  }
+  const sesionesDelDia =
+    frecuenciaBloque != null
+      ? sesionesDeDiaBase(diaActivo, totalSesiones, frecuenciaBloque)
+      : [];
 
   return (
-    <div className="flex flex-wrap items-end gap-x-4 gap-y-3">
-      <div className="space-y-1">
-        <Label className="text-xs text-muted-foreground">Modo</Label>
-        <select
-          value={draft.modoProgresion}
-          onChange={(e) => onModoChange(e.target.value as ProgressionMode)}
-          disabled={update.isPending}
-          className={selectCls}
-        >
-          {Object.values(ProgressionMode).map((m) => (
-            <option key={m} value={m}>
-              {PROGRESSION_MODE_LABELS[m]}
-            </option>
-          ))}
-        </select>
-      </div>
+    <div className="space-y-3">
+      <div className="flex flex-wrap items-end gap-x-4 gap-y-3">
+        <div className="min-w-[10rem] space-y-1">
+          <Label className="text-xs text-muted-foreground">Modo</Label>
+          <Select
+            value={draft.modoProgresion}
+            onValueChange={onModoChange}
+            disabled={update.isPending}
+          >
+            <SelectTrigger>
+              <SelectValue />
+            </SelectTrigger>
+            <SelectContent>
+              {Object.values(ProgressionMode).map((m) => (
+                <SelectItem key={m} value={m}>
+                  {PROGRESSION_MODE_LABELS[m]}
+                </SelectItem>
+              ))}
+            </SelectContent>
+          </Select>
+        </div>
 
-      <div className="space-y-1">
-        <Label className="text-xs text-muted-foreground">Frecuencia semanal</Label>
-        <select
-          value={draft.frecuenciaSemanal}
-          onChange={(e) => onFrecuenciaChange(Number(e.target.value))}
-          disabled={update.isPending}
-          className={selectCls}
-        >
-          {WEEKLY_FREQUENCY_OPTIONS.map((f) => (
-            <option key={f} value={f}>
-              {f} {f === 1 ? 'día' : 'días'}
-            </option>
-          ))}
-        </select>
-      </div>
+        <div className="min-w-[9rem] space-y-1">
+          <Label className="text-xs text-muted-foreground">
+            Frecuencia semanal
+          </Label>
+          <Select
+            value={String(draft.frecuenciaSemanal)}
+            onValueChange={onFrecuenciaChange}
+            disabled={update.isPending}
+          >
+            <SelectTrigger>
+              <SelectValue />
+            </SelectTrigger>
+            <SelectContent>
+              {WEEKLY_FREQUENCY_OPTIONS.map((f) => (
+                <SelectItem key={f} value={String(f)}>
+                  {f} {f === 1 ? 'día' : 'días'}
+                </SelectItem>
+              ))}
+            </SelectContent>
+          </Select>
+        </div>
 
-      <div className="space-y-1">
-        <Label className="text-xs text-muted-foreground">Sesiones</Label>
-        <select
-          value={draft.totalSesiones}
-          onChange={(e) => onSesionesChange(Number(e.target.value))}
-          disabled={update.isPending}
-          className={selectCls}
-        >
-          {sesionesOpts.map((o) => (
-            <option key={o.totalSesiones} value={o.totalSesiones}>
-              {o.label}
-            </option>
-          ))}
-        </select>
+        <div className="min-w-[12rem] space-y-1">
+          <Label className="text-xs text-muted-foreground">Sesiones</Label>
+          <Select
+            value={String(draft.totalSesiones)}
+            onValueChange={onSesionesChange}
+            disabled={update.isPending}
+          >
+            <SelectTrigger>
+              <SelectValue />
+            </SelectTrigger>
+            <SelectContent>
+              {sesionesOpts.map((o) => (
+                <SelectItem key={o.totalSesiones} value={String(o.totalSesiones)}>
+                  {o.label}
+                </SelectItem>
+              ))}
+            </SelectContent>
+          </Select>
+        </div>
+
+        {update.isPending ? (
+          <span className="text-xs text-muted-foreground">Actualizando…</span>
+        ) : null}
       </div>
 
       {frecuenciaBloque ? (
-        <div className="space-y-1">
-          <Label className="text-xs text-muted-foreground">Día</Label>
-          <select
-            value={diaActivo}
-            onChange={(e) => onDiaChange(Number(e.target.value))}
-            className={`${selectCls} font-semibold text-primary`}
-          >
-            {Array.from({ length: frecuenciaBloque }, (_, i) => i + 1).map((d) => (
-              <option key={d} value={d}>
-                {etiquetaDia(draft.modoProgresion, d)}
-              </option>
-            ))}
-          </select>
-        </div>
-      ) : null}
+        <div className="rounded-lg border border-border bg-muted/30 px-3 py-3">
+          <div className="flex flex-wrap items-center justify-between gap-2">
+            <div>
+              <p className="text-xs font-semibold uppercase tracking-wide text-muted-foreground">
+                Día que estás editando
+              </p>
+              <p className="mt-0.5 text-sm text-foreground">
+                {etiquetaDia(draft.modoProgresion, diaActivo)}
+                {sesionesDelDia.length > 0 ? (
+                  <span className="text-muted-foreground">
+                    {' '}
+                    · sesiones {sesionesDelDia.slice(0, 6).join(', ')}
+                    {sesionesDelDia.length > 6 ? '…' : ''}
+                  </span>
+                ) : null}
+              </p>
+            </div>
+            <p className="text-xs text-muted-foreground">
+              Guardá y retomá otro día cuando quieras
+            </p>
+          </div>
 
-      {update.isPending ? (
-        <span className="text-xs text-muted-foreground">Actualizando…</span>
+          <div className="mt-3 flex flex-wrap gap-2">
+            {diasResumen.map(({ dia, ejercicios }) => {
+              const activo = dia === diaActivo;
+              const listo = ejercicios > 0;
+              return (
+                <button
+                  key={dia}
+                  type="button"
+                  onClick={() => onDiaChange(dia)}
+                  className={cn(
+                    'rounded-lg border px-3 py-2 text-left text-sm transition-colors',
+                    activo
+                      ? 'border-foreground bg-background text-foreground shadow-sm'
+                      : 'border-border bg-card text-muted-foreground hover:border-foreground/40 hover:text-foreground',
+                  )}
+                >
+                  <span className="block font-medium text-foreground">
+                    {etiquetaDia(draft.modoProgresion, dia)}
+                  </span>
+                  <span className="mt-0.5 block text-[11px]">
+                    {listo
+                      ? `${ejercicios} ejercicio${ejercicios === 1 ? '' : 's'}`
+                      : 'Pendiente'}
+                  </span>
+                </button>
+              );
+            })}
+          </div>
+        </div>
       ) : null}
     </div>
   );

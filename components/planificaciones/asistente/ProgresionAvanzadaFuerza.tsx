@@ -23,18 +23,18 @@ export function ProgresionAvanzadaFuerza({ parametros, onChange }: Props) {
   }
 
   return (
-    <div className="mt-2 rounded-lg border border-zinc-200 bg-white">
+    <div className="mt-2 rounded-lg border border-border bg-card">
       <button
         type="button"
         onClick={() => setOpen((o) => !o)}
-        className="flex w-full items-center justify-between px-3 py-2 text-left text-sm font-medium text-zinc-700 hover:bg-zinc-50"
+        className="flex w-full items-center justify-between px-3 py-2 text-left text-sm font-medium text-foreground hover:bg-muted"
       >
         <span>⚙️ Configuración avanzada de progresión</span>
-        <span className="text-xs text-zinc-400">{open ? '▲' : '▼'}</span>
+        <span className="text-xs text-muted-foreground">{open ? '▲' : '▼'}</span>
       </button>
       {open ? (
-        <div className="space-y-3 border-t border-zinc-100 px-3 pb-3 pt-2">
-          <p className="text-xs text-zinc-500">
+        <div className="space-y-3 border-t border-border px-3 pb-3 pt-2">
+          <p className="text-xs text-muted-foreground">
             Las series y reps del bloque superior son el punto de partida (mínimos).
             La progresión sube primero <strong>repeticiones</strong>, luego{' '}
             <strong>series</strong> y por último <strong>peso</strong>, hasta los
@@ -67,8 +67,8 @@ export function ProgresionAvanzadaFuerza({ parametros, onChange }: Props) {
 function Info({ label, value }: { label: string; value: number }) {
   return (
     <div className="text-xs">
-      <span className="font-medium text-zinc-600">{label}</span>
-      <div className="mt-0.5 rounded border border-zinc-200 bg-zinc-50 px-1.5 py-1.5 text-zinc-700">
+      <span className="font-medium text-muted-foreground">{label}</span>
+      <div className="mt-0.5 rounded border border-border bg-muted/40 px-1.5 py-1.5 text-foreground">
         {value}
       </div>
     </div>
@@ -90,14 +90,14 @@ function Campo({
 }) {
   return (
     <label className="text-xs">
-      <span className="font-medium text-zinc-700">{label}</span>
+      <span className="font-medium text-foreground">{label}</span>
       <input
         type="number"
         min={min}
         max={max}
         value={value ?? ''}
         onChange={(e) => onChange(Number(e.target.value) || min)}
-        className="mt-0.5 w-full rounded border border-primary/30 bg-white px-1.5 py-1.5"
+        className="mt-0.5 w-full rounded border border-primary/30 bg-card px-1.5 py-1.5"
       />
     </label>
   );

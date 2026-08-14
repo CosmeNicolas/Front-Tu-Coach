@@ -11,7 +11,6 @@ import {
   computeItemProgressionPreview,
   etiquetaDia,
 } from '@/lib/planification/preview-progression';
-import { CEMD } from './constants';
 
 interface Props {
   item: PlanificationItem;
@@ -24,13 +23,13 @@ function cellClass(idx: number, corteIdx: number): string {
     return `${base} border-l-2 border-foreground bg-muted text-foreground`;
   }
   if (corteIdx >= 0 && idx < corteIdx) {
-    return `${base} text-zinc-600`;
+    return `${base} text-muted-foreground`;
   }
-  return `${base} text-zinc-800`;
+  return `${base} text-foreground`;
 }
 
 function headClass(idx: number, corteIdx: number): string {
-  const base = `p-1 text-center font-medium ${CEMD.primaryClass}`;
+  const base = 'p-1 text-center font-medium text-foreground';
   if (corteIdx >= 0 && idx === corteIdx) {
     return `${base} border-l-2 border-foreground bg-muted text-muted-foreground`;
   }
@@ -61,18 +60,20 @@ export function MiniTablaProgresion({ item, config }: Props) {
   }, [progresion, esBloque]);
 
   const diaLabel =
-    esBloque && item.diaBase
-      ? etiquetaDia(config.modoProgresion, item.diaBase)
+    esBloque && item.diaBase != null
+      ? etiquetaDia(config.modoProgresion, Number(item.diaBase))
       : null;
 
   if (indicesVisibles.length === 0) return null;
 
   return (
-    <div className={`mt-3 rounded-lg border ${CEMD.borderClass} bg-white p-3`}>
-      <p className={`text-xs font-semibold ${CEMD.primaryClass}`}>
-        📊 Vista de progresión
+    <div className="mt-3 rounded-lg border border-border bg-card p-3">
+      <p className="text-xs font-semibold text-foreground">
+        Vista de progresión
         {diaLabel ? (
-          <span className="ml-2 font-normal text-zinc-500">({diaLabel})</span>
+          <span className="ml-2 font-normal text-muted-foreground">
+            ({diaLabel})
+          </span>
         ) : null}
         {corteIdx >= 0 ? (
           <span className="ml-2 font-normal text-muted-foreground">
@@ -83,8 +84,10 @@ export function MiniTablaProgresion({ item, config }: Props) {
       <div className="mt-2 overflow-x-auto">
         <table className="w-full min-w-max text-xs">
           <thead>
-            <tr className="border-b border-zinc-200">
-              <th className="p-1 text-left font-medium text-zinc-600">Sesión</th>
+            <tr className="border-b border-border">
+              <th className="p-1 text-left font-medium text-muted-foreground">
+                Sesión
+              </th>
               {indicesVisibles.map((idx) => (
                 <th key={idx} className={headClass(idx, corteIdx)}>
                   {idx + 1}
@@ -94,7 +97,7 @@ export function MiniTablaProgresion({ item, config }: Props) {
           </thead>
           <tbody>
             <tr>
-              <td className="p-1 font-medium text-zinc-600">Valor</td>
+              <td className="p-1 font-medium text-muted-foreground">Valor</td>
               {indicesVisibles.map((idx) => (
                 <td key={idx} className={cellClass(idx, corteIdx)}>
                   {progresion[idx] || '—'}
@@ -104,8 +107,9 @@ export function MiniTablaProgresion({ item, config }: Props) {
           </tbody>
         </table>
       </div>
-      <p className="mt-1 text-[10px] text-zinc-500">
-        {indicesVisibles.length} de {config.totalSesiones} sesiones con progresión
+      <p className="mt-1 text-[10px] text-muted-foreground">
+        {indicesVisibles.length} de {config.totalSesiones} sesiones con
+        progresión
       </p>
     </div>
   );

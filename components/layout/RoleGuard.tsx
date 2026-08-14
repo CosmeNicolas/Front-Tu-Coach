@@ -48,7 +48,7 @@ export function RoleGuard({ expectedRole, children }: RoleGuardProps) {
   if (!authorized) {
     return (
       <div className="flex flex-1 items-center justify-center p-8">
-        <p className="text-sm text-zinc-500">Verificando sesión…</p>
+        <p className="text-sm text-muted-foreground">Verificando sesión…</p>
       </div>
     );
   }

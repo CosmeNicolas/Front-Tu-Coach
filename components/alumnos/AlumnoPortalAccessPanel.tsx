@@ -128,7 +128,7 @@ export function AlumnoPortalAccessPanel({ client }: Props) {
 
       <div className="flex flex-col gap-4">
         <label className="flex flex-col gap-1.5 text-sm">
-          <span className="font-medium text-zinc-700">Email de acceso</span>
+          <span className="font-medium text-foreground">Email de acceso</span>
           <Input
             type="email"
             required
@@ -143,7 +143,7 @@ export function AlumnoPortalAccessPanel({ client }: Props) {
         </label>
 
         <label className="flex flex-col gap-1.5 text-sm">
-          <span className="font-medium text-zinc-700">
+          <span className="font-medium text-foreground">
             {hasAccount ? 'Nueva contraseña (opcional)' : 'Contraseña'}
           </span>
           <div className="flex gap-2">
@@ -198,7 +198,7 @@ export function AlumnoPortalAccessPanel({ client }: Props) {
       <Button
         type="button"
         disabled={upsert.isPending}
-        className="w-full bg-zinc-900 text-white hover:bg-zinc-700"
+        className="w-full bg-primary text-primary-foreground hover:bg-primary/90"
         onClick={handleSave}
       >
         {upsert.isPending

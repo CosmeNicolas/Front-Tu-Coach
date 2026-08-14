@@ -186,6 +186,47 @@ export interface CreatePlanificationPayload {
   titulo: string;
   alumnoId: string;
   config: PlanificationConfig;
+  /** vacio = planilla en blanco; anterior = importar del último plan */
+  origen?: 'vacio' | 'anterior';
+  fromPlanificationId?: string;
+  /** Si se envía, solo importa esas secciones (por título). Omitir = todo. */
+  sectionTitulos?: string[];
+}
+
+export interface PlanBaselineItem {
+  sourceKey: string;
+  kind: 'single' | 'group';
+  ejercicio: string;
+  tipoItem?: string;
+  diaBase?: number;
+  ultimaCarga?: string | null;
+  tipoGrupo?: string;
+  subEjercicios?: string[];
+  /** Ítem listo para mergear (viene del backend ya sembrado). */
+  payload: PlanificationSectionItem;
+}
+
+export interface PlanBaselineSection {
+  titulo: string;
+  tipoSeccion: TipoSeccion | string;
+  totalEjercicios: number;
+  items: PlanBaselineItem[];
+  sectionPayload: PlanificationSection;
+}
+
+export interface PlanBaseline {
+  available: boolean;
+  planificationId?: string;
+  titulo?: string;
+  estado?: PlanificationStatus;
+  config?: PlanificationConfig;
+  totalEjercicios?: number;
+  sesionesCompletadas?: number;
+  totalSesiones?: number;
+  solicitudRevisionPendiente?: boolean;
+  updatedAt?: string | null;
+  secciones?: PlanBaselineSection[];
+  reason?: string;
 }
 
 export type UpdatePlanificationPayload = {

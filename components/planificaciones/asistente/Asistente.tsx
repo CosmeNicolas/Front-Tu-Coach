@@ -1,10 +1,14 @@
 'use client';
 
+import { useMemo } from 'react';
 import { useRouter } from 'next/navigation';
 import { ChevronLeft, ChevronRight, CheckCircle2, Save } from 'lucide-react';
 import { Planification } from '@/types/planification';
 import { useClient } from '@/hooks/useClients';
-import { useMaterializedPlanification } from '@/hooks/usePlanifications';
+import {
+  useMaterializedPlanification,
+  usePlanBaseline,
+} from '@/hooks/usePlanifications';
 import { Button } from '@/components/ui/button';
 import { Card, CardContent } from '@/components/ui/card';
 import { Tabs, TabsContent, TabsList, TabsTrigger } from '@/components/ui/tabs';
@@ -18,6 +22,8 @@ import { IndicadorProgreso } from './IndicadorProgreso';
 import { AsistenteConfigBar } from './AsistenteConfigBar';
 import { TabSeccionContent } from './TabSeccionContent';
 import { PreviewPanel } from './PreviewPanel';
+import { PanelPlanAnterior } from './PanelPlanAnterior';
+import { etiquetaDia } from '@/lib/planification/preview-progression';
 
 export function Asistente({ planification }: { planification: Planification }) {
   const router = useRouter();
@@ -45,6 +51,7 @@ export function Asistente({ planification }: { planification: Planification }) {
     progresoAsistente,
     contentVersion,
     syncFromServer,
+    diasResumen,
     tabIndex,
   } = state;
 
@@ -53,6 +60,126 @@ export function Asistente({ planification }: { planification: Planification }) {
   const alumnoConProgreso = hasAlumnoSessionProgress(planification.progresoAlumno);
   const { data: materialized } = useMaterializedPlanification(
     alumnoConProgreso ? planification.id : '',
+  );
+
+  const tabIdByTitulo = useMemo(() => {
+    const map = new Map<string, string>();
+    for (const tab of WIZARD_TABS) {
+      map.set(tab.titulo.toLowerCase(), tab.id);
+    }
+    return map;
+  }, []);
+
+  const activeTabTitulo =
+    tabActivo === TAB_PREVIEW_ID
+      ? undefined
+      : WIZARD_TABS.find((t) => t.id === tabActivo)?.titulo;
+
+  const { data: baseline } = usePlanBaseline(
+    planification.alumnoId ?? undefined,
+    {
+      excludePlanificationId: planification.id,
+      modoProgresion: planification.config.modoProgresion,
+    },
+  );
+  const showPlanAnterior = Boolean(baseline?.available);
+
+  const wizardTabs = (
+    <Tabs value={tabActivo} onValueChange={setTabActivo}>
+      <div className="flex flex-col gap-2 sm:flex-row sm:items-center">
+        <Button
+          type="button"
+          variant="outline"
+          size="sm"
+          onClick={retrocederTab}
+          disabled={tabIndex <= 0}
+        >
+          <ChevronLeft className="size-4" />
+          Anterior
+        </Button>
+
+        <div className="min-w-0 flex-1 overflow-x-auto">
+          <TabsList className="h-auto w-max flex-wrap">
+            {WIZARD_TABS.map((tab, index) => {
+              const count = countItemsInTab(tab.id);
+              return (
+                <TabsTrigger
+                  key={tab.id}
+                  value={tab.id}
+                  className="text-xs sm:text-sm"
+                >
+                  {count > 0 ? (
+                    <CheckCircle2 className="size-3 text-foreground" />
+                  ) : null}
+                  <span className="hidden sm:inline">{tab.titulo}</span>
+                  <span className="sm:hidden">
+                    {index + 1}. {tab.titulo.split(' ')[0]}
+                  </span>
+                  {count > 0 ? (
+                    <span
+                      className="ml-1 inline-flex size-5 shrink-0 items-center justify-center rounded-full bg-primary text-[10px] font-semibold leading-none text-primary-foreground tabular-nums"
+                      aria-label={`${count} ejercicio${count === 1 ? '' : 's'}`}
+                    >
+                      {count}
+                    </span>
+                  ) : null}
+                </TabsTrigger>
+              );
+            })}
+            <TabsTrigger
+              value={TAB_PREVIEW_ID}
+              className="text-xs sm:text-sm"
+            >
+              Vista previa
+            </TabsTrigger>
+          </TabsList>
+        </div>
+
+        <Button
+          type="button"
+          variant="outline"
+          size="sm"
+          onClick={avanzarTab}
+          disabled={idx >= tabIds.length - 1}
+        >
+          Siguiente
+          <ChevronRight className="size-4" />
+        </Button>
+      </div>
+
+      {WIZARD_TABS.map((tab) => (
+        <TabsContent key={tab.id} value={tab.id}>
+          <Card>
+            <CardContent className="p-4 sm:p-6">
+              <TabSeccionContent
+                tabId={tab.id}
+                planification={planification}
+                seccion={getSeccion(tab.id)}
+                diaActivo={diaActivo}
+                frecuenciaBloque={frecuenciaBloque}
+                contentVersion={contentVersion}
+                progresoAlumno={planification.progresoAlumno}
+                materialized={materialized}
+                onUpdateSeccion={updateSeccion}
+                onUpdateCardio={setCalentamientoOrVuelta}
+                onAdjusted={syncFromServer}
+              />
+            </CardContent>
+          </Card>
+        </TabsContent>
+      ))}
+
+      <TabsContent value={TAB_PREVIEW_ID}>
+          <PreviewPanel
+          planificationId={planification.id}
+          config={planification.config}
+          needsSave={dirty}
+          diaActivo={diaActivo}
+          frecuenciaBloque={frecuenciaBloque}
+          onDiaChange={setDiaActivo}
+        />
+      </TabsContent>
+    </Tabs>
   );
 
   return (
@@ -68,7 +195,9 @@ export function Asistente({ planification }: { planification: Planification }) {
               ) : null}
               <h1
                 className={`font-bold text-primary sm:text-2xl ${
-                  planification.alumnoId ? 'mt-1 text-lg sm:text-xl' : 'text-xl sm:text-2xl'
+                  planification.alumnoId
+                    ? 'mt-1 text-lg sm:text-xl'
+                    : 'text-xl sm:text-2xl'
                 }`}
               >
                 Asistente de planificación
@@ -88,7 +217,11 @@ export function Asistente({ planification }: { planification: Planification }) {
               </Button>
               <Button onClick={handleSave} disabled={!dirty || upsert.isPending}>
                 <Save className="size-4" />
-                {upsert.isPending ? 'Guardando…' : dirty ? 'Guardar planilla' : 'Sin cambios'}
+                {upsert.isPending
+                  ? 'Guardando…'
+                  : dirty
+                    ? 'Guardar planilla'
+                    : 'Sin cambios'}
               </Button>
             </div>
           </div>
@@ -98,6 +231,8 @@ export function Asistente({ planification }: { planification: Planification }) {
             config={planification.config}
             diaActivo={diaActivo}
             frecuenciaBloque={frecuenciaBloque}
+            diasResumen={diasResumen}
+            totalSesiones={planification.config.totalSesiones}
             onDiaChange={setDiaActivo}
           />
 
@@ -105,6 +240,14 @@ export function Asistente({ planification }: { planification: Planification }) {
             progreso={progresoAsistente.progreso}
             seccionesCompletadas={progresoAsistente.seccionesCompletadas}
             totalSecciones={progresoAsistente.totalSecciones}
+            diaLabel={
+              frecuenciaBloque
+                ? etiquetaDia(
+                    planification.config.modoProgresion,
+                    diaActivo,
+                  )
+                : null
+            }
           />
 
           {alumnoConProgreso ? (
@@ -113,11 +256,11 @@ export function Asistente({ planification }: { planification: Planification }) {
               <strong>{planification.progresoAlumno.completadas.length}</strong>{' '}
               sesión(es) (última: #
               {ultimaSesionCompletadaAlumno(planification.progresoAlumno)}). Para
-              cambiar ejercicios usá <strong>⚡ Ajuste desde sesión N</strong>; podés
-              avanzar el corte semana a semana sin modificar lo ya entrenado. La edición ✎
-              y eliminar 🗑 están bloqueadas. Podés{' '}
-              <strong>reordenar</strong> ejercicios con ⋮⋮; el alumno verá el nuevo orden
-              al guardar.
+              cambiar ejercicios usá <strong>⚡ Ajuste desde sesión N</strong>;
+              podés avanzar el corte semana a semana sin modificar lo ya
+              entrenado. La edición ✎ y eliminar 🗑 están bloqueadas. Podés{' '}
+              <strong>reordenar</strong> ejercicios con ⋮⋮; el alumno verá el
+              nuevo orden al guardar.
             </div>
           ) : null}
         </CardContent>
@@ -131,93 +274,24 @@ export function Asistente({ planification }: { planification: Planification }) {
         </Card>
       ) : null}
 
-      <Tabs value={tabActivo} onValueChange={setTabActivo}>
-        <div className="flex flex-col gap-2 sm:flex-row sm:items-center">
-          <Button
-            type="button"
-            variant="outline"
-            size="sm"
-            onClick={retrocederTab}
-            disabled={tabIndex <= 0}
-          >
-            <ChevronLeft className="size-4" />
-            Anterior
-          </Button>
-
-          <div className="min-w-0 flex-1 overflow-x-auto">
-            <TabsList className="h-auto w-max flex-wrap">
-              {WIZARD_TABS.map((tab, index) => {
-                const count = countItemsInTab(tab.id);
-                return (
-                  <TabsTrigger key={tab.id} value={tab.id} className="text-xs sm:text-sm">
-                    {count > 0 ? (
-                      <CheckCircle2 className="size-3 text-foreground" />
-                    ) : null}
-                    <span className="hidden sm:inline">{tab.titulo}</span>
-                    <span className="sm:hidden">
-                      {index + 1}. {tab.titulo.split(' ')[0]}
-                    </span>
-                    {count > 0 ? (
-                      <span
-                        className="ml-1 inline-flex size-5 shrink-0 items-center justify-center rounded-full bg-primary text-[10px] font-semibold leading-none text-primary-foreground tabular-nums"
-                        aria-label={`${count} ejercicio${count === 1 ? '' : 's'}`}
-                      >
-                        {count}
-                      </span>
-                    ) : null}
-                  </TabsTrigger>
-                );
-              })}
-              <TabsTrigger value={TAB_PREVIEW_ID} className="text-xs sm:text-sm">
-                Vista previa
-              </TabsTrigger>
-            </TabsList>
-          </div>
-
-          <Button
-            type="button"
-            variant="outline"
-            size="sm"
-            onClick={avanzarTab}
-            disabled={idx >= tabIds.length - 1}
-          >
-            Siguiente
-            <ChevronRight className="size-4" />
-          </Button>
+      {showPlanAnterior ? (
+        <div className="grid gap-4 lg:grid-cols-[minmax(0,1fr)_300px]">
+          <div className="min-w-0">{wizardTabs}</div>
+          <aside className="lg:sticky lg:top-4 lg:max-h-[calc(100vh-1.5rem)] lg:self-start lg:overflow-y-auto">
+            <PanelPlanAnterior
+              planification={planification}
+              activeTabTitulo={activeTabTitulo}
+              getSeccion={getSeccion}
+              tabIdByTitulo={tabIdByTitulo}
+              onUpdateSeccion={updateSeccion}
+              onUpdateCardio={setCalentamientoOrVuelta}
+              blocked={alumnoConProgreso}
+            />
+          </aside>
         </div>
-
-        {WIZARD_TABS.map((tab) => (
-          <TabsContent key={tab.id} value={tab.id}>
-            <Card>
-              <CardContent className="p-4 sm:p-6">
-                <TabSeccionContent
-                  tabId={tab.id}
-                  planification={planification}
-                  seccion={getSeccion(tab.id)}
-                  diaActivo={diaActivo}
-                  frecuenciaBloque={frecuenciaBloque}
-                  contentVersion={contentVersion}
-                  progresoAlumno={planification.progresoAlumno}
-                  materialized={materialized}
-                  onUpdateSeccion={updateSeccion}
-                  onUpdateCardio={setCalentamientoOrVuelta}
-                  onAdjusted={syncFromServer}
-                />
-              </CardContent>
-            </Card>
-          </TabsContent>
-        ))}
-
-        <TabsContent value={TAB_PREVIEW_ID}>
-          <PreviewPanel
-            planificationId={planification.id}
-            config={planification.config}
-            needsSave={dirty}
-            diaActivo={diaActivo}
-            frecuenciaBloque={frecuenciaBloque}
-          />
-        </TabsContent>
-      </Tabs>
+      ) : (
+        <div className="min-w-0">{wizardTabs}</div>
+      )}
     </div>
   );
 }

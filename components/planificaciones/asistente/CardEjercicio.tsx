@@ -141,7 +141,7 @@ export function CardEjercicio({
   }
 
   return (
-    <article className="rounded-lg border border-zinc-200 bg-white shadow-sm">
+    <article className="rounded-lg border border-border bg-card shadow-sm">
       <div className="p-4">
         <div className="flex flex-col gap-3 sm:flex-row sm:items-start">
           {dragHandleProps ? (

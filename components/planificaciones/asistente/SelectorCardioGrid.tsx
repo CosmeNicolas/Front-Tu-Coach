@@ -3,7 +3,8 @@
 import { useEffect, useState } from 'react';
 import { OPCIONES_CARDIO } from '@/lib/ejercicios/catalogo-cardio';
 import { resolveGifUrl } from '@/lib/ejercicios/gif-url';
-import { ensureSingleItem, isSingleItem, diaBaseDeItem } from '@/lib/planification/section-items';
+import { diaBaseDeItem, ensureSingleItem, isSingleItem } from '@/lib/planification/section-items';
+import { normalizeDiaBase } from '@/lib/planification/asistente-dia';
 import { PLANIFICATION_LIMITS } from '@/types/planification-limits';
 import {
   PlanificationItemSingle,
@@ -44,9 +45,11 @@ export function SelectorCardioGrid({
       ? PLANIFICATION_LIMITS.calentamiento
       : PLANIFICATION_LIMITS.vueltaCalma;
 
+  const dia = normalizeDiaBase(diaActivo);
   const rawItem = frecuenciaBloque
     ? seccion?.items.find(
-        (it) => isSingleItem(it) && (diaBaseDeItem(it) ?? 1) === diaActivo,
+        (it) =>
+          isSingleItem(it) && (diaBaseDeItem(it) ?? 1) === dia,
       )
     : seccion?.items[0];
   const item = rawItem && isSingleItem(rawItem) ? rawItem : undefined;
@@ -60,9 +63,11 @@ export function SelectorCardioGrid({
   const [notas, setNotas] = useState(item?.notas ?? '');
 
   useEffect(() => {
+    const nextDia = normalizeDiaBase(diaActivo);
     const nextRaw = frecuenciaBloque
       ? seccion?.items.find(
-          (it) => isSingleItem(it) && (diaBaseDeItem(it) ?? 1) === diaActivo,
+          (it) =>
+            isSingleItem(it) && (diaBaseDeItem(it) ?? 1) === nextDia,
         )
       : seccion?.items[0];
     const nextItem =
@@ -82,7 +87,10 @@ export function SelectorCardioGrid({
   const emoji = tipoSeccion === TipoSeccion.CALENTAMIENTO ? '🔥' : '🧘';
   const esEntrada = tipoSeccion === TipoSeccion.CALENTAMIENTO;
 
-  function buildItem(id: string, min: number, inc: number, note: string) {
+  function buildItem(id: string, min: number, inc: number, note: string): {
+    section: PlanificationSection;
+    item: PlanificationItemSingle;
+  } | null {
     const op = OPCIONES_CARDIO.find((o) => o.id === id);
     if (!op) return null;
 
@@ -94,25 +102,28 @@ export function SelectorCardioGrid({
       progresion: { incrementoMinutos: inc },
       gif: op.imagen ? resolveGifUrl(op.imagen) : null,
       notas: note.trim() || null,
-      ...(frecuenciaBloque ? { diaBase: diaActivo } : {}),
+      ...(frecuenciaBloque ? { diaBase: dia } : {}),
     });
 
     const existing = seccion?.items ?? [];
     const rest = frecuenciaBloque
-      ? existing.filter((it) => (diaBaseDeItem(it) ?? 1) !== diaActivo)
+      ? existing.filter((it) => (diaBaseDeItem(it) ?? 1) !== dia)
       : [];
 
     return {
-      tipoSeccion,
-      titulo,
-      orden: esEntrada ? -1 : 999,
-      items: frecuenciaBloque ? [...rest, newItem] : [newItem],
-    } satisfies PlanificationSection;
+      item: newItem,
+      section: {
+        tipoSeccion,
+        titulo,
+        orden: esEntrada ? -1 : 999,
+        items: frecuenciaBloque ? [...rest, newItem] : [newItem],
+      },
+    };
   }
 
   function commit(id: string, min: number, inc: number, note: string) {
-    const sec = buildItem(id, min, inc, note);
-    if (sec) onChange(sec);
+    const built = buildItem(id, min, inc, note);
+    if (built) onChange(built.section);
   }
 
   function pick(id: string) {
@@ -120,11 +131,9 @@ export function SelectorCardioGrid({
     commit(id, minutos, incremento, notas);
   }
 
-  const builtDraft = selId
-    ? buildItem(selId, minutos, incremento, notas)?.items[0]
-    : undefined;
-  const draftItem: PlanificationItemSingle | undefined =
-    builtDraft && isSingleItem(builtDraft) ? builtDraft : item;
+  const draftItem: PlanificationItemSingle | undefined = selId
+    ? (buildItem(selId, minutos, incremento, notas)?.item ?? item)
+    : item;
 
   return (
     <section className="space-y-4">
@@ -132,7 +141,7 @@ export function SelectorCardioGrid({
         <h2 className={`text-lg font-bold sm:text-xl ${CEMD.primaryClass}`}>
           {emoji} {titulo}
         </h2>
-        <p className="text-sm text-zinc-500">
+        <p className="text-sm text-muted-foreground">
           Tope: {limits.topeMinutos} min por sesión
           {frecuenciaBloque
             ? ` · ${etiquetaDia(config.modoProgresion, diaActivo)}`
@@ -190,7 +199,7 @@ export function SelectorCardioGrid({
             className={
               selId === op.id
                 ? 'flex flex-col items-center rounded-lg border-2 border-primary bg-primary/10 p-4 transition'
-                : 'flex flex-col items-center rounded-lg border border-zinc-300 bg-white p-4 transition hover:border-primary'
+                : 'flex flex-col items-center rounded-lg border border-input bg-card p-4 transition hover:border-primary'
             }
           >
             <EjercicioAvatar
@@ -199,11 +208,11 @@ export function SelectorCardioGrid({
               size="lg"
               roundedFull
             />
-            <span className="mt-2 block text-center text-sm font-medium text-zinc-800">
+            <span className="mt-2 block text-center text-sm font-medium text-foreground">
               {op.nombre}
             </span>
             {op.descripcion ? (
-              <span className="mt-0.5 block text-center text-[10px] text-zinc-500">
+              <span className="mt-0.5 block text-center text-[10px] text-muted-foreground">
                 {op.descripcion}
               </span>
             ) : null}
@@ -225,7 +234,7 @@ export function SelectorCardioGrid({
                 ? 'Ej: Hacelo suave, buscá entrar en calor sin fatigarte.'
                 : 'Ej: Terminá suave, respirá y bajá pulsaciones.'
             }
-            className="min-h-[88px] w-full resize-none rounded-lg border border-zinc-300 bg-white px-3 py-2 text-sm"
+            className="min-h-[88px] w-full resize-none rounded-lg border border-input bg-card px-3 py-2 text-sm"
             maxLength={220}
           />
         </div>
@@ -233,7 +242,7 @@ export function SelectorCardioGrid({
 
       {draftItem ? (
         <>
-          <p className="text-sm text-zinc-600">
+          <p className="text-sm text-muted-foreground">
             Configurado: <strong className={CEMD.primaryClass}>{draftItem.ejercicio}</strong>{' '}
             · {draftItem.parametros.minutos} min
             {draftItem.progresion?.incrementoMinutos

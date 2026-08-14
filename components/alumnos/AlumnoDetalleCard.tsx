@@ -1,5 +1,9 @@
+'use client';
+
 import Link from 'next/link';
 import { Client } from '@/types/client';
+import { RenovarDesdeAnteriorButton } from '@/components/planificaciones/RenovarDesdeAnteriorButton';
+import { Button } from '@/components/ui/button';
 
 const SEXO_LABELS: Record<string, string> = {
   masculino: 'Masculino',
@@ -10,41 +14,38 @@ const SEXO_LABELS: Record<string, string> = {
 
 export function AlumnoDetalleCard({ client }: { client: Client }) {
   return (
-    <div className="rounded-lg border border-zinc-200 bg-white p-6">
+    <div className="rounded-lg border border-border bg-card p-6">
       <div className="flex flex-wrap items-start justify-between gap-4">
         <div>
-          <h1 className="text-2xl font-semibold text-zinc-900">
+          <h1 className="text-2xl font-semibold text-foreground">
             {client.apellido}, {client.nombre}
           </h1>
-          <p className="mt-1 text-sm text-zinc-500">
+          <p className="mt-1 text-sm text-muted-foreground">
             {client.email ?? 'Sin email'} · {client.telefono ?? 'Sin teléfono'}
           </p>
         </div>
         <div className="flex flex-wrap gap-2">
-          <Link
-            href={`/profesor/alumnos/${client.id}/editar`}
-            className="rounded-lg border border-zinc-300 px-3 py-2 text-sm hover:bg-zinc-50"
-          >
-            Editar
-          </Link>
-          <Link
-            href={`/profesor/alumnos/${client.id}/editar?tab=portal`}
-            className="rounded-lg border border-zinc-300 px-3 py-2 text-sm hover:bg-zinc-50"
-          >
-            {client.userId ? 'Acceso portal' : 'Crear acceso portal'}
-          </Link>
-          <Link
-            href={`/profesor/mensajes?alumnoId=${client.id}`}
-            className="rounded-lg border border-zinc-300 px-3 py-2 text-sm hover:bg-zinc-50"
-          >
-            Mensajes
-          </Link>
-          <Link
-            href={`/profesor/planificaciones/nueva?alumnoId=${client.id}`}
-            className="rounded-lg bg-zinc-900 px-3 py-2 text-sm text-white hover:bg-zinc-700"
-          >
-            Nueva planificación
-          </Link>
+          <Button asChild variant="outline" size="sm">
+            <Link href={`/profesor/alumnos/${client.id}/editar`}>Editar</Link>
+          </Button>
+          <Button asChild variant="outline" size="sm">
+            <Link href={`/profesor/alumnos/${client.id}/editar?tab=portal`}>
+              {client.userId ? 'Acceso portal' : 'Crear acceso portal'}
+            </Link>
+          </Button>
+          <Button asChild variant="outline" size="sm">
+            <Link href={`/profesor/mensajes?alumnoId=${client.id}`}>
+              Mensajes
+            </Link>
+          </Button>
+          <RenovarDesdeAnteriorButton alumnoId={client.id} size="sm" />
+          <Button asChild size="sm">
+            <Link
+              href={`/profesor/planificaciones/nueva?alumnoId=${client.id}`}
+            >
+              Nueva planificación
+            </Link>
+          </Button>
         </div>
       </div>
 
@@ -60,15 +61,27 @@ export function AlumnoDetalleCard({ client }: { client: Client }) {
                 : 'Sin email'
           }
         />
-        <Item label="Edad" value={client.datos.edad ? `${client.datos.edad} años` : '—'} />
-        <Item label="Peso" value={client.datos.peso ? `${client.datos.peso} kg` : '—'} />
-        <Item label="Altura" value={client.datos.altura ? `${client.datos.altura} cm` : '—'} />
+        <Item
+          label="Edad"
+          value={client.datos.edad ? `${client.datos.edad} años` : '—'}
+        />
+        <Item
+          label="Peso"
+          value={client.datos.peso ? `${client.datos.peso} kg` : '—'}
+        />
+        <Item
+          label="Altura"
+          value={client.datos.altura ? `${client.datos.altura} cm` : '—'}
+        />
         <Item
           label="Sexo"
           value={SEXO_LABELS[client.datos.sexo ?? 'no_informado'] ?? '—'}
         />
         <Item label="Objetivo" value={client.datos.objetivo || '—'} />
-        <Item label="Condicionante" value={client.datos.condicionanteDeCarga || '—'} />
+        <Item
+          label="Condicionante"
+          value={client.datos.condicionanteDeCarga || '—'}
+        />
       </dl>
     </div>
   );
@@ -77,8 +90,10 @@ export function AlumnoDetalleCard({ client }: { client: Client }) {
 function Item({ label, value }: { label: string; value: string }) {
   return (
     <div>
-      <dt className="text-xs font-medium uppercase tracking-wide text-zinc-500">{label}</dt>
-      <dd className="mt-1 text-sm text-zinc-900">{value}</dd>
+      <dt className="text-xs font-medium uppercase tracking-wide text-muted-foreground">
+        {label}
+      </dt>
+      <dd className="mt-1 text-sm text-foreground">{value}</dd>
     </div>
   );
 }
