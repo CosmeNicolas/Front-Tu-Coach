@@ -7,6 +7,11 @@ import { LOGIN_ROUTE, LANDING_CONTAINER } from '@/lib/landing/constants';
 import { LandingButton } from '@/components/landing/LandingButton';
 import { ScrollReveal } from '@/components/landing/ScrollReveal';
 
+const HERO_PROFESORES = [
+  { src: '/profesoresimg/Alexis.png', alt: 'Alexis, entrenador en TuCoach' },
+  { src: '/profesoresimg/SOFI.png', alt: 'Sofi, entrenadora en TuCoach' },
+] as const;
+
 function HeroMockups() {
   const reduced = useReducedMotion();
 
@@ -165,17 +170,17 @@ export function HeroSection() {
 
             <div className="mt-10 flex items-center gap-4">
               <div className="flex -space-x-2">
-                {[1, 2, 3, 4].map((i) => (
+                {HERO_PROFESORES.map((profesor) => (
                   <div
-                    key={i}
-                    className="flex size-9 items-center justify-center overflow-hidden rounded-full border-2 border-[#050505] bg-[#141414] ring-1 ring-white/10"
+                    key={profesor.src}
+                    className="relative size-9 overflow-hidden rounded-full border-2 border-[#050505] bg-[#141414] ring-1 ring-white/10"
                   >
                     <Image
-                      src="/branding/ZORRO1.png"
-                      alt=""
-                      width={28}
-                      height={28}
-                      className="opacity-70 grayscale"
+                      src={profesor.src}
+                      alt={profesor.alt}
+                      fill
+                      className="object-cover object-top"
+                      sizes="36px"
                     />
                   </div>
                 ))}

@@ -76,25 +76,25 @@ export function LoginForm() {
       )}
     >
       <CardHeader className="space-y-4 pb-2">
-        <div className="flex items-center gap-3">
+        <div className="flex items-center justify-center gap-4">
           <Image
             src="/branding/ZORRO1.png"
             alt="TuCoach"
-            width={52}
-            height={52}
-            className="rounded-full ring-2 ring-white/30"
+            width={112}
+            height={112}
+            className="h-24 w-24 shrink-0 object-contain sm:h-28 sm:w-28"
             priority
           />
-          <div>
-            <p className="text-xs font-medium uppercase tracking-[0.2em] text-white/70">
-              TuCoach
+          <div className="text-left">
+            <p className="font-display text-sm tracking-wider  text-white sm:text-base">
+              TUCOACH
             </p>
-            <CardTitle className="text-2xl font-semibold tracking-wide text-white">
+            <CardTitle className="text-2xl font-semibold tracking-wide text-white/70">
               Ingresar
             </CardTitle>
           </div>
         </div>
-        <CardDescription className="text-white/70">
+        <CardDescription className="text-center text-white/70">
           Accedé a tu panel de entrenamiento y planificaciones.
         </CardDescription>
       </CardHeader>

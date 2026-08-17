@@ -3,8 +3,10 @@ import {
   MaterializedPlanification,
   MaterializedSession,
   PlanificationProgress,
+  SessionExecutionLog,
 } from '@/types/planification';
 import { formatProgressDate } from '@/lib/planification/progress-stats';
+import { ultimaSesionCompletadaAlumno } from '@/lib/planification/alumno-progress-guard';
 
 export interface ExerciseAlumnoContext {
   sessionNum: number;
@@ -13,6 +15,40 @@ export interface ExerciseAlumnoContext {
   completed: boolean;
   alumnoNote: string | null;
   sessionRpe: number | null;
+  sessionComment: string | null;
+  rpeNote: string | null;
+}
+
+export interface UltimaSesionFeedback {
+  sessionNum: number;
+  fechaLabel: string | null;
+  rpe: number | null;
+  rpeNote: string | null;
+  sessionComment: string | null;
+  exerciseNotesCount: number;
+}
+
+function resolveSessionComment(
+  progress: PlanificationProgress,
+  sessionNum: number,
+  det?: SessionExecutionLog,
+): string | null {
+  const fromDet = det?.sessionComment?.trim();
+  if (fromDet) return fromDet;
+  const legacy = progress.comentarios?.[sessionNum - 1]?.trim();
+  return legacy || null;
+}
+
+function resolveSessionRpe(
+  progress: PlanificationProgress,
+  sessionNum: number,
+  det?: SessionExecutionLog,
+): { rpe: number | null; rpeNote: string | null } {
+  const rpeRaw = det?.rpe?.value ?? progress.rpePorSesion?.[String(sessionNum)];
+  const rpe =
+    typeof rpeRaw === 'number' && rpeRaw >= 1 && rpeRaw <= 10 ? rpeRaw : null;
+  const rpeNote = det?.rpe?.note?.trim() || null;
+  return { rpe, rpeNote };
 }
 
 function normName(value: string): string {
@@ -80,9 +116,11 @@ export function getLastExerciseAlumnoContext(
       ? findMaterializedItem(materialized, sessionNum, item.id, item.ejercicio)
       : null;
 
-    const rpeRaw = det.rpe?.value ?? progress.rpePorSesion?.[String(sessionNum)];
-    const sessionRpe =
-      typeof rpeRaw === 'number' && rpeRaw >= 1 && rpeRaw <= 10 ? rpeRaw : null;
+    const { rpe: sessionRpe, rpeNote } = resolveSessionRpe(
+      progress,
+      sessionNum,
+      det,
+    );
 
     const fechaRaw = fechas[sessionNum - 1]?.trim() || null;
 
@@ -93,10 +131,45 @@ export function getLastExerciseAlumnoContext(
       completed: logEx.completed,
       alumnoNote: logEx.note?.trim() || null,
       sessionRpe,
+      sessionComment: resolveSessionComment(progress, sessionNum, det),
+      rpeNote,
     };
   }
 
   return null;
+}
+
+export function getSesionFeedback(
+  progress: PlanificationProgress | undefined,
+  sessionNum: number,
+): UltimaSesionFeedback | null {
+  if (sessionNum <= 0 || !progress?.completadas?.includes(sessionNum)) {
+    return null;
+  }
+
+  const det = progress.detallePorSesion?.[String(sessionNum)];
+  const fechaRaw = progress.fechas?.[sessionNum - 1]?.trim() || null;
+  const sessionComment = resolveSessionComment(progress, sessionNum, det);
+  const { rpe, rpeNote } = resolveSessionRpe(progress, sessionNum, det);
+  const exerciseNotesCount =
+    det?.exercises?.filter((e) => e.note?.trim()).length ?? 0;
+
+  return {
+    sessionNum,
+    fechaLabel: fechaRaw ? formatProgressDate(fechaRaw) : null,
+    rpe,
+    rpeNote,
+    sessionComment,
+    exerciseNotesCount,
+  };
+}
+
+export function getUltimaSesionFeedback(
+  progress: PlanificationProgress | undefined,
+): UltimaSesionFeedback | null {
+  const sessionNum = ultimaSesionCompletadaAlumno(progress);
+  if (sessionNum <= 0) return null;
+  return getSesionFeedback(progress, sessionNum);
 }
 
 export function sessionHasExerciseNotes(

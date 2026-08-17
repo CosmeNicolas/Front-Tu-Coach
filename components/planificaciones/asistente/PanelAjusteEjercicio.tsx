@@ -14,14 +14,23 @@ import {
   minFromSessionParaAjuste,
   ultimaSesionCompletadaAlumno,
 } from '@/lib/planification/alumno-progress-guard';
+import {
+  getLastExerciseAlumnoContext,
+  getSesionFeedback,
+} from '@/lib/planification/exercise-progress-context';
 import { ajustarRangosTrasCambioMin } from '@/lib/planification/fuerza-rangos';
-import { useCreateItemAdjustment } from '@/hooks/usePlanifications';
+import { useCreateItemAdjustment, useMaterializedPlanification } from '@/hooks/usePlanifications';
 import { applyCatalogToItemDraft } from '@/lib/planification/item-from-catalog';
 import { Button } from '@/components/ui/button';
 import { CardEjercicioEdicion } from './CardEjercicioEdicion';
 import { AjusteAntesDespues } from './AjusteAntesDespues';
 import { SustitucionEjercicioCatalogo } from './SustitucionEjercicioCatalogo';
 import { computeItemProgressionPreview } from '@/lib/planification/preview-progression';
+import { ExerciseAlumnoContextBlock } from '@/components/planificaciones/shared/ExerciseAlumnoContextBlock';
+import {
+  AlumnoFeedbackResumen,
+  hasAlumnoFeedbackContent,
+} from '@/components/planificaciones/shared/AlumnoFeedbackResumen';
 import { CEMD } from './constants';
 
 interface Props {
@@ -46,6 +55,10 @@ export function PanelAjusteEjercicio({
   onApplied,
 }: Props) {
   const mutation = useCreateItemAdjustment(planificationId);
+  const alumnoConProgreso = (progresoAlumno?.completadas?.length ?? 0) > 0;
+  const { data: materialized } = useMaterializedPlanification(
+    alumnoConProgreso ? planificationId : '',
+  );
   const cortePrevio = item.ajuste?.desdeSesion;
   const minFromSession = minFromSessionParaAjuste(progresoAlumno, cortePrevio);
   const avanceDeCorte =
@@ -80,6 +93,33 @@ export function PanelAjusteEjercicio({
     if (sesionesValidas.includes(fromSession)) return;
     setFromSession(sesionesValidas[0]!);
   }, [sesionesValidas, fromSession]);
+
+  const exerciseContext = useMemo(
+    () =>
+      alumnoConProgreso
+        ? getLastExerciseAlumnoContext(progresoAlumno, materialized, item, {
+            beforeSession: fromSession,
+          })
+        : null,
+    [alumnoConProgreso, progresoAlumno, materialized, item, fromSession],
+  );
+
+  const sesionPreCorte = fromSession > 1 ? fromSession - 1 : null;
+  const preCorteFeedback = useMemo(
+    () =>
+      sesionPreCorte && progresoAlumno
+        ? getSesionFeedback(progresoAlumno, sesionPreCorte)
+        : null,
+    [sesionPreCorte, progresoAlumno],
+  );
+
+  const showPreCorteSession = Boolean(
+    preCorteFeedback &&
+      hasAlumnoFeedbackContent(preCorteFeedback) &&
+      exerciseContext?.sessionNum !== sesionPreCorte,
+  );
+
+  const showFeedbackPanel = Boolean(exerciseContext || showPreCorteSession);
 
   function setParam<K extends keyof PlanificationItemSingle['parametros']>(
     key: K,
@@ -219,6 +259,30 @@ export function PanelAjusteEjercicio({
               </select>
             )}
           </label>
+
+          {showFeedbackPanel ? (
+            <div className="space-y-2 rounded-lg border border-sky-200 bg-sky-50/80 px-3 py-2.5 dark:border-sky-900/50 dark:bg-sky-950/30">
+              <p className="text-xs font-semibold uppercase tracking-wide text-muted-foreground">
+                Feedback del alumno (antes del corte)
+              </p>
+              {exerciseContext ? (
+                <ExerciseAlumnoContextBlock context={exerciseContext} compact />
+              ) : null}
+              {showPreCorteSession && preCorteFeedback ? (
+                <AlumnoFeedbackResumen
+                  feedback={preCorteFeedback}
+                  title={`Sesión ${sesionPreCorte} · inmediata anterior al corte`}
+                  compact
+                  showExerciseNotesHint
+                />
+              ) : null}
+            </div>
+          ) : alumnoConProgreso ? (
+            <p className="rounded-lg border border-dashed border-border bg-muted/30 px-3 py-2 text-xs text-muted-foreground">
+              El alumno no dejó comentarios sobre este ejercicio en sesiones
+              anteriores a la {fromSession}.
+            </p>
+          ) : null}
 
           <AjusteAntesDespues
             antes={item}

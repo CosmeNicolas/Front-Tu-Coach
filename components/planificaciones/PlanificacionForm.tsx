@@ -22,8 +22,14 @@ import {
 import {
   CreatePlanificationPayload,
   PlanificationConfig,
+  PlanificationProgress,
   ProgressionMode,
 } from '@/types/planification';
+import { getUltimaSesionFeedback } from '@/lib/planification/exercise-progress-context';
+import {
+  AlumnoFeedbackResumen,
+  hasAlumnoFeedbackContent,
+} from '@/components/planificaciones/shared/AlumnoFeedbackResumen';
 
 interface PlanificacionFormProps {
   initialAlumnoId?: string;
@@ -80,6 +86,11 @@ export function PlanificacionForm({
     () => baseline?.secciones ?? [],
     [baseline?.secciones],
   );
+
+  const baselineFeedback = useMemo(() => {
+    if (!baseline?.progresoAlumno) return null;
+    return getUltimaSesionFeedback(baseline.progresoAlumno as PlanificationProgress);
+  }, [baseline?.progresoAlumno]);
 
   useEffect(() => {
     if (!baseline?.available || !baseline.planificationId) return;
@@ -246,6 +257,16 @@ export function PlanificacionForm({
                     ? ' · solicitud pendiente'
                     : ''}
                 </p>
+
+                {hasAlumnoFeedbackContent(baselineFeedback) ? (
+                  <div className="rounded-lg border border-sky-200 bg-sky-50/80 px-3 py-2.5 dark:border-sky-900/50 dark:bg-sky-950/30">
+                    <AlumnoFeedbackResumen
+                      feedback={baselineFeedback}
+                      title={`Feedback del alumno · última sesión #${baselineFeedback.sessionNum}${baselineFeedback.rpe !== null ? ` · RPE ${baselineFeedback.rpe}` : ''}`}
+                      showExerciseNotesHint
+                    />
+                  </div>
+                ) : null}
 
                 <RadioGroup
                   value={origen}

@@ -5,6 +5,11 @@ import { toast } from 'sonner';
 import { useResolveRevisionRequest } from '@/hooks/usePlanifications';
 import { ApiError } from '@/lib/api/client';
 import { Planification, PlanificationStatus } from '@/types/planification';
+import { getUltimaSesionFeedback } from '@/lib/planification/exercise-progress-context';
+import {
+  AlumnoFeedbackResumen,
+  hasAlumnoFeedbackContent,
+} from '@/components/planificaciones/shared/AlumnoFeedbackResumen';
 import { Button } from '@/components/ui/button';
 
 interface Props {
@@ -71,6 +76,9 @@ export function PlanesARenovarPanel({ plans, alumnoNameById }: Props) {
             const alumno =
               (plan.alumnoId && alumnoNameById.get(plan.alumnoId)) ||
               'Alumno';
+            const ultimaSesionFeedback = getUltimaSesionFeedback(
+              plan.progresoAlumno,
+            );
             return (
               <li
                 key={plan.id}
@@ -89,6 +97,16 @@ export function PlanesARenovarPanel({ plans, alumnoNameById }: Props) {
                       <p className="mt-2 text-sm text-foreground">
                         “{plan.solicitudRevisionMensaje}”
                       </p>
+                    ) : null}
+                    {hasAlumnoFeedbackContent(ultimaSesionFeedback) ? (
+                      <div className="mt-3 rounded-lg border border-sky-200 bg-sky-50/80 px-3 py-2 dark:border-sky-900/50 dark:bg-sky-950/30">
+                        <AlumnoFeedbackResumen
+                          feedback={ultimaSesionFeedback}
+                          title={`Última sesión · #${ultimaSesionFeedback.sessionNum}${ultimaSesionFeedback.rpe !== null ? ` · RPE ${ultimaSesionFeedback.rpe}` : ''}`}
+                          compact
+                          showExerciseNotesHint
+                        />
+                      </div>
                     ) : null}
                   </div>
                   <div className="flex flex-wrap gap-2">

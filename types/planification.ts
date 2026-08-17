@@ -225,6 +225,7 @@ export interface PlanBaseline {
   totalSesiones?: number;
   solicitudRevisionPendiente?: boolean;
   updatedAt?: string | null;
+  progresoAlumno?: PlanificationProgress;
   secciones?: PlanBaselineSection[];
   reason?: string;
 }

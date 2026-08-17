@@ -23,7 +23,9 @@ import { AsistenteConfigBar } from './AsistenteConfigBar';
 import { TabSeccionContent } from './TabSeccionContent';
 import { PreviewPanel } from './PreviewPanel';
 import { PanelPlanAnterior } from './PanelPlanAnterior';
+import { AsistenteUltimaSesionBanner } from './AsistenteUltimaSesionBanner';
 import { etiquetaDia } from '@/lib/planification/preview-progression';
+import { getUltimaSesionFeedback } from '@/lib/planification/exercise-progress-context';
 
 export function Asistente({ planification }: { planification: Planification }) {
   const router = useRouter();
@@ -58,6 +60,13 @@ export function Asistente({ planification }: { planification: Planification }) {
   const tabIds = [...WIZARD_TABS.map((t) => t.id), TAB_PREVIEW_ID];
   const idx = tabIds.indexOf(tabActivo);
   const alumnoConProgreso = hasAlumnoSessionProgress(planification.progresoAlumno);
+  const ultimaSesionFeedback = useMemo(
+    () =>
+      alumnoConProgreso
+        ? getUltimaSesionFeedback(planification.progresoAlumno)
+        : null,
+    [alumnoConProgreso, planification.progresoAlumno],
+  );
   const { data: materialized } = useMaterializedPlanification(
     alumnoConProgreso ? planification.id : '',
   );
@@ -250,8 +259,15 @@ export function Asistente({ planification }: { planification: Planification }) {
             }
           />
 
+          {ultimaSesionFeedback ? (
+            <AsistenteUltimaSesionBanner
+              feedback={ultimaSesionFeedback}
+              planificationId={planification.id}
+            />
+          ) : null}
+
           {alumnoConProgreso ? (
-            <div className="rounded-lg border border-amber-200 bg-amber-50 px-3 py-2 text-sm text-amber-950">
+            <div className="rounded-lg border border-amber-200 bg-amber-50 px-3 py-2 text-sm text-amber-950 dark:border-amber-900/50 dark:bg-amber-950/30 dark:text-amber-100">
               El alumno completó{' '}
               <strong>{planification.progresoAlumno.completadas.length}</strong>{' '}
               sesión(es) (última: #

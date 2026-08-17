@@ -12,7 +12,17 @@ export function ExerciseAlumnoContextBlock({ context, compact }: Props) {
 
   const hasLoad = Boolean(context.valor?.trim());
   const hasNote = Boolean(context.alumnoNote);
-  if (!hasLoad && !hasNote && context.sessionRpe === null) return null;
+  const hasSessionComment = Boolean(context.sessionComment);
+  const hasRpeNote = Boolean(context.rpeNote);
+  if (
+    !hasLoad &&
+    !hasNote &&
+    !hasSessionComment &&
+    !hasRpeNote &&
+    context.sessionRpe === null
+  ) {
+    return null;
+  }
 
   const padding = compact ? 'px-2 py-1.5' : 'px-2.5 py-2';
 
@@ -40,9 +50,25 @@ export function ExerciseAlumnoContextBlock({ context, compact }: Props) {
           {context.sessionRpe !== null ? ` · RPE ${context.sessionRpe}` : ''}
         </p>
       )}
+      {hasSessionComment ? (
+        <p className="whitespace-pre-wrap break-words text-muted-foreground">
+          <span className="font-semibold text-foreground">
+            Comentario general:{' '}
+          </span>
+          {context.sessionComment}
+        </p>
+      ) : null}
+      {hasRpeNote ? (
+        <p className="whitespace-pre-wrap break-words text-muted-foreground">
+          <span className="font-semibold text-foreground">Nota RPE: </span>
+          {context.rpeNote}
+        </p>
+      ) : null}
       {hasNote ? (
-        <p className="text-muted-foreground">
-          <span className="font-semibold text-foreground">Alumno: </span>
+        <p className="whitespace-pre-wrap break-words text-muted-foreground">
+          <span className="font-semibold text-foreground">
+            Nota del ejercicio:{' '}
+          </span>
           {context.alumnoNote}
         </p>
       ) : null}
