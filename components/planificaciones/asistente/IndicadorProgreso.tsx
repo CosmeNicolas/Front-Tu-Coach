@@ -1,23 +1,25 @@
 'use client';
 
-import { CEMD } from './constants';
-
 interface Props {
   progreso: number;
   seccionesCompletadas: number;
   totalSecciones: number;
+  diaLabel?: string | null;
 }
 
 export function IndicadorProgreso({
   progreso,
   seccionesCompletadas,
   totalSecciones,
+  diaLabel,
 }: Props) {
   return (
     <div className="mt-4 w-full space-y-2">
       <div className="flex items-center justify-between text-sm">
-        <span className={`font-medium ${CEMD.primaryClass}`}>Progreso</span>
-        <span className="text-gray-600">
+        <span className="font-medium text-foreground">
+          Progreso{diaLabel ? ` · ${diaLabel}` : ''}
+        </span>
+        <span className="text-muted-foreground">
           {seccionesCompletadas} / {totalSecciones} secciones
         </span>
       </div>
@@ -27,7 +29,7 @@ export function IndicadorProgreso({
           style={{ width: `${progreso}%` }}
         />
       </div>
-      <div className="flex items-center gap-1 text-xs text-gray-500">
+      <div className="flex items-center gap-1 text-xs text-muted-foreground">
         <span className="text-foreground">✓</span>
         <span>{Math.round(progreso)}% completado</span>
       </div>

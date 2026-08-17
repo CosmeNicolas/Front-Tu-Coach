@@ -122,7 +122,7 @@ export function SuperAdminDashboardView() {
             Dashboard Super Admin
           </h1>
           <p className="mt-1 text-sm text-muted-foreground">
-            Vista global multi-tenant. Cada gimnasio solo se gestiona en su tenant.
+            Vista global de la plataforma.
           </p>
         </div>
         <div className="flex flex-wrap gap-2">

@@ -361,7 +361,7 @@ export function ProfesorEjerciciosView() {
                     <p className="truncate font-semibold">{item.nombre}</p>
                     <p className="text-xs text-muted-foreground">{item.categoria}</p>
                     {item.descripcion ? (
-                      <p className="mt-1 line-clamp-2 text-xs text-zinc-600">
+                      <p className="mt-1 line-clamp-2 text-xs text-muted-foreground">
                         {item.descripcion}
                       </p>
                     ) : null}

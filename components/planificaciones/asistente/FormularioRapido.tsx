@@ -20,6 +20,7 @@ import {
   ajustarRangosTrasCambioMin,
   rangosProgresionDefecto,
 } from '@/lib/planification/fuerza-rangos';
+import { normalizeDiaBase } from '@/lib/planification/asistente-dia';
 
 const PRESETS = [
   { label: 'Conservador', series: 3, reps: 8, peso: 15, incPeso: 2.5, incReps: 2 },
@@ -57,9 +58,13 @@ export function FormularioRapido({
     ? TipoItem.ISOMETRICO
     : TipoItem.FUERZA;
 
+  const diaParaItems = frecuenciaBloque
+    ? normalizeDiaBase(diaActivo)
+    : undefined;
+
   const [tipo, setTipo] = useState<TipoItem>(tipoInicial);
   const [draft, setDraft] = useState<PlanificationItem>(() => {
-    const base = defaultItem(tipoInicial, frecuenciaBloque ? diaActivo : undefined);
+    const base = defaultItem(tipoInicial, diaParaItems);
     if (!ejercicioBase) return base;
     return {
       ...base,
@@ -72,7 +77,7 @@ export function FormularioRapido({
   function changeTipo(t: TipoItem) {
     setTipo(t);
     setDraft((d) => ({
-      ...defaultItem(t, frecuenciaBloque ? diaActivo : undefined),
+      ...defaultItem(t, diaParaItems),
       ejercicio: d.ejercicio,
       gif: d.gif,
     }));
@@ -97,7 +102,7 @@ export function FormularioRapido({
     if (!draft.ejercicio.trim()) return;
     onAgregar({
       ...draft,
-      diaBase: frecuenciaBloque ? diaActivo : undefined,
+      diaBase: diaParaItems,
     });
   }
 
@@ -118,15 +123,15 @@ export function FormularioRapido({
             <h3 className={`font-bold ${CEMD.primaryClass}`}>
               {draft.ejercicio || 'Nuevo ejercicio'}
             </h3>
-            <p className="text-xs text-zinc-500">Configurá carga y progresión</p>
+            <p className="text-xs text-muted-foreground">Configurá carga y progresión</p>
             {ejercicioBase?.descripcion ? (
-              <p className="mt-1 line-clamp-2 text-[11px] text-zinc-500">
+              <p className="mt-1 line-clamp-2 text-[11px] text-muted-foreground">
                 {ejercicioBase.descripcion}
               </p>
             ) : null}
           </div>
         </div>
-        <button type="button" onClick={onCancelar} className="text-zinc-400 hover:text-zinc-600">
+        <button type="button" onClick={onCancelar} className="text-muted-foreground hover:text-foreground">
           ✕
         </button>
       </div>
@@ -158,7 +163,7 @@ export function FormularioRapido({
               value={draft.ejercicio}
               onChange={(e) => setDraft({ ...draft, ejercicio: e.target.value })}
               placeholder="Ej. Press de banco"
-              className="mt-1 w-full rounded-lg border border-zinc-300 px-3 py-2"
+              className="mt-1 w-full rounded-lg border border-input px-3 py-2"
             />
           </label>
           <label className="text-sm">
@@ -166,7 +171,7 @@ export function FormularioRapido({
             <select
               value={tipo}
               onChange={(e) => changeTipo(e.target.value as TipoItem)}
-              className="mt-1 w-full rounded-lg border border-zinc-300 px-3 py-2"
+              className="mt-1 w-full rounded-lg border border-input px-3 py-2"
             >
               {[TipoItem.FUERZA, TipoItem.ISOMETRICO, TipoItem.MOVILIDAD].map((t) => (
                 <option key={t} value={t}>
@@ -186,7 +191,7 @@ export function FormularioRapido({
                 key={p.label}
                 type="button"
                 onClick={() => applyPreset(p)}
-                className="rounded-full border border-primary/40 bg-white px-2 py-0.5 text-[10px] hover:bg-primary/10"
+                className="rounded-full border border-primary/40 bg-card px-2 py-0.5 text-[10px] hover:bg-primary/10"
               >
                 {p.label}
               </button>
@@ -230,7 +235,7 @@ export function FormularioRapido({
           type="text"
           value={draft.notas ?? ''}
           onChange={(e) => setDraft({ ...draft, notas: e.target.value || null })}
-          className="mt-1 w-full rounded-lg border border-zinc-300 bg-white px-3 py-2"
+          className="mt-1 w-full rounded-lg border border-input bg-card px-3 py-2"
           placeholder="Opcional — visible para el cliente"
         />
       </label>
@@ -273,7 +278,7 @@ function Campo({
 }) {
   return (
     <label className="text-xs">
-      <span className="font-medium text-zinc-700">{label}</span>
+      <span className="font-medium text-foreground">{label}</span>
       <input
         type="number"
         min={min}
@@ -281,7 +286,7 @@ function Campo({
         step={step ?? 1}
         value={value ?? ''}
         onChange={(e) => onChange(Number(e.target.value) || 0)}
-        className="mt-0.5 w-full rounded border border-primary/30 bg-white px-1.5 py-1.5"
+        className="mt-0.5 w-full rounded border border-primary/30 bg-card px-1.5 py-1.5"
       />
     </label>
   );

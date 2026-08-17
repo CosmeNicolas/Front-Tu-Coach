@@ -9,6 +9,14 @@ import { useClients } from '@/hooks/useClients';
 import { Planification, PROGRESSION_MODE_LABELS } from '@/types/planification';
 import { Button } from '@/components/ui/button';
 import { Input } from '@/components/ui/input';
+import { Label } from '@/components/ui/label';
+import {
+  Select,
+  SelectContent,
+  SelectItem,
+  SelectTrigger,
+  SelectValue,
+} from '@/components/ui/select';
 import {
   Dialog,
   DialogContent,
@@ -75,35 +83,39 @@ export function ClonarPlantillaDialog({ template }: Props) {
           </DialogDescription>
         </DialogHeader>
         <div className="space-y-4">
-          <label className="block">
-            <span className="text-xs font-semibold uppercase tracking-wide text-muted-foreground">
-              Alumno *
-            </span>
-            <select
-              className="mt-1 w-full rounded-lg border border-input bg-card px-3 py-2 text-sm"
-              value={alumnoId}
-              onChange={(e) => setAlumnoId(e.target.value)}
+          <div className="space-y-2">
+            <Label htmlFor="clone-alumno">Alumno *</Label>
+            <Select
+              value={alumnoId || '__none__'}
+              onValueChange={(value) =>
+                setAlumnoId(value === '__none__' ? '' : value)
+              }
               disabled={isLoading}
             >
-              <option value="">Seleccionar alumno…</option>
-              {(clientsData?.items ?? []).map((c) => (
-                <option key={c.id} value={c.id}>
-                  {c.apellido}, {c.nombre}
-                </option>
-              ))}
-            </select>
-          </label>
-          <label className="block">
-            <span className="text-xs font-semibold uppercase tracking-wide text-muted-foreground">
+              <SelectTrigger id="clone-alumno">
+                <SelectValue placeholder="Seleccionar alumno…" />
+              </SelectTrigger>
+              <SelectContent>
+                <SelectItem value="__none__">Seleccionar alumno…</SelectItem>
+                {(clientsData?.items ?? []).map((c) => (
+                  <SelectItem key={c.id} value={c.id}>
+                    {c.apellido}, {c.nombre}
+                  </SelectItem>
+                ))}
+              </SelectContent>
+            </Select>
+          </div>
+          <div className="space-y-2">
+            <Label htmlFor="clone-titulo">
               Título de la planificación (opcional)
-            </span>
+            </Label>
             <Input
-              className="mt-1"
+              id="clone-titulo"
               value={titulo}
               onChange={(e) => setTitulo(e.target.value)}
               maxLength={120}
             />
-          </label>
+          </div>
         </div>
         <DialogFooter className="gap-2">
           <Button variant="outline" type="button" onClick={() => setOpen(false)}>

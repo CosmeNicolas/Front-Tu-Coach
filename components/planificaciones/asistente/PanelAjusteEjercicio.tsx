@@ -156,15 +156,15 @@ export function PanelAjusteEjercicio({
       <div
         role="dialog"
         aria-labelledby="panel-ajuste-title"
-        className="max-h-[90vh] w-full max-w-lg overflow-y-auto rounded-xl bg-white shadow-xl"
+        className="max-h-[90vh] w-full max-w-lg overflow-y-auto rounded-xl bg-card shadow-xl"
       >
-        <header className="sticky top-0 z-10 border-b border-zinc-200 bg-white px-4 py-3">
+        <header className="sticky top-0 z-10 border-b border-border bg-card px-4 py-3">
           <div className="flex items-start justify-between gap-2">
             <div>
               <h3 id="panel-ajuste-title" className={`font-bold ${CEMD.primaryClass}`}>
                 Ajuste desde sesión N
               </h3>
-              <p className="text-xs text-zinc-500">
+              <p className="text-xs text-muted-foreground">
                 Las sesiones anteriores no se recalculan. El progreso del alumno no
                 cambia.
                 {ultimaSesionCompletadaAlumno(progresoAlumno) > 0 ? (
@@ -176,7 +176,7 @@ export function PanelAjusteEjercicio({
                 ) : null}
               </p>
               {cortePrevio !== undefined ? (
-                <p className="mt-1 text-xs text-zinc-600">
+                <p className="mt-1 text-xs text-muted-foreground">
                   Corte anterior: sesión {cortePrevio}.
                   {avanceDeCorte
                     ? ` Elegí sesión ${minFromSession} o posterior para modificar lo que viene sin tocar lo ya hecho.`
@@ -187,7 +187,7 @@ export function PanelAjusteEjercicio({
             <button
               type="button"
               onClick={onClose}
-              className="rounded p-1 text-zinc-500 hover:bg-zinc-100"
+              className="rounded p-1 text-muted-foreground hover:bg-muted"
               aria-label="Cerrar"
             >
               ✕
@@ -207,7 +207,7 @@ export function PanelAjusteEjercicio({
               <select
                 value={fromSession}
                 onChange={(e) => setFromSession(Number(e.target.value))}
-                className="mt-1 w-full rounded border border-zinc-300 px-2 py-1.5 text-sm"
+                className="mt-1 w-full rounded border border-input px-2 py-1.5 text-sm"
               >
                 {sesionesValidas.map((n) => (
                   <option key={n} value={n}>
@@ -252,7 +252,7 @@ export function PanelAjusteEjercicio({
                 onChange={(e) =>
                   setDraft((d) => ({ ...d, ejercicio: e.target.value }))
                 }
-                className="mt-1 w-full rounded border border-zinc-300 px-2 py-1.5"
+                className="mt-1 w-full rounded border border-input px-2 py-1.5"
               />
             </label>
           )}
@@ -265,7 +265,7 @@ export function PanelAjusteEjercicio({
               value={motivo}
               onChange={(e) => setMotivo(e.target.value)}
               placeholder="Ej.: molestia en hombro"
-              className="mt-1 w-full rounded border border-zinc-300 px-2 py-1.5 text-sm"
+              className="mt-1 w-full rounded border border-input px-2 py-1.5 text-sm"
             />
           </label>
 
@@ -283,7 +283,7 @@ export function PanelAjusteEjercicio({
           </div>
         </div>
 
-        <footer className="sticky bottom-0 flex justify-end gap-2 border-t border-zinc-200 bg-white px-4 py-3">
+        <footer className="sticky bottom-0 flex justify-end gap-2 border-t border-border bg-card px-4 py-3">
           <Button type="button" variant="outline" onClick={onClose}>
             Cancelar
           </Button>

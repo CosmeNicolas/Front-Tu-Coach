@@ -93,6 +93,15 @@ export function PlanesARenovarPanel({ plans, alumnoNameById }: Props) {
                   </div>
                   <div className="flex flex-wrap gap-2">
                     {plan.alumnoId ? (
+                      <Button asChild size="sm">
+                        <Link
+                          href={`/profesor/planificaciones/nueva?alumnoId=${plan.alumnoId}&fromPlanId=${plan.id}&origen=anterior`}
+                        >
+                          Nueva desde este plan
+                        </Link>
+                      </Button>
+                    ) : null}
+                    {plan.alumnoId ? (
                       <Button asChild size="sm" variant="outline">
                         <Link href={`/profesor/alumnos/${plan.alumnoId}`}>
                           Ver alumno
@@ -107,6 +116,7 @@ export function PlanesARenovarPanel({ plans, alumnoNameById }: Props) {
                     <Button
                       type="button"
                       size="sm"
+                      variant="outline"
                       disabled={resolve.isPending}
                       onClick={() => void handleResolve(plan.id)}
                     >

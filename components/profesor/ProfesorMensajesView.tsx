@@ -8,6 +8,7 @@ import {
   useThreadWithAlumno,
 } from '@/hooks/useMessages';
 import { ChatThreadView } from '@/components/mensajes/ChatThreadView';
+import { PushNotificationsCard } from '@/components/notifications/PushNotificationsCard';
 import { Button } from '@/components/ui/button';
 import { cn } from '@/lib/utils/cn';
 
@@ -74,8 +75,10 @@ export function ProfesorMensajesView() {
         </p>
       </header>
 
-      <div className="grid gap-4 lg:grid-cols-[280px_1fr]">
-        <aside className="rounded-2xl border border-border bg-card p-3">
+      <PushNotificationsCard variant="banner" />
+
+      <div className="grid min-w-0 gap-4 lg:grid-cols-[280px_minmax(0,1fr)]">
+        <aside className="min-w-0 rounded-2xl border border-border bg-card p-3">
           <p className="px-2 pb-2 text-xs font-semibold uppercase tracking-wide text-muted-foreground">
             Conversaciones
           </p>
@@ -165,7 +168,7 @@ export function ProfesorMensajesView() {
           ) : null}
         </aside>
 
-        <div className="min-h-[480px]">
+        <div className="min-h-[480px] min-w-0">
           {!selectedAlumnoId ? (
             <div className="flex h-full min-h-[420px] items-center justify-center rounded-2xl border border-dashed border-border px-4 text-center text-sm text-muted-foreground">
               Seleccioná un alumno para ver o iniciar el chat.

@@ -15,6 +15,13 @@ import {
   filterItemsPorDia,
   hydrateSections,
 } from '@/lib/planification/section-items';
+import {
+  clampDiaActivo,
+  frecuenciaBloqueFromModo,
+  loadDiaActivo,
+  resumenDiasBloque,
+  saveDiaActivo,
+} from '@/lib/planification/asistente-dia';
 import { TAB_PREVIEW_ID, WIZARD_TABS } from './constants';
 
 function defaultSection(tab: (typeof WIZARD_TABS)[number], orden: number): PlanificationSection {
@@ -40,7 +47,6 @@ function mergeWithDefaults(existing: PlanificationSection[]): PlanificationSecti
 
 export function useAsistenteState(planification: Planification) {
   const [tabActivo, setTabActivo] = useState(WIZARD_TABS[0].id);
-  const [diaActivo, setDiaActivo] = useState(1);
   const [secciones, setSecciones] = useState<PlanificationSection[]>(() =>
     mergeWithDefaults(planification.secciones),
   );
@@ -50,28 +56,41 @@ export function useAsistenteState(planification: Planification) {
   const [dirty, setDirty] = useState(false);
   const upsert = useUpsertSecciones(planification.id);
 
+  const frecuenciaBloque = useMemo(
+    () => frecuenciaBloqueFromModo(planification.config.modoProgresion),
+    [planification.config.modoProgresion],
+  );
+
+  const [diaActivo, setDiaActivoState] = useState(() =>
+    loadDiaActivo(planification.id, frecuenciaBloque),
+  );
+
   useEffect(() => {
     setSecciones(mergeWithDefaults(planification.secciones));
     setContentVersion(planification.contentVersion ?? 1);
     setDirty(false);
   }, [planification.secciones, planification.contentVersion]);
 
-  const frecuenciaBloque = useMemo(() => {
-    const { modoProgresion, frecuenciaSemanal } = planification.config;
-    const map: Partial<Record<string, number>> = {
-      bloqueX2: 2,
-      bloqueX3: 3,
-      bloqueX4: 4,
-      bloqueX5: 5,
-    };
-    return map[modoProgresion] ?? null;
-  }, [planification.config]);
-
   useEffect(() => {
-    if (frecuenciaBloque && diaActivo > frecuenciaBloque) {
-      setDiaActivo(1);
-    }
-  }, [frecuenciaBloque, diaActivo]);
+    setDiaActivoState((prev) => {
+      const clamped = clampDiaActivo(prev, frecuenciaBloque);
+      if (!frecuenciaBloque) return 1;
+      const restored = loadDiaActivo(planification.id, frecuenciaBloque);
+      // Al cambiar de plan o modo, preferir lo guardado si es válido
+      return clampDiaActivo(restored || clamped, frecuenciaBloque);
+    });
+  }, [planification.id, frecuenciaBloque]);
+
+  const setDiaActivo = useCallback(
+    (dia: number) => {
+      const next = clampDiaActivo(dia, frecuenciaBloque);
+      setDiaActivoState(next);
+      if (frecuenciaBloque) {
+        saveDiaActivo(planification.id, next);
+      }
+    },
+    [frecuenciaBloque, planification.id],
+  );
 
   const tabIndex = useMemo(() => {
     if (tabActivo === TAB_PREVIEW_ID) return WIZARD_TABS.length;
@@ -124,6 +143,11 @@ export function useAsistenteState(planification: Planification) {
     [getSeccion, frecuenciaBloque, diaActivo],
   );
 
+  const diasResumen = useMemo(() => {
+    if (!frecuenciaBloque) return [];
+    return resumenDiasBloque(secciones, frecuenciaBloque);
+  }, [secciones, frecuenciaBloque]);
+
   async function handleSave() {
     const prevVersion = contentVersion;
     try {
@@ -138,11 +162,18 @@ export function useAsistenteState(planification: Planification) {
           'El servidor no incrementó contentVersion. Revisá la consola o reintentá.',
         );
       } else {
-        toast.success('Planilla guardada correctamente');
+        toast.success(
+          frecuenciaBloque
+            ? `Planilla guardada · Día ${diaActivo}. Podés seguir con otro día cuando quieras.`
+            : 'Planilla guardada correctamente',
+        );
       }
       setSecciones(mergeWithDefaults(result.secciones));
       setContentVersion(nextVersion);
       setDirty(false);
+      if (frecuenciaBloque) {
+        saveDiaActivo(planification.id, diaActivo);
+      }
     } catch (err) {
       if (err instanceof ApiError && err.status === 409) {
         toast.error(
@@ -202,6 +233,7 @@ export function useAsistenteState(planification: Planification) {
     dirty,
     upsert,
     frecuenciaBloque,
+    diasResumen,
     tabIndex,
     getSeccion,
     updateSeccion,

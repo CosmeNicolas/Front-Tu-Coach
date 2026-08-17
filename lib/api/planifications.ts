@@ -5,6 +5,7 @@ import {
   CreatePlanificationPayload,
   MaterializedPlanification,
   PaginatedPlanifications,
+  PlanBaseline,
   Planification,
   PlanificationAdjustmentRecord,
   SetCalentamientoPayload,
@@ -27,6 +28,26 @@ export function fetchPlanifications(params?: {
   const qs = query.toString();
   return apiClient<PaginatedPlanifications>(
     `/planifications${qs ? `?${qs}` : ''}`,
+    { auth: true },
+  );
+}
+
+export function fetchPlanBaseline(
+  alumnoId: string,
+  options?: {
+    excludePlanificationId?: string;
+    modoProgresion?: string;
+  },
+) {
+  const query = new URLSearchParams({ alumnoId });
+  if (options?.excludePlanificationId) {
+    query.set('excludePlanificationId', options.excludePlanificationId);
+  }
+  if (options?.modoProgresion) {
+    query.set('modoProgresion', options.modoProgresion);
+  }
+  return apiClient<PlanBaseline>(
+    `/planifications/baseline?${query.toString()}`,
     { auth: true },
   );
 }

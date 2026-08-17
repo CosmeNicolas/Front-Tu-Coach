@@ -32,11 +32,14 @@ export function computeItemProgressionPreview(
     return out;
   }
 
+  const itemDia = Number(item.diaBase);
   for (let i = 0; i < total; i++) {
     const nroSesion = i + 1;
     const diaBase = ((nroSesion - 1) % bloques) + 1;
     const ciclo = cicloProgresionBloque(nroSesion, bloques);
-    if (item.diaBase === diaBase) out[i] = linea[ciclo] ?? '';
+    if (Number.isFinite(itemDia) && itemDia === diaBase) {
+      out[i] = linea[ciclo] ?? '';
+    }
   }
   return out;
 }

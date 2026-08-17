@@ -8,7 +8,7 @@ export function AlumnoMensajesView() {
   const { data: thread, isLoading, error } = useMyMessageThread();
 
   return (
-    <div className="mx-auto flex w-full max-w-2xl flex-col gap-4 p-4 sm:p-6">
+    <div className="mx-auto flex w-full min-w-0 max-w-2xl flex-col gap-4 p-4 sm:p-6">
       <header>
         <h1 className="text-2xl font-bold text-foreground">Mensajes</h1>
         <p className="mt-1 text-sm text-muted-foreground">

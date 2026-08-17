@@ -25,13 +25,13 @@ export function AjusteAntesDespues({ antes, despues, fromSession }: Props) {
 
   return (
     <div className="grid gap-3 sm:grid-cols-2">
-      <div className="rounded-lg border border-zinc-200 bg-zinc-50 p-3">
-        <p className="text-xs font-semibold uppercase tracking-wide text-zinc-500">
+      <div className="rounded-lg border border-border bg-muted/40 p-3">
+        <p className="text-xs font-semibold uppercase tracking-wide text-muted-foreground">
           Antes (sesiones 1–{fromSession - 1})
         </p>
         <div className="mt-2 flex items-center gap-2">
           <EjercicioAvatar gif={gifAntes} nombre={nombreAntes} size="sm" />
-          <span className="text-sm font-medium text-zinc-800">{nombreAntes}</span>
+          <span className="text-sm font-medium text-foreground">{nombreAntes}</span>
         </div>
       </div>
       <div
@@ -42,7 +42,7 @@ export function AjusteAntesDespues({ antes, despues, fromSession }: Props) {
         </p>
         <div className="mt-2 flex items-center gap-2">
           <EjercicioAvatar gif={despues.gif} nombre={despues.ejercicio} size="sm" />
-          <span className="text-sm font-medium text-zinc-800">
+          <span className="text-sm font-medium text-foreground">
             {labelDesde(despues)}
           </span>
         </div>

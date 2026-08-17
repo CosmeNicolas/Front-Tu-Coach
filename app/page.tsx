@@ -1,7 +1,6 @@
 import type { Metadata } from 'next';
+import { redirect } from 'next/navigation';
 /* import { LandingPage } from '@/components/landing/LandingPage'; */
-
-import {redirect} from 'next/navigation';
 
 export const metadata: Metadata = {
   title: 'TuCoach — Plataforma para entrenadores y alumnos',
@@ -18,6 +17,6 @@ export const metadata: Metadata = {
   return <LandingPage />;
 } */
 
-  export default function HomePage() {
-    redirect('/login');
+export default function HomePage() {
+  redirect('/login');
 }
