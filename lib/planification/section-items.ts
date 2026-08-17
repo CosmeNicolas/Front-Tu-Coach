@@ -22,14 +22,19 @@ export function isGroupItem(
   return item.kind === 'group';
 }
 
-export function diaBaseDeItem(item: PlanificationSectionItem): number | undefined {
-  const raw = isGroupItem(item)
-    ? (item.diaBase ?? item.items[0]?.diaBase)
-    : item.diaBase;
-  if (raw == null || raw === '') return undefined;
-  const n = Number(raw);
+/** Normaliza diaBase de ítem o API (number | string | null | ''). */
+function parseOptionalDiaBase(value: unknown): number | undefined {
+  if (value == null || value === '') return undefined;
+  const n = Number(value);
   if (!Number.isFinite(n) || n < 1) return undefined;
   return Math.trunc(n);
+}
+
+export function diaBaseDeItem(item: PlanificationSectionItem): number | undefined {
+  const raw: unknown = isGroupItem(item)
+    ? (item.diaBase ?? item.items[0]?.diaBase)
+    : item.diaBase;
+  return parseOptionalDiaBase(raw);
 }
 
 export function ensureSingleItem(
