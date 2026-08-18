@@ -18,6 +18,8 @@ export interface AlumnoDashboardMetrics {
   ultimaFecha: string | null;
   ejerciciosCompletadosTotal: number;
   streakSimple: number;
+  totalTrainingSeconds: number;
+  totalVolumeKg: number;
 }
 
 function asExtended(
@@ -65,10 +67,14 @@ export function buildAlumnoMetrics(
   }
 
   let ejerciciosCompletadosTotal = 0;
+  let totalTrainingSeconds = 0;
+  let totalVolumeKg = 0;
   for (const det of Object.values(progress.detallePorSesion)) {
     ejerciciosCompletadosTotal += (det.exercises ?? []).filter(
       (e) => e.completed,
     ).length;
+    totalTrainingSeconds += det.sessionDurationSeconds ?? 0;
+    totalVolumeKg += det.totalVolumeKg ?? 0;
   }
 
   let streakSimple = 0;
@@ -95,6 +101,8 @@ export function buildAlumnoMetrics(
     ultimaFecha,
     ejerciciosCompletadosTotal,
     streakSimple,
+    totalTrainingSeconds,
+    totalVolumeKg: Math.round(totalVolumeKg * 10) / 10,
   };
 }
 
@@ -119,6 +127,8 @@ export function initExerciseStateFromLog(
       name: ex.name,
       completed: saved?.completed ?? false,
       note: saved?.note ?? '',
+      exerciseTimeSeconds: saved?.exerciseTimeSeconds ?? 0,
+      restTimeSeconds: saved?.restTimeSeconds ?? 0,
     };
   });
 }

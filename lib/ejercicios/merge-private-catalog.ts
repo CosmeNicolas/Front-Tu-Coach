@@ -2,7 +2,7 @@ import {
   EjercicioCatalogo,
   nombreVisible,
 } from '@/lib/ejercicios/catalogo';
-import { CATALOGO_GRUPOS, normGrupo, TAB_GRUPO_IDS } from '@/lib/ejercicios/grupos-musculares';
+import { findCatalogoCategoriaById, normGrupo, TAB_GRUPO_IDS } from '@/lib/ejercicios/grupos-musculares';
 import { WizardPrivateExerciseItem } from '@/types/private-exercise';
 
 const norm = (s: string) =>
@@ -24,6 +24,7 @@ export function privateWizardToCatalogo(
     source: 'private',
     privateId: item.privateId,
     mediaType: item.mediaType,
+    esGlobal: item.esGlobal,
   };
 }
 
@@ -46,7 +47,7 @@ export function filtrarPrivadosParaWizard(
       );
     });
   } else if (input.grupoId) {
-    const def = CATALOGO_GRUPOS.find((g) => g.id === input.grupoId);
+    const def = findCatalogoCategoriaById(input.grupoId);
     if (def) {
       filtered = filtered.filter(
         (e) => normGrupo(e.grupo ?? '') === def.norm,
@@ -57,7 +58,7 @@ export function filtrarPrivadosParaWizard(
     if (grupoIds?.length) {
       const norms = new Set(
         grupoIds
-          .map((id) => CATALOGO_GRUPOS.find((g) => g.id === id)?.norm)
+          .map((id) => findCatalogoCategoriaById(id)?.norm)
           .filter(Boolean),
       );
       filtered = filtered.filter((e) => norms.has(normGrupo(e.grupo ?? '')));

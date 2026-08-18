@@ -34,7 +34,11 @@ export function EjercicioCatalogoCard({
         <span className="mt-2 line-clamp-2 text-center text-xs font-semibold text-foreground">
           {nombre}
         </span>
-        {ejercicio.source === 'private' ? (
+        {ejercicio.esGlobal ? (
+          <Badge variant="outline" className="mx-auto mt-1 w-fit text-[10px]">
+            Global
+          </Badge>
+        ) : ejercicio.source === 'private' ? (
           <Badge variant="secondary" className="mx-auto mt-1 w-fit text-[10px]">
             Propio
           </Badge>

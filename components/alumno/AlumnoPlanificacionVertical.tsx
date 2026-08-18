@@ -8,6 +8,7 @@ import {
   StudentMaterializedPlanification,
 } from '@/lib/api/student-portal';
 import { countSessionExercises } from '@/lib/alumno/flatten-materialized';
+import { formatSessionClock } from '@/lib/alumno/format-time';
 import { cn } from '@/lib/utils/cn';
 
 interface Props {
@@ -32,6 +33,7 @@ export function AlumnoPlanificacionVertical({
         const ejercicios = sesion ? countSessionExercises(sesion) : 0;
         const det = progreso.detallePorSesion[String(n)];
         const hechos = det?.exercises?.filter((e) => e.completed).length ?? 0;
+        const duracion = det?.sessionDurationSeconds ?? 0;
 
         return (
           <li key={n}>
@@ -65,6 +67,9 @@ export function AlumnoPlanificacionVertical({
                     ? `${hechos}/${ejercicios} ejercicios`
                     : 'Sin ejercicios'}
                   {done && rpe ? ` · RPE ${rpe}` : ''}
+                  {done && duracion > 0
+                    ? ` · ${formatSessionClock(duracion)}`
+                    : ''}
                 </span>
               </span>
               <span className="flex shrink-0 flex-col items-end gap-1">

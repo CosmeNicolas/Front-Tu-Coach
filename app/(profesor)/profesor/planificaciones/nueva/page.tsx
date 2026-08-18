@@ -2,6 +2,7 @@
 
 import { useRouter, useSearchParams } from 'next/navigation';
 import { Suspense } from 'react';
+import { toast } from 'sonner';
 import { PlanificacionForm } from '@/components/planificaciones/PlanificacionForm';
 import { useCreatePlanification } from '@/hooks/usePlanifications';
 
@@ -25,7 +26,14 @@ function NuevaPlanificacionContent() {
       submitLabel="Crear planificación"
       onSubmit={async (payload) => {
         const plan = await createMutation.mutateAsync(payload);
-        router.push(`/profesor/planificaciones/${plan.id}/asistente`);
+        const planId = plan?.id?.trim();
+        if (!planId) {
+          toast.error('La planificación se creó pero no recibimos el ID.');
+          router.push('/profesor/planificaciones');
+          return;
+        }
+        // Navegación completa: evita 404 intermitente de client-side nav en dev.
+        window.location.assign(`/profesor/planificaciones/${planId}/asistente`);
       }}
     />
   );

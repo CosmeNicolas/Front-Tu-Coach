@@ -1,6 +1,6 @@
 'use client';
 
-import { useEffect, useLayoutEffect, useMemo, useRef, useState } from 'react';
+import { useCallback, useEffect, useLayoutEffect, useMemo, useRef, useState } from 'react';
 import Link from 'next/link';
 import { useRouter } from 'next/navigation';
 import { toast } from 'sonner';
@@ -8,17 +8,21 @@ import { StudentMaterializedPlanification, StudentPlanification } from '@/lib/ap
 import { isSessionCompleted } from '@/lib/api/student-portal';
 import { flattenSessionToBlocks, countSessionExercises } from '@/lib/alumno/flatten-materialized';
 import { getSessionLog, initExerciseStateFromLog } from '@/lib/alumno/metrics';
+import { calcSessionVolumeKg } from '@/lib/alumno/volume';
 import {
   clearSessionDraft,
   loadSessionDraft,
   mergeExerciseStatesWithDraft,
   saveSessionDraft,
 } from '@/lib/alumno/session-draft-store';
+import { formatSessionClock } from '@/lib/alumno/format-time';
+import { useStopwatch } from '@/hooks/useStopwatch';
 import { etiquetaDia } from '@/lib/planification/preview-progression';
 import { useCompleteSession } from '@/hooks/useStudentPortal';
 import { ExerciseExecutionState } from '@/types/alumno-session';
 import { ApiError } from '@/lib/api/client';
 import { AlumnoBloqueSeccion } from './AlumnoBloqueSeccion';
+import { AlumnoSessionStopwatch } from './AlumnoSessionStopwatch';
 import { AlumnoRpeForm } from './AlumnoRpeForm';
 import { AlumnoPendingExercisesDialog } from './AlumnoPendingExercisesDialog';
 import { Button } from '@/components/ui/button';
@@ -82,8 +86,18 @@ export function AlumnoSesionExecutionView({
   const [notifyProfessor, setNotifyProfessor] = useState(false);
   const [pendingDialogOpen, setPendingDialogOpen] = useState(false);
   const [pendingCount, setPendingCount] = useState(0);
+  const [activeRestExerciseId, setActiveRestExerciseId] = useState<string | null>(
+    null,
+  );
   const sessionHeaderRef = useRef<HTMLElement>(null);
   const [sessionHeaderHeight, setSessionHeaderHeight] = useState(132);
+
+  const savedSessionSeconds = sessionLog?.sessionDurationSeconds ?? 0;
+  const sessionTimer = useStopwatch(
+    readOnly
+      ? { elapsedSeconds: savedSessionSeconds, isRunning: false }
+      : (localDraft?.sessionTimer ?? { elapsedSeconds: 0, isRunning: false }),
+  );
 
   useLayoutEffect(() => {
     const el = sessionHeaderRef.current;
@@ -114,6 +128,7 @@ export function AlumnoSesionExecutionView({
       rpe,
       rpeNote,
       sessionComment,
+      sessionTimer: sessionTimer.getSnapshot(),
     });
   }, [
     readOnly,
@@ -123,7 +138,55 @@ export function AlumnoSesionExecutionView({
     rpe,
     rpeNote,
     sessionComment,
+    sessionTimer.elapsedSeconds,
+    sessionTimer.isRunning,
   ]);
+
+  const patchExercise = useCallback(
+    (id: string, patch: Partial<ExerciseExecutionState>) => {
+      setExerciseStates((prev) => {
+        const current = prev.find((e) => e.exerciseId === id);
+        if (!current) return prev;
+
+        const hasChange = (
+          Object.keys(patch) as (keyof ExerciseExecutionState)[]
+        ).some((key) => current[key] !== patch[key]);
+        if (!hasChange) return prev;
+
+        return prev.map((e) => (e.exerciseId === id ? { ...e, ...patch } : e));
+      });
+    },
+    [],
+  );
+
+  const handleToggleExercise = useCallback(
+    (id: string, completed: boolean) => patchExercise(id, { completed }),
+    [patchExercise],
+  );
+
+  const handleNoteExercise = useCallback(
+    (id: string, note: string) => patchExercise(id, { note }),
+    [patchExercise],
+  );
+
+  const handleWorkTimeChange = useCallback(
+    (id: string, exerciseTimeSeconds: number) =>
+      patchExercise(id, { exerciseTimeSeconds }),
+    [patchExercise],
+  );
+
+  const handleRestTimeChange = useCallback(
+    (id: string, restTimeSeconds: number) =>
+      patchExercise(id, { restTimeSeconds }),
+    [patchExercise],
+  );
+
+  const handleRestStart = useCallback(
+    (id: string) => setActiveRestExerciseId(id),
+    [],
+  );
+
+  const handleRestEnd = useCallback(() => setActiveRestExerciseId(null), []);
 
   if (!sesion) {
     return (
@@ -138,13 +201,16 @@ export function AlumnoSesionExecutionView({
   const prevN = sessionNum > 1 ? sessionNum - 1 : null;
   const nextN = sessionNum < materialized.totalSesiones ? sessionNum + 1 : null;
 
-  function updateExercise(id: string, patch: Partial<ExerciseExecutionState>) {
-    setExerciseStates((prev) =>
-      prev.map((e) => (e.exerciseId === id ? { ...e, ...patch } : e)),
-    );
-  }
-
   async function submitSession() {
+    const sessionDurationSeconds = sessionTimer.getSnapshot().elapsedSeconds;
+    if (sessionTimer.isRunning) {
+      sessionTimer.pause();
+    }
+    const completedById = new Map(
+      exerciseStates.map((e) => [e.exerciseId, e.completed]),
+    );
+    const totalVolumeKg = calcSessionVolumeKg(allExercises, completedById);
+
     try {
       await complete.mutateAsync({
         sessionNum,
@@ -153,18 +219,25 @@ export function AlumnoSesionExecutionView({
           sessionComment: sessionComment.trim() || undefined,
           notifyProfessor:
             Boolean(sessionComment.trim()) && notifyProfessor,
+          sessionDurationSeconds,
+          totalVolumeKg,
           exercises: exerciseStates.map((e) => ({
             exerciseId: e.exerciseId,
             name: e.name,
             completed: e.completed,
             note: e.note.trim() || undefined,
+            exerciseTimeSeconds: e.exerciseTimeSeconds || undefined,
+            restTimeSeconds: e.restTimeSeconds || undefined,
           })),
         },
       });
       clearSessionDraft(plan.id, sessionNum);
       setPendingDialogOpen(false);
       toast.success('Sesión completada', {
-        description: `La sesión ${sessionNum} se guardó correctamente.`,
+        description:
+          sessionDurationSeconds > 0
+            ? `Tiempo registrado: ${formatSessionClock(sessionDurationSeconds)}. Lo vas a ver en Métricas.`
+            : `La sesión ${sessionNum} se guardó correctamente.`,
       });
       router.push('/alumno/mi-planificacion');
       router.refresh();
@@ -183,6 +256,13 @@ export function AlumnoSesionExecutionView({
         description: 'Seleccioná un valor entre 1 y 10 para finalizar la sesión.',
       });
       return;
+    }
+
+    if (sessionTimer.elapsedSeconds === 0) {
+      toast.message('Cronómetro de sesión', {
+        description:
+          'No registraste tiempo de sesión. Podés iniciarlo arriba a la derecha antes de finalizar.',
+      });
     }
 
     const pending = exerciseStates.filter((e) => !e.completed).length;
@@ -229,19 +309,31 @@ export function AlumnoSesionExecutionView({
               Semana {sesion.semanaDelPlan} · Día {sesion.dayIndexInWeek}
             </p>
           ) : null}
-          <div className="mt-3">
-            <div className="mb-1 flex justify-between text-xs text-muted-foreground">
-              <span>Ejercicios de esta sesión</span>
-              <span>
-                {doneEx}/{totalEx} ({sessionPct}%)
-              </span>
+          <div className="mt-3 flex flex-col gap-3 sm:flex-row sm:items-end sm:justify-between">
+            <div className="min-w-0 flex-1">
+              <div className="mb-1 flex justify-between text-xs text-muted-foreground">
+                <span>Ejercicios de esta sesión</span>
+                <span>
+                  {doneEx}/{totalEx} ({sessionPct}%)
+                </span>
+              </div>
+              <div className="h-2 overflow-hidden rounded-full bg-muted">
+                <div
+                  className="h-full rounded-full bg-primary transition-all"
+                  style={{ width: `${sessionPct}%` }}
+                />
+              </div>
             </div>
-            <div className="h-2 overflow-hidden rounded-full bg-muted">
-              <div
-                className="h-full rounded-full bg-primary transition-all"
-                style={{ width: `${sessionPct}%` }}
-              />
-            </div>
+            <AlumnoSessionStopwatch
+              elapsedSeconds={
+                readOnly ? savedSessionSeconds : sessionTimer.elapsedSeconds
+              }
+              isRunning={!readOnly && sessionTimer.isRunning}
+              readOnly={readOnly}
+              onStart={sessionTimer.start}
+              onPause={sessionTimer.pause}
+              onReset={sessionTimer.reset}
+            />
           </div>
         </header>
       </div>
@@ -260,8 +352,13 @@ export function AlumnoSesionExecutionView({
             exerciseStates={exerciseStates}
             readOnly={readOnly}
             defaultOpen
-            onToggle={(id, c) => updateExercise(id, { completed: c })}
-            onNote={(id, n) => updateExercise(id, { note: n })}
+            onToggle={handleToggleExercise}
+            onNote={handleNoteExercise}
+            onWorkTimeChange={handleWorkTimeChange}
+            onRestTimeChange={handleRestTimeChange}
+            activeRestExerciseId={activeRestExerciseId}
+            onRestStart={handleRestStart}
+            onRestEnd={handleRestEnd}
           />
         ))}
       </div>

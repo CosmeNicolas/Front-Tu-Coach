@@ -8,11 +8,10 @@ import { Input } from '@/components/ui/input';
 import { Label } from '@/components/ui/label';
 
 interface Props {
-  /** Si se pasa, fija el filtro al gimnasio (vista desde detalle de tenant). */
   tenantId?: string;
 }
 
-export function SuperAdminPrivateExercisesView({ tenantId: fixedTenantId }: Props) {
+export function SuperAdminTenantExercisesPanel({ tenantId: fixedTenantId }: Props) {
   const [search, setSearch] = useState('');
   const [tenantFilter, setTenantFilter] = useState(fixedTenantId ?? '');
 
@@ -22,13 +21,22 @@ export function SuperAdminPrivateExercisesView({ tenantId: fixedTenantId }: Prop
   const { data, isLoading, error } = usePrivateExercises({
     search,
     tenantId: effectiveTenantId,
+    esGlobal: false,
     limit: 200,
   });
 
   const items = data?.items ?? [];
 
   return (
-    <div className="space-y-4">
+    <section className="space-y-4">
+      <div>
+        <h2 className="font-display text-lg tracking-wide">Ejercicios por gimnasio</h2>
+        <p className="text-sm text-muted-foreground">
+          Ejercicios propios que cada profesor creó en Profesor → Ejercicios (solo los ve
+          quien los creó).
+        </p>
+      </div>
+
       <div className="flex flex-wrap gap-4">
         <div className="min-w-[200px] flex-1 space-y-2">
           <Label htmlFor="sa-ej-search">Buscar</Label>
@@ -70,7 +78,9 @@ export function SuperAdminPrivateExercisesView({ tenantId: fixedTenantId }: Prop
         </p>
       ) : items.length === 0 ? (
         <p className="rounded-lg border border-dashed p-8 text-center text-sm text-muted-foreground">
-          No hay ejercicios privados con esos filtros.
+          {effectiveTenantId
+            ? 'No hay ejercicios propios en este gimnasio. Probá «Todos los gimnasios» o pedile al profesor que cree alguno.'
+            : 'Ningún profesor creó ejercicios propios todavía.'}
         </p>
       ) : (
         <div className="overflow-x-auto rounded-lg border">
@@ -112,6 +122,6 @@ export function SuperAdminPrivateExercisesView({ tenantId: fixedTenantId }: Prop
           </table>
         </div>
       )}
-    </div>
+    </section>
   );
 }

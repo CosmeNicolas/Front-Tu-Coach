@@ -2,8 +2,9 @@ export type PrivateExerciseMediaType = 'gif' | 'mp4' | 'webm' | 'image' | 'youtu
 
 export interface PrivateExercise {
   id: string;
-  tenantId: string;
-  profesorId: string;
+  tenantId?: string | null;
+  profesorId?: string | null;
+  esGlobal: boolean;
   nombre: string;
   categoria: string;
   descripcion: string;
@@ -29,6 +30,7 @@ export interface CreatePrivateExercisePayload {
   descripcion?: string;
   mediaUrl?: string;
   mediaType?: PrivateExerciseMediaType;
+  esGlobal?: boolean;
 }
 
 export type UpdatePrivateExercisePayload = Partial<
@@ -45,6 +47,7 @@ export interface WizardPrivateExerciseItem {
   descripcion: string;
   source: 'private';
   privateId: string;
+  esGlobal?: boolean;
 }
 
 export interface WizardPrivateCatalogResponse {

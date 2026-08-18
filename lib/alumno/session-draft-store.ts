@@ -1,4 +1,5 @@
 import { ExerciseExecutionState } from '@/types/alumno-session';
+import { StopwatchSnapshot } from '@/hooks/useStopwatch';
 
 const PREFIX = 'tucoach:session-draft:';
 
@@ -10,6 +11,7 @@ export interface SessionDraft {
   rpe: number | '';
   rpeNote: string;
   sessionComment: string;
+  sessionTimer?: StopwatchSnapshot;
 }
 
 function draftKey(planificationId: string, sessionNum: number): string {
@@ -83,6 +85,8 @@ export function mergeExerciseStatesWithDraft(
       ...row,
       completed: saved.completed,
       note: saved.note ?? '',
+      exerciseTimeSeconds: saved.exerciseTimeSeconds ?? row.exerciseTimeSeconds,
+      restTimeSeconds: saved.restTimeSeconds ?? row.restTimeSeconds,
     };
   });
 }

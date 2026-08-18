@@ -10,7 +10,7 @@ export const SUPER_ADMIN_NAV: SidebarNavItem[] = [
 
   { href: '/super-admin/profesores', label: 'Profesores' },
 
-  { href: '/super-admin/ejercicios-privados', label: 'Ejercicios privados' },
+  { href: '/super-admin/ejercicios-privados', label: 'Ejercicios' },
 
 ];
 

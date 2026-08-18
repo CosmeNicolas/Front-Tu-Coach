@@ -17,6 +17,7 @@ import {
   updatePlanification,
   upsertSecciones,
 } from '@/lib/api/planifications';
+import { ApiError } from '@/lib/api/client';
 import {
   CreateItemAdjustmentPayload,
   CreatePlanificationPayload,
@@ -62,6 +63,10 @@ export function usePlanification(id: string) {
     queryKey: ['planifications', 'detail', id],
     queryFn: () => fetchPlanification(id),
     enabled: Boolean(id),
+    retry: (failureCount, error) =>
+      failureCount < 2 &&
+      error instanceof ApiError &&
+      (error.status === 404 || error.status >= 500),
   });
 }
 

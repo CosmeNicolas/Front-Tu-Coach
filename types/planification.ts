@@ -65,6 +65,8 @@ export interface SessionExerciseLog {
   name: string;
   completed: boolean;
   note: string;
+  exerciseTimeSeconds?: number;
+  restTimeSeconds?: number;
 }
 
 export interface SessionRpeLog {
@@ -76,6 +78,8 @@ export interface SessionExecutionLog {
   rpe?: SessionRpeLog;
   sessionComment: string;
   exercises: SessionExerciseLog[];
+  sessionDurationSeconds?: number;
+  totalVolumeKg?: number;
 }
 
 export interface PlanificationProgress {

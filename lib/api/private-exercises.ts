@@ -18,6 +18,7 @@ export interface QueryPrivateExercisesParams {
   page?: number;
   limit?: number;
   includeInactive?: boolean;
+  esGlobal?: boolean;
 }
 
 function buildQuery(params?: QueryPrivateExercisesParams): string {
@@ -30,6 +31,8 @@ function buildQuery(params?: QueryPrivateExercisesParams): string {
   if (params.page) q.set('page', String(params.page));
   if (params.limit) q.set('limit', String(params.limit));
   if (params.includeInactive) q.set('includeInactive', 'true');
+  if (params.esGlobal === true) q.set('esGlobal', 'true');
+  if (params.esGlobal === false) q.set('esGlobal', 'false');
   const qs = q.toString();
   return qs ? `?${qs}` : '';
 }

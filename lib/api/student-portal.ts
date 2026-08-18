@@ -81,6 +81,8 @@ export function completeStudentSession(
         sessionComment: payload.sessionComment,
         exercises: payload.exercises,
         notifyProfessor: payload.notifyProfessor ?? false,
+        sessionDurationSeconds: payload.sessionDurationSeconds,
+        totalVolumeKg: payload.totalVolumeKg,
       },
       auth: true,
     },

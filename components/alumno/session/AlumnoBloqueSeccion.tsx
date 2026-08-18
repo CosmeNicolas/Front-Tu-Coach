@@ -14,6 +14,11 @@ interface Props {
   defaultOpen?: boolean;
   onToggle: (exerciseId: string, completed: boolean) => void;
   onNote: (exerciseId: string, note: string) => void;
+  onWorkTimeChange: (exerciseId: string, seconds: number) => void;
+  onRestTimeChange: (exerciseId: string, seconds: number) => void;
+  activeRestExerciseId: string | null;
+  onRestStart: (exerciseId: string) => void;
+  onRestEnd: () => void;
 }
 
 const SECTION_LABEL: Record<TipoSeccion, string> = {
@@ -29,6 +34,11 @@ export function AlumnoBloqueSeccion({
   defaultOpen = true,
   onToggle,
   onNote,
+  onWorkTimeChange,
+  onRestTimeChange,
+  activeRestExerciseId,
+  onRestStart,
+  onRestEnd,
 }: Props) {
   const [open, setOpen] = useState(defaultOpen);
   const blockIds = new Set(block.exercises.map((e) => e.exerciseId));
@@ -65,8 +75,17 @@ export function AlumnoBloqueSeccion({
               exercise={ex}
               state={state}
               readOnly={readOnly}
+              isRestBlocked={
+                activeRestExerciseId != null &&
+                activeRestExerciseId !== ex.exerciseId
+              }
+              isRestActive={activeRestExerciseId === ex.exerciseId}
               onToggle={(c) => onToggle(ex.exerciseId, c)}
               onNote={(n) => onNote(ex.exerciseId, n)}
+              onWorkTimeChange={(s) => onWorkTimeChange(ex.exerciseId, s)}
+              onRestTimeChange={(s) => onRestTimeChange(ex.exerciseId, s)}
+              onRestStart={() => onRestStart(ex.exerciseId)}
+              onRestEnd={onRestEnd}
             />
           );
         })}

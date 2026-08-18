@@ -12,10 +12,17 @@ import {
   buildAggregateMonthlyCompletions,
   buildExercisesPerSession,
   buildMonthlyCompletions,
+  buildMonthlyTrainingMinutes,
+  buildMonthlyVolumeKg,
+  buildDailyTrainingMinutes,
+  buildTrainingTimePerSession,
   buildRpePerSession,
   buildWeeklyCompletions,
+  buildWeeklyTrainingMinutes,
+  buildWeeklyVolumeKg,
   countAssignedExercises,
 } from '@/lib/alumno/chart-data';
+import { formatTrainingMinutes } from '@/lib/alumno/format-time';
 import { StudentPlanificationListItem } from '@/lib/api/student-portal';
 import { PlanificationStatus } from '@/types/planification';
 import { AlumnoMetricasCharts } from './AlumnoMetricasCharts';
@@ -80,6 +87,12 @@ export function AlumnoMetricasView() {
         weekly: [],
         rpe: [],
         exercises: [],
+        trainingWeekly: [],
+        trainingMonthly: [],
+        trainingPerSession: [],
+        trainingDaily: [],
+        volumeWeekly: [],
+        volumeMonthly: [],
       };
     }
     if (!materialized) return null;
@@ -89,6 +102,12 @@ export function AlumnoMetricasView() {
       weekly: buildWeeklyCompletions(progress.fechas, progress.completadas),
       rpe: buildRpePerSession(progress, materialized.totalSesiones),
       exercises: buildExercisesPerSession(materialized),
+      trainingPerSession: buildTrainingTimePerSession(progress),
+      trainingDaily: buildDailyTrainingMinutes(progress),
+      trainingWeekly: buildWeeklyTrainingMinutes(progress),
+      trainingMonthly: buildMonthlyTrainingMinutes(progress),
+      volumeWeekly: buildWeeklyVolumeKg(progress),
+      volumeMonthly: buildMonthlyVolumeKg(progress),
     };
   }, [viewingHistorial, historial, materialized]);
 
@@ -260,6 +279,12 @@ export function AlumnoMetricasView() {
               weekly={charts.weekly}
               rpe={charts.rpe}
               exercises={charts.exercises}
+              trainingPerSession={charts.trainingPerSession}
+              trainingDaily={charts.trainingDaily}
+              trainingWeekly={charts.trainingWeekly}
+              trainingMonthly={charts.trainingMonthly}
+              volumeWeekly={charts.volumeWeekly}
+              volumeMonthly={charts.volumeMonthly}
             />
           ) : null}
         </>
@@ -309,6 +334,18 @@ export function AlumnoMetricasView() {
                   }
                 />
                 <StatCard label="Adherencia" value={`${stats.adherenciaPct}%`} />
+                <StatCard
+                  label="Tiempo entrenado"
+                  value={formatTrainingMinutes(metrics.totalTrainingSeconds)}
+                />
+                <StatCard
+                  label="Carga total"
+                  value={
+                    metrics.totalVolumeKg > 0
+                      ? `${metrics.totalVolumeKg} kg`
+                      : '—'
+                  }
+                />
               </section>
 
               {metrics.ultimaFecha ? (
@@ -353,6 +390,12 @@ export function AlumnoMetricasView() {
               weekly={charts.weekly}
               rpe={charts.rpe}
               exercises={charts.exercises}
+              trainingPerSession={charts.trainingPerSession}
+              trainingDaily={charts.trainingDaily}
+              trainingWeekly={charts.trainingWeekly}
+              trainingMonthly={charts.trainingMonthly}
+              volumeWeekly={charts.volumeWeekly}
+              volumeMonthly={charts.volumeMonthly}
             />
           )}
         </>

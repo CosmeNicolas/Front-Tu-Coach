@@ -8,22 +8,35 @@ import {
 } from '@/lib/alumno/parse-valor';
 import { inferMediaType } from '@/lib/ejercicios/media-type';
 import { cn } from '@/lib/utils';
+import { AlumnoExerciseTimer } from './AlumnoExerciseTimer';
 import { FlatExerciseRow, ExerciseExecutionState } from '@/types/alumno-session';
 
 interface Props {
   exercise: FlatExerciseRow;
   state: ExerciseExecutionState;
   readOnly: boolean;
+  isRestBlocked: boolean;
+  isRestActive: boolean;
   onToggle: (completed: boolean) => void;
   onNote: (note: string) => void;
+  onWorkTimeChange: (seconds: number) => void;
+  onRestTimeChange: (seconds: number) => void;
+  onRestStart: () => void;
+  onRestEnd: () => void;
 }
 
 export function AlumnoEjercicioCard({
   exercise,
   state,
   readOnly,
+  isRestBlocked,
+  isRestActive,
   onToggle,
   onNote,
+  onWorkTimeChange,
+  onRestTimeChange,
+  onRestStart,
+  onRestEnd,
 }: Props) {
   const parsed = parseExerciseParams(
     exercise.valor,
@@ -164,6 +177,19 @@ export function AlumnoEjercicioCard({
               />
             ) : null}
           </div>
+
+          <AlumnoExerciseTimer
+            descansoSeg={descansoSeg ?? 0}
+            savedWorkSeconds={state.exerciseTimeSeconds}
+            savedRestSeconds={state.restTimeSeconds}
+            readOnly={readOnly}
+            isRestBlocked={isRestBlocked}
+            isRestActive={isRestActive}
+            onWorkTimeChange={onWorkTimeChange}
+            onRestTimeChange={onRestTimeChange}
+            onRestStart={onRestStart}
+            onRestEnd={onRestEnd}
+          />
 
           {exercise.notas?.trim() ? (
             <p className="mt-3 rounded-md border border-border bg-muted px-2 py-1.5 text-xs text-muted-foreground">

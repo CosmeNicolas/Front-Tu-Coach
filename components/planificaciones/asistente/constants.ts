@@ -29,6 +29,7 @@ export const WIZARD_TABS: WizardTabDef[] = [
   { id: 'biceps', titulo: 'Bíceps', tipoSeccion: TipoSeccion.PRINCIPAL },
   { id: 'hombros', titulo: 'Hombros', tipoSeccion: TipoSeccion.PRINCIPAL },
   { id: 'triceps', titulo: 'Tríceps', tipoSeccion: TipoSeccion.PRINCIPAL },
+  { id: 'deportes', titulo: 'Deportes', tipoSeccion: TipoSeccion.PRINCIPAL, icon: '⚽' },
   { id: 'adaptados', titulo: 'Ejercicios adaptados', tipoSeccion: TipoSeccion.PRINCIPAL },
   { id: 'vuelta_calma', titulo: 'Vuelta a la calma', tipoSeccion: TipoSeccion.VUELTA_CALMA, icon: '🧘' },
 ];

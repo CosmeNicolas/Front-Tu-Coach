@@ -9,7 +9,7 @@ import {
   usePrivateExercises,
   useUploadPrivateExerciseMedia,
 } from '@/hooks/usePrivateExercises';
-import { CATALOGO_GRUPOS } from '@/lib/ejercicios/grupos-musculares';
+import { CATALOGO_DEPORTES, CATALOGO_GRUPOS, findCatalogoCategoriaByNorm } from '@/lib/ejercicios/grupos-musculares';
 import { ApiError } from '@/lib/api/client';
 import { updatePrivateExercise } from '@/lib/api/private-exercises';
 import {
@@ -204,7 +204,7 @@ export function ProfesorEjerciciosView() {
             </div>
 
             <div className="space-y-2">
-              <Label htmlFor="ej-categoria">Categoría / grupo muscular</Label>
+              <Label htmlFor="ej-categoria">Categoría</Label>
               <select
                 id="ej-categoria"
                 className="w-full rounded-lg border border-input bg-card px-3 py-2 text-sm"
@@ -213,11 +213,20 @@ export function ProfesorEjerciciosView() {
                   setForm((f) => ({ ...f, categoria: e.target.value }))
                 }
               >
-                {CATALOGO_GRUPOS.map((g) => (
-                  <option key={g.id} value={g.norm}>
-                    {g.label}
-                  </option>
-                ))}
+                <optgroup label="Grupos musculares">
+                  {CATALOGO_GRUPOS.map((g) => (
+                    <option key={g.id} value={g.norm}>
+                      {g.label}
+                    </option>
+                  ))}
+                </optgroup>
+                <optgroup label="Deportes">
+                  {CATALOGO_DEPORTES.map((d) => (
+                    <option key={d.id} value={d.norm}>
+                      {d.label}
+                    </option>
+                  ))}
+                </optgroup>
                 <option value="general">General</option>
               </select>
             </div>
@@ -359,7 +368,10 @@ export function ProfesorEjerciciosView() {
                   </div>
                   <div className="min-w-0 flex-1">
                     <p className="truncate font-semibold">{item.nombre}</p>
-                    <p className="text-xs text-muted-foreground">{item.categoria}</p>
+                    <p className="text-xs text-muted-foreground">
+                      {findCatalogoCategoriaByNorm(item.categoria)?.label ??
+                        item.categoria}
+                    </p>
                     {item.descripcion ? (
                       <p className="mt-1 line-clamp-2 text-xs text-muted-foreground">
                         {item.descripcion}

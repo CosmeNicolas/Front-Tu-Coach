@@ -1,6 +1,7 @@
 'use client';
 
 import { AlumnoDashboardMetrics } from '@/lib/alumno/metrics';
+import { formatTrainingMinutes } from '@/lib/alumno/format-time';
 import { formatProgressDate } from '@/lib/planification/progress-stats';
 
 export function AlumnoSessionMetrics({ metrics }: { metrics: AlumnoDashboardMetrics }) {
@@ -18,6 +19,18 @@ export function AlumnoSessionMetrics({ metrics }: { metrics: AlumnoDashboardMetr
     {
       label: 'Ejercicios hechos',
       value: String(metrics.ejerciciosCompletadosTotal),
+    },
+    {
+      label: 'Tiempo entrenado',
+      value:
+        metrics.totalTrainingSeconds > 0
+          ? formatTrainingMinutes(metrics.totalTrainingSeconds)
+          : '—',
+    },
+    {
+      label: 'Carga total',
+      value:
+        metrics.totalVolumeKg > 0 ? `${metrics.totalVolumeKg} kg` : '—',
     },
     {
       label: 'Racha inicial',

@@ -2,7 +2,7 @@
 export interface GrupoCatalogoDef {
   id: string;
   label: string;
-  /** Valor normalizado que aparece en JSON (`grupo`). */
+  /** Valor normalizado que aparece en JSON (`grupo`) y en BD privada (`categoria`). */
   norm: string;
 }
 
@@ -24,7 +24,41 @@ export const CATALOGO_GRUPOS: GrupoCatalogoDef[] = [
   { id: 'cardio', label: 'Cardio', norm: 'cardio' },
 ];
 
-/** Tabs del wizard → grupos sugeridos (ids de CATALOGO_GRUPOS). */
+/** Deportes iniciales — ampliar en futuras iteraciones. */
+export const CATALOGO_DEPORTES: GrupoCatalogoDef[] = [
+  { id: 'futbol', label: 'Fútbol', norm: 'futbol' },
+  { id: 'running', label: 'Running', norm: 'running' },
+  { id: 'musculacion', label: 'Musculación', norm: 'musculacion' },
+  { id: 'ciclismo', label: 'Ciclismo', norm: 'ciclismo' },
+  { id: 'rugby', label: 'Rugby', norm: 'rugby' },
+  { id: 'hockey', label: 'Hockey', norm: 'hockey' },
+  { id: 'padel', label: 'Pádel', norm: 'padel' },
+  { id: 'tenis', label: 'Tenis', norm: 'tenis' },
+  { id: 'basquet', label: 'Básquet', norm: 'basquet' },
+  { id: 'voley', label: 'Vóley', norm: 'voley' },
+  { id: 'natacion', label: 'Natación', norm: 'natacion' },
+  { id: 'handball', label: 'Handball', norm: 'handball' },
+  { id: 'boxeo', label: 'Boxeo', norm: 'boxeo' },
+  { id: 'artesmarciales', label: 'Artes marciales', norm: 'artesmarciales' },
+  { id: 'atletismo', label: 'Atletismo', norm: 'atletismo' },
+  { id: 'trailrunning', label: 'Trail Running', norm: 'trailrunning' },
+  {
+    id: 'crosstraining',
+    label: 'Cross Training / CrossFit',
+    norm: 'crosstraining',
+  },
+  { id: 'gimnasia', label: 'Gimnasia', norm: 'gimnasia' },
+  { id: 'remo', label: 'Remo', norm: 'remo' },
+  { id: 'triatlon', label: 'Triatlón', norm: 'triatlon' },
+  { id: 'tiroconarco', label: 'Tiro con arco', norm: 'tiroconarco' },
+];
+
+export const CATALOGO_CATEGORIAS: GrupoCatalogoDef[] = [
+  ...CATALOGO_GRUPOS,
+  ...CATALOGO_DEPORTES,
+];
+
+/** Tabs del wizard → grupos sugeridos (ids de categoría). */
 export const TAB_GRUPO_IDS: Record<string, string[]> = {
   abdominales: ['core'],
   lumbares: ['extensoresespinales', 'core'],
@@ -36,14 +70,8 @@ export const TAB_GRUPO_IDS: Record<string, string[]> = {
   hombros: ['hombros'],
   triceps: ['triceps'],
   adaptados: ['fullbody', 'cuello'],
+  deportes: CATALOGO_DEPORTES.map((d) => d.id),
 };
-
-export function gruposParaTab(tabId: string): GrupoCatalogoDef[] {
-  const ids = TAB_GRUPO_IDS[tabId];
-  if (!ids) return CATALOGO_GRUPOS;
-  const set = new Set(ids);
-  return CATALOGO_GRUPOS.filter((g) => set.has(g.id));
-}
 
 export function normGrupo(raw: string): string {
   return raw
@@ -53,6 +81,31 @@ export function normGrupo(raw: string): string {
     .replace(/\s+/g, '');
 }
 
+export function findCatalogoCategoriaById(
+  id: string,
+): GrupoCatalogoDef | undefined {
+  return CATALOGO_CATEGORIAS.find((g) => g.id === id);
+}
+
+export function findCatalogoCategoriaByNorm(
+  norm: string,
+): GrupoCatalogoDef | undefined {
+  const n = normGrupo(norm);
+  return CATALOGO_CATEGORIAS.find((g) => g.norm === n);
+}
+
+export function esCategoriaDeporte(categoria: string): boolean {
+  const n = normGrupo(categoria);
+  return CATALOGO_DEPORTES.some((d) => d.norm === n);
+}
+
+export function gruposParaTab(tabId: string): GrupoCatalogoDef[] {
+  const ids = TAB_GRUPO_IDS[tabId];
+  if (!ids) return CATALOGO_CATEGORIAS;
+  const set = new Set(ids);
+  return CATALOGO_CATEGORIAS.filter((g) => set.has(g.id));
+}
+
 export function grupoIdDesdeNorm(norm: string): string | undefined {
-  return CATALOGO_GRUPOS.find((g) => g.norm === norm)?.id;
+  return findCatalogoCategoriaByNorm(norm)?.id;
 }

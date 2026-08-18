@@ -37,6 +37,7 @@ export function useCreatePrivateExercise() {
       createPrivateExercise(payload),
     onSuccess: () => {
       qc.invalidateQueries({ queryKey: ['private-exercises'] });
+      qc.invalidateQueries({ queryKey: ['private-exercises', 'wizard'] });
     },
   });
 }
@@ -48,6 +49,7 @@ export function useUpdatePrivateExercise(id: string) {
       updatePrivateExercise(id, payload),
     onSuccess: () => {
       qc.invalidateQueries({ queryKey: ['private-exercises'] });
+      qc.invalidateQueries({ queryKey: ['private-exercises', 'wizard'] });
     },
   });
 }
@@ -58,6 +60,7 @@ export function useDeletePrivateExercise() {
     mutationFn: (id: string) => deletePrivateExercise(id),
     onSuccess: () => {
       qc.invalidateQueries({ queryKey: ['private-exercises'] });
+      qc.invalidateQueries({ queryKey: ['private-exercises', 'wizard'] });
     },
   });
 }
@@ -74,6 +77,7 @@ export function useUploadPrivateExerciseMedia() {
     }) => uploadPrivateExerciseMedia(file, ejercicioId),
     onSuccess: () => {
       qc.invalidateQueries({ queryKey: ['private-exercises'] });
+      qc.invalidateQueries({ queryKey: ['private-exercises', 'wizard'] });
     },
   });
 }

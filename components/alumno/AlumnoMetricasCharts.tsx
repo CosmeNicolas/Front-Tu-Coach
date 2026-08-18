@@ -10,6 +10,7 @@ import {
   YAxis,
 } from 'recharts';
 import { ChartPoint } from '@/lib/alumno/chart-data';
+import { formatSessionClock, formatTrainingMinutes } from '@/lib/alumno/format-time';
 
 const CHART_PRIMARY = '#525252';
 const CHART_MUTED = '#a3a3a3';
@@ -21,6 +22,9 @@ interface BarChartBlockProps {
   data: ChartPoint[];
   valueLabel?: string;
   maxDomain?: number;
+  allowDecimals?: boolean;
+  durationTooltip?: boolean;
+  emptyMessage?: string;
 }
 
 function EmptyChart({ message }: { message: string }) {
@@ -37,6 +41,9 @@ function AlumnoBarChart({
   data,
   valueLabel = 'Valor',
   maxDomain,
+  allowDecimals = false,
+  durationTooltip = false,
+  emptyMessage = 'Aún no hay datos para mostrar en este gráfico.',
 }: BarChartBlockProps) {
   if (data.length === 0) {
     return (
@@ -46,11 +53,13 @@ function AlumnoBarChart({
           <p className="mt-1 text-xs text-muted-foreground">{description}</p>
         ) : null}
         <div className="mt-3">
-          <EmptyChart message="Aún no hay datos para mostrar en este gráfico." />
+          <EmptyChart message={emptyMessage} />
         </div>
       </section>
     );
   }
+
+  const hasDuration = durationTooltip && data.some((d) => (d.seconds ?? 0) > 0);
 
   return (
     <section className="rounded-2xl border border-border bg-card p-4 shadow-sm">
@@ -67,9 +76,13 @@ function AlumnoBarChart({
               tick={{ fill: CHART_MUTED, fontSize: 11 }}
               axisLine={false}
               tickLine={false}
+              interval={0}
+              angle={data.length > 6 ? -35 : 0}
+              textAnchor={data.length > 6 ? 'end' : 'middle'}
+              height={data.length > 6 ? 56 : 30}
             />
             <YAxis
-              allowDecimals={false}
+              allowDecimals={allowDecimals}
               domain={maxDomain ? [0, maxDomain] : undefined}
               tick={{ fill: CHART_MUTED, fontSize: 11 }}
               axisLine={false}
@@ -83,7 +96,16 @@ function AlumnoBarChart({
                 color: '#fafafa',
               }}
               labelStyle={{ color: '#a3a3a3' }}
-              formatter={(value) => [value, valueLabel]}
+              formatter={(value, _name, item) => {
+                const seconds = (item?.payload as ChartPoint | undefined)?.seconds;
+                if (hasDuration && typeof seconds === 'number' && seconds > 0) {
+                  return [
+                    `${formatSessionClock(seconds)} (${formatTrainingMinutes(seconds)})`,
+                    valueLabel,
+                  ];
+                }
+                return [value, valueLabel];
+              }}
             />
             <Bar dataKey="value" fill={CHART_PRIMARY} radius={[6, 6, 0, 0]} maxBarSize={48} />
           </BarChart>
@@ -98,11 +120,96 @@ interface Props {
   monthly: ChartPoint[];
   rpe: ChartPoint[];
   exercises: ChartPoint[];
+  trainingPerSession: ChartPoint[];
+  trainingDaily: ChartPoint[];
+  trainingWeekly: ChartPoint[];
+  trainingMonthly: ChartPoint[];
+  volumeWeekly: ChartPoint[];
+  volumeMonthly: ChartPoint[];
 }
 
-export function AlumnoMetricasCharts({ weekly, monthly, rpe, exercises }: Props) {
+const TRAINING_EMPTY =
+  'Completá sesiones con el cronómetro de sesión iniciado para ver tiempos acá.';
+
+export function AlumnoMetricasCharts({
+  weekly,
+  monthly,
+  rpe,
+  exercises,
+  trainingPerSession,
+  trainingDaily,
+  trainingWeekly,
+  trainingMonthly,
+  volumeWeekly,
+  volumeMonthly,
+}: Props) {
   return (
     <div className="flex flex-col gap-4">
+      <div className="space-y-1">
+        <h2 className="text-sm font-semibold uppercase tracking-wide text-primary">
+          Tiempo de entrenamiento
+        </h2>
+        <p className="text-xs text-muted-foreground">
+          Cronómetro de sesión al finalizar cada entrenamiento
+        </p>
+      </div>
+
+      <AlumnoBarChart
+        title="Por sesión"
+        description="Duración registrada en cada sesión completada"
+        data={trainingPerSession}
+        valueLabel="Minutos"
+        allowDecimals
+        durationTooltip
+        emptyMessage={TRAINING_EMPTY}
+      />
+      <AlumnoBarChart
+        title="Por día"
+        description="Suma de minutos por día de entrenamiento"
+        data={trainingDaily}
+        valueLabel="Minutos"
+        allowDecimals
+        durationTooltip
+        emptyMessage={TRAINING_EMPTY}
+      />
+      <AlumnoBarChart
+        title="Por semana"
+        description="Total de minutos por semana"
+        data={trainingWeekly}
+        valueLabel="Minutos"
+        allowDecimals
+        durationTooltip
+        emptyMessage={TRAINING_EMPTY}
+      />
+      <AlumnoBarChart
+        title="Por mes"
+        description="Total de minutos por mes"
+        data={trainingMonthly}
+        valueLabel="Minutos"
+        allowDecimals
+        durationTooltip
+        emptyMessage={TRAINING_EMPTY}
+      />
+
+      <div className="space-y-1 pt-2">
+        <h2 className="text-sm font-semibold uppercase tracking-wide text-muted-foreground">
+          Carga y actividad
+        </h2>
+      </div>
+
+      <AlumnoBarChart
+        title="Carga levantada por mes (kg)"
+        description="Volumen total: peso × series × reps (ejercicios completados)"
+        data={volumeMonthly}
+        valueLabel="kg"
+        allowDecimals
+      />
+      <AlumnoBarChart
+        title="Carga levantada por semana (kg)"
+        data={volumeWeekly}
+        valueLabel="kg"
+        allowDecimals
+      />
       <AlumnoBarChart
         title="Sesiones completadas por mes"
         description="Actividad mensual (últimos 12 meses con registros)"

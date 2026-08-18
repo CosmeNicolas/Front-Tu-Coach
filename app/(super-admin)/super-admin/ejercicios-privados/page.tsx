@@ -1,17 +1,18 @@
-import { SuperAdminPrivateExercisesView } from '@/components/ejercicios/SuperAdminPrivateExercisesView';
+import { SuperAdminEjerciciosView } from '@/components/ejercicios/SuperAdminEjerciciosView';
 
 export default function SuperAdminEjerciciosPage() {
   return (
     <div className="space-y-6 p-4 sm:p-8">
       <header>
         <h1 className="font-display text-2xl tracking-wide text-foreground">
-          Ejercicios privados
+          Ejercicios
         </h1>
         <p className="mt-1 text-sm text-muted-foreground">
-          Todos los ejercicios creados por profesores, con gimnasio y autor.
+          Catálogo base de la app, ejercicios globales (super admin) y propios por
+          gimnasio.
         </p>
       </header>
-      <SuperAdminPrivateExercisesView />
+      <SuperAdminEjerciciosView />
     </div>
   );
 }

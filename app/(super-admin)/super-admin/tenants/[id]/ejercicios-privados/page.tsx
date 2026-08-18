@@ -2,7 +2,7 @@
 
 import Link from 'next/link';
 import { use } from 'react';
-import { SuperAdminPrivateExercisesView } from '@/components/ejercicios/SuperAdminPrivateExercisesView';
+import { SuperAdminEjerciciosView } from '@/components/ejercicios/SuperAdminEjerciciosView';
 
 export default function SuperAdminTenantEjerciciosPage({
   params,
@@ -21,10 +21,10 @@ export default function SuperAdminTenantEjerciciosPage({
       </Link>
       <header>
         <h1 className="font-display text-2xl tracking-wide text-foreground">
-          Ejercicios privados del gimnasio
+          Ejercicios del gimnasio
         </h1>
       </header>
-      <SuperAdminPrivateExercisesView tenantId={tenantId} />
+      <SuperAdminEjerciciosView tenantId={tenantId} defaultTab="gimnasio" />
     </div>
   );
 }

@@ -1,6 +1,7 @@
 'use client';
 
 import Link from 'next/link';
+import { useMemo } from 'react';
 import { useMiPlanificacion, useStudentMaterialized } from '@/hooks/useStudentPortal';
 import { buildAlumnoMetrics } from '@/lib/alumno/metrics';
 import { AlumnoProgressHeader } from './AlumnoProgressHeader';
@@ -27,6 +28,17 @@ export function AlumnoPlanificacionView() {
     plan?.id ?? '',
   );
 
+  const metrics = useMemo(() => {
+    if (!plan) return null;
+    const source = materialized
+      ? {
+          config: { totalSesiones: materialized.totalSesiones },
+          progresoAlumno: materialized.progreso,
+        }
+      : plan;
+    return buildAlumnoMetrics(source, plan.progresoResumen);
+  }, [plan, materialized]);
+
   if (isLoading) return <LoadingSkeleton />;
 
   if (error || !plan) {
@@ -40,7 +52,9 @@ export function AlumnoPlanificacionView() {
     );
   }
 
-  const metrics = buildAlumnoMetrics(plan, plan.progresoResumen);
+  if (!metrics) {
+    return null;
+  }
 
   return (
     <div className="flex flex-col gap-6 p-4 sm:p-6">

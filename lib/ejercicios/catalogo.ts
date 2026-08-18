@@ -1,5 +1,8 @@
 import {
+  CATALOGO_CATEGORIAS,
+  CATALOGO_DEPORTES,
   CATALOGO_GRUPOS,
+  findCatalogoCategoriaById,
   normGrupo,
   TAB_GRUPO_IDS,
 } from '@/lib/ejercicios/grupos-musculares';
@@ -29,6 +32,7 @@ export interface EjercicioCatalogo {
   /** Origen del ítem en catálogo fusionado */
   source?: 'global' | 'private';
   privateId?: string;
+  esGlobal?: boolean;
   mediaType?: 'gif' | 'mp4' | 'webm' | 'image' | 'youtube';
 }
 
@@ -94,7 +98,7 @@ export function ejerciciosPorGrupoId(
   grupoId: string,
   limit = 48,
 ): EjercicioCatalogo[] {
-  const def = CATALOGO_GRUPOS.find((g) => g.id === grupoId);
+  const def = findCatalogoCategoriaById(grupoId);
   if (!def) return [];
   return TODOS.filter((e) => normGrupo(e.grupo ?? '') === def.norm).slice(
     0,
@@ -107,7 +111,7 @@ export function ejerciciosPorTab(tabId: string, limit = 48): EjercicioCatalogo[]
   if (!grupoIds?.length) return TODOS.slice(0, limit);
   const norms = new Set(
     grupoIds
-      .map((id) => CATALOGO_GRUPOS.find((g) => g.id === id)?.norm)
+      .map((id) => findCatalogoCategoriaById(id)?.norm)
       .filter(Boolean),
   );
   return TODOS.filter((e) => norms.has(normGrupo(e.grupo ?? ''))).slice(
@@ -133,7 +137,7 @@ export function filtrarCatalogo({
   if (q) {
     const found = buscarEjercicios(q, limit);
     if (grupoId) {
-      const def = CATALOGO_GRUPOS.find((g) => g.id === grupoId);
+      const def = findCatalogoCategoriaById(grupoId);
       if (def) {
         return found.filter((e) => normGrupo(e.grupo ?? '') === def.norm);
       }
@@ -145,6 +149,49 @@ export function filtrarCatalogo({
   return ejerciciosPorTab(tabId, limit);
 }
 
-export { CATALOGO_GRUPOS, TAB_GRUPO_IDS };
+/** Total de ejercicios del catálogo base (JSON incluido en la app). */
+export function catalogoBaseTotal(): number {
+  return TODOS.length;
+}
+
+export interface ListarCatalogoBaseInput {
+  search?: string;
+  categoriaNorm?: string;
+  limit?: number;
+}
+
+/** Lista ejercicios del catálogo base para exploración (super admin, solo lectura). */
+export function listarCatalogoBase({
+  search = '',
+  categoriaNorm,
+  limit = 72,
+}: ListarCatalogoBaseInput = {}): EjercicioCatalogo[] {
+  let list = TODOS;
+
+  if (categoriaNorm?.trim()) {
+    const catNorm = normGrupo(categoriaNorm.trim());
+    list = list.filter((e) => normGrupo(e.grupo ?? '') === catNorm);
+  }
+
+  const q = search.trim();
+  if (q) {
+    list = list.filter((e) => {
+      const nombre = nombreVisible(e);
+      return (
+        norm(nombre).includes(norm(q)) ||
+        norm(e.descripcion ?? '').includes(norm(q)) ||
+        norm(e.grupo ?? '').includes(norm(q)) ||
+        norm(e.nombre ?? '').includes(norm(q))
+      );
+    });
+  }
+
+  return list.slice(0, limit).map((e) => ({
+    ...e,
+    source: 'global' as const,
+  }));
+}
+
+export { CATALOGO_GRUPOS, CATALOGO_DEPORTES, CATALOGO_CATEGORIAS, TAB_GRUPO_IDS };
 
 export { PLACEHOLDER_EJERCICIO } from '@/lib/ejercicios/gif-url';

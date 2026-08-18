@@ -10,6 +10,8 @@ export interface SessionExerciseLog {
   name: string;
   completed: boolean;
   note: string;
+  exerciseTimeSeconds?: number;
+  restTimeSeconds?: number;
 }
 
 export interface SessionRpeLog {
@@ -21,6 +23,8 @@ export interface SessionExecutionLog {
   rpe?: SessionRpeLog;
   sessionComment: string;
   exercises: SessionExerciseLog[];
+  sessionDurationSeconds?: number;
+  totalVolumeKg?: number;
 }
 
 export interface StudentProgressExtended {
@@ -65,6 +69,8 @@ export interface ExerciseExecutionState {
   name: string;
   completed: boolean;
   note: string;
+  exerciseTimeSeconds: number;
+  restTimeSeconds: number;
 }
 
 export interface CompleteSessionPayloadV2 {
@@ -72,10 +78,14 @@ export interface CompleteSessionPayloadV2 {
   sessionComment?: string;
   /** Avisa al profe solo si hay comentario de sesión */
   notifyProfessor?: boolean;
+  sessionDurationSeconds?: number;
+  totalVolumeKg?: number;
   exercises: Array<{
     exerciseId: string;
     name: string;
     completed: boolean;
     note?: string;
+    exerciseTimeSeconds?: number;
+    restTimeSeconds?: number;
   }>;
 }

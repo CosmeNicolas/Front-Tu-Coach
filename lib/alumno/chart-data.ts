@@ -5,6 +5,19 @@ import { StudentProgressExtended } from '@/types/alumno-session';
 export interface ChartPoint {
   label: string;
   value: number;
+  /** Segundos originales (tooltips de duración). */
+  seconds?: number;
+}
+
+function dayKey(isoDate: string): string | null {
+  const d = new Date(isoDate);
+  if (Number.isNaN(d.getTime())) return null;
+  return d.toISOString().slice(0, 10);
+}
+
+function formatDayLabel(isoDay: string): string {
+  const d = new Date(isoDay + 'T12:00:00');
+  return d.toLocaleDateString('es-AR', { weekday: 'short', day: '2-digit', month: 'short' });
 }
 
 function mondayKey(d: Date): string {
@@ -158,4 +171,210 @@ export function countAssignedExercises(
     (acc, s) => acc + countSessionExercises(s),
     0,
   );
+}
+
+interface SessionMetricRow {
+  sessionNum: number;
+  fecha: string;
+  sessionDurationSeconds: number;
+  totalVolumeKg: number;
+}
+
+function buildSessionMetricRows(
+  progress: StudentProgressExtended,
+): SessionMetricRow[] {
+  const rows: SessionMetricRow[] = [];
+  for (const n of progress.completadas) {
+    const fecha = progress.fechas[n - 1]?.trim();
+    if (!fecha) continue;
+    const det = progress.detallePorSesion[String(n)];
+    rows.push({
+      sessionNum: n,
+      fecha,
+      sessionDurationSeconds: det?.sessionDurationSeconds ?? 0,
+      totalVolumeKg: det?.totalVolumeKg ?? 0,
+    });
+  }
+  return rows;
+}
+
+function bucketMetricByDay(
+  rows: SessionMetricRow[],
+  field: 'sessionDurationSeconds' | 'totalVolumeKg',
+): ChartPoint[] {
+  const buckets = new Map<
+    string,
+    { label: string; value: number; seconds: number; sort: string }
+  >();
+
+  for (const row of rows) {
+    const key = dayKey(row.fecha);
+    if (!key) continue;
+    const addSeconds = field === 'sessionDurationSeconds' ? row.sessionDurationSeconds : 0;
+    const add =
+      field === 'sessionDurationSeconds'
+        ? Math.round(row.sessionDurationSeconds / 60)
+        : row.totalVolumeKg;
+    const existing = buckets.get(key);
+    if (existing) {
+      existing.value += add;
+      existing.seconds += addSeconds;
+    } else {
+      buckets.set(key, {
+        label: formatDayLabel(key),
+        value: add,
+        seconds: addSeconds,
+        sort: key,
+      });
+    }
+  }
+
+  return [...buckets.values()]
+    .sort((a, b) => a.sort.localeCompare(b.sort))
+    .slice(-14)
+    .map(({ label, value, seconds }) => ({
+      label,
+      value: Math.round(value * 10) / 10,
+      seconds: field === 'sessionDurationSeconds' ? seconds : undefined,
+    }));
+}
+
+function bucketMetricByMonth(
+  rows: SessionMetricRow[],
+  field: 'sessionDurationSeconds' | 'totalVolumeKg',
+): ChartPoint[] {
+  const buckets = new Map<
+    string,
+    { label: string; value: number; seconds: number; sort: string }
+  >();
+
+  for (const row of rows) {
+    const key = monthKey(row.fecha);
+    if (!key) continue;
+    const addSeconds =
+      field === 'sessionDurationSeconds' ? row.sessionDurationSeconds : 0;
+    const add =
+      field === 'sessionDurationSeconds'
+        ? Math.round(row.sessionDurationSeconds / 60)
+        : row.totalVolumeKg;
+    const existing = buckets.get(key);
+    if (existing) {
+      existing.value += add;
+      existing.seconds += addSeconds;
+    } else {
+      buckets.set(key, {
+        label: formatMonthLabel(key),
+        value: add,
+        seconds: addSeconds,
+        sort: key,
+      });
+    }
+  }
+
+  return [...buckets.values()]
+    .sort((a, b) => a.sort.localeCompare(b.sort))
+    .slice(-12)
+    .map(({ label, value, seconds }) => ({
+      label,
+      value: Math.round(value * 10) / 10,
+      seconds: field === 'sessionDurationSeconds' ? seconds : undefined,
+    }));
+}
+
+function bucketMetricByWeek(
+  rows: SessionMetricRow[],
+  field: 'sessionDurationSeconds' | 'totalVolumeKg',
+): ChartPoint[] {
+  const buckets = new Map<
+    string,
+    { label: string; value: number; seconds: number; sort: string }
+  >();
+
+  for (const row of rows) {
+    const d = new Date(row.fecha);
+    if (Number.isNaN(d.getTime())) continue;
+    const key = mondayKey(d);
+    const addSeconds =
+      field === 'sessionDurationSeconds' ? row.sessionDurationSeconds : 0;
+    const add =
+      field === 'sessionDurationSeconds'
+        ? Math.round(row.sessionDurationSeconds / 60)
+        : row.totalVolumeKg;
+    const existing = buckets.get(key);
+    if (existing) {
+      existing.value += add;
+      existing.seconds += addSeconds;
+    } else {
+      buckets.set(key, {
+        label: formatWeekLabel(key),
+        value: add,
+        seconds: addSeconds,
+        sort: key,
+      });
+    }
+  }
+
+  return [...buckets.values()]
+    .sort((a, b) => a.sort.localeCompare(b.sort))
+    .slice(-8)
+    .map(({ label, value, seconds }) => ({
+      label,
+      value: Math.round(value * 10) / 10,
+      seconds: field === 'sessionDurationSeconds' ? seconds : undefined,
+    }));
+}
+
+function withRecordedTrainingTime(points: ChartPoint[]): ChartPoint[] {
+  return points.filter((p) => (p.seconds ?? 0) > 0);
+}
+
+/** Tiempo de entrenamiento (min) por cada sesión completada. */
+export function buildTrainingTimePerSession(
+  progress: StudentProgressExtended,
+): ChartPoint[] {
+  return withRecordedTrainingTime(
+    buildSessionMetricRows(progress)
+      .sort((a, b) => a.sessionNum - b.sessionNum)
+      .map((row) => ({
+        label: `S${row.sessionNum}`,
+        value: Math.round((row.sessionDurationSeconds / 60) * 10) / 10,
+        seconds: row.sessionDurationSeconds,
+      })),
+  );
+}
+
+export function buildDailyTrainingMinutes(
+  progress: StudentProgressExtended,
+): ChartPoint[] {
+  return withRecordedTrainingTime(
+    bucketMetricByDay(buildSessionMetricRows(progress), 'sessionDurationSeconds'),
+  );
+}
+
+export function buildMonthlyTrainingMinutes(
+  progress: StudentProgressExtended,
+): ChartPoint[] {
+  return withRecordedTrainingTime(
+    bucketMetricByMonth(buildSessionMetricRows(progress), 'sessionDurationSeconds'),
+  );
+}
+
+export function buildWeeklyTrainingMinutes(
+  progress: StudentProgressExtended,
+): ChartPoint[] {
+  return withRecordedTrainingTime(
+    bucketMetricByWeek(buildSessionMetricRows(progress), 'sessionDurationSeconds'),
+  );
+}
+
+export function buildMonthlyVolumeKg(
+  progress: StudentProgressExtended,
+): ChartPoint[] {
+  return bucketMetricByMonth(buildSessionMetricRows(progress), 'totalVolumeKg');
+}
+
+export function buildWeeklyVolumeKg(
+  progress: StudentProgressExtended,
+): ChartPoint[] {
+  return bucketMetricByWeek(buildSessionMetricRows(progress), 'totalVolumeKg');
 }
