@@ -5,16 +5,19 @@ import { Archive, CheckCircle2, History } from 'lucide-react';
 import {
   useMisPlanificaciones,
   useStudentMaterialized,
+  useStudentMaterializedBatch,
 } from '@/hooks/useStudentPortal';
 import { buildAlumnoMetrics } from '@/lib/alumno/metrics';
 import { buildProgressStats, formatProgressDate } from '@/lib/planification/progress-stats';
 import {
   buildAggregateMonthlyCompletions,
+  buildCombinedTrainingData,
   buildExercisesPerSession,
   buildMonthlyCompletions,
   buildMonthlyTrainingMinutes,
   buildMonthlyVolumeKg,
   buildDailyTrainingMinutes,
+  buildSessionTrainingRows,
   buildTrainingTimePerSession,
   buildRpePerSession,
   buildWeeklyCompletions,
@@ -26,6 +29,7 @@ import { formatTrainingMinutes } from '@/lib/alumno/format-time';
 import { StudentPlanificationListItem } from '@/lib/api/student-portal';
 import { PlanificationStatus } from '@/types/planification';
 import { AlumnoMetricasCharts } from './AlumnoMetricasCharts';
+import { AlumnoSessionTrainingTable } from './AlumnoSessionTrainingTable';
 import { Badge } from '@/components/ui/badge';
 import { cn } from '@/lib/utils';
 
@@ -80,17 +84,49 @@ export function AlumnoMetricasView() {
     materializedPlanId,
   );
 
+  const historialPlanIds = useMemo(
+    () => historial?.map((p) => p.id) ?? [],
+    [historial],
+  );
+
+  const {
+    data: historialMaterialized,
+    isLoading: loadingHistorialMat,
+  } = useStudentMaterializedBatch(historialPlanIds, viewingHistorial);
+
+  const combinedTraining = useMemo(() => {
+    if (!viewingHistorial || !historial?.length || historialMaterialized.length === 0) {
+      return null;
+    }
+    const byId = new Map(
+      historialMaterialized.map((item) => [item.id, item.materialized]),
+    );
+    const items = historial
+      .map((plan) => {
+        const mat = byId.get(plan.id);
+        if (!mat) return null;
+        return { progress: mat.progreso, planTitulo: plan.titulo };
+      })
+      .filter(
+        (item): item is { progress: typeof historialMaterialized[0]['materialized']['progreso']; planTitulo: string } =>
+          item !== null,
+      );
+    if (items.length === 0) return null;
+    return buildCombinedTrainingData(items);
+  }, [viewingHistorial, historial, historialMaterialized]);
+
   const charts = useMemo(() => {
     if (viewingHistorial && historial?.length) {
+      const combined = combinedTraining;
       return {
         monthly: buildAggregateMonthlyCompletions(historial),
         weekly: [],
         rpe: [],
         exercises: [],
-        trainingWeekly: [],
-        trainingMonthly: [],
-        trainingPerSession: [],
-        trainingDaily: [],
+        trainingWeekly: combined?.trainingWeekly ?? [],
+        trainingMonthly: combined?.trainingMonthly ?? [],
+        trainingPerSession: combined?.trainingPerSession ?? [],
+        trainingDaily: combined?.trainingDaily ?? [],
         volumeWeekly: [],
         volumeMonthly: [],
       };
@@ -109,7 +145,15 @@ export function AlumnoMetricasView() {
       volumeWeekly: buildWeeklyVolumeKg(progress),
       volumeMonthly: buildMonthlyVolumeKg(progress),
     };
-  }, [viewingHistorial, historial, materialized]);
+  }, [viewingHistorial, historial, materialized, combinedTraining]);
+
+  const sessionTrainingRows = useMemo(() => {
+    if (viewingHistorial) {
+      return combinedTraining?.sessionRows ?? [];
+    }
+    if (!materialized || !selectedPlan) return [];
+    return buildSessionTrainingRows(materialized.progreso, selectedPlan.titulo);
+  }, [viewingHistorial, combinedTraining, materialized, selectedPlan]);
 
   const aggregateStats = useMemo(() => {
     if (!historial?.length) return null;
@@ -230,6 +274,16 @@ export function AlumnoMetricasView() {
                     : '—'
                 }
               />
+              <StatCard
+                label="Tiempo entrenado"
+                value={
+                  combinedTraining && combinedTraining.totalTrainingSeconds > 0
+                    ? formatTrainingMinutes(combinedTraining.totalTrainingSeconds)
+                    : loadingHistorialMat
+                      ? '…'
+                      : '—'
+                }
+              />
             </section>
           ) : null}
 
@@ -273,7 +327,18 @@ export function AlumnoMetricasView() {
             </div>
           </section>
 
-          {charts ? (
+          {loadingHistorialMat ? (
+            <div className="h-32 animate-pulse rounded-xl bg-muted" />
+          ) : (
+            <AlumnoSessionTrainingTable
+              rows={sessionTrainingRows}
+              showPlan
+            />
+          )}
+
+          {loadingHistorialMat || !charts ? (
+            <div className="h-48 animate-pulse rounded-xl bg-muted" />
+          ) : (
             <AlumnoMetricasCharts
               monthly={charts.monthly}
               weekly={charts.weekly}
@@ -286,7 +351,7 @@ export function AlumnoMetricasView() {
               volumeWeekly={charts.volumeWeekly}
               volumeMonthly={charts.volumeMonthly}
             />
-          ) : null}
+          )}
         </>
       ) : (
         <>
@@ -385,7 +450,9 @@ export function AlumnoMetricasView() {
           {loadingMat || !charts ? (
             <div className="h-48 animate-pulse rounded-xl bg-muted" />
           ) : (
-            <AlumnoMetricasCharts
+            <>
+              <AlumnoSessionTrainingTable rows={sessionTrainingRows} />
+              <AlumnoMetricasCharts
               monthly={charts.monthly}
               weekly={charts.weekly}
               rpe={charts.rpe}
@@ -397,6 +464,7 @@ export function AlumnoMetricasView() {
               volumeWeekly={charts.volumeWeekly}
               volumeMonthly={charts.volumeMonthly}
             />
+            </>
           )}
         </>
       )}

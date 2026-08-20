@@ -1,13 +1,19 @@
 'use client';
 
 import { useEffect, useState } from 'react';
+import { toast } from 'sonner';
 import { OPCIONES_CARDIO } from '@/lib/ejercicios/catalogo-cardio';
 import { resolveGifUrl } from '@/lib/ejercicios/gif-url';
 import { diaBaseDeItem, ensureSingleItem, isSingleItem } from '@/lib/planification/section-items';
 import { normalizeDiaBase } from '@/lib/planification/asistente-dia';
+import {
+  itemAfectaSesionCompletada,
+} from '@/lib/planification/alumno-progress-guard';
 import { PLANIFICATION_LIMITS } from '@/types/planification-limits';
 import {
+  Planification,
   PlanificationItemSingle,
+  PlanificationProgress,
   PlanificationSection,
   TipoItem,
   TipoSeccion,
@@ -22,6 +28,9 @@ import {
 } from './constants';
 import { EjercicioAvatar } from './EjercicioAvatar';
 import { MiniTablaProgresion } from './MiniTablaProgresion';
+import { AjusteBadge } from './AjusteAntesDespues';
+import { PanelAjusteEjercicio } from './PanelAjusteEjercicio';
+import { Button } from '@/components/ui/button';
 
 interface Props {
   tipoSeccion: TipoSeccion.CALENTAMIENTO | TipoSeccion.VUELTA_CALMA;
@@ -29,7 +38,11 @@ interface Props {
   config: import('@/types/planification').PlanificationConfig;
   diaActivo: number;
   frecuenciaBloque: number | null;
+  progresoAlumno?: PlanificationProgress;
+  planificationId?: string;
+  contentVersion?: number;
   onChange: (sec: PlanificationSection) => void;
+  onAdjusted?: (planification: Planification) => void;
 }
 
 export function SelectorCardioGrid({
@@ -38,8 +51,13 @@ export function SelectorCardioGrid({
   config,
   diaActivo,
   frecuenciaBloque,
+  progresoAlumno,
+  planificationId,
+  contentVersion,
   onChange,
+  onAdjusted,
 }: Props) {
+  const [ajusteAbierto, setAjusteAbierto] = useState(false);
   const limits =
     tipoSeccion === TipoSeccion.CALENTAMIENTO
       ? PLANIFICATION_LIMITS.calentamiento
@@ -48,11 +66,19 @@ export function SelectorCardioGrid({
   const dia = normalizeDiaBase(diaActivo);
   const rawItem = frecuenciaBloque
     ? seccion?.items.find(
-        (it) =>
-          isSingleItem(it) && (diaBaseDeItem(it) ?? 1) === dia,
-      )
+      (it) =>
+        isSingleItem(it) && (diaBaseDeItem(it) ?? 1) === dia,
+    )
     : seccion?.items[0];
   const item = rawItem && isSingleItem(rawItem) ? rawItem : undefined;
+  const editBlocked = Boolean(
+    item &&
+    progresoAlumno &&
+    itemAfectaSesionCompletada(item, progresoAlumno.completadas ?? [], config),
+  );
+  const canAdjust = Boolean(
+    item && planificationId && contentVersion !== undefined && onAdjusted,
+  );
   const [selId, setSelId] = useState(
     () => OPCIONES_CARDIO.find((o) => o.nombre === item?.ejercicio)?.id ?? '',
   );
@@ -66,9 +92,9 @@ export function SelectorCardioGrid({
     const nextDia = normalizeDiaBase(diaActivo);
     const nextRaw = frecuenciaBloque
       ? seccion?.items.find(
-          (it) =>
-            isSingleItem(it) && (diaBaseDeItem(it) ?? 1) === nextDia,
-        )
+        (it) =>
+          isSingleItem(it) && (diaBaseDeItem(it) ?? 1) === nextDia,
+      )
       : seccion?.items[0];
     const nextItem =
       nextRaw && isSingleItem(nextRaw) ? nextRaw : undefined;
@@ -95,6 +121,7 @@ export function SelectorCardioGrid({
     if (!op) return null;
 
     const newItem = ensureSingleItem({
+      id: item?.id,
       ejercicio: op.nombre,
       tipoItem: TipoItem.AEROBICO,
       unidadTrabajo: UnidadTrabajo.MIN,
@@ -122,11 +149,23 @@ export function SelectorCardioGrid({
   }
 
   function commit(id: string, min: number, inc: number, note: string) {
+    if (editBlocked) {
+      toast.error('Este día ya tiene sesiones completadas', {
+        description: 'Usá ⚡ Ajuste desde sesión "X" para cambiar entrada en calor o vuelta a la calma.',
+      });
+      return;
+    }
     const built = buildItem(id, min, inc, note);
     if (built) onChange(built.section);
   }
 
   function pick(id: string) {
+    if (editBlocked) {
+      toast.error('Este día ya tiene sesiones completadas', {
+        description: 'Usá ⚡ Ajuste desde sesión "X" para elegir otro ejercicio aeróbico.',
+      });
+      return;
+    }
     setSelId(id);
     commit(id, minutos, incremento, notas);
   }
@@ -137,23 +176,49 @@ export function SelectorCardioGrid({
 
   return (
     <section className="space-y-4">
-      <header>
-        <h2 className={`text-lg font-bold sm:text-xl ${CEMD.primaryClass}`}>
-          {emoji} {titulo}
-        </h2>
-        <p className="text-sm text-muted-foreground">
-          Tope: {limits.topeMinutos} min por sesión
-          {frecuenciaBloque
-            ? ` · ${etiquetaDia(config.modoProgresion, diaActivo)}`
-            : ''}
-        </p>
+      <header className="flex flex-wrap items-start justify-between gap-3">
+        <div>
+          <h2 className={`text-lg font-bold sm:text-xl ${CEMD.primaryClass}`}>
+            {emoji} {titulo}
+          </h2>
+          <p className="text-sm text-muted-foreground">
+            Tope: {limits.topeMinutos} min por sesión
+            {frecuenciaBloque
+              ? ` · ${etiquetaDia(config.modoProgresion, diaActivo)}`
+              : ''}
+          </p>
+          {item?.ajuste ? (
+            <div className="mt-2">
+              <AjusteBadge item={item} />
+            </div>
+          ) : null}
+        </div>
+        {canAdjust ? (
+          <Button
+            type="button"
+            variant={editBlocked ? 'default' : 'outline'}
+            size="sm"
+            onClick={() => setAjusteAbierto(true)}
+          >
+            ⚡ Ajuste desde sesión "X"
+          </Button>
+        ) : null}
       </header>
+
+      {editBlocked ? (
+        <p className="rounded-lg border border-amber-200 bg-amber-50 px-3 py-2 text-sm text-amber-950 dark:border-amber-900/50 dark:bg-amber-950/30 dark:text-amber-100">
+          El alumno ya entrenó sesiones de este día. La grilla está en solo lectura;
+          usá <strong>⚡ Ajuste desde sesión "X"</strong> para cambiar el ejercicio, minutos
+          o incremento desde una sesión futura sin alterar lo ya hecho.
+        </p>
+      ) : null}
 
       <div className="grid grid-cols-2 gap-3 sm:grid-cols-3">
         <label className="text-sm">
           <span className="mb-1 block font-medium">Minutos iniciales</span>
           <select
             value={minutos}
+            disabled={editBlocked}
             onChange={(e) => {
               const m = Number(e.target.value);
               setMinutos(m);
@@ -174,6 +239,7 @@ export function SelectorCardioGrid({
           <span className="mb-1 block font-medium">Incremento (min)</span>
           <select
             value={incremento}
+            disabled={editBlocked}
             onChange={(e) => {
               const inc = Number(e.target.value);
               setIncremento(inc);
@@ -195,11 +261,14 @@ export function SelectorCardioGrid({
           <button
             key={op.id}
             type="button"
+            disabled={editBlocked}
             onClick={() => pick(op.id)}
             className={
-              selId === op.id
-                ? 'flex flex-col items-center rounded-lg border-2 border-primary bg-primary/10 p-4 transition'
-                : 'flex flex-col items-center rounded-lg border border-input bg-card p-4 transition hover:border-primary'
+              editBlocked
+                ? 'flex flex-col items-center rounded-lg border border-input bg-muted/40 p-4 opacity-60'
+                : selId === op.id
+                  ? 'flex flex-col items-center rounded-lg border-2 border-primary bg-primary/10 p-4 transition'
+                  : 'flex flex-col items-center rounded-lg border border-input bg-card p-4 transition hover:border-primary'
             }
           >
             <EjercicioAvatar
@@ -227,6 +296,7 @@ export function SelectorCardioGrid({
           </label>
           <textarea
             value={notas}
+            disabled={editBlocked}
             onChange={(e) => setNotas(e.target.value)}
             onBlur={() => commit(selId, minutos, incremento, notas)}
             placeholder={
@@ -256,6 +326,20 @@ export function SelectorCardioGrid({
           Seleccioná un ejercicio aeróbico de la grilla.
         </p>
       )}
+
+      {ajusteAbierto && item && planificationId && contentVersion !== undefined && onAdjusted ? (
+        <PanelAjusteEjercicio
+          planificationId={planificationId}
+          contentVersion={contentVersion}
+          catalogTabId={tipoSeccion === TipoSeccion.CALENTAMIENTO ? 'calentamiento' : 'vuelta_calma'}
+          progresoAlumno={progresoAlumno}
+          item={item}
+          config={config}
+          cardioTipoSeccion={tipoSeccion}
+          onClose={() => setAjusteAbierto(false)}
+          onApplied={onAdjusted}
+        />
+      ) : null}
     </section>
   );
 }

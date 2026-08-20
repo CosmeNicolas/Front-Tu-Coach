@@ -1,9 +1,14 @@
 import {
+  PlanificationConfig,
   PlanificationItemSingle,
   PlanificationProgress,
   PlanificationSection,
 } from '@/types/planification';
 import { isGroupItem } from '@/lib/planification/section-items';
+import {
+  frecuenciaBloqueFromModo,
+  sesionesDeDiaBase,
+} from '@/lib/planification/asistente-dia';
 
 export function hasAlumnoSessionProgress(
   progreso?: PlanificationProgress | null,
@@ -62,16 +67,43 @@ export function filtrarSesionesAjuste(
   return sesionesValidas.filter((n) => n >= min);
 }
 
+export function itemAfectaSesionCompletada(
+  item: Pick<PlanificationItemSingle, 'diaBase'>,
+  completadas: number[],
+  config: Pick<PlanificationConfig, 'modoProgresion' | 'totalSesiones'>,
+): boolean {
+  if (!completadas.length) return false;
+  const bloques = frecuenciaBloqueFromModo(config.modoProgresion);
+  if (!bloques) {
+    return true;
+  }
+  const dia = item.diaBase ?? 1;
+  const set = new Set(completadas);
+  return sesionesDeDiaBase(dia, config.totalSesiones, bloques).some((n) =>
+    set.has(n),
+  );
+}
+
 export function canInlineEditPlanItem(
   progreso?: PlanificationProgress | null,
+  item?: Pick<PlanificationItemSingle, 'diaBase'>,
+  config?: Pick<PlanificationConfig, 'modoProgresion' | 'totalSesiones'>,
 ): boolean {
-  return !hasAlumnoSessionProgress(progreso);
+  if (!hasAlumnoSessionProgress(progreso)) return true;
+  if (!item || !config) return false;
+  return !itemAfectaSesionCompletada(
+    item,
+    progreso!.completadas ?? [],
+    config,
+  );
 }
 
 export function canRemovePlanItem(
   progreso?: PlanificationProgress | null,
+  item?: Pick<PlanificationItemSingle, 'diaBase'>,
+  config?: Pick<PlanificationConfig, 'modoProgresion' | 'totalSesiones'>,
 ): boolean {
-  return !hasAlumnoSessionProgress(progreso);
+  return canInlineEditPlanItem(progreso, item, config);
 }
 
 function walkSingles(

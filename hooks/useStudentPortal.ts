@@ -1,6 +1,6 @@
 'use client';
 
-import { useMutation, useQuery, useQueryClient } from '@tanstack/react-query';
+import { useMutation, useQueries, useQuery, useQueryClient } from '@tanstack/react-query';
 import {
   completeStudentSession,
   fetchMiPerfil,
@@ -39,6 +39,34 @@ export function useStudentMaterialized(planificationId: string) {
     queryFn: () => fetchStudentMaterialized(planificationId),
     enabled: Boolean(planificationId),
   });
+}
+
+export function useStudentMaterializedBatch(
+  planificationIds: string[],
+  enabled = true,
+) {
+  const queries = useQueries({
+    queries: planificationIds.map((id) => ({
+      queryKey: ['alumno', 'materialized', id],
+      queryFn: () => fetchStudentMaterialized(id),
+      enabled: enabled && Boolean(id),
+    })),
+  });
+
+  const isLoading = queries.some((q) => q.isLoading);
+  const isFetching = queries.some((q) => q.isFetching);
+  const data = queries
+    .map((q, index) =>
+      q.data
+        ? { id: planificationIds[index]!, materialized: q.data }
+        : null,
+    )
+    .filter(
+      (item): item is { id: string; materialized: Awaited<ReturnType<typeof fetchStudentMaterialized>> } =>
+        item !== null,
+    );
+
+  return { data, isLoading, isFetching, queries };
 }
 
 export function useCompleteSession(planificationId: string) {

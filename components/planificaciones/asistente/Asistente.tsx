@@ -271,11 +271,10 @@ export function Asistente({ planification }: { planification: Planification }) {
               El alumno completó{' '}
               <strong>{planification.progresoAlumno.completadas.length}</strong>{' '}
               sesión(es) (última: #
-              {ultimaSesionCompletadaAlumno(planification.progresoAlumno)}). Para
-              cambiar ejercicios usá <strong>⚡ Ajuste desde sesión N</strong>;
-              podés avanzar el corte semana a semana sin modificar lo ya
-              entrenado. La edición ✎ y eliminar 🗑 están bloqueadas. Podés{' '}
-              <strong>reordenar</strong> ejercicios con ⋮⋮; el alumno verá el
+              {ultimaSesionCompletadaAlumno(planification.progresoAlumno)}). En
+              modo bloque podés seguir editando días que todavía no entrenó. Para
+              cambiar días ya hechos usá <strong>⚡ Ajuste desde sesión "X"</strong>.
+              Podés <strong>reordenar</strong> ejercicios con ⋮⋮; el alumno verá el
               nuevo orden al guardar.
             </div>
           ) : null}

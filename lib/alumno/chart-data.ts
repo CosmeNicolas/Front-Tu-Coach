@@ -328,43 +328,149 @@ function withRecordedTrainingTime(points: ChartPoint[]): ChartPoint[] {
   return points.filter((p) => (p.seconds ?? 0) > 0);
 }
 
-/** Tiempo de entrenamiento (min) por cada sesión completada. */
-export function buildTrainingTimePerSession(
+export interface SessionTrainingRow {
+  sessionNum: number;
+  fecha: string;
+  sessionDurationSeconds: number;
+  planTitulo?: string;
+}
+
+function sessionMetricRowToTrainingRow(
+  row: SessionMetricRow,
+  planTitulo?: string,
+): SessionTrainingRow {
+  return {
+    sessionNum: row.sessionNum,
+    fecha: row.fecha,
+    sessionDurationSeconds: row.sessionDurationSeconds,
+    planTitulo,
+  };
+}
+
+/** Filas de sesiones con tiempo registrado, más recientes primero. */
+export function buildSessionTrainingRows(
   progress: StudentProgressExtended,
+  planTitulo?: string,
+): SessionTrainingRow[] {
+  return buildSessionMetricRows(progress)
+    .filter((row) => row.sessionDurationSeconds > 0)
+    .map((row) => sessionMetricRowToTrainingRow(row, planTitulo))
+    .sort((a, b) => b.fecha.localeCompare(a.fecha));
+}
+
+function buildTrainingTimePerSessionFromRows(
+  rows: SessionMetricRow[],
+  labelForRow?: (row: SessionMetricRow) => string,
 ): ChartPoint[] {
   return withRecordedTrainingTime(
-    buildSessionMetricRows(progress)
+    [...rows]
       .sort((a, b) => a.sessionNum - b.sessionNum)
       .map((row) => ({
-        label: `S${row.sessionNum}`,
+        label: labelForRow ? labelForRow(row) : `S${row.sessionNum}`,
         value: Math.round((row.sessionDurationSeconds / 60) * 10) / 10,
         seconds: row.sessionDurationSeconds,
       })),
   );
 }
 
+function buildDailyTrainingMinutesFromRows(rows: SessionMetricRow[]): ChartPoint[] {
+  return withRecordedTrainingTime(
+    bucketMetricByDay(rows, 'sessionDurationSeconds'),
+  );
+}
+
+function buildMonthlyTrainingMinutesFromRows(rows: SessionMetricRow[]): ChartPoint[] {
+  return withRecordedTrainingTime(
+    bucketMetricByMonth(rows, 'sessionDurationSeconds'),
+  );
+}
+
+function buildWeeklyTrainingMinutesFromRows(rows: SessionMetricRow[]): ChartPoint[] {
+  return withRecordedTrainingTime(
+    bucketMetricByWeek(rows, 'sessionDurationSeconds'),
+  );
+}
+
+/** Tiempo de entrenamiento (min) por cada sesión completada. */
+export function buildTrainingTimePerSession(
+  progress: StudentProgressExtended,
+): ChartPoint[] {
+  return buildTrainingTimePerSessionFromRows(buildSessionMetricRows(progress));
+}
+
 export function buildDailyTrainingMinutes(
   progress: StudentProgressExtended,
 ): ChartPoint[] {
-  return withRecordedTrainingTime(
-    bucketMetricByDay(buildSessionMetricRows(progress), 'sessionDurationSeconds'),
-  );
+  return buildDailyTrainingMinutesFromRows(buildSessionMetricRows(progress));
 }
 
 export function buildMonthlyTrainingMinutes(
   progress: StudentProgressExtended,
 ): ChartPoint[] {
-  return withRecordedTrainingTime(
-    bucketMetricByMonth(buildSessionMetricRows(progress), 'sessionDurationSeconds'),
-  );
+  return buildMonthlyTrainingMinutesFromRows(buildSessionMetricRows(progress));
 }
 
 export function buildWeeklyTrainingMinutes(
   progress: StudentProgressExtended,
 ): ChartPoint[] {
-  return withRecordedTrainingTime(
-    bucketMetricByWeek(buildSessionMetricRows(progress), 'sessionDurationSeconds'),
+  return buildWeeklyTrainingMinutesFromRows(buildSessionMetricRows(progress));
+}
+
+function shortPlanLabel(titulo: string, max = 12): string {
+  const t = titulo.trim();
+  if (t.length <= max) return t;
+  return `${t.slice(0, max)}…`;
+}
+
+export interface CombinedTrainingData {
+  trainingPerSession: ChartPoint[];
+  trainingDaily: ChartPoint[];
+  trainingWeekly: ChartPoint[];
+  trainingMonthly: ChartPoint[];
+  sessionRows: SessionTrainingRow[];
+  totalTrainingSeconds: number;
+}
+
+/** Agrega tiempos de entrenamiento de varios planes (vista historial). */
+export function buildCombinedTrainingData(
+  items: Array<{ progress: StudentProgressExtended; planTitulo: string }>,
+): CombinedTrainingData {
+  const enrichedRows = items.flatMap(({ progress, planTitulo }) =>
+    buildSessionMetricRows(progress)
+      .filter((row) => row.sessionDurationSeconds > 0)
+      .map((row) => ({ ...row, planTitulo })),
   );
+
+  const sessionRows = enrichedRows
+    .map((row) => sessionMetricRowToTrainingRow(row, row.planTitulo))
+    .sort((a, b) => b.fecha.localeCompare(a.fecha));
+
+  const perSessionRows = [...enrichedRows]
+    .sort((a, b) => a.fecha.localeCompare(b.fecha))
+    .slice(-14);
+
+  return {
+    trainingPerSession: buildTrainingTimePerSessionFromRows(
+      perSessionRows,
+      (row) => {
+        const planTitulo =
+          'planTitulo' in row
+            ? (row as SessionMetricRow & { planTitulo: string }).planTitulo
+            : '';
+        return planTitulo
+          ? `${shortPlanLabel(planTitulo)} S${row.sessionNum}`
+          : `S${row.sessionNum}`;
+      },
+    ),
+    trainingDaily: buildDailyTrainingMinutesFromRows(enrichedRows),
+    trainingWeekly: buildWeeklyTrainingMinutesFromRows(enrichedRows),
+    trainingMonthly: buildMonthlyTrainingMinutesFromRows(enrichedRows),
+    sessionRows,
+    totalTrainingSeconds: enrichedRows.reduce(
+      (acc, row) => acc + row.sessionDurationSeconds,
+      0,
+    ),
+  };
 }
 
 export function buildMonthlyVolumeKg(

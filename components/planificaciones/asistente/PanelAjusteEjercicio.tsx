@@ -3,12 +3,16 @@
 import { useEffect, useMemo, useState } from 'react';
 import { toast } from 'sonner';
 import { ApiError } from '@/lib/api/client';
+import { OPCIONES_CARDIO } from '@/lib/ejercicios/catalogo-cardio';
+import { resolveGifUrl } from '@/lib/ejercicios/gif-url';
 import {
   PlanificationConfig,
   PlanificationItemSingle,
   PlanificationProgress,
   TipoItem,
+  TipoSeccion,
 } from '@/types/planification';
+import { PLANIFICATION_LIMITS } from '@/types/planification-limits';
 import {
   filtrarSesionesAjuste,
   minFromSessionParaAjuste,
@@ -31,7 +35,8 @@ import {
   AlumnoFeedbackResumen,
   hasAlumnoFeedbackContent,
 } from '@/components/planificaciones/shared/AlumnoFeedbackResumen';
-import { CEMD } from './constants';
+import { CEMD, OPCIONES_INCREMENTO_MIN, OPCIONES_MINUTOS } from './constants';
+import { EjercicioAvatar } from './EjercicioAvatar';
 
 interface Props {
   planificationId: string;
@@ -40,6 +45,8 @@ interface Props {
   progresoAlumno?: PlanificationProgress;
   item: PlanificationItemSingle;
   config: PlanificationConfig;
+  /** Entrada en calor / vuelta a la calma: grilla de cardio en el panel. */
+  cardioTipoSeccion?: TipoSeccion.CALENTAMIENTO | TipoSeccion.VUELTA_CALMA;
   onClose: () => void;
   onApplied: (planification: import('@/types/planification').Planification) => void;
 }
@@ -51,6 +58,7 @@ export function PanelAjusteEjercicio({
   progresoAlumno,
   item,
   config,
+  cardioTipoSeccion,
   onClose,
   onApplied,
 }: Props) {
@@ -98,8 +106,8 @@ export function PanelAjusteEjercicio({
     () =>
       alumnoConProgreso
         ? getLastExerciseAlumnoContext(progresoAlumno, materialized, item, {
-            beforeSession: fromSession,
-          })
+          beforeSession: fromSession,
+        })
         : null,
     [alumnoConProgreso, progresoAlumno, materialized, item, fromSession],
   );
@@ -115,11 +123,32 @@ export function PanelAjusteEjercicio({
 
   const showPreCorteSession = Boolean(
     preCorteFeedback &&
-      hasAlumnoFeedbackContent(preCorteFeedback) &&
-      exerciseContext?.sessionNum !== sesionPreCorte,
+    hasAlumnoFeedbackContent(preCorteFeedback) &&
+    exerciseContext?.sessionNum !== sesionPreCorte,
   );
 
   const showFeedbackPanel = Boolean(exerciseContext || showPreCorteSession);
+
+  const cardioLimits = cardioTipoSeccion
+    ? cardioTipoSeccion === TipoSeccion.CALENTAMIENTO
+      ? PLANIFICATION_LIMITS.calentamiento
+      : PLANIFICATION_LIMITS.vueltaCalma
+    : null;
+
+  function pickCardio(id: string) {
+    const op = OPCIONES_CARDIO.find((o) => o.id === id);
+    if (!op) return;
+    setDraft((d) => ({
+      ...d,
+      ejercicio: op.nombre,
+      gif: op.imagen ? resolveGifUrl(op.imagen) : null,
+    }));
+  }
+
+  const cardioSelId =
+    draft.tipoItem === TipoItem.AEROBICO
+      ? OPCIONES_CARDIO.find((o) => o.nombre === draft.ejercicio)?.id ?? ''
+      : '';
 
   function setParam<K extends keyof PlanificationItemSingle['parametros']>(
     key: K,
@@ -202,7 +231,7 @@ export function PanelAjusteEjercicio({
           <div className="flex items-start justify-between gap-2">
             <div>
               <h3 id="panel-ajuste-title" className={`font-bold ${CEMD.primaryClass}`}>
-                Ajuste desde sesión N
+                Ajuste desde sesión "X"
               </h3>
               <p className="text-xs text-muted-foreground">
                 Las sesiones anteriores no se recalculan. El progreso del alumno no
@@ -307,6 +336,77 @@ export function PanelAjusteEjercicio({
               setParametros={(parametros) => setDraft((d) => ({ ...d, parametros }))}
               setNotas={(n) => setDraft((d) => ({ ...d, notas: n || null }))}
             />
+          ) : cardioTipoSeccion && cardioLimits ? (
+            <div className="space-y-3">
+              <p className="text-sm font-medium text-foreground">
+                Nuevo ejercicio aeróbico (desde sesión {fromSession})
+              </p>
+              <div className="grid grid-cols-2 gap-3 sm:grid-cols-3">
+                <label className="text-sm">
+                  <span className="mb-1 block font-medium">Minutos iniciales</span>
+                  <select
+                    value={draft.parametros.minutos ?? 10}
+                    onChange={(e) => setParam('minutos', Number(e.target.value))}
+                    className="mt-1 w-full rounded border border-input px-2 py-1.5"
+                  >
+                    {OPCIONES_MINUTOS.filter(
+                      (m) => m <= cardioLimits.minutosIniciales.max,
+                    ).map((m) => (
+                      <option key={m} value={m}>
+                        {m} min
+                      </option>
+                    ))}
+                  </select>
+                </label>
+                <label className="text-sm">
+                  <span className="mb-1 block font-medium">Incremento (min)</span>
+                  <select
+                    value={draft.progresion?.incrementoMinutos ?? 0}
+                    onChange={(e) => setProg('incrementoMinutos', Number(e.target.value))}
+                    className="mt-1 w-full rounded border border-input px-2 py-1.5"
+                  >
+                    {OPCIONES_INCREMENTO_MIN.map((m) => (
+                      <option key={m} value={m}>
+                        {m === 0 ? 'Sin incremento' : `+${m} min`}
+                      </option>
+                    ))}
+                  </select>
+                </label>
+              </div>
+              <div className="grid grid-cols-2 gap-3 sm:grid-cols-3">
+                {OPCIONES_CARDIO.map((op) => (
+                  <button
+                    key={op.id}
+                    type="button"
+                    onClick={() => pickCardio(op.id)}
+                    className={
+                      cardioSelId === op.id
+                        ? 'flex flex-col items-center rounded-lg border-2 border-primary bg-primary/10 p-3'
+                        : 'flex flex-col items-center rounded-lg border border-input bg-card p-3 hover:border-primary'
+                    }
+                  >
+                    <EjercicioAvatar
+                      gif={op.imagen}
+                      nombre={op.nombre}
+                      size="md"
+                      roundedFull
+                    />
+                    <span className="mt-1 text-center text-xs font-medium">{op.nombre}</span>
+                  </button>
+                ))}
+              </div>
+              <label className="block text-sm">
+                <span className="font-medium">Comentario para el alumno</span>
+                <textarea
+                  value={draft.notas ?? ''}
+                  onChange={(e) =>
+                    setDraft((d) => ({ ...d, notas: e.target.value || null }))
+                  }
+                  className="mt-1 min-h-[72px] w-full resize-none rounded border border-input px-2 py-1.5 text-sm"
+                  maxLength={220}
+                />
+              </label>
+            </div>
           ) : (
             <label className="block text-sm">
               <span className="font-medium">Ejercicio</span>

@@ -78,7 +78,7 @@ export function CardEjercicioToolbar({
             ✎
           </IconBtn>
           {onAdjust ? (
-            <IconBtn label="Ajuste desde sesión N" onClick={onAdjust} color="primary">
+            <IconBtn label="Ajuste desde sesión " onClick={onAdjust} color="primary">
               ⚡
             </IconBtn>
           ) : null}

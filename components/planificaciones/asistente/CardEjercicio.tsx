@@ -103,26 +103,27 @@ export function CardEjercicio({
   }
 
   const display = editing ? draft : item;
-  const inlineEditBlocked = !canInlineEditPlanItem(progresoAlumno);
-  const removeBlocked = !canRemovePlanItem(progresoAlumno);
+  const inlineEditBlocked = !canInlineEditPlanItem(progresoAlumno, item, config);
+  const removeBlocked = !canRemovePlanItem(progresoAlumno, item, config);
   const alumnoProgreso = hasAlumnoSessionProgress(progresoAlumno);
   const alumnoContext =
     !editing && progresoAlumno
       ? getLastExerciseAlumnoContext(progresoAlumno, materialized, {
-          id: item.id,
-          ejercicio: item.ejercicio,
-        })
+        id: item.id,
+        ejercicio: item.ejercicio,
+      })
       : null;
 
   function startEdit() {
     if (inlineEditBlocked) {
-      toast.error('El alumno ya completó sesiones', {
-        description: 'Usá ⚡ ajuste desde sesión N para cambiar sin alterar lo hecho.',
+      toast.error('Este día ya tiene sesiones completadas', {
+        description:
+          'Usá ⚡ Ajuste desde sesión "X" para cambiar sin alterar lo ya entrenado.',
       });
       return;
     }
     if (item.ajuste) {
-      toast.message('Este ejercicio tiene ajuste desde sesión N', {
+      toast.message('Este ejercicio tiene Ajuste desde sesión "X"', {
         description:
           'Usá ⚡ para sustituir sin afectar sesiones pasadas. La edición ✎ aplica a toda la planilla.',
       });
@@ -133,7 +134,8 @@ export function CardEjercicio({
   function handleRemove() {
     if (removeBlocked) {
       toast.error('No podés eliminar este ejercicio', {
-        description: 'El alumno ya registró sesiones en esta planificación.',
+        description:
+          'El alumno ya registró sesiones de este día. Usá ⚡ Ajuste desde sesión "X".',
       });
       return;
     }

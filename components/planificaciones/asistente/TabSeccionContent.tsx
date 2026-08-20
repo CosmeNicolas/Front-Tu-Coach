@@ -85,7 +85,11 @@ export function TabSeccionContent({
         config={planification.config}
         diaActivo={diaActivo}
         frecuenciaBloque={frecuenciaBloque}
+        progresoAlumno={progresoAlumno}
+        planificationId={planification.id}
+        contentVersion={contentVersion}
         onChange={onUpdateCardio}
+        onAdjusted={onAdjusted}
       />
     );
   }
