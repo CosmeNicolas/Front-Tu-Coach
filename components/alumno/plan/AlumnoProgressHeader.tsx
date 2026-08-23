@@ -19,7 +19,10 @@ export function AlumnoProgressHeader({ plan, metrics }: Props) {
   const [dialogOpen, setDialogOpen] = useState(false);
 
   return (
-    <header className="rounded-2xl border border-border bg-card p-5 shadow-sm sm:p-6">
+    <header
+      data-tour="alumno-plan-header"
+      className="rounded-2xl border border-border bg-card p-5 shadow-sm sm:p-6"
+    >
       <div className="flex flex-wrap items-start justify-between gap-4">
         <div>
           <p className="text-xs font-semibold uppercase tracking-wide text-primary">
@@ -35,7 +38,7 @@ export function AlumnoProgressHeader({ plan, metrics }: Props) {
         </div>
         <div className="flex w-full flex-col gap-2 sm:w-auto sm:items-end">
           {proxima ? (
-            <Button asChild size="lg" className="w-full shrink-0 sm:w-auto">
+            <Button asChild size="lg" className="w-full shrink-0 sm:w-auto" data-tour="alumno-plan-entrenar">
               <Link href={`/alumno/sesiones/${proxima}`}>
                 Entrenar sesión {proxima}
               </Link>

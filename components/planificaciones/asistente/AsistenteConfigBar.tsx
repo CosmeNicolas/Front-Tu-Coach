@@ -159,7 +159,10 @@ export function AsistenteConfigBar({
       </div>
 
       {frecuenciaBloque ? (
-        <div className="rounded-lg border border-border bg-muted/30 px-3 py-3">
+        <div
+          className="rounded-lg border border-border bg-muted/30 px-3 py-3"
+          data-tour="profesor-asistente-dias"
+        >
           <div className="flex flex-wrap items-center justify-between gap-2">
             <div>
               <p className="text-xs font-semibold uppercase tracking-wide text-muted-foreground">

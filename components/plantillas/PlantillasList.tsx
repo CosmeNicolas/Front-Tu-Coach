@@ -93,9 +93,8 @@ export function PlantillasList() {
               : 'Sin plantillas todavía'}
           </p>
           <p className="mt-2 text-sm text-muted-foreground">
-            Creá una plantilla por caso clínico, importá la{' '}
-            <strong>biblioteca base</strong> (lumbar, rodilla, embarazo, etc.) o
-            guardá una planificación de alumno como plantilla.
+            Creá una plantilla por caso clínico o guardá una planificación de
+            alumno como plantilla reutilizable.
           </p>
         </div>
       ) : (

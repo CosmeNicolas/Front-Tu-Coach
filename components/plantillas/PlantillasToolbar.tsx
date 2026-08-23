@@ -1,15 +1,10 @@
 'use client';
 
-import { useState } from 'react';
-import { toast } from 'sonner';
-import { ApiError } from '@/lib/api/client';
 import {
   TEMPLATE_CATEGORY_LABELS,
   TemplateCategory,
 } from '@/lib/plantillas/template-categories';
-import { useSeedTemplatePresets } from '@/hooks/usePlanificationTemplates';
 import { NuevaPlantillaDialog } from './NuevaPlantillaDialog';
-import { Button } from '@/components/ui/button';
 import { Input } from '@/components/ui/input';
 
 interface Props {
@@ -25,40 +20,9 @@ export function PlantillasToolbar({
   onSearchChange,
   onCategoriaChange,
 }: Props) {
-  const seed = useSeedTemplatePresets();
-  const [seeding, setSeeding] = useState(false);
-
-  async function handleSeedPresets() {
-    setSeeding(true);
-    try {
-      const result = await seed.mutateAsync();
-      toast.success('Biblioteca importada', {
-        description: `${result.created} nuevas, ${result.skipped} ya existían.`,
-      });
-    } catch (err) {
-      toast.error('No se pudo importar la biblioteca', {
-        description: err instanceof ApiError ? err.message : undefined,
-      });
-    } finally {
-      setSeeding(false);
-    }
-  }
-
   return (
     <div className="flex flex-col gap-4">
-      <div className="flex flex-wrap items-center gap-2">
-        <NuevaPlantillaDialog />
-        <Button
-          type="button"
-          variant="outline"
-          disabled={seeding || seed.isPending}
-          onClick={() => void handleSeedPresets()}
-        >
-          {seeding || seed.isPending
-            ? 'Importando…'
-            : 'Importar biblioteca base'}
-        </Button>
-      </div>
+      <NuevaPlantillaDialog />
 
       <div className="flex flex-col gap-3 sm:flex-row sm:items-center">
         <Input

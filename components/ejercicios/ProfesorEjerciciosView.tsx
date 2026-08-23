@@ -184,7 +184,7 @@ export function ProfesorEjerciciosView() {
 
   return (
     <div className="grid gap-6 lg:grid-cols-[minmax(0,1fr)_minmax(0,1.2fr)]">
-      <Card>
+      <Card data-tour="profesor-ejercicios-formulario">
         <CardHeader>
           <CardTitle className="text-lg">
             {editingId ? 'Editar ejercicio' : 'Nuevo ejercicio'}
@@ -243,7 +243,7 @@ export function ProfesorEjerciciosView() {
               />
             </div>
 
-            <div className="space-y-2">
+            <div className="space-y-2" data-tour="profesor-ejercicios-media">
               <Label htmlFor="ej-media-url">Link de YouTube o URL manual</Label>
               <Input
                 id="ej-media-url"
@@ -299,7 +299,7 @@ export function ProfesorEjerciciosView() {
               </div>
             ) : null}
 
-            <div className="flex flex-wrap gap-2">
+            <div className="flex flex-wrap gap-2" data-tour="profesor-ejercicios-guardar">
               <Button type="submit" disabled={saving}>
                 {saving ? (
                   <>
@@ -326,7 +326,7 @@ export function ProfesorEjerciciosView() {
       </Card>
 
       <div className="space-y-4">
-        <div className="flex flex-wrap items-end gap-3">
+        <div className="flex flex-wrap items-end gap-3" data-tour="profesor-ejercicios-buscar">
           <div className="min-w-[200px] flex-1 space-y-2">
             <Label htmlFor="ej-search">Buscar en mis ejercicios</Label>
             <Input
@@ -346,14 +346,17 @@ export function ProfesorEjerciciosView() {
             No se pudieron cargar tus ejercicios.
           </p>
         ) : items.length === 0 ? (
-          <Card className="border-dashed">
+          <Card className="border-dashed" data-tour="profesor-ejercicios-lista">
             <CardContent className="py-10 text-center text-sm text-muted-foreground">
               Todavía no creaste ejercicios propios. Subí un GIF, video, link de
               YouTube y usalo en el asistente de planificación.
             </CardContent>
           </Card>
         ) : (
-          <div className="grid gap-3 sm:grid-cols-2">
+          <div
+            className="grid gap-3 sm:grid-cols-2"
+            data-tour="profesor-ejercicios-lista"
+          >
             {items.map((item) => (
               <Card key={item.id}>
                 <CardContent className="flex gap-3 p-3">

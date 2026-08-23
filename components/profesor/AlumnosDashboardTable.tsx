@@ -109,7 +109,10 @@ export function AlumnosDashboardTable({ rows }: { rows: AlumnoDashboardRow[] }) 
   };
 
   return (
-    <section className="rounded-2xl border border-border bg-card p-4 shadow-sm sm:p-5">
+    <section
+      className="rounded-2xl border border-border bg-card p-4 shadow-sm sm:p-5"
+      data-tour="profesor-dashboard-alumnos"
+    >
       <div className="mb-4">
         <h2 className="text-lg font-semibold text-foreground">
           Alumnos registrados

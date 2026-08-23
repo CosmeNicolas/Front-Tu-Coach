@@ -9,7 +9,7 @@ export function AlumnoMensajesView() {
 
   return (
     <div className="mx-auto flex w-full min-w-0 max-w-2xl flex-col gap-4 p-4 sm:p-6">
-      <header>
+      <header data-tour="alumno-mensajes-intro">
         <h1 className="text-2xl font-bold text-foreground">Mensajes</h1>
         <p className="mt-1 text-sm text-muted-foreground">
           Escribile a tu profesor por dudas, feedback o para pedir cambios en
@@ -17,7 +17,9 @@ export function AlumnoMensajesView() {
         </p>
       </header>
 
-      <PushNotificationsCard variant="banner" />
+      <div data-tour="alumno-mensajes-notificaciones">
+        <PushNotificationsCard variant="banner" />
+      </div>
 
       {isLoading ? (
         <div className="h-[420px] animate-pulse rounded-2xl bg-muted" />

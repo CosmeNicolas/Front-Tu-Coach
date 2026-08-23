@@ -68,7 +68,12 @@ export function ChatThreadView({ thread, currentRole, emptyHint }: Props) {
 
   return (
     <div className="flex h-full min-h-[420px] min-w-0 flex-col overflow-hidden rounded-2xl border border-border bg-card">
-      <header className="min-w-0 border-b border-border px-4 py-3">
+      <header
+        className="min-w-0 border-b border-border px-4 py-3"
+        {...(currentRole === 'alumno'
+          ? { 'data-tour': 'alumno-mensajes-chat' }
+          : {})}
+      >
         <p className="text-xs font-semibold uppercase tracking-wide text-muted-foreground">
           Chat
         </p>
@@ -77,7 +82,12 @@ export function ChatThreadView({ thread, currentRole, emptyHint }: Props) {
         </h2>
       </header>
 
-      <div className="min-h-0 min-w-0 flex-1 space-y-3 overflow-x-hidden overflow-y-auto px-4 py-4">
+      <div
+        className="min-h-0 min-w-0 flex-1 space-y-3 overflow-x-hidden overflow-y-auto px-4 py-4"
+        {...(currentRole === 'alumno'
+          ? { 'data-tour': 'alumno-mensajes-historial' }
+          : {})}
+      >
         {thread.messages.length === 0 ? (
           <p className="rounded-xl border border-dashed border-border px-4 py-8 text-center text-sm text-muted-foreground">
             {emptyHint ?? 'Todavía no hay mensajes. Escribí el primero.'}
@@ -125,6 +135,9 @@ export function ChatThreadView({ thread, currentRole, emptyHint }: Props) {
       <form
         onSubmit={(e) => void handleSubmit(e)}
         className="flex min-w-0 gap-2 border-t border-border p-3"
+        {...(currentRole === 'alumno'
+          ? { 'data-tour': 'alumno-mensajes-enviar' }
+          : {})}
       >
         <input
           value={text}

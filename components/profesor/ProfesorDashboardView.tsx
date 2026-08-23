@@ -99,7 +99,7 @@ export function ProfesorDashboardView() {
 
   return (
     <div className="space-y-6 p-4 sm:p-8">
-      <header className="space-y-4">
+      <header className="space-y-4" data-tour="profesor-dashboard-header">
         <div>
           <h1 className="font-display text-2xl tracking-wide text-foreground sm:text-3xl">
             Dashboard Profesor
@@ -109,7 +109,7 @@ export function ProfesorDashboardView() {
           </p>
         </div>
 
-        <div className="flex flex-wrap gap-3">
+        <div className="flex flex-wrap gap-3" data-tour="profesor-dashboard-acciones">
           <Button asChild>
             <Link href="/profesor/alumnos/nuevo">Nuevo alumno</Link>
           </Button>
@@ -131,7 +131,10 @@ export function ProfesorDashboardView() {
         <p className="text-sm text-muted-foreground">Cargando tu resumen…</p>
       ) : (
         <>
-          <section className="grid grid-cols-2 gap-3 sm:grid-cols-3 xl:grid-cols-6">
+          <section
+            className="grid grid-cols-2 gap-3 sm:grid-cols-3 xl:grid-cols-6"
+            data-tour="profesor-dashboard-stats"
+          >
             <StatCard label="Total alumnos" value={stats.totalAlumnos} />
             <StatCard label="Alumnos activos" value={stats.alumnosActivos} />
             <StatCard label="Planes activos" value={stats.planesActivos} />
@@ -152,7 +155,7 @@ export function ProfesorDashboardView() {
 
           <PlanesARenovarPanel plans={plans} alumnoNameById={alumnoNameById} />
 
-          <section className="grid gap-4 lg:grid-cols-2">
+          <section className="grid gap-4 lg:grid-cols-2" data-tour="profesor-dashboard-graficos">
             <ChartCard
               title="Sesiones registradas por fecha"
               empty={!hasSesiones}

@@ -413,7 +413,12 @@ function SeccionPrincipal({
 
       {!ejercicioSel && puedeAgregar && !combo.modoSeleccion ? (
         <div className="space-y-3">
-          <Button type="button" className="w-full sm:w-auto" onClick={() => setMostrarCatalogo((v) => !v)}>
+          <Button
+            type="button"
+            className="w-full sm:w-auto"
+            data-tour="profesor-asistente-buscar"
+            onClick={() => setMostrarCatalogo((v) => !v)}
+          >
             <Search className="size-4" />
             {mostrarCatalogo ? 'Ocultar catálogo' : 'Buscar ejercicios'}
           </Button>

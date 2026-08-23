@@ -1,7 +1,7 @@
+import Image from 'next/image';
 import { Check } from 'lucide-react';
 import { LANDING_CONTAINER } from '@/lib/landing/constants';
 import { ScrollReveal } from '@/components/landing/ScrollReveal';
-import { ScreenshotPlaceholder } from '@/components/landing/ScreenshotPlaceholder';
 
 const CONTENT_POINTS = [
   'Ejercicios personalizados',
@@ -18,13 +18,16 @@ export function ContentSection() {
       <div className={LANDING_CONTAINER}>
         <div className="grid items-center gap-12 lg:grid-cols-2 lg:gap-16">
           <ScrollReveal className="order-2 lg:order-1">
-            {/* Reemplazar con /public/landing/contenido-ejercicios.png */}
-            <ScreenshotPlaceholder
-              label="Captura: planificación"
-              aspectRatio="wide"
-              hint="Vista de ejercicios con videos propios y links externos"
-              className="shadow-[0_24px_80px_rgba(0,0,0,0.4)]"
-            />
+            <div className="overflow-hidden rounded-2xl border border-white/10 bg-[#101010] shadow-[0_24px_80px_rgba(0,0,0,0.4)]">
+              <Image
+                src="/landing/EjerciciosProfePanel.png"
+                alt="Panel de ejercicios del profesor con videos propios y links externos"
+                width={1063}
+                height={627}
+                className="h-auto w-full object-cover object-top"
+                unoptimized
+              />
+            </div>
           </ScrollReveal>
 
           <ScrollReveal delay={0.1} className="order-1 lg:order-2">

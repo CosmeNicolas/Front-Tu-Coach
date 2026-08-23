@@ -45,7 +45,7 @@ export default function SesionesAlumnoPage() {
 
   return (
     <div className="space-y-6 p-4 sm:p-8">
-      <header>
+      <header data-tour="alumno-sesiones-header">
         <Link
           href="/alumno/mi-planificacion"
           className="text-sm text-muted-foreground hover:text-foreground"

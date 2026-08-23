@@ -253,7 +253,7 @@ export function AlumnoMetricasView() {
       {viewingHistorial ? (
         <>
           {aggregateStats ? (
-            <section className="grid grid-cols-2 gap-3">
+            <section className="grid grid-cols-2 gap-3" data-tour="alumno-metricas-resumen">
               <StatCard
                 label="Sesiones totales"
                 value={String(aggregateStats.totalSesiones)}
@@ -382,7 +382,7 @@ export function AlumnoMetricasView() {
 
           {metrics && stats ? (
             <>
-              <section className="grid grid-cols-2 gap-3">
+              <section className="grid grid-cols-2 gap-3" data-tour="alumno-metricas-resumen">
                 <StatCard label="Completadas" value={String(metrics.completadas)} />
                 <StatCard label="Pendientes" value={String(metrics.pendientes)} />
                 <StatCard label="Avance" value={`${metrics.adherenciaPct}%`} />

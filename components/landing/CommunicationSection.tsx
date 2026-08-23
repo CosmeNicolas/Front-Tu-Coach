@@ -18,7 +18,6 @@ export function CommunicationSection() {
         </ScrollReveal>
 
         <ScrollReveal delay={0.1}>
-          {/* Reemplazar composición con capturas reales de chat y sesión */}
           <CommunicationMockup />
         </ScrollReveal>
       </div>

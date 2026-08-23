@@ -51,7 +51,10 @@ export function PlanesARenovarPanel({ plans, alumnoNameById }: Props) {
   }
 
   return (
-    <section className="rounded-2xl border border-border bg-card p-4 shadow-sm sm:p-5">
+    <section
+      className="rounded-2xl border border-border bg-card p-4 shadow-sm sm:p-5"
+      data-tour="profesor-dashboard-renovar"
+    >
       <div className="flex flex-wrap items-end justify-between gap-2">
         <div>
           <h2 className="text-sm font-semibold text-foreground">

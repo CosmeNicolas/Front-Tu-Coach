@@ -42,7 +42,10 @@ export function ProgresoAlumnoPanel({
   });
 
   return (
-    <section className="mt-6 rounded-lg border border-border bg-card p-5">
+    <section
+      data-tour="profesor-progreso-panel"
+      className="mt-6 rounded-lg border border-border bg-card p-5"
+    >
       <h2 className="text-sm font-semibold text-foreground">
         Progreso del alumno (portal)
       </h2>
@@ -65,7 +68,10 @@ export function ProgresoAlumnoPanel({
         ) : null}
       </dl>
 
-      <div className="mt-4 overflow-x-auto rounded-lg border border-border">
+      <div
+        className="mt-4 overflow-x-auto rounded-lg border border-border"
+        data-tour="profesor-progreso-feedback"
+      >
         <table className="w-full min-w-[520px] text-left text-sm">
           <thead>
             <tr className="border-b border-border bg-muted/50 text-xs uppercase tracking-wide text-muted-foreground">

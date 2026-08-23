@@ -24,7 +24,7 @@ export function AlumnoPlanificacionVertical({
   const { progreso, totalSesiones, sesiones } = materialized;
 
   return (
-    <ul className="flex flex-col gap-3">
+    <ul className="flex flex-col gap-3" data-tour="alumno-plan-lista">
       {Array.from({ length: totalSesiones }, (_, i) => i + 1).map((n) => {
         const done = isSessionCompleted(progreso, n);
         const rpe = sessionRpe(progreso, n);

@@ -32,7 +32,10 @@ export function AlumnoSessionTrainingTable({
   }
 
   return (
-    <section className="rounded-2xl border border-border bg-card p-4 shadow-sm">
+    <section
+      data-tour="alumno-metricas-tabla"
+      className="rounded-2xl border border-border bg-card p-4 shadow-sm"
+    >
       <div className="flex flex-wrap items-end justify-between gap-2">
         <div>
           <h2 className="text-sm font-semibold text-foreground">

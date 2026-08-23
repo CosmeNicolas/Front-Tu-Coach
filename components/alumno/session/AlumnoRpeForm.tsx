@@ -60,7 +60,10 @@ export function AlumnoRpeForm({
   }
 
   return (
-    <section className="rounded-xl border border-primary/30 bg-card p-5 shadow-sm">
+    <section
+      data-tour="alumno-session-finalize"
+      className="rounded-xl border border-primary/30 bg-card p-5 shadow-sm"
+    >
       <h2 className="text-sm font-semibold text-foreground">
         Finalizar sesión
       </h2>

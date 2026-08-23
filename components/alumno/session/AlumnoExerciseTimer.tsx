@@ -197,51 +197,53 @@ function TimerPanel({
 }) {
   return (
     <div className={cn(disabled && 'opacity-50')}>
-      <p className="text-[10px] font-semibold uppercase tracking-wide text-muted-foreground">
+      <p className="mb-1.5 text-[10px] font-semibold uppercase tracking-wide text-muted-foreground">
         {label}
       </p>
-      <p className="font-mono text-xl font-bold tabular-nums text-foreground">
-        {display}
-      </p>
-      {hint ? (
-        <p className="text-[10px] text-amber-600 dark:text-amber-400">{hint}</p>
-      ) : null}
-      <div className="mt-2 flex gap-1">
-        {isRunning ? (
-          <Button
-            type="button"
-            size="sm"
-            variant="secondary"
-            className="h-7 px-2"
-            onClick={onPause}
-          >
-            <Pause className="size-3" />
-            Pausar
-          </Button>
-        ) : (
-          <Button
-            type="button"
-            size="sm"
-            className="h-7 px-2"
-            onClick={onStart}
-            disabled={disabled}
-          >
-            <Play className="size-3" />
-            Iniciar
-          </Button>
-        )}
-        {canReset ? (
-          <Button
-            type="button"
-            size="sm"
-            variant="ghost"
-            className="h-7 w-7 p-0"
-            onClick={onReset}
-          >
-            <RotateCcw className="size-3" />
-          </Button>
-        ) : null}
+      <div className="flex items-center justify-between gap-3">
+        <div className="flex shrink-0 items-center gap-1">
+          {isRunning ? (
+            <Button
+              type="button"
+              size="sm"
+              variant="secondary"
+              className="h-7 px-2"
+              onClick={onPause}
+            >
+              <Pause className="size-3" />
+              Pausar
+            </Button>
+          ) : (
+            <Button
+              type="button"
+              size="sm"
+              className="h-7 px-2"
+              onClick={onStart}
+              disabled={disabled}
+            >
+              <Play className="size-3" />
+              Iniciar
+            </Button>
+          )}
+          {canReset ? (
+            <Button
+              type="button"
+              size="sm"
+              variant="ghost"
+              className="h-7 w-7 p-0"
+              onClick={onReset}
+            >
+              <RotateCcw className="size-3" />
+            </Button>
+          ) : null}
+        </div>
+        <p className="shrink-0 font-mono text-lg font-bold tabular-nums text-foreground">
+          {display}
+        </p>
       </div>
+      {hint ? (
+        <p className="mt-1 text-[10px] text-amber-600 dark:text-amber-400">{hint}</p>
+      ) : null}
     </div>
   );
 }

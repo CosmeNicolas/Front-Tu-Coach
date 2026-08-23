@@ -3,7 +3,7 @@ import { ProfesorEjerciciosView } from '@/components/ejercicios/ProfesorEjercici
 export default function EjerciciosPage() {
   return (
     <div className="space-y-6 p-4 sm:p-8">
-      <header>
+      <header data-tour="profesor-ejercicios-intro">
         <h1 className="font-display text-2xl tracking-wide text-foreground">
           Mis ejercicios
         </h1>

@@ -12,6 +12,8 @@ interface Props {
   exerciseStates: ExerciseExecutionState[];
   readOnly: boolean;
   defaultOpen?: boolean;
+  /** Primer ejercicio de la sesión (anclas del tour). */
+  tourExerciseId?: string;
   onToggle: (exerciseId: string, completed: boolean) => void;
   onNote: (exerciseId: string, note: string) => void;
   onWorkTimeChange: (exerciseId: string, seconds: number) => void;
@@ -32,6 +34,7 @@ export function AlumnoBloqueSeccion({
   exerciseStates,
   readOnly,
   defaultOpen = true,
+  tourExerciseId,
   onToggle,
   onNote,
   onWorkTimeChange,
@@ -75,6 +78,7 @@ export function AlumnoBloqueSeccion({
               exercise={ex}
               state={state}
               readOnly={readOnly}
+              showTourAnchors={!readOnly && tourExerciseId === ex.exerciseId}
               isRestBlocked={
                 activeRestExerciseId != null &&
                 activeRestExerciseId !== ex.exerciseId

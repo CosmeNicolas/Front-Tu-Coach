@@ -107,7 +107,7 @@ export function Asistente({ planification }: { planification: Planification }) {
           Anterior
         </Button>
 
-        <div className="min-w-0 flex-1 overflow-x-auto">
+        <div className="min-w-0 flex-1 overflow-x-auto" data-tour="profesor-asistente-tabs">
           <TabsList className="h-auto w-max flex-wrap">
             {WIZARD_TABS.map((tab, index) => {
               const count = countItemsInTab(tab.id);
@@ -224,7 +224,7 @@ export function Asistente({ planification }: { planification: Planification }) {
               >
                 Volver
               </Button>
-              <Button onClick={handleSave} disabled={!dirty || upsert.isPending}>
+              <Button onClick={handleSave} disabled={!dirty || upsert.isPending} data-tour="profesor-asistente-guardar">
                 <Save className="size-4" />
                 {upsert.isPending
                   ? 'Guardando…'
@@ -267,7 +267,10 @@ export function Asistente({ planification }: { planification: Planification }) {
           ) : null}
 
           {alumnoConProgreso ? (
-            <div className="rounded-lg border border-amber-200 bg-amber-50 px-3 py-2 text-sm text-amber-950 dark:border-amber-900/50 dark:bg-amber-950/30 dark:text-amber-100">
+            <div
+              data-tour="profesor-asistente-ajuste"
+              className="rounded-lg border border-amber-200 bg-amber-50 px-3 py-2 text-sm text-amber-950 dark:border-amber-900/50 dark:bg-amber-950/30 dark:text-amber-100"
+            >
               El alumno completó{' '}
               <strong>{planification.progresoAlumno.completadas.length}</strong>{' '}
               sesión(es) (última: #

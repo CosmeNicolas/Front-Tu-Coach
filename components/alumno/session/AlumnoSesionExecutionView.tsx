@@ -200,6 +200,8 @@ export function AlumnoSesionExecutionView({
 
   const prevN = sessionNum > 1 ? sessionNum - 1 : null;
   const nextN = sessionNum < materialized.totalSesiones ? sessionNum + 1 : null;
+  const tourExerciseId =
+    readOnly || allExercises.length === 0 ? undefined : allExercises[0]!.exerciseId;
 
   async function submitSession() {
     const sessionDurationSeconds = sessionTimer.getSnapshot().elapsedSeconds;
@@ -294,6 +296,7 @@ export function AlumnoSesionExecutionView({
       >
         <header
           ref={sessionHeaderRef}
+          data-tour="alumno-session-header"
           className="mx-auto w-full max-w-2xl rounded-xl border border-border bg-card/95 p-4 shadow-sm backdrop-blur-sm"
         >
           <p className="text-xs font-semibold uppercase tracking-wide text-primary">
@@ -344,7 +347,7 @@ export function AlumnoSesionExecutionView({
         style={{ height: sessionHeaderHeight }}
       />
 
-      <div className="space-y-3">
+      <div className="space-y-3" data-tour="alumno-session-ejercicios">
         {blocks.map((block) => (
           <AlumnoBloqueSeccion
             key={`${block.tipoSeccion}-${block.titulo}`}
@@ -352,6 +355,7 @@ export function AlumnoSesionExecutionView({
             exerciseStates={exerciseStates}
             readOnly={readOnly}
             defaultOpen
+            tourExerciseId={tourExerciseId}
             onToggle={handleToggleExercise}
             onNote={handleNoteExercise}
             onWorkTimeChange={handleWorkTimeChange}

@@ -50,7 +50,6 @@ export function CoachesSection() {
           </ScrollReveal>
 
           <ScrollReveal delay={0.12}>
-            {/* Reemplazar DashboardPlaceholder con /public/landing/profesor-dashboard.png */}
             <DashboardPlaceholder />
           </ScrollReveal>
         </div>

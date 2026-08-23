@@ -1,7 +1,7 @@
+import Image from 'next/image';
 import { Check } from 'lucide-react';
 import { LANDING_CONTAINER } from '@/lib/landing/constants';
 import { ScrollReveal } from '@/components/landing/ScrollReveal';
-import { ScreenshotPlaceholder } from '@/components/landing/ScreenshotPlaceholder';
 
 const ASSISTANT_BENEFITS = [
   'Flujo guiado',
@@ -40,13 +40,16 @@ export function PlanningAssistantSection() {
           </ScrollReveal>
 
           <ScrollReveal delay={0.12}>
-            {/* Reemplazar con /public/landing/asistente-planificacion.png */}
-            <ScreenshotPlaceholder
-              label="Captura: asistente de planificación"
-              aspectRatio="wide"
-              hint="Vista del asistente de planificación del profesor"
-              className="shadow-[0_24px_80px_rgba(0,0,0,0.4)]"
-            />
+            <div className="overflow-hidden rounded-3xl border border-white/10 bg-[#0A0A0A] shadow-[0_24px_80px_rgba(0,0,0,0.4)] ring-1 ring-white/10">
+              <Image
+                src="/landing/HerramientaAsistenteLineal.png"
+                alt="Asistente de planificación lineal del profesor en TuCoach"
+                width={630}
+                height={406}
+                className="h-auto w-full rounded-3xl object-cover object-top"
+                unoptimized
+              />
+            </div>
           </ScrollReveal>
         </div>
       </div>

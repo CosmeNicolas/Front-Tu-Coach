@@ -23,6 +23,8 @@ interface Props {
   onRestTimeChange: (seconds: number) => void;
   onRestStart: () => void;
   onRestEnd: () => void;
+  /** Destaca checkbox y timer para la guía de onboarding. */
+  showTourAnchors?: boolean;
 }
 
 export function AlumnoEjercicioCard({
@@ -37,6 +39,7 @@ export function AlumnoEjercicioCard({
   onRestTimeChange,
   onRestStart,
   onRestEnd,
+  showTourAnchors = false,
 }: Props) {
   const parsed = parseExerciseParams(
     exercise.valor,
@@ -90,7 +93,12 @@ export function AlumnoEjercicioCard({
             />
 
             {!readOnly ? (
-              <label className="absolute left-3 top-3 z-10 cursor-pointer">
+              <label
+                className="absolute left-3 top-3 z-10 cursor-pointer"
+                {...(showTourAnchors
+                  ? { 'data-tour': 'alumno-session-ejercicio-marca' }
+                  : {})}
+              >
                 <input
                   type="checkbox"
                   checked={state.completed}
@@ -178,18 +186,24 @@ export function AlumnoEjercicioCard({
             ) : null}
           </div>
 
-          <AlumnoExerciseTimer
-            descansoSeg={descansoSeg ?? 0}
-            savedWorkSeconds={state.exerciseTimeSeconds}
-            savedRestSeconds={state.restTimeSeconds}
-            readOnly={readOnly}
-            isRestBlocked={isRestBlocked}
-            isRestActive={isRestActive}
-            onWorkTimeChange={onWorkTimeChange}
-            onRestTimeChange={onRestTimeChange}
-            onRestStart={onRestStart}
-            onRestEnd={onRestEnd}
-          />
+          <div
+            {...(showTourAnchors
+              ? { 'data-tour': 'alumno-session-ejercicio-timer' }
+              : {})}
+          >
+            <AlumnoExerciseTimer
+              descansoSeg={descansoSeg ?? 0}
+              savedWorkSeconds={state.exerciseTimeSeconds}
+              savedRestSeconds={state.restTimeSeconds}
+              readOnly={readOnly}
+              isRestBlocked={isRestBlocked}
+              isRestActive={isRestActive}
+              onWorkTimeChange={onWorkTimeChange}
+              onRestTimeChange={onRestTimeChange}
+              onRestStart={onRestStart}
+              onRestEnd={onRestEnd}
+            />
+          </div>
 
           {exercise.notas?.trim() ? (
             <p className="mt-3 rounded-md border border-border bg-muted px-2 py-1.5 text-xs text-muted-foreground">

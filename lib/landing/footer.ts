@@ -43,22 +43,8 @@ export type TrustedByEntry =
       imageClassName?: string;
     };
 
-/** Logos en /public/sponsor/ — rutas públicas */
+/** Logos en /public/sponsor/ — orden: izquierda → centro → derecha */
 export const TRUSTED_BY_ENTRIES: TrustedByEntry[] = [
-  { kind: 'placeholder', label: 'Tu gimnasio' },
-  { kind: 'placeholder', label: 'Tu equipo' },
-  {
-    kind: 'logo',
-    // ?v= bump al reemplazar el archivo en public/sponsor/
-    src: '/sponsor/CEMD__Logo.png?v=3',
-    alt: 'CEMD — Centro de Medicina Deportiva',
-    scale: 4.5,
-    unoptimized: true,
-    width: 320,
-    height: 320,
-    imageClassName:
-      'h-11 w-auto max-w-[200px] object-contain object-center opacity-90',
-  },
   {
     kind: 'logo',
     src: '/sponsor/Q_TEAM_LETRAS.png',
@@ -66,8 +52,28 @@ export const TRUSTED_BY_ENTRIES: TrustedByEntry[] = [
     width: 160,
     height: 48,
     imageClassName:
-      'h-10 w-full max-w-[140px] object-contain object-center opacity-80 brightness-0 invert',
+      'h-14 w-full max-w-[240px] object-contain object-center opacity-80 brightness-0 invert sm:h-10 sm:max-w-[160px]',
   },
-  { kind: 'placeholder', label: 'Tu estudio' },
-  { kind: 'placeholder', label: 'Tu academia' },
+  {
+    kind: 'logo',
+    src: '/sponsor/CEMD__Logo.png?v=3',
+    alt: 'CEMD — Centro de Medicina Deportiva',
+    scale: 4.5,
+    unoptimized: true,
+    width: 320,
+    height: 320,
+    imageClassName:
+      'h-14 w-auto max-w-[280px] object-contain object-center opacity-90 sm:h-11 sm:max-w-[200px]',
+  },
+  {
+    kind: 'logo',
+    src: '/sponsor/ATLAS.png?v=3',
+    alt: 'Atlas Suplementos',
+    scale: 4.5,
+    unoptimized: true,
+    width: 320,
+    height: 320,
+    imageClassName:
+      'h-14 w-auto max-w-[280px] object-contain object-center opacity-90 sm:h-11 sm:max-w-[200px]',
+  },
 ];

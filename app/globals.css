@@ -239,3 +239,49 @@ textarea::placeholder {
   background-repeat: no-repeat;
   background-attachment: fixed;
 }
+
+/* Driver.js — guías de onboarding TuCoach */
+.driver-popover.tucoach-driver-popover {
+  background: var(--card);
+  color: var(--foreground);
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  box-shadow: 0 10px 40px rgba(0, 0, 0, 0.15);
+  max-width: min(360px, calc(100vw - 2rem));
+}
+
+.driver-popover.tucoach-driver-popover .driver-popover-title {
+  font-size: 0.9375rem;
+  font-weight: 600;
+  color: var(--foreground);
+}
+
+.driver-popover.tucoach-driver-popover .driver-popover-description {
+  font-size: 0.8125rem;
+  line-height: 1.45;
+  color: var(--muted-foreground);
+}
+
+.driver-popover.tucoach-driver-popover .driver-popover-progress-text {
+  font-size: 0.6875rem;
+  color: var(--muted-foreground);
+}
+
+.driver-popover.tucoach-driver-popover button {
+  border-radius: calc(var(--radius) - 2px);
+  font-size: 0.8125rem;
+  text-shadow: none;
+}
+
+.driver-popover.tucoach-driver-popover .driver-popover-next-btn,
+.driver-popover.tucoach-driver-popover .driver-popover-close-btn-text {
+  background: var(--primary);
+  color: var(--primary-foreground);
+  border: none;
+}
+
+.driver-popover.tucoach-driver-popover .driver-popover-prev-btn {
+  background: var(--muted);
+  color: var(--foreground);
+  border: 1px solid var(--border);
+}
