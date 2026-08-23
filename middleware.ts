@@ -44,7 +44,7 @@ export function middleware(request: NextRequest) {
       const dest = role ? DASHBOARD_BY_ROLE[role] : '/login';
       return NextResponse.redirect(new URL(dest, request.url));
     }
-    return NextResponse.next();
+    return NextResponse.redirect(new URL('/login', request.url));
   }
 
   if (PUBLIC_PATHS.includes(pathname)) {

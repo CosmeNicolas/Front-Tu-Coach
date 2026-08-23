@@ -8,6 +8,7 @@ import { toast } from 'sonner';
 import { loginRequest } from '@/lib/api/auth';
 import { getDashboardPath } from '@/lib/auth/roles';
 import { ApiError } from '@/lib/api/client';
+import { API_BASE_URL } from '@/lib/auth/constants';
 import { REMEMBER_EMAIL_KEY } from '@/lib/auth/constants';
 import { Button } from '@/components/ui/button';
 import { Input } from '@/components/ui/input';
@@ -60,7 +61,9 @@ export function LoginForm() {
         message = error.message;
       } else if (error instanceof TypeError) {
         message =
-          'No se pudo conectar con la API. En producción verificá NEXT_PUBLIC_API_URL en Netlify y CORS_ORIGIN en Vercel.';
+          process.env.NODE_ENV === 'development'
+            ? `No se pudo conectar con la API (${API_BASE_URL}). ¿Está corriendo el backend en el puerto 3002? Entrá desde http://localhost:3000 (si usás :3001 o la IP de la red, actualizá CORS_ORIGIN en tucoach-back/.env y reiniciá el back).`
+            : 'No se pudo conectar con la API. En producción verificá NEXT_PUBLIC_API_URL en Netlify y CORS_ORIGIN en Vercel.';
       }
       toast.error(message);
     } finally {
