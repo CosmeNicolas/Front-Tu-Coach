@@ -35,7 +35,8 @@ export function AlumnoExerciseTimer({
   onRestStart,
   onRestEnd,
 }: Props) {
-  const restDefault = descansoSeg > 0 ? descansoSeg : 60;
+  const showRest = descansoSeg > 0;
+  const restDefault = showRest ? descansoSeg : 60;
   const [mode, setMode] = useState<TimerMode>('work');
   const work = useStopwatch({
     elapsedSeconds: savedWorkSeconds,
@@ -48,8 +49,6 @@ export function AlumnoExerciseTimer({
   onWorkTimeChangeRef.current = onWorkTimeChange;
   onRestTimeChangeRef.current = onRestTimeChange;
 
-  // Sincroniza tiempo de trabajo al padre solo cuando cambian los segundos
-  // (evita loop: no depender del callback inline del padre).
   useEffect(() => {
     onWorkTimeChangeRef.current(work.elapsedSeconds);
   }, [work.elapsedSeconds]);
@@ -94,155 +93,153 @@ export function AlumnoExerciseTimer({
     );
   }
 
+  const isWork = mode === 'work';
+  const display = isWork
+    ? formatDuration(work.elapsedSeconds)
+    : formatDuration(rest.remaining);
+  const isRunning = isWork ? work.isRunning : rest.isRunning;
+  const disabled = !isWork && isRestBlocked && !isRestActive;
+  const canReset = isWork
+    ? work.elapsedSeconds > 0
+    : rest.remaining !== restDefault || rest.isRunning;
+
+  function handleStart() {
+    if (isWork) {
+      work.start();
+    } else {
+      handleRestStart();
+    }
+  }
+
+  function handlePause() {
+    if (isWork) {
+      work.pause();
+      onWorkTimeChangeRef.current(work.getSnapshot().elapsedSeconds);
+    } else {
+      handleRestPause();
+    }
+  }
+
+  function handleReset() {
+    if (isWork) {
+      work.reset();
+      onWorkTimeChangeRef.current(0);
+    } else {
+      rest.reset();
+      onRestEnd();
+    }
+  }
+
   return (
-    <div className="mt-3 rounded-lg border border-border/70 bg-muted/20 p-2.5">
-      <div className="mb-2 flex flex-wrap gap-1">
-        <ModeTab
-          active={mode === 'work'}
-          label="Cronómetro"
-          onClick={() => setMode('work')}
+    <div className="mt-3 rounded-lg border border-border/70 bg-muted/20 px-2 py-2">
+      <div
+        className={cn(
+          'flex items-center gap-1.5 sm:gap-2',
+          disabled && 'opacity-50',
+        )}
+      >
+        <SegmentedMode
+          mode={mode}
+          showRest={showRest}
+          restDefault={restDefault}
+          onWork={() => setMode('work')}
+          onRest={() => setMode('rest')}
         />
-        <ModeTab
-          active={mode === 'rest'}
-          label={`Descanso (${restDefault}s)`}
-          onClick={() => setMode('rest')}
-        />
+
+        <p
+          className="min-w-[3.5rem] flex-1 text-center font-mono text-base font-bold tabular-nums leading-none text-foreground"
+          aria-live="polite"
+          aria-label={`Tiempo: ${display}`}
+        >
+          {display}
+        </p>
+
+        {isRunning ? (
+          <Button
+            type="button"
+            size="sm"
+            variant="secondary"
+            className="h-8 shrink-0 px-2.5 text-xs"
+            onClick={handlePause}
+          >
+            <Pause className="size-3.5" />
+            <span className="hidden min-[380px]:inline">Pausar</span>
+          </Button>
+        ) : (
+          <Button
+            type="button"
+            size="sm"
+            className="h-8 shrink-0 px-2.5 text-xs"
+            onClick={handleStart}
+            disabled={disabled}
+          >
+            <Play className="size-3.5" />
+            Iniciar
+          </Button>
+        )}
+
+        <Button
+          type="button"
+          size="sm"
+          variant="ghost"
+          className="h-8 w-8 shrink-0 p-0"
+          onClick={handleReset}
+          disabled={!canReset}
+          aria-label="Reiniciar cronómetro"
+        >
+          <RotateCcw className="size-3.5" />
+        </Button>
       </div>
 
-      {mode === 'work' ? (
-        <TimerPanel
-          label="Tiempo en ejercicio"
-          display={formatDuration(work.elapsedSeconds)}
-          isRunning={work.isRunning}
-          onStart={work.start}
-          onPause={() => {
-            work.pause();
-            onWorkTimeChangeRef.current(work.getSnapshot().elapsedSeconds);
-          }}
-          onReset={() => {
-            work.reset();
-            onWorkTimeChangeRef.current(0);
-          }}
-          canReset={work.elapsedSeconds > 0}
-        />
-      ) : (
-        <TimerPanel
-          label="Temporizador de descanso"
-          display={formatDuration(rest.remaining)}
-          isRunning={rest.isRunning}
-          onStart={handleRestStart}
-          onPause={handleRestPause}
-          onReset={() => {
-            rest.reset();
-            onRestEnd();
-          }}
-          canReset={rest.remaining !== restDefault || rest.isRunning}
-          disabled={isRestBlocked && !isRestActive}
-          hint={
-            isRestBlocked && !isRestActive
-              ? 'Hay otro descanso en curso'
-              : undefined
-          }
-        />
-      )}
+      {disabled ? (
+        <p className="mt-1 text-center text-[10px] text-amber-600 dark:text-amber-400">
+          Hay otro descanso en curso
+        </p>
+      ) : null}
     </div>
   );
 }
 
-function ModeTab({
-  active,
-  label,
-  onClick,
+function SegmentedMode({
+  mode,
+  showRest,
+  restDefault,
+  onWork,
+  onRest,
 }: {
-  active: boolean;
-  label: string;
-  onClick: () => void;
+  mode: TimerMode;
+  showRest: boolean;
+  restDefault: number;
+  onWork: () => void;
+  onRest: () => void;
 }) {
   return (
-    <button
-      type="button"
-      onClick={onClick}
-      className={cn(
-        'rounded-md px-2 py-1 text-[10px] font-semibold uppercase tracking-wide transition',
-        active
-          ? 'bg-primary text-primary-foreground'
-          : 'bg-muted text-muted-foreground hover:text-foreground',
-      )}
-    >
-      {label}
-    </button>
-  );
-}
-
-function TimerPanel({
-  label,
-  display,
-  isRunning,
-  onStart,
-  onPause,
-  onReset,
-  canReset,
-  disabled,
-  hint,
-}: {
-  label: string;
-  display: string;
-  isRunning: boolean;
-  onStart: () => void;
-  onPause: () => void;
-  onReset: () => void;
-  canReset: boolean;
-  disabled?: boolean;
-  hint?: string;
-}) {
-  return (
-    <div className={cn(disabled && 'opacity-50')}>
-      <p className="mb-1.5 text-[10px] font-semibold uppercase tracking-wide text-muted-foreground">
-        {label}
-      </p>
-      <div className="flex items-center justify-between gap-3">
-        <div className="flex shrink-0 items-center gap-1">
-          {isRunning ? (
-            <Button
-              type="button"
-              size="sm"
-              variant="secondary"
-              className="h-7 px-2"
-              onClick={onPause}
-            >
-              <Pause className="size-3" />
-              Pausar
-            </Button>
-          ) : (
-            <Button
-              type="button"
-              size="sm"
-              className="h-7 px-2"
-              onClick={onStart}
-              disabled={disabled}
-            >
-              <Play className="size-3" />
-              Iniciar
-            </Button>
+    <div className="flex shrink-0 overflow-hidden rounded-md border border-border text-[10px] font-semibold leading-none">
+      <button
+        type="button"
+        onClick={onWork}
+        className={cn(
+          'px-2 py-2 transition',
+          mode === 'work'
+            ? 'bg-primary text-primary-foreground'
+            : 'bg-muted/40 text-muted-foreground hover:text-foreground',
+        )}
+      >
+        Cronó
+      </button>
+      {showRest ? (
+        <button
+          type="button"
+          onClick={onRest}
+          className={cn(
+            'border-l border-border px-2 py-2 transition',
+            mode === 'rest'
+              ? 'bg-primary text-primary-foreground'
+              : 'bg-muted/40 text-muted-foreground hover:text-foreground',
           )}
-          {canReset ? (
-            <Button
-              type="button"
-              size="sm"
-              variant="ghost"
-              className="h-7 w-7 p-0"
-              onClick={onReset}
-            >
-              <RotateCcw className="size-3" />
-            </Button>
-          ) : null}
-        </div>
-        <p className="shrink-0 font-mono text-lg font-bold tabular-nums text-foreground">
-          {display}
-        </p>
-      </div>
-      {hint ? (
-        <p className="mt-1 text-[10px] text-amber-600 dark:text-amber-400">{hint}</p>
+        >
+          Desc {restDefault}s
+        </button>
       ) : null}
     </div>
   );
