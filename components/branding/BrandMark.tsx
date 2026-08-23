@@ -9,6 +9,7 @@ const SIZES = {
 interface BrandMarkProps {
   size?: keyof typeof SIZES;
   showWordmark?: boolean;
+  showLogo?: boolean;
   className?: string;
   priority?: boolean;
 }
@@ -16,28 +17,26 @@ interface BrandMarkProps {
 export function BrandMark({
   size = 'md',
   showWordmark = true,
+  showLogo = true,
   className,
   priority = false,
 }: BrandMarkProps) {
   const { px, text } = SIZES[size];
 
   return (
-    <div className={cn('flex min-w-0 items-center gap-2.5', className)}>
-      <Image
-        src="/branding/ZORRO1.png"
-        alt={showWordmark ? '' : 'TuCoach'}
-        width={px}
-        height={px}
-        className="shrink-0 rounded-full object-cover ring-1 ring-border"
-        priority={priority}
-      />
+    <div className={cn('flex shrink-0 items-center gap-2.5', className)}>
+      {showLogo ? (
+        <Image
+          src="/branding/ZORRO1.png"
+          alt={showWordmark ? '' : 'TuCoach'}
+          width={px}
+          height={px}
+          className="shrink-0 rounded-full object-cover ring-1 ring-border"
+          priority={priority}
+        />
+      ) : null}
       {showWordmark ? (
-        <span
-          className={cn(
-            'truncate font-display tracking-wide text-foreground',
-            text,
-          )}
-        >
+        <span className={cn('font-display tracking-wide text-foreground', text)}>
           TuCoach
         </span>
       ) : null}

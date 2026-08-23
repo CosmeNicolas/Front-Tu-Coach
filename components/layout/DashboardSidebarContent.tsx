@@ -37,9 +37,13 @@ export function DashboardSidebarContent({
     <>
       <div className="space-y-4 border-b border-border px-5 py-6">
         <div className="flex items-start justify-between gap-2">
-          <div className="min-w-0">
+          <div className="shrink-0">
             {title === 'TuCoach' ? (
-              <BrandMark size="md" priority />
+              headerActions ? (
+                <BrandMark size="md" showWordmark={false} priority />
+              ) : (
+                <BrandMark size="md" showLogo={false} priority />
+              )
             ) : (
               <p className="font-display text-2xl tracking-wide text-foreground">
                 {title}
