@@ -44,7 +44,7 @@ export function AlumnoForm({
     e.preventDefault();
     setLoading(true);
     try {
-      await onSubmit(form);
+      await onSubmit(toClientPayload(form));
       toast.success('Alumno guardado');
     } catch (error) {
       toast.error(
@@ -160,6 +160,31 @@ export function AlumnoForm({
       </Button>
     </form>
   );
+}
+
+function toClientPayload(form: CreateClientPayload): CreateClientPayload {
+  const email = form.email?.trim();
+  const telefono = form.telefono?.trim();
+  const dni = form.dni?.trim();
+  const edad = form.datos?.edad;
+  const peso = form.datos?.peso;
+  const altura = form.datos?.altura;
+  return {
+    nombre: form.nombre.trim(),
+    apellido: form.apellido.trim(),
+    email: email || undefined,
+    telefono: telefono || undefined,
+    dni: dni || undefined,
+    datos: {
+      edad: edad && edad > 0 ? edad : undefined,
+      peso: peso && peso > 0 ? peso : undefined,
+      altura: altura && altura > 0 ? altura : undefined,
+      objetivo: form.datos?.objetivo?.trim() || undefined,
+      condicionanteDeCarga:
+        form.datos?.condicionanteDeCarga?.trim() || undefined,
+      sexo: form.datos?.sexo ?? 'no_informado',
+    },
+  };
 }
 
 function Field({

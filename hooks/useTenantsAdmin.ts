@@ -27,6 +27,7 @@ export function useUpdateTenant(id: string) {
       qc.invalidateQueries({ queryKey: ['tenants'] });
       qc.invalidateQueries({ queryKey: ['tenants', id] });
       qc.invalidateQueries({ queryKey: ['gym-admin'] });
+      qc.invalidateQueries({ queryKey: ['gym-admin', 'platform-overview'] });
     },
   });
 }
@@ -35,6 +36,9 @@ export function useSuspendTenant() {
   const qc = useQueryClient();
   return useMutation({
     mutationFn: (id: string) => suspendTenant(id),
-    onSuccess: () => qc.invalidateQueries({ queryKey: ['tenants'] }),
+    onSuccess: () => {
+      qc.invalidateQueries({ queryKey: ['tenants'] });
+      qc.invalidateQueries({ queryKey: ['gym-admin'] });
+    },
   });
 }

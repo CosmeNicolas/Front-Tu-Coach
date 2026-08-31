@@ -4,8 +4,9 @@ import { useEffect, useState } from 'react';
 import { Pencil } from 'lucide-react';
 import { toast } from 'sonner';
 import { ApiError } from '@/lib/api/client';
+import { PLAN_HINTS, PLAN_LABELS, planLabel } from '@/lib/plan/labels';
 import { useUpdateTenant } from '@/hooks/useTenantsAdmin';
-import { TenantStatus } from '@/types/admin';
+import { PlanCodigo, TenantStatus } from '@/types/admin';
 import { TenantSummary } from '@/types/gym-admin';
 import { Button } from '@/components/ui/button';
 import { Input } from '@/components/ui/input';
@@ -25,18 +26,28 @@ interface Props {
   trigger?: React.ReactNode;
 }
 
+const PLANES = Object.values(PlanCodigo);
+
 export function EditarGimnasioDialog({ tenant, trigger }: Props) {
   const update = useUpdateTenant(tenant.id);
   const [open, setOpen] = useState(false);
   const [nombre, setNombre] = useState(tenant.nombre);
   const [slug, setSlug] = useState(tenant.slug);
   const [estado, setEstado] = useState(tenant.estado);
+  const [planCodigo, setPlanCodigo] = useState(
+    tenant.planCodigo ?? PlanCodigo.PREMIUM,
+  );
+  const [overrideAlumnos, setOverrideAlumnos] = useState(
+    tenant.limitesOverride?.alumnos?.toString() ?? '',
+  );
 
   useEffect(() => {
     if (!open) return;
     setNombre(tenant.nombre);
     setSlug(tenant.slug);
     setEstado(tenant.estado);
+    setPlanCodigo(tenant.planCodigo ?? PlanCodigo.PREMIUM);
+    setOverrideAlumnos(tenant.limitesOverride?.alumnos?.toString() ?? '');
   }, [open, tenant]);
 
   async function handleSubmit() {
@@ -46,11 +57,24 @@ export function EditarGimnasioDialog({ tenant, trigger }: Props) {
       return;
     }
 
+    const overrideRaw = overrideAlumnos.trim();
+    let limitesOverride: { alumnos: number } | null = null;
+    if (overrideRaw) {
+      const n = Number(overrideRaw);
+      if (!Number.isInteger(n) || n < 1) {
+        toast.error('El tope custom de alumnos tiene que ser un entero mayor a 0');
+        return;
+      }
+      limitesOverride = { alumnos: n };
+    }
+
     try {
       await update.mutateAsync({
         nombre: trimmed,
         slug: slug.trim(),
         estado: estado as TenantStatus,
+        planCodigo,
+        limitesOverride,
       });
       toast.success('Gimnasio actualizado');
       setOpen(false);
@@ -74,7 +98,12 @@ export function EditarGimnasioDialog({ tenant, trigger }: Props) {
       <DialogContent className="max-w-md">
         <DialogHeader>
           <DialogTitle>Editar gimnasio</DialogTitle>
-          <DialogDescription>{tenant.nombre}</DialogDescription>
+          <DialogDescription>
+            {tenant.nombre}
+            {tenant.planCodigo
+              ? ` · plan actual ${planLabel(tenant.planCodigo)}`
+              : ''}
+          </DialogDescription>
         </DialogHeader>
 
         <div className="space-y-4">
@@ -109,6 +138,39 @@ export function EditarGimnasioDialog({ tenant, trigger }: Props) {
               <option value={TenantStatus.ACTIVE}>Activo</option>
               <option value={TenantStatus.SUSPENDED}>Suspendido</option>
             </select>
+          </div>
+
+          <div className="space-y-2">
+            <Label htmlFor="edit-gym-plan">Plan</Label>
+            <select
+              id="edit-gym-plan"
+              className="w-full rounded-lg border border-input bg-card px-3 py-2 text-sm"
+              value={planCodigo}
+              onChange={(e) => setPlanCodigo(e.target.value as PlanCodigo)}
+            >
+              {PLANES.map((codigo) => (
+                <option key={codigo} value={codigo}>
+                  {PLAN_LABELS[codigo]} — {PLAN_HINTS[codigo]}
+                </option>
+              ))}
+            </select>
+            <p className="text-xs text-muted-foreground">
+              Solo super admin puede cambiar el plan.
+            </p>
+          </div>
+
+          <div className="space-y-2">
+            <Label htmlFor="edit-gym-override">Tope custom de alumnos</Label>
+            <Input
+              id="edit-gym-override"
+              inputMode="numeric"
+              placeholder="Vacío = usar el del plan"
+              value={overrideAlumnos}
+              onChange={(e) => setOverrideAlumnos(e.target.value)}
+            />
+            <p className="text-xs text-muted-foreground">
+              Concierge: si es mayor al plan, ese es el cupo real.
+            </p>
           </div>
         </div>
 

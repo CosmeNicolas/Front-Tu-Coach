@@ -24,6 +24,7 @@ export default function SuperAdminTenantDetailPage({
       <GymDashboardView
         tenantId={tenantId}
         basePath={`/super-admin/tenants/${tenantId}`}
+        canManagePlan
       />
     </div>
   );

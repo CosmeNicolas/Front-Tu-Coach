@@ -6,9 +6,23 @@ import {
   DashboardActivityCharts,
   DashboardStatCard,
 } from '@/components/dashboard/DashboardCharts';
+import { EditarGimnasioDialog } from '@/components/super-admin/EditarGimnasioDialog';
 import { Button } from '@/components/ui/button';
 import { Tabs, TabsContent, TabsList, TabsTrigger } from '@/components/ui/tabs';
-import type { PlatformTenantRow } from '@/types/gym-admin';
+import { formatCupo, planLabel } from '@/lib/plan/labels';
+import type { PlatformTenantRow, TenantSummary } from '@/types/gym-admin';
+
+function rowToTenant(row: PlatformTenantRow): TenantSummary {
+  return {
+    id: row.id,
+    nombre: row.nombre,
+    slug: row.slug,
+    estado: row.estado,
+    planCodigo: row.planCodigo,
+    planComercialId: null,
+    limitesOverride: row.limitesOverride,
+  };
+}
 
 type TabId = 'todos' | 'activos' | 'suspendidos' | 'con-actividad' | 'sin-actividad';
 
@@ -38,14 +52,15 @@ function GimnasiosTable({ rows }: { rows: PlatformTenantRow[] }) {
 
   return (
     <div className="overflow-x-auto rounded-xl border border-border">
-      <table className="min-w-[800px] w-full text-sm">
+      <table className="min-w-[1080px] w-full text-sm">
         <thead className="bg-muted/40 text-left text-muted-foreground">
           <tr>
             <th className="px-4 py-3 font-medium">Gimnasio</th>
+            <th className="px-4 py-3 font-medium">Plan</th>
             <th className="px-4 py-3 font-medium">Estado</th>
-            <th className="px-4 py-3 font-medium text-center">Profesores</th>
-            <th className="px-4 py-3 font-medium text-center">Alumnos</th>
-            <th className="px-4 py-3 font-medium text-center">Planes</th>
+            <th className="px-4 py-3 font-medium text-center">Profes</th>
+            <th className="px-4 py-3 font-medium">Alumnos / cupo</th>
+            <th className="px-4 py-3 font-medium">Planes / cupo</th>
             <th className="px-4 py-3 font-medium">Última actividad</th>
             <th className="px-4 py-3 font-medium">Acción</th>
           </tr>
@@ -57,10 +72,29 @@ function GimnasiosTable({ rows }: { rows: PlatformTenantRow[] }) {
                 <p className="font-medium text-foreground">{g.nombre}</p>
                 <p className="text-xs text-muted-foreground">{g.slug}</p>
               </td>
+              <td className="px-4 py-3 font-medium text-foreground">
+                {planLabel(g.planEfectivo ?? g.planCodigo)}
+              </td>
               <td className="px-4 py-3 capitalize text-foreground">{g.estado}</td>
               <td className="px-4 py-3 text-center font-semibold">{g.profesores}</td>
-              <td className="px-4 py-3 text-center">{g.alumnos}</td>
-              <td className="px-4 py-3 text-center">{g.planificacionesActivas}</td>
+              <td className="px-4 py-3">
+                {g.cupos
+                  ? formatCupo(
+                      g.cupos.uso.alumnos,
+                      g.cupos.limites.alumnos,
+                      g.cupos.disponibles.alumnos,
+                    )
+                  : g.alumnos}
+              </td>
+              <td className="px-4 py-3">
+                {g.cupos
+                  ? formatCupo(
+                      g.cupos.uso.planesActivos,
+                      g.cupos.limites.planesActivos,
+                      g.cupos.disponibles.planesActivos,
+                    )
+                  : g.planificacionesActivas}
+              </td>
               <td className="px-4 py-3">
                 <span
                   className={
@@ -73,12 +107,15 @@ function GimnasiosTable({ rows }: { rows: PlatformTenantRow[] }) {
                 </span>
               </td>
               <td className="px-4 py-3">
-                <Link
-                  href={`/super-admin/tenants/${g.id}`}
-                  className="text-foreground underline-offset-2 hover:underline"
-                >
-                  Ver gimnasio
-                </Link>
+                <div className="flex flex-wrap items-center gap-2">
+                  <Link
+                    href={`/super-admin/tenants/${g.id}`}
+                    className="text-foreground underline-offset-2 hover:underline"
+                  >
+                    Ver
+                  </Link>
+                  <EditarGimnasioDialog tenant={rowToTenant(g)} />
+                </div>
               </td>
             </tr>
           ))}

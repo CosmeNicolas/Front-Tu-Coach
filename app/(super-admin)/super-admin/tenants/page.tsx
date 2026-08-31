@@ -7,6 +7,7 @@ import { useTenants } from '@/hooks/useGymAdmin';
 import { useSuspendTenant } from '@/hooks/useTenantsAdmin';
 import { TenantStatus } from '@/types/admin';
 import { TenantSummary } from '@/types/gym-admin';
+import { planLabel } from '@/lib/plan/labels';
 import { ApiError } from '@/lib/api/client';
 import { NuevoGimnasioDialog } from '@/components/super-admin/NuevoGimnasioDialog';
 import { EditarGimnasioDialog } from '@/components/super-admin/EditarGimnasioDialog';
@@ -136,6 +137,9 @@ export default function SuperAdminTenantsPage() {
                 <p className="text-sm text-muted-foreground">/{t.slug}</p>
               </CardHeader>
               <CardContent className="flex flex-1 flex-col pb-4">
+                <p className="text-sm text-foreground">
+                  Plan {planLabel(t.planCodigo)}
+                </p>
                 <p className="text-xs text-muted-foreground">
                   ID: {t.id.slice(-8)}
                 </p>

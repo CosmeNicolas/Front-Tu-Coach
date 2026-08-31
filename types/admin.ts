@@ -5,16 +5,31 @@ export enum TenantStatus {
   SUSPENDED = 'suspendido',
 }
 
+export enum PlanCodigo {
+  FREE = 'free',
+  TRIAL = 'trial',
+  PREMIUM = 'premium',
+  PRO = 'pro',
+}
+
+export interface LimitesOverride {
+  alumnos?: number;
+  planesActivos?: number;
+}
+
 export interface CreateTenantPayload {
   nombre: string;
   slug?: string;
   estado?: TenantStatus;
+  planCodigo?: PlanCodigo;
 }
 
 export interface UpdateTenantPayload {
   nombre?: string;
   slug?: string;
   estado?: TenantStatus;
+  planCodigo?: PlanCodigo;
+  limitesOverride?: LimitesOverride | null;
 }
 
 export interface ProfesorAdmin {

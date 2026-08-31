@@ -1,9 +1,30 @@
+import type { LimitesOverride, PlanCodigo } from '@/types/admin';
+
+export interface TenantLimits {
+  alumnos: number;
+  planesActivos: number;
+}
+
+export interface TenantCupos {
+  planCodigo: PlanCodigo;
+  planEfectivo: PlanCodigo;
+  limites: TenantLimits;
+  uso: TenantLimits;
+  disponibles: TenantLimits;
+  limitesOverride: LimitesOverride | null;
+}
+
 export interface TenantSummary {
   id: string;
   nombre: string;
   slug: string;
   estado: string;
+  tipo?: string;
+  planCodigo?: PlanCodigo;
+  trialEndsAt?: string | null;
+  planVenceAt?: string | null;
   planComercialId: string | null;
+  limitesOverride?: LimitesOverride | null;
 }
 
 export interface ProfesorSummary {
@@ -47,6 +68,7 @@ export interface GymAdminResumen {
 
 export interface GymAdminDashboard {
   tenant: TenantSummary;
+  cupos?: TenantCupos;
   resumen: GymAdminResumen;
   profesores: ProfesorSummary[];
   alumnos?: GymAlumnoActivity[];
@@ -64,6 +86,10 @@ export interface PlatformTenantRow {
   nombre: string;
   slug: string;
   estado: string;
+  planCodigo?: PlanCodigo;
+  planEfectivo?: PlanCodigo;
+  cupos?: TenantCupos;
+  limitesOverride: LimitesOverride | null;
   profesores: number;
   alumnos: number;
   planificacionesActivas: number;

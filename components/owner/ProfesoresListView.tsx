@@ -3,6 +3,7 @@
 import Link from 'next/link';
 import { ChevronLeft } from 'lucide-react';
 import { useGymDashboard } from '@/hooks/useGymAdmin';
+import { TenantCuposCard } from '@/components/super-admin/TenantCuposCard';
 import { Button } from '@/components/ui/button';
 
 interface Props {
@@ -48,6 +49,13 @@ export function ProfesoresListView({
         </p>
       </header>
 
+      {data.cupos ? (
+        <TenantCuposCard
+          cupos={data.cupos}
+          profesores={data.profesores.length}
+        />
+      ) : null}
+
       <div className="grid gap-4 sm:grid-cols-2 lg:grid-cols-3">
         {data.profesores.map((p) => {
           const href = `${basePath}/profesores/${p.id}`;
@@ -63,7 +71,7 @@ export function ProfesoresListView({
               <p className="mt-1 truncate text-sm text-muted-foreground">
                 {p.email}
               </p>
-              <div className="mt-4 flex gap-4 text-sm">
+              <div className="mt-4 flex flex-wrap gap-4 text-sm">
                 <span>
                   <strong className="text-primary">{p.alumnosCount}</strong>{' '}
                   alumnos
@@ -71,6 +79,11 @@ export function ProfesoresListView({
                 <span>
                   <strong>{p.planificacionesActivas}</strong> planes
                 </span>
+                {data.cupos ? (
+                  <span className="text-muted-foreground">
+                    {data.cupos.disponibles.alumnos} libres en el gym
+                  </span>
+                ) : null}
               </div>
             </Link>
           );

@@ -7,17 +7,21 @@ import {
   DashboardStatCard,
 } from '@/components/dashboard/DashboardCharts';
 import { GymAlumnosActivityTable } from '@/components/owner/GymAlumnosActivityTable';
+import { EditarGimnasioDialog } from '@/components/super-admin/EditarGimnasioDialog';
+import { TenantCuposCard } from '@/components/super-admin/TenantCuposCard';
 import { Button } from '@/components/ui/button';
 import { Tabs, TabsContent, TabsList, TabsTrigger } from '@/components/ui/tabs';
 
 interface Props {
   tenantId?: string;
   basePath?: string;
+  canManagePlan?: boolean;
 }
 
 export function GymDashboardView({
   tenantId,
   basePath = '/owner',
+  canManagePlan = false,
 }: Props) {
   const { data, isLoading, error } = useGymDashboard(tenantId);
 
@@ -58,6 +62,7 @@ export function GymDashboardView({
         </div>
 
         <div className="flex flex-wrap gap-2">
+          {canManagePlan ? <EditarGimnasioDialog tenant={data.tenant} /> : null}
           <Button variant="outline" size="sm" asChild>
             <Link href={profesoresPath}>Profesores</Link>
           </Button>
@@ -69,6 +74,13 @@ export function GymDashboardView({
           </Button>
         </div>
       </header>
+
+      {data.cupos ? (
+        <TenantCuposCard
+          cupos={data.cupos}
+          profesores={data.resumen.totalProfesores}
+        />
+      ) : null}
 
       <section className="grid grid-cols-2 gap-3 sm:grid-cols-3 xl:grid-cols-6">
         <DashboardStatCard
@@ -103,7 +115,11 @@ export function GymDashboardView({
         <div className="border-b border-border px-4 py-4 sm:px-6">
           <h2 className="text-lg font-semibold text-foreground">Profesores</h2>
           <p className="mt-1 text-sm text-muted-foreground">
-            Solo profesores activos de este gimnasio
+            Alumnos de cada profe. Los espacios libres son del gimnasio
+            {data.cupos
+              ? ` (${data.cupos.disponibles.alumnos} libres de ${data.cupos.limites.alumnos})`
+              : ''}
+            .
           </p>
         </div>
 
@@ -147,6 +163,9 @@ export function GymDashboardView({
                             Alumnos
                           </th>
                           <th className="px-4 py-3 font-medium text-center">
+                            Del cupo
+                          </th>
+                          <th className="px-4 py-3 font-medium text-center">
                             Planes
                           </th>
                           <th className="px-4 py-3 font-medium">Acción</th>
@@ -166,6 +185,19 @@ export function GymDashboardView({
                             </td>
                             <td className="px-4 py-3 text-center font-semibold text-foreground">
                               {p.alumnosCount}
+                            </td>
+                            <td className="px-4 py-3 text-center text-muted-foreground">
+                              {data.cupos
+                                ? `${
+                                    data.cupos.limites.alumnos > 0
+                                      ? Math.round(
+                                          (p.alumnosCount /
+                                            data.cupos.limites.alumnos) *
+                                            100,
+                                        )
+                                      : 0
+                                  }%`
+                                : '—'}
                             </td>
                             <td className="px-4 py-3 text-center text-foreground">
                               {p.planificacionesActivas}
