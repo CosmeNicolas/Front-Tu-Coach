@@ -130,7 +130,7 @@ export function HeroSection() {
         <div className="grid items-center gap-12 lg:grid-cols-2 lg:gap-16">
           <ScrollReveal>
             <p className="mb-4 inline-flex rounded-full border border-white/10 bg-white/[0.04] px-3 py-1 text-[11px] font-semibold uppercase tracking-[0.18em] text-[#A3A3A3]">
-            Plataforma para profesionales del entrenamiento, gimnasios y usuarios
+              Plataforma para profesionales del entrenamiento, gimnasios y usuarios
             </p>
 
             <h1 className="font-display text-[clamp(2.25rem,5.5vw,3.75rem)] leading-[1.05] tracking-wide text-white">
