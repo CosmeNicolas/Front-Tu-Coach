@@ -61,11 +61,11 @@ export function RecoverResetForm() {
       <CardHeader className="space-y-4 pb-2">
         <div className="flex items-center justify-center gap-4">
           <Image
-            src="/branding/FondoTransparente.png"
+            src="/branding/LGO600PX.png"
             alt="TuCoach"
-            width={140}
-            height={176}
-            className="h-28 w-auto shrink-0 object-contain sm:h-32"
+            width={112}
+            height={112}
+            className="h-24 w-24 shrink-0 object-contain sm:h-28 sm:w-28"
             priority
           />
           <div className="text-left">
