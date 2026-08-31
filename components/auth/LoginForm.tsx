@@ -184,19 +184,19 @@ export function LoginForm() {
           </Button>
 
           <div className="space-y-1 text-center text-sm text-white/75">
-            <p>
+          {/*   <p>
               <Link href="/registro" className="underline-offset-4 hover:text-white hover:underline">
                 Soy profe — probar 7 días
               </Link>
-            </p>
-            <p>
+            </p> */}
+           {/*  <p>
               <Link
                 href="/registro/entrenar"
                 className="underline-offset-4 hover:text-white hover:underline"
               >
                 Quiero un plan estándar
               </Link>
-            </p>
+            </p> */}
           </div>
         </form>
       </CardContent>
