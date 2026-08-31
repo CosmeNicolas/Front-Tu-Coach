@@ -2,7 +2,7 @@
 
 import { useRouter } from 'next/navigation';
 import { toast } from 'sonner';
-import { logoutClient } from '@/lib/api/auth';
+import { logoutRequest } from '@/lib/api/auth';
 import {
   AlertDialog,
   AlertDialogAction,
@@ -22,9 +22,9 @@ interface Props {
 export function AlumnoLogoutConfirmDialog({ open, onOpenChange }: Props) {
   const router = useRouter();
 
-  function handleConfirm() {
+  async function handleConfirm() {
     onOpenChange(false);
-    logoutClient();
+    await logoutRequest();
     toast.success('Sesión cerrada', {
       description: 'Volvé a ingresar cuando quieras continuar tu entrenamiento.',
     });

@@ -1,15 +1,12 @@
-'use client';
-
 import Link from 'next/link';
-import { use } from 'react';
 import { SuperAdminEjerciciosView } from '@/components/ejercicios/SuperAdminEjerciciosView';
 
-export default function SuperAdminTenantEjerciciosPage({
+export default async function SuperAdminTenantEjerciciosPage({
   params,
 }: {
   params: Promise<{ id: string }>;
 }) {
-  const { id: tenantId } = use(params);
+  const { id: tenantId } = await params;
 
   return (
     <div className="space-y-6 p-4 sm:p-8">

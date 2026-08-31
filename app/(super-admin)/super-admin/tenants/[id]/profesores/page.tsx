@@ -1,18 +1,15 @@
-'use client';
-
 import Link from 'next/link';
-import { use } from 'react';
 import { ChevronLeft } from 'lucide-react';
 import { ProfesoresListView } from '@/components/owner/ProfesoresListView';
 import { NuevoProfesorDialog } from '@/components/super-admin/NuevoProfesorDialog';
 import { Button } from '@/components/ui/button';
 
-export default function SuperAdminTenantProfesoresPage({
+export default async function SuperAdminTenantProfesoresPage({
   params,
 }: {
   params: Promise<{ id: string }>;
 }) {
-  const { id: tenantId } = use(params);
+  const { id: tenantId } = await params;
 
   return (
     <div className="space-y-6 p-4 sm:p-8">

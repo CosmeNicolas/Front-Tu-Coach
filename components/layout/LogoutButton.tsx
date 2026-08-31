@@ -1,7 +1,7 @@
 'use client';
 
 import { useRouter } from 'next/navigation';
-import { logoutClient } from '@/lib/api/auth';
+import { logoutRequest } from '@/lib/api/auth';
 import { cn } from '@/lib/utils/cn';
 
 interface Props {
@@ -11,8 +11,8 @@ interface Props {
 export function LogoutButton({ variant = 'default' }: Props) {
   const router = useRouter();
 
-  function handleLogout() {
-    logoutClient();
+  async function handleLogout() {
+    await logoutRequest();
     router.replace('/login');
   }
 

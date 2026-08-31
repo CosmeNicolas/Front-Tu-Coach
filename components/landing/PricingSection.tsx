@@ -1,6 +1,6 @@
 import { Check } from 'lucide-react';
 import { LANDING_PLANS } from '@/lib/landing/pricing';
-import { LANDING_CONTAINER } from '@/lib/landing/constants';
+import { LANDING_CONTAINER, TRIAL_DAYS } from '@/lib/landing/constants';
 import { SectionHeader } from '@/components/landing/SectionHeader';
 import { LandingButton } from '@/components/landing/LandingButton';
 import { ScrollReveal, StaggerGrid, StaggerItem } from '@/components/landing/ScrollReveal';
@@ -14,6 +14,7 @@ export function PricingSection() {
           <SectionHeader
             label="ELEGÍ TU PLAN"
             title="El plan indicado para cada etapa"
+            description={`El registro de profesor empieza con ${TRIAL_DAYS} días Premium. Si no pagás, quedás en Free: 2 alumnos y 1 planificación activa. Premium y Pro se coordinan por mail: todavía no hay cobro automático.`}
           />
         </ScrollReveal>
 

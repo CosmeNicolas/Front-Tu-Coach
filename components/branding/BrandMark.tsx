@@ -27,11 +27,11 @@ export function BrandMark({
     <div className={cn('flex shrink-0 items-center gap-2.5', className)}>
       {showLogo ? (
         <Image
-          src="/branding/ZORRO1.png"
+          src="/branding/LGO600PX.png"
           alt={showWordmark ? '' : 'TuCoach'}
           width={px}
           height={px}
-          className="shrink-0 rounded-full object-cover ring-1 ring-border"
+          className="shrink-0 object-contain"
           priority={priority}
         />
       ) : null}

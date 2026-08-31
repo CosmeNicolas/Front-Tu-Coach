@@ -8,13 +8,13 @@
   "theme_color": "#171717",
   "icons": [
     {
-      "src": "/branding/ZORRO1.png",
+      "src": "/branding/LGO600PX.png",
       "type": "image/png",
       "sizes": "192x192",
       "purpose": "any"
     },
     {
-      "src": "/branding/ZORRO1.png",
+      "src": "/branding/LGO600PX.png",
       "type": "image/png",
       "sizes": "512x512",
       "purpose": "any maskable"

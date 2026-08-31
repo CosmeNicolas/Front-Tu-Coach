@@ -1,5 +1,5 @@
 /* TuCoach Service Worker — Web Push */
-const CACHE_NAME = 'tucoach-push-v1';
+const CACHE_NAME = 'tucoach-push-v2';
 
 self.addEventListener('install', () => {
   self.skipWaiting();
@@ -21,8 +21,8 @@ self.addEventListener('push', (event) => {
   let data = {
     title: 'TuCoach',
     body: 'Tenés una nueva notificación',
-    icon: '/branding/ZORRO1.png',
-    badge: '/branding/ZORRO1.png',
+    icon: '/branding/LGO600PX.png',
+    badge: '/branding/LGO600PX.png',
     tag: 'tucoach',
     data: { url: '/' },
   };
@@ -42,8 +42,8 @@ self.addEventListener('push', (event) => {
   event.waitUntil(
     self.registration.showNotification(data.title || 'TuCoach', {
       body: data.body,
-      icon: data.icon || '/branding/ZORRO1.png',
-      badge: data.badge || '/branding/ZORRO1.png',
+      icon: data.icon || '/branding/LGO600PX.png',
+      badge: data.badge || '/branding/LGO600PX.png',
       tag: data.tag || 'tucoach',
       data: data.data || { url: '/' },
       requireInteraction: false,

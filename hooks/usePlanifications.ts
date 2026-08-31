@@ -91,7 +91,8 @@ export function useUpdatePlanification(id: string) {
   return useMutation({
     mutationFn: (payload: UpdatePlanificationPayload) =>
       updatePlanification(id, payload),
-    onSuccess: () => {
+    onSuccess: (data) => {
+      qc.setQueryData(['planifications', 'detail', id], data);
       qc.invalidateQueries({ queryKey: ['planifications'] });
       qc.invalidateQueries({ queryKey: ['planifications', 'detail', id] });
       qc.invalidateQueries({ queryKey: ['planifications', 'materialized', id] });

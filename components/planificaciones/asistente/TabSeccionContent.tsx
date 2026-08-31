@@ -157,10 +157,21 @@ function SeccionPrincipal({
     return seccion.items.findIndex((it) => it.id === id);
   }
 
+  function stampDia(
+    item: PlanificationItemSingle,
+  ): PlanificationItemSingle {
+    if (!frecuenciaBloque) return item;
+    const dia = Number(item.diaBase);
+    if (Number.isFinite(dia) && dia >= 1 && dia <= frecuenciaBloque) {
+      return item;
+    }
+    return { ...item, diaBase: diaActivo };
+  }
+
   function updateSingleAt(idx: number, item: PlanificationItemSingle) {
     onUpdateSeccion(seccion.titulo, (s) => ({
       ...s,
-      items: s.items.map((it, i) => (i === idx ? item : it)),
+      items: s.items.map((it, i) => (i === idx ? stampDia(item) : it)),
     }));
   }
 
@@ -174,7 +185,7 @@ function SeccionPrincipal({
   function addItem(item: PlanificationItemSingle) {
     onUpdateSeccion(seccion.titulo, (s) => ({
       ...s,
-      items: [...s.items, item],
+      items: [...s.items, stampDia(item)],
     }));
     setEjercicioSel(null);
   }

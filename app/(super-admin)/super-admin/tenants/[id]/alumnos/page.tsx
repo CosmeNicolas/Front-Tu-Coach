@@ -1,15 +1,12 @@
-'use client';
-
 import Link from 'next/link';
-import { use } from 'react';
 import { OwnerAlumnosView } from '@/components/owner/OwnerAlumnosView';
 
-export default function SuperAdminAlumnosPage({
+export default async function SuperAdminAlumnosPage({
   params,
 }: {
   params: Promise<{ id: string }>;
 }) {
-  const { id: tenantId } = use(params);
+  const { id: tenantId } = await params;
 
   return (
     <div className="space-y-4 p-4 sm:p-8">

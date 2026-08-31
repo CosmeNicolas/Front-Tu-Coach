@@ -20,3 +20,9 @@ export const PREMIUM_PRICE_LABEL = 'Consultar';
 export const PRO_PRICE_LABEL = 'Consultar';
 
 export const LOGIN_ROUTE = '/login';
+export const REGISTRO_ROUTE = '/registro';
+export const CONTACT_EMAIL = 'apptucoach@gmail.com';
+export const CONTACT_MAILTO = `mailto:${CONTACT_EMAIL}`;
+
+/** Debe coincidir con TRIAL_DAYS del backend. */
+export const TRIAL_DAYS = 7;

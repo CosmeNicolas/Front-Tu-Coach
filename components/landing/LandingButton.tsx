@@ -32,7 +32,7 @@ export function LandingButton({
     className,
   );
 
-  if (external || href.startsWith('http')) {
+  if (external || href.startsWith('http') || href.startsWith('mailto:')) {
     return (
       <a href={href} className={classes} target="_blank" rel="noopener noreferrer">
         {children}

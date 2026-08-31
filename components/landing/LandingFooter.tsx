@@ -1,7 +1,13 @@
 import Image from 'next/image';
 import Link from 'next/link';
 import { LANDING_FOOTER_GROUPS } from '@/lib/landing/footer';
-import { LOGIN_ROUTE, LANDING_CONTAINER } from '@/lib/landing/constants';
+import {
+  CONTACT_EMAIL,
+  CONTACT_MAILTO,
+  LANDING_CONTAINER,
+  LOGIN_ROUTE,
+  REGISTRO_ROUTE,
+} from '@/lib/landing/constants';
 
 export function LandingFooter() {
   const year = new Date().getFullYear();
@@ -11,13 +17,13 @@ export function LandingFooter() {
       <div className={LANDING_CONTAINER}>
         <div className="grid gap-10 lg:grid-cols-[1.4fr_repeat(3,1fr)]">
           <div>
-            <Link href="#inicio" className="inline-flex items-center gap-2.5">
+            <Link href="/#inicio" className="inline-flex items-center gap-2.5">
               <Image
-                src="/branding/ZORRO1.png"
+                src="/branding/LGO600PX.png"
                 alt=""
                 width={36}
                 height={36}
-                className="rounded-full"
+                className="object-contain"
               />
               <span className="font-display text-xl tracking-wider text-white">TuCoach</span>
             </Link>
@@ -25,6 +31,12 @@ export function LandingFooter() {
               Plataforma para crear, asignar y gestionar planificaciones de entrenamiento,
               acompañar alumnos y analizar su progreso.
             </p>
+            <a
+              href={CONTACT_MAILTO}
+              className="mt-3 inline-block text-sm text-[#A3A3A3] transition-colors hover:text-white"
+            >
+              {CONTACT_EMAIL}
+            </a>
           </div>
 
           {LANDING_FOOTER_GROUPS.map((group) => (
@@ -33,12 +45,21 @@ export function LandingFooter() {
               <ul className="mt-4 space-y-2.5">
                 {group.links.map((link) => (
                   <li key={link.label}>
-                    <a
-                      href={link.href}
-                      className="text-sm text-[#737373] transition-colors hover:text-[#A3A3A3]"
-                    >
-                      {link.label}
-                    </a>
+                    {link.href.startsWith('/') && !link.href.startsWith('/#') ? (
+                      <Link
+                        href={link.href}
+                        className="text-sm text-[#737373] transition-colors hover:text-[#A3A3A3]"
+                      >
+                        {link.label}
+                      </Link>
+                    ) : (
+                      <a
+                        href={link.href}
+                        className="text-sm text-[#737373] transition-colors hover:text-[#A3A3A3]"
+                      >
+                        {link.label}
+                      </a>
+                    )}
                   </li>
                 ))}
               </ul>
@@ -54,12 +75,15 @@ export function LandingFooter() {
             <Link href={LOGIN_ROUTE} className="text-[#737373] hover:text-[#A3A3A3]">
               Iniciar sesión
             </Link>
-            <a href="#planes" className="text-[#737373] hover:text-[#A3A3A3]">
-              Planes
-            </a>
-            <a href="#contacto" className="text-[#737373] hover:text-[#A3A3A3]">
-              Contacto
-            </a>
+            <Link href={REGISTRO_ROUTE} className="text-[#737373] hover:text-[#A3A3A3]">
+              Crear cuenta
+            </Link>
+            <Link href="/terminos" className="text-[#737373] hover:text-[#A3A3A3]">
+              Términos
+            </Link>
+            <Link href="/privacidad" className="text-[#737373] hover:text-[#A3A3A3]">
+              Privacidad
+            </Link>
           </div>
         </div>
       </div>

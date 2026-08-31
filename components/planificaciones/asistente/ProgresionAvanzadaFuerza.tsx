@@ -3,6 +3,7 @@
 import { useState } from 'react';
 import { ParametrosItem } from '@/types/planification';
 import { PLANIFICATION_LIMITS } from '@/types/planification-limits';
+import { NumericCampo } from './NumericCampo';
 
 interface Props {
   parametros: ParametrosItem;
@@ -42,7 +43,7 @@ export function ProgresionAvanzadaFuerza({ parametros, onChange }: Props) {
           </p>
           <div className="grid grid-cols-2 gap-2 sm:grid-cols-4">
             <Info label="Series mín." value={seriesMin} />
-            <Campo
+            <NumericCampo
               label="Series máx."
               value={parametros.seriesMax}
               min={seriesMin}
@@ -50,7 +51,7 @@ export function ProgresionAvanzadaFuerza({ parametros, onChange }: Props) {
               onChange={(v) => setMax('seriesMax', v)}
             />
             <Info label="Reps mín." value={repsMin} />
-            <Campo
+            <NumericCampo
               label="Reps máx."
               value={parametros.repsMax}
               min={repsMin}
@@ -75,30 +76,3 @@ function Info({ label, value }: { label: string; value: number }) {
   );
 }
 
-function Campo({
-  label,
-  value,
-  min,
-  max,
-  onChange,
-}: {
-  label: string;
-  value?: number;
-  min: number;
-  max: number;
-  onChange: (v: number) => void;
-}) {
-  return (
-    <label className="text-xs">
-      <span className="font-medium text-foreground">{label}</span>
-      <input
-        type="number"
-        min={min}
-        max={max}
-        value={value ?? ''}
-        onChange={(e) => onChange(Number(e.target.value) || min)}
-        className="mt-0.5 w-full rounded border border-primary/30 bg-card px-1.5 py-1.5"
-      />
-    </label>
-  );
-}

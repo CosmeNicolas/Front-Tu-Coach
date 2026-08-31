@@ -1,5 +1,5 @@
 import { Building2, Check, Users } from 'lucide-react';
-import { LANDING_CONTAINER } from '@/lib/landing/constants';
+import { CONTACT_MAILTO, LANDING_CONTAINER } from '@/lib/landing/constants';
 import { LandingButton } from '@/components/landing/LandingButton';
 import { ScrollReveal } from '@/components/landing/ScrollReveal';
 
@@ -38,8 +38,8 @@ export function GymsSection() {
                 ))}
               </ul>
               <div className="mt-8">
-                <LandingButton href="#contacto" variant="primary">
-                  Contactar para gimnasios
+                <LandingButton href={CONTACT_MAILTO} variant="primary">
+                  Escribirnos para gimnasios
                 </LandingButton>
               </div>
             </ScrollReveal>

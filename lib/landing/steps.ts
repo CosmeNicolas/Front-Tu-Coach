@@ -8,7 +8,7 @@ export const LANDING_STEPS: LandingStep[] = [
   {
     number: '01',
     title: 'Creá tu cuenta',
-    description: 'Configurá tu perfil y comenzá a trabajar.',
+    description: 'Registrate como profe. Empezás con 7 días Premium.',
   },
   {
     number: '02',

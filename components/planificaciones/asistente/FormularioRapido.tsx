@@ -16,6 +16,7 @@ import { EjercicioMediaPreview } from '@/components/ejercicios/EjercicioMediaPre
 import { inferMediaType } from '@/lib/ejercicios/media-type';
 import { EjercicioCatalogo } from '@/lib/ejercicios/catalogo';
 import { ProgresionAvanzadaFuerza } from './ProgresionAvanzadaFuerza';
+import { NumericCampo } from './NumericCampo';
 import {
   ajustarRangosTrasCambioMin,
   rangosProgresionDefecto,
@@ -198,17 +199,17 @@ export function FormularioRapido({
             ))}
           </div>
           <div className="grid grid-cols-3 gap-2 sm:grid-cols-6">
-            <Campo label="Series" value={draft.parametros.series} min={f.series.min} max={f.series.max}
+            <NumericCampo label="Series" value={draft.parametros.series} min={f.series.min} max={f.series.max}
               onChange={(v) => setDraft({ ...draft, parametros: ajustarRangosTrasCambioMin(draft.parametros, 'series', v) })} />
-            <Campo label="Reps" value={draft.parametros.reps} min={f.reps.min} max={f.reps.max}
+            <NumericCampo label="Reps" value={draft.parametros.reps} min={f.reps.min} max={f.reps.max}
               onChange={(v) => setDraft({ ...draft, parametros: ajustarRangosTrasCambioMin(draft.parametros, 'reps', v) })} />
-            <Campo label="Peso (kg)" value={draft.parametros.peso} min={f.peso.min} max={f.peso.max} step={0.5}
+            <NumericCampo label="Peso (kg)" value={draft.parametros.peso} min={f.peso.min} max={f.peso.max} step={0.5}
               onChange={(v) => setDraft({ ...draft, parametros: { ...draft.parametros, peso: v } })} />
-            <Campo label="Inc. peso" value={draft.progresion?.incrementoPeso} min={0} max={f.incrementoPeso.max} step={0.5}
+            <NumericCampo label="Inc. peso" value={draft.progresion?.incrementoPeso} min={0} max={f.incrementoPeso.max} step={0.5}
               onChange={(v) => setDraft({ ...draft, progresion: { ...draft.progresion, incrementoPeso: v } })} />
-            <Campo label="Inc. reps" value={draft.progresion?.incrementoReps} min={0} max={f.incrementoReps.max}
+            <NumericCampo label="Inc. reps" value={draft.progresion?.incrementoReps} min={0} max={f.incrementoReps.max}
               onChange={(v) => setDraft({ ...draft, progresion: { ...draft.progresion, incrementoReps: v } })} />
-            <Campo label="Descanso" value={draft.parametros.descanso} min={0} max={600}
+            <NumericCampo label="Descanso" value={draft.parametros.descanso} min={0} max={600}
               onChange={(v) => setDraft({ ...draft, parametros: { ...draft.parametros, descanso: v } })} />
           </div>
           <ProgresionAvanzadaFuerza
@@ -220,11 +221,11 @@ export function FormularioRapido({
 
       {tipo === TipoItem.ISOMETRICO ? (
         <div className="grid grid-cols-3 gap-2">
-          <Campo label="Series" value={draft.parametros.series} min={1} max={10}
+          <NumericCampo label="Series" value={draft.parametros.series} min={1} max={10}
             onChange={(v) => setDraft({ ...draft, parametros: { ...draft.parametros, series: v } })} />
-          <Campo label="Segundos" value={draft.parametros.segundos} min={5} max={120}
+          <NumericCampo label="Segundos" value={draft.parametros.segundos} min={5} max={120}
             onChange={(v) => setDraft({ ...draft, parametros: { ...draft.parametros, segundos: v } })} />
-          <Campo label="Inc. seg" value={draft.progresion?.incrementoSegundos} min={0} max={30}
+          <NumericCampo label="Inc. seg" value={draft.progresion?.incrementoSegundos} min={0} max={30}
             onChange={(v) => setDraft({ ...draft, progresion: { ...draft.progresion, incrementoSegundos: v } })} />
         </div>
       ) : null}
@@ -261,33 +262,3 @@ export function FormularioRapido({
   );
 }
 
-function Campo({
-  label,
-  value,
-  onChange,
-  min,
-  max,
-  step,
-}: {
-  label: string;
-  value?: number;
-  onChange: (v: number) => void;
-  min: number;
-  max: number;
-  step?: number;
-}) {
-  return (
-    <label className="text-xs">
-      <span className="font-medium text-foreground">{label}</span>
-      <input
-        type="number"
-        min={min}
-        max={max}
-        step={step ?? 1}
-        value={value ?? ''}
-        onChange={(e) => onChange(Number(e.target.value) || 0)}
-        className="mt-0.5 w-full rounded border border-primary/30 bg-card px-1.5 py-1.5"
-      />
-    </label>
-  );
-}

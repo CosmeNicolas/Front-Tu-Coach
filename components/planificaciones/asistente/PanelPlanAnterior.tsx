@@ -15,6 +15,7 @@ import {
   TipoSeccion,
 } from '@/types/planification';
 import { mergeImportedItemsIntoSection } from '@/lib/planification/merge-baseline-import';
+import { remapItemsDiaBaseForMode } from '@/lib/planification/remap-dia-base';
 import { isGroupItem, isSingleItem } from '@/lib/planification/section-items';
 import {
   aplicarSugerenciaConservandoCarga,
@@ -176,7 +177,10 @@ export function PanelPlanAnterior({
     items: PlanificationSectionItem[],
     label: string,
   ) {
-    const result = mergeImportedItemsIntoSection(target, items);
+    const result = mergeImportedItemsIntoSection(
+      target,
+      remapItemsDiaBaseForMode(items, planification.config.modoProgresion),
+    );
     if (
       target.tipoSeccion === TipoSeccion.CALENTAMIENTO ||
       target.tipoSeccion === TipoSeccion.VUELTA_CALMA

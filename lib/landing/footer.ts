@@ -7,24 +7,24 @@ export const LANDING_FOOTER_GROUPS: FooterLinkGroup[] = [
   {
     title: 'Producto',
     links: [
-      { label: 'Funciones', href: '#funciones' },
-      { label: 'Planes', href: '#planes' },
-      { label: 'Para entrenadores', href: '#entrenadores' },
-      { label: 'Para gimnasios', href: '#gimnasios' },
+      { label: 'Funciones', href: '/#funciones' },
+      { label: 'Planes', href: '/#planes' },
+      { label: 'Para entrenadores', href: '/#entrenadores' },
+      { label: 'Para gimnasios', href: '/#gimnasios' },
     ],
   },
   {
     title: 'Recursos',
     links: [
-      { label: 'Preguntas frecuentes', href: '#contacto' },
-      { label: 'Contacto', href: '#contacto' },
+      { label: 'Crear cuenta', href: '/registro' },
+      { label: 'Contacto', href: 'mailto:hola@tucoach.pro' },
     ],
   },
   {
     title: 'Legal',
     links: [
-      { label: 'Términos y condiciones', href: '#contacto' },
-      { label: 'Política de privacidad', href: '#contacto' },
+      { label: 'Términos y condiciones', href: '/terminos' },
+      { label: 'Política de privacidad', href: '/privacidad' },
     ],
   },
 ];

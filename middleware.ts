@@ -3,7 +3,15 @@ import type { NextRequest } from 'next/server';
 import { TOKEN_COOKIE_NAME } from '@/lib/auth/constants';
 import { Role } from '@/types/auth';
 
-const PUBLIC_PATHS = ['/login'];
+const PUBLIC_PATHS = [
+  '/login',
+  '/registro',
+  '/registro/entrenar',
+  '/recuperar',
+  '/recuperar/nueva',
+  '/terminos',
+  '/privacidad',
+];
 const PROTECTED_PREFIXES = [
   '/super-admin',
   '/owner',
@@ -17,10 +25,6 @@ const DASHBOARD_BY_ROLE: Record<Role, string> = {
   [Role.PROFESOR]: '/profesor/dashboard',
   [Role.ALUMNO]: '/alumno/mi-planificacion',
 };
-
-function hasToken(request: NextRequest): boolean {
-  return Boolean(request.cookies.get(TOKEN_COOKIE_NAME)?.value);
-}
 
 function getRoleFromToken(token: string): Role | null {
   try {
@@ -68,6 +72,12 @@ export const config = {
   matcher: [
     '/',
     '/login',
+    '/registro',
+    '/registro/entrenar',
+    '/recuperar',
+    '/recuperar/:path*',
+    '/terminos',
+    '/privacidad',
     '/super-admin/:path*',
     '/owner/:path*',
     '/profesor/:path*',

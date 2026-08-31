@@ -1,5 +1,5 @@
 import Image from 'next/image';
-import { LOGIN_ROUTE, LANDING_CONTAINER } from '@/lib/landing/constants';
+import { LANDING_CONTAINER, REGISTRO_ROUTE, TRIAL_DAYS } from '@/lib/landing/constants';
 import { LandingButton } from '@/components/landing/LandingButton';
 import { ScrollReveal } from '@/components/landing/ScrollReveal';
 
@@ -20,11 +20,11 @@ export function FinalCTA() {
               </h2>
               <p className="mt-4 text-base leading-relaxed text-[#A3A3A3] sm:text-lg">
                 Sumate a TuCoach y llevá tus planificaciones, alumnos y resultados a un
-                solo lugar.
+                solo lugar. {TRIAL_DAYS} días Premium; si no pagás, quedás en Free.
               </p>
               <div className="mt-8 flex justify-center">
-                <LandingButton href={LOGIN_ROUTE} variant="primary" className="px-8">
-                  Comenzar gratis ahora
+                <LandingButton href={REGISTRO_ROUTE} variant="primary" className="px-8">
+                  {`Probar ${TRIAL_DAYS} días`}
                 </LandingButton>
               </div>
 
@@ -33,7 +33,7 @@ export function FinalCTA() {
                   {[1, 2, 3].map((i) => (
                     <Image
                       key={i}
-                      src="/branding/ZORRO1.png"
+                      src="/branding/LGO600PX.png"
                       alt=""
                       width={32}
                       height={32}

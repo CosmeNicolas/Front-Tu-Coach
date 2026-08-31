@@ -2,6 +2,7 @@
 
 import { useEffect, useState } from 'react';
 import Image from 'next/image';
+import Link from 'next/link';
 import { useRouter, useSearchParams } from 'next/navigation';
 import { Eye, EyeOff, Loader2 } from 'lucide-react';
 import { toast } from 'sonner';
@@ -81,14 +82,14 @@ export function LoginForm() {
       <CardHeader className="space-y-4 pb-2">
         <div className="flex items-center justify-center gap-4">
           <Image
-            src="/branding/ZORRO1.png"
+            src="/branding/LGO600PX.png"
             alt="TuCoach"
             width={112}
             height={112}
             className="h-24 w-24 shrink-0 object-contain sm:h-28 sm:w-28"
             priority
           />
-          <div className="text-left">
+          <div className="">
             <p className="font-display text-sm tracking-wider  text-white sm:text-base">
               TUCOACH
             </p>
@@ -148,6 +149,15 @@ export function LoginForm() {
             </div>
           </div>
 
+          <p className="text-right text-sm">
+            <Link
+              href="/recuperar"
+              className="text-white/75 underline-offset-4 hover:text-white hover:underline"
+            >
+              ¿Olvidaste tu contraseña?
+            </Link>
+          </p>
+
           <label className="flex cursor-pointer items-center gap-2.5 text-sm text-white/80">
             <input
               type="checkbox"
@@ -172,6 +182,22 @@ export function LoginForm() {
               'Ingresar'
             )}
           </Button>
+
+          <div className="space-y-1 text-center text-sm text-white/75">
+            <p>
+              <Link href="/registro" className="underline-offset-4 hover:text-white hover:underline">
+                Soy profe — probar 7 días
+              </Link>
+            </p>
+            <p>
+              <Link
+                href="/registro/entrenar"
+                className="underline-offset-4 hover:text-white hover:underline"
+              >
+                Quiero un plan estándar
+              </Link>
+            </p>
+          </div>
         </form>
       </CardContent>
     </Card>

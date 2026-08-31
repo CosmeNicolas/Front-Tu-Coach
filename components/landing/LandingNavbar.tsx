@@ -6,7 +6,12 @@ import Link from 'next/link';
 import { Menu, X } from 'lucide-react';
 import { motion, AnimatePresence, useReducedMotion } from 'framer-motion';
 import { LANDING_NAV_ITEMS } from '@/lib/landing/nav';
-import { LOGIN_ROUTE, LANDING_CONTAINER } from '@/lib/landing/constants';
+import {
+  LANDING_CONTAINER,
+  LOGIN_ROUTE,
+  REGISTRO_ROUTE,
+  TRIAL_DAYS,
+} from '@/lib/landing/constants';
 import { LandingButton } from '@/components/landing/LandingButton';
 import { cn } from '@/lib/utils';
 
@@ -47,16 +52,16 @@ export function LandingNavbar() {
         aria-label="Navegación principal"
       >
         <Link
-          href="#inicio"
+          href="/#inicio"
           className="flex items-center gap-2.5 rounded-lg focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-white/30"
           onClick={handleNavClick}
         >
           <Image
-            src="/branding/ZORRO1.png"
+            src="/branding/LGO600PX.png"
             alt=""
             width={36}
             height={36}
-            className="rounded-full"
+            className="object-contain"
             priority
           />
           <span className="font-display text-xl tracking-wider text-white">TuCoach</span>
@@ -79,8 +84,8 @@ export function LandingNavbar() {
           <LandingButton href={LOGIN_ROUTE} variant="ghost" className="px-4 py-2">
             Iniciar sesión
           </LandingButton>
-          <LandingButton href={LOGIN_ROUTE} variant="primary" className="px-5 py-2.5">
-            Comenzar gratis
+          <LandingButton href={REGISTRO_ROUTE} variant="primary" className="px-5 py-2.5">
+            {`Probar ${TRIAL_DAYS} días`}
           </LandingButton>
         </div>
 
@@ -133,8 +138,8 @@ export function LandingNavbar() {
                 <LandingButton href={LOGIN_ROUTE} variant="secondary" className="w-full">
                   Iniciar sesión
                 </LandingButton>
-                <LandingButton href={LOGIN_ROUTE} variant="primary" className="w-full">
-                  Comenzar gratis
+                <LandingButton href={REGISTRO_ROUTE} variant="primary" className="w-full">
+                  {`Probar ${TRIAL_DAYS} días`}
                 </LandingButton>
               </div>
             </motion.div>

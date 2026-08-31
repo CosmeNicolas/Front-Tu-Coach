@@ -64,7 +64,9 @@ export function AsistenteConfigBar({
     setDraft(next);
     try {
       await update.mutateAsync({ config: next });
-      toast.success('Configuración actualizada');
+      toast.success(
+        'Configuración actualizada. Si cambiaste de bloque, los ejercicios de cada día se mantienen; los de un día que ya no existe pasan al último día del bloque nuevo.',
+      );
     } catch {
       toast.error('No se pudo actualizar la configuración');
       setDraft(config);

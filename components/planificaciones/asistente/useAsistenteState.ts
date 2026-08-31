@@ -15,6 +15,7 @@ import {
   filterItemsPorDia,
   hydrateSections,
 } from '@/lib/planification/section-items';
+import { remapSeccionesDiaBaseForMode } from '@/lib/planification/remap-dia-base';
 import {
   clampDiaActivo,
   frecuenciaBloqueFromModo,
@@ -33,9 +34,12 @@ function defaultSection(tab: (typeof WIZARD_TABS)[number], orden: number): Plani
   };
 }
 
-function mergeWithDefaults(existing: PlanificationSection[]): PlanificationSection[] {
+function mergeWithDefaults(
+  existing: PlanificationSection[],
+  modo: Planification['config']['modoProgresion'],
+): PlanificationSection[] {
   const hydrated = hydrateSections(existing);
-  return WIZARD_TABS.map((tab, idx) => {
+  const withTabs = WIZARD_TABS.map((tab, idx) => {
     const found = hydrated.find(
       (s) =>
         s.tipoSeccion === tab.tipoSeccion &&
@@ -43,12 +47,16 @@ function mergeWithDefaults(existing: PlanificationSection[]): PlanificationSecti
     );
     return found ?? defaultSection(tab, idx);
   });
+  return remapSeccionesDiaBaseForMode(withTabs, modo);
 }
 
 export function useAsistenteState(planification: Planification) {
   const [tabActivo, setTabActivo] = useState(WIZARD_TABS[0].id);
   const [secciones, setSecciones] = useState<PlanificationSection[]>(() =>
-    mergeWithDefaults(planification.secciones),
+    mergeWithDefaults(
+      planification.secciones,
+      planification.config.modoProgresion,
+    ),
   );
   const [contentVersion, setContentVersion] = useState(
     planification.contentVersion ?? 1,
@@ -66,10 +74,19 @@ export function useAsistenteState(planification: Planification) {
   );
 
   useEffect(() => {
-    setSecciones(mergeWithDefaults(planification.secciones));
+    setSecciones(
+      mergeWithDefaults(
+        planification.secciones,
+        planification.config.modoProgresion,
+      ),
+    );
     setContentVersion(planification.contentVersion ?? 1);
     setDirty(false);
-  }, [planification.secciones, planification.contentVersion]);
+  }, [
+    planification.secciones,
+    planification.contentVersion,
+    planification.config.modoProgresion,
+  ]);
 
   useEffect(() => {
     setDiaActivoState((prev) => {
@@ -152,7 +169,10 @@ export function useAsistenteState(planification: Planification) {
     const prevVersion = contentVersion;
     try {
       const result = await upsert.mutateAsync({
-        secciones,
+        secciones: remapSeccionesDiaBaseForMode(
+          secciones,
+          planification.config.modoProgresion,
+        ),
         requireFijas: false,
         expectedContentVersion: contentVersion,
       });
@@ -168,7 +188,9 @@ export function useAsistenteState(planification: Planification) {
             : 'Planilla guardada correctamente',
         );
       }
-      setSecciones(mergeWithDefaults(result.secciones));
+      setSecciones(
+        mergeWithDefaults(result.secciones, planification.config.modoProgresion),
+      );
       setContentVersion(nextVersion);
       setDirty(false);
       if (frecuenciaBloque) {
@@ -219,7 +241,9 @@ export function useAsistenteState(planification: Planification) {
   }, [seccionTieneItems]);
 
   const syncFromServer = useCallback((next: Planification) => {
-    setSecciones(mergeWithDefaults(next.secciones));
+    setSecciones(
+      mergeWithDefaults(next.secciones, next.config.modoProgresion),
+    );
     setContentVersion(next.contentVersion ?? 1);
   }, []);
 
