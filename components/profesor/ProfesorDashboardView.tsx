@@ -23,6 +23,7 @@ import {
 import { PushNotificationsCard } from '@/components/notifications/PushNotificationsCard';
 import { AlumnosDashboardTable } from '@/components/profesor/AlumnosDashboardTable';
 import { PlanesARenovarPanel } from '@/components/profesor/PlanesARenovarPanel';
+import { PlanificacionesDashboardPanel } from '@/components/profesor/PlanificacionesDashboardPanel';
 import { Button } from '@/components/ui/button';
 import { cn } from '@/lib/utils/cn';
 
@@ -79,7 +80,9 @@ export function ProfesorDashboardView() {
   const { data: clientsData, isLoading: loadingClients } = useClients({
     limit: 100,
   });
-  const { data: plansData, isLoading: loadingPlans } = usePlanifications();
+  const { data: plansData, isLoading: loadingPlans } = usePlanifications({
+    limit: 100,
+  });
   const { data: exercisesData } = usePrivateExercises({ limit: 100 });
   const { data: templatesData } = useTemplates();
 
@@ -275,6 +278,11 @@ export function ProfesorDashboardView() {
               </div>
             </div>
           </section>
+
+          <PlanificacionesDashboardPanel
+            plans={plans}
+            alumnoNameById={alumnoNameById}
+          />
 
           <AlumnosDashboardTable rows={alumnoRows} />
         </>

@@ -1,10 +1,11 @@
 'use client';
 
-import { useState } from 'react';
+import { useEffect, useState } from 'react';
 import Link from 'next/link';
 import { toast } from 'sonner';
 import { PlanificacionTable } from '@/components/planificaciones/PlanificacionTable';
 import { Button } from '@/components/ui/button';
+import { Input } from '@/components/ui/input';
 import {
   AlertDialog,
   AlertDialogAction,
@@ -22,12 +23,36 @@ import {
 } from '@/hooks/usePlanifications';
 import { ApiError } from '@/lib/api/client';
 
+const PAGE_SIZE = 15;
+
 export default function PlanificacionesPage() {
-  const { data, isLoading } = usePlanifications();
+  const [search, setSearch] = useState('');
+  const [debounced, setDebounced] = useState('');
+  const [page, setPage] = useState(1);
+
+  useEffect(() => {
+    const t = window.setTimeout(() => setDebounced(search.trim()), 300);
+    return () => window.clearTimeout(t);
+  }, [search]);
+
+  useEffect(() => {
+    setPage(1);
+  }, [debounced]);
+
+  const { data, isLoading } = usePlanifications({
+    search: debounced || undefined,
+    page,
+    limit: PAGE_SIZE,
+  });
   const archiveMutation = useArchivePlanification();
   const deleteMutation = useDeletePlanification();
   const [deleteId, setDeleteId] = useState<string | null>(null);
   const [deleteTitle, setDeleteTitle] = useState('');
+
+  const total = data?.total ?? 0;
+  const totalPages = Math.max(1, Math.ceil(total / PAGE_SIZE));
+  const from = total === 0 ? 0 : (page - 1) * PAGE_SIZE + 1;
+  const to = Math.min(page * PAGE_SIZE, total);
 
   async function handleArchive(id: string) {
     try {
@@ -69,7 +94,8 @@ export default function PlanificacionesPage() {
             Planificaciones
           </h1>
           <p className="mt-1 text-sm text-muted-foreground">
-            Planificaciones base asociadas a alumnos
+            La etiqueta Actual es la que el alumno está usando ahora. Las demás
+            quedan archivadas.
           </p>
         </div>
         <Button asChild className="shrink-0">
@@ -78,14 +104,58 @@ export default function PlanificacionesPage() {
           </Link>
         </Button>
       </div>
+
+      <div className="mb-4">
+        <Input
+          value={search}
+          onChange={(e) => setSearch(e.target.value)}
+          placeholder="Buscar por planificación o alumno…"
+          className="max-w-md"
+        />
+      </div>
+
       {isLoading ? (
         <p className="text-sm text-muted-foreground">Cargando…</p>
       ) : (
-        <PlanificacionTable
-          items={data?.items ?? []}
-          onArchive={handleArchive}
-          onDelete={requestDelete}
-        />
+        <>
+          <PlanificacionTable
+            items={data?.items ?? []}
+            onArchive={handleArchive}
+            onDelete={requestDelete}
+          />
+          <div className="mt-4 flex flex-col gap-3 sm:flex-row sm:items-center sm:justify-between">
+            <p className="text-sm text-muted-foreground">
+              {total === 0
+                ? 'Sin resultados'
+                : `Mostrando ${from}–${to} de ${total}`}
+            </p>
+            {totalPages > 1 ? (
+              <div className="flex items-center gap-2">
+                <Button
+                  type="button"
+                  variant="outline"
+                  size="sm"
+                  disabled={page <= 1}
+                  onClick={() => setPage((p) => Math.max(1, p - 1))}
+                >
+                  Anterior
+                </Button>
+                <span className="text-sm text-foreground">
+                  Página {page} de {totalPages}
+                </span>
+                <Button
+                  type="button"
+                  variant="outline"
+                  size="sm"
+                  disabled={page >= totalPages}
+                  onClick={() => setPage((p) => Math.min(totalPages, p + 1))}
+                >
+                  Siguiente
+                </Button>
+              </div>
+            ) : null}
+          </div>
+        </>
       )}
 
       <AlertDialog

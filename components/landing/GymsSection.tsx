@@ -1,5 +1,11 @@
 import { Building2, Check, Users } from 'lucide-react';
-import { CONTACT_MAILTO, LANDING_CONTAINER } from '@/lib/landing/constants';
+import {
+  CONTACT_MAILTO,
+  formatArs,
+  LANDING_CONTAINER,
+  launchMonthPrice,
+  PRICE_ARS,
+} from '@/lib/landing/constants';
 import { LandingButton } from '@/components/landing/LandingButton';
 import { ScrollReveal } from '@/components/landing/ScrollReveal';
 
@@ -27,7 +33,9 @@ export function GymsSection() {
               </h2>
               <p className="mt-4 text-base leading-relaxed text-[#A3A3A3]">
                 Coordiná equipos de entrenamiento, estandarizá procesos y obtené una
-                visión clara del trabajo de cada profesor con sus alumnos.
+                visión clara del trabajo de cada profesor con sus alumnos.{' '}
+                {formatArs(launchMonthPrice(PRICE_ARS.gymMonth))} el primer mes;
+                después {formatArs(PRICE_ARS.gymMonth)}/mes.
               </p>
               <ul className="mt-8 space-y-3">
                 {GYM_BENEFITS.map((item) => (

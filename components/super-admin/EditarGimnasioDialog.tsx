@@ -40,6 +40,9 @@ export function EditarGimnasioDialog({ tenant, trigger }: Props) {
   const [overrideAlumnos, setOverrideAlumnos] = useState(
     tenant.limitesOverride?.alumnos?.toString() ?? '',
   );
+  const [overridePlanes, setOverridePlanes] = useState(
+    tenant.limitesOverride?.planesActivos?.toString() ?? '',
+  );
 
   useEffect(() => {
     if (!open) return;
@@ -48,6 +51,7 @@ export function EditarGimnasioDialog({ tenant, trigger }: Props) {
     setEstado(tenant.estado);
     setPlanCodigo(tenant.planCodigo ?? PlanCodigo.PREMIUM);
     setOverrideAlumnos(tenant.limitesOverride?.alumnos?.toString() ?? '');
+    setOverridePlanes(tenant.limitesOverride?.planesActivos?.toString() ?? '');
   }, [open, tenant]);
 
   async function handleSubmit() {
@@ -57,15 +61,32 @@ export function EditarGimnasioDialog({ tenant, trigger }: Props) {
       return;
     }
 
-    const overrideRaw = overrideAlumnos.trim();
-    let limitesOverride: { alumnos: number } | null = null;
-    if (overrideRaw) {
-      const n = Number(overrideRaw);
-      if (!Number.isInteger(n) || n < 1) {
-        toast.error('El tope custom de alumnos tiene que ser un entero mayor a 0');
-        return;
+    const alumnosRaw = overrideAlumnos.trim();
+    const planesRaw = overridePlanes.trim();
+    let limitesOverride: {
+      alumnos?: number;
+      planesActivos?: number;
+    } | null = null;
+    if (alumnosRaw || planesRaw) {
+      limitesOverride = {};
+      if (alumnosRaw) {
+        const n = Number(alumnosRaw);
+        if (!Number.isInteger(n) || n < 1) {
+          toast.error('El tope custom de alumnos tiene que ser un entero mayor a 0');
+          return;
+        }
+        limitesOverride.alumnos = n;
       }
-      limitesOverride = { alumnos: n };
+      if (planesRaw) {
+        const n = Number(planesRaw);
+        if (!Number.isInteger(n) || n < 1) {
+          toast.error(
+            'El tope custom de planes activos tiene que ser un entero mayor a 0',
+          );
+          return;
+        }
+        limitesOverride.planesActivos = n;
+      }
     }
 
     try {
@@ -168,8 +189,22 @@ export function EditarGimnasioDialog({ tenant, trigger }: Props) {
               value={overrideAlumnos}
               onChange={(e) => setOverrideAlumnos(e.target.value)}
             />
+          </div>
+
+          <div className="space-y-2">
+            <Label htmlFor="edit-gym-override-planes">
+              Tope custom de planes activos
+            </Label>
+            <Input
+              id="edit-gym-override-planes"
+              inputMode="numeric"
+              placeholder="Vacío = usar el del plan"
+              value={overridePlanes}
+              onChange={(e) => setOverridePlanes(e.target.value)}
+            />
             <p className="text-xs text-muted-foreground">
-              Concierge: si es mayor al plan, ese es el cupo real.
+              Concierge: si es mayor al plan, ese es el cupo real. El cupo es del
+              gimnasio entero, no por profesor.
             </p>
           </div>
         </div>

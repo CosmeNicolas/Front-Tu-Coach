@@ -27,10 +27,24 @@ import {
   UpsertSeccionesPayload,
 } from '@/types/planification';
 
-export function usePlanifications(alumnoId?: string) {
+export type PlanificationsQuery = {
+  alumnoId?: string;
+  search?: string;
+  page?: number;
+  limit?: number;
+};
+
+export function usePlanifications(
+  alumnoIdOrQuery?: string | PlanificationsQuery,
+) {
+  const query: PlanificationsQuery =
+    typeof alumnoIdOrQuery === 'string'
+      ? { alumnoId: alumnoIdOrQuery, limit: 50 }
+      : { limit: 50, ...alumnoIdOrQuery };
+
   return useQuery({
-    queryKey: ['planifications', alumnoId ?? 'all'],
-    queryFn: () => fetchPlanifications({ alumnoId, limit: 50 }),
+    queryKey: ['planifications', query],
+    queryFn: () => fetchPlanifications(query),
   });
 }
 

@@ -1,7 +1,9 @@
 import {
-  CONTACT_MAILTO,
-  PREMIUM_PRICE_LABEL,
-  PRO_PRICE_LABEL,
+  contactMail,
+  formatArs,
+  LAUNCH_OFFER_LABEL,
+  launchMonthPrice,
+  PRICE_ARS,
   REGISTRO_ROUTE,
   TRIAL_DAYS,
 } from '@/lib/landing/constants';
@@ -11,6 +13,9 @@ export interface LandingPlan {
   name: string;
   subtitle: string;
   price: string;
+  period?: string;
+  launchPrice?: string;
+  launchCaption?: string;
   features: string[];
   cta: string;
   href: string;
@@ -18,7 +23,17 @@ export interface LandingPlan {
   badge?: string;
 }
 
-export const LANDING_PLANS: LandingPlan[] = [
+function saasPrice(amount: number) {
+  return {
+    price: formatArs(amount),
+    period: '/mes',
+    launchPrice: formatArs(launchMonthPrice(amount)),
+    launchCaption: 'primer mes',
+    badge: LAUNCH_OFFER_LABEL,
+  };
+}
+
+export const LANDING_SAAS_PLANS: LandingPlan[] = [
   {
     id: 'free',
     name: 'Free',
@@ -38,7 +53,7 @@ export const LANDING_PLANS: LandingPlan[] = [
     id: 'premium',
     name: 'Premium',
     subtitle: 'Para entrenadores',
-    price: PREMIUM_PRICE_LABEL,
+    ...saasPrice(PRICE_ARS.premiumMonth),
     features: [
       `${TRIAL_DAYS} días de prueba al registrarte`,
       'Hasta 50 alumnos',
@@ -49,13 +64,12 @@ export const LANDING_PLANS: LandingPlan[] = [
     cta: `Probar ${TRIAL_DAYS} días`,
     href: REGISTRO_ROUTE,
     highlighted: true,
-    badge: `${TRIAL_DAYS} DÍAS DE PRUEBA`,
   },
   {
     id: 'pro',
     name: 'Pro',
     subtitle: 'Para estudios grandes',
-    price: PRO_PRICE_LABEL,
+    ...saasPrice(PRICE_ARS.proMonth),
     features: [
       'Todo Premium',
       'Hasta 200 alumnos',
@@ -64,21 +78,100 @@ export const LANDING_PLANS: LandingPlan[] = [
       'Soporte prioritario',
     ],
     cta: 'Consultar Pro',
-    href: CONTACT_MAILTO,
+    href: contactMail('Quiero el plan Pro'),
   },
   {
-    id: 'gimnasios',
-    name: 'Gimnasios',
-    subtitle: 'Para equipos y centros',
-    price: 'A medida',
+    id: 'plus',
+    name: 'Plus',
+    subtitle: 'Para operaciones más grandes',
+    ...saasPrice(PRICE_ARS.plusMonth),
     features: [
-      'Alta concierge (te armamos la cuenta)',
-      'Varios profesores en un mismo tenant',
-      'Dashboard del owner',
-      'Aislamiento por gimnasio',
-      'Planes y cupos a medida',
+      'Todo Pro',
+      'Más capacidad, la coordinamos con vos',
+      'Prioridad de soporte',
+      'Alta a mano: todavía no hay checkout',
+      'Pensado para equipos de un profesor con mucho volumen',
     ],
-    cta: 'Escribirnos',
-    href: CONTACT_MAILTO,
+    cta: 'Consultar Plus',
+    href: contactMail('Quiero el plan Plus'),
+  },
+];
+
+export const LANDING_GYM_PLAN: LandingPlan = {
+  id: 'gimnasios',
+  name: 'Gimnasios',
+  subtitle: 'Para equipos y centros. Alta concierge.',
+  ...saasPrice(PRICE_ARS.gymMonth),
+  features: [
+    'Varios profesores en un mismo tenant',
+    'Dashboard del owner',
+    'Aislamiento por gimnasio',
+    'Cupos a medida',
+  ],
+  cta: 'Escribirnos',
+  href: contactMail('Quiero TuCoach para un gimnasio'),
+};
+
+export const LANDING_CATALOG_PLANS: LandingPlan[] = [
+  {
+    id: 'catalog-4',
+    name: '4 semanas',
+    subtitle: 'Salud, fuerza o hipertrofia',
+    price: formatArs(PRICE_ARS.catalog4w),
+    period: 'el bloque',
+    features: [
+      'Plan genérico de catálogo',
+      'Kg y reps sugeridos',
+      'Portal para seguir el bloque',
+      'Sin seguimiento clínico',
+    ],
+    cta: 'Pedir este plan',
+    href: contactMail('Plan catálogo 4 semanas'),
+  },
+  {
+    id: 'catalog-8',
+    name: '8 semanas',
+    subtitle: 'El bloque más elegido',
+    price: formatArs(PRICE_ARS.catalog8w),
+    period: 'el bloque',
+    features: [
+      'Plan genérico de catálogo',
+      'Kg y reps sugeridos',
+      'Portal para seguir el bloque',
+      'Mejor relación semanas / precio',
+    ],
+    cta: 'Pedir este plan',
+    href: contactMail('Plan catálogo 8 semanas'),
+    highlighted: true,
+  },
+  {
+    id: 'catalog-12',
+    name: '12 semanas',
+    subtitle: 'Salud, fuerza o hipertrofia',
+    price: formatArs(PRICE_ARS.catalog12w),
+    period: 'el bloque',
+    features: [
+      'Plan genérico de catálogo',
+      'Kg y reps sugeridos',
+      'Portal para seguir el bloque',
+      'El menor costo por semana',
+    ],
+    cta: 'Pedir este plan',
+    href: contactMail('Plan catálogo 12 semanas'),
+  },
+  {
+    id: 'catalog-personalizada',
+    name: 'Personalizada',
+    subtitle: 'La arma un profesor para vos',
+    price: formatArs(PRICE_ARS.personalized),
+    period: 'el bloque',
+    features: [
+      'Planificación hecha a medida',
+      'No es una plantilla de catálogo',
+      'Se coordina por mail',
+      'No cubre patologías ni lesiones',
+    ],
+    cta: 'Pedir personalizada',
+    href: contactMail('Planificación personalizada'),
   },
 ];

@@ -38,9 +38,12 @@ export default function TerminosPage() {
         borramos los datos al bajar de plan.
       </p>
       <p>
-        Premium y Pro se coordinan por mail. Todavía no hay cobro automático ni
-        factura electrónica adentro del producto. Los precios publicados como
-        “Consultar” no son un cargo fijo.
+        Premium, Pro, Plus y Gimnasios tienen precio de lista en la landing
+        (pesos, por mes, con 60% off el primer mes). Los bloques de
+        entrenamiento (4, 8 o 12 semanas, o personalizada) se cotizan por
+        bloque. Todavía no hay cobro automático ni factura electrónica adentro
+        del producto: el alta paga se coordina por mail. No ofrecemos planes
+        por patología, lesión ni rehabilitación.
       </p>
 
       <h2>Uso aceptable</h2>
