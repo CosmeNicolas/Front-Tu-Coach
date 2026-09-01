@@ -29,7 +29,9 @@ export function detectDeviceLabel(): string {
 }
 
 export async function registerTuCoachServiceWorker(): Promise<ServiceWorkerRegistration | null> {
-  if (!isPushSupported()) return null;
+  if (typeof window === 'undefined' || !('serviceWorker' in navigator)) {
+    return null;
+  }
   try {
     return await navigator.serviceWorker.register('/sw.js', { scope: '/' });
   } catch {

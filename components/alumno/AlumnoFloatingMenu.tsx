@@ -6,6 +6,7 @@ import {
   BarChart3,
   CalendarDays,
   ClipboardList,
+  Download,
   Gift,
   LogOut,
   Menu,
@@ -53,7 +54,15 @@ const itemVariants = {
   },
 };
 
-export function AlumnoFloatingMenu() {
+interface AlumnoFloatingMenuProps {
+  showInstallApp?: boolean;
+  onInstallApp?: () => void;
+}
+
+export function AlumnoFloatingMenu({
+  showInstallApp = false,
+  onInstallApp,
+}: AlumnoFloatingMenuProps) {
   const pathname = usePathname();
   const [open, setOpen] = useState(false);
   const [logoutConfirmOpen, setLogoutConfirmOpen] = useState(false);
@@ -63,6 +72,11 @@ export function AlumnoFloatingMenu() {
   function requestLogout() {
     setOpen(false);
     setLogoutConfirmOpen(true);
+  }
+
+  function requestInstall() {
+    setOpen(false);
+    onInstallApp?.();
   }
 
   useEffect(() => {
@@ -198,6 +212,18 @@ export function AlumnoFloatingMenu() {
                     </motion.div>
                   );
                 })}
+                {showInstallApp ? (
+                  <motion.div variants={itemVariants}>
+                    <button
+                      type="button"
+                      onClick={requestInstall}
+                      className="flex min-h-12 w-full items-center gap-3 rounded-xl bg-muted/50 px-4 py-3 text-base font-medium text-foreground transition-colors hover:bg-muted"
+                    >
+                      <Download className="size-5 shrink-0" aria-hidden />
+                      Instalar app
+                    </button>
+                  </motion.div>
+                ) : null}
                 <motion.div variants={itemVariants}>
                   <button
                     type="button"

@@ -1,8 +1,14 @@
 /* TuCoach Service Worker — Web Push */
-const CACHE_NAME = 'tucoach-push-v2';
+const CACHE_NAME = 'tucoach-push-v3';
 
 self.addEventListener('install', () => {
   self.skipWaiting();
+});
+
+/* Chrome solo ofrece “Instalar app” si el SW maneja fetch. */
+self.addEventListener('fetch', (event) => {
+  if (event.request.method !== 'GET') return;
+  event.respondWith(fetch(event.request));
 });
 
 self.addEventListener('activate', (event) => {

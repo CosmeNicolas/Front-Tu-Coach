@@ -1,11 +1,13 @@
 'use client';
 
+import { useState } from 'react';
 import Link from 'next/link';
 import { usePathname } from 'next/navigation';
 import {
   BarChart3,
   CalendarDays,
   ClipboardList,
+  Download,
   Gift,
   MessageSquare,
   UserCircle,
@@ -16,7 +18,9 @@ import { AlumnoLogoutButton } from '@/components/alumno/AlumnoLogoutButton';
 import { ThemeToggle } from '@/components/theme/ThemeToggle';
 import { AlumnoPortalGreeting } from '@/components/alumno/AlumnoPortalGreeting';
 import { AlumnoFloatingMenu } from './AlumnoFloatingMenu';
+import { PwaInstallDialog } from '@/components/pwa/PwaInstallDialog';
 import { useMessagesUnreadCount } from '@/hooks/useMessages';
+import { usePWAInstall } from '@/hooks/usePWAInstall';
 import { TourHelpButton } from '@/components/onboarding/TourHelpButton';
 
 const DESKTOP_NAV = [
@@ -40,6 +44,9 @@ export function AlumnoMobileLayout({ children }: { children: React.ReactNode }) 
   const pathname = usePathname();
   const { data: unread } = useMessagesUnreadCount(true);
   const unreadCount = unread?.count ?? 0;
+  const pwa = usePWAInstall();
+  const [installOpen, setInstallOpen] = useState(false);
+  const showInstallApp = !pwa.isInstalled;
 
   return (
     <div className="flex min-h-screen bg-background text-foreground">
@@ -89,6 +96,16 @@ export function AlumnoMobileLayout({ children }: { children: React.ReactNode }) 
               </Link>
             );
           })}
+          {showInstallApp ? (
+            <button
+              type="button"
+              onClick={() => setInstallOpen(true)}
+              className="flex items-center gap-3 rounded-xl px-3 py-2.5 text-sm font-medium text-muted-foreground transition-colors hover:bg-muted hover:text-foreground"
+            >
+              <Download className="size-4 shrink-0" aria-hidden />
+              Instalar app
+            </button>
+          ) : null}
         </nav>
 
         <div className="space-y-3 border-t border-border p-4">
@@ -128,7 +145,18 @@ export function AlumnoMobileLayout({ children }: { children: React.ReactNode }) 
           {children}
         </main>
 
-        <AlumnoFloatingMenu />
+        <AlumnoFloatingMenu
+          showInstallApp={showInstallApp}
+          onInstallApp={() => setInstallOpen(true)}
+        />
+        <PwaInstallDialog
+          open={installOpen}
+          onOpenChange={setInstallOpen}
+          isInstallable={pwa.isInstallable}
+          isInstalled={pwa.isInstalled}
+          platform={pwa.platform}
+          onInstall={pwa.promptInstall}
+        />
       </div>
     </div>
   );

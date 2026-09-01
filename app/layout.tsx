@@ -16,6 +16,11 @@ export const metadata: Metadata = {
     ],
     apple: '/apple-touch-icon.png',
   },
+  appleWebApp: {
+    capable: true,
+    title: 'TuCoach',
+    statusBarStyle: 'black-translucent',
+  },
 };
 
 export default function RootLayout({

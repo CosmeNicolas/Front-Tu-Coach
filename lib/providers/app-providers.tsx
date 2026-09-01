@@ -3,6 +3,7 @@
 import { Toaster } from 'sonner';
 import { QueryProvider } from '@/lib/providers/query-provider';
 import { ThemeProvider } from '@/lib/providers/theme-provider';
+import { PwaInstallBootstrap } from '@/components/pwa/PwaInstallBootstrap';
 
 interface AppProvidersProps {
   children: React.ReactNode;
@@ -16,6 +17,7 @@ export function AppProviders({ children }: AppProvidersProps) {
   return (
     <ThemeProvider>
       <QueryProvider>
+        <PwaInstallBootstrap />
         {children}
         <Toaster
         richColors
