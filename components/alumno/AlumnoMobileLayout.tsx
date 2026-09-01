@@ -6,6 +6,7 @@ import {
   BarChart3,
   CalendarDays,
   ClipboardList,
+  Gift,
   MessageSquare,
   UserCircle,
 } from 'lucide-react';
@@ -27,6 +28,7 @@ const DESKTOP_NAV = [
   { href: '/alumno/sesiones', label: 'Sesiones', icon: CalendarDays },
   { href: '/alumno/mensajes', label: 'Mensajes', icon: MessageSquare },
   { href: '/alumno/metricas', label: 'Métricas', icon: BarChart3 },
+  { href: '/alumno/beneficios', label: 'Beneficios', icon: Gift },
   { href: '/alumno/mis-datos', label: 'Mis datos', icon: UserCircle },
 ] as const;
 
@@ -115,7 +117,14 @@ export function AlumnoMobileLayout({ children }: { children: React.ReactNode }) 
           aria-hidden
         />
 
-        <main className="mx-auto w-full max-w-lg flex-1 pb-28 lg:max-w-4xl lg:pb-8">
+        <main
+          className={cn(
+            'mx-auto w-full flex-1 pb-28 lg:pb-8',
+            pathname.startsWith('/alumno/beneficios')
+              ? 'max-w-lg md:max-w-3xl lg:max-w-5xl xl:max-w-6xl'
+              : 'max-w-lg lg:max-w-4xl',
+          )}
+        >
           {children}
         </main>
 

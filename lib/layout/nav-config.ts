@@ -12,6 +12,8 @@ export const SUPER_ADMIN_NAV: SidebarNavItem[] = [
 
   { href: '/super-admin/ejercicios-privados', label: 'Ejercicios' },
 
+  { href: '/super-admin/beneficios', label: 'Beneficios' },
+
 ];
 
 
@@ -42,6 +44,8 @@ export const PROFESOR_NAV: SidebarNavItem[] = [
 
   { href: '/profesor/ejercicios', label: 'Ejercicios' },
 
+  { href: '/profesor/beneficios', label: 'Beneficios' },
+
 ];
 
 
@@ -55,6 +59,8 @@ export const ALUMNO_NAV: SidebarNavItem[] = [
   { href: '/alumno/mensajes', label: 'Mensajes' },
 
   { href: '/alumno/metricas', label: 'Métricas' },
+
+  { href: '/alumno/beneficios', label: 'Beneficios' },
 
   { href: '/alumno/mis-datos', label: 'Mis datos' },
 

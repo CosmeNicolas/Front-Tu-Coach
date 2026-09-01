@@ -6,6 +6,7 @@ import {
   BarChart3,
   CalendarDays,
   ClipboardList,
+  Gift,
   LogOut,
   Menu,
   MessageSquare,
@@ -25,6 +26,7 @@ const MENU_ITEMS = [
   { href: '/alumno/sesiones', label: 'Sesiones', icon: CalendarDays },
   { href: '/alumno/mensajes', label: 'Mensajes', icon: MessageSquare },
   { href: '/alumno/metricas', label: 'Métricas', icon: BarChart3 },
+  { href: '/alumno/beneficios', label: 'Beneficios', icon: Gift },
   { href: '/alumno/mis-datos', label: 'Datos personales', icon: UserCircle },
 ] as const;
 

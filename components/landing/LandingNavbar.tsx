@@ -52,7 +52,7 @@ export function LandingNavbar() {
         aria-label="Navegación principal"
       >
         <Link
-          href="/#inicio"
+          href={LOGIN_ROUTE}
           className="flex items-center gap-2.5 rounded-lg focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-white/30"
           onClick={handleNavClick}
         >
