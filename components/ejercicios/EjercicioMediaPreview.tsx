@@ -1,11 +1,10 @@
 'use client';
 
-import { useMemo, useState } from 'react';
+import { useEffect, useMemo, useRef, useState } from 'react';
 import { Play } from 'lucide-react';
 import { EjercicioCatalogoImage } from '@/components/ejercicios/EjercicioCatalogoImage';
 import { PLACEHOLDER_EJERCICIO } from '@/lib/ejercicios/gif-url';
 import {
-  cloudinaryVideoPosterUrl,
   ExerciseMediaType,
   inferMediaType,
   youtubeEmbedUrl,
@@ -97,41 +96,60 @@ function YoutubeThumbnail({
   );
 }
 
-function VideoThumbnail({
+/** MP4/WebM en bucle silencioso, mismo comportamiento visual que un GIF. */
+function LoopingExerciseVideo({
   src,
   alt,
   className,
   containerClassName,
+  eager = false,
+  showBadge = false,
 }: {
   src: string;
   alt: string;
   className?: string;
   containerClassName?: string;
+  eager?: boolean;
+  showBadge?: boolean;
 }) {
-  const poster = useMemo(() => cloudinaryVideoPosterUrl(src), [src]);
-  const [posterFailed, setPosterFailed] = useState(false);
+  const videoRef = useRef<HTMLVideoElement>(null);
+  const [shouldLoad, setShouldLoad] = useState(eager);
 
-  if (poster && !posterFailed) {
-    return (
-      <div
-        className={cn(
-          'ejercicio-gif-fondo relative w-full overflow-hidden rounded-lg border border-border bg-black/90',
-          containerClassName,
-        )}
-      >
-        {/* eslint-disable-next-line @next/next/no-img-element */}
-        <img
-          src={poster}
-          alt={alt}
-          className={cn('h-full w-full object-cover object-center', className)}
-          onError={() => setPosterFailed(true)}
-        />
-        <span className="absolute bottom-1 right-1 rounded bg-black/70 px-1.5 py-0.5 text-[10px] font-semibold text-white">
-          Video
-        </span>
-      </div>
+  useEffect(() => {
+    setShouldLoad(eager);
+  }, [eager, src]);
+
+  useEffect(() => {
+    if (eager) return;
+    const el = videoRef.current;
+    if (!el) return;
+
+    const syncPlayback = (visible: boolean) => {
+      setShouldLoad(visible);
+      if (visible) {
+        void el.play().catch(() => {});
+        return;
+      }
+      el.pause();
+    };
+
+    const observer = new IntersectionObserver(
+      ([entry]) => {
+        syncPlayback(entry?.isIntersecting ?? false);
+      },
+      { rootMargin: '80px' },
     );
-  }
+
+    observer.observe(el);
+    return () => observer.disconnect();
+  }, [eager, src]);
+
+  useEffect(() => {
+    if (!shouldLoad) return;
+    const el = videoRef.current;
+    if (!el) return;
+    void el.play().catch(() => {});
+  }, [shouldLoad, src]);
 
   return (
     <div
@@ -142,16 +160,21 @@ function VideoThumbnail({
     >
       {/* eslint-disable-next-line jsx-a11y/media-has-caption */}
       <video
-        src={src}
+        ref={videoRef}
+        src={shouldLoad ? src : undefined}
+        loop
         muted
         playsInline
-        preload="metadata"
+        autoPlay
+        preload={eager ? 'auto' : 'metadata'}
         aria-label={alt}
         className={cn('h-full w-full object-cover object-center', className)}
       />
-      <span className="pointer-events-none absolute bottom-1 right-1 rounded bg-black/70 px-1.5 py-0.5 text-[10px] font-semibold text-white">
-        Video
-      </span>
+      {showBadge ? (
+        <span className="pointer-events-none absolute bottom-1 right-1 rounded bg-black/70 px-1.5 py-0.5 text-[10px] font-semibold text-white">
+          Video
+        </span>
+      ) : null}
     </div>
   );
 }
@@ -225,30 +248,19 @@ export function EjercicioMediaPreview({
   }
 
   if (resolvedType === 'mp4' || resolvedType === 'webm') {
-    if (mode === 'embed') {
-      return (
-        <div
-          className={cn(
-            'ejercicio-gif-fondo relative w-full overflow-hidden rounded-xl border border-border',
-            containerClassName,
-          )}
-        >
-          {/* eslint-disable-next-line jsx-a11y/media-has-caption */}
-          <video
-            src={src}
-            controls
-            className={cn('max-h-full w-full object-contain', className)}
-          />
-        </div>
-      );
-    }
-
     return (
-      <VideoThumbnail
+      <LoopingExerciseVideo
         src={src}
         alt={alt}
-        className={className}
+        eager={eager || mode === 'embed'}
+        showBadge={mode === 'thumbnail'}
         containerClassName={containerClassName}
+        className={
+          className ??
+          (mode === 'embed'
+            ? 'max-h-full w-full object-contain object-center'
+            : undefined)
+        }
       />
     );
   }
