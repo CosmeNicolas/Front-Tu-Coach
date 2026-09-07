@@ -20,6 +20,7 @@ import {
   useArchivePlanification,
   useDeletePlanification,
   usePlanifications,
+  useUnarchivePlanification,
 } from '@/hooks/usePlanifications';
 import { ApiError } from '@/lib/api/client';
 
@@ -45,9 +46,13 @@ export default function PlanificacionesPage() {
     limit: PAGE_SIZE,
   });
   const archiveMutation = useArchivePlanification();
+  const unarchiveMutation = useUnarchivePlanification();
   const deleteMutation = useDeletePlanification();
   const [deleteId, setDeleteId] = useState<string | null>(null);
   const [deleteTitle, setDeleteTitle] = useState('');
+  const [unarchiveId, setUnarchiveId] = useState<string | null>(null);
+  const [unarchiveTitle, setUnarchiveTitle] = useState('');
+  const [unarchiveAlumno, setUnarchiveAlumno] = useState('');
 
   const total = data?.total ?? 0;
   const totalPages = Math.max(1, Math.ceil(total / PAGE_SIZE));
@@ -60,6 +65,29 @@ export default function PlanificacionesPage() {
       toast.success('Planificación archivada');
     } catch (err) {
       toast.error('No se pudo archivar', {
+        description:
+          err instanceof ApiError ? err.message : 'Intentá de nuevo.',
+      });
+    }
+  }
+
+  function requestUnarchive(id: string) {
+    const plan = data?.items.find((p) => p.id === id);
+    setUnarchiveId(id);
+    setUnarchiveTitle(plan?.titulo ?? 'esta planificación');
+    setUnarchiveAlumno(plan?.alumnoNombre ?? 'el alumno');
+  }
+
+  async function confirmUnarchive() {
+    if (!unarchiveId) return;
+    try {
+      await unarchiveMutation.mutateAsync(unarchiveId);
+      toast.success('Planificación desarchivada', {
+        description: `Ahora es la Actual de ${unarchiveAlumno}.`,
+      });
+      setUnarchiveId(null);
+    } catch (err) {
+      toast.error('No se pudo desarchivar', {
         description:
           err instanceof ApiError ? err.message : 'Intentá de nuevo.',
       });
@@ -95,7 +123,7 @@ export default function PlanificacionesPage() {
           </h1>
           <p className="mt-1 text-sm text-muted-foreground">
             La etiqueta Actual es la que el alumno está usando ahora. Las demás
-            quedan archivadas.
+            quedan archivadas; podés desarchivarlas para volver a dárselas.
           </p>
         </div>
         <Button asChild className="shrink-0">
@@ -121,6 +149,7 @@ export default function PlanificacionesPage() {
           <PlanificacionTable
             items={data?.items ?? []}
             onArchive={handleArchive}
+            onUnarchive={requestUnarchive}
             onDelete={requestDelete}
           />
           <div className="mt-4 flex flex-col gap-3 sm:flex-row sm:items-center sm:justify-between">
@@ -157,6 +186,37 @@ export default function PlanificacionesPage() {
           </div>
         </>
       )}
+
+      <AlertDialog
+        open={Boolean(unarchiveId)}
+        onOpenChange={(open) => !open && setUnarchiveId(null)}
+      >
+        <AlertDialogContent>
+          <AlertDialogHeader>
+            <AlertDialogTitle>¿Desarchivar planificación?</AlertDialogTitle>
+            <AlertDialogDescription>
+              &quot;{unarchiveTitle}&quot; vuelve a ser la Actual de{' '}
+              {unarchiveAlumno}. Si ya tiene una Actual, esa se archiva. El
+              alumno verá este plan (con su progreso anterior) la próxima vez
+              que entre.
+            </AlertDialogDescription>
+          </AlertDialogHeader>
+          <AlertDialogFooter>
+            <AlertDialogCancel disabled={unarchiveMutation.isPending}>
+              Cancelar
+            </AlertDialogCancel>
+            <AlertDialogAction
+              disabled={unarchiveMutation.isPending}
+              onClick={(e) => {
+                e.preventDefault();
+                void confirmUnarchive();
+              }}
+            >
+              {unarchiveMutation.isPending ? 'Desarchivando…' : 'Desarchivar'}
+            </AlertDialogAction>
+          </AlertDialogFooter>
+        </AlertDialogContent>
+      </AlertDialog>
 
       <AlertDialog
         open={Boolean(deleteId)}

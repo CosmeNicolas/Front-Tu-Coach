@@ -1,4 +1,4 @@
-import { LOGIN_ROUTE } from '@/lib/landing/constants';
+import { LANDING_HOME_ROUTE } from '@/lib/landing/constants';
 
 export interface LandingNavItem {
   href: string;
@@ -6,10 +6,10 @@ export interface LandingNavItem {
 }
 
 export const LANDING_NAV_ITEMS: LandingNavItem[] = [
-  { label: 'Inicio', href: LOGIN_ROUTE },
-  { label: 'Funciones', href: LOGIN_ROUTE },
-  { label: 'Para entrenadores', href: LOGIN_ROUTE },
-  { label: 'Para gimnasios', href: LOGIN_ROUTE },
-  { label: 'Planes', href: LOGIN_ROUTE },
-  { label: 'Contacto', href: LOGIN_ROUTE },
+  { label: 'Inicio', href: `${LANDING_HOME_ROUTE}#inicio` },
+  { label: 'Funciones', href: `${LANDING_HOME_ROUTE}#funciones` },
+  { label: 'Para entrenadores', href: `${LANDING_HOME_ROUTE}#entrenadores` },
+  { label: 'Para gimnasios', href: `${LANDING_HOME_ROUTE}#gimnasios` },
+  { label: 'Planes', href: `${LANDING_HOME_ROUTE}#planes` },
+  { label: 'Contacto', href: `${LANDING_HOME_ROUTE}#contacto` },
 ];

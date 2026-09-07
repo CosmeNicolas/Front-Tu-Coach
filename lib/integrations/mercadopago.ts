@@ -1,9 +1,7 @@
 /**
- * Placeholder — integración MercadoPago para planes comerciales.
- * Fase posterior.
+ * Integración MercadoPago — checkout vía POST /billing/checkout (back).
+ * El front redirige a init_point; el webhook activa el plan Premium.
  */
-export interface MercadoPagoConfig {
-  publicKey: string;
-}
-
-export const MERCADOPAGO_CONFIG_KEY = 'mercadopago';
+export const MERCADOPAGO_ENABLED = Boolean(
+  process.env.NEXT_PUBLIC_MERCADOPAGO_ENABLED === 'true',
+);

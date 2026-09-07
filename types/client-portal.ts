@@ -8,4 +8,5 @@ export interface ClientPortalAccess {
 export interface UpsertClientPortalPayload {
   email: string;
   password?: string;
+  sendEmail?: boolean;
 }

@@ -21,6 +21,7 @@ import {
   buildProfesorDashboardStats,
 } from '@/lib/profesor/dashboard-stats';
 import { PushNotificationsCard } from '@/components/notifications/PushNotificationsCard';
+import { PlanUpgradeBanner } from '@/components/profesor/PlanUpgradeBanner';
 import { AlumnosDashboardTable } from '@/components/profesor/AlumnosDashboardTable';
 import { PlanesARenovarPanel } from '@/components/profesor/PlanesARenovarPanel';
 import { PlanificacionesDashboardPanel } from '@/components/profesor/PlanificacionesDashboardPanel';
@@ -129,6 +130,8 @@ export function ProfesorDashboardView() {
 
         <PushNotificationsCard variant="banner" />
       </header>
+
+      <PlanUpgradeBanner />
 
       {loading ? (
         <p className="text-sm text-muted-foreground">Cargando tu resumen…</p>

@@ -1,6 +1,8 @@
 'use client';
 
+import { useState } from 'react';
 import Link from 'next/link';
+import { toast } from 'sonner';
 import {
   Planification,
   PlanificationStatus,
@@ -9,6 +11,18 @@ import {
 import { ProgresoAlumnoPanel } from '@/components/planificaciones/ProgresoAlumnoPanel';
 import { RenovarDesdeAnteriorButton } from '@/components/planificaciones/RenovarDesdeAnteriorButton';
 import { Button } from '@/components/ui/button';
+import {
+  AlertDialog,
+  AlertDialogAction,
+  AlertDialogCancel,
+  AlertDialogContent,
+  AlertDialogDescription,
+  AlertDialogFooter,
+  AlertDialogHeader,
+  AlertDialogTitle,
+} from '@/components/ui/alert-dialog';
+import { useUnarchivePlanification } from '@/hooks/usePlanifications';
+import { ApiError } from '@/lib/api/client';
 
 export function PlanificacionDetalleCard({
   planification,
@@ -26,6 +40,26 @@ export function PlanificacionDetalleCard({
     planification.secciones.length > 0 &&
     (planification.estado === PlanificationStatus.ACTIVE ||
       planification.solicitudRevisionPendiente);
+  const canUnarchive =
+    !planification.esPlantilla &&
+    planification.estado === PlanificationStatus.ARCHIVED;
+  const unarchive = useUnarchivePlanification();
+  const [confirmUnarchive, setConfirmUnarchive] = useState(false);
+
+  async function handleUnarchive() {
+    try {
+      await unarchive.mutateAsync(planification.id);
+      toast.success('Planificación desarchivada', {
+        description: 'Ahora es la Actual del alumno.',
+      });
+      setConfirmUnarchive(false);
+    } catch (err) {
+      toast.error('No se pudo desarchivar', {
+        description:
+          err instanceof ApiError ? err.message : 'Intentá de nuevo.',
+      });
+    }
+  }
 
   return (
     <div className="rounded-lg border border-border bg-card p-6">
@@ -62,6 +96,15 @@ export function PlanificacionDetalleCard({
               }
             />
           ) : null}
+          {canUnarchive ? (
+            <Button
+              type="button"
+              variant="outline"
+              onClick={() => setConfirmUnarchive(true)}
+            >
+              Desarchivar
+            </Button>
+          ) : null}
         </div>
       </div>
 
@@ -79,6 +122,36 @@ export function PlanificacionDetalleCard({
           ? 'Sin secciones todavía. Abrí el Asistente para cargar entrada en calor, ejercicios principales y vuelta a la calma.'
           : `${planification.secciones.length} secciones · ${totalItems} ítems cargados`}
       </p>
+
+      <AlertDialog
+        open={confirmUnarchive}
+        onOpenChange={(open) => !open && setConfirmUnarchive(false)}
+      >
+        <AlertDialogContent>
+          <AlertDialogHeader>
+            <AlertDialogTitle>¿Desarchivar planificación?</AlertDialogTitle>
+            <AlertDialogDescription>
+              Esta planificación vuelve a ser la Actual del alumno. Si ya tiene
+              una Actual, esa se archiva. El alumno verá este plan (con su
+              progreso anterior) la próxima vez que entre.
+            </AlertDialogDescription>
+          </AlertDialogHeader>
+          <AlertDialogFooter>
+            <AlertDialogCancel disabled={unarchive.isPending}>
+              Cancelar
+            </AlertDialogCancel>
+            <AlertDialogAction
+              disabled={unarchive.isPending}
+              onClick={(e) => {
+                e.preventDefault();
+                void handleUnarchive();
+              }}
+            >
+              {unarchive.isPending ? 'Desarchivando…' : 'Desarchivar'}
+            </AlertDialogAction>
+          </AlertDialogFooter>
+        </AlertDialogContent>
+      </AlertDialog>
     </div>
   );
 }

@@ -111,12 +111,11 @@ export function PlanificacionesDashboardPanel({
                       )}
                     </td>
                     <td className="px-4 py-3">
-                      <Link
-                        href={`/profesor/planificaciones/${p.id}`}
-                        className="font-medium text-foreground underline-offset-2 hover:underline"
-                      >
-                        Ver
-                      </Link>
+                      <Button asChild size="sm" variant="outline">
+                        <Link href={`/profesor/planificaciones/${p.id}`}>
+                          Ver
+                        </Link>
+                      </Button>
                     </td>
                   </tr>
                 );

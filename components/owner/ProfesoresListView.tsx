@@ -4,6 +4,7 @@ import Link from 'next/link';
 import { ChevronLeft } from 'lucide-react';
 import { useGymDashboard } from '@/hooks/useGymAdmin';
 import { TenantCuposCard } from '@/components/super-admin/TenantCuposCard';
+import { InvitarProfesorGymDialog } from '@/components/owner/InvitarProfesorGymDialog';
 import { Button } from '@/components/ui/button';
 
 interface Props {
@@ -42,11 +43,16 @@ export function ProfesoresListView({
           </Link>
         </Button>
       ) : null}
-      <header>
-        <h1 className="text-2xl font-bold text-foreground">Profesores</h1>
-        <p className="mt-1 text-sm text-muted-foreground">
-          {data.tenant.nombre} · {data.profesores.length} profesores
-        </p>
+      <header className="flex flex-col gap-4 sm:flex-row sm:items-start sm:justify-between">
+        <div>
+          <h1 className="text-2xl font-bold text-foreground">Profesores</h1>
+          <p className="mt-1 text-sm text-muted-foreground">
+            {data.tenant.nombre} · {data.profesores.length} profesores
+          </p>
+        </div>
+        {!basePath.startsWith('/super-admin/tenants/') ? (
+          <InvitarProfesorGymDialog tenantId={tenantId} />
+        ) : null}
       </header>
 
       {data.cupos ? (

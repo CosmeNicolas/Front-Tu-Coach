@@ -183,20 +183,19 @@ export function LoginForm() {
             )}
           </Button>
 
-          <div className="space-y-1 text-center text-sm text-white/75">
-          {/*   <p>
+          <div className="space-y-2 text-center text-sm text-white/75">
+            <p>
+              ¿Sos alumno?{' '}
+              <span className="text-white/90">
+                Ingresá con el email y contraseña que te dio tu entrenador.
+              </span>
+            </p>
+            <p>
+              ¿Sos profe?{' '}
               <Link href="/registro" className="underline-offset-4 hover:text-white hover:underline">
-                Soy profe — probar 7 días
+                Probar 7 días gratis
               </Link>
-            </p> */}
-           {/*  <p>
-              <Link
-                href="/registro/entrenar"
-                className="underline-offset-4 hover:text-white hover:underline"
-              >
-                Quiero un plan estándar
-              </Link>
-            </p> */}
+            </p>
           </div>
         </form>
       </CardContent>

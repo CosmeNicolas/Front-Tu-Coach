@@ -13,6 +13,7 @@ export const LANDING = {
 
 export const LANDING_CONTAINER = 'mx-auto w-full max-w-[1240px] px-4 sm:px-6 lg:px-8';
 
+export const LANDING_HOME_ROUTE = '/';
 export const LOGIN_ROUTE = '/login';
 export const REGISTRO_ROUTE = '/registro';
 export const CONTACT_EMAIL = 'apptucoach@gmail.com';

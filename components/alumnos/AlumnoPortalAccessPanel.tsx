@@ -32,6 +32,7 @@ export function AlumnoPortalAccessPanel({ client }: Props) {
   const [email, setEmail] = useState(client.email ?? '');
   const [password, setPassword] = useState('');
   const [showPassword, setShowPassword] = useState(false);
+  const [sendEmail, setSendEmail] = useState(true);
 
   useEffect(() => {
     if (portal?.email) setEmail(portal.email);
@@ -64,12 +65,15 @@ export function AlumnoPortalAccessPanel({ client }: Props) {
       const result = await upsert.mutateAsync({
         email: trimmedEmail,
         password: password.trim() || undefined,
+        sendEmail,
       });
       setPassword('');
       toast.success(
         hasAccount ? 'Acceso actualizado' : 'Cuenta de portal creada',
         {
-          description: result.email ?? undefined,
+          description: sendEmail
+            ? 'Invitación enviada por email'
+            : result.email ?? undefined,
         },
       );
     } catch (err) {
@@ -175,6 +179,16 @@ export function AlumnoPortalAccessPanel({ client }: Props) {
           >
             Generar contraseña segura
           </Button>
+        </label>
+
+        <label className="flex items-center gap-2 text-sm">
+          <input
+            type="checkbox"
+            checked={sendEmail}
+            onChange={(e) => setSendEmail(e.target.checked)}
+            className="size-4 rounded border-border"
+          />
+          <span className="text-foreground">Enviar invitación por email al alumno</span>
         </label>
       </div>
 

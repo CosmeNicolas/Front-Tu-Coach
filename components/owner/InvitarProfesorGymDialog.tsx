@@ -4,8 +4,7 @@ import { useState } from 'react';
 import { Plus } from 'lucide-react';
 import { toast } from 'sonner';
 import { ApiError } from '@/lib/api/client';
-import { useTenants } from '@/hooks/useGymAdmin';
-import { useCreateAdminProfesor } from '@/hooks/useAdminProfesores';
+import { useCreateGymProfesor } from '@/hooks/useGymAdmin';
 import { Button } from '@/components/ui/button';
 import { Input } from '@/components/ui/input';
 import { Label } from '@/components/ui/label';
@@ -20,35 +19,26 @@ import {
 } from '@/components/ui/dialog';
 
 interface Props {
-  defaultTenantId?: string;
+  tenantId?: string;
   trigger?: React.ReactNode;
 }
 
-export function NuevoProfesorDialog({ defaultTenantId, trigger }: Props) {
-  const { data: tenants } = useTenants();
-  const create = useCreateAdminProfesor();
+export function InvitarProfesorGymDialog({ tenantId, trigger }: Props) {
+  const create = useCreateGymProfesor(tenantId);
   const [open, setOpen] = useState(false);
-  const [tenantId, setTenantId] = useState(defaultTenantId ?? '');
   const [nombre, setNombre] = useState('');
   const [apellido, setApellido] = useState('');
   const [email, setEmail] = useState('');
-  const [password, setPassword] = useState('');
   const [telefono, setTelefono] = useState('');
 
   function resetForm() {
-    setTenantId(defaultTenantId ?? '');
     setNombre('');
     setApellido('');
     setEmail('');
-    setPassword('');
     setTelefono('');
   }
 
   async function handleSubmit() {
-    if (!tenantId) {
-      toast.error('Seleccioná un gimnasio');
-      return;
-    }
     if (!nombre.trim() || !apellido.trim()) {
       toast.error('Nombre y apellido son obligatorios');
       return;
@@ -57,25 +47,20 @@ export function NuevoProfesorDialog({ defaultTenantId, trigger }: Props) {
       toast.error('El email es obligatorio');
       return;
     }
-    if (password.trim() && password.length < 8) {
-      toast.error('La contraseña debe tener al menos 8 caracteres si la definís vos');
-      return;
-    }
 
     try {
       await create.mutateAsync({
-        tenantId,
         nombre: nombre.trim(),
         apellido: apellido.trim(),
         email: email.trim(),
-        password: password.trim() || undefined,
         telefono: telefono.trim() || undefined,
+        tenantId,
       });
-      toast.success('Profesor creado');
+      toast.success('Invitación enviada por email');
       setOpen(false);
       resetForm();
     } catch (err) {
-      toast.error('No se pudo crear el profesor', {
+      toast.error('No se pudo invitar al profesor', {
         description: err instanceof ApiError ? err.message : undefined,
       });
     }
@@ -86,7 +71,6 @@ export function NuevoProfesorDialog({ defaultTenantId, trigger }: Props) {
       open={open}
       onOpenChange={(next) => {
         setOpen(next);
-        if (next && defaultTenantId) setTenantId(defaultTenantId);
         if (!next) resetForm();
       }}
     >
@@ -94,99 +78,62 @@ export function NuevoProfesorDialog({ defaultTenantId, trigger }: Props) {
         {trigger ?? (
           <Button type="button">
             <Plus className="mr-2 h-4 w-4" />
-            Nuevo profesor
+            Invitar profesor
           </Button>
         )}
       </DialogTrigger>
       <DialogContent className="max-h-[90vh] max-w-md overflow-y-auto">
         <DialogHeader>
-          <DialogTitle>Nuevo profesor</DialogTitle>
+          <DialogTitle>Invitar profesor</DialogTitle>
           <DialogDescription>
-            Alta global con acceso al gimnasio que elijas. Sin contraseña, enviamos
-            invitación por mail.
+            Le mandamos un mail para activar su cuenta y elegir contraseña.
           </DialogDescription>
         </DialogHeader>
 
         <div className="space-y-4">
-          <div className="space-y-2">
-            <Label htmlFor="prof-tenant">Gimnasio *</Label>
-            <select
-              id="prof-tenant"
-              className="w-full rounded-lg border border-input bg-card px-3 py-2 text-sm"
-              value={tenantId}
-              onChange={(e) => setTenantId(e.target.value)}
-            >
-              <option value="">Seleccionar…</option>
-              {tenants?.map((t) => (
-                <option key={t.id} value={t.id}>
-                  {t.nombre}
-                </option>
-              ))}
-            </select>
-          </div>
-
           <div className="grid gap-4 sm:grid-cols-2">
             <div className="space-y-2">
-              <Label htmlFor="prof-nombre">Nombre *</Label>
+              <Label htmlFor="gym-prof-nombre">Nombre *</Label>
               <Input
-                id="prof-nombre"
+                id="gym-prof-nombre"
                 value={nombre}
                 onChange={(e) => setNombre(e.target.value)}
               />
             </div>
             <div className="space-y-2">
-              <Label htmlFor="prof-apellido">Apellido *</Label>
+              <Label htmlFor="gym-prof-apellido">Apellido *</Label>
               <Input
-                id="prof-apellido"
+                id="gym-prof-apellido"
                 value={apellido}
                 onChange={(e) => setApellido(e.target.value)}
               />
             </div>
           </div>
-
           <div className="space-y-2">
-            <Label htmlFor="prof-email">Email *</Label>
+            <Label htmlFor="gym-prof-email">Email *</Label>
             <Input
-              id="prof-email"
+              id="gym-prof-email"
               type="email"
               value={email}
               onChange={(e) => setEmail(e.target.value)}
-              autoComplete="off"
             />
           </div>
-
           <div className="space-y-2">
-            <Label htmlFor="prof-password">Contraseña *</Label>
+            <Label htmlFor="gym-prof-tel">Teléfono</Label>
             <Input
-              id="prof-password"
-              type="password"
-              value={password}
-              onChange={(e) => setPassword(e.target.value)}
-              autoComplete="new-password"
-              minLength={8}
-            />
-          </div>
-
-          <div className="space-y-2">
-            <Label htmlFor="prof-telefono">Teléfono</Label>
-            <Input
-              id="prof-telefono"
+              id="gym-prof-tel"
               value={telefono}
               onChange={(e) => setTelefono(e.target.value)}
             />
           </div>
         </div>
 
-        <DialogFooter className="gap-2">
-          <Button variant="outline" type="button" onClick={() => setOpen(false)}>
+        <DialogFooter>
+          <Button type="button" variant="outline" onClick={() => setOpen(false)}>
             Cancelar
           </Button>
-          <Button
-            type="button"
-            disabled={create.isPending}
-            onClick={() => void handleSubmit()}
-          >
-            {create.isPending ? 'Creando…' : 'Crear profesor'}
+          <Button type="button" disabled={create.isPending} onClick={() => void handleSubmit()}>
+            {create.isPending ? 'Enviando…' : 'Enviar invitación'}
           </Button>
         </DialogFooter>
       </DialogContent>

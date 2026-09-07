@@ -51,7 +51,7 @@ export interface ProfesoresAdminList {
 
 export interface CreateProfesorPayload {
   email: string;
-  password: string;
+  password?: string;
   tenantId: string;
   nombre: string;
   apellido: string;

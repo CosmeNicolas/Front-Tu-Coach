@@ -3,6 +3,7 @@
 import { useMutation, useQuery, useQueryClient } from '@tanstack/react-query';
 import {
   archivePlanification,
+  unarchivePlanification,
   createPlanification,
   createItemAdjustment,
   deletePlanification,
@@ -119,6 +120,18 @@ export function useArchivePlanification() {
   return useMutation({
     mutationFn: (id: string) => archivePlanification(id),
     onSuccess: () => qc.invalidateQueries({ queryKey: ['planifications'] }),
+  });
+}
+
+export function useUnarchivePlanification() {
+  const qc = useQueryClient();
+  return useMutation({
+    mutationFn: (id: string) => unarchivePlanification(id),
+    onSuccess: (_data, id) => {
+      qc.invalidateQueries({ queryKey: ['planifications'] });
+      qc.invalidateQueries({ queryKey: ['planifications', 'detail', id] });
+      qc.invalidateQueries({ queryKey: ['notifications'] });
+    },
   });
 }
 

@@ -8,6 +8,7 @@ import { motion, AnimatePresence, useReducedMotion } from 'framer-motion';
 import { LANDING_NAV_ITEMS } from '@/lib/landing/nav';
 import {
   LANDING_CONTAINER,
+  LANDING_HOME_ROUTE,
   LOGIN_ROUTE,
   REGISTRO_ROUTE,
   TRIAL_DAYS,
@@ -52,7 +53,7 @@ export function LandingNavbar() {
         aria-label="Navegación principal"
       >
         <Link
-          href={LOGIN_ROUTE}
+          href={LANDING_HOME_ROUTE}
           className="flex items-center gap-2.5 rounded-lg focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-white/30"
           onClick={handleNavClick}
         >

@@ -1,11 +1,13 @@
 'use client';
 
-import { useQuery } from '@tanstack/react-query';
+import { useMutation, useQuery, useQueryClient } from '@tanstack/react-query';
 import {
+  createGymProfesor,
   fetchGymDashboard,
   fetchPlatformOverview,
   fetchProfesorAlumnos,
   fetchProfesorDetail,
+  type CreateGymProfesorPayload,
 } from '@/lib/api/gym-admin';
 import { fetchTenants } from '@/lib/api/tenants';
 
@@ -44,5 +46,16 @@ export function useProfesorAlumnos(profesorId: string, tenantId?: string) {
     queryKey: ['gym-admin', 'profesor-alumnos', profesorId, tenantId ?? 'own'],
     queryFn: () => fetchProfesorAlumnos(profesorId, tenantId),
     enabled: Boolean(profesorId),
+  });
+}
+
+export function useCreateGymProfesor(tenantId?: string) {
+  const queryClient = useQueryClient();
+  return useMutation({
+    mutationFn: (payload: CreateGymProfesorPayload) =>
+      createGymProfesor(payload, tenantId),
+    onSuccess: () => {
+      queryClient.invalidateQueries({ queryKey: ['gym-admin', 'dashboard'] });
+    },
   });
 }

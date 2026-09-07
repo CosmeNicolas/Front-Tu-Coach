@@ -5,6 +5,7 @@ import {
   CONTACT_EMAIL,
   CONTACT_MAILTO,
   LANDING_CONTAINER,
+  LANDING_HOME_ROUTE,
   LOGIN_ROUTE,
   REGISTRO_ROUTE,
 } from '@/lib/landing/constants';
@@ -17,7 +18,7 @@ export function LandingFooter() {
       <div className={LANDING_CONTAINER}>
         <div className="grid gap-10 lg:grid-cols-[1.4fr_repeat(3,1fr)]">
           <div>
-            <Link href={LOGIN_ROUTE} className="inline-flex items-center gap-2.5">
+            <Link href={LANDING_HOME_ROUTE} className="inline-flex items-center gap-2.5">
               <Image
                 src="/branding/LGO600PX.png"
                 alt=""

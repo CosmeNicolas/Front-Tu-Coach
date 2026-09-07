@@ -1,7 +1,15 @@
 'use client';
 
 import Link from 'next/link';
+import {
+  Archive,
+  ArchiveRestore,
+  Eye,
+  Trash2,
+  Wand2,
+} from 'lucide-react';
 import { Badge } from '@/components/ui/badge';
+import { Button } from '@/components/ui/button';
 import {
   Planification,
   PlanificationStatus,
@@ -11,6 +19,7 @@ import {
 interface PlanificacionTableProps {
   items: Planification[];
   onArchive: (id: string) => void;
+  onUnarchive: (id: string) => void;
   onDelete: (id: string) => void;
 }
 
@@ -41,6 +50,7 @@ function EstadoCell({ plan }: { plan: Planification }) {
 export function PlanificacionTable({
   items,
   onArchive,
+  onUnarchive,
   onDelete,
 }: PlanificacionTableProps) {
   if (!items.length) {
@@ -53,7 +63,7 @@ export function PlanificacionTable({
 
   return (
     <div className="overflow-x-auto rounded-lg border border-border bg-card shadow-sm">
-      <table className="min-w-[880px] w-full text-sm">
+      <table className="min-w-[980px] w-full text-sm">
         <thead className="bg-muted/40 text-left text-muted-foreground">
           <tr>
             <th className="px-4 py-3 font-medium">Alumno</th>
@@ -89,35 +99,50 @@ export function PlanificacionTable({
                   <EstadoCell plan={p} />
                 </td>
                 <td className="px-4 py-3">
-                  <div className="flex flex-wrap gap-2">
-                    <Link
-                      href={`/profesor/planificaciones/${p.id}/asistente`}
-                      className="font-medium text-foreground underline-offset-2 hover:underline"
-                    >
-                      Asistente
-                    </Link>
-                    <Link
-                      href={`/profesor/planificaciones/${p.id}`}
-                      className="text-foreground underline-offset-2 hover:underline"
-                    >
-                      Ver
-                    </Link>
+                  <div className="flex flex-wrap items-center gap-1.5">
+                    <Button asChild size="sm">
+                      <Link href={`/profesor/planificaciones/${p.id}/asistente`}>
+                        <Wand2 />
+                        Asistente
+                      </Link>
+                    </Button>
+                    <Button asChild size="sm" variant="outline">
+                      <Link href={`/profesor/planificaciones/${p.id}`}>
+                        <Eye />
+                        Ver
+                      </Link>
+                    </Button>
                     {esActual ? (
-                      <button
+                      <Button
                         type="button"
+                        size="sm"
+                        variant="outline"
                         onClick={() => onArchive(p.id)}
-                        className="text-foreground underline-offset-2 hover:underline"
                       >
+                        <Archive />
                         Archivar
-                      </button>
+                      </Button>
                     ) : null}
-                    <button
+                    {p.estado === PlanificationStatus.ARCHIVED ? (
+                      <Button
+                        type="button"
+                        size="sm"
+                        variant="outline"
+                        onClick={() => onUnarchive(p.id)}
+                      >
+                        <ArchiveRestore />
+                        Desarchivar
+                      </Button>
+                    ) : null}
+                    <Button
                       type="button"
+                      size="sm"
+                      variant="destructive"
                       onClick={() => onDelete(p.id)}
-                      className="text-red-600 underline-offset-2 hover:underline"
                     >
+                      <Trash2 />
                       Eliminar
-                    </button>
+                    </Button>
                   </div>
                 </td>
               </tr>
