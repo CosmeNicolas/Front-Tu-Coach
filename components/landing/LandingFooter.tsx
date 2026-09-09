@@ -3,7 +3,7 @@ import Link from 'next/link';
 import { LANDING_FOOTER_GROUPS } from '@/lib/landing/footer';
 import {
   CONTACT_EMAIL,
-  CONTACT_MAILTO,
+  CONTACT_ROUTE,
   LANDING_CONTAINER,
   LANDING_HOME_ROUTE,
   LOGIN_ROUTE,
@@ -32,12 +32,12 @@ export function LandingFooter() {
               Plataforma para crear, asignar y gestionar planificaciones de entrenamiento,
               acompañar alumnos y analizar su progreso.
             </p>
-            <a
-              href={CONTACT_MAILTO}
+            <Link
+              href={CONTACT_ROUTE}
               className="mt-3 inline-block text-sm text-[#A3A3A3] transition-colors hover:text-white"
             >
               {CONTACT_EMAIL}
-            </a>
+            </Link>
           </div>
 
           {LANDING_FOOTER_GROUPS.map((group) => (

@@ -65,7 +65,7 @@ export function createGymProfesor(
     {
       method: 'POST',
       auth: true,
-      body: JSON.stringify(payload),
+      body: payload,
     },
   );
 }

@@ -17,7 +17,7 @@ export const LANDING_FOOTER_GROUPS: FooterLinkGroup[] = [
     title: 'Recursos',
     links: [
       { label: 'Crear cuenta', href: '/registro' },
-      { label: 'Contacto', href: 'mailto:hola@tucoach.pro' },
+      { label: 'Contacto', href: '/contacto' },
     ],
   },
   {
@@ -35,45 +35,44 @@ export type TrustedByEntry =
       kind: 'logo';
       src: string;
       alt: string;
-      width?: number;
-      height?: number;
-      scale?: number;
-      /** Evita caché del optimizador al reemplazar PNGs en /public */
       unoptimized?: boolean;
       imageClassName?: string;
+      sizeClassName?: string;
     };
 
-/** Logos en /public/sponsor/ — orden: izquierda → centro → derecha */
+/** Logos en /public/sponsor/ — orden: izquierda → derecha (CEMD en el centro) */
 export const TRUSTED_BY_ENTRIES: TrustedByEntry[] = [
   {
     kind: 'logo',
     src: '/sponsor/Q_TEAM_LETRAS.png',
     alt: 'Tony Quesada Team',
-    width: 160,
-    height: 48,
-    imageClassName:
-      'h-14 w-full max-w-[240px] object-contain object-center opacity-80 brightness-0 invert sm:h-10 sm:max-w-[160px]',
+    imageClassName: 'brightness-0 invert opacity-85',
   },
   {
     kind: 'logo',
-    src: '/sponsor/CEMD__Logo.png?v=3',
-    alt: 'CEMD — Centro de Medicina Deportiva',
-    scale: 4.5,
-    unoptimized: true,
-    width: 320,
-    height: 320,
-    imageClassName:
-      'h-14 w-auto max-w-[280px] object-contain object-center opacity-90 sm:h-11 sm:max-w-[200px]',
-  },
-  {
-    kind: 'logo',
-    src: '/sponsor/ATLAS.png?v=3',
+    src: '/sponsor/ATLAS.png?v=4',
     alt: 'Atlas Suplementos',
-    scale: 4.5,
     unoptimized: true,
-    width: 320,
-    height: 320,
-    imageClassName:
-      'h-14 w-auto max-w-[280px] object-contain object-center opacity-90 sm:h-11 sm:max-w-[200px]',
+  },
+  {
+    kind: 'logo',
+    src: '/sponsor/CEMD__Logo.png?v=4',
+    alt: 'CEMD — Centro de Medicina Deportiva',
+    unoptimized: true,
+  },
+  {
+    kind: 'logo',
+    src: '/sponsor/allFrozen.png?v=4',
+    alt: 'allFrozen — Especialistas en alimentos congelados',
+    unoptimized: true,
+    imageClassName: 'brightness-[1.85] contrast-[1.05] opacity-95',
+  },
+  {
+    kind: 'logo',
+    src: '/sponsor/Coffee.png?v=3',
+    alt: 'Coffee Station',
+    unoptimized: true,
+    imageClassName: 'opacity-90',
+    sizeClassName: 'lg:max-w-[9.5rem]',
   },
 ];

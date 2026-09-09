@@ -10,6 +10,7 @@ import { HowItWorksSection } from '@/components/landing/HowItWorksSection';
 import { TestimonialsSection } from '@/components/landing/TestimonialsSection';
 import { GymsSection } from '@/components/landing/GymsSection';
 import { PricingSection } from '@/components/landing/PricingSection';
+import { PlatformBenefitsSection } from '@/components/landing/PlatformBenefitsSection';
 import { FinalCTA } from '@/components/landing/FinalCTA';
 import { LandingFooter } from '@/components/landing/LandingFooter';
 
@@ -29,6 +30,7 @@ export function LandingPage() {
         <TestimonialsSection />
         <GymsSection />
         <PricingSection />
+        <PlatformBenefitsSection />
         <FinalCTA />
       </main>
       <LandingFooter />

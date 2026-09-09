@@ -1,5 +1,5 @@
+import { contactUrl } from '@/lib/landing/contact';
 import {
-  contactMail,
   formatArs,
   LAUNCH_OFFER_LABEL,
   launchMonthPrice,
@@ -12,6 +12,12 @@ export interface LandingPlan {
   id: string;
   name: string;
   subtitle: string;
+  /** Etiqueta superior opcional (ej. "Para gimnasios") */
+  eyebrow?: string;
+  /** Título grande cuando no se muestra precio (gimnasios) */
+  headline?: string;
+  /** Ocultar bloque de precios en la card */
+  showPricing?: boolean;
   price: string;
   period?: string;
   launchPrice?: string;
@@ -78,7 +84,7 @@ export const LANDING_SAAS_PLANS: LandingPlan[] = [
       'Soporte prioritario',
     ],
     cta: 'Consultar Pro',
-    href: contactMail('Quiero el plan Pro'),
+    href: contactUrl('plan-pro'),
   },
   {
     id: 'plus',
@@ -89,27 +95,31 @@ export const LANDING_SAAS_PLANS: LandingPlan[] = [
       'Todo Pro',
       'Más capacidad, la coordinamos con vos',
       'Prioridad de soporte',
-      'Alta a mano: todavía no hay checkout',
+      'Contactanos para activar este plan',
       'Pensado para equipos de un profesor con mucho volumen',
     ],
     cta: 'Consultar Plus',
-    href: contactMail('Quiero el plan Plus'),
+    href: contactUrl('plan-plus'),
   },
 ];
 
 export const LANDING_GYM_PLAN: LandingPlan = {
   id: 'gimnasios',
+  eyebrow: 'Para gimnasios y centros',
   name: 'Gimnasios',
-  subtitle: 'Para equipos y centros. Alta concierge.',
-  ...saasPrice(PRICE_ARS.gymMonth),
+  headline: 'TuCoach en tu gym',
+  subtitle: 'Contactanos y armamos la propuesta para tu centro.',
+  price: '',
+  showPricing: false,
   features: [
     'Varios profesores en un mismo tenant',
     'Dashboard del owner',
-    'Aislamiento por gimnasio',
-    'Cupos a medida',
+    'Ejercicios propios y reportes del centro',
+    'Cupos a medida — lo adaptamos a tus funcionalidades',
+    'Soporte prioritario y onboarding concierge',
   ],
-  cta: 'Escribirnos',
-  href: contactMail('Quiero TuCoach para un gimnasio'),
+  cta: 'Contactanos',
+  href: contactUrl('gimnasio'),
 };
 
 export const LANDING_CATALOG_PLANS: LandingPlan[] = [
@@ -126,7 +136,7 @@ export const LANDING_CATALOG_PLANS: LandingPlan[] = [
       'Sin seguimiento clínico',
     ],
     cta: 'Pedir este plan',
-    href: contactMail('Plan catálogo 4 semanas'),
+    href: contactUrl('catalog-4'),
   },
   {
     id: 'catalog-8',
@@ -141,7 +151,7 @@ export const LANDING_CATALOG_PLANS: LandingPlan[] = [
       'Mejor relación semanas / precio',
     ],
     cta: 'Pedir este plan',
-    href: contactMail('Plan catálogo 8 semanas'),
+    href: contactUrl('catalog-8'),
     highlighted: true,
   },
   {
@@ -157,7 +167,7 @@ export const LANDING_CATALOG_PLANS: LandingPlan[] = [
       'El menor costo por semana',
     ],
     cta: 'Pedir este plan',
-    href: contactMail('Plan catálogo 12 semanas'),
+    href: contactUrl('catalog-12'),
   },
   {
     id: 'catalog-personalizada',
@@ -170,8 +180,10 @@ export const LANDING_CATALOG_PLANS: LandingPlan[] = [
       'No es una plantilla de catálogo',
       'Se coordina por mail',
       'No cubre patologías ni lesiones',
+      'Te asignamos un profesor para que te acompañe',
+
     ],
     cta: 'Pedir personalizada',
-    href: contactMail('Planificación personalizada'),
+    href: contactUrl('personalizada'),
   },
 ];

@@ -1,11 +1,7 @@
-import { Building2, Check, Users } from 'lucide-react';
-import {
-  CONTACT_MAILTO,
-  formatArs,
-  LANDING_CONTAINER,
-  launchMonthPrice,
-  PRICE_ARS,
-} from '@/lib/landing/constants';
+import Image from 'next/image';
+import { Check } from 'lucide-react';
+import { contactUrl } from '@/lib/landing/contact';
+import { LANDING_CONTAINER } from '@/lib/landing/constants';
 import { LandingButton } from '@/components/landing/LandingButton';
 import { ScrollReveal } from '@/components/landing/ScrollReveal';
 
@@ -34,8 +30,7 @@ export function GymsSection() {
               <p className="mt-4 text-base leading-relaxed text-[#A3A3A3]">
                 Coordiná equipos de entrenamiento, estandarizá procesos y obtené una
                 visión clara del trabajo de cada profesor con sus alumnos.{' '}
-                {formatArs(launchMonthPrice(PRICE_ARS.gymMonth))} el primer mes;
-                después {formatArs(PRICE_ARS.gymMonth)}/mes.
+               
               </p>
               <ul className="mt-8 space-y-3">
                 {GYM_BENEFITS.map((item) => (
@@ -46,42 +41,29 @@ export function GymsSection() {
                 ))}
               </ul>
               <div className="mt-8">
-                <LandingButton href={CONTACT_MAILTO} variant="primary">
+                <LandingButton href={contactUrl('gimnasio')} variant="primary">
                   Escribirnos para gimnasios
                 </LandingButton>
               </div>
             </ScrollReveal>
 
-            <ScrollReveal delay={0.1} className="relative border-t border-white/10 bg-[#0A0A0A] p-8 sm:p-10 lg:border-l lg:border-t-0 lg:p-12">
+            <ScrollReveal
+              delay={0.1}
+              className="relative flex flex-col justify-center border-t border-white/10 bg-[#0A0A0A] p-6 sm:p-8 lg:border-l lg:border-t-0 lg:p-10"
+            >
               <div
                 aria-hidden
                 className="pointer-events-none absolute inset-0 bg-[radial-gradient(circle_at_80%_20%,rgba(255,255,255,0.06),transparent_50%)]"
               />
-              <div className="relative grid gap-4 sm:grid-cols-2">
-                <div className="rounded-2xl border border-white/10 bg-[#141414] p-5">
-                  <Building2 className="mb-3 size-6 text-white" aria-hidden />
-                  <p className="font-display text-lg text-white">Centro demo</p>
-                  <p className="mt-1 text-xs text-[#737373]">Vista institucional</p>
-                </div>
-                <div className="rounded-2xl border border-white/10 bg-[#141414] p-5">
-                  <Users className="mb-3 size-6 text-white" aria-hidden />
-                  <p className="font-display text-lg text-white">Profesores</p>
-                  <p className="mt-1 text-xs text-[#737373]">Gestión por roles</p>
-                </div>
-                <div className="rounded-2xl border border-white/10 bg-[#141414] p-5 sm:col-span-2">
-                  <p className="text-[10px] uppercase tracking-wider text-[#737373]">
-                    Reportes generales
-                  </p>
-                  <div className="mt-3 flex h-12 items-end gap-1">
-                    {[35, 50, 42, 65, 55, 70, 58].map((h, i) => (
-                      <div
-                        key={i}
-                        className="flex-1 rounded-t bg-white/20"
-                        style={{ height: `${h}%` }}
-                      />
-                    ))}
-                  </div>
-                </div>
+              <div className="relative overflow-hidden rounded-2xl border border-white/10 bg-[#101010] shadow-[0_24px_80px_rgba(0,0,0,0.45)]">
+                <Image
+                  src="/landing/SeguimientoDashboard.png"
+                  alt="Dashboard de seguimiento del centro con clientes activos, franjas etarias y reportes generales"
+                  width={1593}
+                  height={764}
+                  className="h-auto w-full object-cover object-top"
+                  unoptimized
+                />
               </div>
             </ScrollReveal>
           </div>

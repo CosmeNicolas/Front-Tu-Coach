@@ -81,14 +81,20 @@ export function LoginForm() {
     >
       <CardHeader className="space-y-4 pb-2">
         <div className="flex items-center justify-center gap-4">
-          <Image
-            src="/branding/LGO600PX.png"
-            alt="TuCoach"
-            width={112}
-            height={112}
-            className="h-24 w-24 shrink-0 object-contain sm:h-28 sm:w-28"
-            priority
-          />
+          <Link
+            href="/"
+            className="shrink-0 rounded-lg transition-opacity hover:opacity-85 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-white/50"
+            aria-label="Volver al inicio"
+          >
+            <Image
+              src="/branding/LGO600PX.png"
+              alt=""
+              width={112}
+              height={112}
+              className="h-24 w-24 object-contain sm:h-28 sm:w-28"
+              priority
+            />
+          </Link>
           <div className="">
             <p className="font-display text-sm tracking-wider  text-white sm:text-base">
               TUCOACH

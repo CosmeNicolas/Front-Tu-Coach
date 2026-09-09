@@ -61,9 +61,9 @@ export function TestimonialsSection() {
           </h2>
           {LANDING_TESTIMONIALS.length === 0 ? (
             <p className="mt-3 text-sm text-[#737373]">
-              Placeholders editables — agregar testimonios reales en{' '}
+             
               <code className="rounded bg-white/5 px-1.5 py-0.5 text-xs">
-                lib/landing/testimonials.ts
+             
               </code>
             </p>
           ) : null}

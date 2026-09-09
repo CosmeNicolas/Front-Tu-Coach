@@ -18,7 +18,7 @@ export function LegalDocument({ title, updated, children }: LegalDocumentProps) 
             {title}
           </h1>
           <p className="mt-3 text-sm text-[#737373]">Actualizado {updated}</p>
-          <div className="mt-10 space-y-6 text-sm leading-relaxed text-[#A3A3A3] [&_h2]:mt-10 [&_h2]:font-display [&_h2]:text-xl [&_h2]:tracking-wide [&_h2]:text-white [&_a]:text-white [&_a]:underline [&_a]:underline-offset-4">
+          <div className="mt-10 space-y-6 text-sm leading-relaxed text-[#A3A3A3] [&_h2]:mt-10 [&_h2]:font-display [&_h2]:text-xl [&_h2]:tracking-wide [&_h2]:text-white [&_a]:text-white [&_a]:underline [&_a]:underline-offset-4 [&_strong]:font-semibold [&_strong]:text-white [&_ul]:mt-3 [&_ul]:list-disc [&_ul]:space-y-1.5 [&_ul]:pl-5">
             {children}
           </div>
         </article>

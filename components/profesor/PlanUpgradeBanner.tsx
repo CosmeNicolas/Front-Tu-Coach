@@ -1,13 +1,23 @@
 'use client';
 
-import { useEffect } from 'react';
-import { useSearchParams } from 'next/navigation';
-import { Loader2, Sparkles } from 'lucide-react';
+import { CreditCard, Loader2 } from 'lucide-react';
 import { toast } from 'sonner';
 import { useBillingCheckout, useBillingPlanStatus } from '@/hooks/useBilling';
 import { PlanCodigo } from '@/types/admin';
-import { formatArs, launchMonthPrice, PRICE_ARS } from '@/lib/landing/constants';
+import {
+  formatArs,
+  LAUNCH_OFFER_LABEL,
+  launchMonthPrice,
+  PRICE_ARS,
+} from '@/lib/landing/constants';
+import { Badge } from '@/components/ui/badge';
 import { Button } from '@/components/ui/button';
+import {
+  Card,
+  CardDescription,
+  CardHeader,
+  CardTitle,
+} from '@/components/ui/card';
 import { ApiError } from '@/lib/api/client';
 
 function formatDate(iso: string | null | undefined): string | null {
@@ -22,36 +32,29 @@ function formatDate(iso: string | null | undefined): string | null {
 }
 
 export function PlanUpgradeBanner() {
-  const searchParams = useSearchParams();
-  const { data, isLoading, refetch } = useBillingPlanStatus();
+  const { data, isLoading } = useBillingPlanStatus();
   const checkout = useBillingCheckout();
-
-  useEffect(() => {
-    const billing = searchParams.get('billing');
-    if (billing === 'success') {
-      toast.success('Pago recibido. Tu plan se actualiza en unos segundos.');
-      void refetch();
-    } else if (billing === 'failure') {
-      toast.error('El pago no se completó.');
-    } else if (billing === 'pending') {
-      toast.message('Pago pendiente de confirmación.');
-    }
-  }, [searchParams, refetch]);
 
   if (isLoading || !data) {
     return null;
   }
 
-  if (!data.canCheckout && data.planEfectivo !== PlanCodigo.FREE && data.planEfectivo !== PlanCodigo.TRIAL) {
+  if (
+    !data.canCheckout &&
+    data.planEfectivo !== PlanCodigo.FREE &&
+    data.planEfectivo !== PlanCodigo.TRIAL
+  ) {
     const vence = formatDate(data.planVenceAt);
     if (!vence) return null;
     return (
-      <section className="rounded-2xl border border-border bg-card px-4 py-4 sm:px-5">
-        <p className="text-sm text-muted-foreground">
-          Plan <strong className="text-foreground">{data.planEfectivo}</strong> activo
-          {vence ? ` hasta el ${vence}.` : '.'}
-        </p>
-      </section>
+      <Card>
+        <CardHeader className="p-4 sm:p-5">
+          <CardDescription>
+            Plan <strong className="text-foreground">{data.planEfectivo}</strong>{' '}
+            activo hasta el {vence}.
+          </CardDescription>
+        </CardHeader>
+      </Card>
     );
   }
 
@@ -60,7 +63,8 @@ export function PlanUpgradeBanner() {
   }
 
   const trialLabel = formatDate(data.trialEndsAt);
-  const amount = data.checkoutPlans[0]?.amountArs ?? launchMonthPrice(PRICE_ARS.premiumMonth);
+  const amount =
+    data.checkoutPlans[0]?.amountArs ?? launchMonthPrice(PRICE_ARS.premiumMonth);
 
   async function handleCheckout() {
     try {
@@ -73,35 +77,43 @@ export function PlanUpgradeBanner() {
     }
   }
 
+  const title =
+    data.planEfectivo === PlanCodigo.TRIAL
+      ? `Tu prueba Premium${trialLabel ? ` termina el ${trialLabel}` : ' está por terminar'}`
+      : 'Estás en plan Free';
+
   return (
-    <section className="rounded-2xl border border-amber-500/30 bg-amber-500/10 px-4 py-4 sm:flex sm:items-center sm:justify-between sm:gap-4 sm:px-5">
-      <div>
-        <p className="inline-flex items-center gap-2 text-sm font-semibold text-foreground">
-          <Sparkles className="size-4 text-amber-500" aria-hidden />
-          {data.planEfectivo === PlanCodigo.TRIAL
-            ? `Tu prueba Premium${trialLabel ? ` termina el ${trialLabel}` : ' está por terminar'}`
-            : 'Estás en plan Free'}
-        </p>
-        <p className="mt-1 text-sm text-muted-foreground">
-          Pasá a Premium para más alumnos y planificaciones activas. Primer mes promo:{' '}
-          {formatArs(amount)}.
-        </p>
-      </div>
-      <Button
-        type="button"
-        className="mt-3 w-full sm:mt-0 sm:w-auto"
-        disabled={!data.checkoutAvailable || checkout.isPending}
-        onClick={() => void handleCheckout()}
-      >
-        {checkout.isPending ? (
-          <>
-            <Loader2 className="animate-spin" />
-            Abriendo pago…
-          </>
-        ) : (
-          'Pagar con MercadoPago'
-        )}
-      </Button>
-    </section>
+    <Card className="border-sky-500/25 bg-sky-500/6">
+      <CardHeader className="gap-4 p-4 sm:flex-row sm:items-center sm:justify-between sm:p-5">
+        <div className="min-w-0 space-y-2">
+          <div className="flex flex-wrap items-center gap-2">
+            <CardTitle className="text-base font-semibold">{title}</CardTitle>
+            <Badge variant="secondary">{LAUNCH_OFFER_LABEL}</Badge>
+          </div>
+          <CardDescription>
+            Pasá a Premium para más alumnos y planificaciones activas. Primer mes:{' '}
+            <strong className="font-semibold text-foreground">{formatArs(amount)}</strong>.
+          </CardDescription>
+        </div>
+        <Button
+          type="button"
+          className="w-full shrink-0 sm:w-auto"
+          disabled={!data.checkoutAvailable || checkout.isPending}
+          onClick={() => void handleCheckout()}
+        >
+          {checkout.isPending ? (
+            <>
+              <Loader2 className="animate-spin" aria-hidden />
+              Abriendo pago…
+            </>
+          ) : (
+            <>
+              <CreditCard className="size-4" aria-hidden />
+              Pagar con Mercado Pago
+            </>
+          )}
+        </Button>
+      </CardHeader>
+    </Card>
   );
 }

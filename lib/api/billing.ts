@@ -34,6 +34,6 @@ export function createBillingCheckout(planId: 'premium') {
   return apiClient<BillingCheckoutResult>('/billing/checkout', {
     method: 'POST',
     auth: true,
-    body: JSON.stringify({ planId }),
+    body: { planId },
   });
 }

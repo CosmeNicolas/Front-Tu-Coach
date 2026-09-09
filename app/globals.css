@@ -2,25 +2,27 @@
 
 :root {
   --radius: 0.625rem;
-  --background: #ffffff;
-  --foreground: #0a0a0a;
-  --card: #ffffff;
-  --card-foreground: #0a0a0a;
-  --popover: #ffffff;
-  --popover-foreground: #0a0a0a;
-  --primary: #171717;
-  --primary-foreground: #fafafa;
-  --secondary: #f5f5f5;
-  --secondary-foreground: #171717;
-  --muted: #f5f5f5;
-  --muted-foreground: #737373;
-  --accent: #e5e5e5;
-  --accent-foreground: #171717;
-  --destructive: #404040;
+  /* Tema claro suave — evita blanco puro (#fff) demasiado intenso */
+  --background: #f2f2f4;
+  --foreground: #18181b;
+  --card: #f9f9fa;
+  --card-foreground: #18181b;
+  --popover: #f9f9fa;
+  --popover-foreground: #18181b;
+  --primary: #27272a;
+  --primary-foreground: #f4f4f5;
+  --secondary: #ececee;
+  --secondary-foreground: #27272a;
+  --muted: #ebebec;
+  --muted-foreground: #71717a;
+  --accent: #e4e4e7;
+  --accent-foreground: #27272a;
+  --destructive: #52525b;
   --destructive-foreground: #fafafa;
-  --border: #e5e5e5;
-  --input: #e5e5e5;
-  --ring: #525252;
+  --border: #d9d9de;
+  --input: #d4d4d8;
+  --ring: #71717a;
+  color-scheme: light;
 }
 
 @theme inline {
@@ -72,6 +74,7 @@
   --border: #404040;
   --input: #404040;
   --ring: #a3a3a3;
+  color-scheme: dark;
 }
 
 html {
@@ -130,8 +133,27 @@ textarea::placeholder {
   color: var(--muted-foreground);
 }
 
+/* Superficies legacy en tema claro — tonos zinc suaves en lugar de blanco puro */
+:root:not(.dark) .bg-white {
+  background-color: #f9f9fa;
+}
+
+:root:not(.dark) .bg-zinc-50,
+:root:not(.dark) .bg-zinc-50\/80,
+:root:not(.dark) .bg-zinc-50\/50 {
+  background-color: color-mix(in srgb, var(--muted) 65%, transparent);
+}
+
+:root:not(.dark) .bg-zinc-100 {
+  background-color: var(--muted);
+}
+
 /* Textos y superficies legacy (zinc / gray): legibles en modo oscuro.
-   No remapear bg-white: la landing y login usan blanco intencional. */
+   No remapear bg-white en landing/login: usan blanco intencional sobre fondo oscuro. */
+.landing-page .bg-white,
+.auth-login-page .bg-white {
+  background-color: #ffffff;
+}
 .dark .bg-zinc-50,
 .dark .bg-zinc-50\/80,
 .dark .bg-zinc-50\/50 {

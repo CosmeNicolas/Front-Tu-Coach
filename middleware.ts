@@ -11,6 +11,7 @@ const PUBLIC_PATHS = [
   '/recuperar/nueva',
   '/terminos',
   '/privacidad',
+  '/contacto',
 ];
 const PROTECTED_PREFIXES = [
   '/super-admin',
@@ -48,7 +49,7 @@ export function middleware(request: NextRequest) {
       const dest = role ? DASHBOARD_BY_ROLE[role] : '/login';
       return NextResponse.redirect(new URL(dest, request.url));
     }
-    return NextResponse.redirect(new URL('/login', request.url));
+    return NextResponse.next();
   }
 
   if (PUBLIC_PATHS.includes(pathname)) {
@@ -78,6 +79,7 @@ export const config = {
     '/recuperar/:path*',
     '/terminos',
     '/privacidad',
+    '/contacto',
     '/super-admin/:path*',
     '/owner/:path*',
     '/profesor/:path*',

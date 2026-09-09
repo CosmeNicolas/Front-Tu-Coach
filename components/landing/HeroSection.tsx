@@ -1,8 +1,10 @@
 'use client';
 
 import { motion, useReducedMotion } from 'framer-motion';
-import { Play } from 'lucide-react';
+
 import Image from 'next/image';
+/* import { Play } from 'lucide-react'; */
+import { contactUrl } from '@/lib/landing/contact';
 import { LANDING_CONTAINER, REGISTRO_ROUTE, TRIAL_DAYS } from '@/lib/landing/constants';
 import { LandingButton } from '@/components/landing/LandingButton';
 import { ScrollReveal } from '@/components/landing/ScrollReveal';
@@ -157,14 +159,14 @@ export function HeroSection() {
                 {`Probar ${TRIAL_DAYS} días`}
               </LandingButton>
               <LandingButton
-                href="#funciones"
+                href={contactUrl('demo')}
                 variant="secondary"
                 className="w-full sm:w-auto"
               >
-                <span className="inline-flex size-7 items-center justify-center rounded-full border border-white/20 bg-white/5">
+                {/* <span className="inline-flex size-7 items-center justify-center rounded-full border border-white/20 bg-white/5">
                   <Play className="size-3 fill-white text-white" aria-hidden />
-                </span>
-                Ver cómo funciona
+                </span> */}
+                Pedir una demo
               </LandingButton>
             </div>
 

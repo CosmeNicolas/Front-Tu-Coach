@@ -16,6 +16,7 @@ export const LANDING_CONTAINER = 'mx-auto w-full max-w-[1240px] px-4 sm:px-6 lg:
 export const LANDING_HOME_ROUTE = '/';
 export const LOGIN_ROUTE = '/login';
 export const REGISTRO_ROUTE = '/registro';
+export const CONTACT_ROUTE = '/contacto';
 export const CONTACT_EMAIL = 'apptucoach@gmail.com';
 export const CONTACT_MAILTO = `mailto:${CONTACT_EMAIL}`;
 
@@ -31,7 +32,7 @@ export const PRICE_ARS = {
   premiumMonth: 50_000,
   proMonth: 100_000,
   plusMonth: 150_000,
-  gymMonth: 200_000,
+  gymMonth: 350_000,
   catalog4w: 15_000,
   catalog8w: 25_000,
   catalog12w: 35_000,

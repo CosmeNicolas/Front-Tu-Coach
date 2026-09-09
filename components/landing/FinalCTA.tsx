@@ -28,20 +28,17 @@ export function FinalCTA() {
                 </LandingButton>
               </div>
 
-              <div className="mt-8 flex items-center justify-center gap-3">
-                <div className="flex -space-x-2">
-                  {[1, 2, 3].map((i) => (
-                    <Image
-                      key={i}
-                      src="/branding/LGO600PX.png"
-                      alt=""
-                      width={32}
-                      height={32}
-                      className="rounded-full border-2 border-[#0A0A0A] opacity-70 grayscale"
-                    />
-                  ))}
-                </div>
-                <p className="text-xs text-[#737373]">Plataforma para profes y alumnos</p>
+              <div className="mt-10 flex flex-col items-center justify-center gap-5">
+                <Image
+                  src="/branding/LGO600PX.png"
+                  alt="TuCoach"
+                  width={96}
+                  height={96}
+                  className="size-16 opacity-90 grayscale sm:size-20"
+                />
+                <p className="font-display text-[clamp(1.75rem,4vw,2.75rem)] leading-tight tracking-wide text-white">
+                  NO DEJES DE MOVERTE
+                </p>
               </div>
             </div>
           </div>
