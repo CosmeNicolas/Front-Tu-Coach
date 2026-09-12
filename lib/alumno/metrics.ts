@@ -1,6 +1,10 @@
 import { Planification, PlanificationProgress } from '@/types/planification';
 import { StudentProgressSummary } from '@/lib/api/student-portal';
 import {
+  buildTrainingActivitySnapshot,
+  type TrainingActivitySnapshot,
+} from '@/lib/alumno/training-streak';
+import {
   ExerciseExecutionState,
   FlatExerciseRow,
   SessionExecutionLog,
@@ -18,6 +22,9 @@ export interface AlumnoDashboardMetrics {
   ultimaFecha: string | null;
   ejerciciosCompletadosTotal: number;
   streakSimple: number;
+  rachaSesiones: number;
+  rachaMaxima: number;
+  actividad: TrainingActivitySnapshot;
   totalTrainingSeconds: number;
   totalVolumeKg: number;
 }
@@ -39,8 +46,11 @@ function asExtended(
 
 export function buildAlumnoMetrics(
   plan: {
-    config: Pick<Planification['config'], 'totalSesiones'>;
+    config: Pick<Planification['config'], 'totalSesiones'> & {
+      frecuenciaSemanal?: number;
+    };
     progresoAlumno: Planification['progresoAlumno'] | StudentProgressExtended;
+    createdAt?: string;
   },
   resumen?: StudentProgressSummary,
 ): AlumnoDashboardMetrics {
@@ -83,6 +93,13 @@ export function buildAlumnoMetrics(
     else break;
   }
 
+  const actividad = buildTrainingActivitySnapshot(
+    progress,
+    total,
+    plan.config.frecuenciaSemanal ?? 3,
+    { planStartedAt: plan.createdAt ?? null },
+  );
+
   return {
     completadas,
     total,
@@ -101,6 +118,9 @@ export function buildAlumnoMetrics(
     ultimaFecha,
     ejerciciosCompletadosTotal,
     streakSimple,
+    rachaSesiones: actividad.rachaSesiones,
+    rachaMaxima: actividad.rachaMaxima,
+    actividad,
     totalTrainingSeconds,
     totalVolumeKg: Math.round(totalVolumeKg * 10) / 10,
   };

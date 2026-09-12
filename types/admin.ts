@@ -41,6 +41,11 @@ export interface ProfesorAdmin {
   estado: UserStatus;
   tenantId: string;
   tenantNombre: string | null;
+  alumnosCount: number;
+  planCodigo: PlanCodigo;
+  planEfectivo: PlanCodigo;
+  diasRestantes: number | null;
+  venceLabel: string;
   createdAt: string;
 }
 

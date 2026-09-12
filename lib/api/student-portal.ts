@@ -31,6 +31,7 @@ export interface StudentPlanificationListItem {
 
 export interface StudentPlanification extends Planification {
   progresoResumen: StudentProgressSummary;
+  actividad?: import('@/lib/alumno/training-streak').TrainingActivitySnapshot;
 }
 
 export interface StudentMaterializedPlanification

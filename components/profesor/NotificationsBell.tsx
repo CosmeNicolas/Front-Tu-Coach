@@ -81,7 +81,7 @@ export function NotificationsBell() {
             <p className="text-sm text-muted-foreground">Cargando…</p>
           ) : items.length === 0 ? (
             <p className="rounded-xl border border-dashed border-border px-4 py-8 text-center text-sm text-muted-foreground">
-              Todavía no hay avisos de tus alumnos.
+              Todavía no hay notificaciones.
             </p>
           ) : (
             items.map((n) => {

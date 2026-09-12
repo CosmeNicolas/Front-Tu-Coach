@@ -6,6 +6,7 @@ import { AlumnoDashboardMetrics } from '@/lib/alumno/metrics';
 import { StudentPlanification } from '@/lib/api/student-portal';
 import { PROGRESSION_MODE_LABELS } from '@/types/planification';
 import { SolicitarNuevaPlanDialog } from '@/components/alumno/plan/SolicitarNuevaPlanDialog';
+import { TrainingStreakBadge } from '@/components/alumno/TrainingStreakBadge';
 import { Button } from '@/components/ui/button';
 
 interface Props {
@@ -71,6 +72,11 @@ export function AlumnoProgressHeader({ plan, metrics }: Props) {
           . Cuando revise o arme una nueva planificación, se actualiza acá.
         </p>
       ) : null}
+
+      <TrainingStreakBadge
+        actividad={plan.actividad ?? metrics.actividad}
+        className="mt-4"
+      />
 
       <div className="mt-5">
         <div className="mb-2 flex justify-between text-sm">

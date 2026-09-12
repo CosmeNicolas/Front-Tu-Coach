@@ -13,8 +13,9 @@ import { PricingSection } from '@/components/landing/PricingSection';
 import { PlatformBenefitsSection } from '@/components/landing/PlatformBenefitsSection';
 import { FinalCTA } from '@/components/landing/FinalCTA';
 import { LandingFooter } from '@/components/landing/LandingFooter';
+import type { PublicPlatformPricing } from '@/types/platform-pricing';
 
-export function LandingPage() {
+export function LandingPage({ pricing }: { pricing?: PublicPlatformPricing }) {
   return (
     <div className="landing-page min-h-screen bg-[#050505] text-white antialiased">
       <LandingNavbar />
@@ -29,7 +30,7 @@ export function LandingPage() {
         <HowItWorksSection />
         <TestimonialsSection />
         <GymsSection />
-        <PricingSection />
+        <PricingSection pricing={pricing} />
         <PlatformBenefitsSection />
         <FinalCTA />
       </main>

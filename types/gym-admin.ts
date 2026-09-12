@@ -88,6 +88,10 @@ export interface PlatformTenantRow {
   estado: string;
   planCodigo?: PlanCodigo;
   planEfectivo?: PlanCodigo;
+  trialEndsAt?: string | null;
+  planVenceAt?: string | null;
+  diasRestantes?: number | null;
+  venceLabel?: string;
   cupos?: TenantCupos;
   limitesOverride: LimitesOverride | null;
   profesores: number;
@@ -95,6 +99,20 @@ export interface PlatformTenantRow {
   planificacionesActivas: number;
   ultimaActividad: string;
   ultimaActividadAt: string | null;
+}
+
+export interface PlatformProfesorPlanRow {
+  id: string;
+  email: string;
+  nombre: string;
+  apellido: string;
+  tenantId: string;
+  tenantNombre: string | null;
+  alumnos: number;
+  planCodigo: PlanCodigo;
+  planEfectivo: PlanCodigo;
+  diasRestantes: number | null;
+  venceLabel: string;
 }
 
 export interface PlatformOverview {
@@ -108,6 +126,7 @@ export interface PlatformOverview {
     ultimaActividad: string;
   };
   gimnasios: PlatformTenantRow[];
+  profesores: PlatformProfesorPlanRow[];
   sesionesPorDia: DashboardChartPoint[];
   planesPorDia: DashboardChartPoint[];
 }

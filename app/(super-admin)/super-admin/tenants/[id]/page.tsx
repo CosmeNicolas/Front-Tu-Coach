@@ -1,17 +1,14 @@
-'use client';
-
 import Link from 'next/link';
-import { use } from 'react';
 import { ChevronLeft } from 'lucide-react';
 import { GymDashboardView } from '@/components/owner/GymDashboardView';
 import { Button } from '@/components/ui/button';
 
-export default function SuperAdminTenantDetailPage({
+export default async function SuperAdminTenantDetailPage({
   params,
 }: {
   params: Promise<{ id: string }>;
 }) {
-  const { id: tenantId } = use(params);
+  const { id: tenantId } = await params;
 
   return (
     <div className="space-y-6 p-4 sm:p-8">

@@ -387,6 +387,20 @@ export function AlumnoMetricasView() {
                 <StatCard label="Pendientes" value={String(metrics.pendientes)} />
                 <StatCard label="Avance" value={`${metrics.adherenciaPct}%`} />
                 <StatCard
+                  label="Racha actual"
+                  value={
+                    metrics.rachaSesiones > 0
+                      ? `${metrics.rachaSesiones} ses.`
+                      : '—'
+                  }
+                />
+                <StatCard
+                  label="Mejor racha"
+                  value={
+                    metrics.rachaMaxima > 0 ? `${metrics.rachaMaxima} ses.` : '—'
+                  }
+                />
+                <StatCard
                   label="RPE promedio"
                   value={
                     metrics.rpePromedio !== null ? String(metrics.rpePromedio) : '—'

@@ -1,11 +1,13 @@
 import { Building2, Check } from 'lucide-react';
 import {
+  buildLandingPlansFromPricing,
   LANDING_GYM_PLAN,
   LANDING_SAAS_PLANS,
   type LandingPlan,
 } from '@/lib/landing/pricing';
 import { contactUrl } from '@/lib/landing/contact';
 import { LANDING_CONTAINER, TRIAL_DAYS } from '@/lib/landing/constants';
+import type { PublicPlatformPricing } from '@/types/platform-pricing';
 import { SectionHeader } from '@/components/landing/SectionHeader';
 import { LandingButton } from '@/components/landing/LandingButton';
 import { ScrollReveal, StaggerGrid, StaggerItem } from '@/components/landing/ScrollReveal';
@@ -141,7 +143,15 @@ function GymPlanCallout({ plan }: { plan: LandingPlan }) {
   );
 }
 
-export function PricingSection() {
+export function PricingSection({ pricing }: { pricing?: PublicPlatformPricing }) {
+  const { saasPlans, trialDays, offerLabel } = pricing
+    ? buildLandingPlansFromPricing(pricing)
+    : {
+        saasPlans: LANDING_SAAS_PLANS,
+        trialDays: TRIAL_DAYS,
+        offerLabel: '60% off el primer mes',
+      };
+
   return (
     <section id="planes" className="border-t border-white/[0.06] bg-[#0A0A0A] py-20 sm:py-28">
       <div className={LANDING_CONTAINER}>
@@ -149,19 +159,19 @@ export function PricingSection() {
           <SectionHeader
             label="ELEGÍ TU PLAN"
             title="Precios para profesores y gimnasios"
-            description={`El registro de profesor empieza con ${TRIAL_DAYS} días Premium. Si no pagás, quedás en Free. Los precios de lista están en pesos; Premium se prueba en la app y el resto se coordina por mail.`}
+            description={`El registro de profesor empieza con ${trialDays} días Premium. Si no pagás, quedás en Free. Los precios de lista están en pesos; Premium se prueba en la app y el resto se coordina por mail.`}
           />
         </ScrollReveal>
 
         <ScrollReveal className="mb-6">
           <h3 className="font-display text-xl tracking-wide text-white">Para entrenadores</h3>
           <p className="mt-1 text-sm text-[#737373]">
-            Suscripción mensual. Oferta de lanzamiento: 60% off el primer mes.
+            Suscripción mensual. Oferta de lanzamiento: {offerLabel.toLowerCase()}.
           </p>
         </ScrollReveal>
 
         <StaggerGrid className="grid gap-5 sm:grid-cols-2 xl:grid-cols-4">
-          {LANDING_SAAS_PLANS.map((plan) => (
+          {saasPlans.map((plan) => (
             <StaggerItem key={plan.id}>
               <PlanCard plan={plan} />
             </StaggerItem>

@@ -1,11 +1,15 @@
 'use client';
 
-import { CheckCircle2, Circle, MessageSquareText } from 'lucide-react';
+import { CheckCircle2, Circle, Flame, MessageSquareText } from 'lucide-react';
 import { Planification, SessionExecutionLog } from '@/types/planification';
 import {
   buildProgressStats,
   formatProgressDate,
 } from '@/lib/planification/progress-stats';
+import {
+  buildTrainingActivitySnapshot,
+  streakLabel,
+} from '@/lib/alumno/training-streak';
 
 export function ProgresoAlumnoPanel({
   planification,
@@ -15,6 +19,12 @@ export function ProgresoAlumnoPanel({
   const stats = buildProgressStats(
     planification.progresoAlumno,
     planification.config.totalSesiones,
+  );
+  const actividad = buildTrainingActivitySnapshot(
+    planification.progresoAlumno,
+    planification.config.totalSesiones,
+    planification.config.frecuenciaSemanal,
+    { planStartedAt: planification.createdAt ?? null },
   );
   const detalle = planification.progresoAlumno?.detallePorSesion ?? {};
 
@@ -49,6 +59,34 @@ export function ProgresoAlumnoPanel({
       <h2 className="text-sm font-semibold text-foreground">
         Progreso del alumno (portal)
       </h2>
+
+      <div className="mt-4 rounded-lg border border-orange-500/20 bg-orange-500/5 p-4">
+        <div className="flex items-start gap-3">
+          <div className="flex size-9 shrink-0 items-center justify-center rounded-full bg-orange-500/15 text-orange-600">
+            <Flame className="size-4" aria-hidden />
+          </div>
+          <div>
+            <p className="text-xs font-semibold uppercase tracking-wide text-muted-foreground">
+              Racha y actividad
+            </p>
+            <p className="mt-1 font-semibold text-foreground">
+              {streakLabel(actividad)}
+            </p>
+            <p className="mt-1 text-sm text-muted-foreground">
+              Semana: {actividad.sesionesSemanaActual}/
+              {actividad.sesionesEsperadasSemana} sesiones
+              {actividad.rachaMaxima > actividad.rachaSesiones
+                ? ` · Mejor racha: ${actividad.rachaMaxima}`
+                : ''}
+            </p>
+            {actividad.recordatorioLabel ? (
+              <p className="mt-1 text-sm font-medium text-amber-700 dark:text-amber-300">
+                {actividad.recordatorioLabel}
+              </p>
+            ) : null}
+          </div>
+        </div>
+      </div>
 
       <dl className="mt-4 grid gap-3 sm:grid-cols-2 lg:grid-cols-4">
         <Metric

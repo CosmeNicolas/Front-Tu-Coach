@@ -13,6 +13,7 @@ import { Button } from '@/components/ui/button';
 import { Input } from '@/components/ui/input';
 import { Label } from '@/components/ui/label';
 import { Card, CardContent } from '@/components/ui/card';
+import { planLabel } from '@/lib/plan/labels';
 
 function ProfesorEstadoBadge({ estado }: { estado: UserStatus }) {
   const labels: Record<UserStatus, string> = {
@@ -106,12 +107,15 @@ export default function SuperAdminProfesoresPage() {
       ) : (
         <div className="overflow-hidden rounded-xl border border-border bg-card shadow-sm">
           <div className="overflow-x-auto">
-            <table className="w-full min-w-[640px] text-sm">
+            <table className="w-full min-w-[960px] text-sm">
               <thead>
                 <tr className="border-b border-border bg-muted/40 text-left text-xs uppercase tracking-wide text-muted-foreground">
                   <th className="px-4 py-3 font-semibold">Profesor</th>
                   <th className="px-4 py-3 font-semibold">Email</th>
                   <th className="px-4 py-3 font-semibold">Gimnasio</th>
+                  <th className="px-4 py-3 font-semibold">Plan</th>
+                  <th className="px-4 py-3 font-semibold">Vencimiento</th>
+                  <th className="px-4 py-3 font-semibold text-center">Alumnos</th>
                   <th className="px-4 py-3 font-semibold">Estado</th>
                   <th className="px-4 py-3 font-semibold text-right">Acciones</th>
                 </tr>
@@ -142,6 +146,20 @@ export default function SuperAdminProfesoresPage() {
                       ) : (
                         '—'
                       )}
+                    </td>
+                    <td className="px-4 py-3 font-medium text-foreground">
+                      {planLabel(p.planEfectivo ?? p.planCodigo)}
+                    </td>
+                    <td className="px-4 py-3">
+                      <p className="font-medium text-foreground">{p.venceLabel}</p>
+                      {p.diasRestantes != null && p.diasRestantes >= 0 ? (
+                        <p className="text-xs text-muted-foreground">
+                          {p.diasRestantes} día{p.diasRestantes === 1 ? '' : 's'}
+                        </p>
+                      ) : null}
+                    </td>
+                    <td className="px-4 py-3 text-center font-semibold">
+                      {p.alumnosCount}
                     </td>
                     <td className="px-4 py-3">
                       <ProfesorEstadoBadge estado={p.estado} />

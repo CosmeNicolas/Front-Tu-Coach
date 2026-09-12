@@ -32,8 +32,12 @@ export function AlumnoPlanificacionView() {
     if (!plan) return null;
     const source = materialized
       ? {
-          config: { totalSesiones: materialized.totalSesiones },
+          config: {
+            totalSesiones: materialized.totalSesiones,
+            frecuenciaSemanal: plan.config.frecuenciaSemanal,
+          },
           progresoAlumno: materialized.progreso,
+          createdAt: plan.createdAt,
         }
       : plan;
     return buildAlumnoMetrics(source, plan.progresoResumen);

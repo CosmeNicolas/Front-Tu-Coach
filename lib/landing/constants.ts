@@ -47,6 +47,6 @@ export function formatArs(amount: number): string {
   return `$${amount.toString().replace(/\B(?=(\d{3})+(?!\d))/g, '.')}`;
 }
 
-export function launchMonthPrice(amount: number): number {
-  return Math.round(amount * (1 - LAUNCH_DISCOUNT));
+export function launchMonthPrice(amount: number, launchDiscount = LAUNCH_DISCOUNT): number {
+  return Math.round(amount * (1 - launchDiscount));
 }

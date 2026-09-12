@@ -10,7 +10,7 @@ import { EditarGimnasioDialog } from '@/components/super-admin/EditarGimnasioDia
 import { Button } from '@/components/ui/button';
 import { Tabs, TabsContent, TabsList, TabsTrigger } from '@/components/ui/tabs';
 import { formatCupo, planLabel } from '@/lib/plan/labels';
-import type { PlatformTenantRow, TenantSummary } from '@/types/gym-admin';
+import type { PlatformProfesorPlanRow, PlatformTenantRow, TenantSummary } from '@/types/gym-admin';
 
 function rowToTenant(row: PlatformTenantRow): TenantSummary {
   return {
@@ -52,11 +52,12 @@ function GimnasiosTable({ rows }: { rows: PlatformTenantRow[] }) {
 
   return (
     <div className="overflow-x-auto rounded-xl border border-border">
-      <table className="min-w-[1080px] w-full text-sm">
+      <table className="min-w-[1280px] w-full text-sm">
         <thead className="bg-muted/40 text-left text-muted-foreground">
           <tr>
             <th className="px-4 py-3 font-medium">Gimnasio</th>
             <th className="px-4 py-3 font-medium">Plan</th>
+            <th className="px-4 py-3 font-medium">Vencimiento</th>
             <th className="px-4 py-3 font-medium">Estado</th>
             <th className="px-4 py-3 font-medium text-center">Profes</th>
             <th className="px-4 py-3 font-medium">Alumnos / cupo</th>
@@ -74,6 +75,16 @@ function GimnasiosTable({ rows }: { rows: PlatformTenantRow[] }) {
               </td>
               <td className="px-4 py-3 font-medium text-foreground">
                 {planLabel(g.planEfectivo ?? g.planCodigo)}
+              </td>
+              <td className="px-4 py-3">
+                <p className="font-medium text-foreground">
+                  {g.venceLabel ?? '—'}
+                </p>
+                {g.diasRestantes != null && g.diasRestantes >= 0 ? (
+                  <p className="text-xs text-muted-foreground">
+                    {g.diasRestantes} día{g.diasRestantes === 1 ? '' : 's'} restantes
+                  </p>
+                ) : null}
               </td>
               <td className="px-4 py-3 capitalize text-foreground">{g.estado}</td>
               <td className="px-4 py-3 text-center font-semibold">{g.profesores}</td>
@@ -125,6 +136,75 @@ function GimnasiosTable({ rows }: { rows: PlatformTenantRow[] }) {
   );
 }
 
+function ProfesoresPlanTable({ rows }: { rows: PlatformProfesorPlanRow[] }) {
+  if (rows.length === 0) {
+    return (
+      <p className="rounded-xl border border-dashed border-border px-4 py-8 text-center text-sm text-muted-foreground">
+        No hay profesores activos registrados.
+      </p>
+    );
+  }
+
+  return (
+    <div className="overflow-x-auto rounded-xl border border-border">
+      <table className="min-w-[1100px] w-full text-sm">
+        <thead className="bg-muted/40 text-left text-muted-foreground">
+          <tr>
+            <th className="px-4 py-3 font-medium">Profesor</th>
+            <th className="px-4 py-3 font-medium">Gimnasio / tenant</th>
+            <th className="px-4 py-3 font-medium">Plan</th>
+            <th className="px-4 py-3 font-medium">Vencimiento</th>
+            <th className="px-4 py-3 font-medium text-center">Alumnos</th>
+            <th className="px-4 py-3 font-medium">Acción</th>
+          </tr>
+        </thead>
+        <tbody>
+          {rows.map((p) => (
+            <tr key={p.id} className="border-t border-border hover:bg-muted/20">
+              <td className="px-4 py-3">
+                <p className="font-medium text-foreground">
+                  {p.apellido}, {p.nombre}
+                </p>
+                <p className="text-xs text-muted-foreground">{p.email}</p>
+              </td>
+              <td className="px-4 py-3">
+                {p.tenantNombre ? (
+                  <>
+                    <p className="font-medium text-foreground">{p.tenantNombre}</p>
+                    <p className="text-xs text-muted-foreground">Tenant del profe</p>
+                  </>
+                ) : (
+                  '—'
+                )}
+              </td>
+              <td className="px-4 py-3 font-medium text-foreground">
+                {planLabel(p.planEfectivo ?? p.planCodigo)}
+              </td>
+              <td className="px-4 py-3">
+                <p className="font-medium text-foreground">{p.venceLabel}</p>
+                {p.diasRestantes != null && p.diasRestantes >= 0 ? (
+                  <p className="text-xs text-muted-foreground">
+                    {p.diasRestantes} día{p.diasRestantes === 1 ? '' : 's'}
+                  </p>
+                ) : null}
+              </td>
+              <td className="px-4 py-3 text-center font-semibold">{p.alumnos}</td>
+              <td className="px-4 py-3">
+                <Link
+                  href={`/super-admin/tenants/${p.tenantId}/profesores/${p.id}`}
+                  className="text-foreground underline-offset-2 hover:underline"
+                >
+                  Ver detalle
+                </Link>
+              </td>
+            </tr>
+          ))}
+        </tbody>
+      </table>
+    </div>
+  );
+}
+
 export function SuperAdminDashboardView() {
   const { data, isLoading, error } = usePlatformOverview();
 
@@ -142,7 +222,7 @@ export function SuperAdminDashboardView() {
     );
   }
 
-  const { resumen, gimnasios } = data;
+  const { resumen, gimnasios, profesores = [] } = data;
   const counts = {
     todos: gimnasios.length,
     activos: filterGimnasios(gimnasios, 'activos').length,
@@ -168,6 +248,9 @@ export function SuperAdminDashboardView() {
           </Button>
           <Button asChild variant="outline">
             <Link href="/super-admin/profesores">Profesores</Link>
+          </Button>
+          <Button asChild variant="outline">
+            <Link href="/super-admin/precios">Precios</Link>
           </Button>
         </div>
       </header>
@@ -243,6 +326,23 @@ export function SuperAdminDashboardView() {
             </TabsContent>
           ))}
         </Tabs>
+      </section>
+
+      <section className="rounded-2xl border border-border bg-card p-4 shadow-sm sm:p-5">
+        <div className="mb-4 flex flex-col gap-2 sm:flex-row sm:items-end sm:justify-between">
+          <div>
+            <h2 className="text-lg font-semibold text-foreground">
+              Profesores y planes
+            </h2>
+            <p className="mt-1 text-sm text-muted-foreground">
+              Plan y días restantes del tenant de cada profesor (trial o Premium pagado).
+            </p>
+          </div>
+          <Button asChild variant="outline" size="sm">
+            <Link href="/super-admin/profesores">Ver listado completo</Link>
+          </Button>
+        </div>
+        <ProfesoresPlanTable rows={profesores} />
       </section>
     </div>
   );

@@ -2,7 +2,10 @@ export type NotificationType =
   | 'plan_completed'
   | 'new_plan_request'
   | 'session_comment'
-  | 'new_message';
+  | 'new_message'
+  | 'new_alumno'
+  | 'training_reminder'
+  | 'alumno_training_inactive';
 
 export interface AppNotification {
   id: string;

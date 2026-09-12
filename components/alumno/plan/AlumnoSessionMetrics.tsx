@@ -33,8 +33,15 @@ export function AlumnoSessionMetrics({ metrics }: { metrics: AlumnoDashboardMetr
         metrics.totalVolumeKg > 0 ? `${metrics.totalVolumeKg} kg` : '—',
     },
     {
-      label: 'Racha inicial',
-      value: metrics.streakSimple > 0 ? `${metrics.streakSimple} ses.` : '—',
+      label: 'Racha actual',
+      value:
+        metrics.rachaSesiones > 0
+          ? `${metrics.rachaSesiones} ses.`
+          : '—',
+    },
+    {
+      label: 'Mejor racha',
+      value: metrics.rachaMaxima > 0 ? `${metrics.rachaMaxima} ses.` : '—',
     },
   ];
 

@@ -22,6 +22,7 @@ import { PwaInstallDialog } from '@/components/pwa/PwaInstallDialog';
 import { useMessagesUnreadCount } from '@/hooks/useMessages';
 import { usePWAInstall } from '@/hooks/usePWAInstall';
 import { TourHelpButton } from '@/components/onboarding/TourHelpButton';
+import { NotificationsBell } from '@/components/profesor/NotificationsBell';
 
 const DESKTOP_NAV = [
   {
@@ -109,7 +110,10 @@ export function AlumnoMobileLayout({ children }: { children: React.ReactNode }) 
         </nav>
 
         <div className="space-y-3 border-t border-border p-4">
-          <TourHelpButton />
+          <div className="flex items-center gap-2">
+            <NotificationsBell />
+            <TourHelpButton />
+          </div>
           <ThemeToggle />
           <AlumnoLogoutButton />
         </div>
@@ -123,6 +127,7 @@ export function AlumnoMobileLayout({ children }: { children: React.ReactNode }) 
             </div>
             <div className="flex shrink-0 items-center gap-2">
               <TourHelpButton />
+              <NotificationsBell />
               <BrandMark size="sm" showWordmark={false} priority />
               <ThemeToggle variant="compact" />
             </div>
