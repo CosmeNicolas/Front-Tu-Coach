@@ -20,6 +20,7 @@ import {
   AlertDialogTitle,
 } from '@/components/ui/alert-dialog';
 import type { Sponsor } from '@/types/sponsor';
+import { sponsorDestinoLabel } from '@/types/sponsor';
 
 function formatDayShort(isoDay: string): string {
   const [year, month, day] = isoDay.split('-');
@@ -157,6 +158,12 @@ export function SuperAdminBeneficiosView() {
                       <dd className="min-w-0 text-foreground">{vigencia}</dd>
                     </div>
                   ) : null}
+                  <div className="flex gap-2">
+                    <dt className="shrink-0 text-muted-foreground">Destino:</dt>
+                    <dd className="min-w-0 text-foreground">
+                      {sponsorDestinoLabel(sponsor.destino)}
+                    </dd>
+                  </div>
                   <div className="flex gap-2">
                     <dt className="shrink-0 text-muted-foreground">WhatsApp:</dt>
                     <dd className="min-w-0 truncate text-foreground">

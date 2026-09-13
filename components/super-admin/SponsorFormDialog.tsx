@@ -25,7 +25,15 @@ import {
   DialogHeader,
   DialogTitle,
 } from '@/components/ui/dialog';
-import type { Sponsor } from '@/types/sponsor';
+import {
+  Select,
+  SelectContent,
+  SelectItem,
+  SelectTrigger,
+  SelectValue,
+} from '@/components/ui/select';
+import type { Sponsor, SponsorDestino } from '@/types/sponsor';
+import { SPONSOR_DESTINO_OPTIONS } from '@/types/sponsor';
 
 interface Props {
   open: boolean;
@@ -51,6 +59,9 @@ export function SponsorFormDialog({ open, onOpenChange, sponsor }: Props) {
   const [validoDesde, setValidoDesde] = useState(sponsor?.validoDesde ?? '');
   const [validoHasta, setValidoHasta] = useState(sponsor?.validoHasta ?? '');
   const [activo, setActivo] = useState(sponsor?.activo ?? true);
+  const [destino, setDestino] = useState<SponsorDestino>(
+    sponsor?.destino ?? 'tucoach',
+  );
   const [orden, setOrden] = useState(String(sponsor?.orden ?? 0));
 
   const saving = create.isPending || update.isPending || upload.isPending;
@@ -65,6 +76,7 @@ export function SponsorFormDialog({ open, onOpenChange, sponsor }: Props) {
     setValidoDesde(next?.validoDesde ?? '');
     setValidoHasta(next?.validoHasta ?? '');
     setActivo(next?.activo ?? true);
+    setDestino(next?.destino ?? 'tucoach');
     setOrden(String(next?.orden ?? 0));
     if (fileRef.current) fileRef.current.value = '';
   }
@@ -125,6 +137,7 @@ export function SponsorFormDialog({ open, onOpenChange, sponsor }: Props) {
       validoDesde,
       validoHasta,
       activo,
+      destino,
       orden: Number.isFinite(ordenNum) && ordenNum >= 0 ? ordenNum : 0,
     };
 
@@ -216,6 +229,29 @@ export function SponsorFormDialog({ open, onOpenChange, sponsor }: Props) {
             <p className="text-xs text-muted-foreground">
               Pegá el wa.me o el número. Alumno y profesor lo abren y van a
               WhatsApp.
+            </p>
+          </div>
+
+          <div className="space-y-2">
+            <Label htmlFor="sponsor-destino">Destino</Label>
+            <Select
+              value={destino}
+              onValueChange={(value) => setDestino(value as SponsorDestino)}
+            >
+              <SelectTrigger id="sponsor-destino">
+                <SelectValue placeholder="Elegí dónde se muestra" />
+              </SelectTrigger>
+              <SelectContent>
+                {SPONSOR_DESTINO_OPTIONS.map((option) => (
+                  <SelectItem key={option.value} value={option.value}>
+                    {option.label}
+                  </SelectItem>
+                ))}
+              </SelectContent>
+            </Select>
+            <p className="text-xs text-muted-foreground">
+              TuCoach: alumnos y profesores de TuCoach. CEMD: app CEMD vía API
+              externa. Ambos: visible en las dos plataformas.
             </p>
           </div>
 
