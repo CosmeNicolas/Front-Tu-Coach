@@ -53,10 +53,13 @@ export async function logoutRequest(): Promise<void> {
   logoutClient();
 }
 
-export async function forgotPasswordRequest(email: string): Promise<{ message: string }> {
+export async function forgotPasswordRequest(
+  email: string,
+  turnstileToken?: string,
+): Promise<{ message: string }> {
   return apiClient<{ message: string }>('/auth/forgot-password', {
     method: 'POST',
-    body: { email },
+    body: { email, turnstileToken },
   });
 }
 
@@ -87,6 +90,20 @@ export type RegisterAutogestionadoPayload = {
   turnstileToken?: string;
 };
 
+export type RegisterPendingResponse = {
+  requiresEmailVerification: true;
+  message: string;
+  email: string;
+};
+
+export type RegisterProfesorResult = LoginResponse | RegisterPendingResponse;
+
+export function isRegisterPendingResponse(
+  response: RegisterProfesorResult,
+): response is RegisterPendingResponse {
+  return 'requiresEmailVerification' in response && response.requiresEmailVerification === true;
+}
+
 async function persistSession(response: LoginResponse): Promise<LoginResponse> {
   setTokenPair(response.accessToken, response.refreshToken);
   setSessionUser(response.user);
@@ -95,23 +112,35 @@ async function persistSession(response: LoginResponse): Promise<LoginResponse> {
 
 export async function registerProfesorRequest(
   payload: RegisterProfesorPayload,
-): Promise<LoginResponse> {
-  const response = await apiClient<LoginResponse>('/auth/register-profesor', {
+): Promise<RegisterProfesorResult> {
+  return apiClient<RegisterProfesorResult>('/auth/register-profesor', {
     method: 'POST',
     body: payload,
   });
-  return persistSession(response);
 }
 
 export async function registerAutogestionadoRequest(
   payload: RegisterAutogestionadoPayload,
-): Promise<LoginResponse> {
-  const response = await apiClient<LoginResponse>(
-    '/auth/register-autogestionado',
-    {
-      method: 'POST',
-      body: payload,
-    },
-  );
+): Promise<RegisterProfesorResult> {
+  return apiClient<RegisterProfesorResult>('/auth/register-autogestionado', {
+    method: 'POST',
+    body: payload,
+  });
+}
+
+export async function verifyEmailRequest(token: string): Promise<LoginResponse> {
+  const response = await apiClient<LoginResponse>('/auth/verify-email', {
+    method: 'POST',
+    body: { token },
+  });
   return persistSession(response);
+}
+
+export async function resendVerificationRequest(
+  email: string,
+): Promise<{ message: string }> {
+  return apiClient<{ message: string }>('/auth/resend-verification', {
+    method: 'POST',
+    body: { email },
+  });
 }

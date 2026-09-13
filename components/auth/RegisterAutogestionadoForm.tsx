@@ -6,9 +6,10 @@ import Link from 'next/link';
 import { useRouter } from 'next/navigation';
 import { Loader2 } from 'lucide-react';
 import { toast } from 'sonner';
-import { registerAutogestionadoRequest } from '@/lib/api/auth';
+import { registerAutogestionadoRequest, isRegisterPendingResponse } from '@/lib/api/auth';
 import { getDashboardPath } from '@/lib/auth/roles';
 import { ApiError } from '@/lib/api/client';
+import { RegisterPendingCard } from '@/components/auth/RegisterPendingCard';
 import { Button } from '@/components/ui/button';
 import { Input } from '@/components/ui/input';
 import { Label } from '@/components/ui/label';
@@ -29,6 +30,7 @@ export function RegisterAutogestionadoForm() {
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
   const [loading, setLoading] = useState(false);
+  const [pending, setPending] = useState<{ email: string; message: string } | null>(null);
 
   const turnstile = useTurnstile();
   const turnstileEnabled = !!process.env.NEXT_PUBLIC_TURNSTILE_SITE_KEY;
@@ -50,6 +52,11 @@ export function RegisterAutogestionadoForm() {
         password,
         turnstileToken: turnstile.token ?? undefined,
       });
+      if (isRegisterPendingResponse(response)) {
+        setPending({ email: response.email, message: response.message });
+        toast.success('Revisá tu email para confirmar la cuenta.');
+        return;
+      }
       toast.success('Listo. Te asignamos un plan Full body 3 días.');
       router.replace(getDashboardPath(response.user.role));
     } catch (error) {
@@ -96,6 +103,9 @@ export function RegisterAutogestionadoForm() {
         </CardDescription>
       </CardHeader>
       <CardContent>
+        {pending ? (
+          <RegisterPendingCard email={pending.email} message={pending.message} />
+        ) : (
         <form onSubmit={handleSubmit} className="flex flex-col gap-4">
           <div className="grid grid-cols-2 gap-3">
             <div className="space-y-2">
@@ -182,6 +192,7 @@ export function RegisterAutogestionadoForm() {
             </Link>
           </p>
         </form>
+        )}
       </CardContent>
     </Card>
   );
