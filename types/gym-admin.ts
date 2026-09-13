@@ -14,6 +14,13 @@ export interface TenantCupos {
   limitesOverride: LimitesOverride | null;
 }
 
+export interface TenantSecurityReview {
+  suspicious: boolean;
+  motivo: string | null;
+  markedAt: string | null;
+  markedBy: string | null;
+}
+
 export interface TenantSummary {
   id: string;
   nombre: string;
@@ -25,6 +32,29 @@ export interface TenantSummary {
   planVenceAt?: string | null;
   planComercialId: string | null;
   limitesOverride?: LimitesOverride | null;
+  securityReview?: TenantSecurityReview;
+  archivedAt?: string | null;
+  createdAt?: string;
+  updatedAt?: string;
+}
+
+export interface TenantSecuritySummary {
+  id: string;
+  nombre: string;
+  slug: string;
+  estado: string;
+  planCodigo: PlanCodigo;
+  createdAt: string;
+  ownerEmail: string | null;
+  usuarios: number;
+  profesores: number;
+  alumnos: number;
+  planificaciones: number;
+  suspicious: boolean;
+  suspiciousMotivo: string | null;
+  archivedAt: string | null;
+  hasRealActivity: boolean;
+  recommendSuspendOverDelete: boolean;
 }
 
 export interface ProfesorSummary {
