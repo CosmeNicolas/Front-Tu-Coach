@@ -12,6 +12,7 @@ import { ApiError } from '@/lib/api/client';
 import { Button } from '@/components/ui/button';
 import { Input } from '@/components/ui/input';
 import { Label } from '@/components/ui/label';
+import { Turnstile, useTurnstile } from '@/components/ui/turnstile';
 import {
   Card,
   CardContent,
@@ -29,8 +30,17 @@ export function RegisterAutogestionadoForm() {
   const [password, setPassword] = useState('');
   const [loading, setLoading] = useState(false);
 
+  const turnstile = useTurnstile();
+  const turnstileEnabled = !!process.env.NEXT_PUBLIC_TURNSTILE_SITE_KEY;
+
   async function handleSubmit(event: React.FormEvent<HTMLFormElement>) {
     event.preventDefault();
+
+    if (turnstileEnabled && !turnstile.token) {
+      toast.error('Completá la verificación de seguridad antes de continuar.');
+      return;
+    }
+
     setLoading(true);
     try {
       const response = await registerAutogestionadoRequest({
@@ -38,6 +48,7 @@ export function RegisterAutogestionadoForm() {
         apellido,
         email,
         password,
+        turnstileToken: turnstile.token ?? undefined,
       });
       toast.success('Listo. Te asignamos un plan Full body 3 días.');
       router.replace(getDashboardPath(response.user.role));
@@ -47,6 +58,7 @@ export function RegisterAutogestionadoForm() {
           ? error.message
           : 'No se pudo crear la cuenta. Probá de nuevo.',
       );
+      turnstile.reset();
     } finally {
       setLoading(false);
     }
@@ -140,9 +152,19 @@ export function RegisterAutogestionadoForm() {
               className="h-11 border-white/20 bg-white/95 text-foreground"
             />
           </div>
+          {turnstileEnabled && (
+            <div className="flex justify-center">
+              <Turnstile
+                theme="dark"
+                onVerify={turnstile.onVerify}
+                onError={turnstile.onError}
+                onExpire={turnstile.onExpire}
+              />
+            </div>
+          )}
           <Button
             type="submit"
-            disabled={loading}
+            disabled={loading || (turnstileEnabled && !turnstile.token)}
             className="h-11 w-full rounded-lg bg-neutral-950 text-base font-medium text-white hover:bg-neutral-800"
           >
             {loading ? (

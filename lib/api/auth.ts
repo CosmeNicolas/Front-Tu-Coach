@@ -76,6 +76,7 @@ export type RegisterProfesorPayload = {
   nombre: string;
   apellido: string;
   nombreEstudio?: string;
+  turnstileToken?: string;
 };
 
 export type RegisterAutogestionadoPayload = {
@@ -83,6 +84,7 @@ export type RegisterAutogestionadoPayload = {
   password: string;
   nombre: string;
   apellido: string;
+  turnstileToken?: string;
 };
 
 async function persistSession(response: LoginResponse): Promise<LoginResponse> {

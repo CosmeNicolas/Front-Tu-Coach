@@ -6,6 +6,9 @@ export interface ContactInquiryPayload {
   email: string;
   motivo: ContactTopicValue;
   mensaje: string;
+  website?: string;
+  formStartedAt?: number;
+  turnstileToken?: string;
 }
 
 export interface ContactInquiryResponse {

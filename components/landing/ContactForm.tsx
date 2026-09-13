@@ -16,6 +16,7 @@ import { CONTACT_EMAIL } from '@/lib/landing/constants';
 import { Input } from '@/components/ui/input';
 import { Label } from '@/components/ui/label';
 import { Textarea } from '@/components/ui/textarea';
+import { Turnstile, useTurnstile } from '@/components/ui/turnstile';
 import { cn } from '@/lib/utils';
 
 const fieldClassName =
@@ -30,8 +31,13 @@ function ContactFormInner() {
   const [email, setEmail] = useState('');
   const [motivo, setMotivo] = useState<ContactTopicValue>(initialMotivo);
   const [mensaje, setMensaje] = useState('');
+  const [website, setWebsite] = useState('');
+  const [formStartedAt] = useState(() => Date.now());
   const [loading, setLoading] = useState(false);
   const [sent, setSent] = useState(false);
+
+  const turnstile = useTurnstile();
+  const turnstileEnabled = !!process.env.NEXT_PUBLIC_TURNSTILE_SITE_KEY;
 
   useEffect(() => {
     if (isContactTopic(motivoParam)) {
@@ -41,6 +47,12 @@ function ContactFormInner() {
 
   async function handleSubmit(event: React.FormEvent<HTMLFormElement>) {
     event.preventDefault();
+
+    if (turnstileEnabled && !turnstile.token) {
+      toast.error('Completá la verificación de seguridad antes de enviar.');
+      return;
+    }
+
     setLoading(true);
 
     try {
@@ -49,6 +61,9 @@ function ContactFormInner() {
         email: email.trim(),
         motivo,
         mensaje: mensaje.trim(),
+        website: website.trim() || undefined,
+        formStartedAt,
+        turnstileToken: turnstile.token ?? undefined,
       });
       setSent(true);
       toast.success(response.message);
@@ -63,6 +78,7 @@ function ContactFormInner() {
             : 'No se pudo conectar con el servidor. Intentá más tarde.';
       }
       toast.error(message);
+      turnstile.reset();
     } finally {
       setLoading(false);
     }
@@ -88,6 +104,21 @@ function ContactFormInner() {
       onSubmit={handleSubmit}
       className="rounded-2xl border border-white/15 bg-[#101010] p-6 sm:p-8"
     >
+      <div
+        aria-hidden="true"
+        className="pointer-events-none absolute left-[-9999px] top-auto h-0 w-0 overflow-hidden opacity-0"
+      >
+        <label htmlFor="contact-website">Website</label>
+        <input
+          id="contact-website"
+          name="website"
+          tabIndex={-1}
+          autoComplete="off"
+          value={website}
+          onChange={(event) => setWebsite(event.target.value)}
+        />
+      </div>
+
       <div className="grid gap-5 sm:grid-cols-2">
         <div className="space-y-2">
           <Label htmlFor="contact-nombre" className="text-[#A3A3A3]">
@@ -167,9 +198,21 @@ function ContactFormInner() {
         />
       </div>
 
+      {turnstileEnabled && (
+        <div className="mt-5">
+          <Turnstile
+            theme="dark"
+            onVerify={turnstile.onVerify}
+            onError={turnstile.onError}
+            onExpire={turnstile.onExpire}
+            className="flex justify-center"
+          />
+        </div>
+      )}
+
       <button
         type="submit"
-        disabled={loading}
+        disabled={loading || (turnstileEnabled && !turnstile.token)}
         className={cn(
           'mt-6 inline-flex w-full items-center justify-center gap-2 rounded-xl border border-white/20',
           'bg-white px-5 py-3 text-sm font-semibold text-[#050505] transition-colors',
