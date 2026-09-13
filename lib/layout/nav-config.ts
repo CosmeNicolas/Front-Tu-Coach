@@ -16,6 +16,8 @@ export const SUPER_ADMIN_NAV: SidebarNavItem[] = [
 
   { href: '/super-admin/beneficios', label: 'Beneficios' },
 
+  { href: '/super-admin/seguridad', label: 'Seguridad' },
+
 ];
 
 
