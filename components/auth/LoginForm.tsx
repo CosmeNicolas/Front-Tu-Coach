@@ -21,9 +21,14 @@ import {
   CardHeader,
   CardTitle,
 } from '@/components/ui/card';
+import { TRIAL_DAYS } from '@/lib/landing/constants';
 import { cn } from '@/lib/utils';
 
-export function LoginForm() {
+type LoginFormProps = {
+  trialDays?: number;
+};
+
+export function LoginForm({ trialDays = TRIAL_DAYS }: LoginFormProps) {
   const router = useRouter();
   const searchParams = useSearchParams();
   const emailFromLink = searchParams.get('email')?.trim() ?? '';
@@ -199,7 +204,7 @@ export function LoginForm() {
             <p>
               ¿Sos profe?{' '}
               <Link href="/registro" className="underline-offset-4 hover:text-white hover:underline">
-                Probar 7 días gratis
+                {`Probar ${trialDays} días gratis`}
               </Link>
             </p>
           </div>

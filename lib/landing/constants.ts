@@ -24,8 +24,8 @@ export function contactMail(subject: string): string {
   return `${CONTACT_MAILTO}?subject=${encodeURIComponent(subject)}`;
 }
 
-/** Debe coincidir con TRIAL_DAYS del backend. */
-export const TRIAL_DAYS = 7;
+/** Fallback si la API de precios no responde. Debe coincidir con plan-limits del backend. */
+export const TRIAL_DAYS = 5;
 
 /** Precios de lista en ARS. Suscripciones = por mes. Catálogo = por bloque. */
 export const PRICE_ARS = {

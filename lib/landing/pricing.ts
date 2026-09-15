@@ -9,6 +9,12 @@ import {
 } from '@/lib/landing/constants';
 import type { PublicPlatformPricing } from '@/types/platform-pricing';
 
+export const FREE_PLAN_SUBTITLE = 'Sin costo mensual';
+
+export function resolveTrialDays(pricing?: PublicPlatformPricing | null): number {
+  return pricing?.trialDays ?? TRIAL_DAYS;
+}
+
 export interface LandingPlan {
   id: string;
   name: string;
@@ -55,7 +61,7 @@ export function buildLandingPlansFromPricing(
     {
       id: 'free',
       name: 'Free',
-      subtitle: 'Después del trial',
+      subtitle: FREE_PLAN_SUBTITLE,
       price: 'Gratis',
       features: [
         'Hasta 2 alumnos',
@@ -187,7 +193,7 @@ export const LANDING_SAAS_PLANS: LandingPlan[] = [
   {
     id: 'free',
     name: 'Free',
-    subtitle: 'Después del trial',
+    subtitle: FREE_PLAN_SUBTITLE,
     price: 'Gratis',
     features: [
       'Hasta 2 alumnos',

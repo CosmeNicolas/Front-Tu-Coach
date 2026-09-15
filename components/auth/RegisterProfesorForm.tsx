@@ -21,9 +21,14 @@ import {
   CardHeader,
   CardTitle,
 } from '@/components/ui/card';
+import { TRIAL_DAYS } from '@/lib/landing/constants';
 import { cn } from '@/lib/utils';
 
-export function RegisterProfesorForm() {
+type RegisterProfesorFormProps = {
+  trialDays?: number;
+};
+
+export function RegisterProfesorForm({ trialDays = TRIAL_DAYS }: RegisterProfesorFormProps) {
   const router = useRouter();
   const [nombre, setNombre] = useState('');
   const [apellido, setApellido] = useState('');
@@ -59,7 +64,7 @@ export function RegisterProfesorForm() {
         toast.success('Revisá tu email para confirmar la cuenta.');
         return;
       }
-      toast.success('Cuenta creada. Tenés 7 días de prueba Premium.');
+      toast.success(`Cuenta creada. Tenés ${trialDays} días de prueba Premium.`);
       router.replace(getDashboardPath(response.user.role));
     } catch (error) {
       toast.error(
@@ -95,13 +100,13 @@ export function RegisterProfesorForm() {
               TUCOACH
             </p>
             <CardTitle className="text-2xl font-semibold tracking-wide text-white/70">
-              Probar 7 días
+              {`Probar ${trialDays} días`}
             </CardTitle>
           </div>
         </div>
         <CardDescription className="text-center text-white/70">
-          Cuenta de profesor. Cuando termina el trial pasás a Free: hasta 2
-          alumnos y 1 planificación activa. No borramos tus datos.
+          Cuenta de profesor. Si no pagás, quedás en Free: hasta 2 alumnos y 1
+          planificación activa. No borramos tus datos.
         </CardDescription>
       </CardHeader>
       <CardContent>

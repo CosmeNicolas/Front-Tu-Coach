@@ -1,6 +1,8 @@
 import { Suspense } from 'react';
 import { LoginForm } from '@/components/auth/LoginForm';
 import { ThemeToggle } from '@/components/theme/ThemeToggle';
+import { fetchPublicPlatformPricing } from '@/lib/api/platform-settings';
+import { resolveTrialDays } from '@/lib/landing/pricing';
 
 function LoginFormFallback() {
   return (
@@ -8,7 +10,15 @@ function LoginFormFallback() {
   );
 }
 
-export default function LoginPage() {
+export default async function LoginPage() {
+  let trialDays;
+  try {
+    const pricing = await fetchPublicPlatformPricing();
+    trialDays = resolveTrialDays(pricing);
+  } catch {
+    trialDays = undefined;
+  }
+
   return (
     <div className="relative flex flex-1 flex-col items-center justify-center px-4 py-12">
       <div className="absolute right-4 top-4 z-20 rounded-full border border-white/20 bg-black/30 p-1 backdrop-blur-md">
@@ -26,7 +36,7 @@ export default function LoginPage() {
       />
 
       <Suspense fallback={<LoginFormFallback />}>
-        <LoginForm />
+        <LoginForm trialDays={trialDays} />
       </Suspense>
     </div>
   );

@@ -6,6 +6,10 @@ import Image from 'next/image';
 /* import { Play } from 'lucide-react'; */
 import { contactUrl } from '@/lib/landing/contact';
 import { LANDING_CONTAINER, REGISTRO_ROUTE, TRIAL_DAYS } from '@/lib/landing/constants';
+
+type HeroSectionProps = {
+  trialDays?: number;
+};
 import { LandingButton } from '@/components/landing/LandingButton';
 import { ScrollReveal } from '@/components/landing/ScrollReveal';
 
@@ -107,7 +111,7 @@ function HeroMockups() {
   );
 }
 
-export function HeroSection() {
+export function HeroSection({ trialDays = TRIAL_DAYS }: HeroSectionProps) {
   return (
     <section
       id="inicio"
@@ -156,7 +160,7 @@ export function HeroSection() {
 
             <div className="mt-8 flex flex-col gap-3 sm:flex-row sm:items-center">
               <LandingButton href={REGISTRO_ROUTE} variant="primary" className="w-full sm:w-auto">
-                {`Probar ${TRIAL_DAYS} días`}
+                {`Probar ${trialDays} días`}
               </LandingButton>
               <LandingButton
                 href={contactUrl('demo')}

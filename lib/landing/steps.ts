@@ -1,14 +1,17 @@
+import { TRIAL_DAYS } from '@/lib/landing/constants';
+
 export interface LandingStep {
   number: string;
   title: string;
   description: string;
 }
 
-export const LANDING_STEPS: LandingStep[] = [
+export function buildLandingSteps(trialDays = TRIAL_DAYS): LandingStep[] {
+  return [
   {
     number: '01',
     title: 'Creá tu cuenta',
-    description: 'Registrate como profe. Empezás con 7 días Premium.',
+    description: `Registrate como profe. Empezás con ${trialDays} días Premium.`,
   },
   {
     number: '02',
@@ -21,3 +24,4 @@ export const LANDING_STEPS: LandingStep[] = [
     description: 'Revisá sesiones, métricas, comentarios y resultados.',
   },
 ];
+}

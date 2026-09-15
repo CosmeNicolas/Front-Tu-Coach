@@ -16,7 +16,11 @@ import {
 import { LandingButton } from '@/components/landing/LandingButton';
 import { cn } from '@/lib/utils';
 
-export function LandingNavbar() {
+type LandingNavbarProps = {
+  trialDays?: number;
+};
+
+export function LandingNavbar({ trialDays = TRIAL_DAYS }: LandingNavbarProps) {
   const [scrolled, setScrolled] = useState(false);
   const [mobileOpen, setMobileOpen] = useState(false);
   const reduced = useReducedMotion();
@@ -86,7 +90,7 @@ export function LandingNavbar() {
             Iniciar sesión
           </LandingButton>
           <LandingButton href={REGISTRO_ROUTE} variant="primary" className="px-5 py-2.5">
-            {`Probar ${TRIAL_DAYS} días`}
+            {`Probar ${trialDays} días`}
           </LandingButton>
         </div>
 
@@ -140,7 +144,7 @@ export function LandingNavbar() {
                   Iniciar sesión
                 </LandingButton>
                 <LandingButton href={REGISTRO_ROUTE} variant="primary" className="w-full">
-                  {`Probar ${TRIAL_DAYS} días`}
+                  {`Probar ${trialDays} días`}
                 </LandingButton>
               </div>
             </motion.div>

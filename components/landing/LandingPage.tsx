@@ -13,26 +13,29 @@ import { PricingSection } from '@/components/landing/PricingSection';
 import { PlatformBenefitsSection } from '@/components/landing/PlatformBenefitsSection';
 import { FinalCTA } from '@/components/landing/FinalCTA';
 import { LandingFooter } from '@/components/landing/LandingFooter';
+import { resolveTrialDays } from '@/lib/landing/pricing';
 import type { PublicPlatformPricing } from '@/types/platform-pricing';
 
 export function LandingPage({ pricing }: { pricing?: PublicPlatformPricing }) {
+  const trialDays = resolveTrialDays(pricing);
+
   return (
     <div className="landing-page min-h-screen bg-[#050505] text-white antialiased">
-      <LandingNavbar />
+      <LandingNavbar trialDays={trialDays} />
       <main>
-        <HeroSection />
+        <HeroSection trialDays={trialDays} />
         <TrustedBySection />
         <FeaturesSection />
         <CoachesSection />
         <ContentSection />
         <PlanningAssistantSection />
         <CommunicationSection />
-        <HowItWorksSection />
+        <HowItWorksSection trialDays={trialDays} />
         <TestimonialsSection />
         <GymsSection />
         <PricingSection pricing={pricing} />
         <PlatformBenefitsSection />
-        <FinalCTA />
+        <FinalCTA trialDays={trialDays} />
       </main>
       <LandingFooter />
     </div>

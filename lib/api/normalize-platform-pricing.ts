@@ -38,9 +38,13 @@ export function normalizePublicPlatformPricing(
       ? (payload._doc as Record<string, unknown>)
       : payload;
 
+  const fallback = FALLBACK_PUBLIC_PLATFORM_PRICING;
   const values: Partial<Record<(typeof PRICING_KEYS)[number], number>> = {};
   for (const key of PRICING_KEYS) {
-    const value = readNumber(nested, key) ?? readNumber(payload, key);
+    const value =
+      readNumber(nested, key) ??
+      readNumber(payload, key) ??
+      fallback[key];
     if (value === null) return null;
     values[key] = value;
   }

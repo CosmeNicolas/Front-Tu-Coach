@@ -1,13 +1,23 @@
 import { RegisterProfesorForm } from '@/components/auth/RegisterProfesorForm';
 import { ThemeToggle } from '@/components/theme/ThemeToggle';
+import { fetchPublicPlatformPricing } from '@/lib/api/platform-settings';
+import { resolveTrialDays } from '@/lib/landing/pricing';
 
-export default function RegistroProfesorPage() {
+export default async function RegistroProfesorPage() {
+  let trialDays;
+  try {
+    const pricing = await fetchPublicPlatformPricing();
+    trialDays = resolveTrialDays(pricing);
+  } catch {
+    trialDays = undefined;
+  }
+
   return (
     <div className="relative flex flex-1 flex-col items-center justify-center px-4 py-12">
       <div className="absolute right-4 top-4 z-20 rounded-full border border-white/20 bg-black/30 p-1 backdrop-blur-md">
         <ThemeToggle variant="compact" className="text-white [&_svg]:text-white/90" />
       </div>
-      <RegisterProfesorForm />
+      <RegisterProfesorForm trialDays={trialDays} />
     </div>
   );
 }

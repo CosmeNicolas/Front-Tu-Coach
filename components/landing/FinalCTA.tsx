@@ -3,7 +3,11 @@ import { LANDING_CONTAINER, REGISTRO_ROUTE, TRIAL_DAYS } from '@/lib/landing/con
 import { LandingButton } from '@/components/landing/LandingButton';
 import { ScrollReveal } from '@/components/landing/ScrollReveal';
 
-export function FinalCTA() {
+type FinalCTAProps = {
+  trialDays?: number;
+};
+
+export function FinalCTA({ trialDays = TRIAL_DAYS }: FinalCTAProps) {
   return (
     <section className="pb-20 sm:pb-28">
       <div className={LANDING_CONTAINER}>
@@ -20,11 +24,11 @@ export function FinalCTA() {
               </h2>
               <p className="mt-4 text-base leading-relaxed text-[#A3A3A3] sm:text-lg">
                 Sumate a TuCoach y llevá tus planificaciones, alumnos y resultados a un
-                solo lugar. {TRIAL_DAYS} días Premium; si no pagás, quedás en Free.
+                solo lugar. {trialDays} días Premium; si no pagás, quedás en Free.
               </p>
               <div className="mt-8 flex justify-center">
                 <LandingButton href={REGISTRO_ROUTE} variant="primary" className="px-8">
-                  {`Probar ${TRIAL_DAYS} días`}
+                  {`Probar ${trialDays} días`}
                 </LandingButton>
               </div>
 

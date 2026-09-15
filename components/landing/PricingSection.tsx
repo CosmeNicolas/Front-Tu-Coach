@@ -1,12 +1,12 @@
 import { Building2, Check } from 'lucide-react';
+import { FALLBACK_PUBLIC_PLATFORM_PRICING } from '@/lib/api/normalize-platform-pricing';
 import {
   buildLandingPlansFromPricing,
   LANDING_GYM_PLAN,
-  LANDING_SAAS_PLANS,
   type LandingPlan,
 } from '@/lib/landing/pricing';
 import { contactUrl } from '@/lib/landing/contact';
-import { LANDING_CONTAINER, TRIAL_DAYS } from '@/lib/landing/constants';
+import { LANDING_CONTAINER } from '@/lib/landing/constants';
 import type { PublicPlatformPricing } from '@/types/platform-pricing';
 import { SectionHeader } from '@/components/landing/SectionHeader';
 import { LandingButton } from '@/components/landing/LandingButton';
@@ -144,13 +144,9 @@ function GymPlanCallout({ plan }: { plan: LandingPlan }) {
 }
 
 export function PricingSection({ pricing }: { pricing?: PublicPlatformPricing }) {
-  const { saasPlans, trialDays, offerLabel } = pricing
-    ? buildLandingPlansFromPricing(pricing)
-    : {
-        saasPlans: LANDING_SAAS_PLANS,
-        trialDays: TRIAL_DAYS,
-        offerLabel: '60% off el primer mes',
-      };
+  const { saasPlans, trialDays, offerLabel } = buildLandingPlansFromPricing(
+    pricing ?? FALLBACK_PUBLIC_PLATFORM_PRICING,
+  );
 
   return (
     <section id="planes" className="border-t border-white/[0.06] bg-[#0A0A0A] py-20 sm:py-28">
