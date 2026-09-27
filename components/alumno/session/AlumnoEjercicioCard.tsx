@@ -19,12 +19,15 @@ interface Props {
   isRestActive: boolean;
   onToggle: (completed: boolean) => void;
   onNote: (note: string) => void;
+  onPesoUsado: (kg: number | null) => void;
   onWorkTimeChange: (seconds: number) => void;
   onRestTimeChange: (seconds: number) => void;
   onRestStart: () => void;
   onRestEnd: () => void;
   /** Destaca checkbox y timer para la guía de onboarding. */
   showTourAnchors?: boolean;
+  /** Plan estándar: sin kilos prescritos; el alumno carga “Kg usados”. */
+  isStandardPlan?: boolean;
 }
 
 export function AlumnoEjercicioCard({
@@ -35,11 +38,13 @@ export function AlumnoEjercicioCard({
   isRestActive,
   onToggle,
   onNote,
+  onPesoUsado,
   onWorkTimeChange,
   onRestTimeChange,
   onRestStart,
   onRestEnd,
   showTourAnchors = false,
+  isStandardPlan = false,
 }: Props) {
   const parsed = parseExerciseParams(
     exercise.valor,
@@ -51,6 +56,8 @@ export function AlumnoEjercicioCard({
     exercise.tipoItem,
     exercise.unidadTrabajo,
   );
+  const showPrescribedPeso = !isStandardPlan && Boolean(parsed.pesoKg);
+  const showKgUsados = isStandardPlan && !inSeconds;
   const descansoSeg = exercise.parametros?.descanso;
   const showDescanso = descansoSeg != null && descansoSeg > 0;
   const mediaType = inferMediaType(exercise.gif);
@@ -152,7 +159,7 @@ export function AlumnoEjercicioCard({
           </div>
 
           <div className="mt-3 flex flex-wrap gap-2">
-            {parsed.pesoKg ? (
+            {showPrescribedPeso ? (
               <MetricChip label="Peso" value={`${parsed.pesoKg} kg`} />
             ) : null}
             {parsed.series ? (
@@ -170,7 +177,7 @@ export function AlumnoEjercicioCard({
                 value={parsed.segundos}
               />
             ) : null}
-            {!parsed.pesoKg &&
+            {!showPrescribedPeso &&
             !parsed.series &&
             !parsed.reps &&
             !parsed.minutos &&
@@ -210,6 +217,39 @@ export function AlumnoEjercicioCard({
               <span className="font-semibold">Coach: </span>
               {exercise.notas}
             </p>
+          ) : null}
+
+          {showKgUsados ? (
+            !readOnly ? (
+              <label className="mt-3 block max-w-[10rem]">
+                <span className="text-[10px] font-semibold uppercase tracking-wide text-muted-foreground">
+                  Kg usados
+                </span>
+                <input
+                  type="number"
+                  inputMode="decimal"
+                  min={0}
+                  max={2000}
+                  step={0.5}
+                  value={state.pesoUsadoKg ?? ''}
+                  onChange={(e) => {
+                    const raw = e.target.value.trim();
+                    if (!raw) {
+                      onPesoUsado(null);
+                      return;
+                    }
+                    const n = Number(raw);
+                    onPesoUsado(Number.isFinite(n) ? n : null);
+                  }}
+                  placeholder="Ej: 20"
+                  className="mt-1 w-full rounded-lg border border-input bg-background px-2.5 py-1.5 text-sm"
+                />
+              </label>
+            ) : state.pesoUsadoKg != null ? (
+              <p className="mt-2 text-xs text-muted-foreground">
+                Kg usados: {state.pesoUsadoKg} kg
+              </p>
+            ) : null
           ) : null}
 
           {!readOnly ? (

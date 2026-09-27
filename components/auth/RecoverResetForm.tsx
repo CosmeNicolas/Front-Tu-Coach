@@ -59,10 +59,14 @@ export function RecoverResetForm() {
       )}
     >
       <CardHeader className="space-y-4 pb-2">
-        <div className="flex items-center justify-center gap-4">
+        <Link
+          href="/"
+          className="flex items-center justify-center gap-4 rounded-lg transition-opacity hover:opacity-85 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-white/50"
+          aria-label="Volver al inicio"
+        >
           <Image
             src="/branding/LGO600PX.png"
-            alt="TuCoach"
+            alt=""
             width={112}
             height={112}
             className="h-24 w-24 shrink-0 object-contain sm:h-28 sm:w-28"
@@ -76,7 +80,7 @@ export function RecoverResetForm() {
               Nueva clave
             </CardTitle>
           </div>
-        </div>
+        </Link>
         <CardDescription className="text-center text-white/70">
           {token
             ? 'Elegí una contraseña de al menos 8 caracteres.'

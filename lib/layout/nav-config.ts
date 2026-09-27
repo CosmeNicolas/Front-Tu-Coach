@@ -10,6 +10,8 @@ export const SUPER_ADMIN_NAV: SidebarNavItem[] = [
 
   { href: '/super-admin/profesores', label: 'Profesores' },
 
+  { href: '/super-admin/planes-estandar', label: 'Planes estándar' },
+
   { href: '/super-admin/precios', label: 'Precios' },
 
   { href: '/super-admin/ejercicios-privados', label: 'Ejercicios' },
@@ -40,6 +42,8 @@ export const PROFESOR_NAV: SidebarNavItem[] = [
 
   { href: '/profesor/alumnos', label: 'Alumnos' },
 
+  { href: '/profesor/solicitudes', label: 'Solicitudes' },
+
   { href: '/profesor/mensajes', label: 'Mensajes' },
 
   { href: '/profesor/planificaciones', label: 'Planificaciones' },
@@ -47,6 +51,8 @@ export const PROFESOR_NAV: SidebarNavItem[] = [
   { href: '/profesor/plantillas', label: 'Plantillas' },
 
   { href: '/profesor/ejercicios', label: 'Ejercicios' },
+
+  { href: '/profesor/perfil-publico', label: 'Perfil público' },
 
   { href: '/profesor/beneficios', label: 'Beneficios' },
 
@@ -61,6 +67,8 @@ export const ALUMNO_NAV: SidebarNavItem[] = [
   { href: '/alumno/sesiones', label: 'Sesiones' },
 
   { href: '/alumno/mensajes', label: 'Mensajes' },
+
+  { href: '/alumno/solicitudes', label: 'Mis coaches' },
 
   { href: '/alumno/metricas', label: 'Métricas' },
 

@@ -44,6 +44,7 @@ interface Props {
   onUpdate: (item: PlanificationItem) => void;
   onRemove: () => void;
   onAdjusted?: (planification: Planification) => void;
+  assistantMode?: 'profesional' | 'standard';
 }
 
 export function CardEjercicio({
@@ -59,6 +60,7 @@ export function CardEjercicio({
   onUpdate,
   onRemove,
   onAdjusted,
+  assistantMode = 'profesional',
 }: Props) {
   const [draft, setDraft] = useState(item);
   const [editing, setEditing] = useState(false);
@@ -70,7 +72,13 @@ export function CardEjercicio({
 
   function save() {
     if (!draft.ejercicio.trim()) return;
-    onUpdate(draft);
+    if (assistantMode === 'standard') {
+      const { peso: _p, ...parametros } = draft.parametros;
+      const { incrementoPeso: _ip, ...progresion } = draft.progresion ?? {};
+      onUpdate({ ...draft, parametros, progresion });
+    } else {
+      onUpdate(draft);
+    }
     setEditing(false);
   }
 
@@ -201,6 +209,7 @@ export function CardEjercicio({
                   setDraft((d) => ({ ...d, parametros }))
                 }
                 setNotas={(n) => setDraft((d) => ({ ...d, notas: n || null }))}
+                assistantMode={assistantMode}
               />
             ) : null}
           </div>

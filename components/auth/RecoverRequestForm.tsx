@@ -60,10 +60,14 @@ export function RecoverRequestForm() {
       )}
     >
       <CardHeader className="space-y-4 pb-2">
-        <div className="flex items-center justify-center gap-4">
+        <Link
+          href="/"
+          className="flex items-center justify-center gap-4 rounded-lg transition-opacity hover:opacity-85 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-white/50"
+          aria-label="Volver al inicio"
+        >
           <Image
             src="/branding/LGO600PX.png"
-            alt="TuCoach"
+            alt=""
             width={140}
             height={176}
             className="h-28 w-auto shrink-0 object-contain sm:h-32"
@@ -77,7 +81,7 @@ export function RecoverRequestForm() {
               Recuperar
             </CardTitle>
           </div>
-        </div>
+        </Link>
         <CardDescription className="text-center text-white/70">
           {sent
             ? 'Si ese email está en TuCoach, vas a recibir un enlace. Revisá también spam.'

@@ -18,4 +18,6 @@ export interface StudentPerfil {
   clienteEmail: string | null;
   datos: StudentPersonalData;
   profesor: StudentProfesorBrief | null;
+  /** true cuando el profesor asignado es el mismo usuario y no hay coach aceptado. */
+  entrenandoSolo?: boolean;
 }

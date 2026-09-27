@@ -72,7 +72,7 @@ export function PreviewPanel({
   const sesionesVacias =
     filtroDia != null &&
     sesionesFiltradas.every((s) =>
-      s.secciones.every((sec) => (sec.items?.length ?? 0) === 0),
+      (s.secciones ?? []).every((sec) => (sec.items?.length ?? 0) === 0),
     );
 
   return (

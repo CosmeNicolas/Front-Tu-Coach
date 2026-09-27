@@ -16,11 +16,14 @@ interface Props {
   tourExerciseId?: string;
   onToggle: (exerciseId: string, completed: boolean) => void;
   onNote: (exerciseId: string, note: string) => void;
+  onPesoUsado: (exerciseId: string, kg: number | null) => void;
   onWorkTimeChange: (exerciseId: string, seconds: number) => void;
   onRestTimeChange: (exerciseId: string, seconds: number) => void;
   activeRestExerciseId: string | null;
   onRestStart: (exerciseId: string) => void;
   onRestEnd: () => void;
+  /** Plan estándar: oculta kilos prescritos. */
+  isStandardPlan?: boolean;
 }
 
 const SECTION_LABEL: Record<TipoSeccion, string> = {
@@ -37,11 +40,13 @@ export function AlumnoBloqueSeccion({
   tourExerciseId,
   onToggle,
   onNote,
+  onPesoUsado,
   onWorkTimeChange,
   onRestTimeChange,
   activeRestExerciseId,
   onRestStart,
   onRestEnd,
+  isStandardPlan = false,
 }: Props) {
   const [open, setOpen] = useState(defaultOpen);
   const blockIds = new Set(block.exercises.map((e) => e.exerciseId));
@@ -86,10 +91,12 @@ export function AlumnoBloqueSeccion({
               isRestActive={activeRestExerciseId === ex.exerciseId}
               onToggle={(c) => onToggle(ex.exerciseId, c)}
               onNote={(n) => onNote(ex.exerciseId, n)}
+              onPesoUsado={(kg) => onPesoUsado(ex.exerciseId, kg)}
               onWorkTimeChange={(s) => onWorkTimeChange(ex.exerciseId, s)}
               onRestTimeChange={(s) => onRestTimeChange(ex.exerciseId, s)}
               onRestStart={() => onRestStart(ex.exerciseId)}
               onRestEnd={onRestEnd}
+              isStandardPlan={isStandardPlan}
             />
           );
         })}

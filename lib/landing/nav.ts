@@ -8,8 +8,10 @@ export interface LandingNavItem {
 export const LANDING_NAV_ITEMS: LandingNavItem[] = [
   { label: 'Inicio', href: `${LANDING_HOME_ROUTE}#inicio` },
   { label: 'Funciones', href: `${LANDING_HOME_ROUTE}#funciones` },
-  { label: 'Para entrenadores', href: `${LANDING_HOME_ROUTE}#entrenadores` },
-  { label: 'Para gimnasios', href: `${LANDING_HOME_ROUTE}#gimnasios` },
+  { label: 'Entrenadores', href: `${LANDING_HOME_ROUTE}#entrenadores` },
+  { label: 'Gimnasios', href: `${LANDING_HOME_ROUTE}#gimnasios` },
   { label: 'Planes', href: `${LANDING_HOME_ROUTE}#planes` },
+  { label: 'Entrenamientos', href: '/entrenamientos' },
+  { label: 'Profesores', href: '/profesores' },
   { label: 'Contacto', href: CONTACT_ROUTE },
 ];

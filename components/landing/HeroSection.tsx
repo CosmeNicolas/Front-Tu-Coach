@@ -144,10 +144,10 @@ export function HeroSection({ trialDays = TRIAL_DAYS }: HeroSectionProps) {
               <br />
               <span className="relative inline-block text-white">
                 Progresá con datos.
-                <span
+               {/*  <span
                   aria-hidden
                   className="absolute -bottom-1 left-0 h-px w-full bg-gradient-to-r from-transparent via-white/40 to-transparent"
-                />
+                /> */}
               </span>
               <br />
               <span className="text-[#737373]">Todo en TuCoach.</span>

@@ -14,6 +14,7 @@ import { REMEMBER_EMAIL_KEY } from '@/lib/auth/constants';
 import { Button } from '@/components/ui/button';
 import { Input } from '@/components/ui/input';
 import { Label } from '@/components/ui/label';
+import { Turnstile, useTurnstile } from '@/components/ui/turnstile';
 import {
   Card,
   CardContent,
@@ -37,6 +38,8 @@ export function LoginForm({ trialDays = TRIAL_DAYS }: LoginFormProps) {
   const [showPassword, setShowPassword] = useState(false);
   const [rememberMe, setRememberMe] = useState(true);
   const [loading, setLoading] = useState(false);
+  const turnstile = useTurnstile();
+  const turnstileEnabled = !!process.env.NEXT_PUBLIC_TURNSTILE_SITE_KEY;
 
   useEffect(() => {
     if (emailFromLink) return;
@@ -50,10 +53,20 @@ export function LoginForm({ trialDays = TRIAL_DAYS }: LoginFormProps) {
 
   async function handleSubmit(event: React.FormEvent<HTMLFormElement>) {
     event.preventDefault();
+
+    if (turnstileEnabled && !turnstile.token) {
+      toast.error('Completá la verificación anti-bot antes de continuar.');
+      return;
+    }
+
     setLoading(true);
 
     try {
-      const response = await loginRequest({ email, password });
+      const response = await loginRequest({
+        email,
+        password,
+        turnstileToken: turnstile.token ?? undefined,
+      });
       if (rememberMe) {
         localStorage.setItem(REMEMBER_EMAIL_KEY, email.trim());
       } else {
@@ -62,6 +75,7 @@ export function LoginForm({ trialDays = TRIAL_DAYS }: LoginFormProps) {
       toast.success('Sesión iniciada');
       router.replace(getDashboardPath(response.user.role));
     } catch (error) {
+      turnstile.reset();
       let message = 'No se pudo iniciar sesión';
       if (error instanceof ApiError) {
         message = error.message;
@@ -85,30 +99,28 @@ export function LoginForm({ trialDays = TRIAL_DAYS }: LoginFormProps) {
       )}
     >
       <CardHeader className="space-y-4 pb-2">
-        <div className="flex items-center justify-center gap-4">
-          <Link
-            href="/"
-            className="shrink-0 rounded-lg transition-opacity hover:opacity-85 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-white/50"
-            aria-label="Volver al inicio"
-          >
-            <Image
-              src="/branding/LGO600PX.png"
-              alt=""
-              width={112}
-              height={112}
-              className="h-24 w-24 object-contain sm:h-28 sm:w-28"
-              priority
-            />
-          </Link>
-          <div className="">
-            <p className="font-display text-sm tracking-wider  text-white sm:text-base">
+        <Link
+          href="/"
+          className="flex items-center justify-center gap-4 rounded-lg transition-opacity hover:opacity-85 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-white/50"
+          aria-label="Volver al inicio"
+        >
+          <Image
+            src="/branding/LGO600PX.png"
+            alt=""
+            width={112}
+            height={112}
+            className="h-24 w-24 shrink-0 object-contain sm:h-28 sm:w-28"
+            priority
+          />
+          <div>
+            <p className="font-display text-sm tracking-wider text-white sm:text-base">
               TUCOACH
             </p>
             <CardTitle className="text-2xl font-semibold tracking-wide text-white/70">
               Ingresar
             </CardTitle>
           </div>
-        </div>
+        </Link>
         <CardDescription className="text-center text-white/70">
           Accedé a tu panel de entrenamiento y planificaciones.
         </CardDescription>
@@ -179,9 +191,20 @@ export function LoginForm({ trialDays = TRIAL_DAYS }: LoginFormProps) {
             Recordar mi email en este dispositivo
           </label>
 
+          {turnstileEnabled && (
+            <div className="flex justify-center">
+              <Turnstile
+                siteKey={process.env.NEXT_PUBLIC_TURNSTILE_SITE_KEY!}
+                onVerify={turnstile.onVerify}
+                onError={turnstile.onError}
+                onExpire={turnstile.onExpire}
+              />
+            </div>
+          )}
+
           <Button
             type="submit"
-            disabled={loading}
+            disabled={loading || (turnstileEnabled && !turnstile.token)}
             className="h-11 w-full rounded-lg bg-neutral-950 text-base font-medium text-white hover:bg-neutral-800"
           >
             {loading ? (

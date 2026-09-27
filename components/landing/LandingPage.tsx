@@ -10,14 +10,17 @@ import { HowItWorksSection } from '@/components/landing/HowItWorksSection';
 import { TestimonialsSection } from '@/components/landing/TestimonialsSection';
 import { GymsSection } from '@/components/landing/GymsSection';
 import { PricingSection } from '@/components/landing/PricingSection';
+import { StandardPlansCatalogSection } from '@/components/landing/StandardPlansCatalogSection';
+import { ProfessorsCatalogSection } from '@/components/landing/ProfessorsCatalogSection';
 import { PlatformBenefitsSection } from '@/components/landing/PlatformBenefitsSection';
 import { FinalCTA } from '@/components/landing/FinalCTA';
 import { LandingFooter } from '@/components/landing/LandingFooter';
-import { resolveTrialDays } from '@/lib/landing/pricing';
+import { resolveTrialDays, resolveStandardPlanTrialSessions } from '@/lib/landing/pricing';
 import type { PublicPlatformPricing } from '@/types/platform-pricing';
 
 export function LandingPage({ pricing }: { pricing?: PublicPlatformPricing }) {
   const trialDays = resolveTrialDays(pricing);
+  const trialSessions = resolveStandardPlanTrialSessions(pricing);
 
   return (
     <div className="landing-page min-h-screen bg-[#050505] text-white antialiased">
@@ -34,6 +37,8 @@ export function LandingPage({ pricing }: { pricing?: PublicPlatformPricing }) {
         <TestimonialsSection />
         <GymsSection />
         <PricingSection pricing={pricing} />
+        <StandardPlansCatalogSection trialSessions={trialSessions} />
+        <ProfessorsCatalogSection />
         <PlatformBenefitsSection />
         <FinalCTA trialDays={trialDays} />
       </main>

@@ -16,7 +16,8 @@ interface Props {
 }
 
 export function SesionPreviewCard({ sesion, config }: Props) {
-  const tieneAjuste = sesion.secciones.some((g) =>
+  const secciones = sesion.secciones ?? [];
+  const tieneAjuste = secciones.some((g) =>
     g.items.some((entry) => {
       if ('kind' in entry && entry.kind === 'group') {
         return entry.items.some((s) => s.esPreAjuste || s.ajusteDesdeSesion);
@@ -48,14 +49,14 @@ export function SesionPreviewCard({ sesion, config }: Props) {
         </CardTitle>
       </CardHeader>
       <CardContent className="max-h-[420px] space-y-4 overflow-y-auto p-4 pt-0">
-        {sesion.secciones.map((grupo, i) => (
+        {secciones.map((grupo, i) => (
           <SeccionPreviewBlock
             key={`${sesion.numero}-${grupo.titulo}-${i}`}
             grupo={grupo}
             sessionNum={sesion.numero}
           />
         ))}
-        {sesion.secciones.length === 0 ? (
+        {secciones.length === 0 ? (
           <p className="text-center text-xs text-muted-foreground">Sin ejercicios</p>
         ) : null}
       </CardContent>

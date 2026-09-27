@@ -7,6 +7,8 @@ import { buildAlumnoMetrics } from '@/lib/alumno/metrics';
 import { AlumnoProgressHeader } from './AlumnoProgressHeader';
 import { AlumnoSessionMetrics } from './AlumnoSessionMetrics';
 import { AlumnoPlanificacionVertical } from '@/components/alumno/AlumnoPlanificacionVertical';
+import { StandardPlanUnlockButton } from '@/components/alumno/StandardPlanUnlockButton';
+import { useTrainsAlone } from '@/hooks/useTrainsAlone';
 
 function LoadingSkeleton() {
   return (
@@ -24,9 +26,11 @@ function LoadingSkeleton() {
 
 export function AlumnoPlanificacionView() {
   const { data: plan, isLoading, error } = useMiPlanificacion();
-  const { data: materialized, isLoading: loadingMat } = useStudentMaterialized(
-    plan?.id ?? '',
-  );
+  const { trainsAlone } = useTrainsAlone();
+  const embedded = plan?.materialized;
+  const { data: fetchedMaterialized, isLoading: loadingFetched } =
+    useStudentMaterialized(embedded ? '' : (plan?.id ?? ''));
+  const materialized = embedded ?? fetchedMaterialized;
 
   const metrics = useMemo(() => {
     if (!plan) return null;
@@ -60,10 +64,66 @@ export function AlumnoPlanificacionView() {
     return null;
   }
 
+  const proxima = plan.progresoResumen.proximaSesion;
+  const proximaSesion = proxima
+    ? materialized?.sesiones.find((sesion) => sesion.numero === proxima)
+    : undefined;
+  const proximaBloqueada = Boolean(proximaSesion?.locked);
+
   return (
     <div className="flex flex-col gap-6 p-4 sm:p-6">
-      <AlumnoProgressHeader plan={plan} metrics={metrics} />
+      <AlumnoProgressHeader
+        plan={plan}
+        metrics={metrics}
+        proximaBloqueada={proximaBloqueada}
+        sesionesListas={Boolean(materialized)}
+        trainsAlone={trainsAlone}
+      />
       <AlumnoSessionMetrics metrics={metrics} />
+
+      {materialized?.enrollment ? (
+        <div
+          className={
+            materialized.enrollment.accessStatus === 'locked'
+              ? 'rounded-xl border border-amber-500/40 bg-amber-500/10 px-4 py-3 text-sm text-amber-950 dark:text-amber-100'
+              : 'rounded-xl border border-border bg-muted/40 px-4 py-3 text-sm text-muted-foreground'
+          }
+        >
+          {materialized.enrollment.accessStatus === 'purchased' ? (
+            <p>Plan completo desbloqueado.</p>
+          ) : materialized.enrollment.accessStatus === 'locked' ? (
+            <div className="flex flex-col gap-3 sm:flex-row sm:items-center sm:justify-between">
+              <p>
+                Terminaste tu prueba (
+                {materialized.enrollment.trialSessionsAllowed} sesiones). Comprá
+                el bloque para seguir entrenando.
+              </p>
+              <StandardPlanUnlockButton
+                planificationId={plan.id}
+                label="Desbloquear"
+                size="sm"
+                className="shrink-0"
+              />
+            </div>
+          ) : (
+            <div className="flex flex-col gap-3 sm:flex-row sm:items-center sm:justify-between">
+              <p>
+                Prueba: te quedan{' '}
+                <strong>{materialized.enrollment.trialSessionsRemaining}</strong>{' '}
+                de {materialized.enrollment.trialSessionsAllowed} sesiones
+                gratis.
+              </p>
+              <StandardPlanUnlockButton
+                planificationId={plan.id}
+                label="Comprar ahora"
+                variant="outline"
+                size="sm"
+                className="shrink-0"
+              />
+            </div>
+          )}
+        </div>
+      ) : null}
 
       <section className="flex items-center justify-between">
         <h2 className="text-sm font-semibold text-foreground">Historial de sesiones</h2>
@@ -75,13 +135,15 @@ export function AlumnoPlanificacionView() {
         </Link>
       </section>
 
-      {loadingMat || !materialized ? (
+      {(!embedded && loadingFetched) || !materialized ? (
         <div className="h-40 animate-pulse rounded-xl bg-muted" />
       ) : (
         <AlumnoPlanificacionVertical
           planificationId={plan.id}
           materialized={materialized}
-          highlightSession={plan.progresoResumen.proximaSesion ?? undefined}
+          highlightSession={
+            proximaBloqueada ? undefined : (proxima ?? undefined)
+          }
         />
       )}
     </div>

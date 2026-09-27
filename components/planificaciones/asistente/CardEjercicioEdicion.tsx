@@ -14,6 +14,8 @@ interface Props {
   ) => void;
   setParametros: (p: PlanificationItem['parametros']) => void;
   setNotas: (n: string) => void;
+  /** Oculta peso / incrementoPeso (plan estándar). */
+  assistantMode?: 'profesional' | 'standard';
 }
 
 export function CardEjercicioEdicion({
@@ -22,9 +24,11 @@ export function CardEjercicioEdicion({
   setProg,
   setParametros,
   setNotas,
+  assistantMode = 'profesional',
 }: Props) {
   const f = PLANIFICATION_LIMITS.fuerza;
   const iso = PLANIFICATION_LIMITS.isometrico;
+  const hidePeso = assistantMode === 'standard';
 
   return (
     <div className="mt-3 space-y-2 rounded-lg border border-primary/20 bg-primary/5 p-3">
@@ -33,8 +37,12 @@ export function CardEjercicioEdicion({
           <div className="grid grid-cols-3 gap-2 sm:grid-cols-6">
             <NumericCampo label="Series" value={draft.parametros.series} onChange={(v) => setParam('series', v)} min={f.series.min} max={f.series.max} />
             <NumericCampo label="Reps" value={draft.parametros.reps} onChange={(v) => setParam('reps', v)} min={f.reps.min} max={f.reps.max} />
-            <NumericCampo label="Peso" value={draft.parametros.peso} onChange={(v) => setParam('peso', v)} min={f.peso.min} max={f.peso.max} step={0.5} />
-            <NumericCampo label="+ Peso" value={draft.progresion?.incrementoPeso} onChange={(v) => setProg('incrementoPeso', v)} min={0} max={f.incrementoPeso.max} step={0.5} />
+            {!hidePeso ? (
+              <>
+                <NumericCampo label="Peso" value={draft.parametros.peso} onChange={(v) => setParam('peso', v)} min={f.peso.min} max={f.peso.max} step={0.5} />
+                <NumericCampo label="+ Peso" value={draft.progresion?.incrementoPeso} onChange={(v) => setProg('incrementoPeso', v)} min={0} max={f.incrementoPeso.max} step={0.5} />
+              </>
+            ) : null}
             <NumericCampo label="+ Reps" value={draft.progresion?.incrementoReps} onChange={(v) => setProg('incrementoReps', v)} min={0} max={f.incrementoReps.max} />
             <NumericCampo label="Descanso" value={draft.parametros.descanso} onChange={(v) => setParam('descanso', v)} min={0} max={600} />
           </div>

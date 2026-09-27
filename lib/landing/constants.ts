@@ -24,8 +24,11 @@ export function contactMail(subject: string): string {
   return `${CONTACT_MAILTO}?subject=${encodeURIComponent(subject)}`;
 }
 
-/** Fallback si la API de precios no responde. Debe coincidir con plan-limits del backend. */
+/** Fallback si la API de precios no responde. Debe coincidir con el backend. */
 export const TRIAL_DAYS = 5;
+
+/** Fallback del cupo de planes estándar si el panel todavía no lo envía. */
+export const STANDARD_PLAN_TRIAL_SESSIONS = 2;
 
 /** Precios de lista en ARS. Suscripciones = por mes. Catálogo = por bloque. */
 export const PRICE_ARS = {

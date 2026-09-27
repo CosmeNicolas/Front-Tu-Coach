@@ -9,6 +9,8 @@ export const LANDING_FOOTER_GROUPS: FooterLinkGroup[] = [
     links: [
       { label: 'Funciones', href: '/#funciones' },
       { label: 'Planes', href: '/#planes' },
+      { label: 'Entrenamientos', href: '/entrenamientos' },
+      { label: 'Profesores', href: '/profesores' },
       { label: 'Para entrenadores', href: '/#entrenadores' },
       { label: 'Para gimnasios', href: '/#gimnasios' },
     ],

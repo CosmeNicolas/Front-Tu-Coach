@@ -238,18 +238,31 @@ export function TenantAdminActions({ tenant }: Props) {
             </Button>
           )}
 
-          <Button
-            variant="ghost"
-            size="sm"
-            className="w-full justify-start text-destructive hover:text-destructive"
-            onClick={() => {
-              setMenuOpen(false);
-              setArchiveOpen(true);
-            }}
-          >
-            <Archive className="mr-2 h-3.5 w-3.5" />
-            Archivar
-          </Button>
+          {isSuspended ? (
+            <Button
+              variant="ghost"
+              size="sm"
+              className="w-full justify-start text-destructive hover:text-destructive"
+              onClick={() => {
+                setMenuOpen(false);
+                setArchiveOpen(true);
+              }}
+            >
+              <Archive className="mr-2 h-3.5 w-3.5" />
+              Archivar
+            </Button>
+          ) : (
+            <Button
+              variant="ghost"
+              size="sm"
+              className="w-full justify-start text-muted-foreground"
+              disabled
+              title="Primero suspendé el gimnasio"
+            >
+              <Archive className="mr-2 h-3.5 w-3.5" />
+              Archivar (suspendé antes)
+            </Button>
+          )}
         </PopoverContent>
       </Popover>
 
@@ -320,8 +333,9 @@ export function TenantAdminActions({ tenant }: Props) {
           <DialogHeader>
             <DialogTitle>Archivar {tenant.nombre}</DialogTitle>
             <DialogDescription>
-              Esta acción archiva el gimnasio y bloquea su acceso a TuCoach. No
-              borramos datos relacionados de inmediato.
+              Archiva el gimnasio y desactiva en cascada usuarios, alumnos,
+              planificaciones, vínculos coach y perfiles públicos. No borramos
+              datos físicos.
             </DialogDescription>
           </DialogHeader>
 
@@ -340,11 +354,18 @@ export function TenantAdminActions({ tenant }: Props) {
                 {summary.usuarios} · Profesores: {summary.profesores} · Alumnos:{' '}
                 {summary.alumnos} · Planificaciones: {summary.planificaciones}
               </p>
-              {summary.recommendSuspendOverDelete && (
+              {!summary.canArchive && (
                 <p className="flex items-start gap-2 text-amber-700 dark:text-amber-300">
                   <AlertTriangle className="mt-0.5 h-4 w-4 shrink-0" />
-                  Este gimnasio tiene actividad real. Recomendamos{' '}
-                  <strong>suspender</strong> antes que archivar.
+                  El gimnasio está activo. Suspendelo primero para poder
+                  archivarlo.
+                </p>
+              )}
+              {summary.canArchive && summary.hasRealActivity && (
+                <p className="flex items-start gap-2 text-amber-700 dark:text-amber-300">
+                  <AlertTriangle className="mt-0.5 h-4 w-4 shrink-0" />
+                  Tiene actividad real. Al archivar se bloquearán usuarios y se
+                  cortarán vínculos coach.
                 </p>
               )}
             </div>
@@ -359,6 +380,7 @@ export function TenantAdminActions({ tenant }: Props) {
               value={confirmText}
               onChange={(e) => setConfirmText(e.target.value)}
               autoComplete="off"
+              disabled={summary?.canArchive === false}
             />
           </div>
 
@@ -370,6 +392,7 @@ export function TenantAdminActions({ tenant }: Props) {
               variant="destructive"
               disabled={
                 archive.isPending ||
+                summary?.canArchive === false ||
                 confirmText.trim().toUpperCase() !== 'ELIMINAR'
               }
               onClick={() => void handleArchive()}

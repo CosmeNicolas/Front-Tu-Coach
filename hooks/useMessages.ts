@@ -15,7 +15,8 @@ export function useMessageThreads(enabled = true) {
     queryKey: ['messages', 'threads'],
     queryFn: fetchMessageThreads,
     enabled,
-    refetchInterval: 12_000,
+    refetchInterval: 30_000,
+    refetchIntervalInBackground: false,
   });
 }
 
@@ -24,7 +25,8 @@ export function useMessagesUnreadCount(enabled = true) {
     queryKey: ['messages', 'unread-count'],
     queryFn: fetchMessagesUnreadCount,
     enabled,
-    refetchInterval: 12_000,
+    refetchInterval: 45_000,
+    refetchIntervalInBackground: false,
   });
 }
 
@@ -33,7 +35,8 @@ export function useMyMessageThread(enabled = true) {
     queryKey: ['messages', 'my-thread'],
     queryFn: fetchMyMessageThread,
     enabled,
-    refetchInterval: 12_000,
+    refetchInterval: 15_000,
+    refetchIntervalInBackground: false,
   });
 }
 
@@ -42,7 +45,8 @@ export function useThreadWithAlumno(alumnoId: string) {
     queryKey: ['messages', 'with-alumno', alumnoId],
     queryFn: () => fetchThreadWithAlumno(alumnoId),
     enabled: Boolean(alumnoId),
-    refetchInterval: 12_000,
+    refetchInterval: 15_000,
+    refetchIntervalInBackground: false,
   });
 }
 

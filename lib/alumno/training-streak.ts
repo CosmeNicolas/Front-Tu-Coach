@@ -182,5 +182,6 @@ export function buildTrainingActivitySnapshot(
 
 export function streakLabel(snapshot: TrainingActivitySnapshot): string {
   if (snapshot.rachaSesiones <= 0) return 'Sin racha aún';
-  return `${snapshot.rachaSesiones} sesión${snapshot.rachaSesiones === 1 ? '' : 'es'} seguidas`;
+  const unidad = snapshot.rachaSesiones === 1 ? 'sesión' : 'sesiones';
+  return `${snapshot.rachaSesiones} ${unidad} seguidas`;
 }

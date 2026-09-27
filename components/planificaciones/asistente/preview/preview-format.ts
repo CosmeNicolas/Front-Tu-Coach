@@ -17,7 +17,9 @@ export function formatValorDisplay(
 
   const fuerza = v.match(/(?:(\d+(?:\.\d+)?)\s*kg\s*)?(\d+)x(\d+)/i);
   if (fuerza) {
-    const peso = fuerza[1] ? `${fuerza[1]} kg · ` : '';
+    const pesoNum = fuerza[1] != null ? Number(fuerza[1]) : NaN;
+    const peso =
+      Number.isFinite(pesoNum) && pesoNum > 0 ? `${fuerza[1]} kg · ` : '';
     return `${peso}${fuerza[2]} series × ${fuerza[3]} reps`;
   }
 

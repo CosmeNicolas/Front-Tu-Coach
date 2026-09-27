@@ -1,4 +1,3 @@
-import Link from 'next/link';
 import { ProfesorAlumnosView } from '@/components/owner/ProfesorAlumnosView';
 
 export default async function SuperAdminProfesorAlumnosPage({
@@ -9,13 +8,7 @@ export default async function SuperAdminProfesorAlumnosPage({
   const { id: tenantId, profesorId } = await params;
 
   return (
-    <div className="space-y-4 p-4 sm:p-8">
-      <Link
-        href={`/super-admin/tenants/${tenantId}/profesores`}
-        className="text-sm text-muted-foreground hover:text-foreground"
-      >
-        ← Profesores
-      </Link>
+    <div className="p-4 sm:p-8">
       <ProfesorAlumnosView
         profesorId={profesorId}
         tenantId={tenantId}

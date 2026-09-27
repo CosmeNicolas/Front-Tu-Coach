@@ -57,7 +57,7 @@ function normName(value: string): string {
 
 function flattenMaterializedItems(session: MaterializedSession): MaterializedItem[] {
   const out: MaterializedItem[] = [];
-  for (const sec of session.secciones) {
+  for (const sec of session.secciones ?? []) {
     for (const entry of sec.items) {
       if ('kind' in entry && entry.kind === 'group') {
         out.push(...entry.items);

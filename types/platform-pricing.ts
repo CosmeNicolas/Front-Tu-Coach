@@ -9,6 +9,7 @@ export interface PlatformPricingValues {
   personalized: number;
   launchDiscount: number;
   trialDays: number;
+  standardPlanTrialSessions: number;
   premiumBillingDays: number;
 }
 

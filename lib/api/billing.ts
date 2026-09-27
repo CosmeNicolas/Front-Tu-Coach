@@ -37,3 +37,39 @@ export function createBillingCheckout(planId: 'premium') {
     body: { planId },
   });
 }
+
+export interface StandardPlanCheckoutResult {
+  preferenceId: string | null;
+  checkoutUrl: string;
+  amountArs: number;
+  enrollmentId: string;
+  templateNombre: string;
+}
+
+export interface StandardPlanConfirmResult {
+  ok: boolean;
+  status: 'purchased' | 'pending' | 'rejected' | 'already';
+  accessStatus?: string;
+}
+
+export function createStandardPlanCheckout(planificationId: string) {
+  return apiClient<StandardPlanCheckoutResult>(
+    '/billing/standard-plan/checkout',
+    {
+      method: 'POST',
+      auth: true,
+      body: { planificationId },
+    },
+  );
+}
+
+export function confirmStandardPlanPayment(paymentId: string) {
+  return apiClient<StandardPlanConfirmResult>(
+    '/billing/standard-plan/confirm',
+    {
+      method: 'POST',
+      auth: true,
+      body: { paymentId },
+    },
+  );
+}

@@ -2,6 +2,7 @@ import {
   LAUNCH_DISCOUNT,
   LAUNCH_OFFER_LABEL,
   PRICE_ARS,
+  STANDARD_PLAN_TRIAL_SESSIONS,
   TRIAL_DAYS,
   launchMonthPrice,
 } from '@/lib/landing/constants';
@@ -18,6 +19,7 @@ const PRICING_KEYS = [
   'personalized',
   'launchDiscount',
   'trialDays',
+  'standardPlanTrialSessions',
   'premiumBillingDays',
 ] as const;
 
@@ -69,6 +71,7 @@ export function normalizePublicPlatformPricing(
     personalized: values.personalized!,
     launchDiscount: values.launchDiscount!,
     trialDays: values.trialDays!,
+    standardPlanTrialSessions: values.standardPlanTrialSessions!,
     premiumBillingDays: values.premiumBillingDays!,
     premiumLaunchMonth,
     launchOfferLabel,
@@ -86,6 +89,7 @@ export const FALLBACK_PUBLIC_PLATFORM_PRICING: PublicPlatformPricing = {
   personalized: PRICE_ARS.personalized,
   launchDiscount: LAUNCH_DISCOUNT,
   trialDays: TRIAL_DAYS,
+  standardPlanTrialSessions: STANDARD_PLAN_TRIAL_SESSIONS,
   premiumBillingDays: 30,
   premiumLaunchMonth: launchMonthPrice(PRICE_ARS.premiumMonth),
   launchOfferLabel: LAUNCH_OFFER_LABEL,

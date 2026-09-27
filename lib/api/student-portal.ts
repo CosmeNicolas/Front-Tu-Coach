@@ -32,6 +32,7 @@ export interface StudentPlanificationListItem {
 export interface StudentPlanification extends Planification {
   progresoResumen: StudentProgressSummary;
   actividad?: import('@/lib/alumno/training-streak').TrainingActivitySnapshot;
+  materialized?: StudentMaterializedPlanification;
 }
 
 export interface StudentMaterializedPlanification
@@ -47,6 +48,19 @@ export interface CompleteSessionResult {
 
 export function fetchMiPerfil() {
   return apiClient<StudentPerfil>('/alumno/mi-perfil', { auth: true });
+}
+
+export function updateMisDatos(payload: {
+  edad?: number;
+  peso?: number;
+  altura?: number;
+  objetivo?: string;
+}) {
+  return apiClient<StudentPerfil>('/alumno/mi-perfil', {
+    method: 'PATCH',
+    auth: true,
+    body: payload,
+  });
 }
 
 export function fetchMiPlanificacion() {

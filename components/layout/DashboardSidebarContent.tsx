@@ -6,6 +6,7 @@ import { BrandMark } from '@/components/branding/BrandMark';
 import { ThemeToggle } from '@/components/theme/ThemeToggle';
 import { PortalGreeting } from '@/components/layout/PortalGreeting';
 import { useMessagesUnreadCount } from '@/hooks/useMessages';
+import { Button } from '@/components/ui/button';
 import { cn } from '@/lib/utils/cn';
 import type { SidebarNavItem } from '@/components/layout/AppSidebar';
 
@@ -64,35 +65,38 @@ export function DashboardSidebarContent({
 
       <nav className="flex flex-1 flex-col gap-1 overflow-y-auto p-3">
         {navItems.map((item) => {
-          const active = pathname === item.href || pathname.startsWith(`${item.href}/`);
+          const active =
+            pathname === item.href || pathname.startsWith(`${item.href}/`);
           const showBadge =
             item.href.includes('/mensajes') && unreadCount > 0;
           return (
-            <Link
+            <Button
               key={item.href}
-              href={item.href}
-              onClick={onNavigate}
+              asChild
+              variant={active ? 'secondary' : 'ghost'}
               className={cn(
-                'flex items-center gap-2 rounded-lg px-3 py-2 text-sm font-medium transition-colors',
+                'h-auto w-full justify-start px-3 py-2 font-medium',
                 active
-                  ? 'bg-primary text-primary-foreground'
-                  : 'text-muted-foreground hover:bg-muted hover:text-foreground',
+                  ? 'bg-primary text-primary-foreground hover:bg-primary/90 hover:text-primary-foreground'
+                  : 'text-muted-foreground',
               )}
             >
-              <span className="flex-1">{item.label}</span>
-              {showBadge ? (
-                <span
-                  className={cn(
-                    'rounded-full px-1.5 text-[10px] font-bold',
-                    active
-                      ? 'bg-primary-foreground text-primary'
-                      : 'bg-primary text-primary-foreground',
-                  )}
-                >
-                  {unreadCount > 99 ? '99+' : unreadCount}
-                </span>
-              ) : null}
-            </Link>
+              <Link href={item.href} onClick={onNavigate}>
+                <span className="flex-1 text-left">{item.label}</span>
+                {showBadge ? (
+                  <span
+                    className={cn(
+                      'rounded-full px-1.5 text-[10px] font-bold',
+                      active
+                        ? 'bg-primary-foreground text-primary'
+                        : 'bg-primary text-primary-foreground',
+                    )}
+                  >
+                    {unreadCount > 99 ? '99+' : unreadCount}
+                  </span>
+                ) : null}
+              </Link>
+            </Button>
           );
         })}
       </nav>

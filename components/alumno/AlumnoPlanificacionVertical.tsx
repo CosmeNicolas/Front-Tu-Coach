@@ -28,9 +28,10 @@ export function AlumnoPlanificacionVertical({
       {Array.from({ length: totalSesiones }, (_, i) => i + 1).map((n) => {
         const done = isSessionCompleted(progreso, n);
         const rpe = sessionRpe(progreso, n);
-        const active = highlightSession === n;
         const sesion = sesiones.find((s) => s.numero === n);
-        const ejercicios = sesion ? countSessionExercises(sesion) : 0;
+        const locked = Boolean(sesion?.locked);
+        const active = !locked && highlightSession === n;
+        const ejercicios = sesion && !locked ? countSessionExercises(sesion) : 0;
         const det = progreso.detallePorSesion[String(n)];
         const hechos = det?.exercises?.filter((e) => e.completed).length ?? 0;
         const duracion = det?.sessionDurationSeconds ?? 0;
@@ -63,9 +64,11 @@ export function AlumnoPlanificacionVertical({
                   Sesión {n}
                 </span>
                 <span className="mt-0.5 block text-sm text-muted-foreground">
-                  {ejercicios > 0
-                    ? `${hechos}/${ejercicios} ejercicios`
-                    : 'Sin ejercicios'}
+                  {locked
+                    ? 'Bloqueada'
+                    : ejercicios > 0
+                      ? `${hechos}/${ejercicios} ejercicios`
+                      : 'Sin ejercicios'}
                   {done && rpe ? ` · RPE ${rpe}` : ''}
                   {done && duracion > 0
                     ? ` · ${formatSessionClock(duracion)}`
@@ -83,7 +86,13 @@ export function AlumnoPlanificacionVertical({
                         : 'bg-muted text-muted-foreground',
                   )}
                 >
-                  {done ? 'Completada' : active ? 'Siguiente' : 'Pendiente'}
+                  {done
+                    ? 'Completada'
+                    : locked
+                      ? 'Bloqueada'
+                      : active
+                        ? 'Siguiente'
+                        : 'Pendiente'}
                 </span>
                 <ChevronRight
                   className="size-5 text-muted-foreground"

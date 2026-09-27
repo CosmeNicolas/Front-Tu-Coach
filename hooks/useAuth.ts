@@ -13,7 +13,7 @@ export function useAuth() {
     // Siempre refrescar desde API: el cache en memoria puede quedar con nombre viejo
     queryFn: () => fetchCurrentUser({ force: true }),
     enabled: hasToken,
-    staleTime: 30_000,
+    staleTime: 60_000,
     retry: false,
   });
 }

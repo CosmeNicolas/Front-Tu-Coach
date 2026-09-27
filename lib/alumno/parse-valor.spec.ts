@@ -25,6 +25,17 @@ describe('parseExerciseParams', () => {
     expect(r.segundos).toBeNull();
   });
 
+  it('ignora peso 0 (plan estándar)', () => {
+    const r = parseExerciseParams('3x8', TipoItem.FUERZA, UnidadTrabajo.REPS, {
+      peso: 0,
+      series: 3,
+      reps: 8,
+    });
+    expect(r.pesoKg).toBeNull();
+    expect(r.series).toBe('3');
+    expect(r.reps).toBe('8');
+  });
+
   it('no confunde isométrico 3x30 con reps', () => {
     const r = parseExerciseParams(
       "3x35''",

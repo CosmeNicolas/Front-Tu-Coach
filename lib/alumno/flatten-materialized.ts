@@ -71,6 +71,10 @@ function flattenEntry(
 export function flattenSessionToBlocks(
   sesion: MaterializedSession,
 ): SessionSectionBlock[] {
+  if (sesion.locked || !sesion.secciones?.length) {
+    return [];
+  }
+
   const blocks: SessionSectionBlock[] = [];
   let globalIndex = 0;
 

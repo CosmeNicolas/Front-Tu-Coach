@@ -12,6 +12,7 @@ import {
   Menu,
   MessageSquare,
   UserCircle,
+  Users,
   X,
 } from 'lucide-react';
 import { AnimatePresence, motion } from 'framer-motion';
@@ -26,6 +27,7 @@ const MENU_ITEMS = [
   { href: '/alumno/mi-planificacion', label: 'Mi planificación', icon: ClipboardList },
   { href: '/alumno/sesiones', label: 'Sesiones', icon: CalendarDays },
   { href: '/alumno/mensajes', label: 'Mensajes', icon: MessageSquare },
+  { href: '/alumno/solicitudes', label: 'Mis coaches', icon: Users },
   { href: '/alumno/metricas', label: 'Métricas', icon: BarChart3 },
   { href: '/alumno/beneficios', label: 'Beneficios', icon: Gift },
   { href: '/alumno/mis-datos', label: 'Datos personales', icon: UserCircle },

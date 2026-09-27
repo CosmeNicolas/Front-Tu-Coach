@@ -11,6 +11,7 @@ import {
   Gift,
   MessageSquare,
   UserCircle,
+  Users,
 } from 'lucide-react';
 import { cn } from '@/lib/utils/cn';
 import { BrandMark } from '@/components/branding/BrandMark';
@@ -32,6 +33,7 @@ const DESKTOP_NAV = [
   },
   { href: '/alumno/sesiones', label: 'Sesiones', icon: CalendarDays },
   { href: '/alumno/mensajes', label: 'Mensajes', icon: MessageSquare },
+  { href: '/alumno/solicitudes', label: 'Mis coaches', icon: Users },
   { href: '/alumno/metricas', label: 'Métricas', icon: BarChart3 },
   { href: '/alumno/beneficios', label: 'Beneficios', icon: Gift },
   { href: '/alumno/mis-datos', label: 'Mis datos', icon: UserCircle },

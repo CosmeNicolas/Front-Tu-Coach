@@ -85,6 +85,10 @@ export function mergeExerciseStatesWithDraft(
       ...row,
       completed: saved.completed,
       note: saved.note ?? '',
+      pesoUsadoKg:
+        saved.pesoUsadoKg != null && Number.isFinite(saved.pesoUsadoKg)
+          ? saved.pesoUsadoKg
+          : row.pesoUsadoKg,
       exerciseTimeSeconds: saved.exerciseTimeSeconds ?? row.exerciseTimeSeconds,
       restTimeSeconds: saved.restTimeSeconds ?? row.restTimeSeconds,
     };

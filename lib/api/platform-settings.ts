@@ -12,7 +12,7 @@ import type {
 
 export function fetchPublicPlatformPricing(): Promise<PublicPlatformPricing> {
   return fetch(`${API_BASE_URL}/platform/pricing`, {
-    cache: 'no-store',
+    next: { revalidate: 60 },
   }).then(async (res) => {
     if (!res.ok) throw new Error('No se pudieron cargar los precios');
     const json: unknown = await res.json();

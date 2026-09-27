@@ -15,9 +15,14 @@ import { Button } from '@/components/ui/button';
 interface Props {
   /** Compacto para banner; full para página de ajustes */
   variant?: 'banner' | 'card';
+  /** El texto de profesor no cambia. El del alumno no habla de "un alumno". */
+  audience?: 'profesor' | 'alumno';
 }
 
-export function PushNotificationsCard({ variant = 'card' }: Props) {
+export function PushNotificationsCard({
+  variant = 'card',
+  audience = 'profesor',
+}: Props) {
   const qc = useQueryClient();
   const supported = isPushSupported();
   const [busy, setBusy] = useState(false);
@@ -125,7 +130,9 @@ export function PushNotificationsCard({ variant = 'card' }: Props) {
                 ? 'El servidor aún no tiene VAPID configurado.'
                 : subscribed
                   ? 'Activas en este dispositivo. Vas a recibir avisos aunque la app esté en segundo plano.'
-                  : 'Activá avisos en el celular o la PC cuando un alumno escriba o termine un plan.'}
+                  : audience === 'alumno'
+                    ? 'Activá avisos en el celular o la PC cuando tu profesor te escriba.'
+                    : 'Activá avisos en el celular o la PC cuando un alumno escriba o termine un plan.'}
           </p>
         </div>
         <div className="flex flex-wrap gap-2">

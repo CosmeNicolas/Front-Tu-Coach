@@ -10,6 +10,7 @@ import {
 } from 'lucide-react';
 import { Badge } from '@/components/ui/badge';
 import { Button } from '@/components/ui/button';
+import { portalActualIds } from '@/lib/profesor/portal-actual';
 import {
   Planification,
   PlanificationStatus,
@@ -23,8 +24,26 @@ interface PlanificacionTableProps {
   onDelete: (id: string) => void;
 }
 
-function EstadoCell({ plan }: { plan: Planification }) {
-  const esActual = plan.estado === PlanificationStatus.ACTIVE;
+function EstadoCell({
+  plan,
+  esLaDelPortal,
+}: {
+  plan: Planification;
+  esLaDelPortal: boolean;
+}) {
+  const esActual = plan.estado === PlanificationStatus.ACTIVE && esLaDelPortal;
+  if (plan.estado === PlanificationStatus.ACTIVE && !esLaDelPortal) {
+    return (
+      <div className="flex flex-wrap items-center gap-1.5">
+        <Badge variant="outline">Otra activa</Badge>
+        {plan.solicitudRevisionPendiente ? (
+          <Badge variant="outline" className="border-amber-500/40 text-amber-700">
+            A renovar
+          </Badge>
+        ) : null}
+      </div>
+    );
+  }
   if (esActual) {
     return (
       <div className="flex flex-wrap items-center gap-1.5">
@@ -61,6 +80,8 @@ export function PlanificacionTable({
     );
   }
 
+  const actuales = portalActualIds(items);
+
   return (
     <div className="overflow-x-auto rounded-lg border border-border bg-card shadow-sm">
       <table className="min-w-[980px] w-full text-sm">
@@ -75,7 +96,10 @@ export function PlanificacionTable({
         </thead>
         <tbody>
           {items.map((p) => {
-            const esActual = p.estado === PlanificationStatus.ACTIVE;
+            const esActual =
+              typeof p.esPortalActual === 'boolean'
+                ? p.esPortalActual
+                : actuales.has(p.id);
             return (
               <tr
                 key={p.id}
@@ -96,7 +120,7 @@ export function PlanificacionTable({
                   {p.config.totalSesiones} sesiones
                 </td>
                 <td className="px-4 py-3">
-                  <EstadoCell plan={p} />
+                  <EstadoCell plan={p} esLaDelPortal={esActual} />
                 </td>
                 <td className="px-4 py-3">
                   <div className="flex flex-wrap items-center gap-1.5">
@@ -112,7 +136,7 @@ export function PlanificacionTable({
                         Ver
                       </Link>
                     </Button>
-                    {esActual ? (
+                    {p.estado === PlanificationStatus.ACTIVE ? (
                       <Button
                         type="button"
                         size="sm"

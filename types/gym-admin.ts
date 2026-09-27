@@ -55,6 +55,8 @@ export interface TenantSecuritySummary {
   archivedAt: string | null;
   hasRealActivity: boolean;
   recommendSuspendOverDelete: boolean;
+  /** Solo true si el tenant ya está suspendido. */
+  canArchive: boolean;
 }
 
 export interface ProfesorSummary {

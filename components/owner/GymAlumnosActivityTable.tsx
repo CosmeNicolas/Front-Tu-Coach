@@ -3,6 +3,10 @@
 import Link from 'next/link';
 import type { GymAlumnoActivity } from '@/types/gym-admin';
 import { Tabs, TabsContent, TabsList, TabsTrigger } from '@/components/ui/tabs';
+import {
+  TablePagination,
+  useClientPagination,
+} from '@/components/ui/table-pagination';
 
 type TabId = 'todos' | 'activos' | 'inactivos' | 'con-actividad' | 'sin-actividad';
 
@@ -28,6 +32,9 @@ function TableBody({
   rows: GymAlumnoActivity[];
   basePath: string;
 }) {
+  const { pageItems, page, totalPages, totalItems, pageSize, setPage } =
+    useClientPagination(rows);
+
   if (rows.length === 0) {
     return (
       <p className="rounded-xl border border-dashed border-border px-4 py-8 text-center text-sm text-muted-foreground">
@@ -37,68 +44,80 @@ function TableBody({
   }
 
   return (
-    <div className="overflow-x-auto rounded-xl border border-border">
-      <table className="min-w-[800px] w-full text-sm">
-        <thead className="bg-muted/40 text-left text-muted-foreground">
-          <tr>
-            <th className="px-4 py-3 font-medium">Alumno</th>
-            <th className="px-4 py-3 font-medium">Profesor</th>
-            <th className="px-4 py-3 font-medium">Estado</th>
-            <th className="px-4 py-3 font-medium">Plan activo</th>
-            <th className="px-4 py-3 font-medium">Sesiones</th>
-            <th className="px-4 py-3 font-medium">Última actividad</th>
-            <th className="px-4 py-3 font-medium">Acción</th>
-          </tr>
-        </thead>
-        <tbody>
-          {rows.map((row) => (
-            <tr key={row.id} className="border-t border-border hover:bg-muted/20">
-              <td className="px-4 py-3">
-                <p className="font-medium text-foreground">
-                  {row.apellido}, {row.nombre}
-                </p>
-                <p className="text-xs text-muted-foreground">
-                  {row.email ?? 'Sin email'}
-                </p>
-              </td>
-              <td className="px-4 py-3">
-                <Link
-                  href={`${basePath}/profesores/${row.profesorId}`}
-                  className="text-foreground underline-offset-2 hover:underline"
-                >
-                  {row.profesorNombre}
-                </Link>
-              </td>
-              <td className="px-4 py-3 text-foreground">
-                {row.estado === 'activo' ? 'Activo' : 'Inactivo'}
-              </td>
-              <td className="max-w-[160px] truncate px-4 py-3 text-muted-foreground">
-                {row.planActivoTitulo ?? '—'}
-              </td>
-              <td className="px-4 py-3">{row.sesionesCompletadas}</td>
-              <td className="px-4 py-3">
-                <span
-                  className={
-                    row.ultimaActividadAt
-                      ? 'font-medium text-foreground'
-                      : 'text-muted-foreground'
-                  }
-                >
-                  {row.ultimaActividadLabel}
-                </span>
-              </td>
-              <td className="px-4 py-3">
-                <Link
-                  href={`${basePath}/profesores/${row.profesorId}`}
-                  className="text-foreground underline-offset-2 hover:underline"
-                >
-                  Ver
-                </Link>
-              </td>
+    <div>
+      <div className="overflow-x-auto rounded-xl border border-border">
+        <table className="min-w-[800px] w-full text-sm">
+          <thead className="bg-muted/40 text-left text-muted-foreground">
+            <tr>
+              <th className="px-4 py-3 font-medium">Alumno</th>
+              <th className="px-4 py-3 font-medium">Profesor</th>
+              <th className="px-4 py-3 font-medium">Estado</th>
+              <th className="px-4 py-3 font-medium">Plan activo</th>
+              <th className="px-4 py-3 font-medium">Sesiones</th>
+              <th className="px-4 py-3 font-medium">Última actividad</th>
+              <th className="px-4 py-3 font-medium">Acción</th>
             </tr>
-          ))}
-        </tbody>
-      </table>
+          </thead>
+          <tbody>
+            {pageItems.map((row) => (
+              <tr
+                key={row.id}
+                className="border-t border-border hover:bg-muted/20"
+              >
+                <td className="px-4 py-3">
+                  <p className="font-medium text-foreground">
+                    {row.apellido}, {row.nombre}
+                  </p>
+                  <p className="text-xs text-muted-foreground">
+                    {row.email ?? 'Sin email'}
+                  </p>
+                </td>
+                <td className="px-4 py-3">
+                  <Link
+                    href={`${basePath}/profesores/${row.profesorId}`}
+                    className="text-foreground underline-offset-2 hover:underline"
+                  >
+                    {row.profesorNombre}
+                  </Link>
+                </td>
+                <td className="px-4 py-3 text-foreground">
+                  {row.estado === 'activo' ? 'Activo' : 'Inactivo'}
+                </td>
+                <td className="max-w-[160px] truncate px-4 py-3 text-muted-foreground">
+                  {row.planActivoTitulo ?? '—'}
+                </td>
+                <td className="px-4 py-3">{row.sesionesCompletadas}</td>
+                <td className="px-4 py-3">
+                  <span
+                    className={
+                      row.ultimaActividadAt
+                        ? 'font-medium text-foreground'
+                        : 'text-muted-foreground'
+                    }
+                  >
+                    {row.ultimaActividadLabel}
+                  </span>
+                </td>
+                <td className="px-4 py-3">
+                  <Link
+                    href={`${basePath}/profesores/${row.profesorId}`}
+                    className="text-foreground underline-offset-2 hover:underline"
+                  >
+                    Ver
+                  </Link>
+                </td>
+              </tr>
+            ))}
+          </tbody>
+        </table>
+      </div>
+      <TablePagination
+        page={page}
+        totalPages={totalPages}
+        totalItems={totalItems}
+        pageSize={pageSize}
+        onPageChange={setPage}
+      />
     </div>
   );
 }
@@ -125,7 +144,7 @@ export function GymAlumnosActivityTable({
           Alumnos del gimnasio
         </h2>
         <p className="mt-1 text-sm text-muted-foreground">
-          Última actividad 
+          Última actividad
         </p>
       </div>
 

@@ -3,8 +3,14 @@
 import { useMemo, useState } from 'react';
 import Link from 'next/link';
 import { Search } from 'lucide-react';
+import { toast } from 'sonner';
 import { useTenants } from '@/hooks/useGymAdmin';
 import { useAdminProfesores } from '@/hooks/useAdminProfesores';
+import {
+  useAdminBackfillProfessorCatalog,
+  useAdminHideProfessorCatalog,
+  useAdminUnhideProfessorCatalog,
+} from '@/hooks/useProfessorCatalog';
 import { UserStatus } from '@/types/auth';
 import { NuevoProfesorDialog } from '@/components/super-admin/NuevoProfesorDialog';
 import { EditarProfesorDialog } from '@/components/super-admin/EditarProfesorDialog';
@@ -14,6 +20,7 @@ import { Input } from '@/components/ui/input';
 import { Label } from '@/components/ui/label';
 import { Card, CardContent } from '@/components/ui/card';
 import { planLabel } from '@/lib/plan/labels';
+import { ApiError } from '@/lib/api/client';
 
 function ProfesorEstadoBadge({ estado }: { estado: UserStatus }) {
   const labels: Record<UserStatus, string> = {
@@ -44,6 +51,42 @@ export default function SuperAdminProfesoresPage() {
     [search, tenantFilter],
   );
   const { data, isLoading, error } = useAdminProfesores(queryParams);
+  const hideCatalog = useAdminHideProfessorCatalog();
+  const unhideCatalog = useAdminUnhideProfessorCatalog();
+  const backfill = useAdminBackfillProfessorCatalog();
+
+  async function handleBackfill() {
+    try {
+      const result = await backfill.mutateAsync();
+      toast.success(
+        `Backfill listo: ${result.created} creados, ${result.skipped} ya existían`,
+      );
+    } catch (err) {
+      toast.error(
+        err instanceof ApiError ? err.message : 'No se pudo hacer backfill',
+      );
+    }
+  }
+
+  async function handleHide(userId: string) {
+    try {
+      await hideCatalog.mutateAsync(userId);
+      toast.success('Profesor oculto del catálogo');
+    } catch (err) {
+      toast.error(err instanceof ApiError ? err.message : 'No se pudo ocultar');
+    }
+  }
+
+  async function handleUnhide(userId: string) {
+    try {
+      await unhideCatalog.mutateAsync(userId);
+      toast.success('Ocultamiento removido');
+    } catch (err) {
+      toast.error(
+        err instanceof ApiError ? err.message : 'No se pudo desocultar',
+      );
+    }
+  }
 
   return (
     <div className="space-y-6 p-4 sm:p-8">
@@ -54,7 +97,17 @@ export default function SuperAdminProfesoresPage() {
             Listado global · {data?.total ?? 0} profesores
           </p>
         </div>
-        <NuevoProfesorDialog defaultTenantId={tenantFilter || undefined} />
+        <div className="flex flex-wrap gap-2">
+          <Button
+            type="button"
+            variant="outline"
+            disabled={backfill.isPending}
+            onClick={() => void handleBackfill()}
+          >
+            {backfill.isPending ? 'Backfill…' : 'Backfill perfiles públicos'}
+          </Button>
+          <NuevoProfesorDialog defaultTenantId={tenantFilter || undefined} />
+        </div>
       </header>
 
       <Card className="border-border bg-card shadow-sm">
@@ -165,7 +218,27 @@ export default function SuperAdminProfesoresPage() {
                       <ProfesorEstadoBadge estado={p.estado} />
                     </td>
                     <td className="px-4 py-3 text-right">
-                      <EditarProfesorDialog profesor={p} />
+                      <div className="flex justify-end gap-1">
+                        <Button
+                          type="button"
+                          size="sm"
+                          variant="ghost"
+                          disabled={hideCatalog.isPending}
+                          onClick={() => void handleHide(p.id)}
+                        >
+                          Ocultar catálogo
+                        </Button>
+                        <Button
+                          type="button"
+                          size="sm"
+                          variant="ghost"
+                          disabled={unhideCatalog.isPending}
+                          onClick={() => void handleUnhide(p.id)}
+                        >
+                          Mostrar
+                        </Button>
+                        <EditarProfesorDialog profesor={p} />
+                      </div>
                     </td>
                   </tr>
                 ))}

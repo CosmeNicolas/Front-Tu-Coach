@@ -56,6 +56,7 @@ interface Props {
   ) => void;
   onUpdateCardio: (sec: PlanificationSection) => void;
   onAdjusted: (planification: Planification) => void;
+  assistantMode?: 'profesional' | 'standard';
 }
 
 export function TabSeccionContent({
@@ -70,6 +71,7 @@ export function TabSeccionContent({
   onUpdateSeccion,
   onUpdateCardio,
   onAdjusted,
+  assistantMode = 'profesional',
 }: Props) {
   const tab = WIZARD_TABS.find((t) => t.id === tabId);
   if (!tab || !seccion) return null;
@@ -107,6 +109,7 @@ export function TabSeccionContent({
       materialized={materialized}
       onUpdateSeccion={onUpdateSeccion}
       onAdjusted={onAdjusted}
+      assistantMode={assistantMode}
     />
   );
 }
@@ -123,6 +126,7 @@ function SeccionPrincipal({
   materialized,
   onUpdateSeccion,
   onAdjusted,
+  assistantMode = 'profesional',
 }: {
   tab: (typeof WIZARD_TABS)[number];
   tabId: string;
@@ -135,6 +139,7 @@ function SeccionPrincipal({
   materialized?: MaterializedPlanification;
   onUpdateSeccion: Props['onUpdateSeccion'];
   onAdjusted: Props['onAdjusted'];
+  assistantMode?: 'profesional' | 'standard';
 }) {
   const [ejercicioSel, setEjercicioSel] = useState<EjercicioCatalogo | null>(null);
   const [mostrarCatalogo, setMostrarCatalogo] = useState(true);
@@ -380,6 +385,7 @@ function SeccionPrincipal({
                       onUpdate={(updated) => updateSingleAt(idx, updated)}
                       onRemove={() => removeAt(idx)}
                       onAdjusted={onAdjusted}
+                      assistantMode={assistantMode}
                     />
                   </div>
                 )}
@@ -419,6 +425,7 @@ function SeccionPrincipal({
           }}
           onAgregar={addItem}
           onCancelar={() => setEjercicioSel(null)}
+          assistantMode={assistantMode}
         />
       ) : null}
 

@@ -1,7 +1,6 @@
 import { NextResponse } from 'next/server';
 import type { NextRequest } from 'next/server';
 import { TOKEN_COOKIE_NAME } from '@/lib/auth/constants';
-import { Role } from '@/types/auth';
 
 const PUBLIC_PATHS = [
   '/login',
@@ -20,35 +19,14 @@ const PROTECTED_PREFIXES = [
   '/alumno',
 ];
 
-const DASHBOARD_BY_ROLE: Record<Role, string> = {
-  [Role.SUPER_ADMIN]: '/super-admin/dashboard',
-  [Role.OWNER_GIMNASIO]: '/owner/dashboard',
-  [Role.PROFESOR]: '/profesor/dashboard',
-  [Role.ALUMNO]: '/alumno/mi-planificacion',
-};
-
-function getRoleFromToken(token: string): Role | null {
-  try {
-    const payload = JSON.parse(
-      Buffer.from(token.split('.')[1], 'base64url').toString('utf-8'),
-    ) as { role?: Role };
-    return payload.role ?? null;
-  } catch {
-    return null;
-  }
-}
-
 export function middleware(request: NextRequest) {
   const { pathname } = request.nextUrl;
   const token = request.cookies.get(TOKEN_COOKIE_NAME)?.value;
   const authenticated = Boolean(token);
 
+  // Landing pública siempre accesible (incluso logueado).
+  // El redirect al dashboard ocurre post-login, no al visitar "/".
   if (pathname === '/') {
-    if (authenticated && token) {
-      const role = getRoleFromToken(token);
-      const dest = role ? DASHBOARD_BY_ROLE[role] : '/login';
-      return NextResponse.redirect(new URL(dest, request.url));
-    }
     return NextResponse.next();
   }
 

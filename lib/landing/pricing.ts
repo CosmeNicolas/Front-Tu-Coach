@@ -5,6 +5,7 @@ import {
   launchMonthPrice,
   PRICE_ARS,
   REGISTRO_ROUTE,
+  STANDARD_PLAN_TRIAL_SESSIONS,
   TRIAL_DAYS,
 } from '@/lib/landing/constants';
 import type { PublicPlatformPricing } from '@/types/platform-pricing';
@@ -13,6 +14,23 @@ export const FREE_PLAN_SUBTITLE = 'Sin costo mensual';
 
 export function resolveTrialDays(pricing?: PublicPlatformPricing | null): number {
   return pricing?.trialDays ?? TRIAL_DAYS;
+}
+
+export function resolveStandardPlanTrialSessions(
+  pricing?: { standardPlanTrialSessions?: number } | null,
+): number {
+  const n = pricing?.standardPlanTrialSessions;
+  if (typeof n === 'number' && Number.isInteger(n) && n >= 1 && n <= 12) {
+    return n;
+  }
+  return STANDARD_PLAN_TRIAL_SESSIONS;
+}
+
+export function standardPlanTrialPhrase(sessions: number): string {
+  const n = resolveStandardPlanTrialSessions({
+    standardPlanTrialSessions: sessions,
+  });
+  return n === 1 ? '1 sesión' : `${n} sesiones`;
 }
 
 export interface LandingPlan {

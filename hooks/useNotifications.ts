@@ -13,7 +13,8 @@ export function useNotifications(enabled = true) {
     queryKey: ['notifications'],
     queryFn: () => fetchNotifications(40),
     enabled,
-    refetchInterval: 30_000,
+    refetchInterval: 60_000,
+    refetchIntervalInBackground: false,
   });
 }
 
@@ -22,7 +23,8 @@ export function useUnreadNotificationCount(enabled = true) {
     queryKey: ['notifications', 'unread-count'],
     queryFn: fetchUnreadNotificationCount,
     enabled,
-    refetchInterval: 30_000,
+    refetchInterval: 45_000,
+    refetchIntervalInBackground: false,
   });
 }
 

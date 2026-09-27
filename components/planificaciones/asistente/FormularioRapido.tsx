@@ -45,7 +45,16 @@ interface Props {
   ejercicioBase?: EjercicioBase;
   onAgregar: (item: PlanificationItem) => void;
   onCancelar: () => void;
+  /** Oculta peso / incrementoPeso (plan estándar). */
+  assistantMode?: 'profesional' | 'standard';
 }
+
+const PRESETS_STANDARD = [
+  { label: 'Conservador', series: 3, reps: 8, incReps: 2 },
+  { label: 'Moderado', series: 3, reps: 10, incReps: 2 },
+  { label: 'Intensivo', series: 4, reps: 12, incReps: 2 },
+  { label: 'Fuerza', series: 4, reps: 6, incReps: 1 },
+];
 
 export function FormularioRapido({
   config,
@@ -54,7 +63,9 @@ export function FormularioRapido({
   ejercicioBase,
   onAgregar,
   onCancelar,
+  assistantMode = 'profesional',
 }: Props) {
+  const hidePeso = assistantMode === 'standard';
   const tipoInicial = ejercicioBase?.isIsometrico
     ? TipoItem.ISOMETRICO
     : TipoItem.FUERZA;
@@ -84,30 +95,43 @@ export function FormularioRapido({
     }));
   }
 
-  function applyPreset(p: (typeof PRESETS)[number]) {
+  function applyPreset(p: (typeof PRESETS)[number] | (typeof PRESETS_STANDARD)[number]) {
     const rangos = rangosProgresionDefecto(p.series, p.reps);
+    const peso = 'peso' in p ? p.peso : undefined;
+    const incPeso = 'incPeso' in p ? p.incPeso : undefined;
     setDraft((d) => ({
       ...d,
       parametros: {
         ...d.parametros,
         series: p.series,
         reps: p.reps,
-        peso: p.peso,
+        ...(hidePeso ? {} : { peso }),
         ...rangos,
       },
-      progresion: { incrementoPeso: p.incPeso, incrementoReps: p.incReps },
+      progresion: {
+        ...(hidePeso ? {} : { incrementoPeso: incPeso }),
+        incrementoReps: p.incReps,
+      },
     }));
   }
 
   function submit() {
     if (!draft.ejercicio.trim()) return;
-    onAgregar({
+    const item: PlanificationItem = {
       ...draft,
       diaBase: diaParaItems,
-    });
+    };
+    if (hidePeso) {
+      const { peso: _p, ...parametros } = item.parametros;
+      const { incrementoPeso: _ip, ...progresion } = item.progresion ?? {};
+      item.parametros = parametros;
+      item.progresion = progresion;
+    }
+    onAgregar(item);
   }
 
   const f = PLANIFICATION_LIMITS.fuerza;
+  const presets = hidePeso ? PRESETS_STANDARD : PRESETS;
 
   return (
     <div className={`rounded-xl border-2 border-primary bg-primary/5 p-4 shadow-sm`}>
@@ -187,7 +211,7 @@ export function FormularioRapido({
       {tipo === TipoItem.FUERZA ? (
         <>
           <div className="mb-2 flex flex-wrap gap-1">
-            {PRESETS.map((p) => (
+            {presets.map((p) => (
               <button
                 key={p.label}
                 type="button"
@@ -203,10 +227,14 @@ export function FormularioRapido({
               onChange={(v) => setDraft({ ...draft, parametros: ajustarRangosTrasCambioMin(draft.parametros, 'series', v) })} />
             <NumericCampo label="Reps" value={draft.parametros.reps} min={f.reps.min} max={f.reps.max}
               onChange={(v) => setDraft({ ...draft, parametros: ajustarRangosTrasCambioMin(draft.parametros, 'reps', v) })} />
-            <NumericCampo label="Peso (kg)" value={draft.parametros.peso} min={f.peso.min} max={f.peso.max} step={0.5}
-              onChange={(v) => setDraft({ ...draft, parametros: { ...draft.parametros, peso: v } })} />
-            <NumericCampo label="Inc. peso" value={draft.progresion?.incrementoPeso} min={0} max={f.incrementoPeso.max} step={0.5}
-              onChange={(v) => setDraft({ ...draft, progresion: { ...draft.progresion, incrementoPeso: v } })} />
+            {!hidePeso ? (
+              <>
+                <NumericCampo label="Peso (kg)" value={draft.parametros.peso} min={f.peso.min} max={f.peso.max} step={0.5}
+                  onChange={(v) => setDraft({ ...draft, parametros: { ...draft.parametros, peso: v } })} />
+                <NumericCampo label="Inc. peso" value={draft.progresion?.incrementoPeso} min={0} max={f.incrementoPeso.max} step={0.5}
+                  onChange={(v) => setDraft({ ...draft, progresion: { ...draft.progresion, incrementoPeso: v } })} />
+              </>
+            ) : null}
             <NumericCampo label="Inc. reps" value={draft.progresion?.incrementoReps} min={0} max={f.incrementoReps.max}
               onChange={(v) => setDraft({ ...draft, progresion: { ...draft.progresion, incrementoReps: v } })} />
             <NumericCampo label="Descanso" value={draft.parametros.descanso} min={0} max={600}

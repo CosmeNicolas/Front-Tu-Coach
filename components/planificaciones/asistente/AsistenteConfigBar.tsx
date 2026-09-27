@@ -40,6 +40,11 @@ interface Props {
   diasResumen: DiaResumen[];
   totalSesiones: number;
   onDiaChange: (dia: number) => void;
+  /**
+   * Si se pasa, actualiza config por este callback (planes estándar)
+   * en lugar de PATCH /planifications/:id.
+   */
+  onConfigCommit?: (config: PlanificationConfig) => Promise<void>;
 }
 
 export function AsistenteConfigBar({
@@ -50,26 +55,36 @@ export function AsistenteConfigBar({
   diasResumen,
   totalSesiones,
   onDiaChange,
+  onConfigCommit,
 }: Props) {
   const update = useUpdatePlanification(planificationId);
   const [draft, setDraft] = useState(config);
+  const [committing, setCommitting] = useState(false);
 
   useEffect(() => {
     setDraft(config);
   }, [config]);
 
   const sesionesOpts = opcionesSesiones(draft.frecuenciaSemanal);
+  const busy = committing || update.isPending;
 
   async function commit(next: PlanificationConfig) {
     setDraft(next);
     try {
-      await update.mutateAsync({ config: next });
+      if (onConfigCommit) {
+        setCommitting(true);
+        await onConfigCommit(next);
+      } else {
+        await update.mutateAsync({ config: next });
+      }
       toast.success(
         'Configuración actualizada. Si cambiaste de bloque, los ejercicios de cada día se mantienen; los de un día que ya no existe pasan al último día del bloque nuevo.',
       );
     } catch {
       toast.error('No se pudo actualizar la configuración');
       setDraft(config);
+    } finally {
+      setCommitting(false);
     }
   }
 
@@ -98,7 +113,7 @@ export function AsistenteConfigBar({
           <Select
             value={draft.modoProgresion}
             onValueChange={onModoChange}
-            disabled={update.isPending}
+            disabled={busy}
           >
             <SelectTrigger>
               <SelectValue />
@@ -120,7 +135,7 @@ export function AsistenteConfigBar({
           <Select
             value={String(draft.frecuenciaSemanal)}
             onValueChange={onFrecuenciaChange}
-            disabled={update.isPending}
+            disabled={busy}
           >
             <SelectTrigger>
               <SelectValue />
@@ -140,7 +155,7 @@ export function AsistenteConfigBar({
           <Select
             value={String(draft.totalSesiones)}
             onValueChange={onSesionesChange}
-            disabled={update.isPending}
+            disabled={busy}
           >
             <SelectTrigger>
               <SelectValue />
@@ -155,7 +170,7 @@ export function AsistenteConfigBar({
           </Select>
         </div>
 
-        {update.isPending ? (
+        {busy ? (
           <span className="text-xs text-muted-foreground">Actualizando…</span>
         ) : null}
       </div>

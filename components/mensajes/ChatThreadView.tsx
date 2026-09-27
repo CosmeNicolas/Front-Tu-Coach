@@ -16,6 +16,10 @@ interface Props {
   /** Rol del usuario actual: define alineación de burbujas */
   currentRole: 'alumno' | 'profesor';
   emptyHint?: string;
+  /** Overrides para chat de vínculo coach (Etapa 10) */
+  onSend?: (text: string) => Promise<void>;
+  onMarkRead?: () => void;
+  isSending?: boolean;
 }
 
 function formatTime(iso: string) {
@@ -27,15 +31,24 @@ function formatTime(iso: string) {
   });
 }
 
-export function ChatThreadView({ thread, currentRole, emptyHint }: Props) {
+export function ChatThreadView({
+  thread,
+  currentRole,
+  emptyHint,
+  onSend,
+  onMarkRead,
+  isSending,
+}: Props) {
   const [text, setText] = useState('');
   const bottomRef = useRef<HTMLDivElement>(null);
   const markRead = useMarkThreadRead();
   const send = useSendThreadMessage();
+  const pending = isSending ?? send.isPending;
 
   useEffect(() => {
     if (thread.unreadCount > 0) {
-      markRead.mutate(thread.threadKey);
+      if (onMarkRead) onMarkRead();
+      else markRead.mutate(thread.threadKey);
     }
     // Solo al abrir / cambiar hilo
     // eslint-disable-next-line react-hooks/exhaustive-deps
@@ -48,9 +61,10 @@ export function ChatThreadView({ thread, currentRole, emptyHint }: Props) {
   async function handleSubmit(e: FormEvent) {
     e.preventDefault();
     const value = text.trim();
-    if (!value || send.isPending) return;
+    if (!value || pending) return;
     try {
-      await send.mutateAsync({ threadKey: thread.threadKey, text: value });
+      if (onSend) await onSend(value);
+      else await send.mutateAsync({ threadKey: thread.threadKey, text: value });
       setText('');
     } catch (err) {
       const message =
@@ -146,8 +160,8 @@ export function ChatThreadView({ thread, currentRole, emptyHint }: Props) {
           placeholder="Escribí un mensaje…"
           className="min-w-0 flex-1 rounded-xl border border-input bg-background px-3 py-2 text-sm"
         />
-        <Button type="submit" disabled={send.isPending || !text.trim()}>
-          {send.isPending ? '…' : 'Enviar'}
+        <Button type="submit" disabled={pending || !text.trim()}>
+          {pending ? '…' : 'Enviar'}
         </Button>
       </form>
     </div>

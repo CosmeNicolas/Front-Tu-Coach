@@ -6,18 +6,33 @@ import { AlumnoDashboardMetrics } from '@/lib/alumno/metrics';
 import { StudentPlanification } from '@/lib/api/student-portal';
 import { PROGRESSION_MODE_LABELS } from '@/types/planification';
 import { SolicitarNuevaPlanDialog } from '@/components/alumno/plan/SolicitarNuevaPlanDialog';
+import { StandardPlanUnlockButton } from '@/components/alumno/StandardPlanUnlockButton';
 import { TrainingStreakBadge } from '@/components/alumno/TrainingStreakBadge';
 import { Button } from '@/components/ui/button';
 
 interface Props {
   plan: StudentPlanification;
   metrics: AlumnoDashboardMetrics;
+  /** La próxima sesión del plan estándar está bloqueada. */
+  proximaBloqueada?: boolean;
+  /** False mientras no llegó el plan materializado. */
+  sesionesListas?: boolean;
+  /** Sin profesor distinto de sí mismo. */
+  trainsAlone?: boolean;
 }
 
-export function AlumnoProgressHeader({ plan, metrics }: Props) {
+export function AlumnoProgressHeader({
+  plan,
+  metrics,
+  proximaBloqueada = false,
+  sesionesListas = true,
+  trainsAlone = false,
+}: Props) {
   const proxima = plan.progresoResumen.proximaSesion;
   const pending = Boolean(plan.solicitudRevisionPendiente);
   const [dialogOpen, setDialogOpen] = useState(false);
+  const mostrarEntrenar =
+    Boolean(proxima) && sesionesListas && !proximaBloqueada;
 
   return (
     <header
@@ -38,32 +53,41 @@ export function AlumnoProgressHeader({ plan, metrics }: Props) {
           </p>
         </div>
         <div className="flex w-full flex-col gap-2 sm:w-auto sm:items-end">
-          {proxima ? (
+          {mostrarEntrenar ? (
             <Button asChild size="lg" className="w-full shrink-0 sm:w-auto" data-tour="alumno-plan-entrenar">
               <Link href={`/alumno/sesiones/${proxima}`}>
                 Entrenar sesión {proxima}
               </Link>
             </Button>
+          ) : proxima && !sesionesListas ? null : proximaBloqueada ? (
+            <StandardPlanUnlockButton
+              planificationId={plan.id}
+              label="Desbloquear"
+              size="lg"
+              className="w-full shrink-0 sm:w-auto"
+            />
           ) : (
             <span className="rounded-lg bg-muted px-3 py-2 text-center text-sm font-medium text-foreground">
               Plan completado
             </span>
           )}
-          <Button
-            type="button"
-            variant={proxima ? 'outline' : 'default'}
-            size="sm"
-            className="w-full sm:w-auto"
-            onClick={() => setDialogOpen(true)}
-          >
-            {pending
-              ? 'Enviar recordatorio al profe'
-              : 'Solicitar nueva planificación'}
-          </Button>
+          {trainsAlone ? null : (
+            <Button
+              type="button"
+              variant={mostrarEntrenar ? 'outline' : 'default'}
+              size="sm"
+              className="w-full sm:w-auto"
+              onClick={() => setDialogOpen(true)}
+            >
+              {pending
+                ? 'Enviar recordatorio al profe'
+                : 'Solicitar nueva planificación'}
+            </Button>
+          )}
         </div>
       </div>
 
-      {pending ? (
+      {pending && !trainsAlone ? (
         <p className="mt-3 rounded-lg border border-border bg-muted/40 px-3 py-2 text-sm text-muted-foreground">
           Ya avisaste a tu profesor
           {plan.solicitudRevisionAt
@@ -99,12 +123,14 @@ export function AlumnoProgressHeader({ plan, metrics }: Props) {
         </div>
       </div>
 
-      <SolicitarNuevaPlanDialog
-        open={dialogOpen}
-        onOpenChange={setDialogOpen}
-        planificationId={plan.id}
-        alreadyPending={pending}
-      />
+      {trainsAlone ? null : (
+        <SolicitarNuevaPlanDialog
+          open={dialogOpen}
+          onOpenChange={setDialogOpen}
+          planificationId={plan.id}
+          alreadyPending={pending}
+        />
+      )}
     </header>
   );
 }

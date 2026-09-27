@@ -5,6 +5,7 @@ import {
   completeStudentSession,
   fetchMiPerfil,
   fetchMiPlanificacion,
+  updateMisDatos,
   fetchMisPlanificaciones,
   fetchStudentMaterialized,
   solicitarNuevaPlanificacion,
@@ -15,6 +16,17 @@ export function useMiPerfil() {
   return useQuery({
     queryKey: ['alumno', 'mi-perfil'],
     queryFn: fetchMiPerfil,
+  });
+}
+
+export function useUpdateMisDatos() {
+  const qc = useQueryClient();
+  return useMutation({
+    mutationFn: updateMisDatos,
+    onSuccess: async (perfil) => {
+      qc.setQueryData(['alumno', 'mi-perfil'], perfil);
+      await qc.invalidateQueries({ queryKey: ['alumno', 'mi-perfil'] });
+    },
   });
 }
 

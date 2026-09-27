@@ -88,6 +88,8 @@ export type RegisterAutogestionadoPayload = {
   nombre: string;
   apellido: string;
   turnstileToken?: string;
+  /** Slug de plan estándar published (Etapa 4). */
+  standardPlanSlug?: string;
 };
 
 export type RegisterPendingResponse = {

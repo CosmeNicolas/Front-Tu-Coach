@@ -184,6 +184,8 @@ export interface Planification {
   solicitudRevisionPendiente?: boolean;
   createdAt: string;
   updatedAt: string;
+  /** true solo en el plan activo que el portal del alumno está usando. */
+  esPortalActual?: boolean;
 }
 
 export interface CreatePlanificationPayload {
@@ -300,7 +302,21 @@ export interface MaterializedSession {
   diaBase: number;
   semanaDelPlan: number;
   dayIndexInWeek: number;
-  secciones: MaterializedSectionGroup[];
+  secciones?: MaterializedSectionGroup[];
+  locked?: boolean;
+  unlockReason?: 'purchase_required' | 'trial_exhausted';
+  trialSessionsRemaining?: number;
+  enrollmentAccessStatus?: 'trial' | 'locked' | 'purchased';
+}
+
+export interface StandardPlanEnrollmentAccess {
+  accessStatus: 'trial' | 'locked' | 'purchased';
+  trialSessionsConsumed: number;
+  trialSessionsAllowed: number;
+  trialSessionsRemaining: number;
+  purchasedAt: string | null;
+  standardTemplateId: string;
+  slug?: string;
 }
 
 export interface MaterializedPlanification {
@@ -309,6 +325,7 @@ export interface MaterializedPlanification {
   updatedAt: string;
   totalSesiones: number;
   sesiones: MaterializedSession[];
+  enrollment?: StandardPlanEnrollmentAccess | null;
 }
 
 export interface PaginatedPlanifications {

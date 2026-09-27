@@ -19,13 +19,17 @@ import { formatSessionClock } from '@/lib/alumno/format-time';
 import { useStopwatch } from '@/hooks/useStopwatch';
 import { etiquetaDia } from '@/lib/planification/preview-progression';
 import { useCompleteSession } from '@/hooks/useStudentPortal';
+import { useAuth } from '@/hooks/useAuth';
 import { ExerciseExecutionState } from '@/types/alumno-session';
 import { ApiError } from '@/lib/api/client';
+import type { SessionShareStats } from '@/lib/alumno/session-share';
 import { AlumnoBloqueSeccion } from './AlumnoBloqueSeccion';
 import { AlumnoSessionStopwatch } from './AlumnoSessionStopwatch';
 import { AlumnoRpeForm } from './AlumnoRpeForm';
 import { AlumnoPendingExercisesDialog } from './AlumnoPendingExercisesDialog';
+import { AlumnoSessionShareDialog } from './AlumnoSessionShareDialog';
 import { Button } from '@/components/ui/button';
+import { StandardPlanUnlockButton } from '@/components/alumno/StandardPlanUnlockButton';
 
 interface Props {
   plan: StudentPlanification;
@@ -39,9 +43,39 @@ export function AlumnoSesionExecutionView({
   sessionNum,
 }: Props) {
   const router = useRouter();
+  const { data: me } = useAuth();
   const complete = useCompleteSession(plan.id);
   const sesion = materialized.sesiones.find((s) => s.numero === sessionNum);
   const readOnly = isSessionCompleted(materialized.progreso, sessionNum);
+  const [shareStats, setShareStats] = useState<SessionShareStats | null>(null);
+
+  if (sesion?.locked) {
+    return (
+      <div className="mx-auto max-w-lg space-y-4 rounded-2xl border border-border bg-card p-6 text-center">
+        <h1 className="text-xl font-semibold text-foreground">
+          Sesión {sessionNum} bloqueada
+        </h1>
+        <p className="text-sm text-muted-foreground">
+          Ya usaste tus{' '}
+          {materialized.enrollment?.trialSessionsAllowed ?? 2} sesiones de
+          prueba. Comprá el plan para desbloquear el resto del bloque.
+        </p>
+        <StandardPlanUnlockButton
+          planificationId={plan.id}
+          label="Quiero desbloquear"
+          className="w-full"
+        />
+        <div>
+          <Link
+            href="/alumno/mi-planificacion"
+            className="text-sm text-primary hover:underline"
+          >
+            ← Volver a mi planificación
+          </Link>
+        </div>
+      </div>
+    );
+  }
 
   const blocks = useMemo(
     () => (sesion ? flattenSessionToBlocks(sesion) : []),
@@ -169,6 +203,12 @@ export function AlumnoSesionExecutionView({
     [patchExercise],
   );
 
+  const handlePesoUsado = useCallback(
+    (id: string, pesoUsadoKg: number | null) =>
+      patchExercise(id, { pesoUsadoKg }),
+    [patchExercise],
+  );
+
   const handleWorkTimeChange = useCallback(
     (id: string, exerciseTimeSeconds: number) =>
       patchExercise(id, { exerciseTimeSeconds }),
@@ -211,7 +251,14 @@ export function AlumnoSesionExecutionView({
     const completedById = new Map(
       exerciseStates.map((e) => [e.exerciseId, e.completed]),
     );
-    const totalVolumeKg = calcSessionVolumeKg(allExercises, completedById);
+    const pesoUsadoById = new Map(
+      exerciseStates.map((e) => [e.exerciseId, e.pesoUsadoKg]),
+    );
+    const totalVolumeKg = calcSessionVolumeKg(
+      allExercises,
+      completedById,
+      pesoUsadoById,
+    );
 
     try {
       await complete.mutateAsync({
@@ -228,6 +275,7 @@ export function AlumnoSesionExecutionView({
             name: e.name,
             completed: e.completed,
             note: e.note.trim() || undefined,
+            pesoUsadoKg: e.pesoUsadoKg,
             exerciseTimeSeconds: e.exerciseTimeSeconds || undefined,
             restTimeSeconds: e.restTimeSeconds || undefined,
           })),
@@ -241,8 +289,19 @@ export function AlumnoSesionExecutionView({
             ? `Tiempo registrado: ${formatSessionClock(sessionDurationSeconds)}. Lo vas a ver en Métricas.`
             : `La sesión ${sessionNum} se guardó correctamente.`,
       });
-      router.push('/alumno/mi-planificacion');
-      router.refresh();
+      const nombre = [me?.profile?.nombre, me?.profile?.apellido]
+        .filter((p) => p?.trim())
+        .join(' ')
+        .trim();
+      setShareStats({
+        displayName: nombre || 'Atleta TuCoach',
+        planTitle: plan.titulo,
+        sessionNum,
+        totalSesiones: materialized.totalSesiones,
+        durationSeconds: sessionDurationSeconds,
+        totalVolumeKg,
+        rpe: typeof rpe === 'number' ? rpe : null,
+      });
     } catch (err) {
       const message =
         err instanceof ApiError
@@ -358,11 +417,13 @@ export function AlumnoSesionExecutionView({
             tourExerciseId={tourExerciseId}
             onToggle={handleToggleExercise}
             onNote={handleNoteExercise}
+            onPesoUsado={handlePesoUsado}
             onWorkTimeChange={handleWorkTimeChange}
             onRestTimeChange={handleRestTimeChange}
             activeRestExerciseId={activeRestExerciseId}
             onRestStart={handleRestStart}
             onRestEnd={handleRestEnd}
+            isStandardPlan={Boolean(materialized.enrollment)}
           />
         ))}
       </div>
@@ -388,6 +449,18 @@ export function AlumnoSesionExecutionView({
         onConfirm={handleConfirmWithPending}
         isSubmitting={complete.isPending}
       />
+
+      {shareStats ? (
+        <AlumnoSessionShareDialog
+          open
+          stats={shareStats}
+          onClose={() => {
+            setShareStats(null);
+            router.push('/alumno/mi-planificacion');
+            router.refresh();
+          }}
+        />
+      ) : null}
 
       <nav className="flex items-center justify-between gap-3 border-t border-border pt-4">
         {prevN ? (

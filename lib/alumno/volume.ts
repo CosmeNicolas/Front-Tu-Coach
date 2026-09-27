@@ -5,6 +5,7 @@ import { FlatExerciseRow } from '@/types/alumno-session';
 export function calcExerciseVolumeKg(
   exercise: FlatExerciseRow,
   completed: boolean,
+  pesoUsadoKg?: number | null,
 ): number {
   if (!completed) return 0;
   const parsed = parseExerciseParams(
@@ -13,7 +14,10 @@ export function calcExerciseVolumeKg(
     exercise.unidadTrabajo,
     exercise.parametros,
   );
-  const peso = parsed.pesoKg ? parseFloat(parsed.pesoKg) : 0;
+  const prescrito = parsed.pesoKg ? parseFloat(parsed.pesoKg) : 0;
+  const usado =
+    pesoUsadoKg != null && Number.isFinite(pesoUsadoKg) ? pesoUsadoKg : null;
+  const peso = usado != null && usado > 0 ? usado : prescrito;
   const series = parsed.series ? parseInt(parsed.series, 10) : 0;
   const reps = parsed.reps ? parseInt(parsed.reps, 10) : 0;
   if (!Number.isFinite(peso) || !Number.isFinite(series) || !Number.isFinite(reps)) {
@@ -26,10 +30,15 @@ export function calcExerciseVolumeKg(
 export function calcSessionVolumeKg(
   exercises: FlatExerciseRow[],
   completedById: Map<string, boolean>,
+  pesoUsadoById?: Map<string, number | null>,
 ): number {
   let total = 0;
   for (const ex of exercises) {
-    total += calcExerciseVolumeKg(ex, completedById.get(ex.exerciseId) ?? false);
+    total += calcExerciseVolumeKg(
+      ex,
+      completedById.get(ex.exerciseId) ?? false,
+      pesoUsadoById?.get(ex.exerciseId),
+    );
   }
   return Math.round(total * 10) / 10;
 }

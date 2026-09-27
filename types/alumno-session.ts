@@ -10,6 +10,8 @@ export interface SessionExerciseLog {
   name: string;
   completed: boolean;
   note: string;
+  /** Kg que el alumno usó en este ejercicio (plan estándar / ajuste). */
+  pesoUsadoKg?: number | null;
   exerciseTimeSeconds?: number;
   restTimeSeconds?: number;
 }
@@ -69,6 +71,8 @@ export interface ExerciseExecutionState {
   name: string;
   completed: boolean;
   note: string;
+  /** Kg usados por el alumno; null = sin cargar. */
+  pesoUsadoKg: number | null;
   exerciseTimeSeconds: number;
   restTimeSeconds: number;
 }
@@ -85,6 +89,7 @@ export interface CompleteSessionPayloadV2 {
     name: string;
     completed: boolean;
     note?: string;
+    pesoUsadoKg?: number | null;
     exerciseTimeSeconds?: number;
     restTimeSeconds?: number;
   }>;

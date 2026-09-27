@@ -97,8 +97,16 @@ export function parseExerciseParams(
 
   const fuerza = v.match(/(?:(\d+(?:\.\d+)?)\s*kg\s*)?(\d+)\s*x\s*(\d+)/i);
   if (fuerza && !exerciseUsesSeconds(tipoItem, unidadTrabajo)) {
+    const fromValor = fuerza[1] ? parseFloat(fuerza[1]) : NaN;
+    const fromParams =
+      parametros?.peso != null ? Number(parametros.peso) : NaN;
+    const pesoNum = Number.isFinite(fromValor)
+      ? fromValor
+      : Number.isFinite(fromParams)
+        ? fromParams
+        : NaN;
     return {
-      pesoKg: fuerza[1] ?? (parametros?.peso != null ? String(parametros.peso) : null),
+      pesoKg: pesoNum > 0 ? String(pesoNum) : null,
       series: fuerza[2],
       reps: fuerza[3],
       minutos: null,
@@ -107,8 +115,13 @@ export function parseExerciseParams(
     };
   }
 
+  const pesoParam =
+    parametros?.peso != null && Number(parametros.peso) > 0
+      ? String(parametros.peso)
+      : null;
+
   return {
-    pesoKg: parametros?.peso != null ? String(parametros.peso) : null,
+    pesoKg: pesoParam,
     series: parametros?.series != null ? String(parametros.series) : null,
     reps: exerciseUsesSeconds(tipoItem, unidadTrabajo)
       ? null

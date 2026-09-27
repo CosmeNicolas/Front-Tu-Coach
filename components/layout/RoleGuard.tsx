@@ -2,6 +2,7 @@
 
 import { useEffect, useState } from 'react';
 import { useRouter } from 'next/navigation';
+import { useQueryClient } from '@tanstack/react-query';
 import { fetchCurrentUser } from '@/lib/api/client';
 import { getDashboardPath, isRoleAllowedForPath } from '@/lib/auth/roles';
 import { hydrateTokenStore, getAccessToken } from '@/lib/auth/token-store';
@@ -14,6 +15,7 @@ interface RoleGuardProps {
 
 export function RoleGuard({ expectedRole, children }: RoleGuardProps) {
   const router = useRouter();
+  const queryClient = useQueryClient();
   const [authorized, setAuthorized] = useState(false);
 
   useEffect(() => {
@@ -25,8 +27,9 @@ export function RoleGuard({ expectedRole, children }: RoleGuardProps) {
       return;
     }
 
-    fetchCurrentUser()
+    fetchCurrentUser({ force: true })
       .then((user) => {
+        queryClient.setQueryData(['auth', 'me'], user);
         if (user.role !== expectedRole) {
           router.replace(getDashboardPath(user.role));
           return;
@@ -43,7 +46,7 @@ export function RoleGuard({ expectedRole, children }: RoleGuardProps) {
       .catch(() => {
         router.replace('/login');
       });
-  }, [expectedRole, router]);
+  }, [expectedRole, queryClient, router]);
 
   if (!authorized) {
     return (

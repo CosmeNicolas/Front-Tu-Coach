@@ -122,8 +122,9 @@ export default function PlanificacionesPage() {
             Planificaciones
           </h1>
           <p className="mt-1 text-sm text-muted-foreground">
-            La etiqueta Actual es la que el alumno está usando ahora. Las demás
-            quedan archivadas; podés desarchivarlas para volver a dárselas.
+            La etiqueta Actual es la que el alumno está usando ahora. Otra activa
+            sigue guardada, pero el alumno no la ve hasta que armes un plan nuevo
+            o la desarchives.
           </p>
         </div>
         <Button asChild className="shrink-0">

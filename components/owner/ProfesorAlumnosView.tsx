@@ -1,8 +1,11 @@
 'use client';
 
 import Link from 'next/link';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { faCircleArrowLeft } from '@fortawesome/free-solid-svg-icons';
 import { useProfesorAlumnos, useProfesorDetail } from '@/hooks/useGymAdmin';
 import { ClientStatus } from '@/types/client';
+import { Button } from '@/components/ui/button';
 
 interface Props {
   profesorId: string;
@@ -25,14 +28,15 @@ export function ProfesorAlumnosView({
   );
 
   const backHref = `${basePath}/profesores`;
-  const dashboardHref =
-    basePath.startsWith('/super-admin/tenants/')
-      ? basePath
-      : `${basePath}/dashboard`;
+  const dashboardHref = basePath.startsWith('/super-admin/tenants/')
+    ? basePath
+    : `${basePath}/dashboard`;
 
   if (loadingProf || loadingAlumnos) {
     return (
-      <p className="text-sm text-muted-foreground">Cargando alumnos del profesor…</p>
+      <p className="text-sm text-muted-foreground">
+        Cargando alumnos del profesor…
+      </p>
     );
   }
 
@@ -44,19 +48,24 @@ export function ProfesorAlumnosView({
 
   return (
     <div className="space-y-6">
-      <div className="flex flex-col gap-2">
-        <Link
-          href={dashboardHref}
-          className="text-sm text-muted-foreground hover:text-foreground"
+      <div className="flex flex-wrap gap-1">
+        <Button
+          asChild
+          variant="ghost"
+          size="sm"
+          className="-ml-2 text-muted-foreground"
         >
-          ← Dashboard
-        </Link>
-        <Link
-          href={backHref}
-          className="text-sm text-muted-foreground hover:text-foreground"
-        >
-          ← Profesores
-        </Link>
+          <Link href={dashboardHref}>
+            <FontAwesomeIcon icon={faCircleArrowLeft} className="size-4" />
+            Dashboard
+          </Link>
+        </Button>
+        <Button asChild variant="ghost" size="sm" className="text-muted-foreground">
+          <Link href={backHref}>
+            <FontAwesomeIcon icon={faCircleArrowLeft} className="size-4" />
+            Profesores
+          </Link>
+        </Button>
       </div>
 
       <header className="rounded-2xl border border-border bg-card p-5 shadow-sm">
@@ -69,7 +78,8 @@ export function ProfesorAlumnosView({
         <p className="mt-1 text-sm text-muted-foreground">{profesor.email}</p>
         <p className="mt-3 text-sm text-foreground">
           <strong>{alumnos?.total ?? 0}</strong> alumnos ·{' '}
-          <strong>{profesor.planificacionesActivas}</strong> planificaciones activas
+          <strong>{profesor.planificacionesActivas}</strong> planificaciones
+          activas
         </p>
       </header>
 

@@ -5,6 +5,7 @@ import Link from 'next/link';
 import { Badge } from '@/components/ui/badge';
 import { Button } from '@/components/ui/button';
 import { Input } from '@/components/ui/input';
+import { portalActualIds } from '@/lib/profesor/portal-actual';
 import {
   Planification,
   PlanificationStatus,
@@ -20,6 +21,11 @@ export function PlanificacionesDashboardPanel({
   alumnoNameById,
 }: Props) {
   const [search, setSearch] = useState('');
+
+  const actuales = useMemo(
+    () => portalActualIds(plans.filter((plan) => !plan.esPlantilla)),
+    [plans],
+  );
 
   const filtered = useMemo(() => {
     const q = search.trim().toLowerCase();
@@ -89,7 +95,10 @@ export function PlanificacionesDashboardPanel({
             </thead>
             <tbody>
               {filtered.map((p) => {
-                const esActual = p.estado === PlanificationStatus.ACTIVE;
+                const esActual =
+                  typeof p.esPortalActual === 'boolean'
+                    ? p.esPortalActual
+                    : actuales.has(p.id);
                 return (
                   <tr
                     key={p.id}
@@ -106,6 +115,8 @@ export function PlanificacionesDashboardPanel({
                         <Badge className="bg-emerald-600 text-white hover:bg-emerald-600">
                           Actual
                         </Badge>
+                      ) : p.estado === PlanificationStatus.ACTIVE ? (
+                        <Badge variant="outline">Otra activa</Badge>
                       ) : (
                         <span className="text-muted-foreground">Archivada</span>
                       )}

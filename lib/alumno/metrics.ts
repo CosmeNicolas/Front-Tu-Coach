@@ -147,6 +147,12 @@ export function initExerciseStateFromLog(
       name: ex.name,
       completed: saved?.completed ?? false,
       note: saved?.note ?? '',
+      pesoUsadoKg:
+        saved?.pesoUsadoKg != null &&
+        Number.isFinite(saved.pesoUsadoKg) &&
+        saved.pesoUsadoKg > 0
+          ? saved.pesoUsadoKg
+          : null,
       exerciseTimeSeconds: saved?.exerciseTimeSeconds ?? 0,
       restTimeSeconds: saved?.restTimeSeconds ?? 0,
     };

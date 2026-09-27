@@ -23,20 +23,18 @@ const SAAS_FIELDS: { key: PricingField; label: string; hint?: string }[] = [
   { key: 'gymMonth', label: 'Gimnasios / mes (referencia)' },
 ];
 
-const CATALOG_FIELDS: { key: PricingField; label: string }[] = [
-  { key: 'catalog4w', label: 'Catálogo 4 semanas' },
-  { key: 'catalog8w', label: 'Catálogo 8 semanas' },
-  { key: 'catalog12w', label: 'Catálogo 12 semanas' },
-  { key: 'personalized', label: 'Personalizada' },
-];
-
 const CONFIG_FIELDS: { key: PricingField; label: string; hint: string }[] = [
   {
     key: 'launchDiscount',
     label: 'Descuento primer mes (0–1)',
     hint: 'Ej. 0.6 = 60% off',
   },
-  { key: 'trialDays', label: 'Días de trial al registrarse', hint: '1–90' },
+  { key: 'trialDays', label: 'Días de trial al registrarse', hint: '1–90. Solo la prueba Premium del profesor.' },
+  {
+    key: 'standardPlanTrialSessions',
+    label: 'Sesiones gratis del plan estándar',
+    hint: '1–12. Se guarda en cada inscripción nueva. Quien ya empezó no cambia.',
+  },
   {
     key: 'premiumBillingDays',
     label: 'Días que cubre el primer pago Premium',
@@ -84,7 +82,9 @@ export function SuperAdminPricingView() {
     if (!form) return;
     try {
       await update.mutateAsync(form);
-      toast.success('Precios actualizados. La landing y el checkout usan estos valores.');
+      toast.success(
+        'Precios actualizados. La landing, el checkout y las inscripciones nuevas usan estos valores.',
+      );
     } catch (err) {
       toast.error(
         err instanceof ApiError ? err.message : 'No se pudieron guardar los precios',
@@ -98,8 +98,9 @@ export function SuperAdminPricingView() {
         <div>
           <h1 className="text-2xl font-bold text-foreground">Precios de la plataforma</h1>
           <p className="mt-1 max-w-2xl text-sm text-muted-foreground">
-            Editá los montos en ARS. Se reflejan en la landing pública y en el checkout
-            de Mercado Pago (Premium primer mes).
+            Editá los montos en ARS y las sesiones gratis de los planes estándar.
+            Los días de trial cambian la prueba Premium del profesor. Las sesiones
+            gratis se copian al inscribirse y no modifican a quien ya está entrenando.
           </p>
           {data?.updatedAt ? (
             <p className="mt-2 text-xs text-muted-foreground">
@@ -130,7 +131,7 @@ export function SuperAdminPricingView() {
         </CardContent>
       </Card>
 
-      <div className="grid gap-6 lg:grid-cols-2">
+      <div className="grid gap-6">
         <Card>
           <CardHeader>
             <CardTitle className="text-base">Suscripciones (lista mensual)</CardTitle>
@@ -154,30 +155,9 @@ export function SuperAdminPricingView() {
 
         <Card>
           <CardHeader>
-            <CardTitle className="text-base">Catálogo (por bloque)</CardTitle>
-          </CardHeader>
-          <CardContent className="grid gap-4 sm:grid-cols-2">
-            {CATALOG_FIELDS.map(({ key, label }) => (
-              <div key={key} className="space-y-2">
-                <Label htmlFor={key}>{label}</Label>
-                <Input
-                  id={key}
-                  type="number"
-                  min={0}
-                  step={500}
-                  value={form[key]}
-                  onChange={(e) => setField(key, e.target.value)}
-                />
-              </div>
-            ))}
-          </CardContent>
-        </Card>
-
-        <Card className="lg:col-span-2">
-          <CardHeader>
             <CardTitle className="text-base">Configuración comercial</CardTitle>
           </CardHeader>
-          <CardContent className="grid gap-4 sm:grid-cols-3">
+          <CardContent className="grid gap-4 sm:grid-cols-2">
             {CONFIG_FIELDS.map(({ key, label, hint }) => (
               <div key={key} className="space-y-2">
                 <Label htmlFor={key}>{label}</Label>
@@ -185,7 +165,15 @@ export function SuperAdminPricingView() {
                   id={key}
                   type="number"
                   min={key === 'launchDiscount' ? 0 : 1}
-                  max={key === 'launchDiscount' ? 1 : key === 'trialDays' ? 90 : 365}
+                  max={
+                    key === 'launchDiscount'
+                      ? 1
+                      : key === 'trialDays'
+                        ? 90
+                        : key === 'standardPlanTrialSessions'
+                          ? 12
+                          : 365
+                  }
                   step={key === 'launchDiscount' ? 0.05 : 1}
                   value={form[key]}
                   onChange={(e) => setField(key, e.target.value)}

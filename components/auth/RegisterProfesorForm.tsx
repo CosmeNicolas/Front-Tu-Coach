@@ -86,10 +86,14 @@ export function RegisterProfesorForm({ trialDays = TRIAL_DAYS }: RegisterProfeso
       )}
     >
       <CardHeader className="space-y-4 pb-2">
-        <div className="flex items-center justify-center gap-4">
+        <Link
+          href="/"
+          className="flex items-center justify-center gap-4 rounded-lg transition-opacity hover:opacity-85 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-white/50"
+          aria-label="Volver al inicio"
+        >
           <Image
             src="/branding/LGO600PX.png"
-            alt="TuCoach"
+            alt=""
             width={112}
             height={112}
             className="h-24 w-24 shrink-0 object-contain sm:h-28 sm:w-28"
@@ -103,7 +107,7 @@ export function RegisterProfesorForm({ trialDays = TRIAL_DAYS }: RegisterProfeso
               {`Probar ${trialDays} días`}
             </CardTitle>
           </div>
-        </div>
+        </Link>
         <CardDescription className="text-center text-white/70">
           Cuenta de profesor. Si no pagás, quedás en Free: hasta 2 alumnos y 1
           planificación activa. No borramos tus datos.
