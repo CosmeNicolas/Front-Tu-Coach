@@ -1,6 +1,7 @@
 'use client';
 
-import { CheckCircle2, Circle, Flame, MessageSquareText } from 'lucide-react';
+import { CheckCircle2, Circle, MessageSquareText } from 'lucide-react';
+import { StreakHeart } from '@/components/alumno/StreakHeart';
 import { Planification, SessionExecutionLog } from '@/types/planification';
 import {
   buildProgressStats,
@@ -60,19 +61,19 @@ export function ProgresoAlumnoPanel({
         Progreso del alumno (portal)
       </h2>
 
-      <div className="mt-4 rounded-lg border border-orange-500/20 bg-orange-500/5 p-4">
+      <div className="mt-4 rounded-lg border border-[#547A95] bg-[#2C3947] p-4 text-[#E8EDF2]">
         <div className="flex items-start gap-3">
-          <div className="flex size-9 shrink-0 items-center justify-center rounded-full bg-orange-500/15 text-orange-600">
-            <Flame className="size-4" aria-hidden />
+          <div className="flex size-9 shrink-0 items-center justify-center rounded-full bg-[#E8EDF2]">
+            <StreakHeart beat={actividad.rachaSesiones > 0} />
           </div>
           <div>
-            <p className="text-xs font-semibold uppercase tracking-wide text-muted-foreground">
+            <p className="text-xs font-semibold uppercase tracking-wide text-[#E8EDF2]/70">
               Racha y actividad
             </p>
-            <p className="mt-1 font-semibold text-foreground">
+            <p className="mt-1 font-semibold text-[#E8EDF2]">
               {streakLabel(actividad)}
             </p>
-            <p className="mt-1 text-sm text-muted-foreground">
+            <p className="mt-1 text-sm text-[#E8EDF2]/80">
               Semana: {actividad.sesionesSemanaActual}/
               {actividad.sesionesEsperadasSemana} sesiones
               {actividad.rachaMaxima > actividad.rachaSesiones
@@ -80,7 +81,7 @@ export function ProgresoAlumnoPanel({
                 : ''}
             </p>
             {actividad.recordatorioLabel ? (
-              <p className="mt-1 text-sm font-medium text-amber-700 dark:text-amber-300">
+              <p className="mt-1 text-sm font-medium text-[#547A95]">
                 {actividad.recordatorioLabel}
               </p>
             ) : null}

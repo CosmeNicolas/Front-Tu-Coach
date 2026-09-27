@@ -307,3 +307,31 @@ textarea::placeholder {
   color: var(--foreground);
   border: 1px solid var(--border);
 }
+
+@keyframes streak-heart-beat {
+  0%,
+  36%,
+  100% {
+    transform: scale(1);
+  }
+  8% {
+    transform: scale(1.22);
+  }
+  16% {
+    transform: scale(1);
+  }
+  26% {
+    transform: scale(1.14);
+  }
+}
+
+.streak-heart-beat {
+  transform-origin: center;
+  animation: streak-heart-beat 3s ease-in-out infinite;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .streak-heart-beat {
+    animation: none;
+  }
+}

@@ -85,7 +85,7 @@ export function AlumnoPlanificacionView() {
         <div
           className={
             materialized.enrollment.accessStatus === 'locked'
-              ? 'rounded-xl border border-amber-500/40 bg-amber-500/10 px-4 py-3 text-sm text-amber-950 dark:text-amber-100'
+              ? 'rounded-xl border border-[#547A95] bg-[#2C3947] px-4 py-3 text-sm text-[#E8EDF2]'
               : 'rounded-xl border border-border bg-muted/40 px-4 py-3 text-sm text-muted-foreground'
           }
         >
@@ -102,7 +102,7 @@ export function AlumnoPlanificacionView() {
                 planificationId={plan.id}
                 label="Desbloquear"
                 size="sm"
-                className="shrink-0"
+                className="shrink-0 bg-[#E8EDF2] text-[#2C3947] hover:bg-[#E8EDF2]/90"
               />
             </div>
           ) : (
