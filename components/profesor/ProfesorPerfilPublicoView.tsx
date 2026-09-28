@@ -229,13 +229,17 @@ export function ProfesorPerfilPublicoView() {
         <CardContent>
           <form className="space-y-4" onSubmit={(e) => void handleSave(e)}>
             <div className="space-y-2">
-              <Label htmlFor="slug">Slug (URL)</Label>
+              <Label htmlFor="slug">Dirección del perfil</Label>
               <Input
                 id="slug"
                 value={slug}
                 onChange={(e) => setSlug(e.target.value)}
                 placeholder="juan-perez"
               />
+              <p className="text-xs text-muted-foreground">
+                Es el enlace de tu perfil público. Usá minúsculas y guiones, sin
+                espacios ni acentos. Ejemplo: juan-perez
+              </p>
             </div>
             <div className="space-y-2">
               <Label htmlFor="bio">Bio</Label>

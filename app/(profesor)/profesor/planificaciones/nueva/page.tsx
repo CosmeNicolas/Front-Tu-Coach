@@ -28,7 +28,9 @@ function NuevaPlanificacionContent() {
         const plan = await createMutation.mutateAsync(payload);
         const planId = plan?.id?.trim();
         if (!planId) {
-          toast.error('La planificación se creó pero no recibimos el ID.');
+          toast.error(
+            'La planificación se creó, pero no pudimos abrirla. Buscala en el listado.',
+          );
           router.push('/profesor/planificaciones');
           return;
         }

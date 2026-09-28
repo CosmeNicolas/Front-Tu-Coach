@@ -117,10 +117,10 @@ export function StandardPlanFormDialog({
     try {
       if (editing) {
         await update.mutateAsync(payload);
-        toast.success('Template actualizado');
+        toast.success('Plan actualizado');
       } else {
         await create.mutateAsync(payload);
-        toast.success('Template creado (borrador)');
+        toast.success('Plan creado (borrador)');
       }
       onOpenChange(false);
     } catch (err) {
@@ -137,7 +137,7 @@ export function StandardPlanFormDialog({
       <DialogContent className="max-h-[90vh] overflow-y-auto sm:max-w-lg">
         <DialogHeader>
           <DialogTitle>
-            {editing ? 'Editar template' : 'Nuevo plan estándar'}
+            {editing ? 'Editar plan' : 'Nuevo plan estándar'}
           </DialogTitle>
         </DialogHeader>
         <form className="space-y-4" onSubmit={handleSubmit}>
@@ -155,7 +155,7 @@ export function StandardPlanFormDialog({
             />
           </div>
           <div className="space-y-2">
-            <Label htmlFor="sp-slug">Slug</Label>
+            <Label htmlFor="sp-slug">Dirección del plan</Label>
             <Input
               id="sp-slug"
               value={slug}
@@ -165,7 +165,12 @@ export function StandardPlanFormDialog({
               }}
               required
               pattern="[a-z0-9]+(?:-[a-z0-9]+)*"
+              placeholder="fullbody-3d-principiante"
             />
+            <p className="text-xs text-muted-foreground">
+              Es el enlace del plan. Solo minúsculas, números y guiones. Ejemplo:
+              fullbody-3d-principiante
+            </p>
           </div>
           <div className="space-y-2">
             <Label htmlFor="sp-objetivo">Objetivo</Label>

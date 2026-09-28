@@ -94,7 +94,7 @@ export function NuevoGimnasioDialog({ trigger }: Props) {
           </div>
 
           <div className="space-y-2">
-            <Label htmlFor="gym-slug">Slug (opcional)</Label>
+            <Label htmlFor="gym-slug">Dirección del gimnasio (opcional)</Label>
             <Input
               id="gym-slug"
               value={slug}

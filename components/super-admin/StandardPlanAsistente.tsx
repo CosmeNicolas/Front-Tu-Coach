@@ -129,7 +129,7 @@ function StandardPreviewPanel({
         <div>
           <h2 className="text-lg font-semibold text-foreground">Vista previa</h2>
           <p className="mt-1 text-sm text-muted-foreground">
-            Resumen del contenido del template (sin kilos prescritos).
+            Resumen del contenido del plan (sin kilos prescritos).
             {needsSave
               ? ' Hay cambios sin guardar — esto refleja el borrador local.'
               : null}
@@ -380,12 +380,12 @@ export function StandardPlanAsistente({
       }
       toast.success(
         frecuenciaBloque
-          ? `Template guardado · Día ${diaActivo}. Podés seguir con otro día cuando quieras.`
-          : 'Template guardado (sin kilos prescritos)',
+          ? `Plan guardado · Día ${diaActivo}. Podés seguir con otro día cuando quieras.`
+          : 'Plan guardado (sin kilos prescritos)',
       );
     } catch (err) {
       if (err instanceof ApiError && err.status === 409) {
-        toast.error('Otra sesión modificó este template. Recargá la página.');
+        toast.error('Otra sesión modificó este plan. Recargá la página.');
       } else {
         toast.error('No se pudo guardar', {
           description: err instanceof ApiError ? err.message : undefined,

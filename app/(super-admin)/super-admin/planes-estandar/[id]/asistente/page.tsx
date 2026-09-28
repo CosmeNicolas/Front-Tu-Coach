@@ -15,7 +15,7 @@ export default function SuperAdminStandardPlanAsistentePage({
 
   if (isLoading) {
     return (
-      <p className="p-8 text-sm text-muted-foreground">Cargando template…</p>
+      <p className="p-8 text-sm text-muted-foreground">Cargando plan…</p>
     );
   }
 
@@ -23,8 +23,8 @@ export default function SuperAdminStandardPlanAsistentePage({
     return (
       <p className="p-8 text-sm text-destructive">
         {error instanceof ApiError && error.status === 404
-          ? 'Template no encontrado o feature desactivada (FEATURE_STANDARD_PLANS).'
-          : 'No se pudo cargar el template.'}
+          ? 'Plan no encontrado o la función está desactivada (FEATURE_STANDARD_PLANS).'
+          : 'No se pudo cargar el plan.'}
       </p>
     );
   }

@@ -80,7 +80,7 @@ export default function AlumnosPage() {
           </h2>
           <p className="mt-1 text-xs text-muted-foreground">
             Alumnos que se entrenan por cuenta propia y se vincularon con vos.
-            Solo lectura; no son alumnos de tu tenant.
+            Solo lectura; no son alumnos que cargaste vos en el gimnasio.
           </p>
         </div>
 

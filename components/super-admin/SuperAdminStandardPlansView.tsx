@@ -54,8 +54,8 @@ export function SuperAdminStandardPlansView() {
       const res = await seed.mutateAsync(undefined);
       toast.success(
         res.created
-          ? 'Template Full body importado como borrador'
-          : 'Ya existía el template Full body',
+          ? 'Plan Full body importado como borrador'
+          : 'Ya existía el plan Full body',
       );
     } catch (err) {
       toast.error('No se pudo importar', {
@@ -67,7 +67,7 @@ export function SuperAdminStandardPlansView() {
   async function handlePublish(id: string) {
     try {
       await publish.mutateAsync(id);
-      toast.success('Template publicado');
+      toast.success('Plan publicado');
     } catch (err) {
       toast.error('No se pudo publicar', {
         description: err instanceof ApiError ? err.message : undefined,
@@ -78,7 +78,7 @@ export function SuperAdminStandardPlansView() {
   async function handleArchive(id: string) {
     try {
       await archive.mutateAsync(id);
-      toast.success('Template archivado');
+      toast.success('Plan archivado');
     } catch (err) {
       toast.error('No se pudo archivar', {
         description: err instanceof ApiError ? err.message : undefined,
@@ -89,7 +89,7 @@ export function SuperAdminStandardPlansView() {
   async function handleUnarchive(id: string) {
     try {
       await unarchive.mutateAsync(id);
-      toast.success('Template desarchivado (borrador)');
+      toast.success('Plan desarchivado (borrador)');
     } catch (err) {
       toast.error('No se pudo desarchivar', {
         description: err instanceof ApiError ? err.message : undefined,
@@ -105,7 +105,7 @@ export function SuperAdminStandardPlansView() {
             Planes estándar
           </h1>
           <p className="mt-1 max-w-xl text-sm text-muted-foreground">
-            Templates comerciales de TuCoach (sin kilos prescritos). Requiere
+            Planes comerciales de TuCoach (sin kilos prescritos). Requiere
             FEATURE_STANDARD_PLANS=true.
           </p>
         </div>
@@ -125,7 +125,7 @@ export function SuperAdminStandardPlansView() {
             }}
           >
             <Plus className="mr-2 size-4" />
-            Nuevo template
+            Nuevo plan
           </Button>
         </div>
       </header>
@@ -136,11 +136,11 @@ export function SuperAdminStandardPlansView() {
         <p className="text-sm text-destructive">
           {error instanceof ApiError && error.status === 404
             ? 'Feature desactivada. Activá FEATURE_STANDARD_PLANS=true en el backend.'
-            : 'No se pudieron cargar los templates.'}
+            : 'No se pudieron cargar los planes.'}
         </p>
       ) : items.length === 0 ? (
         <p className="text-sm text-muted-foreground">
-          Todavía no hay templates. Importá Full body o creá uno vacío.
+          Todavía no hay planes. Importá Full body o creá uno vacío.
         </p>
       ) : (
         <ul className="divide-y rounded-xl border border-border">

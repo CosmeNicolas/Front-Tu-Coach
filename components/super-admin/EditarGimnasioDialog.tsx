@@ -139,13 +139,17 @@ export function EditarGimnasioDialog({ tenant, trigger }: Props) {
           </div>
 
           <div className="space-y-2">
-            <Label htmlFor="edit-gym-slug">Slug</Label>
+            <Label htmlFor="edit-gym-slug">Dirección del gimnasio</Label>
             <Input
               id="edit-gym-slug"
               value={slug}
               onChange={(e) => setSlug(e.target.value.toLowerCase())}
               maxLength={80}
+              placeholder="gimnasio-central"
             />
+            <p className="text-xs text-muted-foreground">
+              Solo minúsculas, números y guiones. Ejemplo: gimnasio-central
+            </p>
           </div>
 
           <div className="space-y-2">

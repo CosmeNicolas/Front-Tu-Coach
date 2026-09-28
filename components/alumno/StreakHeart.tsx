@@ -23,7 +23,7 @@ export function StreakHeart({
     >
       <FontAwesomeIcon
         icon={faHeart}
-        className="text-[#547A95]"
+        className="text-[#B93636]"
         style={{ width: 22, height: 22 }}
       />
     </span>
