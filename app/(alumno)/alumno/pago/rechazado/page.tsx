@@ -3,7 +3,7 @@ import { Suspense } from 'react';
 import { AlumnoBillingResultView } from '@/components/alumno/AlumnoBillingResultView';
 
 export const metadata: Metadata = {
-  title: 'Pago rechazado | TuCoach',
+  title: 'Pago rechazado',
   robots: { index: false, follow: false },
 };
 

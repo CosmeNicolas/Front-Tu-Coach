@@ -1,11 +1,12 @@
-import type { Metadata } from 'next';
+import { publicMetadata } from '@/lib/seo/site';
 import { LegalDocument } from '@/components/landing/LegalDocument';
 import { CONTACT_EMAIL, CONTACT_MAILTO } from '@/lib/landing/constants';
 
-export const metadata: Metadata = {
-  title: 'Política de privacidad — TuCoach',
+export const metadata = publicMetadata({
+  title: 'Política de privacidad',
   description: 'Cómo trata TuCoach los datos de la cuenta y del entrenamiento.',
-};
+  path: '/privacidad',
+});
 
 export default function PrivacidadPage() {
   return (

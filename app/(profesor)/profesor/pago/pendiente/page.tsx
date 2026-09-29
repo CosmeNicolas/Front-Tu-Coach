@@ -2,7 +2,7 @@ import type { Metadata } from 'next';
 import { BillingResultView } from '@/components/profesor/BillingResultView';
 
 export const metadata: Metadata = {
-  title: 'Pago pendiente | TuCoach',
+  title: 'Pago pendiente',
   robots: { index: false, follow: false },
 };
 

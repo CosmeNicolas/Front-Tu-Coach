@@ -1,11 +1,13 @@
-import type { Metadata } from 'next';
+import { publicMetadata } from '@/lib/seo/site';
 import { LegalDocument } from '@/components/landing/LegalDocument';
 import { CONTACT_EMAIL, CONTACT_MAILTO, TRIAL_DAYS } from '@/lib/landing/constants';
 
-export const metadata: Metadata = {
-  title: 'Términos y condiciones — TuCoach',
-  description: 'Condiciones de uso de TuCoach.',
-};
+export const metadata = publicMetadata({
+  title: 'Términos y condiciones',
+  description:
+    'Condiciones de uso de TuCoach para profesores, gimnasios y quienes entrenan por su cuenta.',
+  path: '/terminos',
+});
 
 export default function TerminosPage() {
   return (

@@ -1,3 +1,6 @@
+import type { Metadata } from 'next';
+import { fetchPublicStandardPlan } from '@/lib/api/standard-plans';
+import { publicMetadata } from '@/lib/seo/site';
 import { LandingNavbar } from '@/components/landing/LandingNavbar';
 import { LandingFooter } from '@/components/landing/LandingFooter';
 import { StandardPlanDetailPageClient } from '@/components/landing/StandardPlanDetailView';
@@ -9,12 +12,27 @@ export async function generateMetadata({
   params,
 }: {
   params: Promise<{ slug: string }>;
-}) {
+}): Promise<Metadata> {
   const { slug } = await params;
-  return {
-    title: `${slug} | Entrenamientos TuCoach`,
-    description: 'Planificación estándar de TuCoach para entrenar por tu cuenta.',
-  };
+  try {
+    const plan = await fetchPublicStandardPlan(slug);
+    const description =
+      plan.descripcion?.trim().slice(0, 160) ||
+      `Plan ${plan.nombre} de TuCoach para entrenar por tu cuenta. ${plan.config.semanasDelPlan} semanas, ${plan.config.frecuenciaSemanal} días por semana.`;
+    return publicMetadata({
+      title: plan.nombre,
+      description,
+      path: `/entrenamientos/${plan.slug}`,
+      image: plan.imagenUrl,
+    });
+  } catch {
+    return publicMetadata({
+      title: 'Plan de entrenamiento',
+      description: 'Planificación estándar de TuCoach para entrenar por tu cuenta.',
+      path: `/entrenamientos/${slug}`,
+      index: false,
+    });
+  }
 }
 
 export default async function EntrenamientoDetallePage({

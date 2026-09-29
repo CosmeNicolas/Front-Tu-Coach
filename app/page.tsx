@@ -1,8 +1,10 @@
 import type { Metadata } from 'next';
 import { LandingPage } from '@/components/landing/LandingPage';
+import { JsonLd } from '@/components/seo/JsonLd';
 import { fetchPublicPlatformPricing } from '@/lib/api/platform-settings';
 import { TRIAL_DAYS } from '@/lib/landing/constants';
 import { resolveTrialDays } from '@/lib/landing/pricing';
+import { homeJsonLd, publicMetadata } from '@/lib/seo/site';
 
 export async function generateMetadata(): Promise<Metadata> {
   let trialDays = TRIAL_DAYS;
@@ -13,19 +15,14 @@ export async function generateMetadata(): Promise<Metadata> {
     // fallback al valor por defecto
   }
 
-  return {
+  const description = `Creá planificaciones, acompañá alumnos y analizá su progreso. Probá ${trialDays} días Premium gratis.`;
+
+  return publicMetadata({
     title: 'TuCoach — Plataforma para entrenadores, gimnasios y alumnos',
-    description: `Creá planificaciones, acompañá alumnos y analizá su progreso. Probá ${trialDays} días Premium gratis.`,
-    openGraph: {
-      title: 'TuCoach',
-      description:
-        'Planificaciones, seguimiento de alumnos y portal de entrenamiento en una sola plataforma.',
-      url: 'https://tucoach.pro',
-      siteName: 'TuCoach',
-      locale: 'es_AR',
-      type: 'website',
-    },
-  };
+    description,
+    path: '/',
+    absoluteTitle: true,
+  });
 }
 
 export default async function HomePage() {
@@ -36,5 +33,14 @@ export default async function HomePage() {
     pricing = undefined;
   }
 
-  return <LandingPage pricing={pricing} />;
+  const description = `Creá planificaciones, acompañá alumnos y analizá su progreso. Probá ${
+    pricing ? resolveTrialDays(pricing) : TRIAL_DAYS
+  } días Premium gratis.`;
+
+  return (
+    <>
+      <JsonLd data={homeJsonLd(description)} />
+      <LandingPage pricing={pricing} />
+    </>
+  );
 }

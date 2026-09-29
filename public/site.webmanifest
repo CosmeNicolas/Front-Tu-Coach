@@ -1,7 +1,7 @@
 {
   "name": "TuCoach",
   "short_name": "TuCoach",
-  "description": "Plataforma SaaS para gimnasios y planificaciones",
+  "description": "Planificaciones y seguimiento para entrenadores, gimnasios y alumnos",
   "start_url": "/",
   "scope": "/",
   "display": "standalone",

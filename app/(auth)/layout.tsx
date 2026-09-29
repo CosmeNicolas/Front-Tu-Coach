@@ -1,3 +1,7 @@
+import { PRIVATE_ROBOTS } from '@/lib/seo/site';
+
+export const metadata = PRIVATE_ROBOTS;
+
 export default function AuthLayout({
   children,
 }: {

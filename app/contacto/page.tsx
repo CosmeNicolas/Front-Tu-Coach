@@ -1,14 +1,15 @@
-import type { Metadata } from 'next';
+import { publicMetadata } from '@/lib/seo/site';
 import { LandingNavbar } from '@/components/landing/LandingNavbar';
 import { LandingFooter } from '@/components/landing/LandingFooter';
 import { ContactForm } from '@/components/landing/ContactForm';
 import { CONTACT_EMAIL, LANDING_CONTAINER } from '@/lib/landing/constants';
 
-export const metadata: Metadata = {
-  title: 'Contacto — TuCoach',
+export const metadata = publicMetadata({
+  title: 'Contacto',
   description:
     'Escribinos para pedir una demo, consultar planes o implementar TuCoach en tu gimnasio.',
-};
+  path: '/contacto',
+});
 
 export default function ContactoPage() {
   return (

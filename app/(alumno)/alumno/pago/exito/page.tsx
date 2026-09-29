@@ -3,7 +3,7 @@ import { Suspense } from 'react';
 import { AlumnoBillingResultView } from '@/components/alumno/AlumnoBillingResultView';
 
 export const metadata: Metadata = {
-  title: 'Pago exitoso | TuCoach',
+  title: 'Pago exitoso',
   robots: { index: false, follow: false },
 };
 

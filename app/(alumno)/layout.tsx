@@ -1,8 +1,11 @@
+import { PRIVATE_ROBOTS } from '@/lib/seo/site';
 import { RoleGuard } from '@/components/layout/RoleGuard';
 import { AlumnoMobileLayout } from '@/components/alumno/AlumnoMobileLayout';
 import { PushNotificationsBootstrap } from '@/components/notifications/PushNotificationsBootstrap';
 import { ProductTourShell } from '@/components/onboarding/ProductTourShell';
 import { Role } from '@/types/auth';
+
+export const metadata = PRIVATE_ROBOTS;
 
 export default function AlumnoLayout({
   children,

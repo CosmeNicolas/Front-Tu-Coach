@@ -1,3 +1,4 @@
+import { publicMetadata } from '@/lib/seo/site';
 import { LandingNavbar } from '@/components/landing/LandingNavbar';
 import { LandingFooter } from '@/components/landing/LandingFooter';
 import { StandardPlansCatalogView } from '@/components/landing/StandardPlansCatalogView';
@@ -5,11 +6,12 @@ import { fetchPublicPlatformPricing } from '@/lib/api/platform-settings';
 import { STANDARD_PLAN_TRIAL_SESSIONS, TRIAL_DAYS } from '@/lib/landing/constants';
 import { resolveTrialDays, resolveStandardPlanTrialSessions } from '@/lib/landing/pricing';
 
-export const metadata = {
-  title: 'Entrenamientos | TuCoach',
+export const metadata = publicMetadata({
+  title: 'Entrenamientos',
   description:
-    'Planificaciones estándar de TuCoach para entrenar por tu cuenta.',
-};
+    'Planes de entrenamiento listos para empezar por tu cuenta. Probá sesiones gratis y desbloqueá el plan completo.',
+  path: '/entrenamientos',
+});
 
 export default async function EntrenamientosPage() {
   let trialDays = TRIAL_DAYS;

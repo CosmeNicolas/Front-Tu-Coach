@@ -1,3 +1,4 @@
+import { PRIVATE_ROBOTS } from '@/lib/seo/site';
 import { RoleGuard } from '@/components/layout/RoleGuard';
 import { DashboardShell } from '@/components/layout/DashboardShell';
 import { PushNotificationsBootstrap } from '@/components/notifications/PushNotificationsBootstrap';
@@ -6,6 +7,8 @@ import { ProductTourShell } from '@/components/onboarding/ProductTourShell';
 import { TourHelpButton } from '@/components/onboarding/TourHelpButton';
 import { PROFESOR_NAV } from '@/lib/layout/nav-config';
 import { Role } from '@/types/auth';
+
+export const metadata = PRIVATE_ROBOTS;
 
 export default function ProfesorLayout({
   children,
