@@ -13,6 +13,7 @@ import {
   clearSessionDraft,
   loadSessionDraft,
   mergeExerciseStatesWithDraft,
+  restoreSessionTimer,
   saveSessionDraft,
 } from '@/lib/alumno/session-draft-store';
 import { formatSessionClock } from '@/lib/alumno/format-time';
@@ -130,7 +131,7 @@ export function AlumnoSesionExecutionView({
   const sessionTimer = useStopwatch(
     readOnly
       ? { elapsedSeconds: savedSessionSeconds, isRunning: false }
-      : (localDraft?.sessionTimer ?? { elapsedSeconds: 0, isRunning: false }),
+      : restoreSessionTimer(localDraft),
   );
 
   useLayoutEffect(() => {
@@ -162,7 +163,7 @@ export function AlumnoSesionExecutionView({
       rpe,
       rpeNote,
       sessionComment,
-      sessionTimer: sessionTimer.getSnapshot(),
+      sessionTimer: { ...sessionTimer.getBaseSnapshot(), baseOnly: true },
     });
   }, [
     readOnly,

@@ -1,5 +1,10 @@
 import { ExerciseExecutionState } from '@/types/alumno-session';
-import { StopwatchSnapshot } from '@/hooks/useStopwatch';
+import type { StopwatchSnapshot } from '@/hooks/useStopwatch';
+
+export interface SessionTimerDraft extends StopwatchSnapshot {
+  /** elapsedSeconds es solo el tiempo anterior al tramo en curso. */
+  baseOnly?: boolean;
+}
 
 const PREFIX = 'tucoach:session-draft:';
 
@@ -11,7 +16,39 @@ export interface SessionDraft {
   rpe: number | '';
   rpeNote: string;
   sessionComment: string;
-  sessionTimer?: StopwatchSnapshot;
+  sessionTimer?: SessionTimerDraft;
+}
+
+/**
+ * Al reabrir, el cronómetro sigue desde runningSince.
+ * Los borradores viejos guardaban el total ya sumado y además runningSince.
+ */
+export function restoreSessionTimer(draft: SessionDraft | null): StopwatchSnapshot {
+  const timer = draft?.sessionTimer;
+  if (!draft || !timer) return { elapsedSeconds: 0, isRunning: false };
+
+  const elapsed = Math.max(0, Math.floor(timer.elapsedSeconds || 0));
+  if (!timer.isRunning || !timer.runningSince) {
+    return { elapsedSeconds: elapsed, isRunning: false };
+  }
+
+  if (timer.baseOnly) {
+    return {
+      elapsedSeconds: elapsed,
+      isRunning: true,
+      runningSince: timer.runningSince,
+    };
+  }
+
+  const baked = Math.max(
+    0,
+    Math.floor((draft.updatedAt - timer.runningSince) / 1000),
+  );
+  return {
+    elapsedSeconds: Math.max(0, elapsed - baked),
+    isRunning: true,
+    runningSince: timer.runningSince,
+  };
 }
 
 function draftKey(planificationId: string, sessionNum: number): string {

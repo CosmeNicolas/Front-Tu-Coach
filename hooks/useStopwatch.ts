@@ -71,6 +71,16 @@ export function useStopwatch(initial: StopwatchSnapshot = { elapsedSeconds: 0, i
     };
   }, []);
 
+  /** Base del tramo actual, sin sumar runningSince. Sirve para persistir sin duplicar. */
+  const getBaseSnapshot = useCallback((): StopwatchSnapshot => {
+    const prev = snapshotRef.current;
+    return {
+      elapsedSeconds: Math.max(0, Math.floor(prev.elapsedSeconds)),
+      isRunning: prev.isRunning,
+      runningSince: prev.isRunning ? prev.runningSince : undefined,
+    };
+  }, []);
+
   return {
     elapsedSeconds,
     isRunning: snapshot.isRunning,
@@ -78,6 +88,7 @@ export function useStopwatch(initial: StopwatchSnapshot = { elapsedSeconds: 0, i
     pause,
     reset,
     getSnapshot,
+    getBaseSnapshot,
     setSnapshot,
   };
 }
