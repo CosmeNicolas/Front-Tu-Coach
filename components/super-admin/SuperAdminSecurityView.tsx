@@ -19,12 +19,76 @@ import {
   SecurityBlocklistRow,
 } from '@/lib/api/security-blocklist';
 
+const EVENT_LABELS: Record<string, string> = {
+  'registration.pending_verification': 'Registro esperando confirmación del mail',
+  'registration.verified': 'La persona confirmó el mail y la cuenta quedó activa',
+  'registration.disposable_email': 'Rechazamos un email temporal',
+  'registration.blocked': 'Registro bloqueado',
+  'register-profesor.soft_signals':
+    'Registro de profesor rechazado: datos sospechosos. No se creó la cuenta',
+  'register-autogestionado.soft_signals':
+    'Registro para entrenar solo rechazado: datos sospechosos. No se creó la cuenta',
+  'contact.spam': 'Contacto descartado: parecía automático',
+  'contact.accepted': 'Contacto recibido',
+  'contact.blocked': 'Contacto bloqueado',
+  'contact.turnstile_failed': 'El formulario de contacto no pasó la verificación',
+  'contact.email_failed': 'No se pudo enviar el mail del contacto',
+  'auth.login_blocked': 'Intento de ingreso bloqueado',
+  'auth.forgot_password_blocked': 'Recuperación de contraseña bloqueada',
+};
+
+const SIGNAL_LABELS: Record<string, string> = {
+  gibberish_name: 'el nombre parece una cadena al azar',
+  gibberish_apellido: 'el apellido parece una cadena al azar',
+  gibberish_message: 'el mensaje parece una cadena al azar',
+  spam_email: 'el email parece generado',
+  honeypot: 'completó un campo oculto',
+  too_fast: 'envió el formulario demasiado rápido',
+  short_random_message: 'el mensaje es muy corto y sin sentido',
+};
+
+const KIND_LABELS: Record<string, string> = {
+  profesor: 'Profesor',
+  autogestionado: 'Entrena por su cuenta',
+  hard: 'Se descartó',
+  alumno: 'Alumno',
+};
+
+function labelList(value: string, dictionary: Record<string, string>): string {
+  return value
+    .split(',')
+    .map((part) => part.trim())
+    .filter(Boolean)
+    .map((part) => dictionary[part] ?? part)
+    .join('. ');
+}
+
 function formatMeta(meta: SecurityEventRow['meta']): string {
-  const entries = Object.entries(meta);
-  if (entries.length === 0) {
-    return '—';
+  const parts: string[] = [];
+  if (typeof meta.detalle === 'string' && meta.detalle.trim()) {
+    parts.push(meta.detalle);
+  } else if (typeof meta.signals === 'string') {
+    parts.push(labelList(meta.signals, SIGNAL_LABELS));
+  } else if (typeof meta.softSignals === 'string') {
+    parts.push(labelList(meta.softSignals, SIGNAL_LABELS));
   }
-  return entries.map(([key, value]) => `${key}=${value}`).join(' · ');
+  if (typeof meta.reasons === 'string') {
+    parts.push(labelList(meta.reasons, SIGNAL_LABELS));
+  }
+  if (typeof meta.resultado === 'string' && meta.resultado.trim()) {
+    parts.push(meta.resultado);
+  }
+  if (typeof meta.kind === 'string') {
+    parts.push(KIND_LABELS[meta.kind] ?? String(meta.kind));
+  }
+  if (typeof meta.role === 'string') {
+    parts.push(KIND_LABELS[meta.role] ?? String(meta.role));
+  }
+  return parts.filter(Boolean).join(' · ') || '—';
+}
+
+function eventLabel(event: string): string {
+  return EVENT_LABELS[event] ?? event;
 }
 
 function formatDate(value: string): string {
@@ -126,7 +190,7 @@ export function SuperAdminSecurityView() {
       <div>
         <h1 className="text-2xl font-semibold text-foreground">Seguridad</h1>
         <p className="mt-1 text-sm text-muted-foreground">
-          Eventos anti-spam, bloqueos automáticos/manuales y rate limit compartido vía MongoDB.
+          Acá ves registros y contactos. Una alerta amarilla es algo que se frenó o hay que mirar. Si un alta parece automática, también te llega un mail.
         </p>
       </div>
 
@@ -147,7 +211,7 @@ export function SuperAdminSecurityView() {
             >
               <option value="all">Todos</option>
               <option value="warn">Solo alertas</option>
-              <option value="info">Solo info</option>
+              <option value="info">Solo avisos</option>
             </select>
             <Button type="button" variant="outline" onClick={() => void loadEvents()}>
               Actualizar
@@ -188,7 +252,12 @@ export function SuperAdminSecurityView() {
                   rows.map((row) => (
                     <tr key={row.id} className="border-t border-border align-top">
                       <td className="px-4 py-3 whitespace-nowrap">{formatDate(row.createdAt)}</td>
-                      <td className="px-4 py-3 font-mono text-xs">{row.event}</td>
+                      <td className="px-4 py-3">
+                        <p>{eventLabel(row.event)}</p>
+                        <p className="mt-1 font-mono text-[11px] text-muted-foreground">
+                          {row.event}
+                        </p>
+                      </td>
                       <td className="px-4 py-3">
                         <span
                           className={
@@ -197,7 +266,7 @@ export function SuperAdminSecurityView() {
                               : 'rounded-full bg-muted px-2 py-0.5 text-xs font-medium text-muted-foreground'
                           }
                         >
-                          {row.severity}
+                          {row.severity === 'warn' ? 'Alerta' : 'Aviso'}
                         </span>
                       </td>
                       <td className="px-4 py-3 font-mono text-xs text-muted-foreground">
@@ -237,7 +306,7 @@ export function SuperAdminSecurityView() {
                 required
                 value={blockValue}
                 onChange={(event) => setBlockValue(event.target.value)}
-                placeholder="Copiá el ipHash de un evento"
+                placeholder="Email, dominio o el hash de IP de un evento"
               />
             </div>
             <div className="space-y-2 md:col-span-2">
